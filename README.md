@@ -1,2 +1,0 @@
-# LineaCasaBari
-progetto tecweb universita'
