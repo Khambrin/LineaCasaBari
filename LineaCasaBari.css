@@ -28,14 +28,14 @@ body
 	background-image:url(images/logo.png);
 	background-repeat:no-repeat;
     display: inline-block;
-    width: 18%;
+    width: 20%;
     height:6.9em;
 }
 
 #header h1
 {
     display: inline-block;
-    width: 81%;
+    width: 79%;
     height: 2.7em;
     vertical-align: middle;
     color: aliceblue;
@@ -82,7 +82,7 @@ body
     text-decoration: none;
 }
 
-#search-image
+.search-image
 {
 	background-image:url(images/ricerca.png);
 	background-repeat:no-repeat;
@@ -99,7 +99,44 @@ body
 		
 }
 
-#footer {
-    background-color: #2D3235;
+#torna-su
+{
+    text-align: center;
+    padding:0.5em;
+    border-bottom: 2px solid;
+    border-bottom-color: aliceblue;
+    
+}
+
+#torna-su a
+{
+   text-decoration: none; 
+}
+
+#footer
+{
+     background-color: #E1E3E4;
+    /*background-color: #2D3235;*/
+    
+}
+
+#footer-container
+{
+    padding:2em;
+    /*padding-top: 2em;
+    padding-left: 2em;*/
+}
+
+.footer-block
+{
+    width: 33%;
+    display: inline-block;
+    
+}
+
+.footer-block li
+{
+     list-style: none;
+    padding:0.5em;
     
 }
