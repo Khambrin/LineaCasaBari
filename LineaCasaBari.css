@@ -15,15 +15,15 @@ body
 {
     text-align: center;
 	background-color:#66b1ff;
-	padding:1em;
-    padding-bottom: 2em;
+	padding:0.5em;
+ 
 }
 
 #header a{
     text-decoration: none;
 }
 
-#logo
+.logo
 {
 	background-image:url(images/logo.png);
 	background-repeat:no-repeat;
@@ -38,69 +38,64 @@ body
     width: 81%;
     height: 2.7em;
     vertical-align: middle;
+    color: aliceblue;
+    
 }
 
-
-#path {
-    
-    padding-left: 1.5em;
-    display: inline-block;
-	width: 24%;
-    height: 2em;
+#menu
+{
+    padding:1em;
+    height: 1em;
     background-color: #E1E3E4;
-    margin-right: -0.3em;
-    padding-top: 1.2em;
-    
-    
+    margin-bottom: 2em;
 }
 
+#path
+{
+    display: inline-block;
+    height: 1em;
+    width: 24%;   
+    
+}
 #nav
 {
-	display: inline-block;
-	width:73.737%;
+    display: inline-block;
     height: 2em;
+    width: 75%;
     text-align: right;
-    background-color: #E1E3E4;
-    padding-top: 0.5em;
-    padding-bottom: 0.7em;
+   
+    
 }
-
-
-
-#nav li{
+#nav li
+{
     list-style: none;
     display: inline;
-    padding-right: 1em;
-    border-right: 1px solid;
-    padding-left: 1em;
+    padding-right: 1.5em;
+    border-left:1px solid;
+    padding-left:1em;
+    text-align: center;
+    
+    
 }
-
-#nav a{
+#nav a
+{
     text-decoration: none;
 }
 
-#last-nav{
-    
-}
-
-#login-image
-{
-	background-image:url(images/login_negozio.jpg);
-	background-repeat:no-repeat;
-	display: inline-block;
-	background-size:contain;
-	width:3%;
-	height:1.5em;
-	
-}
 #search-image
 {
-	background-image:url(images/ricerca.jpg);
+	background-image:url(images/ricerca.png);
 	background-repeat:no-repeat;
-	display: inline-block;
-	width:3%;
-	height:1.6em;
-	background-size:contain;
+	display: inline;
+	padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+
+    background-size: contain;
+ 
+	
+    
 		
 }
 
