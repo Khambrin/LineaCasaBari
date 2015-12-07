@@ -1,0 +1,185 @@
+*{
+	padding:0em;
+	margin:0em;
+}
+
+body
+{
+	max-width:1024px;
+	margin:auto;
+	font-size:100%;
+	
+}
+
+#header
+{
+    text-align: center;
+	background-color:#66b1ff;
+	padding:0.5em;
+ 
+}
+
+#header a{
+    text-decoration: none;
+}
+
+.logo
+{
+	background-image:url(images/logo.png);
+	background-repeat:no-repeat;
+    display: inline-block;
+    width: 20%;
+    height:6.9em;
+}
+
+#header h1
+{
+    display: inline-block;
+    width: 79%;
+    height: 2.7em;
+    vertical-align: middle;
+    color: aliceblue;
+    
+}
+
+#menu
+{
+    padding:1em;
+    height: 1em;
+    background-color: #E1E3E4;
+    margin-bottom: 2em;
+}
+
+#path
+{
+    display: inline-block;
+    height: 1em;
+    width: 24%;   
+    
+}
+#nav
+{
+    display: inline-block;
+    height: 2em;
+    width: 75%;
+    text-align: right;
+   
+    
+}
+#nav li
+{
+    list-style: none;
+    display: inline;
+    padding-right: 1.5em;
+    border-left:1px solid;
+    padding-left:1em;
+    text-align: center;
+    
+    
+}
+#nav a
+{
+    text-decoration: none;
+}
+
+.search-image
+{
+	background-image:url(images/ricerca.png);
+	background-repeat:no-repeat;
+	display: inline;
+	padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+
+    background-size: contain;
+ 
+	
+    
+		
+}
+
+#torna-su
+{
+    text-align: center;
+    padding-bottom:0.5em;
+    padding-top: 0.5em;
+    border-bottom: 2px solid;
+    border-bottom-color: aliceblue;
+    display: inline-block;
+    width: 100%;
+}
+
+#torna-su a
+{
+   text-decoration: none; 
+}
+
+#footer
+{
+     background-color: #E1E3E4;
+    /*background-color: #2D3235;*/
+    
+}
+
+#footer-container
+{
+    padding:2em;
+    /*padding-top: 2em;
+    padding-left: 2em;*/
+}
+
+.footer-block
+{
+    width: 33%;
+    display: inline-block;
+    
+}
+
+.footer-block li
+{
+     list-style: none;
+    padding:0.5em;
+    
+}
+/*--------------- STORIA------------*/
+
+#titolo
+{
+    text-align: center;
+    padding-bottom: 2em;
+}
+
+#linea-tempo li
+{
+    list-style: none;
+    display: inline-block;
+    padding-left: 1em;
+    padding-right: 1em;
+    transform:rotate(-20deg);
+    border: 1px solid;
+    text-decoration: none;
+    background-color:#66b1ff;
+    margin-left: 1em;
+    margin-right: 1em;
+   
+}
+
+#linea-tempo
+{
+    display: inline-block;
+    width: 99%;
+    height: 2.7em;
+    text-align: center;
+}
+
+#linea-tempo-testo
+{
+    margin-left: 2em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+#linea-tempo-testo li
+{
+    padding-bottom: 2em;
+}
