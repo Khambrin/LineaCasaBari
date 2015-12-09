@@ -145,6 +145,19 @@ body
     padding-top: 0.5em;
 }
 
+#email
+{
+    background-image:url(images/email.png);
+	background-repeat:no-repeat;
+	display: inline;
+	padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    background-size: contain;
+    line-height: 200%;
+}
+
 #titolo
 {
     text-align: center;
