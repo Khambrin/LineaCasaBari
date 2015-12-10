@@ -112,9 +112,7 @@ body
 
 #footer
 {
-     background-color: #E1E3E4;
-    /*background-color: #2D3235;*/
-    
+    background-color: #E1E3E4;
 }
 
 #footer-container
@@ -161,7 +159,7 @@ body
     
 }
 
-
+/*-------------------------------------- la_nostra_storia.html ----------------------------------------------------------------------------------*/
 
 #titolo
 {
@@ -242,8 +240,8 @@ body
 #linea-tempo-testo a
 {
     text-decoration: none;
-    
 }
+
 .linea-tempo-su
 {
     width: 25%;
@@ -259,5 +257,4 @@ body
 {
     text-decoration: none;
 }
-
 
