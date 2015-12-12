@@ -32,13 +32,23 @@
                 <li><a href="prodotti.html">Prodotti</a></li>
                 <li><a href="annunci.html">Annunci</a></li>
                 <li><a href="contattaci.html">Contattaci</a></li>
-                <li><a href="login.html">Registrati/Login</a></li>
-                <li><a href="ricerca.html"><span class="search-image"></span></a></li>
+                <li><a href="login.html">Accedi</a></li>
+                <li><a href="registrazione.html">Registrati</a></li>
             </ul>
         </div>
     </div>
 
     <div id="content">
+        <div id="searchBar">
+            <div id="searchContainer">
+                <form id="commonSearch">
+                    <input id="commonSearchInput" type="text" placeholder="Cerca..."/>
+                    <button id="commonSearchButton" type="submit">
+
+                    </button>
+                </form>
+            </div>
+        </div>
         <div id="prodotti-resultInfoBar">
             <span id="prodotti-resultInfoBlock">
                 1-k dei n risultati in "categoria"
@@ -145,8 +155,9 @@
             
             <div class="footer-block">
                 <form id="newsletter">
-                    <input type="email" placeholder="Inserisci la tua Email"/>
-                    <button type="submit"></button>
+                    <input id="email-input" type="email" placeholder="Inserisci la tua Email"/>
+                    <button id="email-button" type="submit">
+                    </button>
                 </form>
                 <div id="social-links">
                     <a href="facebook.html">
