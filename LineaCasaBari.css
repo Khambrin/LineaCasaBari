@@ -1,3 +1,14 @@
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+input{
+    overflow: hidden;
+}
+
 *{
 	padding:0em;
 	margin:0em;
@@ -149,7 +160,6 @@ body
     width: 82%;
     height: 2em;
     padding-left: 0.3em;
-    overflow: hidden;
 }
 
 #email-button
@@ -202,12 +212,7 @@ body
     bottom: 10%;
 }
 
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-    outline: none;
-}
+
 
 /*-------------------------------------- la_nostra_storia.html ------------------------------------------------------------------------------------*/
 
@@ -519,7 +524,6 @@ button:focus {
     background-color: transparent;
     border: none;
     line-height: 240%;
-    overflow: hidden;
     height: 2.4em;
 }
 
@@ -558,7 +562,6 @@ button:focus {
 #login-passwordInput {
     background-color: transparent;
     border: none;
-    overflow: hidden;
     width: 104%;
     height: 2.4em;
     line-height: 240%;
