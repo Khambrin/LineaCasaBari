@@ -148,20 +148,22 @@ body
 {
     width: 82%;
     height: 2em;
+    padding-left: 0.3em;
+    overflow: hidden;
 }
 
 #email-button
 {
     width: 13%;
-    height: 1.9em;
+    height: 2em;
     background-image:url(images/email.png);
 	background-repeat:no-repeat;
     background-color: transparent;
     background-size: contain;
     border: none;
     position: absolute;
-    left: 84%;
-    top:23%;
+    left: 88%;
+    top:10%;
 }
 
 #searchBar{
@@ -198,6 +200,13 @@ body
     position: absolute;
     right: 0.5%;
     bottom: 10%;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
 }
 
 /*-------------------------------------- la_nostra_storia.html ------------------------------------------------------------------------------------*/
@@ -441,3 +450,121 @@ body
     
 }
 
+/*------------------------------- login.html ---------------------------------------------------------------------------------------------------*/
+
+#login-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5em;
+    margin-top: 5em;
+}
+
+#login-container2 {
+    width: 50%;
+    border: 1px solid;
+    margin: 0 auto;
+    height: 16em;
+    background-color: #E1E3E4;
+}
+
+#login-container2 h2{
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+
+.login-block{
+    height: 2.5em;
+    width: 100%;
+    padding-bottom: 1em;
+}
+
+.login-labels{
+    padding-right: 0.5em;
+}
+
+#login-email_inputleft{
+    background-image: url(images/input_left.png);
+    width: 3%;
+    height: 2em;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: -11.2px;
+}
+
+#login-email_inputmiddle{
+    background-image: url(images/input_middle.png);
+    width: 40%;
+    height: 2em;
+    background-size: contain;
+    background-repeat: repeat-x;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: -3.8px;
+}
+
+#login-email_inputright{
+    background-image:url(images/input_right.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 2em;
+    width: 3%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#login-emailInput{
+    width: 104%;
+    background-color: transparent;
+    border: none;
+    line-height: 240%;
+    overflow: hidden;
+    height: 2.4em;
+}
+
+#login-password_inputleft{
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url(images/input_left.png);
+    width: 3%;
+    height: 2em;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: -11px;
+}
+
+#login-password_inputmiddle{
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url(images/input_middle.png);
+    width: 40%;
+    height: 2em;
+    background-size: contain;
+    background-repeat: repeat-x;
+    margin-right: -3.6px;
+}
+
+#login-password_inputright{
+    display: inline-block;
+    vertical-align: middle;
+    background-image:url(images/input_right.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 2em;
+    width: 3%;
+}
+
+#login-passwordInput {
+    background-color: transparent;
+    border: none;
+    overflow: hidden;
+    width: 104%;
+    height: 2.4em;
+    line-height: 240%;
+}
+
+#login-accediButton {
+    height: 3em;
+    width: 20%;
+}
