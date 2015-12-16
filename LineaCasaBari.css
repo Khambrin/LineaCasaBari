@@ -586,3 +586,61 @@ body
 #registrazione-confermapasswordLabel{
     padding-right: 0.8em;
 }
+
+/*--------------------------- contattaci.html ----------------------------------------------------------------------------------------------------*/
+
+#contattaci-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5em;
+    margin-top: 5em;
+}
+
+#contattaci-container2 {
+    width: 50%;
+    border: 1px solid;
+    margin: 0 auto;
+    height: 37em;
+    background-color: #E1E3E4;
+}
+
+#contattaci-container2 h2{
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+#contattaci-Block {
+    
+}
+
+#contattaci-Block li {
+    list-style: none;
+    padding-bottom: 2em;
+}
+
+#contattaci-messaggioTextArea {
+    width: 80%;
+    height: 10em;
+}
+
+#contattaci-nomeLabel {
+    padding-right: 2.3em;
+}
+
+#contattaci-cognomeLabel {
+    padding-right: 0.7em;
+}
+
+#contattaci-emailLabel {
+    padding-right: 2.2em;
+}
+
+#contattaci-telefonoLabel {
+    padding-right: 1em;
+}
+
+#contattaci-messaggioLabelBlock{
+    text-align: left;
+    padding-bottom: 0.5em;
+    padding-left: 3.2em;
+}
