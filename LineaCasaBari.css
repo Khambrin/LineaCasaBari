@@ -509,7 +509,7 @@ body
     width: 50%;
     border: 1px solid;
     margin: 0 auto;
-    height: 16em;
+    height: 17.5em;
     background-color: #E1E3E4;
 }
 
@@ -518,10 +518,13 @@ body
     padding-top: 1em;
 }
 
-.login-block{
-    height: 2.5em;
-    width: 100%;
-    padding-bottom: 1em;
+#login-Block{
+    padding-top: 0.5em;
+}
+
+#login-Block li{
+    list-style: none;
+    padding-bottom: 2em;
 }
 
 #login-emailLabel{
