@@ -492,87 +492,46 @@ body
     padding-right: 0.5em;
 }
 
-#login-email_inputleft{
-    background-image: url(images/input_left.png);
-    width: 3%;
-    height: 2em;
-    background-repeat: no-repeat;
-    background-size: contain;
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: -11.2px;
-}
 
-#login-email_inputmiddle{
-    background-image: url(images/input_middle.png);
-    width: 40%;
-    height: 2em;
-    background-size: contain;
-    background-repeat: repeat-x;
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: -3.8px;
-}
-
-#login-email_inputright{
-    background-image:url(images/input_right.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 2em;
-    width: 3%;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-#login-emailInput{
-    width: 104%;
-    background-color: transparent;
-    border: none;
-    line-height: 240%;
-    height: 2.4em;
-}
-
-#login-password_inputleft{
-    display: inline-block;
-    vertical-align: middle;
-    background-image: url(images/input_left.png);
-    width: 3%;
-    height: 2em;
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin-right: -11px;
-}
-
-#login-password_inputmiddle{
-    display: inline-block;
-    vertical-align: middle;
-    background-image: url(images/input_middle.png);
-    width: 40%;
-    height: 2em;
-    background-size: contain;
-    background-repeat: repeat-x;
-    margin-right: -3.6px;
-}
-
-#login-password_inputright{
-    display: inline-block;
-    vertical-align: middle;
-    background-image:url(images/input_right.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 2em;
-    width: 3%;
-}
-
-#login-passwordInput {
-    background-color: transparent;
-    border: none;
-    width: 104%;
-    height: 2.4em;
-    line-height: 240%;
-}
-
-#login-accediButton {
+.button {
     height: 3em;
     width: 20%;
+}
+
+.inputLeft {
+    display: inline-block;
+    background-image: url(images/input_left.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 3%;
+    height: 2em;
+    vertical-align: middle;
+    margin-right: -11.3px;
+}
+
+.inputMiddle {
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url(images/input_middle.png);
+    width: 40%;
+    height: 2em;
+    background-size: contain;
+    background-repeat: repeat-x;
+    margin-right: -3.9px;
+}
+
+.inputRight {
+    display: inline-block;
+    vertical-align: middle;
+    background-image:url(images/input_right.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 2em;
+    width: 3%;
+}
+
+.input{
+    line-height: 240%;
+    background-color: transparent;
+    border: none;
 }
