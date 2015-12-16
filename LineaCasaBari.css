@@ -212,7 +212,48 @@ body
     bottom: 10%;
 }
 
+.button {
+    height: 3em;
+    width: 20%;
+}
 
+.inputLeft {
+    display: inline-block;
+    background-image: url(images/input_left.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 3%;
+    height: 2em;
+    vertical-align: middle;
+    margin-right: -11.3px;
+}
+
+.inputMiddle {
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url(images/input_middle.png);
+    width: 40%;
+    height: 2em;
+    background-size: contain;
+    background-repeat: repeat-x;
+    margin-right: -3.9px;
+}
+
+.inputRight {
+    display: inline-block;
+    vertical-align: middle;
+    background-image:url(images/input_right.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 2em;
+    width: 3%;
+}
+
+.input{
+    line-height: 240%;
+    background-color: transparent;
+    border: none;
+}
 
 /*-------------------------------------- la_nostra_storia.html ------------------------------------------------------------------------------------*/
 
@@ -493,45 +534,52 @@ body
 }
 
 
-.button {
-    height: 3em;
-    width: 20%;
+/*--------------------------- registrazione.html -----------------------------------------------------------------------------------------------*/
+
+#registrazione-container{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5em;
+    margin-top: 5em;
 }
 
-.inputLeft {
-    display: inline-block;
-    background-image: url(images/input_left.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 3%;
-    height: 2em;
-    vertical-align: middle;
-    margin-right: -11.3px;
+#registrazione-container2{
+    width: 50%;
+    margin: 0 auto;
+    background-color: #E1E3E4;
+    height: 30em;
 }
 
-.inputMiddle {
-    display: inline-block;
-    vertical-align: middle;
-    background-image: url(images/input_middle.png);
-    width: 40%;
-    height: 2em;
-    background-size: contain;
-    background-repeat: repeat-x;
-    margin-right: -3.9px;
+#registrazione-container2 h2{
+    padding-bottom: 1em;
+    padding-top: 1em;
 }
 
-.inputRight {
-    display: inline-block;
-    vertical-align: middle;
-    background-image:url(images/input_right.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 2em;
-    width: 3%;
+#registrazione-Block{
+    padding-top: 1.5em;
 }
 
-.input{
-    line-height: 240%;
-    background-color: transparent;
-    border: none;
+#registrazione-Block li{
+    list-style: none;
+    padding-bottom: 2em;   
+}
+
+#registrazione-nomeLabel{
+    padding-right: 6.3em;
+}
+
+#registrazione-cognomeLabel{
+    padding-right: 4.9em;
+}
+
+#registrazione-emailLabel{
+    padding-right: 6.35em;
+}
+
+#registrazione-passwordLabel{
+    padding-right: 4.9em;
+}
+
+#registrazione-confermapasswordLabel{
+    padding-right: 0.8em;
 }
