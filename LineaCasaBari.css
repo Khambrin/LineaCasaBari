@@ -123,6 +123,7 @@ body
 #footer
 {
     background-color: #E1E3E4;
+    margin-top: 1.5em;
 }
 
 #footer-container
@@ -257,12 +258,7 @@ body
 
 /*-------------------------------------- la_nostra_storia.html ------------------------------------------------------------------------------------*/
 
-#la_nostra_storia_titolo
-{
-    margin-top: 1em;
-    text-align: center;
-    padding-bottom: 2em;
-}
+
 
 #linea-tempo li
 {
@@ -643,4 +639,38 @@ body
     text-align: left;
     padding-bottom: 0.5em;
     padding-left: 3.2em;
+}
+/*------------------- termini e spedizione*/
+#content h2
+{
+    margin-top: 1em;
+    text-align: center;
+    padding-bottom: 1.5em;
+}
+
+#term_sped_container
+{
+    text-align: center;
+    width: 100%;
+    background-color: aliceblue;
+}
+#term_sped_container h3
+{
+    background-color: #E1E3E4;
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    padding-right: 2.6em;
+    margin-top: 1.5em;
+    
+}
+    
+.term_sped_text
+{
+    text-align: justify;
+    
+    padding: 1.5em;
+    width: 50%;
+    background-color:#66b1ff; 
+    display: inline-block;
 }
