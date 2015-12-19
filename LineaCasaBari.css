@@ -179,7 +179,6 @@ body
     
     width: 100%;
     height: 3em;
-    
 }
 
 #searchContainer
@@ -187,14 +186,49 @@ body
     width: 100%;
     position: relative;
     text-align: right;
+    background-color: #E1E3E4;
 }
 
 #commonSearchInput{
-    width: 60%;
-    height: 2.75em;
+    line-height: 300%;
+    background-color: transparent;
+    border: none;
+    width: 91%;
     font-size: 1em;
-    padding-left: 0.4em;
+    margin-right: 3em;
+    height: 3em;
+}
+
+#commonSearchInputLeft{
+    display: inline-block;
+    background-image: url(images/input_left.png);
+    background-size: contain;
+    background-repeat: no-repeat;
     vertical-align: middle;
+    height: 3em;
+    width: 1.3%;
+    margin-right: -5.1px;
+}
+
+#commonSearchInputMiddle{
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url(images/input_middle.png);
+    background-size: contain;
+    background-repeat: repeat-x;
+    height: 3em;
+    width: 45%;
+    margin-right: -3.8px;
+}
+
+#commonSearchInputRight{
+    display: inline-block;
+    background-image: url(images/input_right.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    height: 3em;
+    width: 1.3%;
 }
 
 #commonSearchButton{
@@ -207,8 +241,8 @@ body
     border: none;
     vertical-align: middle;
     position: absolute;
-    right: 0.5%;
-    bottom: 10%;
+    right: 0.8%;
+    bottom: 9%;
 }
 
 .button {
@@ -286,11 +320,6 @@ body
     text-align: center;
 }
 
-#linea-tempo
-{
-    text-decoration: none;
-}
-
 #linea-tempo-testo
 {
     display: block;
@@ -298,10 +327,9 @@ body
     margin-left: 17.5em;
     padding-top: 4em;
     padding-bottom: 2em;
-    width: 45%;
-    
-    
+    width: 45%;    
 }
+
 #linea-tempo-testo li
 {
     padding-bottom: 1em;
@@ -312,6 +340,7 @@ body
     background-color:#66b1ff;
     
 }
+
 #linea-tempo a
 {
     text-decoration: none;
@@ -637,7 +666,7 @@ body
     padding-bottom: 0.5em;
     padding-left: 3.2em;
 }
-/*------------------- termini e spedizione*/
+/*------------------- termini e spedizione -------------------------------------------------------------------------------------------------------*/
 #content h2
 {
     margin-top: 1em;
