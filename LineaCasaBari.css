@@ -683,18 +683,22 @@ body
 #term_sped_container h3
 {
     background-color: #E1E3E4;
-    display: inline-block;
     width: 50%;
     text-align: center;
-    padding-right: 2.6em;
+    display: inline-block;
     margin-top: 1.5em;
+    padding-left: 1.3em;
+    padding-right: 1.3em;
+    
+    
+   
     
 }
     
 .term_sped_text
 {
     text-align: justify;
-    
+   
     padding: 1.5em;
     width: 50%;
     background-color:#66b1ff; 
