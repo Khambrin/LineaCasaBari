@@ -127,41 +127,80 @@ body
 #footer-container
 {
     padding-bottom: 1em;
-    padding-left: 1em;
+    padding-left: 1.5em;
     padding-top: 0.5em;
-    padding-right: 0.5em;
 }
 
 #footer-logo{
     display: inline-block;
-    width: 76%;
+    width: 87%;
     height: 6.5em;
     background-image: url(images/logo.png);
     background-repeat: no-repeat;
 }
 
-.footer-block
-{
-    width: 23.1%;;
-    display: inline-block;
-    position: relative;
-}
-
-.footer-block li
-{
+#footer-container li{
     list-style: none;
     padding-bottom:0.5em;
     padding-top: 0.5em;
 }
 
-#email-input
-{
-    width: 82%;
-    height: 2em;
-    padding-left: 0.3em;
+#first-footer-block{
+    display: inline-block;
+    width: 20%;
+    padding-right: 3em;
 }
 
-#email-button
+.footer-block
+{
+    display: inline-block;
+    width: 14%;
+    padding-right: 3.5em;
+}
+
+#last-footer-block{
+    display: inline-block;
+    width: 30%;
+    position: relative;
+    
+}
+
+#facebook-link {
+    text-decoration: none;
+}
+
+#facebook-button{
+    background-image: url(images/facebook_link.png);
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 21%;
+    height: 3em;
+    margin-left: 2em;
+    margin-top: 0.8em;
+}
+
+#newsletter-input
+{
+    background-color: transparent;
+    border: none;
+    width: 97%;
+    height: 2.3em;
+    padding-left: 1em;
+}
+
+#newsletterInputMiddle{
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url(images/input_middle.png);
+    width: 70%;
+    height: 2em;
+    background-size: contain;
+    background-repeat: repeat-x;
+    margin-right: -3.9px;
+}
+
+#newsletter-button
 {
     width: 13%;
     height: 2em;
@@ -171,8 +210,8 @@ body
     background-size: contain;
     border: none;
     position: absolute;
-    left: 88%;
-    top:10%;
+    left: 76%;
+    top: 8%;
 }
 
 #searchBar{
@@ -287,6 +326,7 @@ body
     background-color: transparent;
     border: none;
 }
+
 
 /*-------------------------------------- la_nostra_storia.html ------------------------------------------------------------------------------------*/
 
@@ -704,3 +744,5 @@ body
     background-color:#66b1ff; 
     display: inline-block;
 }
+
+
