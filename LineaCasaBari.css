@@ -388,7 +388,7 @@ body
     width: 45%;    
 }
 
-#linea-tempo-testo li
+.linea-tempo-testo-li
 {
     padding-bottom: 1em;
     margin-bottom: 1em;
@@ -570,11 +570,12 @@ body
 }
 
 #prodotti-searchSortFormLabel {
+    display: inline;
     padding-right: 0.3em;
 }
 
 #prodotti-searchSortFormSelect {
-    
+    display: inline;
 }
 
 /*------------------------------- login.html ---------------------------------------------------------------------------------------------------*/
@@ -680,7 +681,7 @@ body
     width: 50%;
     border: 1px solid;
     margin: 0 auto;
-    height: 38.7em;
+    height: 38.5em;
     background-color: #E1E3E4;
 }
 
@@ -695,7 +696,16 @@ body
 
 #contattaci-Block li {
     list-style: none;
+}
+
+.contattaci-Block-li{
     padding-bottom: 2em;
+}
+
+#contattaci-messaggioLabelBlock{
+    text-align: left;
+    padding-left: 3.2em;
+    padding-bottom: 0.5em;
 }
 
 #contattaci-messaggioTextArea {
@@ -719,11 +729,6 @@ body
     padding-right: 1em;
 }
 
-#contattaci-messaggioLabelBlock{
-    text-align: left;
-    padding-bottom: 0.5em;
-    padding-left: 3.2em;
-}
 /*------------------- termini e spedizione/resi e rimborsi  -------------------------------------------------------------------------------------------------------*/
 #content h2
 {

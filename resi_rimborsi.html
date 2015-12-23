@@ -16,7 +16,9 @@
 </head>
 
 <body>
-    <a href="#content" class="skip">Salta al contenuto</a>
+    <div>
+        <a href="#content" class="skip">Salta al contenuto</a>
+    </div>
     <div id="header">
     <a href="home.html">
         <span id="header-logo"></span>
@@ -45,10 +47,12 @@
             <form id="commonSearch">
                 <div id="commonSearchInputLeft"></div>
                 <div id="commonSearchInputMiddle">
-                    <input id="commonSearchInput" type="text" placeholder="Cerca..."/>
+                    <input id="commonSearchInput" type="text"/>
                 </div>
                 <div id="commonSearchInputRight"></div>
+                <div>
                 <button id="commonSearchButton" type="submit"></button>
+                </div>
             </form>
         </div>
     </div>
@@ -105,10 +109,12 @@
                         <form id="newsletter">
                             <div class="inputLeft"></div>
                             <div id="newsletterInputMiddle">
-                                <input id="newsletter-input" type="email" placeholder="Inserisci la tua email"/>
+                                <input id="newsletter-input" type="text"/>
                             </div>
                             <div class="inputRight"></div>
-                            <button id="newsletter-button" type="submit"></button>
+                            <div>
+                                <button id="newsletter-button" type="submit"></button>
+                            </div>
                         </form>
                     </li>
                     <li>

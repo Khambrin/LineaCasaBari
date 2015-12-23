@@ -14,7 +14,9 @@
     <link href="LineaCasaBari.css" rel="stylesheet" type="text/css" media="screen"/>
 </head>
 <body>
-    <a href="#content" class="skip">Salta al contenuto</a>
+    <div>
+        <a href="#content" class="skip">Salta al contenuto</a>
+    </div>
     <div id="header">
     <a href="home.html">
         <span id="header-logo"></span>
@@ -43,10 +45,12 @@
             <form id="commonSearch">
                 <div id="commonSearchInputLeft"></div>
                 <div id="commonSearchInputMiddle">
-                    <input id="commonSearchInput" type="text" placeholder="Cerca..."/>
+                    <input id="commonSearchInput" type="text"/>
                 </div>
                 <div id="commonSearchInputRight"></div>
-                <button id="commonSearchButton" type="submit"></button>
+                <div>
+                    <button id="commonSearchButton" type="submit"></button>
+                </div>
             </form>
         </div>
     </div>
@@ -61,7 +65,7 @@
                             <label id="registrazione-nomeLabel">Nome:</label>
                             <div class="inputLeft"></div>
                             <div class="inputMiddle">
-                                <input class="input" type="text" placeholder="inserisci il tuo nome"/>
+                                <input class="input" type="text"/>
                             </div>
                             <div class="inputRight"></div>
                         </li>
@@ -69,7 +73,7 @@
                             <label id="registrazione-cognomeLabel">Cognome:</label>
                             <div class="inputLeft"></div>
                             <div class="inputMiddle">
-                                <input class="input" type="text" placeholder="inserisci il tuo cognome"/>
+                                <input class="input" type="text"/>
                             </div>
                             <div class="inputRight"></div>
                         </li>
@@ -77,7 +81,7 @@
                             <label id="registrazione-emailLabel">Email:</label>
                             <div class="inputLeft"></div>
                             <div class="inputMiddle">
-                                <input class="input" type="email" placeholder="inserisci la tua email"/>
+                                <input class="input" type="text"/>
                             </div>
                             <div class="inputRight"></div>
                         </li>
@@ -85,7 +89,7 @@
                             <label id="registrazione-passwordLabel">Password:</label>
                             <div class="inputLeft"></div>
                             <div class="inputMiddle">
-                                <input class="input" type="password" placeholder="inserisci la tua password"/>
+                                <input class="input" type="password"/>
                             </div>
                             <div class="inputRight"></div>
                         </li>
@@ -93,12 +97,14 @@
                             <label id="registrazione-confermapasswordLabel">Conferma password:</label>
                             <div class="inputLeft"></div>
                             <div class="inputMiddle">
-                                <input class="input" type="password" placeholder="reinserisci la tua password"/>
+                                <input class="input" type="password"/>
                             </div>
                             <div class="inputRight"></div>
                         </li>
                     </ul>
-                    <button class="button" type="submit">Registrati</button>
+                    <div>
+                        <button class="button" type="submit">Registrati</button>
+                    </div>
                 </form>
             </div>
         
@@ -147,10 +153,12 @@
                         <form id="newsletter">
                             <div class="inputLeft"></div>
                             <div id="newsletterInputMiddle">
-                                <input id="newsletter-input" type="email" placeholder="Inserisci la tua email"/>
+                                <input id="newsletter-input" type="text"/>
                             </div>
                             <div class="inputRight"></div>
-                            <button id="newsletter-button" type="submit"></button>
+                            <div>
+                                <button id="newsletter-button" type="submit"></button>
+                            </div>
                         </form>
                     </li>
                     <li>

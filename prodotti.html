@@ -14,7 +14,9 @@
     <link href="LineaCasaBari.css" rel="stylesheet" type="text/css" media="screen"/>
 </head>
 <body>
-    <a href="#content" class="skip">Salta al contenuto</a>
+    <div>
+        <a href="#content" class="skip">Salta al contenuto</a>
+    </div>
     <div id="header">
     <a href="home.html">
         <span id="header-logo"></span>
@@ -43,10 +45,12 @@
             <form id="commonSearch">
                 <div id="commonSearchInputLeft"></div>
                 <div id="commonSearchInputMiddle">
-                    <input id="commonSearchInput" type="text" placeholder="Cerca..."/>
+                    <input id="commonSearchInput" type="text"/>
                 </div>
                 <div id="commonSearchInputRight"></div>
-                <button id="commonSearchButton" type="submit"></button>
+                <div>
+                    <button id="commonSearchButton" type="submit"></button>
+                </div>
             </form>
         </div>
     </div>
@@ -58,16 +62,18 @@
             </span>
             <div id="prodotti-searchSortBlock">
                 <form id="prodotti-searchSortForm" method="post">
-                    <span id="prodotti-searchSortFormLabel">
+                    <div id="prodotti-searchSortFormLabel">
                         Ordina per
-                    </span>
-                    <select id="prodotti-searchSortFormSelect">
-                        <option value="rilevanza">Rilevanza</option>
-                        <option value="prezzo_crescente">Prezzo crescente</option>
-                        <option value="prezzo_decrescente">Prezzo decrescente</option>
-                        <option value="media_recensioni_clienti">Media recensioni clienti</option>
-                        <option value="ultimi_arrivi">Ultimi arrivi</option>
-                    </select>
+                    </div>
+                    <div id="prodotti-searchSortFormSelect">
+                        <select>
+                            <option value="rilevanza">Rilevanza</option>
+                            <option value="prezzo_crescente">Prezzo crescente</option>
+                            <option value="prezzo_decrescente">Prezzo decrescente</option>
+                            <option value="media_recensioni_clienti">Media recensioni clienti</option>
+                            <option value="ultimi_arrivi">Ultimi arrivi</option>
+                        </select>
+                    </div>
                 </form>
             </div>
         </div>
@@ -163,10 +169,12 @@
                         <form id="newsletter">
                             <div class="inputLeft"></div>
                             <div id="newsletterInputMiddle">
-                                <input id="newsletter-input" type="email" placeholder="Inserisci la tua email"/>
+                                <input id="newsletter-input" type="text"/>
                             </div>
                             <div class="inputRight"></div>
-                            <button id="newsletter-button" type="submit"></button>
+                            <div>
+                                <button id="newsletter-button" type="submit"></button>
+                            </div>
                         </form>
                     </li>
                     <li>
