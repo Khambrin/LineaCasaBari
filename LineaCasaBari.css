@@ -3,12 +3,40 @@
 	margin:0em;
 }
 
+input:focus,
+textarea:focus{
+    outline: none;
+}
+
+input{
+    overflow: hidden;
+}
+
+.skip{
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    height: 1px;
+    width: 1px;
+    text-align: left;
+    overflow: hidden;
+}
+
+a.skip:active,
+a.skip:focus,
+a.skip:hover {
+    left: 0;
+    top: 0;
+    width: auto;
+    height: auto;
+    overflow: visible;
+}
+
 body
 {
 	max-width:1024px;
 	margin:auto;
 	font-size:100%;
-	
 }
 
 #header
@@ -16,7 +44,6 @@ body
     text-align: center;
 	background-color:#66b1ff;
 	padding:0.5em;
- 
 }
 
 #header a{
@@ -47,7 +74,6 @@ body
     padding:1em;
     height: 1em;
     background-color: #E1E3E4;
-    margin-bottom: 2em;
 }
 
 #path
@@ -57,23 +83,6 @@ body
     width: 24%;   
     
 }
-
-#conte{
-    color:blue;
-}
-div.post{
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-    margin:20px;
-    padding:20px;
-} 
-div.post h2{
-    color:dodgerblue;
-}
-div.post h3{
-    color:darkslategrey;
-}
-
-
 #nav
 {
     display: inline-block;
@@ -129,9 +138,8 @@ div.post h3{
 
 #footer
 {
-     background-color: #E1E3E4;
-    /*background-color: #2D3235;*/
-    
+    background-color: #E1E3E4;
+    margin-top: 1.5em;
 }
 
 #footer-container
@@ -143,23 +151,631 @@ div.post h3{
 
 #footer-logo{
     display: inline-block;
-    width: 71%;
+    width: 87%;
     height: 6.5em;
     background-image: url(images/logo.png);
     background-repeat: no-repeat;
 }
 
-.footer-block
-{
-    width: 24.7%;
-    display: inline-block;
-}
-
-.footer-block li
-{
+#footer-container li{
     list-style: none;
     padding-bottom:0.5em;
     padding-top: 0.5em;
 }
 
+#first-footer-block{
+    display: inline-block;
+    width: 20%;
+    padding-right: 3em;
+}
+
+.footer-block
+{
+    display: inline-block;
+    width: 14%;
+    padding-right: 3.5em;
+}
+
+#last-footer-block{
+    display: inline-block;
+    width: 30%;
+    position: relative;
+    
+}
+
+#facebook-link {
+    text-decoration: none;
+}
+
+#facebook-button{
+    background-image: url(images/facebook_link.png);
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 21%;
+    height: 3em;
+    margin-left: 2em;
+    margin-top: 0.8em;
+}
+
+#newsletter-input
+{
+    background-color: transparent;
+    border: none;
+    width: 97%;
+    height: 2.3em;
+    padding-left: 1em;
+}
+
+#newsletterInputMiddle{
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url(images/input_middle.png);
+    width: 70%;
+    height: 2em;
+    background-size: contain;
+    background-repeat: repeat-x;
+    margin-right: -3.9px;
+}
+
+#newsletter-button
+{
+    width: 13%;
+    height: 2em;
+    background-image:url(images/email.png);
+	background-repeat:no-repeat;
+    background-color: transparent;
+    background-size: contain;
+    border: none;
+    position: absolute;
+    left: 76%;
+    top: 8%;
+}
+
+#searchBar{
+    
+    width: 100%;
+    height: 3em;
+}
+
+#searchContainer
+{
+    width: 100%;
+    position: relative;
+    text-align: right;
+    background-color: #E1E3E4;
+}
+
+#commonSearchInput{
+    line-height: 300%;
+    background-color: transparent;
+    border: none;
+    width: 91%;
+    font-size: 1em;
+    margin-right: 3em;
+    height: 3em;
+}
+
+#commonSearchInputLeft{
+    display: inline-block;
+    background-image: url(images/input_left.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    height: 3em;
+    width: 1.3%;
+    margin-right: -5.1px;
+}
+
+#commonSearchInputMiddle{
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url(images/input_middle.png);
+    background-size: contain;
+    background-repeat: repeat-x;
+    height: 3em;
+    width: 45%;
+    margin-right: -3.8px;
+}
+
+#commonSearchInputRight{
+    display: inline-block;
+    background-image: url(images/input_right.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    height: 3em;
+    width: 1.3%;
+}
+
+#commonSearchButton{
+    width: 4%;
+    height:3em;
+    background-image: url(images/ricerca.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    vertical-align: middle;
+    position: absolute;
+    right: 0.8%;
+    bottom: 9%;
+}
+
+.button {
+    height: 3em;
+    width: 20%;
+}
+
+.inputLeft {
+    display: inline-block;
+    background-image: url(images/input_left.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 3%;
+    height: 2em;
+    vertical-align: middle;
+    margin-right: -11.3px;
+}
+
+.inputMiddle {
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url(images/input_middle.png);
+    width: 40%;
+    height: 2em;
+    background-size: contain;
+    background-repeat: repeat-x;
+    margin-right: -3.9px;
+}
+
+.inputRight {
+    display: inline-block;
+    vertical-align: middle;
+    background-image:url(images/input_right.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 2em;
+    width: 3%;
+}
+
+.input{
+    line-height: 240%;
+    background-color: transparent;
+    border: none;
+}
+
+
+/*-------------------------------------- la_nostra_storia.html ------------------------------------------------------------------------------------*/
+
+
+
+#linea-tempo li
+{
+    list-style: none;
+    display: inline-block;
+    padding-left: 1em;
+    padding-right: 1em;
+    transform:rotate(-20deg);
+    border: 1px solid;
+    text-decoration: none;
+    background-color:#66b1ff;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding:0.5em;
+   
+}
+#linea-tempo ul
+{
+    padding: 2em;
+}
+
+#linea-tempo
+{
+    display: inline-block;
+    width: 99%;
+    height: 2.7em;
+    text-align: center;
+}
+
+#linea-tempo-testo
+{
+   /* display: block;*/
+    text-align: center;
+    margin-left: 17.5em;
+    padding-top: 4em;
+    padding-bottom: 2em;
+    width: 45%;    
+}
+
+.linea-tempo-testo-li
+{
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    list-style: none;
+    border: 1px solid;
+    background-color: #E1E3E4;
+    background-color:#66b1ff;
+    
+}
+
+#linea-tempo a
+{
+    text-decoration: none;
+}
+
+#linea-tempo-testo h3
+{
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    margin-bottom: 1em;
+    background-color: #E1E3E4;
+    border-bottom: 1px solid;
+}
+
+#linea-tempo-testo p
+{
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#linea-tempo-testo a
+{
+    text-decoration: none;
+}
+
+.linea-tempo-su
+{
+    width: 25%;
+    border: 1px solid;
+    background-color: #E1E3E4;
+    margin-bottom: 4em;
+    display: inline-block;
+    padding-top:0.5em;
+    padding-bottom:0.5em;    
+}
+
+.linea-tempo-su a
+{
+    text-decoration: none;
+}
+
+/*---------------------------------------- prodotti.html ------------------------------------------------------------------------------------------*/
+
+#prodotti-leftBlock{
+    background-color: #cce5ff;
+    display: inline-block;
+    height: 25em;
+    width: 20%;
+    vertical-align: middle;
+}
+
+#prodotti-rightBlock{
+    background-color: #E1E3E4;
+    display: inline-block;
+    width: 80.1%;
+    height: 25em;
+    vertical-align: middle;
+    margin: -4px;
+}
+
+#prodotti-categorie{
+    display: block;
+    background-color: #cce5ff;
+    height: 2em;
+    text-align: center;
+    line-height: 180%;
+}
+
+#prodotti-categorie li{
+    display: inline;
+    list-style: none;
+    padding-left: 3.5em;
+}
+
+#prodotti-categorie a{
+    text-decoration: none;
+}
+
+#prodotti-vetrina{
+    background-color: crimson;
+    height: 20em;
+    width: 100%;
+}
+
+#prodotti-pageSelector{
+    background-color: chartreuse;
+    display: inline-block;
+    height: 2.5em;
+    width: 100%;
+    text-align: center;
+    line-height: 210%;
+}
+
+#prodotti-frecciaPaginaPrecedente {
+    display: inline-block;
+    width: 5%;
+    height: 2em;
+    vertical-align: middle;
+    background-image: url(images/leftArrow.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#prodotti-paginaPrecedente {
+    display: inline-block;
+    width: 20%;
+    height: 2em;
+    vertical-align: middle;
+}
+
+#prodotti-paginaNumeri{
+    display: inline-block;
+    width: 30%;
+    height: 2em;
+    vertical-align: middle;
+}
+
+#prodotti-pageSelector li{
+    list-style: none;
+    display: inline;
+    padding-left:1em;
+}
+
+#prodotti-pageSelector a{
+    text-decoration: none;
+}
+
+#prodotti-paginaSuccessiva {
+    display: inline-block;
+    width: 20%;
+    height: 2em;
+    vertical-align: middle;
+}
+
+#prodotti-frecciaPaginaSuccessiva {
+    display: inline-block;
+    width: 5%;
+    height: 2em;
+    vertical-align: middle;
+    background-image: url(images/rightArrow.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#prodotti-resultInfoBar {
+    background-color: aqua;
+}
+
+#prodotti-resultInfoBlock {
+    display: inline-block;
+    width: 22%;
+    height: 2.5em;
+    vertical-align: middle;
+    line-height: 250%;
+    text-align: center;
+}
+
+#prodotti-searchSortBlock {
+    display: inline-block;
+    width: 77.61%;
+    height: 2.5em;
+    vertical-align: middle;
+    line-height: 250%;
+    text-align: right;
+}
+
+#prodotti-searchSortForm {
+    padding-right: 0.5em;
+}
+
+#prodotti-searchSortFormLabel {
+    display: inline;
+    padding-right: 0.3em;
+}
+
+#prodotti-searchSortFormSelect {
+    display: inline;
+}
+
+/*------------------------------- login.html ---------------------------------------------------------------------------------------------------*/
+
+#login-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5em;
+    margin-top: 5em;
+}
+
+#login-container2 {
+    width: 50%;
+    border: 1px solid;
+    margin: 0 auto;
+    height: 18.5em;
+    background-color: #E1E3E4;
+}
+
+#login-container2 h2{
+    padding-top: 0.3em;
+}
+
+#login-Block{
+    padding-top: 0.3em;
+}
+
+#login-Block li{
+    list-style: none;
+    padding-bottom: 2em;
+}
+
+#login-emailLabel{
+    padding-right: 1.9em;
+    
+}
+
+#login-passwordLabel{
+    padding-right: 0.5em;
+}
+
+
+/*--------------------------- registrazione.html -----------------------------------------------------------------------------------------------*/
+
+#registrazione-container{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5em;
+    margin-top: 5em;
+}
+
+#registrazione-container2{
+    width: 50%;
+    margin: 0 auto;
+    background-color: #E1E3E4;
+    height: 30.6em;
+}
+
+#registrazione-container2 h2{
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+
+#registrazione-Block{
+    padding-top: 1em;
+}
+
+#registrazione-Block li{
+    list-style: none;
+    padding-bottom: 2em;   
+}
+
+#registrazione-nomeLabel{
+    padding-right: 6.3em;
+}
+
+#registrazione-cognomeLabel{
+    padding-right: 4.9em;
+}
+
+#registrazione-emailLabel{
+    padding-right: 6.35em;
+}
+
+#registrazione-passwordLabel{
+    padding-right: 4.9em;
+}
+
+#registrazione-confermapasswordLabel{
+    padding-right: 0.8em;
+}
+
+/*--------------------------- contattaci.html ----------------------------------------------------------------------------------------------------*/
+
+#contattaci-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5em;
+    margin-top: 5em;
+}
+
+#contattaci-container2 {
+    width: 50%;
+    border: 1px solid;
+    margin: 0 auto;
+    height: 38.5em;
+    background-color: #E1E3E4;
+}
+
+#contattaci-container2 h2{
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+}
+
+#contattaci-Block {
+    
+}
+
+#contattaci-Block li {
+    list-style: none;
+}
+
+.contattaci-Block-li{
+    padding-bottom: 2em;
+}
+
+#contattaci-messaggioLabelBlock{
+    text-align: left;
+    padding-left: 3.2em;
+    padding-bottom: 0.5em;
+}
+
+#contattaci-messaggioTextArea {
+    width: 80%;
+    height: 10em;
+}
+
+#contattaci-nomeLabel {
+    padding-right: 2.3em;
+}
+
+#contattaci-cognomeLabel {
+    padding-right: 0.7em;
+}
+
+#contattaci-emailLabel {
+    padding-right: 2.2em;
+}
+
+#contattaci-telefonoLabel {
+    padding-right: 1em;
+}
+
+/*------------------- termini e spedizione/resi e rimborsi  -------------------------------------------------------------------------------------------------------*/
+#content h2
+{
+    margin-top: 1em;
+    text-align: center;
+    padding-bottom: 1.5em;
+}
+
+#info-container
+{
+    text-align: center;
+    width: 100%;
+    background-color: aliceblue;
+}
+
+#info-container h3
+{
+    background-color: #E1E3E4;
+    width: 50%;
+    text-align: center;
+    display: inline-block;
+    margin-top: 1.5em;
+    padding-left: 1.2em;
+    padding-right: 1.3em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+}
+    
+.info-text
+{
+    text-align: justify;
+    padding: 1.5em;
+    width: 50%;
+    background-color:#66b1ff; 
+    display: inline-block;
+}
+
+/*------------------- annunci.html -------------------------------------------------------------------------------------------------------*/
+div.post{
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    margin:20px;
+    padding:20px;
+} 
+div.post h2{
+    color:dodgerblue;
+}
+div.post h3{
+    color:darkslategrey;
+}
 

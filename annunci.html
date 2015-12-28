@@ -4,10 +4,10 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Linea Casa Bari</title>
-    <meta name="title" content="Linea Casa Bari" />
-    <meta name="description" content="Annunci del sito sul negozio Linea Casa Bari" />
-    <meta name="keywords" content="piatti, bicchieri, posate, porcellane, liste nozze, vasi, lampade, paralumi" />
+    <title>Linea Casa Bari - Contatti</title>
+    <meta name="title" content="Linea Casa Bari - Contattaci" />
+    <meta name="description" content="Pagina per contattare i titolari del negozio Linea Casa Bari" />
+    <meta name="keywords" content="piatti, bicchieri, posate, porcellane, liste nozze, vasi, lampade, paralumi, contatti, messaggio" />
     <meta name="language" content="italian it" />
     <meta name="author" content="Alessandro Bari, Navid Taha, Alice Sasso, Lorenzo Ferrarin" />
 
@@ -15,6 +15,9 @@
 </head>
 
 <body>
+    <div>
+        <a href="#content" class="skip">Salta al contenuto</a>
+    </div>
     <div id="header">
     <a href="home.html">
         <span id="header-logo"></span>
@@ -24,19 +27,35 @@
     
     <div id="menu">
         <span id="path">
-            <span>Ti trovi in: </span><span xml:lang="en">Annunci</span>
+            <span>Ti trovi in: </span><span xml:lang="en">Home</span>
         </span>
     
         <div id="nav">
             <ul>
+                <li><a href="home.html"><span xml:lang="en">Home</span></a></li>
                 <li><a href="prodotti.html">Prodotti</a></li>
                 <li><a href="annunci.html">Annunci</a></li>
                 <li><a href="contattaci.html">Contattaci</a></li>
-                <li><a href="login.html">Registrati/Login</a></li>
-                <li><a href="ricerca.html"><span class="search-image"></span></a></li>
+                <li><a href="login.html">Accedi</a></li>
+                <li><a href="registrazione.html">Registrati</a></li>
             </ul>
         </div>
     </div>
+    <div id="searchBar">
+        <div id="searchContainer">
+            <form id="commonSearch">
+                <div id="commonSearchInputLeft"></div>
+                <div id="commonSearchInputMiddle">
+                    <input id="commonSearchInput" type="text"/>
+                </div>
+                <div id="commonSearchInputRight"></div>
+                <div>
+                    <button id="commonSearchButton" type="submit"></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script>
 			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
 				xmlhttp = new XMLHttpRequest();
@@ -70,7 +89,7 @@
             </span>
         </a>
         <div id="footer-container">
-            <div class="footer-block">
+            <div id="first-footer-block">
                 <span id="footer-logo"></span>
                 <ul>
                     <li>Corso Umberto 1°, 51</li>
@@ -94,23 +113,36 @@
                     <li><a href="prodotti.html">Prodotti</a></li>
                     <li><a href="annunci.html">Annunci</a></li>
                     <li><a href="contattaci.html">Contattaci</a></li>
-                    <li><a href="login.html">Registrati/Login</a></li>
+                    <li><a href="login.html">Accedi</a></li>
+                    <li><a href="registrazione.html">Registrati</a></li>
                 </ul>
             </div>
             
-            <div class="footer-block">
-                <form id="newsletter">
-                    <input type="email" placeholder="Inserisci la tua Email"/>.
-                    <button type="submit"></button>
-                </form>
-                <div id="social-links">
-                    <a href="facebook.html">
-                        <span id="facebook-page"></span>
-                    </a>
-                </div>
-                <div id="w3c-validation">
-                
-                </div>
+            <div id="last-footer-block">
+                <ul>
+                    <li>
+                        <form id="newsletter">
+                            <div class="inputLeft"></div>
+                            <div id="newsletterInputMiddle">
+                                <input id="newsletter-input" type="text"/>
+                            </div>
+                            <div class="inputRight"></div>
+                            <div>
+                                <button id="newsletter-button" type="submit"></button>
+                            </div>
+                        </form>
+                    </li>
+                    <li>
+                        <a  id="facebook-link" href="facebook.html">
+                            <span id="facebook-button"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <div id="w3c-validation">
+                            
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
