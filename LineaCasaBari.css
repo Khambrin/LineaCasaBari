@@ -34,9 +34,52 @@ a.skip:hover {
 
 body
 {
-	max-width:1024px;
-	margin:auto;
+	/*max-width:1024px;
+	margin:auto;*/
 	font-size:100%;
+}
+
+.button {
+    height: 3em;
+    width: 20%;
+}
+
+.inputLeft {
+    display: inline-block;
+    background-image: url(images/input_left.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 12px;
+    height: 2em;
+    vertical-align: middle;
+    margin-right: -0.3em;
+}
+
+.inputMiddle {
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url(images/input_middle.png);
+    width: 40%;
+    background-size: contain;
+    background-repeat: repeat-x;
+}
+
+.inputRight {
+    display: inline-block;
+    vertical-align: middle;
+    background-image:url(images/input_right.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 2em;
+    width: 12px;
+}
+
+.input{
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    height: 2em;
+    font-size: 1em;
 }
 
 #header
@@ -215,7 +258,6 @@ body
     height: 2em;
     background-size: contain;
     background-repeat: repeat-x;
-    margin-right: -3.9px;
 }
 
 #newsletter-button
@@ -227,33 +269,30 @@ body
     background-color: transparent;
     background-size: contain;
     border: none;
-    position: absolute;
-    left: 76%;
-    top: 8%;
+    vertical-align: middle;
 }
 
 #searchBar{
     
     width: 100%;
     height: 3em;
+    background-color: #E1E3E4;
 }
 
 #searchContainer
 {
-    width: 100%;
-    position: relative;
     text-align: right;
-    background-color: #E1E3E4;
+    padding-right: 1em;
 }
 
 #commonSearchInput{
     line-height: 300%;
     background-color: transparent;
     border: none;
-    width: 91%;
+    width: 93%;
     font-size: 1em;
-    margin-right: 3em;
     height: 3em;
+    margin-right: 2.5em;
 }
 
 #commonSearchInputLeft{
@@ -263,8 +302,7 @@ body
     background-repeat: no-repeat;
     vertical-align: middle;
     height: 3em;
-    width: 1.3%;
-    margin-right: -5.1px;
+    width: 12px;
 }
 
 #commonSearchInputMiddle{
@@ -273,9 +311,7 @@ body
     background-image: url(images/input_middle.png);
     background-size: contain;
     background-repeat: repeat-x;
-    height: 3em;
     width: 45%;
-    margin-right: -3.8px;
 }
 
 #commonSearchInputRight{
@@ -285,66 +321,20 @@ body
     background-repeat: no-repeat;
     vertical-align: middle;
     height: 3em;
-    width: 1.3%;
+    width: 12px;
 }
 
 #commonSearchButton{
-    width: 4%;
-    height:3em;
+    width: 3%;
+    height: 3em;
     background-image: url(images/ricerca.png);
     background-size:contain;
     background-repeat: no-repeat;
     background-color: transparent;
     border: none;
     vertical-align: middle;
-    position: absolute;
-    right: 0.8%;
-    bottom: 9%;
+    margin-left: -4em;
 }
-
-.button {
-    height: 3em;
-    width: 20%;
-}
-
-.inputLeft {
-    display: inline-block;
-    background-image: url(images/input_left.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 3%;
-    height: 2em;
-    vertical-align: middle;
-    margin-right: -11.3px;
-}
-
-.inputMiddle {
-    display: inline-block;
-    vertical-align: middle;
-    background-image: url(images/input_middle.png);
-    width: 40%;
-    height: 2em;
-    background-size: contain;
-    background-repeat: repeat-x;
-    margin-right: -3.9px;
-}
-
-.inputRight {
-    display: inline-block;
-    vertical-align: middle;
-    background-image:url(images/input_right.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 2em;
-    width: 3%;
-}
-
-.input{
-    line-height: 240%;
-    background-color: transparent;
-    border: none;
-}
-
 
 /*-------------------------------------- la_nostra_storia.html ------------------------------------------------------------------------------------*/
 
@@ -380,7 +370,6 @@ body
 
 #linea-tempo-testo
 {
-   /* display: block;*/
     text-align: center;
     margin-left: 17.5em;
     padding-top: 4em;

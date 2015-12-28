@@ -4,10 +4,10 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Linea Casa Bari - Contatti</title>
-    <meta name="title" content="Linea Casa Bari - Contattaci" />
-    <meta name="description" content="Pagina per contattare i titolari del negozio Linea Casa Bari" />
-    <meta name="keywords" content="piatti, bicchieri, posate, porcellane, liste nozze, vasi, lampade, paralumi, contatti, messaggio" />
+    <title>Linea Casa Bari - Accedi</title>
+    <meta name="title" content="Linea Casa Bari - Accedi" />
+    <meta name="description" content="Pagina per accedere come membro al sito sul negozio Linea Casa Bari" />
+    <meta name="keywords" content="piatti, bicchieri, posate, porcellane, liste nozze, vasi, lampade, paralumi, login, accesso, accedi, password" />
     <meta name="language" content="italian it" />
     <meta name="author" content="Alessandro Bari, Navid Taha, Alice Sasso, Lorenzo Ferrarin" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -50,32 +50,29 @@
             </form>
         </div>
     </div>
-
-    <script>
-			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
-				xmlhttp = new XMLHttpRequest();
-			} else {// code for IE6, IE5
-				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-			}
-			xmlhttp.open("GET", "listaAnnunci.xml", false);
-			xmlhttp.send();
-			xmlDoc = xmlhttp.responseXML;
-
-			
-			var x = xmlDoc.getElementsByTagName("annuncio");
-			for ( i = 0; i < x.length; i++) {
-                document.write("<div class='post'>");
-                document.write("<h2>");
-				document.write(x[i].getElementsByTagName("titolo")[0].childNodes[0].nodeValue);
-				document.write("</h2> <h3>");
-				document.write(x[i].getElementsByTagName("data")[0].childNodes[0].nodeValue);
-                document.write("</h3> <p>");
-                document.write(x[i].getElementsByTagName("contenuto")[0].childNodes[0].nodeValue);
-                document.write("</p>");
-                document.write("</div>");
-			}
-	
-    </script>
+    
+    <div id="content">
+        <div id="login-container">
+            <div id="login-container2">
+                <h2>Effettua l'accesso</h2>
+                <form>
+                    <ul id="login-Block">
+                        <li>
+                            <label id="login-emailLabel">Email:</label>
+                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text"/></div><div class="inputRight"></div>
+                        </li>
+                        <li>
+                            <label id="login-passwordLabel">Password:</label>
+                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password"/></div><div class="inputRight"></div>
+                        </li>
+                    </ul>
+                    <div>
+                        <button class="button" type="submit">Accedi</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     
     <div id="footer">
         <a href="#header">

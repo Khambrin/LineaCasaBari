@@ -50,33 +50,44 @@
             </form>
         </div>
     </div>
-
-    <script>
-			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
-				xmlhttp = new XMLHttpRequest();
-			} else {// code for IE6, IE5
-				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-			}
-			xmlhttp.open("GET", "listaAnnunci.xml", false);
-			xmlhttp.send();
-			xmlDoc = xmlhttp.responseXML;
-
-			
-			var x = xmlDoc.getElementsByTagName("annuncio");
-			for ( i = 0; i < x.length; i++) {
-                document.write("<div class='post'>");
-                document.write("<h2>");
-				document.write(x[i].getElementsByTagName("titolo")[0].childNodes[0].nodeValue);
-				document.write("</h2> <h3>");
-				document.write(x[i].getElementsByTagName("data")[0].childNodes[0].nodeValue);
-                document.write("</h3> <p>");
-                document.write(x[i].getElementsByTagName("contenuto")[0].childNodes[0].nodeValue);
-                document.write("</p>");
-                document.write("</div>");
-			}
-	
-    </script>
     
+    <div id="content">
+        <div id="contattaci-container">
+            <div id="contattaci-container2">
+                <h2>Inviaci un messaggio</h2>
+                <form>
+                    <ul id="contattaci-Block">
+                        <li class="contattaci-Block-li">
+                            <label id="contattaci-nomeLabel">Nome:</label>
+                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text"/></div><div class="inputRight"></div>
+                        </li>
+                        <li class="contattaci-Block-li">
+                            <label id="contattaci-cognomeLabel">Cognome:</label>
+                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text"/></div><div class="inputRight"></div>
+                        </li>
+                        <li class="contattaci-Block-li">
+                            <label id="contattaci-emailLabel">Email:</label>
+                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text"/></div><div class="inputRight"></div>
+                        </li>
+                        <li class="contattaci-Block-li">
+                            <label id="contattaci-telefonoLabel">Telefono:</label>
+                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text"/></div><div class="inputRight"></div>
+                        </li>
+                        <li id="contattaci-messaggioLabelBlock">
+                            <label id="contattaci-messaggioLabel">Messaggio:</label>
+                        </li>
+                        <li class="contattaci-Block-li">
+                            <textarea id="contattaci-messaggioTextArea" rows="50" cols="50"></textarea>
+                        </li>
+                    </ul>
+                    <div>
+                        <button class="button" type="submit">Invia</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <div id="footer">
         <a href="#header">
             <span id="torna-su">

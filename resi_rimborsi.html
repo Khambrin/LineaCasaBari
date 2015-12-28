@@ -4,10 +4,11 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Linea Casa Bari - Contatti</title>
-    <meta name="title" content="Linea Casa Bari - Contattaci" />
-    <meta name="description" content="Pagina per contattare i titolari del negozio Linea Casa Bari" />
-    <meta name="keywords" content="piatti, bicchieri, posate, porcellane, liste nozze, vasi, lampade, paralumi, contatti, messaggio" />
+    <title>Linea Casa Bari - Resi e Rimborsi</title>
+    <meta name="title" content="Linea Casa Bari - Resi e Rimborsi"
+          />
+    <meta name="description" content="Informativa su resi e rimborsi Linea Casa Bari" />
+    <meta name="keywords" content="piatti, bicchieri, posate, porcellane, liste nozze, vasi, lampade, paralumi, resi, rimborsi" />
     <meta name="language" content="italian it" />
     <meta name="author" content="Alessandro Bari, Navid Taha, Alice Sasso, Lorenzo Ferrarin" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -50,32 +51,16 @@
             </form>
         </div>
     </div>
-
-    <script>
-			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
-				xmlhttp = new XMLHttpRequest();
-			} else {// code for IE6, IE5
-				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-			}
-			xmlhttp.open("GET", "listaAnnunci.xml", false);
-			xmlhttp.send();
-			xmlDoc = xmlhttp.responseXML;
-
-			
-			var x = xmlDoc.getElementsByTagName("annuncio");
-			for ( i = 0; i < x.length; i++) {
-                document.write("<div class='post'>");
-                document.write("<h2>");
-				document.write(x[i].getElementsByTagName("titolo")[0].childNodes[0].nodeValue);
-				document.write("</h2> <h3>");
-				document.write(x[i].getElementsByTagName("data")[0].childNodes[0].nodeValue);
-                document.write("</h3> <p>");
-                document.write(x[i].getElementsByTagName("contenuto")[0].childNodes[0].nodeValue);
-                document.write("</p>");
-                document.write("</div>");
-			}
-	
-    </script>
+    
+    <div id="content">
+        <h2>Resi e Rimborsi</h2>
+        <div id="info-container">
+            <h3>Diritto di recesso</h3>
+            <div class="info-text">
+                <p>Si ha il diritto di recedere dal contratto, indicando le ragioni, entro 10 giorni dal ricevimento del prodotto o nel caso di acquisto di pi&ugrave; prodotti consegnati separatamente con un solo ordine, 10 giorni dal ricevimento dell'ultimo prodotto. Per esercitare il diritto di recesso si deve compilare un modulo cliccando su &quot;recedi&quot; accanto all' ordine dal quale si intende recedere. A seguito di questa richiesta sar&agrave; mandata una mail di conferma di esercizio del recesso, all'indirizzo mail usato per registrarsi, contenente il modulo di reso da inserire nel pacco e le istruzioni per procedere alla restituzione del prodotto. Si ricorda di inserire il modulo di reso compilato nel pacco insieme al prodotto e di spedirlo a: Linea Casa Bari, Corso Umberto 1, 51 Albaredo d'Adige 37041 (VR) - ITALIA. Per rispettare il termine di recesso, &egrave; sufficiente inviare la richiesta tramite il form prima della scadenza del periodo di recesso. In alternativa al reso online pu&ograve; essere inviata una dichiarazione esplicita, tramite e-mail a lineacasabari@gmail.com, della decisione di recessione allegando il modulo di recesso. Se recedi saranno rimborsati i pagamenti effettuati, comprensivi dei costi di consegna (ad eccezione dei costi supplementari derivanti dall'eventuale scelta di un tipo di consegna diverso dal tipo meno costoso di consegna standard offerta), senza indebito ritardo e in ogni caso non oltre 14 giorni da quando la nostra sede ricever&agrave; la decisione di recedere. Detti rimborsi saranno effettuati utilizzando lo stesso mezzo di pagamento usato per la transazione iniziale, salvo la richiesta esplicita di rimborso su diverso mezzo di pagamento, in tale caso saranno a vostro carico eventuali costi aggiuntivi derivanti dal diverso mezzo di pagamento. Il rimborso pu&ograve; essere sospeso fino al ricevimento dei beni oppure fino all&rsquo;avvenuta dimostrazione da parte vostra di aver rispedito i beni. Se il prodotto &egrave; stato ricevuto, si &egrave; pregati di restituirlo alla nostra sede senza indebito ritardo e, in ogni caso, entro 14 giorni dal giorno in cui &egrave; stato comunicato il recesso. Il termine &egrave; rispettato se vengono rispediti i beni prima della scadenza del periodo di 14 giorni. I costi diretti per la restituzione dei beni saranno a vostro carico. Si &egrave; ritenuti responsabili solo della diminuzione del valore dei beni risultante da una manipolazione diversa da quella necessaria per stabilirne la natura, le caratteristiche ed il funzionamento.</p>
+            </div>            
+        </div>        
+    </div>
     
     <div id="footer">
         <a href="#header">
