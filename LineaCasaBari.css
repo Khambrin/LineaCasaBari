@@ -380,7 +380,7 @@ body
 
 #linea-tempo-testo
 {
-    display: block;
+   /* display: block;*/
     text-align: center;
     margin-left: 17.5em;
     padding-top: 4em;
@@ -404,7 +404,7 @@ body
     text-decoration: none;
 }
 
-#linea-tempo-testo h2
+#linea-tempo-testo h3
 {
     padding-top: 0.4em;
     padding-bottom: 0.4em;
@@ -753,6 +753,8 @@ body
     margin-top: 1.5em;
     padding-left: 1.2em;
     padding-right: 1.3em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
 }
     
 .info-text
