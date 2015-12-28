@@ -766,6 +766,16 @@ body
     display: inline-block;
 }
 
-
-
+/*------------------- annunci.html -------------------------------------------------------------------------------------------------------*/
+div.post{
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    margin:20px;
+    padding:20px;
+} 
+div.post h2{
+    color:dodgerblue;
+}
+div.post h3{
+    color:darkslategrey;
+}
 
