@@ -260,6 +260,10 @@ body
     background-repeat: repeat-x;
 }
 
+#newsletter-buttonContainer{
+    display: inline;
+}
+
 #newsletter-button
 {
     width: 13%;
@@ -322,6 +326,10 @@ body
     vertical-align: middle;
     height: 3em;
     width: 12px;
+}
+
+#commonSearchButtonContainer{
+    display:inline;
 }
 
 #commonSearchButton{
