@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Utenti" xmlns:tns="http://www.example.org/Utenti" elementFormDefault="qualified">
+
+
+    <complexType name="Tipo_utente">
+    	<sequence>
+    		<element name="Nome" type="string"></element>
+    		<element name="Cognome" type="string"></element>
+    		<element name="Email" type="string"></element>
+    		<element name="Password" type="string"></element>
+    		<element name="Indirizzo" type="tns:Tipo_indirizzo"></element>
+    		<element name="Telefono" type="string"></element>
+    		<element name="Amministratore" type="boolean"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="Utente" type="tns:Tipo_utente"></element>
+
+    <complexType name="Tipo_indirizzo">
+    	<sequence>
+            <element name="Via" type="string"></element>
+            <element name="Numero_civico" type="int"></element>
+            <element name="Città" type="string"></element>
+            <element name="Provincia" type="string"></element>
+            <element name="CAP" type="int"></element>
+        </sequence>
+    </complexType>
+</schema>

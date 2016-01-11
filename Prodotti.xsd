@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Prodotti" xmlns:tns="http://www.example.org/Prodotti" elementFormDefault="qualified">
+
+    <element name="Prodotti" type="tns:Tipo_prodotto"></element>
+    
+    <complexType name="Tipo_prodotto">
+    	<sequence>
+    		<element name="Codice" type="string"></element>
+    		<element name="Nome" type="string"></element>
+    		<element name="Descrizione" type="string"></element>
+    		<element name="Prezzo" type="double"></element>
+            <element name="Data_aggiunta" type="date"></element>
+            <element name="Valutazione" type="float"></element>
+    		<element name="Immagine" type="string"></element>
+    		<element name="Tag" type="string" maxOccurs="unbounded"
+    			minOccurs="1">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Tipo_recensione">
+    	<sequence>
+            <element name="Titolo" type="string"></element>
+            <element name="Nome_visualizzato" type="string"></element>
+            <element name="Data_pubblicazione" type="date"></element>
+            <element name="Testo" type="string"></element>
+            <element name="Voto_prodotto" type="float"></element>
+    		<element name="Voto_recensione" type="int"></element>
+    	</sequence>
+    </complexType>
+</schema>
