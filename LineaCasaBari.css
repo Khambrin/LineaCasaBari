@@ -204,10 +204,11 @@
     }
 
     #searchBar{
-
+        display: block;
         width: 100%;
         height: 3em;
         background-color: #E1E3E4;
+        padding-top: 0.2em;
     }
 
     #searchContainer
@@ -440,6 +441,57 @@
 
     #registrazione-confermapasswordLabel{
         padding-right: 0.8em;
+    }
+
+    /*--------------------------- contattaci.html ----------------------------------------------------------------------------------------------------*/
+    
+    #contattaci-container-mobile{
+        display: block;
+        text-align: center;
+    }
+    
+    #contattaci-container {
+        display: none;
+    }
+
+    #contattaci-container-mobile h2{
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+
+    #contattaci-Block li {
+        list-style: none;
+    }
+
+    .contattaci-Block-li{
+        padding-bottom: 2em;
+    }
+
+    #contattaci-messaggioLabelBlock{
+        text-align: left;
+        padding-left: 3.2em;
+        padding-bottom: 0.5em;
+    }
+
+    #contattaci-messaggioTextArea {
+        width: 80%;
+        height: 10em;
+    }
+
+    #contattaci-nomeLabel {
+        padding-right: 2.3em;
+    }
+
+    #contattaci-cognomeLabel {
+        padding-right: 0.7em;
+    }
+
+    #contattaci-emailLabel {
+        padding-right: 2.2em;
+    }
+
+    #contattaci-telefonoLabel {
+        padding-right: 1em;
     }
 /*-------------------------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -1247,9 +1299,14 @@
         padding-right: 0.8em;
     }
 
-    /*--------------------------- contattaci.html ----------------------------------------------------------------------------------------------------*/
-
+/*--------------------------- contattaci.html ----------------------------------------------------------------------------------------------------*/
+    
+    #contattaci-container-mobile{
+        display: none;
+    }
+    
     #contattaci-container {
+        display: block;
         width: 100%;
         text-align: center;
         margin-bottom: 5em;
