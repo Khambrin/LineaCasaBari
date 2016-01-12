@@ -616,6 +616,7 @@
 
     #menu
     {
+        width: 100%;
         display: inline;
         padding:1em;
         height: 1em;
@@ -871,7 +872,7 @@
     #linea-tempo-testo
     {
         text-align: center;
-        margin-left: 17.5em;
+        margin-left: 22.5em;
         padding-top: 4em;
         padding-bottom: 2em;
         width: 45%;    
