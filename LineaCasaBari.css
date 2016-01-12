@@ -4,6 +4,7 @@
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         -o-box-sizing: border-box;
+    
     }
     
     html,
@@ -617,9 +618,10 @@
     #menu
     {
         width: 100%;
-        display: inline;
+        height: 3em;
+        display: block;
         padding:1em;
-        height: 1em;
+        
         background-color: #E1E3E4;
     }
 
@@ -943,7 +945,7 @@
     #prodotti-rightBlock{
         background-color: #E1E3E4;
         display: inline-block;
-        width: 80.1%;
+        width: 80%;
         height: 25em;
         vertical-align: middle;
         margin: -4px;
