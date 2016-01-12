@@ -4,7 +4,6 @@
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         -o-box-sizing: border-box;
-    
     }
     
     html,
@@ -365,6 +364,39 @@
         vertical-align: middle;
     }
 
+/*---------------------------------------------------login.html ------------------------------------------------------------------------------*/
+
+    #login-container {
+        display: none;
+    }
+
+    #login-container-mobile{
+        display: block;
+        text-align: center;
+    }
+
+    #login-container-mobile h2{
+        padding-top: 1em;
+    }
+
+    #login-Block{
+        padding-top: 1.5em;
+    }
+
+    #login-Block li{
+        list-style: none;
+        padding-bottom: 2em;
+    }
+
+    #login-emailLabel{
+        padding-right: 1.9em;
+
+    }
+
+    #login-passwordLabel{
+        padding-right: 0.5em;
+    }
+
 /*-------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 @media screen and (min-width: 768px)
@@ -618,10 +650,9 @@
     #menu
     {
         width: 100%;
-        height: 3em;
-        display: block;
+        display: inline;
         padding:1em;
-        
+        height: 1em;
         background-color: #E1E3E4;
     }
 
@@ -945,7 +976,7 @@
     #prodotti-rightBlock{
         background-color: #E1E3E4;
         display: inline-block;
-        width: 80%;
+        width: 80.1%;
         height: 25em;
         vertical-align: middle;
         margin: -4px;
