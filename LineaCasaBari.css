@@ -397,6 +397,50 @@
         padding-right: 0.5em;
     }
 
+/*--------------------------- registrazione.html -----------------------------------------------------------------------------------------------*/
+
+    #registrazione-container-mobile{
+        display: block;
+        text-align: center;
+    }
+
+    #registrazione-container{
+        display: none;
+    }
+
+    #registrazione-container-mobile h2{
+        padding-bottom: 1em;
+        padding-top: 1em;
+    }
+
+    #registrazione-Block{
+        padding-top: 1em;
+    }
+
+    #registrazione-Block li{
+        list-style: none;
+        padding-bottom: 2em;   
+    }
+
+    #registrazione-nomeLabel{
+        padding-right: 6.3em;
+    }
+
+    #registrazione-cognomeLabel{
+        padding-right: 4.9em;
+    }
+
+    #registrazione-emailLabel{
+        padding-right: 6.35em;
+    }
+
+    #registrazione-passwordLabel{
+        padding-right: 4.9em;
+    }
+
+    #registrazione-confermapasswordLabel{
+        padding-right: 0.8em;
+    }
 /*-------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 @media screen and (min-width: 768px)
@@ -1150,7 +1194,12 @@
 
     /*--------------------------- registrazione.html -----------------------------------------------------------------------------------------------*/
 
+    #registrazione-container-mobile{
+        display: none;
+    }
+    
     #registrazione-container{
+        display: block;
         width: 100%;
         text-align: center;
         margin-bottom: 5em;
