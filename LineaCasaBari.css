@@ -1,498 +1,497 @@
 *{
-        padding:0em;
-        margin:0em;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        -o-box-sizing: border-box;
-    }
+    padding:0em;
+    margin:0em;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+}
     
-    html,
-    body{
-        height: 100%;
-    }
+html,
+body{
+    height: 100%;
+}
     
-    #drawer-toggle{
-        position: absolute;
-        opacity: 0;
-    }
+#drawer-toggle{
+    position: absolute;
+    opacity: 0;
+}
     
-    #drawer-toggle:checked ~ #drawer-toggle-label,
-    #drawer-toggle:checked ~ header,
-    #drawer-toggle:checked ~ #drawer,
-    #drawer-toggle:checked ~ #content,
-    #drawer-toggle-label{
-        -webkit-transition: .25s ease-in-out;
-        -moz-transition: .25s ease-in-out;
-        -o-transition: .25s ease-in-out;
-        transition: .25s ease-in-out;
-    }
+#drawer-toggle:checked ~ #drawer-toggle-label,
+#drawer-toggle:checked ~ header,
+#drawer-toggle:checked ~ #drawer,
+#drawer-toggle:checked ~ #content,
+#drawer-toggle-label{
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
     
-    #drawer-toggle-label{
-        right: 0px;
-        height: 50px;
-        width: 50px;
-        display: block;
-        position: fixed;
-        background: rgba(255, 255, 255, .0);
-        z-index: 1;
-    }
+#drawer-toggle-label{
+    right: 0px;
+    height: 50px;
+    width: 50px;
+    display: block;
+    position: fixed;
+    background: rgba(255, 255, 255, .0);
+    z-index: 1;
+}
     
-    #drawer-toggle-label:before{
-        content: '';
-        display: block;
-        position: absolute;
-        height: 2px;
-        width: 24px;
-        background: #8d8d8d;
-        right: 13px;
-        top: 18px;
-        box-shadow: 0 6px 0 #8d8d8d, 0 12px 0 #8d8d8d;
-    }
+#drawer-toggle-label:before{
+    content: '';
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 24px;
+    background: #8d8d8d;
+    right: 13px;
+    top: 18px;
+    box-shadow: 0 6px 0 #8d8d8d, 0 12px 0 #8d8d8d;
+}
     
-    #drawer{
-        position: fixed;
-        top: 0;
-        right: -75%;
-        height: 100%;
-        width: 75%;
-        background: #2f2f2f;
-        overflow-x: hidden;
-        overflow-y: scroll;
-        -webkit-overflow-scrolling: touch;
-        z-index: 1;
-    }
+#drawer{
+    position: fixed;
+    top: 0;
+    right: -75%;
+    height: 100%;
+    width: 75%;
+    background: #2f2f2f;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    z-index: 1;
+}
     
-    #drawer li{
-        padding-top: 2em;
-        padding-bottom: 2em;
-        text-align: center;
-        list-style: none;
-        width: 100%;
-        border-bottom: 1px solid;
-    }
+#drawer li{
+    padding-top: 2em;
+    padding-bottom: 2em;
+    text-align: center;
+    list-style: none;
+    width: 100%;
+    border-bottom: 1px solid;
+}
     
-    #drawer-toggle:checked ~ #drawer-toggle-label{
-        height: 100%;
-        width: 25%;
-        background: rgba(255,255,255,.8);
-    }
+#drawer-toggle:checked ~ #drawer-toggle-label{
+    height: 100%;
+    width: 25%;
+    background: rgba(255,255,255,.8);
+}
     
-    #drawer-toggle:checked ~ #drawer-toggle-label,
-    #drawer-toggle:checked ~ header{
-        right: 75%;
-    }
+#drawer-toggle:checked ~ #drawer-toggle-label,
+#drawer-toggle:checked ~ header{
+    right: 75%;
+}
     
-    #drawer-toggle:checked ~ #drawer{
-        right: 0%;
-    }
+#drawer-toggle:checked ~ #drawer{
+    right: 0%;
+}
     
-    #drawer-toggle:checked ~ #content{
-        margin-right: 75%;
-    }
+#drawer-toggle:checked ~ #content{
+    margin-right: 75%;
+}
     
-    input:focus,
-    textarea:focus{
-        outline: none;
-    }
+input:focus,
+textarea:focus{
+    outline: none;
+}
 
-    input{
-        overflow: hidden;
-    }
+input{
+    overflow: hidden;
+}
 
-    .skip{
-        position: absolute;
-        top: -1000px;
-        left: -1000px;
-        height: 1px;
-        width: 1px;
-        text-align: left;
-        overflow: hidden;
-    }
+.skip{
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    height: 1px;
+    width: 1px;
+    text-align: left;
+    overflow: hidden;
+}
 
-    a.skip:active,
-    a.skip:focus,
-    a.skip:hover {
-        left: 0;
-        top: 0;
-        width: auto;
-        height: auto;
-        overflow: visible;
-    }
+a.skip:active,
+a.skip:focus,
+a.skip:hover {
+    left: 0;
+    top: 0;
+    width: auto;
+    height: auto;
+    overflow: visible;
+}
 
-    body
-    {
-        font-size:100%;
-    }
+body
+{
+    font-size:100%;
+}
 
-    .button {
-        height: 3em;
-        width: 20%;
-    }
+.button {
+    height: 3em;
+    width: 20%;
+}
 
-    .inputLeft {
-        display: inline-block;
-        background-image: url(images/input_left.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        width: 12px;
-        height: 2em;
-        vertical-align: middle;
-        margin-right: -0.3em;
-    }
+.inputLeft {
+    display: inline-block;
+    background-image: url(images/input_left.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 12px;
+    height: 2em;
+    vertical-align: middle;
+    margin-right: -0.3em;
+}
 
-    .inputMiddle {
-        display: inline-block;
-        vertical-align: middle;
-        background-image: url(images/input_middle.png);
-        width: 40%;
-        background-size: contain;
-        background-repeat: repeat-x;
-    }
+.inputMiddle {
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url(images/input_middle.png);
+    width: 40%;
+    background-size: contain;
+    background-repeat: repeat-x;
+}
 
-    .inputRight {
-        display: inline-block;
-        vertical-align: middle;
-        background-image:url(images/input_right.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        height: 2em;
-        width: 12px;
-    }
+.inputRight {
+    display: inline-block;
+    vertical-align: middle;
+    background-image:url(images/input_right.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 2em;
+    width: 12px;
+}
 
-    .input{
-        background-color: transparent;
-        border: none;
-        width: 100%;
-        height: 2em;
-        font-size: 1em;
-    }
+.input{
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    height: 2em;
+    font-size: 1em;
+}
 
-    #header
-    {
-        text-align: center;
-        background-color:#66b1ff;
-        padding:0.5em;
-        z-index: 0;
-    }
+#header
+{
+    text-align: center;
+    background-color:#66b1ff;
+    padding:0.5em;
+    z-index: 0;
+}
 
-    #header a{
-        text-decoration: none;
-    }
+#header a{
+    text-decoration: none;
+}
 
-    #header-logo
-    {
-        background-image:url(images/logo.png);
-        background-repeat:no-repeat;
-        background-size: contain;
-        display: block;
-        width: 40%;
-        height: 5em;
-        margin: auto;
-    }
+#header-logo
+{
+    background-image:url(images/logo.png);
+    background-repeat:no-repeat;
+    background-size: contain;
+    display: block;
+    width: 40%;
+    height: 5em;
+    margin: auto;
+}
 
-    #header h1
-    {
-        display: block;
-        width: 100%;
-        height: 2.7em;
-        color: aliceblue;
-        padding-top: 0.5em;
-    }
+#header h1
+{
+    display: block;
+    width: 100%;
+    height: 2.7em;
+    color: aliceblue;
+    padding-top: 0.5em;
+}
 
-    #menu {
-        display: none;
-    }
+#menu {
+    display: none;
+}
 
-    #searchBar{
-        display: block;
-        width: 100%;
-        height: 3em;
-        background-color: #E1E3E4;
-        padding-top: 0.2em;
-    }
+#searchBar{
+    display: block;
+    width: 100%;
+    height: 3em;
+    background-color: #E1E3E4;
+    padding-top: 0.2em;
+}
 
-    #searchContainer
-    {
-        text-align: center;
-    }
+#searchContainer
+{
+    text-align: center;
+}
 
-    #commonSearchInput{
-        line-height: 300%;
-        background-color: transparent;
-        border: none;
-        width: 93%;
-        font-size: 1em;
-        height: 2.5em;
-        padding-right: 1.5em;
-    }
+#commonSearchInput{
+    line-height: 300%;
+    background-color: transparent;
+    border: none;
+    width: 93%;
+    font-size: 1em;
+    height: 2.5em;
+    padding-right: 1.5em;
+}
 
-    #commonSearchInputLeft{
-        display: inline-block;
-        background-image: url(images/input_left.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        vertical-align: middle;
-        height: 2.5em;
-        width: 12px;
-        margin-right: -0.1em;
-    }
+#commonSearchInputLeft{
+    display: inline-block;
+    background-image: url(images/input_left.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    height: 2.5em;
+    width: 12px;
+    margin-right: -0.1em;
+}
 
-    #commonSearchInputMiddle{
-        display: inline-block;
-        vertical-align: middle;
-        background-image: url(images/input_middle.png);
-        background-size: contain;
-        background-repeat: repeat-x;
-        width: 80%;
-    }
+#commonSearchInputMiddle{
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url(images/input_middle.png);
+    background-size: contain;
+    background-repeat: repeat-x;
+    width: 80%;
+}
 
-    #commonSearchInputRight{
-        display: inline-block;
-        background-image: url(images/input_right.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        vertical-align: middle;
-        height: 2.5em;
-        width: 12px;
-    }
+#commonSearchInputRight{
+    display: inline-block;
+    background-image: url(images/input_right.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    height: 2.5em;
+    width: 12px;
+}
 
-    #commonSearchButtonContainer{
-        display:inline;
-    }
+#commonSearchButtonContainer{
+    display:inline;
+}
 
-    #commonSearchButton{
-        width: 10%;
-        height: 2.5em;
-        background-image: url(images/ricerca.png);
-        background-size:contain;
-        background-repeat: no-repeat;
-        background-color: transparent;
-        border: none;
-        vertical-align: middle;
-        margin-left: -4em;
-    }
+#commonSearchButton{
+    width: 10%;
+    height: 2.5em;
+    background-image: url(images/ricerca.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    vertical-align: middle;
+    margin-left: -4em;
+}
 
-    #torna-su
-    {
-        display: none;
-    }
+#torna-su
+{
+    display: none;
+}
 
-    #footer
-    {
-        background-color: #E1E3E4;
-        margin-top: 1.5em;
-    }
+#footer
+{
+    background-color: #E1E3E4;
+    margin-top: 1.5em;
+}
 
-    #footer-container
-    {
-        padding-bottom: 1em;
-        padding-left: 1.5em;
-        padding-top: 0.5em;
-    }
+#footer-container
+{
+    padding-bottom: 1em;
+    padding-left: 1.5em;
+    padding-top: 0.5em;
+}
 
-    #footer-logo{
-        display: none;
-    }
+#footer-logo{
+    display: none;
+}
 
-    #footer-container li{
-        list-style: none;
-        padding-bottom:0.5em;
-        padding-top: 0.5em;
-    }
+#footer-container li{
+    list-style: none;
+    padding-bottom:0.5em;
+    padding-top: 0.5em;
+}
 
-    #first-footer-block{
-        display: block;
-        text-align: center;
-    }
+#first-footer-block{
+    display: block;
+    text-align: center;
+}
 
-    .footer-block
-    {
-        display: none;
-    }
+.footer-block
+{
+    display: none;
+}
 
-    #last-footer-block{
-        display: block;
-        text-align: center;
-    }
+#last-footer-block{
+    display: block;
+    text-align: center;
+}
 
-    #facebook-link {
-        text-decoration: none;
-    }
+#facebook-link {
+    text-decoration: none;
+}
 
-    #facebook-button{
-        background-image: url(images/facebook_link.png);
-        display: inline-block;
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 21%;
-        height: 3em;
-        margin-left: 2em;
-        margin-top: 0.8em;
-    }
+#facebook-button{
+    background-image: url(images/facebook_link.png);
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 21%;
+    height: 3em;
+    margin-left: 2em;
+    margin-top: 0.8em;
+}
 
-    #newsletter-input
-    {
-        background-color: transparent;
-        border: none;
-        width: 97%;
-        height: 2.3em;
-        padding-left: 1em;
-    }
+#newsletter-input
+{
+    background-color: transparent;
+    border: none;
+    width: 97%;
+    height: 2.3em;
+    padding-left: 1em;
+}
 
-    #newsletterInputMiddle{
-        display: inline-block;
-        vertical-align: middle;
-        background-image: url(images/input_middle.png);
-        width: 70%;
-        height: 2em;
-        background-size: contain;
-        background-repeat: repeat-x;
-    }
+#newsletterInputMiddle{
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url(images/input_middle.png);
+    width: 70%;
+    height: 2em;
+    background-size: contain;
+    background-repeat: repeat-x;
+}
 
-    #newsletter-buttonContainer{
-        display: inline;
-    }
+#newsletter-buttonContainer{
+    display: inline;
+}
 
-    #newsletter-button
-    {
-        width: 13%;
-        height: 2em;
-        background-image:url(images/email.png);
-        background-repeat:no-repeat;
-        background-color: transparent;
-        background-size: contain;
-        border: none;
-        vertical-align: middle;
-    }
+#newsletter-button
+{
+    width: 13%;
+    height: 2em;
+    background-image:url(images/email.png);
+    background-repeat:no-repeat;
+    background-color: transparent;
+    background-size: contain;
+    border: none;
+    vertical-align: middle;
+}
 
 /*---------------------------------------------------login.html ------------------------------------------------------------------------------*/
 
-    #login-container {
-        display: none;
-    }
+#login-container {
+    display: none;
+}
 
-    #login-container-mobile{
-        display: block;
-        text-align: center;
-    }
+#login-container-mobile{
+    display: block;
+    text-align: center;
+}
 
-    #login-container-mobile h2{
-        padding-top: 1em;
-    }
+#login-container-mobile h2{
+    padding-top: 1em;
+}
 
-    #login-Block{
-        padding-top: 1.5em;
-    }
+#login-Block{
+    padding-top: 1.5em;
+}
 
-    #login-Block li{
-        list-style: none;
-        padding-bottom: 2em;
-    }
+#login-Block li{
+    list-style: none;
+    padding-bottom: 2em;
+}
 
-    #login-emailLabel{
-        padding-right: 1.9em;
+#login-emailLabel{
+    padding-right: 1.9em;
+}
 
-    }
-
-    #login-passwordLabel{
-        padding-right: 0.5em;
-    }
+#login-passwordLabel{
+    padding-right: 0.5em;
+}
 
 /*--------------------------- registrazione.html -----------------------------------------------------------------------------------------------*/
 
-    #registrazione-container-mobile{
-        display: block;
-        text-align: center;
-    }
+#registrazione-container-mobile{
+    display: block;
+    text-align: center;
+}
 
-    #registrazione-container{
-        display: none;
-    }
+#registrazione-container{
+    display: none;
+}
 
-    #registrazione-container-mobile h2{
-        padding-bottom: 1em;
-        padding-top: 1em;
-    }
+#registrazione-container-mobile h2{
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
 
-    #registrazione-Block{
-        padding-top: 1em;
-    }
+#registrazione-Block{
+    padding-top: 1em;
+}
 
-    #registrazione-Block li{
-        list-style: none;
-        padding-bottom: 2em;   
-    }
+#registrazione-Block li{
+    list-style: none;
+    padding-bottom: 2em;   
+}
 
-    #registrazione-nomeLabel{
-        padding-right: 6.3em;
-    }
+#registrazione-nomeLabel{
+    padding-right: 6.3em;
+}
 
-    #registrazione-cognomeLabel{
+#registrazione-cognomeLabel{
+    padding-right: 4.9em;
+}
+
+#registrazione-emailLabel{
+    padding-right: 6.35em;
+}
+
+#registrazione-passwordLabel{
         padding-right: 4.9em;
-    }
+}
 
-    #registrazione-emailLabel{
-        padding-right: 6.35em;
-    }
+#registrazione-confermapasswordLabel{
+    padding-right: 0.8em;
+}
 
-    #registrazione-passwordLabel{
-        padding-right: 4.9em;
-    }
-
-    #registrazione-confermapasswordLabel{
-        padding-right: 0.8em;
-    }
-
-    /*--------------------------- contattaci.html ----------------------------------------------------------------------------------------------------*/
+/*--------------------------- contattaci.html ----------------------------------------------------------------------------------------------------*/
     
-    #contattaci-container-mobile{
-        display: block;
-        text-align: center;
-    }
+#contattaci-container-mobile{
+    display: block;
+    text-align: center;
+}
     
-    #contattaci-container {
-        display: none;
-    }
+#contattaci-container {
+    display: none;
+}
 
-    #contattaci-container-mobile h2{
-        padding-top: 1em;
-        padding-bottom: 1em;
-    }
+#contattaci-container-mobile h2{
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
 
-    #contattaci-Block li {
-        list-style: none;
-    }
+#contattaci-Block li {
+    list-style: none;
+}
 
-    .contattaci-Block-li{
-        padding-bottom: 2em;
-    }
+.contattaci-Block-li{
+    padding-bottom: 2em;
+}
 
-    #contattaci-messaggioLabelBlock{
-        text-align: left;
-        padding-left: 3.2em;
-        padding-bottom: 0.5em;
-    }
+#contattaci-messaggioLabelBlock{
+    text-align: left;
+    padding-left: 3.2em;
+    padding-bottom: 0.5em;
+}
 
-    #contattaci-messaggioTextArea {
-        width: 80%;
-        height: 10em;
-    }
+#contattaci-messaggioTextArea {
+    width: 80%;
+    height: 10em;
+}
 
-    #contattaci-nomeLabel {
-        padding-right: 2.3em;
-    }
+#contattaci-nomeLabel {
+    padding-right: 2.3em;
+}
 
-    #contattaci-cognomeLabel {
-        padding-right: 0.7em;
-    }
+#contattaci-cognomeLabel {
+    padding-right: 0.7em;
+}
 
     #contattaci-emailLabel {
-        padding-right: 2.2em;
-    }
+    padding-right: 2.2em;
+}
 
     #contattaci-telefonoLabel {
-        padding-right: 1em;
-    }
+    padding-right: 1em;
+}
 /*-------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 @media screen and (min-width: 768px)
@@ -624,110 +623,13 @@
 /*-------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 @media screen and (min-width: 806px)
-{
-    
-    *{
-        padding:0em;
-        margin:0em;
-    }
-
-    input:focus,
-    textarea:focus{
-        outline: none;
-    }
-
-    input{
-        overflow: hidden;
-    }
-
-    .skip{
-        position: absolute;
-        top: -1000px;
-        left: -1000px;
-        height: 1px;
-        width: 1px;
-        text-align: left;
-        overflow: hidden;
-    }
-
-    a.skip:active,
-    a.skip:focus,
-    a.skip:hover {
-        left: 0;
-        top: 0;
-        width: auto;
-        height: auto;
-        overflow: visible;
-    }
-
-    body
-    {
-        font-size:100%;
-    }
-
-    .button {
-        height: 3em;
-        width: 20%;
-    }
-
-    .inputLeft {
-        display: inline-block;
-        background-image: url(images/input_left.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        width: 12px;
-        height: 2em;
-        vertical-align: middle;
-        margin-right: -0.3em;
-    }
-
-    .inputMiddle {
-        display: inline-block;
-        vertical-align: middle;
-        background-image: url(images/input_middle.png);
-        width: 40%;
-        background-size: contain;
-        background-repeat: repeat-x;
-    }
-
-    .inputRight {
-        display: inline-block;
-        vertical-align: middle;
-        background-image:url(images/input_right.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        height: 2em;
-        width: 12px;
-    }
-
-    .input{
-        background-color: transparent;
-        border: none;
-        width: 100%;
-        height: 2em;
-        font-size: 1em;
-    }
-    
+{   
     #menu-drawer{
         display: none;
     }
     
-    #header
-    {
-        text-align: center;
-        background-color:#66b1ff;
-        padding:0.5em;
-    }
-
-    #header a{
-        text-decoration: none;
-    }
-
     #header-logo
     {
-        background-image:url(images/logo.png);
-        background-repeat:no-repeat;
-        background-size: contain;
         display: inline-block;
         width: 15%;
         height: 8em;
@@ -737,10 +639,8 @@
     {
         display: inline-block;
         width: 79%;
-        height: 2.7em;
         vertical-align: middle;
-        color: aliceblue;
-
+		padding-top: 0em;
     }
 
     #menu
@@ -749,7 +649,6 @@
         display: block;
         padding-top :1em;
         padding-bottom: 2em;
-        
         height: 1em;
         background-color: #E1E3E4;
     }
@@ -768,7 +667,6 @@
         height: 2em;
         width: 75%;
         text-align: right;
-
     }
     
     #nav li
@@ -802,19 +700,6 @@
        text-decoration: none; 
     }
 
-    #footer
-    {
-        background-color: #E1E3E4;
-        margin-top: 1.5em;
-    }
-
-    #footer-container
-    {
-        padding-bottom: 1em;
-        padding-left: 1.5em;
-        padding-top: 0.5em;
-    }
-
     #footer-logo{
         display: inline-block;
         width: 70%;
@@ -822,12 +707,6 @@
         background-image: url(images/logo.png);
         background-repeat: no-repeat;
         background-size: contain;
-    }
-
-    #footer-container li{
-        list-style: none;
-        padding-bottom:0.5em;
-        padding-top: 0.5em;
     }
 
     #first-footer-block{
@@ -839,72 +718,20 @@
     .footer-block
     {
         display: inline-block;
-        width: 14%;
+        width: 20%;
         padding-right: 3.5em;
+        padding-left: 2em;
     }
 
     #last-footer-block{
         display: inline-block;
         width: 30%;
         position: relative;
-
-    }
-
-    #facebook-link {
-        text-decoration: none;
-    }
-
-    #facebook-button{
-        background-image: url(images/facebook_link.png);
-        display: inline-block;
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 21%;
-        height: 3em;
-        margin-left: 2em;
-        margin-top: 0.8em;
-    }
-
-    #newsletter-input
-    {
-        background-color: transparent;
-        border: none;
-        width: 97%;
-        height: 2.3em;
-        padding-left: 1em;
-    }
-
-    #newsletterInputMiddle{
-        display: inline-block;
-        vertical-align: middle;
-        background-image: url(images/input_middle.png);
-        width: 70%;
-        height: 2em;
-        background-size: contain;
-        background-repeat: repeat-x;
-    }
-
-    #newsletter-buttonContainer{
-        display: inline;
-    }
-
-    #newsletter-button
-    {
-        width: 13%;
-        height: 2em;
-        background-image:url(images/email.png);
-        background-repeat:no-repeat;
-        background-color: transparent;
-        background-size: contain;
-        border: none;
-        vertical-align: middle;
     }
 
     #searchBar{
-        
-        width: 100%;
-        height: 3em;
-        background-color: #E1E3E4;
+        padding-bottom: 3.2em;
+		padding-top: 0em;
     }
 
     #searchContainer
@@ -914,61 +741,32 @@
     }
 
     #commonSearchInput{
-        line-height: 300%;
-        background-color: transparent;
-        border: none;
-        width: 93%;
-        font-size: 1em;
         height: 3em;
         margin-right: 2.5em;
+		padding-right: 0em;
     }
 
     #commonSearchInputLeft{
-        display: inline-block;
-        background-image: url(images/input_left.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        vertical-align: middle;
         height: 3em;
         width: 12px;
+		margin-right:0em;
     }
 
     #commonSearchInputMiddle{
-        display: inline-block;
-        vertical-align: middle;
-        background-image: url(images/input_middle.png);
-        background-size: contain;
-        background-repeat: repeat-x;
         width: 45%;
     }
 
     #commonSearchInputRight{
-        display: inline-block;
-        background-image: url(images/input_right.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        vertical-align: middle;
         height: 3em;
         width: 12px;
-    }
-
-    #commonSearchButtonContainer{
-        display:inline;
     }
 
     #commonSearchButton{
         width: 3%;
         height: 3em;
-        background-image: url(images/ricerca.png);
-        background-size:contain;
-        background-repeat: no-repeat;
-        background-color: transparent;
-        border: none;
-        vertical-align: middle;
-        margin-left: -4em;
     }
 
-    /*-------------------------------------- la_nostra_storia.html ------------------------------------------------------------------------------------*/
+    /*-------------------------------------- la_nostra_storia.html --------------------------------------------------------------------------------*/
 
 
 
@@ -1061,7 +859,7 @@
         text-decoration: none;
     }
 
-    /*---------------------------------------- prodotti.html ------------------------------------------------------------------------------------------*/
+    /*---------------------------------------- prodotti.html --------------------------------------------------------------------------------------*/
 
     #prodotti-leftBlock{
         background-color: #cce5ff;
@@ -1199,7 +997,7 @@
         display: inline;
     }
 
-    /*------------------------------- login.html ---------------------------------------------------------------------------------------------------*/
+    /*------------------------------- login.html --------------------------------------------------------------------------------------------------*/
 
     #login-container-mobile{
         display: none;
@@ -1244,7 +1042,7 @@
     }
 
 
-    /*--------------------------- registrazione.html -----------------------------------------------------------------------------------------------*/
+    /*--------------------------- registrazione.html ----------------------------------------------------------------------------------------------*/
 
     #registrazione-container-mobile{
         display: none;
@@ -1365,7 +1163,7 @@
         padding-right: 1em;
     }
 
-    /*------------------- termini e spedizione/resi e rimborsi  -------------------------------------------------------------------------------------------------------*/
+    /*------------------- termini e spedizione/resi e rimborsi  -----------------------------------------------------------------------------------*/
     #content h2
     {
         margin-top: 1em;
