@@ -492,6 +492,150 @@ body
     #contattaci-telefonoLabel {
     padding-right: 1em;
 }
+
+/*------------------- annunci.html ---------------------------------------------------------------------------------------------------------------*/
+div.post{
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    margin:20px;
+    padding:20px;
+} 
+div.post h2{
+    color:dodgerblue;
+}
+div.post h3{
+    color:darkslategrey;
+}
+
+/*-------------------------------------- la_nostra_storia.html --------------------------------------------------------------------------------*/
+
+#la_nostra_storia-titolo{
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1.5em;
+}
+
+#linea-tempo li
+{
+    list-style: none;
+    display: inline-block;
+    padding-left: 1em;
+    padding-right: 1em;
+    transform:rotate(-20deg);
+    border: 1px solid;
+    text-decoration: none;
+    background-color:#66b1ff;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding:0.5em;
+}
+
+#linea-tempo
+{
+    display: inline-block;
+    width: 99%;
+    height: 2.7em;
+    text-align: center;
+}
+
+#linea-tempo-testo
+{
+    text-align: center;
+    margin: auto;
+    padding-top: 4em;
+    padding-bottom: 2em;
+    width: 85%;    
+}
+
+.linea-tempo-testo-li
+{
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    list-style: none;
+    border: 1px solid;
+    background-color: #E1E3E4;
+    background-color:#66b1ff;
+}
+
+#linea-tempo a
+{
+    text-decoration: none;
+}
+
+#linea-tempo-testo h3
+{
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    margin-bottom: 1em;
+    background-color: #E1E3E4;
+    border-bottom: 1px solid;
+}
+
+#linea-tempo-testo p
+{
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#linea-tempo-testo a
+{
+    text-decoration: none;
+}
+
+.linea-tempo-su
+{
+    width: 45%;
+    border: 1px solid;
+    background-color: #E1E3E4;
+    margin-bottom: 3em;
+    display: inline-block;
+    padding-top:0.5em;
+    padding-bottom:0.5em;
+}
+
+.linea-tempo-su a
+{
+    text-decoration: none;
+}
+
+/*------------------- termini e spedizione/resi e rimborsi  -----------------------------------------------------------------------------------*/
+
+#resi_rimb_term_sped-h2{
+    margin-top: 1em;
+    text-align: center;
+}
+
+#info-container
+{
+    text-align: center;
+    width: 90%;
+    margin: auto;
+}
+
+#info-container h3
+{
+    background-color: #E1E3E4;
+    width: 90%;
+    text-align: center;
+    display: inline-block;
+    margin-top: 1.5em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    border-top: 1px solid;
+    border-right: 1px solid;
+    border-left: 1px solid;
+}
+
+.info-text
+{
+    text-align: justify;
+    padding: 1.5em;
+    width: 90%;
+    background-color:#66b1ff; 
+    display: inline-block;
+    border: 1px solid;
+    margin-bottom: 2em;
+}
+
 /*-------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 @media screen and (min-width: 768px)
@@ -783,11 +927,7 @@ body
         padding:0.5em;
 
     }
-    #linea-tempo ul
-    {
-        padding: 2em;
-    }
-
+    
     #linea-tempo
     {
         display: inline-block;
@@ -1079,29 +1219,28 @@ body
     }
 
     /*------------------- termini e spedizione/resi e rimborsi  -----------------------------------------------------------------------------------*/
-    #content h2
-    {
+    
+    #resi_rimb_term_sped-h2{
         margin-top: 1em;
         text-align: center;
         padding-bottom: 1.5em;
     }
-
+    
     #info-container
     {
         text-align: center;
-        width: 100%;
-        background-color: aliceblue;
+        width: 50%;
+        margin: auto;
     }
 
     #info-container h3
     {
         background-color: #E1E3E4;
-        width: 50%;
+        width: 100%;
         text-align: center;
         display: inline-block;
         margin-top: 1.5em;
-        padding-left: 1.26em;
-        padding-right: 1.3em;
+        margin: auto;
         padding-bottom: 0.5em;
         padding-top: 0.5em;
     }
@@ -1110,22 +1249,9 @@ body
     {
         text-align: justify;
         padding: 1.5em;
-        width: 50%;
+        width: 100%;
         background-color:#66b1ff; 
         display: inline-block;
+        margin-bottom: 2.5em;
     }
-
-    /*------------------- annunci.html -------------------------------------------------------------------------------------------------------*/
-    div.post{
-        font-family: "Trebuchet MS", Helvetica, sans-serif;
-        margin:20px;
-        padding:20px;
-    } 
-    div.post h2{
-        color:dodgerblue;
-    }
-    div.post h3{
-        color:darkslategrey;
-    }
-
 }
