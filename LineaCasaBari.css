@@ -435,7 +435,7 @@ body
 }
 
 #registrazione-passwordLabel{
-        padding-right: 4.9em;
+    padding-right: 4.9em;
 }
 
 #registrazione-confermapasswordLabel{
@@ -768,8 +768,6 @@ body
 
     /*-------------------------------------- la_nostra_storia.html --------------------------------------------------------------------------------*/
 
-
-
     #linea-tempo li
     {
         list-style: none;
@@ -1027,21 +1025,6 @@ body
         padding-top: 0.3em;
     }
 
-    #login-Block li{
-        list-style: none;
-        padding-bottom: 2em;
-    }
-
-    #login-emailLabel{
-        padding-right: 1.9em;
-
-    }
-
-    #login-passwordLabel{
-        padding-right: 0.5em;
-    }
-
-
     /*--------------------------- registrazione.html ----------------------------------------------------------------------------------------------*/
 
     #registrazione-container-mobile{
@@ -1066,35 +1049,6 @@ body
     #registrazione-container2 h2{
         padding-bottom: 1em;
         padding-top: 1em;
-    }
-
-    #registrazione-Block{
-        padding-top: 1em;
-    }
-
-    #registrazione-Block li{
-        list-style: none;
-        padding-bottom: 2em;   
-    }
-
-    #registrazione-nomeLabel{
-        padding-right: 6.3em;
-    }
-
-    #registrazione-cognomeLabel{
-        padding-right: 4.9em;
-    }
-
-    #registrazione-emailLabel{
-        padding-right: 6.35em;
-    }
-
-    #registrazione-passwordLabel{
-        padding-right: 4.9em;
-    }
-
-    #registrazione-confermapasswordLabel{
-        padding-right: 0.8em;
     }
 
 /*--------------------------- contattaci.html ----------------------------------------------------------------------------------------------------*/
@@ -1122,45 +1076,6 @@ body
     #contattaci-container2 h2{
         padding-top: 0.5em;
         padding-bottom: 1em;
-    }
-
-    #contattaci-Block {
-
-    }
-
-    #contattaci-Block li {
-        list-style: none;
-    }
-
-    .contattaci-Block-li{
-        padding-bottom: 2em;
-    }
-
-    #contattaci-messaggioLabelBlock{
-        text-align: left;
-        padding-left: 3.2em;
-        padding-bottom: 0.5em;
-    }
-
-    #contattaci-messaggioTextArea {
-        width: 80%;
-        height: 10em;
-    }
-
-    #contattaci-nomeLabel {
-        padding-right: 2.3em;
-    }
-
-    #contattaci-cognomeLabel {
-        padding-right: 0.7em;
-    }
-
-    #contattaci-emailLabel {
-        padding-right: 2.2em;
-    }
-
-    #contattaci-telefonoLabel {
-        padding-right: 1em;
     }
 
     /*------------------- termini e spedizione/resi e rimborsi  -----------------------------------------------------------------------------------*/
