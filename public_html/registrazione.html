@@ -46,7 +46,8 @@
     
     <div id="menu">
         <span id="path">
-            Ti trovi in: Registrati        </span>
+            Ti trovi in: Registrati
+        </span>
     
         <div id="nav">
             <ul>
@@ -74,30 +75,30 @@
         <div id="registrazione-container-mobile">
             <h2>Crea un account</h2>
                 <form>
-                    <ul id="registrazione-Block">
+                    <ul class="registrazione-Block">
                         <li>
-                            <label id="registrazione-nomeLabel">Nome:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text"/></div><div class="inputRight"></div>
+                            <label class="registrazione-nomeLabel">Nome:</label>
+                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="nome"/></div><div class="inputRight"></div>
                         </li>
                         <li>
-                            <label id="registrazione-cognomeLabel">Cognome:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text"/></div><div class="inputRight"></div>
+                            <label class="registrazione-cognomeLabel">Cognome:</label>
+                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="cognome"/></div><div class="inputRight"></div>
                         </li>
                         <li>
-                            <label id="registrazione-emailLabel">Email:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text"/></div><div class="inputRight"></div>
+                            <label class="registrazione-emailLabel">Email:</label>
+                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="email"/></div><div class="inputRight"></div>
                         </li>
                         <li>
-                            <label id="registrazione-passwordLabel">Password:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password"/></div><div class="inputRight"></div>
+                            <label class="registrazione-passwordLabel">Password:</label>
+                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password" name="password"/></div><div class="inputRight"></div>
                         </li>
                         <li>
-                            <label id="registrazione-confermapasswordLabel">Conferma password:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password"/></div><div class="inputRight"></div>
+                            <label class="registrazione-confermapasswordLabel">Conferma password:</label>
+                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password" name="conf_password"/></div><div class="inputRight"></div>
                         </li>
                     </ul>
                     <div>
-                        <button class="button" type="submit">Registrati</button>
+                        <button class="button" type="submit" value="registrazione">Registrati</button>
                     </div>
                 </form>
         </div>
@@ -105,31 +106,31 @@
         <div id="registrazione-container">
             <div id="registrazione-container2">
                 <h2>Crea un account</h2>
-                <form>
-                    <ul id="registrazione-Block">
+                <form action="../cgi-bin/registrazione_form.cgi" method="post">
+                    <ul class="registrazione-Block">
                         <li>
-                            <label id="registrazione-nomeLabel">Nome:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text"/></div><div class="inputRight"></div>
+                            <label class="registrazione-nomeLabel">Nome:</label>
+                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="nome"/></div><div class="inputRight"></div>
                         </li>
                         <li>
-                            <label id="registrazione-cognomeLabel">Cognome:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text"/></div><div class="inputRight"></div>
+                            <label class="registrazione-cognomeLabel">Cognome:</label>
+                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="cognome"/></div><div class="inputRight"></div>
                         </li>
                         <li>
-                            <label id="registrazione-emailLabel">Email:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text"/></div><div class="inputRight"></div>
+                            <label class="registrazione-emailLabel">Email:</label>
+                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="email"/></div><div class="inputRight"></div>
                         </li>
                         <li>
-                            <label id="registrazione-passwordLabel">Password:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password"/></div><div class="inputRight"></div>
+                            <label class="registrazione-passwordLabel">Password:</label>
+                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password" name="password"/></div><div class="inputRight"></div>
                         </li>
                         <li>
-                            <label id="registrazione-confermapasswordLabel">Conferma password:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password"/></div><div class="inputRight"></div>
+                            <label class="registrazione-confermapasswordLabel">Conferma password:</label>
+                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password" name="conf_password"/></div><div class="inputRight"></div>
                         </li>
                     </ul>
                     <div>
-                        <button class="button" type="submit">Registrati</button>
+                        <button class="button" type="submit" value="registrazione">Registrati</button>
                     </div>
                 </form>
             </div>
