@@ -1,31 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Prodotti" xmlns:tns="http://www.example.org/Prodotti" elementFormDefault="qualified">
-
-    <element name="Prodotti" type="tns:Tipo_prodotto"></element>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Prodotti" xmlns="http://www.example.org/Prodotti">
     
-    <complexType name="Tipo_prodotto">
-    	<sequence>
-    		<element name="Codice" type="string"></element>
-    		<element name="Nome" type="string"></element>
-    		<element name="Descrizione" type="string"></element>
-    		<element name="Prezzo" type="double"></element>
-            <element name="Data_aggiunta" type="date"></element>
-            <element name="Valutazione" type="float"></element>
-    		<element name="Immagine" type="string"></element>
-    		<element name="Tag" type="string" maxOccurs="unbounded"
-    			minOccurs="1">
-    		</element>
-    	</sequence>
-    </complexType>
+	<xsd:complexType name="Tipo_recensione">
+    	<xsd:sequence>
+            <xsd:element name="Titolo" type="xsd:string"/>
+            <xsd:element name="Nome_visualizzato" type="xsd:string"/>
+            <xsd:element name="Data_pubblicazione" type="xsd:date"/>
+            <xsd:element name="Testo" type="xsd:string"/>
+            <xsd:element name="Voto_prodotto" type="xsd:float"/>
+    		<xsd:element name="Voto_recensione" type="xsd:int"/>
+    	</xsd:sequence>
+    </xsd:complexType>
 
-    <complexType name="Tipo_recensione">
-    	<sequence>
-            <element name="Titolo" type="string"></element>
-            <element name="Nome_visualizzato" type="string"></element>
-            <element name="Data_pubblicazione" type="date"></element>
-            <element name="Testo" type="string"></element>
-            <element name="Voto_prodotto" type="float"></element>
-    		<element name="Voto_recensione" type="int"></element>
-    	</sequence>
-    </complexType>
-</schema>
+    <xsd:complexType name="Tipo_prodotto">
+    	<xsd:sequence>
+    		<xsd:element name="Codice" type="xsd:string"/>
+    		<xsd:element name="Nome" type="xsd:string"/>
+    		<xsd:element name="Descrizione" type="xsd:string"/>
+    		<xsd:element name="Prezzo" type="xsd:double"/>
+            <xsd:element name="Data_aggiunta" type="xsd:date"/>
+            <xsd:element name="Valutazione" type="xsd:float"/>
+    		<xsd:element name="Immagine" type="xsd:string"/>
+    		<xsd:element name="Tag" type="xsd:string" maxOccurs="unbounded"
+    			minOccurs="1"/>
+			<xsd:element name="recensione" type="Tipo_recensione" minOccurs="0" maxOccurs="unbounded"/>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+	<xsd:complexType name="Tipo_prodotti">
+		<xsd:sequence>
+			<xsd:element name="Prodotto" type="Tipo_prodotto" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="Prodotti" type="Tipo_prodotti" maxOccurs="1"/>
+</xsd:schema>

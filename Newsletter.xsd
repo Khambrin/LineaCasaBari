@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Newsletter" xmlns:tns="http://www.example.org/Newsletter" elementFormDefault="qualified">
-
-    <element name="Newsletter" type="tns:Tipo_newsletter"></element>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Newsletter" xmlns="http://www.example.org/Newsletter">
     
-    <complexType name="Tipo_newsletter">
-    	<sequence>
-    		<element name="Email" type="string"></element>
-    	</sequence>
-    </complexType>
-</schema>
+    <xsd:complexType name="Tipo_newsletter">
+    	<xsd:sequence>
+    		<xsd:element name="Email" type="xsd:string"/>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+	<xsd:complexType name="Tipo_newsletters">
+		<xsd:sequence>
+			<xsd:element name="Newsletter" type="Tipo_newsletter" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="Newsletters" type="Tipo_newsletters" maxOccurs="1"/>
+</xsd:schema>

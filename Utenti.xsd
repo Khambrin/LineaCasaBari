@@ -1,28 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Utenti" xmlns:tns="http://www.example.org/Utenti" elementFormDefault="qualified">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Utenti" xmlns="http://www.example.org/Utenti">
 
 
-    <complexType name="Tipo_utente">
-    	<sequence>
-    		<element name="Nome" type="string"></element>
-    		<element name="Cognome" type="string"></element>
-    		<element name="Email" type="string"></element>
-    		<element name="Password" type="string"></element>
-    		<element name="Indirizzo" type="tns:Tipo_indirizzo"></element>
-    		<element name="Telefono" type="string"></element>
-    		<element name="Amministratore" type="boolean"></element>
-    	</sequence>
-    </complexType>
+    <xsd:complexType name="Tipo_utente">
+    	<xsd:sequence>
+    		<xsd:element name="Nome" type="xsd:string"/>
+    		<xsd:element name="Cognome" type="xsd:string"/>
+    		<xsd:element name="Email" type="xsd:string"/>
+    		<xsd:element name="Password" type="xsd:string"/>
+    		<xsd:element name="Indirizzo" type="Tipo_indirizzo"/>
+    		<xsd:element name="Telefono" type="xsd:string"/>
+    		<xsd:element name="Amministratore" type="xsd:boolean"/>
+    	</xsd:sequence>
+    </xsd:complexType>
 
-    <element name="Utente" type="tns:Tipo_utente"></element>
+    <xsd:complexType name="Tipo_indirizzo">
+    	<xsd:sequence>
+            <xsd:element name="Via" type="xsd:string"/>
+            <xsd:element name="Numero_civico" type="xsd:int"/>
+            <xsd:element name="Città" type="xsd:string"/>
+            <xsd:element name="Provincia" type="xsd:string"/>
+            <xsd:element name="CAP" type="xsd:int"/>
+        </xsd:sequence>
+    </xsd:complexType>
+	
+	<xsd:complexType name="Tipo_utenti">
+		<xsd:sequence>
+			<xsd:element name="Utente" type="Tipo_utente" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
 
-    <complexType name="Tipo_indirizzo">
-    	<sequence>
-            <element name="Via" type="string"></element>
-            <element name="Numero_civico" type="int"></element>
-            <element name="Città" type="string"></element>
-            <element name="Provincia" type="string"></element>
-            <element name="CAP" type="int"></element>
-        </sequence>
-    </complexType>
-</schema>
+	<xsd:element name="Utenti" type="Tipo_utenti" maxOccurs="1"/>
+</xsd:schema>
