@@ -12,5 +12,5 @@
 			<xsd:element name="Newsletter" type="Tipo_newsletter" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
-	<xsd:element name="Newsletters" type="Tipo_newsletters" maxOccurs="1"/>
+	<xsd:element name="Newsletters" type="Tipo_newsletters"/>
 </xsd:schema>

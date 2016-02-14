@@ -30,5 +30,5 @@
 		</xsd:sequence>
 	</xsd:complexType>
 
-	<xsd:element name="Utenti" type="Tipo_utenti" maxOccurs="1"/>
+	<xsd:element name="Utenti" type="Tipo_utenti"/>
 </xsd:schema>

@@ -32,5 +32,5 @@
 			<xsd:element name="Prodotto" type="Tipo_prodotto" minOccurs="0" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
-	<xsd:element name="Prodotti" type="Tipo_prodotti" maxOccurs="1"/>
+	<xsd:element name="Prodotti" type="Tipo_prodotti"/>
 </xsd:schema>

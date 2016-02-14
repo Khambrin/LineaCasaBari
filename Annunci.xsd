@@ -18,5 +18,5 @@
 		</xsd:sequence>
 	</xsd:complexType>
 
-	<xsd:element name="Annunci" type="Tipo_annunci" maxOccurs="1"/>
+	<xsd:element name="Annunci" type="Tipo_annunci"/>
 </xsd:schema>
