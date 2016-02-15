@@ -46,30 +46,29 @@ foreach my $chiave (keys %values)
 
 if (@errors)
 {
-	open(FORM,'/home/vaio/www/LineaCasaBari/registrazione.html') or die $!;
+	open(FORM,"../public_html/registrazione.html") or die $!;
 	my $form=join('',<FORM>);
 	close(FORM);
 	my $error_message="<ul>"."<li>[@errors]</li>"."</ul>";
 	$form=~ s/<!--error_message-->/$error_message/;
 	my $original_css='<link href="LineaCasaBari.css" rel="stylesheet" type="text/css" media="screen"/>';
-	my $correct_css='<link href="../LineaCasaBari/LineaCasaBari.css" rel="stylesheet" type="text/css" media="screen"/>';
+	my $correct_css='<link href="../LineaCasaBari.css" rel="stylesheet" type="text/css" media="screen"/>';
 	$form=~ s/$original_css/$correct_css/;
 	my $original_jquery='<script type="text/javascript" src="jquery-1.12.0.js"></script>';
-	my $correct_jquery='<script type="text/javascript" src="../LineaCasaBari/jquery-1.12.0.js"></script>';
+	my $correct_jquery='<script type="text/javascript" src="../jquery-1.12.0.js"></script>';
 	$form=~ s/$original_jquery/$correct_jquery/;
 	my $original_linkskipper='<script type="text/javascript" src="link_skipper.js"></script>';
-	my $correct_linkskipper='<script type="text/javascript" src="../LineaCasaBari/link_skipper.js"></script>';
+	my $correct_linkskipper='<script type="text/javascript" src="../link_skipper.js"></script>';
 	$form=~ s/$original_linkskipper/$correct_linkskipper/;
 	print $form;
 }
 else
 {
 	
-	if (-e "/home/vaio/www/cgi-bin/Utenti.xml")
+	if (-e "../data/Utenti.xml")
 	{
-		open my $fh,"<","/home/vaio/www/cgi-bin/Utenti.xml";
-		my $doc=XML::LibXML->load_xml(IO => $fh);
-		close($fh);
+		my $parser=XML::LibXML->new();
+		my $doc=$parser->parse_file("../data/Utenti.xml");
 		my $root=$doc->documentElement();
 		my $utente_tag=$doc->createElement("Utente");
 		$root->appendChild($utente_tag);
@@ -98,7 +97,7 @@ else
 			}
 			$utente_tag->appendChild($novalue_tag);
 		}
-		open(XML,">","/home/vaio/www/cgi-bin/Utenti.xml");
+		open(XML,">","../data/Utenti.xml");
 		print XML $doc->toString();
 		close(XML);
 	}
@@ -134,7 +133,7 @@ else
 			}
 			$utente_tag->appendChild($novalue_tag);
 		}
-		open (XML,">","/home/vaio/www/cgi-bin/Utenti.xml");
+		open (XML,">","../data/Utenti.xml");
 		print XML $doc->toString();
 		close(XML);
 	}	
