@@ -4,6 +4,7 @@ use CGI qw(:standard);
 use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use strict;
 use XML::LibXML;
+use Template;
 
 print "Content-type: text/html\n\n";
 
@@ -46,6 +47,7 @@ foreach my $chiave (keys %values)
 
 if (@errors)
 {
+=pod
 	open(FORM,"../public_html/registrazione.html") or die $!;
 	my $form=join('',<FORM>);
 	close(FORM);
@@ -61,6 +63,15 @@ if (@errors)
 	my $correct_linkskipper='<script type="text/javascript" src="../link_skipper.js"></script>';
 	$form=~ s/$original_linkskipper/$correct_linkskipper/;
 	print $form;
+=cut
+	my $file='registrazione.html';
+	my $vars={
+		'error' => "<ul>"."<li>[@errors]</li>"."</ul>"
+	};
+	my $template=Template->new({
+		INCLUDE_PATH => '../public_html/temp',
+	});
+	$template->process($file,$vars) || die $template->error();
 }
 else
 {

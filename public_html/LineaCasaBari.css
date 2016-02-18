@@ -397,6 +397,11 @@ body
     padding-right: 0.5em;
 }
 
+.login-error{
+    padding-top: 1.5em;
+    color: red;
+}
+
 /*--------------------------- registrazione.html -----------------------------------------------------------------------------------------------*/
 
 #registrazione-container-mobile{
@@ -440,6 +445,11 @@ body
 
 .registrazione-confermapasswordLabel{
     padding-right: 0.8em;
+}
+
+.registrazione-error{
+    padding-top: 1.5em;
+    color: red;
 }
 
 /*--------------------------- contattaci.html ----------------------------------------------------------------------------------------------------*/
@@ -1183,7 +1193,7 @@ div.post h3{
         width: 50%;
         margin: 0 auto;
         background-color: #E1E3E4;
-        height: 30.6em;
+        height: 35em;
     }
 
     #registrazione-container2 h2{
