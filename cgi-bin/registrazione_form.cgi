@@ -6,7 +6,8 @@ use strict;
 use XML::LibXML;
 use Template;
 
-print "Content-type: text/html\n\n";
+my $cgi=new CGI;
+print $cgi->header('text/html');
 
 my @errors=();
 my %values;
@@ -64,7 +65,7 @@ if (@errors)
 	$form=~ s/$original_linkskipper/$correct_linkskipper/;
 	print $form;
 =cut
-	my $file='registrazione.html';
+	my $file='registrazione_temp.html';
 	my $vars={
 		'error' => "<ul>"."<li>[@errors]</li>"."</ul>"
 	};
@@ -75,7 +76,6 @@ if (@errors)
 }
 else
 {
-	
 	if (-e "../data/Utenti.xml")
 	{
 		my $parser=XML::LibXML->new();
