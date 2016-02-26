@@ -4,6 +4,9 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	[% IF check == 'true' %]
+	<meta http-equiv="refresh" content="0; url=../../cgi-bin/home_script.cgi"/>
+	[% END %]
     <title>Linea Casa Bari - Home</title>
     <meta name="title" content="Linea Casa Bari"/>
     <meta name="description" content="Home page del sito sul negozio Linea Casa Bari" />
@@ -12,9 +15,9 @@
     <meta name="author" content="Alessandro Bari, Navid Taha, Alice Sasso, Lorenzo Ferrarin" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href="../LineaCasaBari/LineaCasaBari.css" rel="stylesheet" type="text/css" media="screen"/>
-    <script type="text/javascript" src="../LineaCasaBari/jquery-1.12.0.js"></script>
-    <script type="text/javascript" src="../LineaCasaBari/link_skipper.js"></script>
+    <link href="../LineaCasaBari.css" rel="stylesheet" type="text/css" media="screen"/>
+    <script type="text/javascript" src="../jquery-1.12.0.js"></script>
+    <script type="text/javascript" src="../link_skipper.js"></script>
 </head>
 
 <body>
@@ -23,15 +26,15 @@
         <label for="drawer-toggle" id="drawer-toggle-label"></label>
         <div id="drawer">
             <ul>
-                <li><a href="home.html"><span xml:lang="en">Home</span></a></li>
-                <li><a href="prodotti.html">Prodotti</a></li>
-                <li><a href="annunci.html">Annunci</a></li>
-                <li><a href="contattaci.html">Contattaci</a></li>
-                <li><a href="login.html">Accedi</a></li>
-                <li><a href="registrazione.html">Registrati</a></li>
-                <li><a href="la_nostra_storia.html">La nostra Storia</a></li>
-                <li><a href="termini_spedizione.html">Termini e Spedizione</a></li>
-                <li><a href="resi_rimborsi.html">Resi e Rimborsi</a></li>
+                <li><a href="../home.html"><span xml:lang="en">Home</span></a></li>
+                <li><a href="../prodotti.html">Prodotti</a></li>
+                <li><a href="../annunci.html">Annunci</a></li>
+                <li><a href="../contattaci.html">Contattaci</a></li>
+                <li><a href="../login.html">Accedi</a></li>
+                <li><a href="../registrazione.html">Registrati</a></li>
+                <li><a href="../la_nostra_storia.html">La nostra Storia</a></li>
+                <li><a href="../termini_spedizione.html">Termini e Spedizione</a></li>
+                <li><a href="../resi_rimborsi.html">Resi e Rimborsi</a></li>
             </ul>
         </div>
     </div>
@@ -39,7 +42,7 @@
         <a href="#content" class="skip">Salta al contenuto</a>
     </div>
     <div id="header">
-    <a href="home.html">
+    <a href="home_script.cgi">
         <span id="header-logo"></span>
     </a>
     <h1 id="nome_negozio">Linea Casa Bari</h1>
@@ -52,16 +55,21 @@
     
         <div id="nav">
             <ul>
-                <li><a href="home.html"><span xml:lang="en">Home</span></a></li>
-                <li><a href="prodotti.html">Prodotti</a></li>
-                <li><a href="annunci.html">Annunci</a></li>
-                <li><a href="contattaci.html">Contattaci</a></li>
-				<li><a href="registrazione.html">Modifica</a></li>                
-				<li><a href="logout_script.cgi">Logout</a></li>                
+                <li><a href="home_script.cgi"><span xml:lang="en">Home</span></a></li>
+                <li><a href="../prodotti.html">Prodotti</a></li>
+                <li><a href="../annunci.html">Annunci</a></li>
+                <li><a href="../contattaci.html">Contattaci</a></li>
+				[% IF test == 'true' %]
+				<li><a href="../registrazione.html">Modifica</a></li>                
+				<li><a href="logout_script.cgi">Logout</a></li>
+				[% ELSE %]
+				<li><a href="../login.html">Accedi</a></li>
+                <li><a href="../registrazione.html">Registrati</a></li>
+				[% END %]
             </ul>
         </div>
 		<div id="nome_utente">
-			<span>kit e mourt</span>
+			<span>[% email %]</span>
 		</div>
     </div>
     <div id="searchBar">
@@ -77,28 +85,28 @@
     
     <div id="content">
         <div class="imgcategoria">
-            <img src="images/listanozzeB.png" alt="Lista Nozze"> 
-            <a href="prodotti.html"><h2>Lista Nozze</h2><p>Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit,<br />sed do eiusmod tempor incididunt<br /> ut labore </p></a>
+            <img src="../images/listanozzeB.png" alt="Lista Nozze"> 
+            <a href="../prodotti.html"><h2>Lista Nozze</h2><p>Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit,<br />sed do eiusmod tempor incididunt<br /> ut labore </p></a>
         </div>
         <div class="imgcategoria">
-            <img src="images/porcellaneB.png" alt="Porcellane"> 
-            <a href="prodotti.html"><h2>Porcellane</h2><p>Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit,<br />sed do eiusmod tempor incididunt<br /> ut labore </p></a>
+            <img src="../images/porcellaneB.png" alt="Porcellane"> 
+            <a href="../prodotti.html"><h2>Porcellane</h2><p>Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit,<br />sed do eiusmod tempor incididunt<br /> ut labore </p></a>
         </div>
         <div class="imgcategoria">
-            <img src="images/lampadeB.png" alt="Lampade"> 
-            <a href="prodotti.html"><h2>Paralumi</h2><p>Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit,<br />sed do eiusmod tempor incididunt<br /> ut labore </p></a>
+            <img src="../images/lampadeB.png" alt="Lampade"> 
+            <a href="../prodotti.html"><h2>Paralumi</h2><p>Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit,<br />sed do eiusmod tempor incididunt<br /> ut labore </p></a>
         </div>
         <div class="imgcategoria">
-            <img src="images/pentoleB.png" alt="Pentole"> 
-            <a href="prodotti.html"><h2>Pentole</h2><p>Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit,<br />sed do eiusmod tempor incididunt<br /> ut labore </p></a>
+            <img src="../images/pentoleB.png" alt="Pentole"> 
+            <a href="../prodotti.html"><h2>Pentole</h2><p>Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit,<br />sed do eiusmod tempor incididunt<br /> ut labore </p></a>
         </div>
         <div class="imgcategoria">
-            <img src="images/tavolaB.png" alt="Tavola"> 
-            <a href="prodotti.html"><h2>Per La Tavola</h2><p>Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit,<br />sed do eiusmod tempor incididunt<br /> ut labore </p></a>
+            <img src="../images/tavolaB.png" alt="Tavola"> 
+            <a href="../prodotti.html"><h2>Per La Tavola</h2><p>Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit,<br />sed do eiusmod tempor incididunt<br /> ut labore </p></a>
         </div>
         <div class="imgcategoria">
-            <img src="images/tovaglieB.png" alt="Tovaglie"> 
-            <a href="prodotti.html"><h2>Tovaglie</h2><p>Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit,<br />sed do eiusmod tempor incididunt<br /> ut labore </p></a>
+            <img src="../images/tovaglieB.png" alt="Tovaglie"> 
+            <a href="../prodotti.html"><h2>Tovaglie</h2><p>Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit,<br />sed do eiusmod tempor incididunt<br /> ut labore </p></a>
         </div>
     </div>
     
