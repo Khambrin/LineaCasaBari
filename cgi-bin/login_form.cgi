@@ -40,6 +40,7 @@ if ($session->is_empty)
 		my $file='login_temp.html';
 		my $vars={
 			'error' => "<ul>"."<li>[@errors]</li>"."</ul>"
+			
 		};
 		my $template=Template->new({
 			INCLUDE_PATH => '../public_html/temp',
@@ -48,24 +49,13 @@ if ($session->is_empty)
 	}
 	else
 	{
-		#print $cgi->header('text/html');
 		my $session=new CGI::Session("driver:File",undef,{Directory=>File::Spec->tmpdir});
 		my $cookie=$cgi->cookie(CGISESSID => $session->id);
 		$session->param("email", $values{email});
-		print $cgi->redirect(-uri => 'check_session.cgi', -cookie => $cookie);
-		#my $file='home_temp.html';
-		#my $vars={
-		#	'check' => "false",
-		#	'test' => "true",
-		#	'email' => $session->param("email"),
-		#};
-		#my $template=Template->new({
-		#	INCLUDE_PATH => '/home/vaio/www/LineaCasaBari/temp',
-		#});
-		#$template->process($file,$vars) || die $template->error();
+		print $cgi->redirect(-uri => 'check_session.cgi?login', -cookie => $cookie);
 	}
 }
 else
 {
-	print $cgi->redirect('check_session.cgi');
+	print $cgi->redirect("check_session.cgi?$ENV{'QUERY_STRING'}");
 }

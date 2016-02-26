@@ -4,10 +4,10 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Linea Casa Bari - Registrati</title>
-    <meta name="title" content="Linea Casa Bari - Registrati" />
-    <meta name="description" content="Pagina per registrarsi come membro al sito sul negozio Linea Casa Bari" />
-    <meta name="keywords" content="piatti, bicchieri, posate, porcellane, liste nozze, vasi, lampade, paralumi, registrati, registrazione" />
+    <title>Linea Casa Bari - Contatti</title>
+    <meta name="title" content="Linea Casa Bari - Contattaci" />
+    <meta name="description" content="Pagina per contattare i titolari del negozio Linea Casa Bari" />
+    <meta name="keywords" content="piatti, bicchieri, posate, porcellane, liste nozze, vasi, lampade, paralumi, contatti, messaggio" />
     <meta name="language" content="italian it" />
     <meta name="author" content="Alessandro Bari, Navid Taha, Alice Sasso, Lorenzo Ferrarin" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,6 +16,7 @@
     <script type="text/javascript" src="../jquery-1.12.0.js"></script>
     <script type="text/javascript" src="../link_skipper.js"></script>
 </head>
+
 <body>
     <div id="menu-drawer">
         <input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
@@ -26,8 +27,13 @@
                 <li><a href="redirect_script.cgi?prodotti">Prodotti</a></li>
                 <li><a href="redirect_script.cgi?annunci">Annunci</a></li>
                 <li><a href="redirect_script.cgi?contattaci">Contattaci</a></li>
+				[% IF test == 'true' %]
+				<li><a href="redirect_script.cgi?account">Account</a></li>                
+				<li><a href="logout_script.cgi">Logout</a></li>
+				[% ELSE %]
                 <li><a href="redirect_script.cgi?login">Accedi</a></li>
                 <li><a href="redirect_script.cgi?registrazione">Registrati</a></li>
+				[% END %]
                 <li><a href="redirect_script.cgi?la_nostra_storia">La nostra Storia</a></li>
                 <li><a href="redirect_script.cgi?termini_spedizione">Termini e Spedizione</a></li>
                 <li><a href="redirect_script.cgi?resi_rimborsi">Resi e Rimborsi</a></li>
@@ -46,8 +52,7 @@
     
     <div id="menu">
         <span id="path">
-            Ti trovi in: Registrati
-        </span>
+            Ti trovi in: Annunci</span>
     
         <div id="nav">
             <ul>
@@ -55,10 +60,18 @@
                 <li><a href="redirect_script.cgi?prodotti">Prodotti</a></li>
                 <li><a href="redirect_script.cgi?annunci">Annunci</a></li>
                 <li><a href="redirect_script.cgi?contattaci">Contattaci</a></li>
+                [% IF test == 'true' %]
+				<li><a href="redirect_script.cgi?account">Account</a></li>                
+				<li><a href="logout_script.cgi">Logout</a></li>
+				[% ELSE %]
 				<li><a href="redirect_script.cgi?login">Accedi</a></li>
                 <li><a href="redirect_script.cgi?registrazione">Registrati</a></li>
+				[% END %]
             </ul>
         </div>
+		<div id="nome_utente">
+			<span>[% email %]</span>
+		</div>
     </div>
     <div id="searchBar">
         <div id="searchContainer">
@@ -70,74 +83,32 @@
             </form>
         </div>
     </div>
-    
-    <div id="content">
-        <div id="registrazione-container-mobile">
-            <h2>Crea un account</h2>
-                <form>
-                    <ul class="registrazione-Block">
-                        <li>
-                            <label class="registrazione-nomeLabel">Nome:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="nome"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="registrazione-cognomeLabel">Cognome:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="cognome"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="registrazione-emailLabel">Email:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="email"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="registrazione-passwordLabel">Password:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password" name="password"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="registrazione-confermapasswordLabel">Conferma password:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password" name="conf_password"/></div><div class="inputRight"></div>
-                        </li>
-                    </ul>
-                    <div>
-                        <button class="button" type="submit" value="registrazione">Registrati</button>
-                    </div>
-                </form>
-        </div>
-        
-        <div id="registrazione-container">
-            <div id="registrazione-container2">
-                <h2>Crea un account</h2>
-                <form action="../cgi-bin/registrazione_form.cgi" method="post">
-                    <ul class="registrazione-Block">
-                        <li>
-                            <label class="registrazione-nomeLabel">Nome:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="nome"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="registrazione-cognomeLabel">Cognome:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="cognome"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="registrazione-emailLabel">Email:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="email"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="registrazione-passwordLabel">Password:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password" name="password"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="registrazione-confermapasswordLabel">Conferma password:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password" name="conf_password"/></div><div class="inputRight"></div>
-                        </li>
-                    </ul>
-                    <div>
-                        <button class="button" type="submit" value="registrazione">Registrati</button>
-                    </div>
-                    <div class="registrazione-error">[% error %]</div>
-                </form>
-            </div>
-        
-        </div>
-    </div>
+
+    <script>
+			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp = new XMLHttpRequest();
+			} else {// code for IE6, IE5
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.open("GET", "listaAnnunci.xml", false);
+			xmlhttp.send();
+			xmlDoc = xmlhttp.responseXML;
+
+			
+			var x = xmlDoc.getElementsByTagName("annuncio");
+			for ( i = 0; i < x.length; i++) {
+                document.write("<div class='post'>");
+                document.write("<h2>");
+				document.write(x[i].getElementsByTagName("titolo")[0].childNodes[0].nodeValue);
+				document.write("</h2> <h3>");
+				document.write(x[i].getElementsByTagName("data")[0].childNodes[0].nodeValue);
+                document.write("</h3> <p>");
+                document.write(x[i].getElementsByTagName("contenuto")[0].childNodes[0].nodeValue);
+                document.write("</p>");
+                document.write("</div>");
+			}
+	
+    </script>
     
     <div id="footer">
         <a href="#header">
@@ -159,8 +130,8 @@
             <div class="footer-block">
                 <ul>
                     <li><a href="redirect_script.cgi?la_nostra_storia">La nostra Storia</a></li>
-                	<li><a href="redirect_script.cgi?termini_spedizione">Termini e Spedizione</a></li>
-                	<li><a href="redirect_script.cgi?resi_rimborsi">Resi e Rimborsi</a></li>
+                    <li><a href="redirect_script.cgi?termini_spedizione">Termini e Spedizione</a></li>
+                    <li><a href="redirect_script.cgi?resi_rimborsi">Resi e Rimborsi</a></li>
                 </ul>
             </div>
 
@@ -169,8 +140,13 @@
                     <li><a href="redirect_script.cgi?prodotti">Prodotti</a></li>
                 	<li><a href="redirect_script.cgi?annunci">Annunci</a></li>
                 	<li><a href="redirect_script.cgi?contattaci">Contattaci</a></li>
+                    [% IF test == 'true' %]
+					<li><a href="redirect_script.cgi?account">Account</a></li>                
+					<li><a href="logout_script.cgi">Logout</a></li>
+					[% ELSE %]
 					<li><a href="redirect_script.cgi?login">Accedi</a></li>
                 	<li><a href="redirect_script.cgi?registrazione">Registrati</a></li>
+					[% END %]
                 </ul>
             </div>
             

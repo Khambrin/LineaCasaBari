@@ -48,23 +48,6 @@ foreach my $chiave (keys %values)
 
 if (@errors)
 {
-=pod
-	open(FORM,"../public_html/registrazione.html") or die $!;
-	my $form=join('',<FORM>);
-	close(FORM);
-	my $error_message="<ul>"."<li>[@errors]</li>"."</ul>";
-	$form=~ s/<!--error_message-->/$error_message/;
-	my $original_css='<link href="LineaCasaBari.css" rel="stylesheet" type="text/css" media="screen"/>';
-	my $correct_css='<link href="../LineaCasaBari.css" rel="stylesheet" type="text/css" media="screen"/>';
-	$form=~ s/$original_css/$correct_css/;
-	my $original_jquery='<script type="text/javascript" src="jquery-1.12.0.js"></script>';
-	my $correct_jquery='<script type="text/javascript" src="../jquery-1.12.0.js"></script>';
-	$form=~ s/$original_jquery/$correct_jquery/;
-	my $original_linkskipper='<script type="text/javascript" src="link_skipper.js"></script>';
-	my $correct_linkskipper='<script type="text/javascript" src="../link_skipper.js"></script>';
-	$form=~ s/$original_linkskipper/$correct_linkskipper/;
-	print $form;
-=cut
 	my $file='registrazione_temp.html';
 	my $vars={
 		'error' => "<ul>"."<li>[@errors]</li>"."</ul>"

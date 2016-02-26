@@ -4,9 +4,6 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	[% IF check == 'true' %]
-	<meta http-equiv="refresh" content="0; url=../../cgi-bin/home_script.cgi"/>
-	[% END %]
     <title>Linea Casa Bari - Home</title>
     <meta name="title" content="Linea Casa Bari"/>
     <meta name="description" content="Home page del sito sul negozio Linea Casa Bari" />
@@ -24,17 +21,22 @@
     <div id="menu-drawer">
         <input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
         <label for="drawer-toggle" id="drawer-toggle-label"></label>
-        <div id="drawer">
+       <div id="drawer">
             <ul>
-                <li><a href="../home.html"><span xml:lang="en">Home</span></a></li>
-                <li><a href="../prodotti.html">Prodotti</a></li>
-                <li><a href="../annunci.html">Annunci</a></li>
-                <li><a href="../contattaci.html">Contattaci</a></li>
-                <li><a href="../login.html">Accedi</a></li>
-                <li><a href="../registrazione.html">Registrati</a></li>
-                <li><a href="../la_nostra_storia.html">La nostra Storia</a></li>
-                <li><a href="../termini_spedizione.html">Termini e Spedizione</a></li>
-                <li><a href="../resi_rimborsi.html">Resi e Rimborsi</a></li>
+                <li><a href="redirect_script.cgi?index"><span xml:lang="en">Home</span></a></li>
+                <li><a href="redirect_script.cgi?prodotti">Prodotti</a></li>
+                <li><a href="redirect_script.cgi?annunci">Annunci</a></li>
+                <li><a href="redirect_script.cgi?contattaci">Contattaci</a></li>
+				[% IF test == 'true' %]
+				<li><a href="redirect_script.cgi?account">Account</a></li>                
+				<li><a href="logout_script.cgi">Logout</a></li>
+				[% ELSE %]
+                <li><a href="redirect_script.cgi?login">Accedi</a></li>
+                <li><a href="redirect_script.cgi?registrazione">Registrati</a></li>
+				[% END %]
+                <li><a href="redirect_script.cgi?la_nostra_storia">La nostra Storia</a></li>
+                <li><a href="redirect_script.cgi?termini_spedizione">Termini e Spedizione</a></li>
+                <li><a href="redirect_script.cgi?resi_rimborsi">Resi e Rimborsi</a></li>
             </ul>
         </div>
     </div>
@@ -42,7 +44,7 @@
         <a href="#content" class="skip">Salta al contenuto</a>
     </div>
     <div id="header">
-    <a href="home_script.cgi">
+    <a href="redirect_script.cgi?index">
         <span id="header-logo"></span>
     </a>
     <h1 id="nome_negozio">Linea Casa Bari</h1>
@@ -55,16 +57,16 @@
     
         <div id="nav">
             <ul>
-                <li><a href="home_script.cgi"><span xml:lang="en">Home</span></a></li>
-                <li><a href="../prodotti.html">Prodotti</a></li>
-                <li><a href="../annunci.html">Annunci</a></li>
-                <li><a href="../contattaci.html">Contattaci</a></li>
-				[% IF test == 'true' %]
-				<li><a href="../registrazione.html">Modifica</a></li>                
+                <li><a href="redirect_script.cgi?index"><span xml:lang="en">Home</span></a></li>
+                <li><a href="redirect_script.cgi?prodotti">Prodotti</a></li>
+                <li><a href="redirect_script.cgi?annunci">Annunci</a></li>
+                <li><a href="redirect_script.cgi?contattaci">Contattaci</a></li>
+                [% IF test == 'true' %]
+				<li><a href="redirect_script.cgi?account">Account</a></li>                
 				<li><a href="logout_script.cgi">Logout</a></li>
 				[% ELSE %]
-				<li><a href="../login.html">Accedi</a></li>
-                <li><a href="../registrazione.html">Registrati</a></li>
+				<li><a href="redirect_script.cgi?login">Accedi</a></li>
+                <li><a href="redirect_script.cgi?registrazione">Registrati</a></li>
 				[% END %]
             </ul>
         </div>
@@ -129,19 +131,24 @@
            
             <div class="footer-block">
                 <ul>
-                    <li><a href="la_nostra_storia.html">La nostra Storia</a></li>
-                    <li><a href="termini_spedizione.html">Termini e Spedizione</a></li>
-                    <li><a href="resi_rimborsi.html">Resi e Rimborsi</a></li>
+                    <li><a href="redirect_script.cgi?la_nostra_storia">La nostra Storia</a></li>
+                    <li><a href="redirect_script.cgi?termini_spedizione">Termini e Spedizione</a></li>
+                    <li><a href="redirect_script.cgi?resi_rimborsi">Resi e Rimborsi</a></li>
                 </ul>
             </div>
 
             <div class="footer-block">
                 <ul>
-                    <li><a href="prodotti.html">Prodotti</a></li>
-                    <li><a href="annunci.html">Annunci</a></li>
-                    <li><a href="contattaci.html">Contattaci</a></li>
-                    <li><a href="login.html">Accedi</a></li>
-                    <li><a href="registrazione.html">Registrati</a></li>
+                    <li><a href="redirect_script.cgi?prodotti">Prodotti</a></li>
+                	<li><a href="redirect_script.cgi?annunci">Annunci</a></li>
+                	<li><a href="redirect_script.cgi?contattaci">Contattaci</a></li>
+                    [% IF test == 'true' %]
+					<li><a href="redirect_script.cgi?account">Account</a></li>                
+					<li><a href="logout_script.cgi">Logout</a></li>
+					[% ELSE %]
+					<li><a href="redirect_script.cgi?login">Accedi</a></li>
+                	<li><a href="redirect_script.cgi?registrazione">Registrati</a></li>
+					[% END %]
                 </ul>
             </div>
             

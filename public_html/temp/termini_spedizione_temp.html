@@ -4,10 +4,10 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Linea Casa Bari - Accedi</title>
-    <meta name="title" content="Linea Casa Bari - Accedi" />
+    <title>Linea Casa Bari - Termini e Spedizione</title>
+    <meta name="title" content="Linea Casa Bari - Termini e Spedizione" />
     <meta name="description" content="Pagina per accedere come membro al sito sul negozio Linea Casa Bari" />
-    <meta name="keywords" content="piatti, bicchieri, posate, porcellane, liste nozze, vasi, lampade, paralumi, login, accesso, accedi, password" />
+    <meta name="keywords" content="piatti, bicchieri, posate, porcellane, liste nozze, vasi, lampade, paralumi, termini, spedizione, costo spedizione, corriere" />
     <meta name="language" content="italian it" />
     <meta name="author" content="Alessandro Bari, Navid Taha, Alice Sasso, Lorenzo Ferrarin" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,8 +27,13 @@
                 <li><a href="redirect_script.cgi?prodotti">Prodotti</a></li>
                 <li><a href="redirect_script.cgi?annunci">Annunci</a></li>
                 <li><a href="redirect_script.cgi?contattaci">Contattaci</a></li>
+				[% IF test == 'true' %]
+				<li><a href="redirect_script.cgi?account">Account</a></li>                
+				<li><a href="logout_script.cgi">Logout</a></li>
+				[% ELSE %]
                 <li><a href="redirect_script.cgi?login">Accedi</a></li>
                 <li><a href="redirect_script.cgi?registrazione">Registrati</a></li>
+				[% END %]
                 <li><a href="redirect_script.cgi?la_nostra_storia">La nostra Storia</a></li>
                 <li><a href="redirect_script.cgi?termini_spedizione">Termini e Spedizione</a></li>
                 <li><a href="redirect_script.cgi?resi_rimborsi">Resi e Rimborsi</a></li>
@@ -47,7 +52,7 @@
     
     <div id="menu">
         <span id="path">
-            Ti trovi in: Accedi </span>
+            Ti trovi in: Termini e Spedizione</span>
     
         <div id="nav">
             <ul>
@@ -55,10 +60,18 @@
                 <li><a href="redirect_script.cgi?prodotti">Prodotti</a></li>
                 <li><a href="redirect_script.cgi?annunci">Annunci</a></li>
                 <li><a href="redirect_script.cgi?contattaci">Contattaci</a></li>
+                [% IF test == 'true' %]
+				<li><a href="redirect_script.cgi?account">Account</a></li>                
+				<li><a href="logout_script.cgi">Logout</a></li>
+				[% ELSE %]
 				<li><a href="redirect_script.cgi?login">Accedi</a></li>
                 <li><a href="redirect_script.cgi?registrazione">Registrati</a></li>
+				[% END %]
             </ul>
         </div>
+		<div id="nome_utente">
+			<span>[% email %]</span>
+		</div>
     </div>
     <div id="searchBar">
         <div id="searchContainer">
@@ -72,48 +85,33 @@
     </div>
     
     <div id="content">
-        
-        <div id="login-container-mobile">
-            <h2>Effettua l'accesso</h2>
-            <form>
-                <ul class="login-Block">
-                    <li>
-                        <label class="login-emailLabel">Email:</label>
-                        <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text"/></div><div class="inputRight"></div>
-                    </li>
-                    <li>
-                        <label class="login-passwordLabel">Password:</label>
-                        <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password"/></div><div class="inputRight"></div>
-                    </li>
-                </ul>
-                <div>
-                    <button class="button" type="submit">Accedi</button>
-                </div>
-            </form>
-        </div>
-        
-        <div id="login-container">
-            <div id="login-container2">
-                <h2>Effettua l'accesso</h2>
-                <form action="../cgi-bin/login_form.cgi" method="post">
-                    <ul class="login-Block">
-                        <li>
-                            <label class="login-emailLabel">Email:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="email"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="login-passwordLabel">Password:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password" name="password"/></div><div class="inputRight"></div>
-                        </li>
-                    </ul>
-                    <div>
-                        <button class="button" type="submit">Accedi</button>
-                    </div>
-					<div class="login-error">[% error %]</div>
-                </form>
+     <h2 id="resi_rimb_term_sped-h2">Spedizione</h2>
+        <div id="info-container">
+            <h3>Dove e quando spediamo</h3>
+            <div class="info-text">
+                <p>I Prodotti ordinati tramite il Sito saranno spediti solamente in ITALIA, ad esclusione di San Marino, Livigno e Citt&agrave; del Vaticano. Si pu&ograve; richiedere che la spedizione venga effettuata ad un indirizzo diverso da quello usato per la registrazione, selezionando la relativa opzione durante l&rsquo;acquisto, a condizione che l&rsquo;indirizzo fornito si trovi nel Paese di spedizione sopra indicato. La spedizione sar&agrave; effettuata tramite corriere in orario d&rsquo;ufficio, dal luned&igrave; al venerd&igrave;. Tutti gli ordini inoltrati prima delle ore 12.00 saranno consegnati al nostro corriere di preferenza il giorno stesso e consegnati entro circa 3-4 giorni lavorativi. Gli Ordini inoltrati pi&ugrave; tardi di quell&rsquo;ora saranno consegnati entro due giorni lavorativi. Gli Ordini inoltrati di venerd&igrave; prima delle ore 24.00 saranno consegnati il giorno lavorativo seguente. Non recapitiamo prodotti presso Caselle Postali. I tempi di consegna sono riportati a titolo meramente indicativo, e non prendono in considerazione i possibili ritardi derivanti dalla procedura di autorizzazione del pagamento. Gli Ordini saranno elaborati in conformit&agrave; con i Termini e Condizioni di Vendita. Non si pu&ograve; modificare la destinazione degli Ordini una volta che i prodotti sono stati spediti.</p>
             </div>
+                <h3>Spese di spedizione</h3>
+            <div class="info-text">
+                <label>GLS Standard: Gratuita</label>
+        <p>Consegna gratuita al tuo indirizzo personale o lavorativo entro 3-4 giorni lavorativi dalla conferma della spedizione. Controlla il tuo ordine su gls.com</p>
+                <label>UPS Express: € 12,00</label>
+                <p>Consegna espressa al tuo indirizzo personale o lavorativo entro 2 giorni feriali per tutti gli ordini effettuati prima delle ore 12.00 e fino a 3 tentativi di consegna.</p>
+            </div>
+                <h3>Tasse e imposte</h3>
+            <div class="info-text">
+                <p>Tasse e imposte sono calcolate in base al tuo indirizzo di consegna e specificate nella pagina finale di verifica della Conferma d&rsquo;Ordine. Le spese di spedizione per gli Ordini spediti in Italia includono l&rsquo;IVA e comprendono tutti i costi relativi alla consegna dell&rsquo;Ordine presso l&rsquo;indirizzo indicato.</p>
+            </div>
+                <h3>Stato della spedizione</h3>
+            <div class="info-text">
+                <p>Nella conferma della spedizione, che verr&agrave; mandata via e-mail, si potr&agrave; cliccare direttamente sul link del nostro corriere. Il link per verificare lo stato della spedizione diviene attivo entro 24 ore dalla presa in gestione della spedizione da parte del corriere.</p>
+            </div>
+                <h3>Termini e condizioni di vendita</h3>
+            <div class="info-text">
+                <p>I presenti Termini e Condizioni di Vendita (&ldquo;Condizioni&rdquo;) si applicano all&rsquo;acquisto e alla consegna in ITALIA dei Prodotti effettuate tramite il nostro Sito. Si prega di leggere con attenzione le presenti Condizioni prima di effettuare un Ordine. Confermando di aver letto ed accettato le presenti Condizioni nel momento in cui effettui un Ordine attraverso il nostro Sito, si conferma di accettarle incondizionatamente. Se si ha bisogno di ulteriori informazioni, o si ha difficolt&agrave; nel comprendere le presenti Condizioni, fare riferimento alla sezione contattaci inserendo le proprie domande, i nostri operatori provvederanno alla risposta nel pi&ugrave; breve tempo possibile. Le presenti Condizioni, unitamente alla Conferma d&rsquo;Ordine, costituiscono il Contratto tra le parti avente ad oggetto l&rsquo;acquisto dei Prodotti ed al quale non si applicheranno altri termini o condizioni differenti. Il contratto pu&ograve; essere modificato solo per effetto di un accordo reciproco riportato per iscritto o via e-mail. Una copia delle presenti Condizioni pu&ograve; essere memorizzata su supporto elettronico o stampata da tutti gli utenti del Sito.</p>
+                </div>
         </div>
-    </div>
+        </div>
     
     <div id="footer">
         <a href="#header">
@@ -135,8 +133,8 @@
             <div class="footer-block">
                 <ul>
                     <li><a href="redirect_script.cgi?la_nostra_storia">La nostra Storia</a></li>
-                	<li><a href="redirect_script.cgi?termini_spedizione">Termini e Spedizione</a></li>
-                	<li><a href="redirect_script.cgi?resi_rimborsi">Resi e Rimborsi</a></li>
+                    <li><a href="redirect_script.cgi?termini_spedizione">Termini e Spedizione</a></li>
+                    <li><a href="redirect_script.cgi?resi_rimborsi">Resi e Rimborsi</a></li>
                 </ul>
             </div>
 
@@ -145,8 +143,13 @@
                     <li><a href="redirect_script.cgi?prodotti">Prodotti</a></li>
                 	<li><a href="redirect_script.cgi?annunci">Annunci</a></li>
                 	<li><a href="redirect_script.cgi?contattaci">Contattaci</a></li>
+                    [% IF test == 'true' %]
+					<li><a href="redirect_script.cgi?account">Account</a></li>                
+					<li><a href="logout_script.cgi">Logout</a></li>
+					[% ELSE %]
 					<li><a href="redirect_script.cgi?login">Accedi</a></li>
                 	<li><a href="redirect_script.cgi?registrazione">Registrati</a></li>
+					[% END %]
                 </ul>
             </div>
             

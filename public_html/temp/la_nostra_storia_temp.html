@@ -4,10 +4,10 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Linea Casa Bari - Registrati</title>
-    <meta name="title" content="Linea Casa Bari - Registrati" />
-    <meta name="description" content="Pagina per registrarsi come membro al sito sul negozio Linea Casa Bari" />
-    <meta name="keywords" content="piatti, bicchieri, posate, porcellane, liste nozze, vasi, lampade, paralumi, registrati, registrazione" />
+    <title>Linea Casa Bari - Storia del negozio</title>
+    <meta name="title" content="Linea Casa Bari - Storia del negozio" />
+    <meta name="description" content="Pagina sulla storia del negozio Linea Casa Bari" />
+    <meta name="keywords" content="piatti, bicchieri, posate, porcellane, liste nozze, vasi, lampade, paralumi, storia" />
     <meta name="language" content="italian it" />
     <meta name="author" content="Alessandro Bari, Navid Taha, Alice Sasso, Lorenzo Ferrarin" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,8 +26,13 @@
                 <li><a href="redirect_script.cgi?prodotti">Prodotti</a></li>
                 <li><a href="redirect_script.cgi?annunci">Annunci</a></li>
                 <li><a href="redirect_script.cgi?contattaci">Contattaci</a></li>
+				[% IF test == 'true' %]
+				<li><a href="redirect_script.cgi?account">Account</a></li>                
+				<li><a href="logout_script.cgi">Logout</a></li>
+				[% ELSE %]
                 <li><a href="redirect_script.cgi?login">Accedi</a></li>
                 <li><a href="redirect_script.cgi?registrazione">Registrati</a></li>
+				[% END %]
                 <li><a href="redirect_script.cgi?la_nostra_storia">La nostra Storia</a></li>
                 <li><a href="redirect_script.cgi?termini_spedizione">Termini e Spedizione</a></li>
                 <li><a href="redirect_script.cgi?resi_rimborsi">Resi e Rimborsi</a></li>
@@ -46,8 +51,7 @@
     
     <div id="menu">
         <span id="path">
-            Ti trovi in: Registrati
-        </span>
+            Ti trovi in: La nostra Storia</span>
     
         <div id="nav">
             <ul>
@@ -55,10 +59,18 @@
                 <li><a href="redirect_script.cgi?prodotti">Prodotti</a></li>
                 <li><a href="redirect_script.cgi?annunci">Annunci</a></li>
                 <li><a href="redirect_script.cgi?contattaci">Contattaci</a></li>
+                [% IF test == 'true' %]
+				<li><a href="redirect_script.cgi?account">Account</a></li>                
+				<li><a href="logout_script.cgi">Logout</a></li>
+				[% ELSE %]
 				<li><a href="redirect_script.cgi?login">Accedi</a></li>
                 <li><a href="redirect_script.cgi?registrazione">Registrati</a></li>
+				[% END %]
             </ul>
         </div>
+		<div id="nome_utente">
+			<span>[% email %]</span>
+		</div>
     </div>
     <div id="searchBar">
         <div id="searchContainer">
@@ -72,72 +84,65 @@
     </div>
     
     <div id="content">
-        <div id="registrazione-container-mobile">
-            <h2>Crea un account</h2>
-                <form>
-                    <ul class="registrazione-Block">
-                        <li>
-                            <label class="registrazione-nomeLabel">Nome:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="nome"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="registrazione-cognomeLabel">Cognome:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="cognome"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="registrazione-emailLabel">Email:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="email"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="registrazione-passwordLabel">Password:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password" name="password"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="registrazione-confermapasswordLabel">Conferma password:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password" name="conf_password"/></div><div class="inputRight"></div>
-                        </li>
-                    </ul>
-                    <div>
-                        <button class="button" type="submit" value="registrazione">Registrati</button>
-                    </div>
-                </form>
+        <h2 id="la_nostra_storia-titolo">Un po' di storia</h2>
+        <ul id="linea-tempo">
+            <li><a href="#la_nostra_storia-1960">1960</a></li>
+            <li><a href="#la_nostra_storia-1980">1980</a></li>
+            <li><a href="#la_nostra_storia-1990">1990</a></li>
+            <li><a href="#la_nostra_storia-2000">2000</a></li>
+            <li><a href="#la_nostra_storia-2015">2015</a></li>
+        </ul>
+
+        <ul id="linea-tempo-testo">
+            <li class="linea-tempo-testo-li">
+                <h3 id="la_nostra_storia-1960">Ferramenta stufe a legna ('60)</h3>
+                <p>Il negozio venne aperto intorno agli anni '60 da Dario Bari, che ne fece una ferramenta a gestione familiare.</p><p>Oltre ai tipici elementi da ferramenta vendeva stufe a legna con tutti i suoi accessori, questo fatto ne faceva un punto di riferimento nella bassa veronese, in quanto era l'unico negozio nel raggio di diversi chilometri a svolgere questo servizio dove la legna era la forma di riscaldamento pi&ugrave; usata.</p>
+
+            </li>
+            <li class="linea-tempo-su">
+                <a href="#la_nostra_storia_titolo">   
+                    Torna all'indice
+                </a>
+            </li>
+            <li class="linea-tempo-testo-li">
+                <h3 id="la_nostra_storia-1980">Articoli da regalo ('80)</h3>
+                <p>Linea Casa Bari venne completamente stravolto dal nuovo titolare, portandolo da ferramenta a negozio per la casa. Questo grande cambiamento import&ograve; un nuovo tipo di clientela.</p><p>La nuova linea di vendita comprendeva prodotti come piatti, bicchieri, posate, servizi da the, da caff&egrave;, eccetera.</p>
+                <p>La gestione rimase familiare, ma pass&ograve; alla generazione pi&ugrave; giovane</p>
+            </li>
+            <li class="linea-tempo-su">
+                <a href="#la_nostra_storia_titolo">   
+                    Torna all'indice
+                </a>
+            </li>
+            <li class="linea-tempo-testo-li">
+                <h3 id="la_nostra_storia-1990">Porcellane ('90)</h3>
+                <p>Il negozio cominci&ograve; ad interessarsi alla porcellana e cominciarono ad apparire nelle vetrine vasi, piatti, soprammobili dipinti a mano e i fantastici servizi di tazze inglesi di fattura <span xml:lang="en"> Royal Albert</span>.</p>
+            </li>
+            <li class="linea-tempo-su">
+                <a href="#la_nostra_storia_titolo">   
+                    Torna all'indice
+                </a>
+            </li>
+            <li class="linea-tempo-testo-li">
+                <h3 id="la_nostra_storia-2000">Lampade realizzate dal vaso</h3>
+                <p>Il successo conseguito dai vasi di porcellana port&ograve; ad un'altra novit&agrave; l'introduzione delle lampade, infatti un cliente poteva trovare in negozio delle lampade di ogni dimensione, costo e pregio.</p><p>La novit&agrave; pi&ugrave; grande consisteva per&ograve; nel fatto che un cliente interessato potesse scegliere lui stesso tra una vasta gamma di vasi e altrettanti paralumi e chiedere la composizione della sua lampada personalizzata</p>
+            </li>
+            <li class="linea-tempo-su">
+                <a href="#la_nostra_storia_titolo">   
+                    Torna all'indice
+                </a>
+            </li>
+            <li class="linea-tempo-testo-li">
+                <h3 id="la_nostra_storia-2015">Liste nozze</h3>
+                <p>La novit&agrave; pi&ugrave; recente consiste nell'introduzione delle liste nozze. Si tratta, appunto, della possibilita&agrave; di richiedere la propria lista nozze direttamente in negozio.</p><p>Il negozio organizza, inoltre, le composizioni delle bomboniere realizzando tutte le decorazioni richieste dai clienti.</p>
+            </li>
+            <li class="linea-tempo-su">
+                <a href="#la_nostra_storia_titolo">   
+                    Torna all'indice
+                </a>
+            </li>
+            </ul>
         </div>
-        
-        <div id="registrazione-container">
-            <div id="registrazione-container2">
-                <h2>Crea un account</h2>
-                <form action="../cgi-bin/registrazione_form.cgi" method="post">
-                    <ul class="registrazione-Block">
-                        <li>
-                            <label class="registrazione-nomeLabel">Nome:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="nome"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="registrazione-cognomeLabel">Cognome:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="cognome"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="registrazione-emailLabel">Email:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="email"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="registrazione-passwordLabel">Password:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password" name="password"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="registrazione-confermapasswordLabel">Conferma password:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password" name="conf_password"/></div><div class="inputRight"></div>
-                        </li>
-                    </ul>
-                    <div>
-                        <button class="button" type="submit" value="registrazione">Registrati</button>
-                    </div>
-                    <div class="registrazione-error">[% error %]</div>
-                </form>
-            </div>
-        
-        </div>
-    </div>
     
     <div id="footer">
         <a href="#header">
@@ -159,8 +164,8 @@
             <div class="footer-block">
                 <ul>
                     <li><a href="redirect_script.cgi?la_nostra_storia">La nostra Storia</a></li>
-                	<li><a href="redirect_script.cgi?termini_spedizione">Termini e Spedizione</a></li>
-                	<li><a href="redirect_script.cgi?resi_rimborsi">Resi e Rimborsi</a></li>
+                    <li><a href="redirect_script.cgi?termini_spedizione">Termini e Spedizione</a></li>
+                    <li><a href="redirect_script.cgi?resi_rimborsi">Resi e Rimborsi</a></li>
                 </ul>
             </div>
 
@@ -169,8 +174,13 @@
                     <li><a href="redirect_script.cgi?prodotti">Prodotti</a></li>
                 	<li><a href="redirect_script.cgi?annunci">Annunci</a></li>
                 	<li><a href="redirect_script.cgi?contattaci">Contattaci</a></li>
+                    [% IF test == 'true' %]
+					<li><a href="redirect_script.cgi?account">Account</a></li>                
+					<li><a href="logout_script.cgi">Logout</a></li>
+					[% ELSE %]
 					<li><a href="redirect_script.cgi?login">Accedi</a></li>
                 	<li><a href="redirect_script.cgi?registrazione">Registrati</a></li>
+					[% END %]
                 </ul>
             </div>
             

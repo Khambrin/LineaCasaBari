@@ -4,10 +4,10 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Linea Casa Bari - Registrati</title>
-    <meta name="title" content="Linea Casa Bari - Registrati" />
-    <meta name="description" content="Pagina per registrarsi come membro al sito sul negozio Linea Casa Bari" />
-    <meta name="keywords" content="piatti, bicchieri, posate, porcellane, liste nozze, vasi, lampade, paralumi, registrati, registrazione" />
+    <title>Linea Casa Bari - Prodotti</title>
+    <meta name="title" content="Linea Casa Bari - Prodotti" />
+    <meta name="description" content="Pagina dei prodotti acquistabili nel negozio Linea Casa Bari" />
+    <meta name="keywords" content="piatti, bicchieri, posate, porcellane, liste nozze, vasi, lampade, paralumi, prodotti, descrizione, immagini, compera, carrello " />
     <meta name="language" content="italian it" />
     <meta name="author" content="Alessandro Bari, Navid Taha, Alice Sasso, Lorenzo Ferrarin" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,8 +26,13 @@
                 <li><a href="redirect_script.cgi?prodotti">Prodotti</a></li>
                 <li><a href="redirect_script.cgi?annunci">Annunci</a></li>
                 <li><a href="redirect_script.cgi?contattaci">Contattaci</a></li>
+				[% IF test == 'true' %]
+				<li><a href="redirect_script.cgi?account">Account</a></li>                
+				<li><a href="logout_script.cgi">Logout</a></li>
+				[% ELSE %]
                 <li><a href="redirect_script.cgi?login">Accedi</a></li>
                 <li><a href="redirect_script.cgi?registrazione">Registrati</a></li>
+				[% END %]
                 <li><a href="redirect_script.cgi?la_nostra_storia">La nostra Storia</a></li>
                 <li><a href="redirect_script.cgi?termini_spedizione">Termini e Spedizione</a></li>
                 <li><a href="redirect_script.cgi?resi_rimborsi">Resi e Rimborsi</a></li>
@@ -46,8 +51,7 @@
     
     <div id="menu">
         <span id="path">
-            Ti trovi in: Registrati
-        </span>
+            Ti trovi in: Prodotti</span>
     
         <div id="nav">
             <ul>
@@ -55,10 +59,18 @@
                 <li><a href="redirect_script.cgi?prodotti">Prodotti</a></li>
                 <li><a href="redirect_script.cgi?annunci">Annunci</a></li>
                 <li><a href="redirect_script.cgi?contattaci">Contattaci</a></li>
+                [% IF test == 'true' %]
+				<li><a href="redirect_script.cgi?account">Account</a></li>                
+				<li><a href="logout_script.cgi">Logout</a></li>
+				[% ELSE %]
 				<li><a href="redirect_script.cgi?login">Accedi</a></li>
                 <li><a href="redirect_script.cgi?registrazione">Registrati</a></li>
+				[% END %]
             </ul>
         </div>
+		<div id="nome_utente">
+			<span>[% email %]</span>
+		</div>
     </div>
     <div id="searchBar">
         <div id="searchContainer">
@@ -72,72 +84,74 @@
     </div>
     
     <div id="content">
-        <div id="registrazione-container-mobile">
-            <h2>Crea un account</h2>
-                <form>
-                    <ul class="registrazione-Block">
-                        <li>
-                            <label class="registrazione-nomeLabel">Nome:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="nome"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="registrazione-cognomeLabel">Cognome:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="cognome"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="registrazione-emailLabel">Email:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="email"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="registrazione-passwordLabel">Password:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password" name="password"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="registrazione-confermapasswordLabel">Conferma password:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password" name="conf_password"/></div><div class="inputRight"></div>
-                        </li>
-                    </ul>
-                    <div>
-                        <button class="button" type="submit" value="registrazione">Registrati</button>
+        <div id="prodotti-resultInfoBar">
+            <span id="prodotti-resultInfoBlock">
+                1-k dei n risultati in "categoria"
+            </span>
+            <div id="prodotti-searchSortBlock">
+                <form id="prodotti-searchSortForm" method="post">
+                    <div id="prodotti-searchSortFormLabel">
+                        Ordina per
                     </div>
-                </form>
-        </div>
-        
-        <div id="registrazione-container">
-            <div id="registrazione-container2">
-                <h2>Crea un account</h2>
-                <form action="../cgi-bin/registrazione_form.cgi" method="post">
-                    <ul class="registrazione-Block">
-                        <li>
-                            <label class="registrazione-nomeLabel">Nome:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="nome"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="registrazione-cognomeLabel">Cognome:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="cognome"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="registrazione-emailLabel">Email:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="email"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="registrazione-passwordLabel">Password:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password" name="password"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="registrazione-confermapasswordLabel">Conferma password:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password" name="conf_password"/></div><div class="inputRight"></div>
-                        </li>
-                    </ul>
-                    <div>
-                        <button class="button" type="submit" value="registrazione">Registrati</button>
+                    <div id="prodotti-searchSortFormSelect">
+                        <select>
+                            <option value="rilevanza">Rilevanza</option>
+                            <option value="prezzo_crescente">Prezzo crescente</option>
+                            <option value="prezzo_decrescente">Prezzo decrescente</option>
+                            <option value="media_recensioni_clienti">Media recensioni clienti</option>
+                            <option value="ultimi_arrivi">Ultimi arrivi</option>
+                        </select>
                     </div>
-                    <div class="registrazione-error">[% error %]</div>
                 </form>
             </div>
-        
+        </div>
+        <div id="prodotti-centralContainer">
+            <div id="prodotti-leftBlock">
+                <div id="prodotti-filterlabel">Filtra per</div>
+                <h2>Marche</h2>
+            </div><div id="prodotti-rightBlock">
+                <div id="prodotti-categorie">
+                    <ul>
+                        <li><a href="liste_nozze.html">Liste nozze</a></li>
+                        <li><a href="porcellane.html">Porcellane</a></li>
+                        <li><a href="pentolame.html">Pentolame</a></li>
+                        <li><a href="tovaglie.html">Tovaglie</a></li>
+                        <li><a href="tavola.html">Tavola</a></li>
+                        <li><a href="paralumi.html">Paralumi</a></li>
+                    </ul>
+                </div>
+            
+                <div id="prodotti-vetrina">
+
+                </div>
+            
+                <div id="prodotti-pageSelector">
+                    <a href="pagina_precedente.html">
+                        <span id="prodotti-frecciaPaginaPrecedente">
+                        </span>
+                    </a>
+                    <span id="prodotti-paginaPrecedente">
+                        Pagina precedente
+                    </span>
+                    <div id="prodotti-paginaNumeri">
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                        </ul>
+                    </div>
+                    <span id="prodotti-paginaSuccessiva">
+                        <a href="pagina_successiva.html">Pagina successiva</a>
+                    </span>
+                    <a href="pagina_successiva.html">
+                        <span id="prodotti-frecciaPaginaSuccessiva">
+                        </span>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
+    
     
     <div id="footer">
         <a href="#header">
@@ -159,8 +173,8 @@
             <div class="footer-block">
                 <ul>
                     <li><a href="redirect_script.cgi?la_nostra_storia">La nostra Storia</a></li>
-                	<li><a href="redirect_script.cgi?termini_spedizione">Termini e Spedizione</a></li>
-                	<li><a href="redirect_script.cgi?resi_rimborsi">Resi e Rimborsi</a></li>
+                    <li><a href="redirect_script.cgi?termini_spedizione">Termini e Spedizione</a></li>
+                    <li><a href="redirect_script.cgi?resi_rimborsi">Resi e Rimborsi</a></li>
                 </ul>
             </div>
 
@@ -169,8 +183,13 @@
                     <li><a href="redirect_script.cgi?prodotti">Prodotti</a></li>
                 	<li><a href="redirect_script.cgi?annunci">Annunci</a></li>
                 	<li><a href="redirect_script.cgi?contattaci">Contattaci</a></li>
+                    [% IF test == 'true' %]
+					<li><a href="redirect_script.cgi?account">Account</a></li>                
+					<li><a href="logout_script.cgi">Logout</a></li>
+					[% ELSE %]
 					<li><a href="redirect_script.cgi?login">Accedi</a></li>
                 	<li><a href="redirect_script.cgi?registrazione">Registrati</a></li>
+					[% END %]
                 </ul>
             </div>
             
