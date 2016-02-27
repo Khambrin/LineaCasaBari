@@ -27,7 +27,7 @@
                 <li><a href="redirect_script.cgi?prodotti">Prodotti</a></li>
                 <li><a href="redirect_script.cgi?annunci">Annunci</a></li>
                 <li><a href="redirect_script.cgi?contattaci">Contattaci</a></li>
-				[% IF test == 'true' %]
+				[% IF sessione == 'true' %]
 				<li><a href="redirect_script.cgi?account">Account</a></li>                
 				<li><a href="logout_script.cgi">Logout</a></li>
 				[% ELSE %]
@@ -60,7 +60,7 @@
                 <li><a href="redirect_script.cgi?prodotti">Prodotti</a></li>
                 <li><a href="redirect_script.cgi?annunci">Annunci</a></li>
                 <li><a href="redirect_script.cgi?contattaci">Contattaci</a></li>
-                [% IF test == 'true' %]
+                [% IF sessione == 'true' %]
 				<li><a href="redirect_script.cgi?account">Account</a></li>                
 				<li><a href="logout_script.cgi">Logout</a></li>
 				[% ELSE %]
@@ -184,7 +184,7 @@
                     <li><a href="redirect_script.cgi?prodotti">Prodotti</a></li>
                 	<li><a href="redirect_script.cgi?annunci">Annunci</a></li>
                 	<li><a href="redirect_script.cgi?contattaci">Contattaci</a></li>
-                    [% IF test == 'true' %]
+                    [% IF sessione == 'true' %]
 					<li><a href="redirect_script.cgi?account">Account</a></li>                
 					<li><a href="logout_script.cgi">Logout</a></li>
 					[% ELSE %]

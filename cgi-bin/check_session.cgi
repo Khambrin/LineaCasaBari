@@ -32,7 +32,7 @@ switch($ENV{'QUERY_STRING'})
 if ($session->is_empty)
 {
 	$vars={
-		'test' => "false",
+		'sessione' => "false",
 	};
 	if ($ENV{'QUERY_STRING'} eq 'login' or $ENV{'QUERY_STRING'} eq 'account')
 	{
@@ -46,7 +46,7 @@ if ($session->is_empty)
 else
 {	
 	$vars={
-		'test' => "true",
+		'sessione' => "true",
 		'email' => $session->param("email"),
 	};
 	if ($ENV{'QUERY_STRING'} eq 'login' or $ENV{'QUERY_STRING'} eq 'registrazione')

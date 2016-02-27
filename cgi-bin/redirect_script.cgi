@@ -19,6 +19,5 @@ if ($session->is_empty)
 }
 else
 {	
-	#print $cgi->redirect("login_form.cgi?$ENV{'QUERY_STRING'}");
 	print $cgi->redirect("check_session.cgi?$ENV{'QUERY_STRING'}");
 }
