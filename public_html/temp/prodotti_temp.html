@@ -22,20 +22,20 @@
         <label for="drawer-toggle" id="drawer-toggle-label"></label>
         <div id="drawer">
             <ul>
-                <li><a href="redirect_script.cgi?index"><span xml:lang="en">Home</span></a></li>
-                <li><a href="redirect_script.cgi?prodotti">Prodotti</a></li>
-                <li><a href="redirect_script.cgi?annunci">Annunci</a></li>
-                <li><a href="redirect_script.cgi?contattaci">Contattaci</a></li>
+                <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
+                <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
+                <li><a href="check_session.cgi?annunci">Annunci</a></li>
+                <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
 				[% IF sessione == 'true' %]
-				<li><a href="redirect_script.cgi?account">Account</a></li>                
+				<li><a href="check_session.cgi?account">Account</a></li>                
 				<li><a href="logout_script.cgi">Logout</a></li>
 				[% ELSE %]
-                <li><a href="redirect_script.cgi?login">Accedi</a></li>
-                <li><a href="redirect_script.cgi?registrazione">Registrati</a></li>
+                <li><a href="check_session.cgi?login">Accedi</a></li>
+                <li><a href="check_session.cgi?registrazione">Registrati</a></li>
 				[% END %]
-                <li><a href="redirect_script.cgi?la_nostra_storia">La nostra Storia</a></li>
-                <li><a href="redirect_script.cgi?termini_spedizione">Termini e Spedizione</a></li>
-                <li><a href="redirect_script.cgi?resi_rimborsi">Resi e Rimborsi</a></li>
+                <li><a href="check_session.cgi?la_nostra_storia">La nostra Storia</a></li>
+                <li><a href="check_session.cgi?termini_spedizione">Termini e Spedizione</a></li>
+                <li><a href="check_session.cgi?resi_rimborsi">Resi e Rimborsi</a></li>
             </ul>
         </div>
     </div>
@@ -43,7 +43,7 @@
         <a href="#content" class="skip">Salta al contenuto</a>
     </div>
     <div id="header">
-    <a href="redirect_script.cgi?index">
+    <a href="check_session.cgi?index">
         <span id="header-logo"></span>
     </a>
     <h1 id="nome_negozio">Linea Casa Bari</h1>
@@ -55,16 +55,16 @@
     
         <div id="nav">
             <ul>
-                <li><a href="redirect_script.cgi?index"><span xml:lang="en">Home</span></a></li>
-                <li><a href="redirect_script.cgi?prodotti">Prodotti</a></li>
-                <li><a href="redirect_script.cgi?annunci">Annunci</a></li>
-                <li><a href="redirect_script.cgi?contattaci">Contattaci</a></li>
+                <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
+                <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
+                <li><a href="check_session.cgi?annunci">Annunci</a></li>
+                <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
                 [% IF sessione == 'true' %]
-				<li><a href="redirect_script.cgi?account">Account</a></li>                
+				<li><a href="check_session.cgi?account">Account</a></li>                
 				<li><a href="logout_script.cgi">Logout</a></li>
 				[% ELSE %]
-				<li><a href="redirect_script.cgi?login">Accedi</a></li>
-                <li><a href="redirect_script.cgi?registrazione">Registrati</a></li>
+				<li><a href="check_session.cgi?login">Accedi</a></li>
+                <li><a href="check_session.cgi?registrazione">Registrati</a></li>
 				[% END %]
             </ul>
         </div>
@@ -172,23 +172,23 @@
            
             <div class="footer-block">
                 <ul>
-                    <li><a href="redirect_script.cgi?la_nostra_storia">La nostra Storia</a></li>
-                    <li><a href="redirect_script.cgi?termini_spedizione">Termini e Spedizione</a></li>
-                    <li><a href="redirect_script.cgi?resi_rimborsi">Resi e Rimborsi</a></li>
+                    <li><a href="check_session.cgi?la_nostra_storia">La nostra Storia</a></li>
+                    <li><a href="check_session.cgi?termini_spedizione">Termini e Spedizione</a></li>
+                    <li><a href="check_session.cgi?resi_rimborsi">Resi e Rimborsi</a></li>
                 </ul>
             </div>
 
             <div class="footer-block">
                 <ul>
-                    <li><a href="redirect_script.cgi?prodotti">Prodotti</a></li>
-                	<li><a href="redirect_script.cgi?annunci">Annunci</a></li>
-                	<li><a href="redirect_script.cgi?contattaci">Contattaci</a></li>
+                    <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
+                	<li><a href="check_session.cgi?annunci">Annunci</a></li>
+                	<li><a href="check_session.cgi?contattaci">Contattaci</a></li>
                     [% IF sessione == 'true' %]
-					<li><a href="redirect_script.cgi?account">Account</a></li>                
+					<li><a href="check_session.cgi?account">Account</a></li>                
 					<li><a href="logout_script.cgi">Logout</a></li>
 					[% ELSE %]
-					<li><a href="redirect_script.cgi?login">Accedi</a></li>
-                	<li><a href="redirect_script.cgi?registrazione">Registrati</a></li>
+					<li><a href="check_session.cgi?login">Accedi</a></li>
+                	<li><a href="check_session.cgi?registrazione">Registrati</a></li>
 					[% END %]
                 </ul>
             </div>
