@@ -21,14 +21,17 @@
     <div id="menu-drawer">
         <input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
         <label for="drawer-toggle" id="drawer-toggle-label"></label>
-        <div id="drawer">
+       <div id="drawer">
             <ul>
                 <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
                 <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
                 <li><a href="check_session.cgi?annunci">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
 				[% IF sessione == 'true' %]
-				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>                
+				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>				
+				[% IF amministratore == 'true' %]
+				<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
+				[% END %]
 				<li><a href="logout_script.cgi">Logout</a></li>
 				[% ELSE %]
                 <li><a href="check_session.cgi?login">Accedi</a></li>
@@ -61,7 +64,10 @@
                 <li><a href="check_session.cgi?annunci">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
                 [% IF sessione == 'true' %]
-				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>                
+				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
+				[% IF amministratore == 'true' %]
+				<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
+				[% END %]
 				<li><a href="logout_script.cgi">Logout</a></li>
 				[% ELSE %]
 				<li><a href="check_session.cgi?login">Accedi</a></li>
@@ -144,7 +150,10 @@
                 	<li><a href="check_session.cgi?annunci">Annunci</a></li>
                 	<li><a href="check_session.cgi?contattaci">Contattaci</a></li>
                     [% IF sessione == 'true' %]
-					<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>                
+					<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
+					[% IF amministratore == 'true' %]
+					<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
+					[% END %]
 					<li><a href="logout_script.cgi">Logout</a></li>
 					[% ELSE %]
 					<li><a href="check_session.cgi?login">Accedi</a></li>
