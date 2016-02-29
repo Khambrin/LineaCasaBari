@@ -27,10 +27,10 @@ switch($ENV{'QUERY_STRING'})
 	case 'prodotti' { $file='prodotti_temp.html'; }
 	case 'resi_rimborsi' { $file='resi_rimborsi_temp.html'; }
 	case 'termini_spedizione' { $file='termini_spedizione_temp.html'; }
-	case 'i_miei_ordini' { $file='i_miei_ordini_temp'; }
-	case 'impostazioni_account' { $file='impostazioni_account_temp' }
-	case 'indirizzi' { $file='indirizzi_temp' }
-	case 'pagamenti' { $file='pagamenti_temp' }
+	case 'i_miei_ordini' { $file='i_miei_ordini_temp.html'; }
+	case 'impostazioni_account' { $file='impostazioni_account_temp.html' }
+	case 'indirizzi' { $file='indirizzi_temp.html' }
+	case 'pagamenti' { $file='pagamenti_temp.html' }
 }
 
 if ($session->is_empty)
