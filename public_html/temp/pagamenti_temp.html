@@ -4,10 +4,10 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Linea Casa Bari - Contatti</title>
-    <meta name="title" content="Linea Casa Bari - Contattaci" />
-    <meta name="description" content="Pagina per contattare i titolari del negozio Linea Casa Bari" />
-    <meta name="keywords" content="piatti, bicchieri, posate, porcellane, liste nozze, vasi, lampade, paralumi, contatti, messaggio" />
+    <title>Linea Casa Bari - Account</title>
+    <meta name="title" content="Linea Casa Bari - Account" />
+    <meta name="description" content="Pagina per gestire l'account del negozio Linea Casa Bari" />
+    <meta name="keywords" content="account, ordini, pagamenti, impostazioni, indirizzi, gestione" />
     <meta name="language" content="italian it" />
     <meta name="author" content="Alessandro Bari, Navid Taha, Alice Sasso, Lorenzo Ferrarin" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,7 +28,7 @@
                 <li><a href="check_session.cgi?annunci">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
 				[% IF sessione == 'true' %]
-				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>                
+				<li><a href="check_session.cgi?account">Account</a></li>                
 				<li><a href="logout_script.cgi">Logout</a></li>
 				[% ELSE %]
                 <li><a href="check_session.cgi?login">Accedi</a></li>
@@ -52,7 +52,7 @@
     
     <div id="menu">
         <span id="path">
-            Ti trovi in: Contattaci</span>
+            Ti trovi in: Account</span>
     
         <div id="nav">
             <ul>
@@ -83,74 +83,27 @@
             </form>
         </div>
     </div>
-    
     <div id="content">
-        <div id="contattaci-container-mobile">
-            <h2>Inviaci un messaggio</h2>
-                <form>
-                    <ul class="contattaci-Block">
-                        <li class="contattaci-Block-li">
-                            <label class="contattaci-nomeLabel">Nome:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text"/></div><div class="inputRight"></div>
-                        </li>
-                        <li class="contattaci-Block-li">
-                            <label class="contattaci-cognomeLabel">Cognome:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text"/></div><div class="inputRight"></div>
-                        </li>
-                        <li class="contattaci-Block-li">
-                            <label class="contattaci-emailLabel">Email:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text"/></div><div class="inputRight"></div>
-                        </li>
-                        <li class="contattaci-Block-li">
-                            <label class="contattaci-telefonoLabel">Telefono:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text"/></div><div class="inputRight"></div>
-                        </li>
-                        <li class="contattaci-messaggioLabelBlock">
-                            <label class="contattaci-messaggioLabel">Messaggio:</label>
-                        </li>
-                        <li class="contattaci-Block-li">
-                            <textarea class="contattaci-messaggioTextArea" rows="50" cols="50"></textarea>
-                        </li>
-                    </ul>
-                    <div>
-                        <button class="button" type="submit">Invia</button>
-                    </div>
-                </form>
-        </div>
-        
-        <div id="contattaci-container">
-            <div id="contattaci-container2">
-                <h2>Inviaci un messaggio</h2>
-                <form>
-                    <ul class="contattaci-Block">
-                        <li class="contattaci-Block-li">
-                            <label class="contattaci-nomeLabel">Nome:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text"/></div><div class="inputRight"></div>
-                        </li>
-                        <li class="contattaci-Block-li">
-                            <label class="contattaci-cognomeLabel">Cognome:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text"/></div><div class="inputRight"></div>
-                        </li>
-                        <li class="contattaci-Block-li">
-                            <label class="contattaci-emailLabel">Email:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text"/></div><div class="inputRight"></div>
-                        </li>
-                        <li class="contattaci-Block-li">
-                            <label class="contattaci-telefonoLabel">Telefono:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text"/></div><div class="inputRight"></div>
-                        </li>
-                        <li class="contattaci-messaggioLabelBlock">
-                            <label class="contattaci-messaggioLabel">Messaggio:</label>
-                        </li>
-                        <li class="contattaci-Block-li">
-                            <textarea class="contattaci-messaggioTextArea" rows="50" cols="50"></textarea>
-                        </li>
-                    </ul>
-                    <div>
-                        <button class="button" type="submit">Invia</button>
-                    </div>
-                </form>
-            </div>
+        <div id="col">
+            <div id="left-col">
+                <ul>
+                    <li class="title_link"><a href="check_session.cgi?i_miei_ordini">I miei oridini</a></li>
+                    <li class="subtitle_link">Guarda e modifica gli ordini recenti</li>
+                </ul>
+                <ul>
+                    <li class="title_link"><a href="check_session.cgi?impostazioni_account">Impostazioni account</a></li>
+                    <li class="subtitle_link">Gestione password, e-mail</li>
+                </ul>
+                <ul>
+                    <li id="pagamenti" class="title_link">Pagamenti</li>
+                    <li class="subtitle_link">Gestisci impostazioni di pagamento</li>
+                </ul>
+                <ul>
+                    <li class="title_link"><a href="check_session.cgi?indirizzi">Indirizzi</a></li>
+                    <li class="subtitle_link">Gestisci gli indirizzi di spedizione</li>
+                </ul>
+            </div><div id="right-col">
+            </div>        
         </div>
     </div>
 
@@ -185,7 +138,7 @@
                 	<li><a href="check_session.cgi?annunci">Annunci</a></li>
                 	<li><a href="check_session.cgi?contattaci">Contattaci</a></li>
                     [% IF sessione == 'true' %]
-					<li><a href="check_session.cgi?account">Account</a></li>                
+					<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>                
 					<li><a href="logout_script.cgi">Logout</a></li>
 					[% ELSE %]
 					<li><a href="check_session.cgi?login">Accedi</a></li>
