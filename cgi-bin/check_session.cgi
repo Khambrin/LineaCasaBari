@@ -7,6 +7,7 @@ use strict;
 use Template;
 use CGI::Session;
 use Switch;
+use XML::LibXML;
 
 my $cgi=new CGI;
 print $cgi->header('text/html');
@@ -18,11 +19,16 @@ my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
 	});
 
+my $parser=XML::LibXML->new;
+my $doc=$parser->parse_file("../data/Utenti.xml");
+
 switch($ENV{'QUERY_STRING'})
 {
 	case 'index' { $file='index_temp.html'; }
 	case 'annunci' { $file='annunci_temp.html'; }
 	case 'contattaci' { $file='contattaci_temp.html'; }
+	case 'registrazione' { $file='registrazione_temp.html'; }
+	case 'login' { $file='login_temp.html'; }
 	case 'la_nostra_storia' { $file='la_nostra_storia_temp.html'; }
 	case 'prodotti' { $file='prodotti_temp.html'; }
 	case 'resi_rimborsi' { $file='resi_rimborsi_temp.html'; }
@@ -31,6 +37,10 @@ switch($ENV{'QUERY_STRING'})
 	case 'impostazioni_account' { $file='impostazioni_account_temp.html' }
 	case 'indirizzi' { $file='indirizzi_temp.html' }
 	case 'pagamenti' { $file='pagamenti_temp.html' }
+	case 'togli_utenti' { $file='togli_utenti_temp.html' }
+	case 'gestione_prodotti' { $file='gestione_prodotti_temp.html'; }
+	case 'gestione_ordini' { $file='gestione_ordini_temp.html'; }
+	case 'gestione_annunci' { $file='gestione_annunci_temp.html' }
 }
 
 if ($session->is_empty)
@@ -38,28 +48,25 @@ if ($session->is_empty)
 	$vars={
 		'sessione' => "false",
 	};
-	if ($ENV{'QUERY_STRING'} eq 'login' or $ENV{'QUERY_STRING'} eq 'account')
+	if ($ENV{'QUERY_STRING'} eq 'i_miei_ordini' or $ENV{'QUERY_STRING'} eq 'pagamenti' or $ENV{'QUERY_STRING'} eq 'impostazioni_account' 
+		or $ENV{'QUERY_STRING'} eq 'indirizzi' or $ENV{'QUERY_STRING'} eq 'togli_utenti' or $ENV{'QUERY_STRING'} eq 'gestione_prodotti' 
+		or $ENV{'QUERY_STRING'} eq 'gestione_ordini' or $ENV{'QUERY_STRING'} eq 'gestione_annunci')
 	{
 		$file='login_temp.html';
-	}
-	if ($ENV{'QUERY_STRING'} eq 'registrazione')
-	{
-		$file='registrazione_temp.html';
 	}
 }
 else
 {	
+	my $email=$session->param("email");
 	$vars={
 		'sessione' => "true",
-		'email' => $session->param("email"),
+		'email' => $email,
+		'amministratore' => $doc->findnodes("Utenti/Utente[Email[text()='$email']]/Amministratore/text()"),
 	};
 	if ($ENV{'QUERY_STRING'} eq 'login' or $ENV{'QUERY_STRING'} eq 'registrazione')
 	{
 		$file='index_temp.html';
 	}
-	if ($ENV{'QUERY_STRING'} eq 'account')
-	{
-		$file='account_temp.html';
-	}
+	
 }
 	$template->process($file,$vars) || die $template->error();

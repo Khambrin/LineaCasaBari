@@ -1323,7 +1323,7 @@ div.post h3{
     }
     #i_miei_ordini
     {
-       background-image: url(images/rightArrow2.png);
+        background-image: url(images/rightArrow2.png);
         background-repeat: no-repeat;
         background-position: right;
         background-size: 2em; 
@@ -1331,7 +1331,7 @@ div.post h3{
     
     #impostazioni_account
     {
-       background-image: url(images/rightArrow2.png);
+        background-image: url(images/rightArrow2.png);
         background-repeat: no-repeat;
         background-position: right;
         background-size: 2em; 
@@ -1339,7 +1339,7 @@ div.post h3{
     
     #pagamenti
     {
-       background-image: url(images/rightArrow2.png);
+        background-image: url(images/rightArrow2.png);
         background-repeat: no-repeat;
         background-position: right;
         background-size: 2em; 
@@ -1347,7 +1347,7 @@ div.post h3{
     
     #indirizzi
     {
-       background-image: url(images/rightArrow2.png);
+        background-image: url(images/rightArrow2.png);
         background-repeat: no-repeat;
         background-position: right;
         background-size: 2em; 
@@ -1359,6 +1359,34 @@ div.post h3{
         
         
     }
+
+/*------------------------------------------------ gestione sito ----------------------------------------------------------------------------------*/
+
+    #togli_utenti{
+        background-image: url(images/rightArrow2.png);
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: 2em; 
+    }
     
+    #gestione_prodotti{
+        background-image: url(images/rightArrow2.png);
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: 2em; 
+    }
     
+    #gestione_ordini{
+        background-image: url(images/rightArrow2.png);
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: 2em;
+    }
+    
+    #gestione_annunci{
+        background-image: url(images/rightArrow2.png);
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: 2em;
+    }
 }

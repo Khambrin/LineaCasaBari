@@ -7,7 +7,6 @@ use XML::LibXML;
 use Template;
 
 my $cgi=new CGI;
-print $cgi->header('text/html');
 
 my @errors=();
 my %values;
@@ -48,6 +47,7 @@ foreach my $chiave (keys %values)
 
 if (@errors)
 {
+	print $cgi->header('text/html');
 	my $file='registrazione_temp.html';
 	my $vars={
 		'error' => "<ul>"."<li>[@errors]</li>"."</ul>"
@@ -94,6 +94,7 @@ else
 		open(XML,">","../data/Utenti.xml");
 		print XML $doc->toString();
 		close(XML);
+		print $cgi->redirect("auto_login.cgi?$values{'email'}");
 	}
 	else
 	{
@@ -130,6 +131,7 @@ else
 		open (XML,">","../data/Utenti.xml");
 		print XML $doc->toString();
 		close(XML);
+		print $cgi->redirect("auto_login.cgi?$values{'email'}");
 	}	
 }
 
