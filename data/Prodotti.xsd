@@ -23,7 +23,7 @@
     		<xsd:element name="Immagine" type="xsd:string"/>
     		<xsd:element name="Tag" type="xsd:string" maxOccurs="unbounded"
     			minOccurs="1"/>
-			<xsd:element name="recensione" type="Tipo_recensione" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Recensione" type="Tipo_recensione" minOccurs="0" maxOccurs="unbounded"/>
     	</xsd:sequence>
     </xsd:complexType>
 

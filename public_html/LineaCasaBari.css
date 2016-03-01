@@ -122,6 +122,7 @@ a.skip:hover {
 body
 {
     font-size:100%;
+    background-color: #FAFAFA;
 }
 
 .button {
@@ -207,7 +208,7 @@ body
     display: block;
     width: 100%;
     height: 3em;
-    background-color: #FFFFFF;
+    background-color: #295380;
     padding-top: 0.2em;
 }
 
@@ -279,7 +280,7 @@ body
 
 #footer
 {
-    background-color: #FFFFFF;
+    background-color: #295380;
     margin-top: 1.5em;
 }
 
@@ -288,6 +289,9 @@ body
     padding-bottom: 1em;
     padding-left: 1.5em;
     padding-top: 0.5em;
+    text-decoration:none;
+    color:aliceblue;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 #footer-logo{
@@ -304,6 +308,12 @@ body
     display: block;
     text-align: center;
 }
+
+.footer-block a{
+    text-decoration: none;
+    color:aliceblue;
+}
+
 
 .footer-block
 {
@@ -518,6 +528,10 @@ div.post h3{
 
 /*-------------------------------------- la_nostra_storia.html --------------------------------------------------------------------------------*/
 
+#content h2{
+    font-family: Georgia, serif;
+}
+
 #la_nostra_storia-titolo{
     text-align: center;
     padding-top: 1em;
@@ -576,8 +590,9 @@ div.post h3{
     padding-top: 0.4em;
     padding-bottom: 0.4em;
     margin-bottom: 1em;
-    background-color: #FFFFFF;
+    background-color: #E1E3E4;
     border-bottom: 1px solid;
+    font-family: Georgia, serif;
 }
 
 #linea-tempo-testo p
@@ -595,7 +610,7 @@ div.post h3{
 {
     width: 45%;
     border: 1px solid;
-    background-color: #FFFFFF;
+    background-color: #E1E3E4;
     margin-bottom: 3em;
     display: inline-block;
     padding-top:0.5em;
@@ -804,7 +819,10 @@ div.post h3{
         padding-top :1em;
         padding-bottom: 2em;
         height: 1em;
-        background-color: #FFFFFF;
+        background-color: #295380;
+        border-top:0.1em;
+        border-top-style:solid;
+        border-top-color:white;
     }
 
     #path
@@ -813,6 +831,7 @@ div.post h3{
         height: 1em;
         width: 24%;   
         padding-left: 1em;
+        color: white;
     }
     
     #nav
@@ -828,7 +847,7 @@ div.post h3{
         list-style: none;
         display: inline;
         padding-right: 1.5em;
-        border-left:1px solid;
+        border-color:#15164B;
         padding-left:1em;
         text-align: center;
     }
@@ -836,6 +855,7 @@ div.post h3{
     #nav a
     {
         text-decoration: none;
+        color: white;
     }
 
     #torna-su
@@ -847,11 +867,13 @@ div.post h3{
         border-bottom-color: aliceblue;
         display: inline-block;
         width: 100%;
+        color: white;
     }
 
     #torna-su a
     {
-       text-decoration: none; 
+       text-decoration: none;
+       color: white; 
     }
 
     #footer-logo{
@@ -935,6 +957,8 @@ div.post h3{
         margin-left: 1em;
         margin-right: 1em;
         padding:0.5em;
+        color: white;
+        box-shadow: 1px 1px 1px 1px #888888;
 
     }
     
@@ -969,6 +993,7 @@ div.post h3{
     #linea-tempo a
     {
         text-decoration: none;
+        color: white;
     }
 
     #linea-tempo-testo h3
@@ -976,8 +1001,10 @@ div.post h3{
         padding-top: 0.4em;
         padding-bottom: 0.4em;
         margin-bottom: 1em;
-        background-color: #FFFFFF;
+        background-color: #295380;
         border-bottom: 1px solid;
+        border-bottom-color: darkgrey;
+        color: white;
     }
 
     #linea-tempo-testo p
@@ -995,11 +1022,12 @@ div.post h3{
     {
         width: 25%;
         border: 1px solid;
-        background-color: #FFFFFF;
+        background-color: #295380;
         margin-bottom: 4em;
         display: inline-block;
         padding-top:0.5em;
-        padding-bottom:0.5em;    
+        padding-bottom:0.5em;   
+        box-shadow: 1px 1px 1px #888888;  
     }
 
     .linea-tempo-su a
@@ -1023,7 +1051,6 @@ div.post h3{
         width: 80%;
         height: 25em;
         vertical-align: middle;
-        /*margin: -4px;*/
     }
 
     #prodotti-categorie{
@@ -1161,10 +1188,10 @@ div.post h3{
 
     #login-container2 {
         width: 50%;
-        border: 1px solid;
+        box-shadow: 1px 1px 1px 1px #888888;  
         margin: 0 auto;
         height: 18.5em;
-        background-color: #FFFFFF;
+        background-color: #E1E3E4;
     }
 
     #login-container2 h2{
@@ -1192,8 +1219,9 @@ div.post h3{
     #registrazione-container2{
         width: 50%;
         margin: 0 auto;
-        background-color: #FFFFFF;
+        background-color: #E1E3E4;
         height: 35em;
+        box-shadow: 1px 1px 1px 1px #888888; 
     }
 
     #registrazione-container2 h2{
@@ -1217,10 +1245,10 @@ div.post h3{
 
     #contattaci-container2 {
         width: 50%;
-        border: 1px solid;
+        box-shadow: 1px 1px 1px 1px #888888;
         margin: 0 auto;
         height: 38.5em;
-        background-color: #FFFFFF;
+        background-color: #E1E3E4;
     }
 
     #contattaci-container2 h2{
@@ -1392,5 +1420,53 @@ div.post h3{
     
     .togli_utenti-pulsante{
         display: inline-block;
+    }
+    
+    #gestione_prodotti-textarea{
+        width: 80%;
+        height: 10em;
+    }
+    .gestione_prodotti-labels{
+        text-align: left;
+    }
+    .gestione_prodotti-inputLeft{
+        display: inline-block;
+        background-image: url(images/input_left.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 12px;
+        height: 2em;
+        vertical-align: middle;
+        margin-right: -0.3em;
+    }
+    .gestione_prodotti-inputMiddle{
+        display: inline-block;
+        vertical-align: middle;
+        background-image: url(images/input_middle.png);
+        width: 30%;
+        background-size: contain;
+        background-repeat: repeat-x;
+    }
+    
+    .gestione_prodotti-inputRight{
+        display: inline-block;
+        vertical-align: middle;
+        background-image:url(images/input_right.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 2em;
+        width: 12px;
+    }
+    .gestione_prodotti-input{
+        background-color: transparent;
+        border: none;
+        width: 100%;
+        height: 2em;
+        font-size: 1em;
+    }
+    #gestione_prodotti-form{
+        text-align: center;
+        padding-top: 2em;
+        
     }
 }
