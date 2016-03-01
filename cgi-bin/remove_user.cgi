@@ -10,7 +10,7 @@ use Switch;
 use XML::LibXML;
 
 my $cgi=new CGI;
-print $cgi->header('text/html');
+
 
 my $session = CGI::Session->load();
 my $email=$session->param("email");
@@ -27,8 +27,8 @@ my $file='togli_utenti_temp.html';
 my $tot;
 foreach my $i (@users)
 {
-	my $asd="<li>$i".'<form class="togli_utenti-pulsante"><div><input type="submit" value="Rimuovi"/></div></form></li>';
-	$tot=$tot.$asd;
+	my $x="<li>$i".'<form class="togli_utenti-pulsante" action="remove_user_form.cgi"><div><input type="submit" value="Rimuovi"/><input type="hidden" name="email" value="'."$i".'"/></div></form></li>';
+	$tot=$tot.$x;
 }
 
 my $lista_utenti="<ul>"."$tot"."</ul>";
@@ -39,4 +39,5 @@ my $vars={
 		'amministratore' => "true",
 		'lista_utenti' => $lista_utenti,
 	};
+print $cgi->header('text/html');
 $template->process($file,$vars) || die $template->error();
