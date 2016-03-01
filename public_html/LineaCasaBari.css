@@ -1389,4 +1389,8 @@ div.post h3{
         background-position: right;
         background-size: 2em;
     }
+    
+    .togli_utenti-pulsante{
+        display: inline-block;
+    }
 }

@@ -10,7 +10,7 @@ use Switch;
 use XML::LibXML;
 
 my $cgi=new CGI;
-print $cgi->header('text/html');
+
 my $session = CGI::Session->load();
 
 my $file, my $vars;
@@ -37,7 +37,6 @@ switch($ENV{'QUERY_STRING'})
 	case 'impostazioni_account' { $file='impostazioni_account_temp.html' }
 	case 'indirizzi' { $file='indirizzi_temp.html' }
 	case 'pagamenti' { $file='pagamenti_temp.html' }
-	case 'togli_utenti' { $file='togli_utenti_temp.html' }
 	case 'gestione_prodotti' { $file='gestione_prodotti_temp.html'; }
 	case 'gestione_ordini' { $file='gestione_ordini_temp.html'; }
 	case 'gestione_annunci' { $file='gestione_annunci_temp.html' }
@@ -67,6 +66,10 @@ else
 	{
 		$file='index_temp.html';
 	}
-	
+	if ($ENV{'QUERY_STRING'} eq 'togli_utenti')
+	{
+		print $cgi->redirect("remove_user.cgi");
+	}
 }
+	print $cgi->header('text/html');
 	$template->process($file,$vars) || die $template->error();
