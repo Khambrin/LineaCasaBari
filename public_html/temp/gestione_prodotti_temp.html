@@ -109,37 +109,59 @@
                     <li class="subtitle_link">Togli, aggiungi e modifica gli annunci</li>
                 </ul>
             </div><div id="right-col">
-                <form method="post">
+                <form method="post" action="aggiungi_prodotto_form.cgi" enctype="multipart/form-data">
                     <ul div id="gestione_prodotti-form">
-                        <li>
-                            <label class="gestione_prodotti-labels">Codice</label>
-                            <div class="gestione_prodotti-inputLeft"></div><div class="gestione_prodotti-inputMiddle"><input class="gestione_prodotti-input" type="text" name="codice"/></div><div class="gestione_prodotti-inputRight"></div>
-                        
-                        
-                            <label class="gestione_prodotti-labels">Nome</label>
+                        <li class="gestione_prodotti-block">
+                            <label class="gestione_prodotti-labels">Nome:</label>
                             <div class="inputLeft"></div><div class="gestione_prodotti-inputMiddle"><input class="input" type="text" name="nome"/></div><div class="inputRight"></div>
                         </li>
-                        <li>
-                            <label class="gestione_prodotti-labels">Descrizione</label>
-                            <textarea id="gestione_prodotti-textarea" rows="50" cols="50"></textarea>
-                        </li>
-                        <li>
-                            <label class="gestione_prodotti-labels">Prezzo</label>
+                        <li class="gestione_prodotti-block">
+                            <label class="gestione_prodotti-labels">Prezzo:</label>
                             <div class="inputLeft"></div><div class="gestione_prodotti-inputMiddle"><input class="input" type="text" name="prezzo"/></div><div class="inputRight"></div>
                         </li>
-                        <li>
+                        <li class="gestione_prodotti-block">
+                            <label class="gestione_prodotti-labels">Categoria:</label>
+                            <select name="categoria">
+                                <option value="lista_nozze">Lista nozze</option>
+                                <option value="porcellane">Porcellane</option>
+                                <option value="paralumi">Paralumi</option>
+                                <option value="pentole">Pentole</option>
+                                <option value="per_la_tavola">Per la tavola</option>
+                                <option value="tovaglie">Tovaglie</option>
+                            </select>
+                        </li>
+                        <li class="gestione_prodotti-block">
+                            <label id="gestione_prodotti-textarea_label">Descrizione:</label>
+                        </li>
+                        <li class="gestione_prodotti-block">
+                            <textarea id="gestione_prodotti-textarea" rows="50" cols="50" name="descrizione"></textarea>
+                        </li>
+                        <li class="gestione_prodotti-block">
                             <label class="gestione_prodotti-labels">Tag 1</label>
                             <div class="inputLeft"></div><div class="gestione_prodotti-inputMiddle"><input class="input" type="text" name="tag1"/></div><div class="inputRight"></div>
                         </li>
-                        <label class="gestione_prodotti-labels">Tag 2</label>
-                        <div class="inputLeft"></div><div class="gestione_prodotti-inputMiddle"><input class="input" type="text" name="tag2"/></div><div class="inputRight"></div>
-                        
-                        <label class="gestione_prodotti-labels">Tag 3</label>
-                        <div class="inputLeft"></div><div class="gestione_prodotti-inputMiddle"><input class="input" type="text" name="tag3"/></div><div class="inputRight"></div>
-                        
-                        <label class="gestione_prodotti-labels">Tag 4</label>
-                        <div class="inputLeft"></div><div class="gestione_prodotti-inputMiddle"><input class="input" type="text" name="tag4"/></div><div class="inputRight"></div>
+                        <li class="gestione_prodotti-block">
+                            <label class="gestione_prodotti-labels">Tag 2</label>
+                            <div class="inputLeft"></div><div class="gestione_prodotti-inputMiddle"><input class="input" type="text" name="tag2"/></div><div class="inputRight"></div>
+                        </li>
+                        <li class="gestione_prodotti-block">
+                            <label class="gestione_prodotti-labels">Tag 3</label>
+                            <div class="inputLeft"></div><div class="gestione_prodotti-inputMiddle"><input class="input" type="text" name="tag3"/></div><div class="inputRight"></div>
+                        </li>
+                        <li class="gestione_prodotti-block">
+                            <label class="gestione_prodotti-labels">Tag 4</label>
+                            <div class="inputLeft"></div><div class="gestione_prodotti-inputMiddle"><input class="input" type="text" name="tag4"/></div><div class="inputRight"></div>
+                        </li>
+                        <li class="gestione_prodotti-block">
+                            <div id="gestione_prodotti-file_label">
+                                <label class="gestione_prodotti-labels">Inserisci immagine:</label>
+                            </div>
+                            <input type="file" name="immagine"/>
+                        </li>
                     </ul>
+                    <div id="gestione_prodotti-button_block">
+                        <button class="button" type="submit">Aggiungi prodotto</button>
+                    </div>
                 </form>
             </div>        
         </div>

@@ -6,7 +6,6 @@ use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use strict;
 use Template;
 use CGI::Session;
-use Switch;
 use XML::LibXML;
 
 my $cgi=new CGI;
@@ -23,7 +22,7 @@ if (-e "../data/Prodotti.xml")
 {
 	my $parser=XML::LibXML->new;
 	my $doc=$parser->parse_file("../data/Prodotti.xml");
-
+	my @products=$doc->findnodes("Utenti/Utente/Email/text()");	
 }
 else
 {

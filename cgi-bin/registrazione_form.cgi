@@ -59,49 +59,20 @@ if (@errors)
 }
 else
 {
+	my $doc,my $root;
 	if (-e "../data/Utenti.xml")
 	{
 		my $parser=XML::LibXML->new();
-		my $doc=$parser->parse_file("../data/Utenti.xml");
-		my $root=$doc->documentElement();
-		my $utente_tag=$doc->createElement("Utente");
-		$root->appendChild($utente_tag);
-		my @value_tags=("Nome","Cognome","Email","Password");
-		foreach my $k (@value_tags)
-		{
-			my $value_tag=$doc->createElement($k);
-			$value_tag->appendTextNode($values{lc $k});
-			$utente_tag->appendChild($value_tag);
-		}
-		my $indirizzo=$doc->createElement("Indirizzo");
-		$utente_tag->appendChild($indirizzo);
-		my @indirizzo_tags=("Via","Numero_civico","Città","Provincia","CAP");
-		foreach my $x (@indirizzo_tags)
-		{
-			my $indirizzo_tag=$doc->createElement($x);
-			$indirizzo->appendChild($indirizzo_tag);
-		}
-		my @novalue_tags=("Telefono","Amministratore");
-		foreach my $i (@novalue_tags)
-		{
-			my $novalue_tag=$doc->createElement($i);
-			if ($i eq "Amministratore")
-			{
-				$novalue_tag->appendTextNode("false");
-			}
-			$utente_tag->appendChild($novalue_tag);
-		}
-		open(XML,">","../data/Utenti.xml");
-		print XML $doc->toString();
-		close(XML);
-		print $cgi->redirect("auto_login.cgi?$values{'email'}");
+		$doc=$parser->parse_file("../data/Utenti.xml");
+		$root=$doc->documentElement();
 	}
 	else
 	{
 		my $doc=XML::LibXML::Document->new("1.0","UTF-8");
 		my $root=$doc->createElement("Utenti");
 		$doc->setDocumentElement($root);
-		my $utente_tag=$doc->createElement("Utente");
+	}
+	my $utente_tag=$doc->createElement("Utente");
 		$root->appendChild($utente_tag);
 		my @value_tags=("Nome","Cognome","Email","Password");
 		foreach my $k (@value_tags)
@@ -132,6 +103,5 @@ else
 		print XML $doc->toString();
 		close(XML);
 		print $cgi->redirect("auto_login.cgi?$values{'email'}");
-	}	
 }
 
