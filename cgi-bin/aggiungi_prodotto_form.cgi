@@ -73,7 +73,7 @@ else
 		my $parser=XML::LibXML->new();
 		$doc=$parser->parse_file("../data/Prodotti.xml");
 		$root=$doc->documentElement();
-		my $last_id=$doc->findnodes("Prodotti/Prodotto[last()]/Codice/text()")->[0];
+		my $last_id=$doc->findvalue("Prodotti/Prodotto[last()]/Codice");
 		$id=$last_id+1;
 	}
 	else
@@ -81,6 +81,7 @@ else
 		$doc=XML::LibXML::Document->new("1.0","UTF-8");
 		$root=$doc->createElement("Prodotti");
 		$doc->setDocumentElement($root);
+		
 	}
 		my $prodotto_tag=$doc->createElement("Prodotto");	
 		$root->appendChild($prodotto_tag);
@@ -96,9 +97,8 @@ else
 			$value_tag->appendTextNode($values{lc $k});
 			$prodotto_tag->appendChild($value_tag);
 		}
-		#(my $mday,my $mon,my $year) = localtime();
-		my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime(time);
-		
+		my ($sec,$min,$hour,$mday,$mon,$yr19,$wday,$yday,$isdst) = localtime(time);
+		my $year=$yr19+1900;
 		my $date="$mday/$mon/$year";
 		my $date_tag=$doc->createElement("Data_aggiunta");
 		$date_tag->appendTextNode($date);

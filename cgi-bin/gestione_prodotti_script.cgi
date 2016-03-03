@@ -29,8 +29,6 @@ else
 	$lista_prodotti="";
 }
 
-
-
 my $file='gestione_prodotti_temp.html';
 my $vars={
 		'sessione' => "true",
