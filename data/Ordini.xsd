@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Ordini" xmlns="http://www.example.org/Ordini">
+
+    <xsd:complexType name="Tipo_ordine">
+    	<xsd:sequence>
+			<xsd:element name="Codice" type="xsd:string"/>
+    		<xsd:element name="Utente" type="xsd:string"/>
+    		<xsd:element name="Data_ordine" type="xsd:date"/>
+			<xsd:element name="Prodotto_ordinato" type="xsd:string" maxOccurs="unbounded"/>
+    	</xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

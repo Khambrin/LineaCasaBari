@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Utenti><Utente><Nome>Navid</Nome><Cognome>Taha</Cognome><Email>navidtaha@gmail.com</Email><Password>123</Password><Indirizzo><Via/><Numero_civico/><Città/><Provincia/><CAP/></Indirizzo><Telefono/><Amministratore>false</Amministratore></Utente><Utente><Nome>ciao</Nome><Cognome>bello</Cognome><Email>abari@gmail.com</Email><Password>123</Password><Indirizzo><Via/><Numero_civico/><Città/><Provincia/><CAP/></Indirizzo><Telefono/><Amministratore>true</Amministratore></Utente></Utenti>
