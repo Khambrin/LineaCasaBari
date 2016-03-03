@@ -73,14 +73,14 @@ else
 		my $parser=XML::LibXML->new();
 		$doc=$parser->parse_file("../data/Prodotti.xml");
 		$root=$doc->documentElement();
-		$id=$id+findnodes("Prodotti/Prodotto[last()]/Codice/text()")
+		my $last_id=$doc->findnodes("Prodotti/Prodotto[last()]/Codice/text()")->[0];
+		$id=$last_id+1;
 	}
 	else
 	{
 		$doc=XML::LibXML::Document->new("1.0","UTF-8");
 		$root=$doc->createElement("Prodotti");
 		$doc->setDocumentElement($root);
-		
 	}
 		my $prodotto_tag=$doc->createElement("Prodotto");	
 		$root->appendChild($prodotto_tag);
@@ -96,7 +96,9 @@ else
 			$value_tag->appendTextNode($values{lc $k});
 			$prodotto_tag->appendChild($value_tag);
 		}
-		(my $mday,my $mon,my $year) = localtime();
+		#(my $mday,my $mon,my $year) = localtime();
+		my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime(time);
+		
 		my $date="$mday/$mon/$year";
 		my $date_tag=$doc->createElement("Data_aggiunta");
 		$date_tag->appendTextNode($date);
@@ -106,20 +108,27 @@ else
 		$valutazione_tag->appendTextNode($valutazione);
 		$prodotto_tag->appendChild($valutazione_tag);
 
-		my $upload_directory="../images/prodotti";
-		my $upload_filehandle=$cgi->upload("immagine");
-		open (UPLOADFILE,">$upload_directory/$values{'immagine'}") or die "$!";
-		binmode UPLOADFILE;
-		while (<$upload_filehandle>)
-		{
-			print UPLOADFILE;
-		}
-		close UPLOADFILE;
-		my $immagine="$upload_directory/$values{'immagine'}";
 		my $immagine_tag=$doc->createElement("Immagine");
+		my $immagine;
+		if ($values{'immagine'})
+		{
+			my $upload_directory="../public_html/images/prodotti";
+			my $upload_filehandle=$cgi->upload("immagine");
+			open (UPLOADFILE,">$upload_directory/$values{'immagine'}") or die "$!";
+			binmode UPLOADFILE;
+			while (<$upload_filehandle>)
+			{
+				print UPLOADFILE;
+			}
+			close UPLOADFILE;
+			$immagine="$upload_directory/$values{'immagine'}";
+		}
+		else
+		{
+			$immagine="";
+		}
 		$immagine_tag->appendTextNode($immagine);
 		$prodotto_tag->appendChild($immagine_tag);
-		
 		if ($values{"tag1"})
 		{
 			my $tag1_tag=$doc->createElement("Tag");
