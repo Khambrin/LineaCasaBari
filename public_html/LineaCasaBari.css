@@ -1299,13 +1299,11 @@ div.post h3{
     }
     #left-col
     {
-        
+		display: inline-block;
         vertical-align: middle;
         width: 25%;
-        
-        border: 1px solid;
-        display: inline-block;
-        height: 40em;        
+        border-bottom: 1px solid;
+        height: 47em;        
     }
     #left-col li
     {
@@ -1319,7 +1317,6 @@ div.post h3{
         padding-bottom: 1em;
         border-bottom: 1px solid;
         width: 100%;
-        
     }
     
     #left-col a
@@ -1329,13 +1326,12 @@ div.post h3{
     
     #right-col
     {
+		display: inline-block;
         vertical-align: middle;
         width: 75%;
-        border-top: 1px solid;
         border-bottom: 1px solid;
-        border-right: 1px solid;
-        display: inline-block;
-        height: 40em;
+        border-left: 1px solid;
+        height: 100%;
     }
     #right-col li
     {
@@ -1345,35 +1341,10 @@ div.post h3{
     .title_link
     {
         font-weight: bold;
-        font-size: 1.5em;
-        
-                
-    }
-    #i_miei_ordini
-    {
-        background-image: url(images/rightArrow2.png);
-        background-repeat: no-repeat;
-        background-position: right;
-        background-size: 2em; 
+        font-size: 1.5em;        
     }
     
-    #impostazioni_account
-    {
-        background-image: url(images/rightArrow2.png);
-        background-repeat: no-repeat;
-        background-position: right;
-        background-size: 2em; 
-    }
-    
-    #pagamenti
-    {
-        background-image: url(images/rightArrow2.png);
-        background-repeat: no-repeat;
-        background-position: right;
-        background-size: 2em; 
-    }
-    
-    #indirizzi
+    #left_menu_arrow
     {
         background-image: url(images/rightArrow2.png);
         background-repeat: no-repeat;
@@ -1384,40 +1355,10 @@ div.post h3{
     .subtitle_link
     {
         opacity: 0.6;
-        
-        
     }
 
 /*------------------------------------------------ gestione sito ----------------------------------------------------------------------------------*/
 
-    #togli_utenti{
-        background-image: url(images/rightArrow2.png);
-        background-repeat: no-repeat;
-        background-position: right;
-        background-size: 2em; 
-    }
-    
-    #gestione_prodotti{
-        background-image: url(images/rightArrow2.png);
-        background-repeat: no-repeat;
-        background-position: right;
-        background-size: 2em; 
-    }
-    
-    #gestione_ordini{
-        background-image: url(images/rightArrow2.png);
-        background-repeat: no-repeat;
-        background-position: right;
-        background-size: 2em;
-    }
-    
-    #gestione_annunci{
-        background-image: url(images/rightArrow2.png);
-        background-repeat: no-repeat;
-        background-position: right;
-        background-size: 2em;
-    }
-    
     .togli_utenti-pulsante{
         display: inline-block;
     }
@@ -1429,16 +1370,7 @@ div.post h3{
     .gestione_prodotti-labels{
         text-align: left;
     }
-    .gestione_prodotti-inputLeft{
-        display: inline-block;
-        background-image: url(images/input_left.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        width: 12px;
-        height: 2em;
-        vertical-align: middle;
-        margin-right: -0.3em;
-    }
+    
     .gestione_prodotti-inputMiddle{
         display: inline-block;
         vertical-align: middle;
@@ -1448,25 +1380,31 @@ div.post h3{
         background-repeat: repeat-x;
     }
     
-    .gestione_prodotti-inputRight{
-        display: inline-block;
-        vertical-align: middle;
-        background-image:url(images/input_right.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        height: 2em;
-        width: 12px;
-    }
-    .gestione_prodotti-input{
-        background-color: transparent;
-        border: none;
-        width: 100%;
-        height: 2em;
-        font-size: 1em;
-    }
     #gestione_prodotti-form{
         text-align: center;
         padding-top: 2em;
+    }
+	.gestione_prodotti-block{
+        display: block;
+        padding-bottom: 2em;
         
+    }
+    .gestione_prodotti-labels{
+        padding-right: 1em;
+    }
+    #gestione_prodotti-textarea_block{
+        padding-top: 2em;
+    }
+    #gestione_prodotti-textarea_label{
+        text-align: left;
+        
+    }
+    #gestione_prodotti-button_block{
+        text-align: center;
+        padding-bottom: 2em;
+    }
+    #gestione_prodotti-file_label{
+        display: block;
+        padding-bottom: 1em;
     }
 }
