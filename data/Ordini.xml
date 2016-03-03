@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Ordini>
+    <Ordine>
+        <Codice>1</Codice>
+        <Utente>abari@gmail.com</Utente>
+        <Data>12345</Data>
+        <Prodotto>666</Prodotto>
+        <Prodotto>777</Prodotto>
+        <Prodotto>888</Prodotto>
+    </Ordine>
+</Ordini>

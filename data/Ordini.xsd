@@ -9,4 +9,12 @@
 			<xsd:element name="Prodotto_ordinato" type="xsd:string" maxOccurs="unbounded"/>
     	</xsd:sequence>
     </xsd:complexType>
+	
+	<xsd:complexType name="Tipo_ordini">
+		<xsd:sequence>
+			<xsd:element name="Ordine" type="Tipo_ordine" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="Ordini" type="Tipo_ordini"/>
 </xsd:schema>

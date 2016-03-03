@@ -37,7 +37,6 @@ switch($ENV{'QUERY_STRING'})
 	case 'impostazioni_account' { $file='impostazioni_account_temp.html' }
 	case 'indirizzi' { $file='indirizzi_temp.html' }
 	case 'pagamenti' { $file='pagamenti_temp.html' }
-	case 'gestione_ordini' { $file='gestione_ordini_temp.html'; }
 	case 'gestione_annunci' { $file='gestione_annunci_temp.html' }
 }
 
@@ -72,6 +71,10 @@ else
 	if ($ENV{'QUERY_STRING'} eq 'gestione_prodotti')
 	{
 		print $cgi->redirect("gestione_prodotti_script.cgi");
+	}
+	if($ENV{'QUERY_STRING'} eq 'gestione_ordini')
+	{
+		print $cgi->redirect("gestione_ordini.cgi");
 	}
 }
 	print $cgi->header('text/html');
