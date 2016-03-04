@@ -1303,7 +1303,7 @@ div.post h3{
         vertical-align: middle;
         width: 25%;
         border-bottom: 1px solid;
-        height: 47em;        
+        height: 55em;
     }
     #left-col li
     {
@@ -1331,7 +1331,7 @@ div.post h3{
         width: 75%;
         border-bottom: 1px solid;
         border-left: 1px solid;
-        height: 100%;
+        height: 55em;
     }
     #right-col li
     {
@@ -1363,6 +1363,27 @@ div.post h3{
         display: inline-block;
     }
     
+    .gestione_prodotti-menu_block{
+        display: inline-block;
+        background-color: aqua;
+        height: 2.5em;
+        width: 20%;
+        text-align: center;
+        border-right: 1px solid;
+        border-bottom: 1px solid;
+        margin-top: 0.8em;
+    }
+    
+    .gestione_prodotti-menu_text{
+        display: inline-block;
+        vertical-align: middle;
+        margin-top: 0.5em;
+    }
+    
+    .gestione_prodotti-menu_link{
+
+    }
+    
     #gestione_prodotti-textarea{
         width: 80%;
         height: 10em;
@@ -1380,7 +1401,7 @@ div.post h3{
         background-repeat: repeat-x;
     }
     
-    #gestione_prodotti-form{
+    #gestione_prodotti-aggiungi_form{
         text-align: center;
         padding-top: 2em;
     }
@@ -1406,5 +1427,14 @@ div.post h3{
     #gestione_prodotti-file_label{
         display: block;
         padding-bottom: 1em;
+    }
+    
+    #gestione_prodotti-rimuovi_modifica_form{
+        text-align: center;
+    }
+   
+    #gestione_prodotti-search_label_block{
+        padding-bottom: 2em;
+        margin-top: 2em;
     }
 }

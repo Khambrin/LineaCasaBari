@@ -61,8 +61,7 @@ if (@errors)
 	my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
 	});
-	#$template->process($file,$vars) || die $template->error();
-	print "Errori";
+	$template->process($file,$vars) || die $template->error();
 }
 else
 {
@@ -156,6 +155,6 @@ else
 		open (XML,">","../data/Prodotti.xml");
 		print XML $doc->toString();
 		close(XML);
-		print $cgi->redirect("gestione_prodotti_script.cgi");
+		print $cgi->redirect("gestione_prodotti_script.cgi?aggiungi");
 }
 		

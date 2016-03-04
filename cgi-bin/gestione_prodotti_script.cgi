@@ -35,6 +35,7 @@ my $vars={
 		'email' => $email,
 		'amministratore' => "true",
 		'lista_prodotti' => $lista_prodotti,
+		'pagina' => $ENV{'QUERY_STRING'},
 	};
 print $cgi->header('text/html');
 $template->process($file,$vars) || die $template->error();

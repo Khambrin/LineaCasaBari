@@ -109,8 +109,13 @@
                     <li class="subtitle_link">Togli, aggiungi e modifica gli annunci</li>
                 </ul>
             </div><div id="right-col">
-                <form method="post" action="aggiungi_prodotto_form.cgi" enctype="multipart/form-data">
-                    <ul div id="gestione_prodotti-form">
+                <div>
+                <a class="gestione_prodotti-menu_link" href="gestione_prodotti_script.cgi?aggiungi">
+                    <div class="gestione_prodotti-menu_block"><span class="gestione_prodotti-menu_text">Aggiungi prodotto</span></div></a><a class="gestione_prodotti-menu_link" href="gestione_prodotti_script.cgi?rimuovi_modifica"><div class="gestione_prodotti-menu_block"><span class="gestione_prodotti-menu_text">Rimuovi o modifica prodotto</span></div></a>
+                </div>
+            	[% IF pagina == 'aggiungi' %]
+                <!--<form method="post" action="aggiungi_prodotto_form.cgi" enctype="multipart/form-data">
+                    <ul div id="gestione_prodotti-aggiungi_form">
                         <li class="gestione_prodotti-block">
                             <label class="gestione_prodotti-labels">Nome:</label>
                             <div class="inputLeft"></div><div class="gestione_prodotti-inputMiddle"><input class="input" type="text" name="nome"/></div><div class="inputRight"></div>
@@ -162,7 +167,22 @@
                     <div id="gestione_prodotti-button_block">
                         <button class="button" type="submit">Aggiungi prodotto</button>
                     </div>
-                </form>
+                </form>-->
+				[% ELSIF pagina == 'rimuovi_modifica' %]
+                    <form method="post" action="ricerca_prodotto.cgi">
+                        <ul id="gestione_prodotti-rimuovi_modifica_form">
+                            <li id="gestione_prodotti-search_label_block">
+                                <label id="gestione_prodotti-search_label">Cerca un prodotto:</label>
+                            </li>
+                            <li id="gestione_prodotti-search_input_block">
+                                <div id="commonSearchInputLeft"></div><div id="commonSearchInputMiddle"><input id="commonSearchInput" type="text"/></div><div id="commonSearchInputRight"></div>
+                <div id="commonSearchButtonContainer">
+                    <input id="commonSearchButton" type="submit" value=""/>
+                </div>
+                            </li>
+                        </ul>
+                    </form>
+				[% END %]
             </div>        
         </div>
     </div>
