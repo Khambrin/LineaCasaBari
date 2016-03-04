@@ -13,7 +13,7 @@ my $cgi=new CGI;
 
 my $session = CGI::Session->load();
 my $email=$session->param("email");
-
+my $pagina=param("pagina");
 my @errors=();
 my %values;
 
@@ -22,25 +22,19 @@ foreach my $p (param())
 	$values{$p}=param($p);
 }
 
-foreach my $chiave (keys %values)
+if (!$values{"nome"})
 {
-	if (!$values{"nome"})
-	{
-		push @errors, "Devi completare il campo nome.";
-	}
-	if (!$values{"prezzo"})
-	{
-		push @errors, "Devi completare il campo prezzo.";
-	}
-	if (!$values{"descrizione"})
-	{
-		push @errors, "Devi completare il campo descrizione.";
-	}
-	if ($chiave eq "prezzo")
-	{
-		#controlli su campo prezzo
-	}	
+	push @errors, "Devi completare il campo nome.";
 }
+if (!$values{"prezzo"})
+{
+	push @errors, "Devi completare il campo prezzo.";
+}
+if (!$values{"descrizione"})
+{
+	push @errors, "Devi completare il campo descrizione.";
+}
+
 if (@errors)
 {
 	print $cgi->header('text/html');
@@ -57,6 +51,7 @@ if (@errors)
 		'email' => $email,
 		'amministratore' => "true",
 		'error' => $error_message,
+		'pagina' => $pagina,
 	};
 	my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',

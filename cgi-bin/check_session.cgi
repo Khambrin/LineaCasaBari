@@ -70,11 +70,15 @@ else
 	}
 	if ($ENV{'QUERY_STRING'} eq 'gestione_prodotti')
 	{
-		print $cgi->redirect("gestione_prodotti_script.cgi");
+		print $cgi->redirect("gestione_prodotti_script.cgi?aggiungi");
 	}
 	if($ENV{'QUERY_STRING'} eq 'gestione_ordini')
 	{
 		print $cgi->redirect("gestione_ordini.cgi");
+	}
+	if($ENV{'QUERY_STRING'} eq 'gestione_annunci')
+	{
+		print $cgi->redirect("gestione_annunci_script.cgi?aggiungi");
 	}
 }
 	print $cgi->header('text/html');

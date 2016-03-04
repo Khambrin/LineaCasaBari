@@ -110,22 +110,22 @@
                 </ul>
             </div><div id="right-col">
                 <div>
-                <a class="gestione_prodotti-menu_link" href="gestione_prodotti_script.cgi?aggiungi">
-                    <div class="gestione_prodotti-menu_block"><span class="gestione_prodotti-menu_text">Aggiungi prodotto</span></div></a><a class="gestione_prodotti-menu_link" href="gestione_prodotti_script.cgi?rimuovi_modifica"><div class="gestione_prodotti-menu_block"><span class="gestione_prodotti-menu_text">Rimuovi o modifica prodotto</span></div></a>
+                <a class="sub_menu_link" href="gestione_prodotti_script.cgi?aggiungi">
+                    <div class="sub_menu_block"><span class="sub_menu_text">Aggiungi prodotto</span></div></a><a class="sub_menu_link" href="gestione_prodotti_script.cgi?rimuovi_modifica"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica prodotto</span></div></a>
                 </div>
             	[% IF pagina == 'aggiungi' %]
                 <!--<form method="post" action="aggiungi_prodotto_form.cgi" enctype="multipart/form-data">
-                    <ul div id="gestione_prodotti-aggiungi_form">
-                        <li class="gestione_prodotti-block">
-                            <label class="gestione_prodotti-labels">Nome:</label>
-                            <div class="inputLeft"></div><div class="gestione_prodotti-inputMiddle"><input class="input" type="text" name="nome"/></div><div class="inputRight"></div>
+                    <ul div id="gestione-aggiungi_form">
+                        <li class="gestione-block">
+                            <label class="gestione-labels">Nome:</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="nome"/></div><div class="inputRight"></div>
                         </li>
-                        <li class="gestione_prodotti-block">
-                            <label class="gestione_prodotti-labels">Prezzo:</label>
-                            <div class="inputLeft"></div><div class="gestione_prodotti-inputMiddle"><input class="input" type="text" name="prezzo"/></div><div class="inputRight"></div>
+                        <li class="gestione-block">
+                            <label class="gestione-labels">Prezzo:</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="prezzo"/></div><div class="inputRight"></div>
                         </li>
-                        <li class="gestione_prodotti-block">
-                            <label class="gestione_prodotti-labels">Categoria:</label>
+                        <li class="gestione-block">
+                            <label class="gestione-labels">Categoria:</label>
                             <select name="categoria">
                                 <option value="lista_nozze">Lista nozze</option>
                                 <option value="porcellane">Porcellane</option>
@@ -135,38 +135,40 @@
                                 <option value="tovaglie">Tovaglie</option>
                             </select>
                         </li>
-                        <li class="gestione_prodotti-block">
-                            <label id="gestione_prodotti-textarea_label">Descrizione:</label>
+                        <li class="gestione-block">
+                            <label id="gestione-textarea_label">Descrizione:</label>
                         </li>
-                        <li class="gestione_prodotti-block">
+                        <li class="gestione-block">
                             <textarea id="gestione_prodotti-textarea" rows="50" cols="50" name="descrizione"></textarea>
                         </li>
-                        <li class="gestione_prodotti-block">
-                            <label class="gestione_prodotti-labels">Tag 1</label>
-                            <div class="inputLeft"></div><div class="gestione_prodotti-inputMiddle"><input class="input" type="text" name="tag1"/></div><div class="inputRight"></div>
+                        <li class="gestione-block">
+                            <label class="gestione-labels">Tag 1</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag1"/></div><div class="inputRight"></div>
                         </li>
-                        <li class="gestione_prodotti-block">
-                            <label class="gestione_prodotti-labels">Tag 2</label>
-                            <div class="inputLeft"></div><div class="gestione_prodotti-inputMiddle"><input class="input" type="text" name="tag2"/></div><div class="inputRight"></div>
+                        <li class="gestione-block">
+                            <label class="gestione-labels">Tag 2</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag2"/></div><div class="inputRight"></div>
                         </li>
-                        <li class="gestione_prodotti-block">
-                            <label class="gestione_prodotti-labels">Tag 3</label>
-                            <div class="inputLeft"></div><div class="gestione_prodotti-inputMiddle"><input class="input" type="text" name="tag3"/></div><div class="inputRight"></div>
+                        <li class="gestione-block">
+                            <label class="gestione-labels">Tag 3</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag3"/></div><div class="inputRight"></div>
                         </li>
-                        <li class="gestione_prodotti-block">
-                            <label class="gestione_prodotti-labels">Tag 4</label>
-                            <div class="inputLeft"></div><div class="gestione_prodotti-inputMiddle"><input class="input" type="text" name="tag4"/></div><div class="inputRight"></div>
+                        <li class="gestione-block">
+                            <label class="gestione-labels">Tag 4</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag4"/></div><div class="inputRight"></div>
                         </li>
-                        <li class="gestione_prodotti-block">
-                            <div id="gestione_prodotti-file_label">
-                                <label class="gestione_prodotti-labels">Inserisci immagine:</label>
+                        <li class="gestione-block">
+                            <div id="gestione-file_label">
+                                <label class="gestione-labels">Inserisci immagine:</label>
                             </div>
                             <input type="file" name="immagine"/>
                         </li>
                     </ul>
-                    <div id="gestione_prodotti-button_block">
+                    <div id="gestione-button_block">
                         <button class="button" type="submit">Aggiungi prodotto</button>
                     </div>
+					<div>[% hidden %]</div>
+					<div>[% error %]</div>
                 </form>-->
 				[% ELSIF pagina == 'rimuovi_modifica' %]
                     <form method="post" action="ricerca_prodotto.cgi">

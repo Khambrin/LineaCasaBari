@@ -1363,7 +1363,7 @@ div.post h3{
         display: inline-block;
     }
     
-    .gestione_prodotti-menu_block{
+    .sub_menu_block{
         display: inline-block;
         background-color: aqua;
         height: 2.5em;
@@ -1374,13 +1374,13 @@ div.post h3{
         margin-top: 0.8em;
     }
     
-    .gestione_prodotti-menu_text{
+    .sub_menu_text{
         display: inline-block;
         vertical-align: middle;
         margin-top: 0.5em;
     }
     
-    .gestione_prodotti-menu_link{
+    .sub_menu_link{
 
     }
     
@@ -1388,11 +1388,17 @@ div.post h3{
         width: 80%;
         height: 10em;
     }
-    .gestione_prodotti-labels{
+    
+    #gestione_annunci-textarea{
+        width: 80%;
+        height: 20em;
+    }
+    
+    .gestione-labels{
         text-align: left;
     }
     
-    .gestione_prodotti-inputMiddle{
+    .gestione-inputMiddle{
         display: inline-block;
         vertical-align: middle;
         background-image: url(images/input_middle.png);
@@ -1401,30 +1407,30 @@ div.post h3{
         background-repeat: repeat-x;
     }
     
-    #gestione_prodotti-aggiungi_form{
+    #gestione-aggiungi_form{
         text-align: center;
         padding-top: 2em;
     }
-	.gestione_prodotti-block{
+	.gestione-block{
         display: block;
         padding-bottom: 2em;
         
     }
-    .gestione_prodotti-labels{
+    .gestione-labels{
         padding-right: 1em;
     }
-    #gestione_prodotti-textarea_block{
+    #gestione-textarea_block{
         padding-top: 2em;
     }
-    #gestione_prodotti-textarea_label{
+    #gestione-textarea_label{
         text-align: left;
         
     }
-    #gestione_prodotti-button_block{
+    #gestione-button_block{
         text-align: center;
         padding-bottom: 2em;
     }
-    #gestione_prodotti-file_label{
+    #gestione-file_label{
         display: block;
         padding-bottom: 1em;
     }
