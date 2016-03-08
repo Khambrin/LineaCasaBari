@@ -4,10 +4,10 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Linea Casa Bari - Account</title>
-    <meta name="title" content="Linea Casa Bari - Account" />
-    <meta name="description" content="Pagina per gestire l'account del negozio Linea Casa Bari" />
-    <meta name="keywords" content="account, ordini, pagamenti, impostazioni, indirizzi, gestione" />
+    <title>Linea Casa Bari - Contatti</title>
+    <meta name="title" content="Linea Casa Bari - Contattaci" />
+    <meta name="description" content="Pagina per contattare i titolari del negozio Linea Casa Bari" />
+    <meta name="keywords" content="piatti, bicchieri, posate, porcellane, liste nozze, vasi, lampade, paralumi, contatti, messaggio" />
     <meta name="language" content="italian it" />
     <meta name="author" content="Alessandro Bari, Navid Taha, Alice Sasso, Lorenzo Ferrarin" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -55,18 +55,18 @@
     
     <div id="menu">
         <span id="path">
-            Ti trovi in: Account</span>
+            Ti trovi in: Annunci</span>
     
         <div id="nav">
             <ul>
                 <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
                 <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
-                <li><a href="stampa_annunci.cgi">Annunci</a></li>
+                <li id="current"><a href="stampa_annunci.cgi">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
                 [% IF sessione == 'true' %]
 				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
 				[% IF amministratore == 'true' %]
-				<li id="current"><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
+				<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 				[% END %]
 				<li><a href="logout_script.cgi">Logout</a></li>
 				[% ELSE %]
@@ -90,30 +90,16 @@
         </div>
     </div>
     <div id="content">
-        <div id="col">
-            <div id="left-col">
-                <ul>
-                    <li id="left_menu_arrow" class="title_link">Togli utenti</li>
-                    <li class="subtitle_link">Elimina un utente iscritto</li>
-                </ul>
-                <ul>
-                    <li class="title_link"><a href="check_session.cgi?gestione_prodotti">Gestione prodotti</a></li>
-                    <li class="subtitle_link">Togli, aggiungi e modifica i prodotti</li>
-                </ul>
-                <ul>
-                    <li class="title_link"><a href="check_session.cgi?gestione_ordini">Gestione ordini</a></li>
-                    <li class="subtitle_link">Visualizza informazioni e modifica gli ordini</li>
-                </ul>
-                <ul>
-                    <li class="title_link"><a href="check_session.cgi?gestione_annunci">Gestione annunci</a></li>
-                    <li class="subtitle_link">Togli, aggiungi e modifica gli annunci</li>
-                </ul>
-            </div><div id="right-col">
-                [% lista_utenti %]
-            </div>        
-        </div>
-    </div>
+	<div>
+		<h2> Annunci </h2>
+	</div>
 
+
+	<div>
+        [% lista_annunci %]
+        </div>  
+    </div>
+    
     <div id="footer">
         <a href="#header">
             <span id="torna-su">
@@ -142,7 +128,7 @@
             <div class="footer-block">
                 <ul>
                     <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
-                	<li><a href="stampa_annunci.cgi">Annunci</a></li>
+                	<li><a href="check_session.cgi?annunci">Annunci</a></li>
                 	<li><a href="check_session.cgi?contattaci">Contattaci</a></li>
                     [% IF sessione == 'true' %]
 					<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>

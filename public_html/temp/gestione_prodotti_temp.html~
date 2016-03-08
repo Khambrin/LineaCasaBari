@@ -21,11 +21,11 @@
     <div id="menu-drawer">
         <input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
         <label for="drawer-toggle" id="drawer-toggle-label"></label>
-       <div id="drawer">
+        <div id="drawer">
             <ul>
                 <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
                 <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
-                <li><a href="stampa_annunci.cgi">Annunci</a></li>
+                <li><a href="check_session.cgi?annunci">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
 				[% IF sessione == 'true' %]
 				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>				
@@ -61,7 +61,7 @@
             <ul>
                 <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
                 <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
-                <li><a href="stampa_annunci.cgi">Annunci</a></li>
+                <li><a href="check_session.cgi?annunci">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
                 [% IF sessione == 'true' %]
 				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
@@ -93,11 +93,11 @@
         <div id="col">
             <div id="left-col">
                 <ul>
-                    <li id="left_menu_arrow" class="title_link">Togli utenti</li>
+                    <li class="title_link"><a href="check_session.cgi?togli_utenti">Togli utenti</a></li>
                     <li class="subtitle_link">Elimina un utente iscritto</li>
                 </ul>
                 <ul>
-                    <li class="title_link"><a href="check_session.cgi?gestione_prodotti">Gestione prodotti</a></li>
+                    <li id="left_menu_arrow" class="title_link">Gestione prodotti</li>
                     <li class="subtitle_link">Togli, aggiungi e modifica i prodotti</li>
                 </ul>
                 <ul>
@@ -109,7 +109,82 @@
                     <li class="subtitle_link">Togli, aggiungi e modifica gli annunci</li>
                 </ul>
             </div><div id="right-col">
-                [% lista_utenti %]
+                <div>
+                <a class="sub_menu_link" href="gestione_prodotti_script.cgi?aggiungi">
+                    <div class="sub_menu_block"><span class="sub_menu_text">Aggiungi prodotto</span></div></a><a class="sub_menu_link" href="gestione_prodotti_script.cgi?rimuovi_modifica"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica prodotto</span></div></a>
+                </div>
+            	[% IF pagina == 'aggiungi' %]
+                <!--<form method="post" action="aggiungi_prodotto_form.cgi" enctype="multipart/form-data">
+                    <ul div id="gestione-aggiungi_form">
+                        <li class="gestione-block">
+                            <label class="gestione-labels">Nome:</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="nome"/></div><div class="inputRight"></div>
+                        </li>
+                        <li class="gestione-block">
+                            <label class="gestione-labels">Prezzo:</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="prezzo"/></div><div class="inputRight"></div>
+                        </li>
+                        <li class="gestione-block">
+                            <label class="gestione-labels">Categoria:</label>
+                            <select name="categoria">
+                                <option value="lista_nozze">Lista nozze</option>
+                                <option value="porcellane">Porcellane</option>
+                                <option value="paralumi">Paralumi</option>
+                                <option value="pentole">Pentole</option>
+                                <option value="per_la_tavola">Per la tavola</option>
+                                <option value="tovaglie">Tovaglie</option>
+                            </select>
+                        </li>
+                        <li class="gestione-block">
+                            <label id="gestione-textarea_label">Descrizione:</label>
+                        </li>
+                        <li class="gestione-block">
+                            <textarea id="gestione_prodotti-textarea" rows="50" cols="50" name="descrizione"></textarea>
+                        </li>
+                        <li class="gestione-block">
+                            <label class="gestione-labels">Tag 1</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag1"/></div><div class="inputRight"></div>
+                        </li>
+                        <li class="gestione-block">
+                            <label class="gestione-labels">Tag 2</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag2"/></div><div class="inputRight"></div>
+                        </li>
+                        <li class="gestione-block">
+                            <label class="gestione-labels">Tag 3</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag3"/></div><div class="inputRight"></div>
+                        </li>
+                        <li class="gestione-block">
+                            <label class="gestione-labels">Tag 4</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag4"/></div><div class="inputRight"></div>
+                        </li>
+                        <li class="gestione-block">
+                            <div id="gestione-file_label">
+                                <label class="gestione-labels">Inserisci immagine:</label>
+                            </div>
+                            <input type="file" name="immagine"/>
+                        </li>
+                    </ul>
+                    <div id="gestione-button_block">
+                        <button class="button" type="submit">Aggiungi prodotto</button>
+                    </div>
+					<div>[% hidden %]</div>
+					<div>[% error %]</div>
+                </form>-->
+				[% ELSIF pagina == 'rimuovi_modifica' %]
+                    <form method="post" action="ricerca_prodotto.cgi">
+                        <ul id="gestione_prodotti-rimuovi_modifica_form">
+                            <li id="gestione_prodotti-search_label_block">
+                                <label id="gestione_prodotti-search_label">Cerca un prodotto:</label>
+                            </li>
+                            <li id="gestione_prodotti-search_input_block">
+                                <div id="commonSearchInputLeft"></div><div id="commonSearchInputMiddle"><input id="commonSearchInput" type="text"/></div><div id="commonSearchInputRight"></div>
+                <div id="commonSearchButtonContainer">
+                    <input id="commonSearchButton" type="submit" value=""/>
+                </div>
+                            </li>
+                        </ul>
+                    </form>
+				[% END %]
             </div>        
         </div>
     </div>
@@ -142,7 +217,7 @@
             <div class="footer-block">
                 <ul>
                     <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
-                	<li><a href="stampa_annunci.cgi">Annunci</a></li>
+                	<li><a href="check_session.cgi?annunci">Annunci</a></li>
                 	<li><a href="check_session.cgi?contattaci">Contattaci</a></li>
                     [% IF sessione == 'true' %]
 					<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>

@@ -516,19 +516,6 @@ body
     padding-right: 1em;
 }
 
-/*------------------- annunci.html ---------------------------------------------------------------------------------------------------------------*/
-div.post{
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-    margin:20px;
-    padding:20px;
-} 
-div.post h2{
-    color:dodgerblue;
-}
-div.post h3{
-    color:darkslategrey;
-}
-
 /*-------------------------------------- la_nostra_storia.html --------------------------------------------------------------------------------*/
 
 #content h2{
@@ -561,25 +548,9 @@ div.post h3{
     width: 99%;
     height: 2.7em;
     text-align: center;
+    padding-bottom: 4em;
 }
 
-#linea-tempo-testo
-{
-    text-align: center;
-    margin: auto;
-    padding-top: 4em;
-    padding-bottom: 2em;
-    width: 85%;    
-}
-
-.linea-tempo-testo-li
-{
-    padding-bottom: 1em;
-    margin-bottom: 1em;
-    list-style: none;
-    background-color: #FFFFFF;
-    background-color:#295380;
-}
 
 #linea-tempo a
 {
@@ -595,16 +566,6 @@ div.post h3{
     font-family: Georgia, serif;
 }
 
-#linea-tempo-testo p
-{
-    padding-left: 1em;
-    padding-right: 1em;
-}
-
-#linea-tempo-testo a
-{
-    text-decoration: none;
-}
 
 .linea-tempo-su
 {

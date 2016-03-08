@@ -4,10 +4,10 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Linea Casa Bari - Account</title>
-    <meta name="title" content="Linea Casa Bari - Account" />
-    <meta name="description" content="Pagina per gestire l'account del negozio Linea Casa Bari" />
-    <meta name="keywords" content="account, ordini, pagamenti, impostazioni, indirizzi, gestione" />
+    <title>Linea Casa Bari - Prodotti</title>
+    <meta name="title" content="Linea Casa Bari - Prodotti" />
+    <meta name="description" content="Pagina dei prodotti acquistabili nel negozio Linea Casa Bari" />
+    <meta name="keywords" content="piatti, bicchieri, posate, porcellane, liste nozze, vasi, lampade, paralumi, prodotti, descrizione, immagini, compera, carrello " />
     <meta name="language" content="italian it" />
     <meta name="author" content="Alessandro Bari, Navid Taha, Alice Sasso, Lorenzo Ferrarin" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,7 +16,6 @@
     <script type="text/javascript" src="../jquery-1.12.0.js"></script>
     <script type="text/javascript" src="../link_skipper.js"></script>
 </head>
-
 <body>
     <div id="menu-drawer">
         <input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
@@ -25,7 +24,7 @@
             <ul>
                 <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
                 <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
-                <li><a href="stampa_annunci.cgi">Annunci</a></li>
+                <li><a href="check_session.cgi?annunci">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
 				[% IF sessione == 'true' %]
 				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>				
@@ -55,18 +54,18 @@
     
     <div id="menu">
         <span id="path">
-            Ti trovi in: Account</span>
+            Ti trovi in: Prodotti</span>
     
         <div id="nav">
             <ul>
                 <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
-                <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
-                <li><a href="stampa_annunci.cgi">Annunci</a></li>
+                <li id="current"><a href="check_session.cgi?prodotti">Prodotti</a></li>
+                <li><a href="check_session.cgi?annunci">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
                 [% IF sessione == 'true' %]
 				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
 				[% IF amministratore == 'true' %]
-				<li id="current"><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
+				<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 				[% END %]
 				<li><a href="logout_script.cgi">Logout</a></li>
 				[% ELSE %]
@@ -89,31 +88,77 @@
             </form>
         </div>
     </div>
+    
     <div id="content">
-        <div id="col">
-            <div id="left-col">
-                <ul>
-                    <li id="left_menu_arrow" class="title_link">Togli utenti</li>
-                    <li class="subtitle_link">Elimina un utente iscritto</li>
-                </ul>
-                <ul>
-                    <li class="title_link"><a href="check_session.cgi?gestione_prodotti">Gestione prodotti</a></li>
-                    <li class="subtitle_link">Togli, aggiungi e modifica i prodotti</li>
-                </ul>
-                <ul>
-                    <li class="title_link"><a href="check_session.cgi?gestione_ordini">Gestione ordini</a></li>
-                    <li class="subtitle_link">Visualizza informazioni e modifica gli ordini</li>
-                </ul>
-                <ul>
-                    <li class="title_link"><a href="check_session.cgi?gestione_annunci">Gestione annunci</a></li>
-                    <li class="subtitle_link">Togli, aggiungi e modifica gli annunci</li>
-                </ul>
-            </div><div id="right-col">
-                [% lista_utenti %]
-            </div>        
+        <div id="prodotti-resultInfoBar">
+            <span id="prodotti-resultInfoBlock">
+                1-k dei n risultati in "categoria"
+            </span>
+            <div id="prodotti-searchSortBlock">
+                <form id="prodotti-searchSortForm" method="post">
+                    <div id="prodotti-searchSortFormLabel">
+                        Ordina per
+                    </div>
+                    <div id="prodotti-searchSortFormSelect">
+                        <select>
+                            <option value="rilevanza">Rilevanza</option>
+                            <option value="prezzo_crescente">Prezzo crescente</option>
+                            <option value="prezzo_decrescente">Prezzo decrescente</option>
+                            <option value="media_recensioni_clienti">Media recensioni clienti</option>
+                            <option value="ultimi_arrivi">Ultimi arrivi</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="prodotti-centralContainer">
+            <div id="prodotti-leftBlock">
+                <div id="prodotti-filterlabel">Filtra per</div>
+                <h2>Marche</h2>
+            </div><div id="prodotti-rightBlock">
+                <div id="prodotti-categorie">
+                    <ul>
+                        <li><a href="liste_nozze.html">Liste nozze</a></li>
+                        <li><a href="porcellane.html">Porcellane</a></li>
+                        <li><a href="pentolame.html">Pentolame</a></li>
+                        <li><a href="tovaglie.html">Tovaglie</a></li>
+                        <li><a href="tavola.html">Tavola</a></li>
+                        <li><a href="paralumi.html">Paralumi</a></li>
+                    </ul>
+                </div>
+            
+                <div id="prodotti-vetrina">
+
+                </div>
+            
+                <div id="prodotti-pageSelector">
+                    <a href="pagina_precedente.html">
+                        <span id="prodotti-frecciaPaginaPrecedente">
+                        </span>
+                    </a>
+                    <span id="prodotti-paginaPrecedente">
+                        Pagina precedente
+                    </span>
+                    <div id="prodotti-paginaNumeri">
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                        </ul>
+                    </div>
+                    <span id="prodotti-paginaSuccessiva">
+                        <a href="pagina_successiva.html">Pagina successiva</a>
+                    </span>
+                    <a href="pagina_successiva.html">
+                        <span id="prodotti-frecciaPaginaSuccessiva">
+                        </span>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
-
+    
+    
     <div id="footer">
         <a href="#header">
             <span id="torna-su">
@@ -142,7 +187,7 @@
             <div class="footer-block">
                 <ul>
                     <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
-                	<li><a href="stampa_annunci.cgi">Annunci</a></li>
+                	<li><a href="check_session.cgi?annunci">Annunci</a></li>
                 	<li><a href="check_session.cgi?contattaci">Contattaci</a></li>
                     [% IF sessione == 'true' %]
 					<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>

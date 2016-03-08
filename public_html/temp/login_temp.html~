@@ -4,10 +4,10 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Linea Casa Bari - Account</title>
-    <meta name="title" content="Linea Casa Bari - Account" />
-    <meta name="description" content="Pagina per gestire l'account del negozio Linea Casa Bari" />
-    <meta name="keywords" content="account, ordini, pagamenti, impostazioni, indirizzi, gestione" />
+    <title>Linea Casa Bari - Accedi</title>
+    <meta name="title" content="Linea Casa Bari - Accedi" />
+    <meta name="description" content="Pagina per accedere come membro al sito sul negozio Linea Casa Bari" />
+    <meta name="keywords" content="piatti, bicchieri, posate, porcellane, liste nozze, vasi, lampade, paralumi, login, accesso, accedi, password" />
     <meta name="language" content="italian it" />
     <meta name="author" content="Alessandro Bari, Navid Taha, Alice Sasso, Lorenzo Ferrarin" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,22 +21,14 @@
     <div id="menu-drawer">
         <input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
         <label for="drawer-toggle" id="drawer-toggle-label"></label>
-       <div id="drawer">
+        <div id="drawer">
             <ul>
                 <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
                 <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
                 <li><a href="stampa_annunci.cgi">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
-				[% IF sessione == 'true' %]
-				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>				
-				[% IF amministratore == 'true' %]
-				<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
-				[% END %]
-				<li><a href="logout_script.cgi">Logout</a></li>
-				[% ELSE %]
                 <li><a href="check_session.cgi?login">Accedi</a></li>
                 <li><a href="check_session.cgi?registrazione">Registrati</a></li>
-				[% END %]
                 <li><a href="check_session.cgi?la_nostra_storia">La nostra Storia</a></li>
                 <li><a href="check_session.cgi?termini_spedizione">Termini e Spedizione</a></li>
                 <li><a href="check_session.cgi?resi_rimborsi">Resi e Rimborsi</a></li>
@@ -55,7 +47,7 @@
     
     <div id="menu">
         <span id="path">
-            Ti trovi in: Account</span>
+            Ti trovi in: Accedi </span>
     
         <div id="nav">
             <ul>
@@ -63,21 +55,10 @@
                 <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
                 <li><a href="stampa_annunci.cgi">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
-                [% IF sessione == 'true' %]
-				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
-				[% IF amministratore == 'true' %]
-				<li id="current"><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
-				[% END %]
-				<li><a href="logout_script.cgi">Logout</a></li>
-				[% ELSE %]
-				<li><a href="check_session.cgi?login">Accedi</a></li>
+				<li id="current"><a href="check_session.cgi?login">Accedi</a></li>
                 <li><a href="check_session.cgi?registrazione">Registrati</a></li>
-				[% END %]
             </ul>
         </div>
-		<div id="nome_utente">
-			<span>[% email %]</span>
-		</div>
     </div>
     <div id="searchBar">
         <div id="searchContainer">
@@ -89,31 +70,51 @@
             </form>
         </div>
     </div>
+    
     <div id="content">
-        <div id="col">
-            <div id="left-col">
-                <ul>
-                    <li id="left_menu_arrow" class="title_link">Togli utenti</li>
-                    <li class="subtitle_link">Elimina un utente iscritto</li>
+        
+        <div id="login-container-mobile">
+            <h2>Effettua l'accesso</h2>
+            <form>
+                <ul class="login-Block">
+                    <li>
+                        <label class="login-emailLabel">Email:</label>
+                        <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text"/></div><div class="inputRight"></div>
+                    </li>
+                    <li>
+                        <label class="login-passwordLabel">Password:</label>
+                        <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password"/></div><div class="inputRight"></div>
+                    </li>
                 </ul>
-                <ul>
-                    <li class="title_link"><a href="check_session.cgi?gestione_prodotti">Gestione prodotti</a></li>
-                    <li class="subtitle_link">Togli, aggiungi e modifica i prodotti</li>
-                </ul>
-                <ul>
-                    <li class="title_link"><a href="check_session.cgi?gestione_ordini">Gestione ordini</a></li>
-                    <li class="subtitle_link">Visualizza informazioni e modifica gli ordini</li>
-                </ul>
-                <ul>
-                    <li class="title_link"><a href="check_session.cgi?gestione_annunci">Gestione annunci</a></li>
-                    <li class="subtitle_link">Togli, aggiungi e modifica gli annunci</li>
-                </ul>
-            </div><div id="right-col">
-                [% lista_utenti %]
-            </div>        
+                <div>
+                    <button class="button" type="submit">Accedi</button>
+                </div>
+            </form>
+        </div>
+        
+        <div id="login-container">
+            <div id="login-container2">
+                <h2>Effettua l'accesso</h2>
+                <form action="../cgi-bin/login_form.cgi" method="post">
+                    <ul class="login-Block">
+                        <li>
+                            <label class="login-emailLabel">Email:</label>
+                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="email"/></div><div class="inputRight"></div>
+                        </li>
+                        <li>
+                            <label class="login-passwordLabel">Password:</label>
+                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password" name="password"/></div><div class="inputRight"></div>
+                        </li>
+                    </ul>
+                    <div>
+                        <button class="button" type="submit">Accedi</button>
+                    </div>
+					<div class="login-error">[% error %]</div>
+                </form>
+            </div>
         </div>
     </div>
-
+    
     <div id="footer">
         <a href="#header">
             <span id="torna-su">
@@ -134,26 +135,18 @@
             <div class="footer-block">
                 <ul>
                     <li><a href="check_session.cgi?la_nostra_storia">La nostra Storia</a></li>
-                    <li><a href="check_session.cgi?termini_spedizione">Termini e Spedizione</a></li>
-                    <li><a href="check_session.cgi?resi_rimborsi">Resi e Rimborsi</a></li>
+                	<li><a href="check_session.cgi?termini_spedizione">Termini e Spedizione</a></li>
+                	<li><a href="check_session.cgi?resi_rimborsi">Resi e Rimborsi</a></li>
                 </ul>
             </div>
 
             <div class="footer-block">
                 <ul>
                     <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
-                	<li><a href="stampa_annunci.cgi">Annunci</a></li>
+                	<li><a href="check_session.cgi?annunci">Annunci</a></li>
                 	<li><a href="check_session.cgi?contattaci">Contattaci</a></li>
-                    [% IF sessione == 'true' %]
-					<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
-					[% IF amministratore == 'true' %]
-					<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
-					[% END %]
-					<li><a href="logout_script.cgi">Logout</a></li>
-					[% ELSE %]
 					<li><a href="check_session.cgi?login">Accedi</a></li>
                 	<li><a href="check_session.cgi?registrazione">Registrati</a></li>
-					[% END %]
                 </ul>
             </div>
             

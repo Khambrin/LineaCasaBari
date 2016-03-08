@@ -21,11 +21,11 @@
     <div id="menu-drawer">
         <input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
         <label for="drawer-toggle" id="drawer-toggle-label"></label>
-       <div id="drawer">
+        <div id="drawer">
             <ul>
                 <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
                 <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
-                <li><a href="stampa_annunci.cgi">Annunci</a></li>
+                <li><a href="check_session.cgi?annunci">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
 				[% IF sessione == 'true' %]
 				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>				
@@ -61,7 +61,7 @@
             <ul>
                 <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
                 <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
-                <li><a href="stampa_annunci.cgi">Annunci</a></li>
+                <li><a href="check_session.cgi?annunci">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
                 [% IF sessione == 'true' %]
 				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
@@ -93,7 +93,7 @@
         <div id="col">
             <div id="left-col">
                 <ul>
-                    <li id="left_menu_arrow" class="title_link">Togli utenti</li>
+                    <li class="title_link"><a href="check_session.cgi?togli_utenti">Togli utenti</a></li>
                     <li class="subtitle_link">Elimina un utente iscritto</li>
                 </ul>
                 <ul>
@@ -101,7 +101,7 @@
                     <li class="subtitle_link">Togli, aggiungi e modifica i prodotti</li>
                 </ul>
                 <ul>
-                    <li class="title_link"><a href="check_session.cgi?gestione_ordini">Gestione ordini</a></li>
+                    <li id="left_menu_arrow" class="title_link">Gestione ordini</li>
                     <li class="subtitle_link">Visualizza informazioni e modifica gli ordini</li>
                 </ul>
                 <ul>
@@ -109,7 +109,40 @@
                     <li class="subtitle_link">Togli, aggiungi e modifica gli annunci</li>
                 </ul>
             </div><div id="right-col">
-                [% lista_utenti %]
+                <form method="post" action="../cgi-bin/ricerca_ordini.cgi">
+                    <ul id="gestione_ordini-rimuovi_modifica_form">
+						<li id="gestione_ordini-search_label_block">
+                            <label id="gestione_ordini-search_label">Cerca un ordine per codice:</label>
+                        </li>
+                        <li id="gestione_ordini-search_input_block">
+                            <div id="commonSearchInputLeft"></div><div id="commonSearchInputMiddle"><input id="commonSearchInput" type="text"/></div><div id="commonSearchInputRight"></div>
+							<div id="commonSearchButtonContainer">
+								<input name="Codice" id="commonSearchButton" type="submit" value=""/>
+							</div>
+                        </li>
+						<li id="gestione_ordini-search_label_block">
+                            <label id="gestione_ordini-search_label">Cerca un ordine per utente:</label>
+                        </li>
+                        <li id="gestione_ordini-search_input_block">
+                            <div id="commonSearchInputLeft"></div><div id="commonSearchInputMiddle"><input id="commonSearchInput" type="text"/></div><div id="commonSearchInputRight"></div>
+							<div id="commonSearchButtonContainer">
+								<input name="Utente" id="commonSearchButton" type="submit" value=""/>
+							</div>
+                        </li>
+						<li id="gestione_ordini-search_label_block">
+                            <label name="Data" id="gestione_ordini-search_label">Cerca un ordine per data:</label>
+                        </li>
+                        <li id="gestione_ordini-search_input_block">
+                            <div id="commonSearchInputLeft"></div><div id="commonSearchInputMiddle"><input id="commonSearchInput" type="text"/></div><div id="commonSearchInputRight"></div>
+							<div id="commonSearchButtonContainer">
+								<input id="commonSearchButton" type="submit" value=""/>
+							</div>
+                        </li>
+                    </ul>
+                </form>
+				[% lista %]
+				
+				
             </div>        
         </div>
     </div>
@@ -142,7 +175,7 @@
             <div class="footer-block">
                 <ul>
                     <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
-                	<li><a href="stampa_annunci.cgi">Annunci</a></li>
+                	<li><a href="check_session.cgi?annunci">Annunci</a></li>
                 	<li><a href="check_session.cgi?contattaci">Contattaci</a></li>
                     [% IF sessione == 'true' %]
 					<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>

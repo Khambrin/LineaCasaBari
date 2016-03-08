@@ -64,9 +64,9 @@
                 <li><a href="stampa_annunci.cgi">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
                 [% IF sessione == 'true' %]
-				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
+				<li id="current"><a href="check_session.cgi?i_miei_ordini">Account</a></li>
 				[% IF amministratore == 'true' %]
-				<li id="current"><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
+				<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 				[% END %]
 				<li><a href="logout_script.cgi">Logout</a></li>
 				[% ELSE %]
@@ -93,23 +93,23 @@
         <div id="col">
             <div id="left-col">
                 <ul>
-                    <li id="left_menu_arrow" class="title_link">Togli utenti</li>
-                    <li class="subtitle_link">Elimina un utente iscritto</li>
+                    <li id="left_menu_arrow" class="title_link">I miei oridini</li>
+                    <li class="subtitle_link">Guarda e modifica gli ordini recenti</li>
                 </ul>
                 <ul>
-                    <li class="title_link"><a href="check_session.cgi?gestione_prodotti">Gestione prodotti</a></li>
-                    <li class="subtitle_link">Togli, aggiungi e modifica i prodotti</li>
+                    <li class="title_link"><a href="check_session.cgi?impostazioni_account">Impostazioni account</a></li>
+                    <li class="subtitle_link">Gestione password, e-mail</li>
                 </ul>
                 <ul>
-                    <li class="title_link"><a href="check_session.cgi?gestione_ordini">Gestione ordini</a></li>
-                    <li class="subtitle_link">Visualizza informazioni e modifica gli ordini</li>
+                    <li class="title_link"><a href="check_session.cgi?pagamenti">Pagamenti</a></li>
+                    <li class="subtitle_link">Gestisci impostazioni di pagamento</li>
                 </ul>
                 <ul>
-                    <li class="title_link"><a href="check_session.cgi?gestione_annunci">Gestione annunci</a></li>
-                    <li class="subtitle_link">Togli, aggiungi e modifica gli annunci</li>
+                    <li class="title_link"><a href="check_session.cgi?indirizzi">Indirizzi</a></li>
+                    <li class="subtitle_link">Gestisci gli indirizzi di spedizione</li>
                 </ul>
             </div><div id="right-col">
-                [% lista_utenti %]
+                
             </div>        
         </div>
     </div>
@@ -142,7 +142,7 @@
             <div class="footer-block">
                 <ul>
                     <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
-                	<li><a href="stampa_annunci.cgi">Annunci</a></li>
+                	<li><a href="check_session.cgi?annunci">Annunci</a></li>
                 	<li><a href="check_session.cgi?contattaci">Contattaci</a></li>
                     [% IF sessione == 'true' %]
 					<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>

@@ -25,7 +25,7 @@
             <ul>
                 <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
                 <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
-                <li><a href="check_session.cgi?annunci">Annunci</a></li>
+                <li><a href="stampa_annunci.cgi">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
 				[% IF sessione == 'true' %]
 				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>				
@@ -61,7 +61,7 @@
             <ul>
                 <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
                 <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
-                <li id="current"><a href="check_session.cgi?annunci">Annunci</a></li>
+                <li id="current"><a href="stampa_annunci.cgi">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
                 [% IF sessione == 'true' %]
 				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
@@ -89,32 +89,16 @@
             </form>
         </div>
     </div>
+    <div id="content">
+	<div>
+		<h2> Annunci </h2>
+	</div>
 
-    <script>
-			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
-				xmlhttp = new XMLHttpRequest();
-			} else {// code for IE6, IE5
-				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-			}
-			xmlhttp.open("GET", "listaAnnunci.xml", false);
-			xmlhttp.send();
-			xmlDoc = xmlhttp.responseXML;
 
-			
-			var x = xmlDoc.getElementsByTagName("annuncio");
-			for ( i = 0; i < x.length; i++) {
-                document.write("<div class='post'>");
-                document.write("<h2>");
-				document.write(x[i].getElementsByTagName("titolo")[0].childNodes[0].nodeValue);
-				document.write("</h2> <h3>");
-				document.write(x[i].getElementsByTagName("data")[0].childNodes[0].nodeValue);
-                document.write("</h3> <p>");
-                document.write(x[i].getElementsByTagName("contenuto")[0].childNodes[0].nodeValue);
-                document.write("</p>");
-                document.write("</div>");
-			}
-	
-    </script>
+	<div>
+        [% lista_annunci %]
+        </div>  
+    </div>
     
     <div id="footer">
         <a href="#header">
@@ -144,7 +128,7 @@
             <div class="footer-block">
                 <ul>
                     <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
-                	<li><a href="check_session.cgi?annunci">Annunci</a></li>
+                	<li><a href="stampa_annunci.cgi">Annunci</a></li>
                 	<li><a href="check_session.cgi?contattaci">Contattaci</a></li>
                     [% IF sessione == 'true' %]
 					<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
