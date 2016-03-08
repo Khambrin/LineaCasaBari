@@ -109,10 +109,28 @@
                     <li class="subtitle_link">Togli, aggiungi e modifica gli annunci</li>
                 </ul>
             </div><div id="right-col">
-                <form method="post" action="ricerca_ordini.cgi">
+                <form method="post" action="../cgi-bin/ricerca_ordini.cgi">
                     <ul id="gestione_ordini-rimuovi_modifica_form">
 						<li id="gestione_ordini-search_label_block">
-                            <label id="gestione_ordini-search_label">Cerca un ordine:</label>
+                            <label id="gestione_ordini-search_label">Cerca un ordine per codice:</label>
+                        </li>
+                        <li id="gestione_ordini-search_input_block">
+                            <div id="commonSearchInputLeft"></div><div id="commonSearchInputMiddle"><input id="commonSearchInput" type="text"/></div><div id="commonSearchInputRight"></div>
+							<div id="commonSearchButtonContainer">
+								<input name="Codice" id="commonSearchButton" type="submit" value=""/>
+							</div>
+                        </li>
+						<li id="gestione_ordini-search_label_block">
+                            <label id="gestione_ordini-search_label">Cerca un ordine per utente:</label>
+                        </li>
+                        <li id="gestione_ordini-search_input_block">
+                            <div id="commonSearchInputLeft"></div><div id="commonSearchInputMiddle"><input id="commonSearchInput" type="text"/></div><div id="commonSearchInputRight"></div>
+							<div id="commonSearchButtonContainer">
+								<input name="Utente" id="commonSearchButton" type="submit" value=""/>
+							</div>
+                        </li>
+						<li id="gestione_ordini-search_label_block">
+                            <label name="Data" id="gestione_ordini-search_label">Cerca un ordine per data:</label>
                         </li>
                         <li id="gestione_ordini-search_input_block">
                             <div id="commonSearchInputLeft"></div><div id="commonSearchInputMiddle"><input id="commonSearchInput" type="text"/></div><div id="commonSearchInputRight"></div>
@@ -122,6 +140,7 @@
                         </li>
                     </ul>
                 </form>
+				[% lista %]
 				
 				
             </div>        

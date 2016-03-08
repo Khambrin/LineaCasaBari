@@ -8,4 +8,12 @@
         <Prodotto>777</Prodotto>
         <Prodotto>888</Prodotto>
     </Ordine>
+	<Ordine>
+        <Codice>2</Codice>
+        <Utente>abari@gmail.com</Utente>
+        <Data>23456</Data>
+        <Prodotto>666</Prodotto>
+        <Prodotto>777</Prodotto>
+        <Prodotto>888</Prodotto>
+    </Ordine>
 </Ordini>
