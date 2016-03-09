@@ -6,38 +6,63 @@ use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use strict;
 use Template;
 use CGI::Session;
+use Switch;
 use XML::LibXML;
 
 my $cgi=new CGI;
+my $session = CGI::Session->load();
+my $email=$session->param("email");
+
+my $parser=XML::LibXML->new;
+my $doc=$parser->parse_file("../data/Ordini.xml");
 my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
 	});
 	
-my $session = CGI::Session->load();
-my $email=$session->param("email");
-my @errors=();
+my $cod=$session->param("cod");
+my $error="false";
 
-my $cod=param("cod");
+my @cod_ordini=$doc->findnodes("Ordini/Ordine/Codice/text()");
 
-if (!$cod)
+if($cod)
 {
-	push @errors, "inserire un codice";
+	my $i;
+	foreach $i (@cod_ordini)
+	{
+		if($i ne $cod)
+		{
+			$error="il codice inserito non corrisponde a nessun ordine esistente";
+		}
+		else
+		{
+			$error="false";
+			last;
+		}
+	}
+}
+else
+{
+	$error="inserisci un codice per la ricerca";
 }
 
-
-my $parser=XML::LibXML->new;
-my $doc=$parser->parse_file("../data/Ordini.xml");
-
-
-my @lista=$doc->findnodes("Ordini//Ordine[Codice='$cod']");
-
 my $file='gestione_ordini_temp.html';
+my $tot;
+my @ordine=$doc->findnodes("Ordini/Ordine[Codice='$cod']/text()");
+foreach my $i (@ordine)
+{
+	my $x="<li>$i".'<form action="gestione_ordini.cgi" method="post"><div><input type="submit" value="modifica"/><input type="hidden" name="email" value="'."$i".'"/></div></form></li>';
+	$tot=$tot.$x;
+}
+
+my $lista_ordine="<ul>"."$tot"."</ul>";
+
 my $vars={
 		'sessione' => "true",
 		'email' => $email,
 		'amministratore' => "true",
-		'errors' => @errors,
-		'lista' => @lista,
+		'list' => "true",
+		'error' => $error,
+		'lista_ordini' => $lista_ordine,
 	};
 print $cgi->header('text/html');
 $template->process($file,$vars) || die $template->error();

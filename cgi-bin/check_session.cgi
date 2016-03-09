@@ -38,6 +38,7 @@ switch($ENV{'QUERY_STRING'})
 	case 'indirizzi' { $file='indirizzi_temp.html' }
 	case 'pagamenti' { $file='pagamenti_temp.html' }
 	case 'gestione_annunci' { $file='gestione_annunci_temp.html' }
+	case 'gestione_ordini' {$file='gestione_ordini_temp.html' }
 }
 
 if ($session->is_empty)
@@ -59,6 +60,7 @@ else
 		'sessione' => "true",
 		'email' => $email,
 		'amministratore' => $doc->findnodes("Utenti/Utente[Email[text()='$email']]/Amministratore/text()"),
+		'error'=> "false",
 	};
 	if ($ENV{'QUERY_STRING'} eq 'login' or $ENV{'QUERY_STRING'} eq 'registrazione')
 	{
@@ -74,7 +76,7 @@ else
 	}
 	if($ENV{'QUERY_STRING'} eq 'gestione_ordini')
 	{
-		print $cgi->redirect("gestione_ordini.cgi");
+		print $cgi->redirect("ricerca_ordini.cgi");
 	}
 	if($ENV{'QUERY_STRING'} eq 'gestione_annunci')
 	{
