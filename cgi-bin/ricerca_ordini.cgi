@@ -9,7 +9,9 @@ use CGI::Session;
 use Switch;
 use XML::LibXML;
 
+
 my $cgi=new CGI;
+print $cgi->header('text/html');
 my $session = CGI::Session->load();
 my $email=$session->param("email");
 
@@ -19,9 +21,8 @@ my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
 	});
 	
-my $cod=$session->param("cod");
+my $cod=param("codice");
 my $error="false";
-
 my @cod_ordini=$doc->findnodes("Ordini/Ordine/Codice/text()");
 
 if($cod)
@@ -45,12 +46,13 @@ else
 	$error="inserisci un codice per la ricerca";
 }
 
+
 my $file='gestione_ordini_temp.html';
 my $tot;
 my @ordine=$doc->findnodes("Ordini/Ordine[Codice='$cod']/text()");
 foreach my $i (@ordine)
 {
-	my $x="<li>$i".'<form action="gestione_ordini.cgi" method="post"><div><input type="submit" value="modifica"/><input type="hidden" name="email" value="'."$i".'"/></div></form></li>';
+	my $x='<li><form action="gestione_ordini.cgi" method="post">'."$i".'<div><input type="submit" value="modifica"/></div></form></li>';
 	$tot=$tot.$x;
 }
 
@@ -64,5 +66,5 @@ my $vars={
 		'error' => $error,
 		'lista_ordini' => $lista_ordine,
 	};
-print $cgi->header('text/html');
+
 $template->process($file,$vars) || die $template->error();
