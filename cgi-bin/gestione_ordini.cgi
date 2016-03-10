@@ -16,8 +16,11 @@ my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
 	});
 
+my $new_codice=param("Codice");
+my $new_utente=param("Utente");
+my $new_cod=param("Data");
 
 
 
-
-
+print $cgi->header('text/html');
+print param("Prodotto1");

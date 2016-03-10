@@ -49,12 +49,38 @@ else
 
 my $file='gestione_ordini_temp.html';
 my $tot;
-my @ordine=$doc->findnodes("Ordini/Ordine[Codice='$cod']/text()");
-foreach my $i (@ordine)
+push my @ordine, $doc->findnodes("Ordini/Ordine[Codice='$cod']/Codice/text()");
+push @ordine, $doc->findnodes("Ordini/Ordine[Codice='$cod']/Utente/text()");
+push @ordine, $doc->findnodes("Ordini/Ordine[Codice='$cod']/Data/text()");
+my $num_prodotto=$doc->findvalue("count(Ordini/Ordine[Codice=1]/Prodotto)");
+for(my $x=0; $x<$num_prodotto;$x++)
 {
-	my $x='<li><form action="gestione_ordini.cgi" method="post">'."$i".'<div><input type="submit" value="modifica"/></div></form></li>';
+	push @ordine, $doc->findnodes("Ordini/Ordine[Codice='$cod']/Prodotto/text()");
+}
+
+my @label = ('Codice','Utente','Data' );
+for(my $x=0; $x<$num_prodotto;$x++)
+{
+	push @label, "Prodotto";
+}
+
+my $y=0;
+for(my $i=0; $i<3;$i++)
+{
+	my $x='<li><form action="gestione_ordini.cgi" method="post">'."<label>@label[$i]: </label>". '<input type="text" name="'."@label[$i]".'" value="'."@ordine[$y]".'"/>';
+	$y++;
 	$tot=$tot.$x;
 }
+my $counter=1;
+for(my $i=0; $i<$num_prodotto;$i++)
+{
+	my $x='<li><form action="gestione_ordini.cgi" method="post">'."<label>@label[$y] $counter: </label>". '<input type="text" name="'."@label[$y]$counter".'" value="'."@ordine[$y]".'"/>';
+	$y++;
+	$counter++;
+	$tot=$tot.$x;
+}
+
+$tot=$tot.'<div><input type="submit" value="modifica"/></div></form></li>';
 
 my $lista_ordine="<ul>"."$tot"."</ul>";
 
