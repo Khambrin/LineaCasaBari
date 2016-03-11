@@ -17,25 +17,17 @@ my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
 	});
 
-my vecchio_ordine= param("vecchio_ordine");
-my $twig = XML::Twig -> parse_file ("../data/Ordini.xml" ); 
+my $vecchio_ordine= param("vecchio_ordine");
 
-if ($twig -> get_xpath("Ordini/Ordine[Codice='$vecchio_ordine']")) 
-{
-	my $add_to = $twig -> get_xpath ( "Ordini/Ordine/Codice", param("Codice") ); 
-	$add_to = $twig -> get_xpath ( "Ordini/Ordine/Utente", param("Utente") );
-	$add_to = $twig -> get_xpath ( "Ordini/Ordine/Data", param("Data") );
-	for(my $i=1;$i<=param("numero_prodotti");$i++)
-	{
-		$add_to = $twig -> get_xpath ( "Ordini/Ordine/Prodotto[$i]", param("Prodotto[$i]") );
-	}
-	$add_to -> insert_new_elt ( 'last_child', 'param', { name => "another_setting" }, "Content here" );
-
-	$twig -> set_pretty_print("indented_a");
-	$twig -> print;
-    
-}
-
+my $twig=XML::Twig->new(
+    pretty_print  => 'indented',
+    twig_handlers => { 
+        name => sub { 
+            $_->set_text( 'culo' )->flush  if $_->text eq 'abari@gmail.com' 
+        },
+    },
+    );
+$twig->parsefile_inplace( '../data/Ordini.xml');
 
 
 
