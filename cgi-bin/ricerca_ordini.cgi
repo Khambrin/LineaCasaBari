@@ -6,9 +6,7 @@ use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use strict;
 use Template;
 use CGI::Session;
-use Switch;
 use XML::LibXML;
-
 
 my $cgi=new CGI;
 print $cgi->header('text/html');
@@ -46,8 +44,6 @@ else
 	$error="inserisci un codice per la ricerca";
 }
 
-
-my $file='gestione_ordini_temp.html';
 my $tot;
 push my @ordine, $doc->findnodes("Ordini/Ordine[Codice='$cod']/Codice/text()");
 push @ordine, $doc->findnodes("Ordini/Ordine[Codice='$cod']/Utente/text()");
@@ -79,11 +75,11 @@ for(my $i=0; $i<$num_prodotto;$i++)
 	$counter++;
 	$tot=$tot.$x;
 }
-
-$tot=$tot.'<div><input type="submit" value="modifica"/></div></form></li>';
-
+$y=0;
+$tot=$tot.'<div><input type="submit" value="modifica"/></div></form>'.'<input type="hidden" name="vecchio_ordine" value="'."@ordine[$y]".'"/><input type="hidden" name="numero_prodotti" value="'."$num_prodotto".'"/></div></form></li></li>';
 my $lista_ordine="<ul>"."$tot"."</ul>";
 
+my $file='gestione_ordini_temp.html';
 my $vars={
 		'sessione' => "true",
 		'email' => $email,
@@ -92,5 +88,4 @@ my $vars={
 		'error' => $error,
 		'lista_ordini' => $lista_ordine,
 	};
-
 $template->process($file,$vars) || die $template->error();
