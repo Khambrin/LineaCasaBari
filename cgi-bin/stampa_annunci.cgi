@@ -11,9 +11,13 @@ use XML::LibXML;
 
 my $cgi=new CGI;
 
-
 my $session = CGI::Session->load();
+
 my $email=$session->param("email");
+
+my $amministratore=$session->param("amministratore");
+
+my $vars;
 
 my $parser=XML::LibXML->new;
 my $doc=$parser->parse_file("../data/Annunci.xml");
@@ -30,24 +34,35 @@ my $file='annunci_temp.html';
 my $tot;
 for (my $index=0; $index <=$#annuncio_titolo; $index++)
 {	
-	
 	my $x='<div id="info-container"> <h3>'."@annuncio_titolo[$index]".'</h3>';
 	$tot=$tot.$x;
 	my $x='<div class="info-text"><p>'."@annuncio_data[$index]".'</p>';
 	$tot=$tot.$x;
 	my $x="<p>@annuncio_testo[$index]".'<p>';
 	$tot=$tot.$x;
-	my $x='<img src='."@annuncio_immagine[$index]".' alt='."Immagine annuncio".'></div></div>';
+	my $alt= substr @annuncio_immagine[$index], 18, -4;
+	my $x='<img src="'."@annuncio_immagine[$index]".'" alt="'."$alt".'"></div></div>';
 	$tot=$tot.$x;
 }
 
 my $lista_annunci="<ul>"."$tot"."</ul>";
 
-my $vars={
-		'sessione' => "true",
-		'email' => $email,
-		'amministratore' => "true",
+if ($session->is_empty)
+{
+	$vars={
+		'sessione' => "false",
 		'lista_annunci' => $lista_annunci,
 	};
+}
+
+else
+{
+	$vars={
+		'sessione' => "true",
+		'email' => $email,
+		'amministratore' => $amministratore,
+		'lista_annunci' => $lista_annunci,
+	};
+}
 print $cgi->header('text/html');
 $template->process($file,$vars) || die $template->error();

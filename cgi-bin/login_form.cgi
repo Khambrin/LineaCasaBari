@@ -45,8 +45,10 @@ if (@errors)
 }
 else
 {
+	my $amministratore=$doc->findvalue("Utenti/Utente[Email[text()='$values{email}']]/Amministratore");
 	my $session=new CGI::Session("driver:File",undef,{Directory=>File::Spec->tmpdir});
 	my $cookie=$cgi->cookie(CGISESSID => $session->id);
 	$session->param("email", $values{email});
+	$session->param("amministratore", $amministratore);
 	print $cgi->redirect(-uri => 'check_session.cgi?login', -cookie => $cookie);
 }

@@ -19,9 +19,6 @@ my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
 	});
 
-my $parser=XML::LibXML->new;
-my $doc=$parser->parse_file("../data/Utenti.xml");
-
 switch($ENV{'QUERY_STRING'})
 {
 	case 'index' { $file='index_temp.html'; }
@@ -56,10 +53,11 @@ if ($session->is_empty)
 else
 {	
 	my $email=$session->param("email");
+	my $amministratore=$session->param("amministratore");
 	$vars={
 		'sessione' => "true",
 		'email' => $email,
-		'amministratore' => $doc->findnodes("Utenti/Utente[Email[text()='$email']]/Amministratore/text()"),
+		'amministratore' => $amministratore,
 		'error'=> "false",
 	};
 	if ($ENV{'QUERY_STRING'} eq 'login' or $ENV{'QUERY_STRING'} eq 'registrazione')

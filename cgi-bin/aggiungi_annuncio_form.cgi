@@ -105,7 +105,7 @@ else
 		}
 		else
 		{
-			$immagine="";
+			$immagine=" ";
 		}
 		$immagine_tag->appendTextNode($immagine);
 		$annuncio_tag->appendChild($immagine_tag);
