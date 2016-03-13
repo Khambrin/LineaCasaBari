@@ -111,7 +111,7 @@
             </div><div id="right-col">
                 <div>
                 <a class="sub_menu_link" href="gestione_annunci_script.cgi?aggiungi">
-                    <div class="sub_menu_block"><span class="sub_menu_text">Aggiungi annuncio</span></div></a><a class="sub_menu_link" href="gestione_annunci_script.cgi?rimuovi_modifica"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica annuncio</span></div></a>
+                    <div class="sub_menu_block"><span class="sub_menu_text">Aggiungi annuncio</span></div></a><a class="sub_menu_link" href="modifica_annunci.cgi"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica annuncio</span></div></a>
                 </div>
                 [% IF pagina == 'aggiungi' %]
                 <form method="post" action="aggiungi_annuncio_form.cgi" enctype="multipart/form-data">
@@ -139,8 +139,8 @@
 					<div>[% hidden %]</div>
 					<div>[% error %]</div>
                 </form>
-				[% ELSIF pagina == 'rimuovi_modifica' %]
-
+				[% ELSE %]
+					<span>[% lista_annunci %]</span>
 
 				[% END %]
             </div>        
