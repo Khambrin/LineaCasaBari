@@ -65,22 +65,23 @@ if($error eq "false")
 	my $y=0;
 	for(my $i=0; $i<3;$i++)
 	{
-		my $x="<li>"."<label>@label[$i]: @ordine[$y]</label></li>";
+		my $x="<li>".'<form action="elimina_prodotti_ordini.cgi" method="post" >'."<label>@label[$i]: @ordine[$y]</label></form></li>";
 		$y++;
 		$tot=$tot.$x;
 	}
 	my $counter=1;
 	for(my $i=0; $i<$num_prodotto;$i++)
 	{
-		my $x="<li>"."<label>@label[$y] $counter: @ordine[$y]</label>".'<div><input type="checkbox" value="'."$counter".'/></div></li>';
+		my $x="<li>".'<form action="elimina_prodotti_ordini.cgi" method="post" >'."<label>@label[$y] $counter: @ordine[$y]</label>".'<div><input type="checkbox" name="'."$counter".'/></div></form></li>';
 		$y++;
 		$counter++;
 		$tot=$tot.$x;
 	}
 
 	$y=0;
-	$tot=$tot.'<li><div><input type="submit" value="elimina selezionati"/></div><div><input type="submit" value="aggiungi prodotto"/></div>'.'<input type="hidden" name="ordine" value="'."$cod".'"/><input type="hidden" name="numero_prodotti" value="'."$num_prodotto".'"/></li>';
-	my $lista_ordine='<div><form action=gestione_ordini.cgi" method="post">'."<ul>"."$tot"."</ul></form></div>";
+	
+	$tot=$tot."<li>".'<form action="elimina_prodotti_ordini.cgi" method="post">'.'<div><input type="submit" value="elimina selezionati"/></div><input type="hidden" name="num_prodotti" value="'."$num_prodotto"."/>".'<input type="hidden" name="ordine" value="'."$cod".'"/></form><form action="aggiungi_prodotti_ordine.cgi" method="post" ><input type="hidden" name="ordine" value="'."$cod".'"/><div><input type="submit" value="aggiungi prodotto"/></div></form></li>';
+	my $lista_ordine="<ul>"."$tot"."</ul>";
 	$vars={
 		'sessione' => "true",
 		'email' => $email,
