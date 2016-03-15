@@ -139,10 +139,40 @@
 					<div>[% hidden %]</div>
 					<div>[% error %]</div>
                 </form>
+				[% ELSIF pagina == 'edit' %]
+
+                <form method="post" action="edit_annuncio.cgi" enctype="multipart/form-data">
+                    <ul div id="edit-form">
+                        <li class="gestione-block">
+                            <label class="gestione-labels">Titolo:</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="titolo"/></div><div class="inputRight"></div>
+                        </li>
+                        <li class="gestione-block">
+                            <label id="gestione-textarea_label">Testo:</label>
+                        </li>
+                        <li class="gestione-block">
+                            <textarea id="gestione_annunci-textarea" rows="100" cols="100" name="testo"></textarea>
+                        </li>
+                        <li class="gestione-block">
+                            <div id="gestione-file_label">
+                                <label class="gestione-labels">Inserisci immagine:</label>
+                            </div>
+                            <input type="file" name="immagine"/>
+                        </li>
+                    </ul>
+                    <div id="gestione-button_block">
+                        <button class="button" type="submit">Modifica annuncio</button>
+                    </div>
+					<div>[% hidden %]</div>
+					<div>[% error %]</div>
+                </form>
+
 				[% ELSE %]
-					<span>[% lista_annunci %]</span>
+
+					<span>[% lista_annunci %]</span>				
 
 				[% END %]
+				
             </div>        
         </div>
     </div>

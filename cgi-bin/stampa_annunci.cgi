@@ -41,7 +41,7 @@ for (my $index=0; $index <=$#annuncio_titolo; $index++)
 	my $x="<p>@annuncio_testo[$index]".'<p>';
 	$tot=$tot.$x;
 	my $alt= substr @annuncio_immagine[$index], 18, -4;
-	my $x='<img src="'."@annuncio_immagine[$index]".'" alt="'."$alt".'"></div></div>';
+	my $x='<div id="immagine_annuncio"><img src="'."@annuncio_immagine[$index]".'" alt="'."$alt".'"></div></div></div>';
 	$tot=$tot.$x;
 }
 
