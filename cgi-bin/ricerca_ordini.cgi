@@ -18,8 +18,17 @@ my $doc=$parser->parse_file("../data/Ordini.xml");
 my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
 	});
+my $cod;
+if ($ENV{'REQUEST_METHOD'} eq 'POST')
+{
+	$cod=param("codice");
 	
-my $cod=param("codice");
+}
+else
+{
+	$cod=$ENV{'QUERY_STRING'};
+}
+
 my $error="false";
 my @cod_ordini=$doc->findnodes("Ordini/Ordine/Codice/text()");
 
@@ -65,22 +74,22 @@ if($error eq "false")
 	my $y=0;
 	for(my $i=0; $i<3;$i++)
 	{
-		my $x="<li>".'<form action="elimina_prodotti_ordini.cgi" method="post" >'."<label>@label[$i]: @ordine[$y]</label></form></li>";
+		my $x="<li>".'<form>'."<label>@label[$i]: @ordine[$y]</label></form></li>";
 		$y++;
 		$tot=$tot.$x;
 	}
 	my $counter=1;
+	$tot=$tot.'<form action="elimina_prodotti_ordini.cgi" method="post">';
 	for(my $i=0; $i<$num_prodotto;$i++)
 	{
-		my $x="<li>".'<form action="elimina_prodotti_ordini.cgi" method="post" >'."<label>@label[$y] $counter: @ordine[$y]</label>".'<div><input type="checkbox" name="'."$counter".'/></div></form></li>';
+		my $x="<li><label>@label[$y] $counter: @ordine[$y]</label>".'<div><input type="checkbox" name="'."$counter".'" value="on"/></div></li>';
 		$y++;
 		$counter++;
 		$tot=$tot.$x;
 	}
 
 	$y=0;
-	
-	$tot=$tot."<li>".'<form action="elimina_prodotti_ordini.cgi" method="post">'.'<div><input type="submit" value="elimina selezionati"/></div><input type="hidden" name="num_prodotti" value="'."$num_prodotto"."/>".'<input type="hidden" name="ordine" value="'."$cod".'"/></form><form action="aggiungi_prodotti_ordine.cgi" method="post" ><input type="hidden" name="ordine" value="'."$cod".'"/><div><input type="submit" value="aggiungi prodotto"/></div></form></li>';
+	$tot=$tot.'<li><div><input type="submit" value="elimina selezionati"/></div><input type="hidden" name="num_prodotti" value="'."$num_prodotto".'"/><input type="hidden" name="ordine" value="'."$cod".'"/></form><form action="togli_ordine.cgi" method="post"><input type="hidden" name="ordine" value="'."$cod".'"/><div><input type="submit" value="togli ordine"/></div></form></li>';
 	my $lista_ordine="<ul>"."$tot"."</ul>";
 	$vars={
 		'sessione' => "true",
