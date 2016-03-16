@@ -114,7 +114,7 @@
                     <div class="sub_menu_block"><span class="sub_menu_text">Aggiungi prodotto</span></div></a><a class="sub_menu_link" href="gestione_prodotti_script.cgi?rimuovi_modifica"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica prodotto</span></div></a>
                 </div>
             	[% IF pagina == 'aggiungi' %]
-                <!--<form method="post" action="aggiungi_prodotto_form.cgi" enctype="multipart/form-data">
+                <form method="post" action="aggiungi_prodotto_form.cgi" enctype="multipart/form-data">
                     <ul div id="gestione-aggiungi_form">
                         <li class="gestione-block">
                             <label class="gestione-labels">Nome:</label>
@@ -164,12 +164,12 @@
                             <input type="file" name="immagine"/>
                         </li>
                     </ul>
-                    <div id="gestione-button_block">
+                    <div class="gestione-button_block">
                         <button class="button" type="submit">Aggiungi prodotto</button>
                     </div>
 					<div>[% hidden %]</div>
 					<div>[% error %]</div>
-                </form>-->
+                </form>
 				[% ELSIF pagina == 'rimuovi_modifica' %]
                     <form method="post" action="ricerca_prodotto.cgi">
                         <ul id="gestione_prodotti-rimuovi_modifica_form">
