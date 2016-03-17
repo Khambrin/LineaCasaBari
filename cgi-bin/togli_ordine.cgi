@@ -21,7 +21,16 @@ my $template=Template->new({
 	});
 	
 my $parser=XML::LibXML->new;
-my $ordine=param("ordine");
+my $ordine;
+if ($ENV{'REQUEST_METHOD'} eq 'POST')
+{
+	$ordine=param("ordine");
+	
+}
+else
+{
+	$ordine=$ENV{'QUERY_STRING'};
+}
 
 my $doc=$parser->parse_file("../data/Ordini.xml");
 my $ordine_node=$doc->findnodes("Ordini/Ordine[Codice='$ordine']");

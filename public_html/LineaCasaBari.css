@@ -1368,7 +1368,7 @@ body
         background-repeat: repeat-x;
     }
     
-    #gestione-aggiungi_form{
+    .gestione-aggiungi_form{
         text-align: center;
         padding-top: 2em;
     }

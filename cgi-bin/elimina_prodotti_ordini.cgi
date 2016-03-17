@@ -12,27 +12,38 @@ use XML::LibXML;
 my $cgi=new CGI;
 my $session = CGI::Session->load();
 my $email=$session->param("email");
-
-my $parser,my $doc;
-my $num_prodotti=param("num_prodotti");
 my $cod_ordine=param("ordine");
 
+my $parser=XML::LibXML->new;
+my $doc=$parser->parse_file("../data/Ordini.xml");
+my $num_prodotti=$doc->findvalue("count(Ordini/Ordine[Codice='$cod_ordine']/Prodotto)");
+my $counter=0;
 for (my $i=1; $i<=$num_prodotti;$i++)
 {
+	$counter++;
 	if(param($i))
 	{
-		$parser=XML::LibXML->new;
-		$doc=$parser->parse_file("../data/Ordini.xml");
-		my $ordine = $doc->findnodes("Ordini/Ordine[Codice='$cod_ordine']/Prodotto[$i]");
+		my $ordine = $doc->findnodes("Ordini/Ordine[Codice='$cod_ordine']/Prodotto[$counter]");
 		$ordine->[0]->parentNode->removeChild($ordine->[0]);
-		
-	}	
+		$counter--;
+	}		
 }
-
 open(XML,">","../data/Ordini.xml");
 print XML $doc->toString();
 close(XML);
-print $cgi->redirect("ricerca_ordini.cgi?$cod_ordine");
+
+$parser=XML::LibXML->new;
+$doc=$parser->parse_file("../data/Ordini.xml");
+$num_prodotti=$doc->findvalue("count(Ordini/Ordine[Codice='$cod_ordine']/Prodotto)");
+
+if($num_prodotti)
+{
+	print $cgi->redirect("ricerca_ordini.cgi?$cod_ordine");
+}
+else
+{
+	print $cgi->redirect("togli_ordine.cgi?$cod_ordine");
+}
 
 
 
