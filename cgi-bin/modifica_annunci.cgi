@@ -28,7 +28,7 @@ my $tot;
 foreach my $i (@annuncio_titolo)
 {
 	my $x="<li>$i".'<form class="togli_annuncio-pulsante" action="remove_annuncio.cgi" method="post"><div><input type="submit" value="Rimuovi"/><input type="hidden" name="titolo" value="'."$i".'"/></div></form>
-<form class="modifica_annuncio-pulsante" action="gestione_annunci_script.cgi?edit" method="post"><div><input type="submit" value="Modifica"/><input type="hidden" name="titolo_edit" value="'."$i".'"/></div></form>
+<form class="modifica_annuncio-pulsante" action="modifica_annunci_script.cgi" method="post"><div><input type="submit" value="Modifica"/><input type="hidden" name="titolo_edit" value="'."$i".'"/></div></form>
 </li>';
 	$tot=$tot.$x;
 }
