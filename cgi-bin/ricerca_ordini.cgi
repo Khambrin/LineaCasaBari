@@ -32,25 +32,33 @@ else
 my $error="false";
 my @cod_ordini=$doc->findnodes("Ordini/Ordine/Codice/text()");
 
-if($cod)
+if(@cod_ordini)
 {
-	my $i;
-	foreach $i (@cod_ordini)
+	if($cod)
 	{
-		if($i ne $cod)
+		my $i;
+		foreach $i (@cod_ordini)
 		{
-			$error="il codice inserito non corrisponde a nessun ordine esistente";
+			if($i ne $cod)
+			{
+				print "non uguale";
+				$error="il codice inserito non corrisponde a nessun ordine esistente";
+			}
+			else
+			{
+				$error="false";
+				last;
+			}
 		}
-		else
-		{
-			$error="false";
-			last;
-		}
+	}
+	else
+	{
+		$error="inserisci un codice per la ricerca";
 	}
 }
 else
 {
-	$error="inserisci un codice per la ricerca";
+	$error="non ci sono ordini";
 }
 my $vars;
 if($error eq "false")
@@ -82,7 +90,7 @@ if($error eq "false")
 	$tot=$tot.'<form action="elimina_prodotti_ordini.cgi" method="post">';
 	for(my $i=0; $i<$num_prodotto;$i++)
 	{
-		my $x='<li class="gestione-block">'.'<label class="gestione-labels">'."@label[$y] $counter: @ordine[$y]</label>".'<div><input type="checkbox" name="'."$counter".'" value="on"/></div></li>';
+		my $x='<li class="gestione-block">'.'<div><label class="gestione-labels">'."@label[$y] $counter: @ordine[$y]</label>".'<input type="checkbox" name="'."$counter".'" value="on"/></div></li>';
 		$y++;
 		$counter++;
 		$tot=$tot.$x;

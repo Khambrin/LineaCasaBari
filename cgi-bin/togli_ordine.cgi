@@ -39,12 +39,13 @@ $ordine_node->[0]->parentNode->removeChild($ordine_node->[0]);
 open(XML,">","../data/Ordini.xml");
 print XML $doc->toString();
 close(XML);
-
+$error="ordine eliminato con successo";
 my $vars={
 		'sessione' => "true",
 		'email' => $email,
 		'amministratore' => "true",
 		'list' => "false",
+		'error' => $error,
 	};
 
 my $file='gestione_ordini_temp.html';

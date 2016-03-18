@@ -111,23 +111,21 @@
             </div>
             <div id="right-col">
                 <form method="post" action="../cgi-bin/ricerca_ordini.cgi">
-                    <ul id="gestione_ordini-rimuovi_modifica_form">
-						<li id="gestione_ordini-search_label_block">
-                            <label id="gestione_ordini-search_label">Cerca un ordine per codice:</label>
-                        </li>
-                        <li id="gestione_ordini-search_input_block">
-                            <input class="input" name="codice" type="text"/>
-							<div id="commonSearchButtonContainer">
-								<button class="button" type="submit">Cerca</button>
-							</div>
-                        </li>
+                    <ul class="gestione-aggiungi_form">
+						<li class="gestione-block">
+                            <label class="gestione-labels">Cerca un ordine:</label>
+                        	<div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="codice" type="text"/></div><div class="inputRight"></div>
+						</li
                     </ul>
+                    <div class="gestione-button_block">
+							<button class="button" type="submit">Cerca</button>
+					</div>
                 </form>
                 [% IF error != 'false' %]<div class="registrazione-error">[% error %]</div>[% END %]
 				[% IF list == 'true' %]
 				[% lista_ordini %] 	
 				[% END %]	
-				[% messaggio %]
+				
 				
             </div>        
         </div>
