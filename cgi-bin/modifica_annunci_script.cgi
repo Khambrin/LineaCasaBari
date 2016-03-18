@@ -22,8 +22,18 @@ my $template=Template->new({
 	});
 
 my $titolo=param("titolo_edit");
+
+
+
 my $annuncio_node=$doc->findnodes("Annunci/Annuncio[Titolo='$titolo']");
-my $contenuto=$annuncio_node->[0]->parentNode->findvalue('Testo');
+
+my $fcontenuto=$doc->findnodes("Annunci/Annuncio[Titolo='$titolo']/Testo/text()");
+
+
+
+
+my $contenuto=$fcontenuto;
+my $vcontenuto='<textarea id="gestione_annunci-textarea" rows="100" cols="100" name="testo">'."$contenuto".'</textarea>';
 
 my $vt_form='<input class= "input" type="text" name="titolo" value="'."$titolo".'"/>';
 
@@ -43,6 +53,7 @@ my $vars={
 		'pagina' => "edit",
 		'prova'=>"salveeeeeeee",
 		'vtitolo'=>$vt_form,
+		'vcontenuto'=>$vcontenuto,
 	};
 
 print $cgi->header('text/html');
