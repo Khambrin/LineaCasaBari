@@ -133,6 +133,7 @@ body
 .button {
     height: 3em;
     width: 20%;
+    padding-bottom:0.5em;
 }
 
 .inputLeft {
@@ -409,11 +410,6 @@ body
     padding-right: 0.5em;
 }
 
-.login-error{
-    padding-top: 1.5em;
-    color: red;
-}
-
 /*--------------------------- registrazione.html -----------------------------------------------------------------------------------------------*/
 
 #registrazione-container-mobile{
@@ -457,11 +453,6 @@ body
 
 .registrazione-confermapasswordLabel{
     padding-right: 0.8em;
-}
-
-.registrazione-error{
-    padding-top: 1.5em;
-    color: red;
 }
 
 /*--------------------------- contattaci.html ----------------------------------------------------------------------------------------------------*/
@@ -796,7 +787,7 @@ body
     {
         list-style: none;
         display: inline;
-        padding-right: 1.5em;
+        padding-right: 1em;
         border-color:#15164B;
         padding-left:1em;
         text-align: center;
@@ -815,7 +806,11 @@ body
     #current
     {
 	padding:1em;
-	background-color: yellow;
+	background-color: #295380;
+    }
+    #current a
+    {
+		color: white;
     }
 
     #torna-su
@@ -1274,7 +1269,7 @@ body
     #left-col ul
     {
         padding-top: 2em;
-        padding-left: 2em;
+        padding-left: 1em;
         padding-bottom: 1em;
         border-bottom: 1px solid;
         width: 100%;
@@ -1289,7 +1284,7 @@ body
     {
 		display: inline-block;
         vertical-align: middle;
-        width: 75%;
+        width: 74%;
         border-bottom: 1px solid;
         border-left: 1px solid;
         height: 55em;
@@ -1404,4 +1399,15 @@ body
         padding-bottom: 2em;
         margin-top: 2em;
     }
+}
+/*-------------------------------------------------------------Generale----------------------------*/
+
+#nome_utente
+{
+	padding-left:1em;
+}
+
+.messaggio-error{
+    padding-top: 1em;
+    color: #295380;
 }

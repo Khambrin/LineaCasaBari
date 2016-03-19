@@ -8,7 +8,7 @@ use Template;
 
 my $cgi=new CGI;
 
-my @errors=();
+my @messaggi=();
 my %values;
 
 foreach my $p (param())
@@ -21,14 +21,14 @@ foreach my $chiave (keys %values)
 {
 	if (!$values{$chiave})
 	{
-		push @errors, "Devi completare il campo '$chiave'.";
+		push @messaggi, "Devi completare il campo '$chiave'.";
 	}
 	if ($chiave eq "email")
 	{
 		#controlli sul campo email
 		if (!$values{$chiave}=~ /^[^ ,@]+\@([a-z0-9-]+\.)+[a-z]+$/)
 		{
-			push @errors, "Indirizzo email inserito non valido.";
+			push @messaggi, "Indirizzo email inserito non valido.";
 		}
 	}
 	if ($chiave eq "password")
@@ -40,17 +40,17 @@ foreach my $chiave (keys %values)
 	{
 		if ($values{$chiave} ne $pwd)
 		{
-			push @errors, "La conferma della password non corrisponde.";
+			push @messaggi, "La conferma della password non corrisponde.";
 		}
 	}
 }
 
-if (@errors)
+if (@messaggi)
 {
 	print $cgi->header('text/html');
 	my $file='registrazione_temp.html';
 	my $vars={
-		'error' => "<ul>"."<li>[@errors]</li>"."</ul>"
+		'messaggio' => "<ul>"."<li>[@messaggi]</li>"."</ul>"
 	};
 	my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',

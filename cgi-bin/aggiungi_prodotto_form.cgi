@@ -14,7 +14,7 @@ my $cgi=new CGI;
 my $session = CGI::Session->load();
 my $email=$session->param("email");
 my $pagina=param("pagina");
-my @errors=();
+my @messaggi=();
 my %values;
 
 foreach my $p (param())
@@ -24,23 +24,23 @@ foreach my $p (param())
 
 if (!$values{"nome"})
 {
-	push @errors, "Devi completare il campo nome.";
+	push @messaggi, "Devi completare il campo nome.";
 }
 if (!$values{"prezzo"})
 {
-	push @errors, "Devi completare il campo prezzo.";
+	push @messaggi, "Devi completare il campo prezzo.";
 }
 if (!$values{"descrizione"})
 {
-	push @errors, "Devi completare il campo descrizione.";
+	push @messaggi, "Devi completare il campo descrizione.";
 }
 
-if (@errors)
+if (@messaggi)
 {
 	print $cgi->header('text/html');
 	my $file='gestione_prodotti_temp.html';
 	my $error_message_aux;
-	foreach my $i (@errors)
+	foreach my $i (@messaggi)
 	{
 		my $x="<li>$i".'</li>';
 		$error_message_aux=$error_message_aux.$x;
@@ -50,7 +50,7 @@ if (@errors)
 		'sessione' => "true",
 		'email' => $email,
 		'amministratore' => "true",
-		'error' => $error_message,
+		'messaggio' => $error_message,
 		'pagina' => $pagina,
 	};
 	my $template=Template->new({

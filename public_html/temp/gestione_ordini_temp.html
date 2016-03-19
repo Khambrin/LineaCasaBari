@@ -89,6 +89,7 @@
             </form>
         </div>
     </div>
+    
     <div id="content">
         <div id="col">
             <div id="left-col">
@@ -121,12 +122,8 @@
 							<button class="button" type="submit">Cerca</button>
 					</div>
                 </form>
-                [% IF error != 'false' %]<div class="registrazione-error">[% error %]</div>[% END %]
-				[% IF list == 'true' %]
-				[% lista_ordini %] 	
-				[% END %]	
-				
-				
+                [% IF messaggio != 'false' %]<div class="messaggio-error">[% messaggio %]</div>[% END %]
+				[% lista_ordini %]
             </div>        
         </div>
     </div>

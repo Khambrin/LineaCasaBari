@@ -14,7 +14,7 @@ my $cgi=new CGI;
 my $session = CGI::Session->load();
 my $email=$session->param("email");
 my $pagina=param("pagina");
-my @errors=();
+my @messaggi=();
 my %values;
 
 foreach my $p (param())
@@ -24,19 +24,19 @@ foreach my $p (param())
 
 if (!$values{"titolo"})
 {
-	push @errors, "Devi completare il campo titolo.";
+	push @messaggi, "Devi completare il campo titolo.";
 }
 if (!$values{"testo"})
 {
-	push @errors, "Devi completare il campo testo.";
+	push @messaggi, "Devi completare il campo testo.";
 }
 
-if (@errors)
+if (@messaggi)
 {
 	print $cgi->header('text/html');
 	my $file='gestione_annunci_temp.html';
 	my $error_message_aux;
-	foreach my $i (@errors)
+	foreach my $i (@messaggi)
 	{
 		my $x="<li>$i".'</li>';
 		$error_message_aux=$error_message_aux.$x;
@@ -46,7 +46,7 @@ if (@errors)
 		'sessione' => "true",
 		'email' => $email,
 		'amministratore' => "true",
-		'error' => $error_message,
+		'messaggio' => $error_message,
 		'pagina' => $pagina,
 	};
 	my $template=Template->new({

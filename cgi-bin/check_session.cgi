@@ -58,7 +58,7 @@ else
 		'sessione' => "true",
 		'email' => $email,
 		'amministratore' => $amministratore,
-		'error'=> "false",
+		'messaggio'=> "false",
 	};
 	if ($ENV{'QUERY_STRING'} eq 'login' or $ENV{'QUERY_STRING'} eq 'registrazione')
 	{

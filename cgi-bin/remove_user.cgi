@@ -27,11 +27,11 @@ my $file='togli_utenti_temp.html';
 my $tot;
 foreach my $i (@users)
 {
-	my $x="<li>$i".'<form class="togli_utenti-pulsante" action="remove_user_form.cgi" method="post"><div><input type="submit" value="Rimuovi"/><input type="hidden" name="email" value="'."$i".'"/></div></form></li>';
+	my $x='<li class="gestione-block">'."$i".'<form class="togli_utenti-pulsante" action="remove_user_form.cgi" method="post"><div class="gestione-button_block"><button class="button" type="submit">Rimuovi</button><input type="hidden" name="email" value="'."$i".'"/></div></form></li>';
 	$tot=$tot.$x;
 }
 
-my $lista_utenti="<ul>"."$tot"."</ul>";
+my $lista_utenti='<ul class="gestione-aggiungi_form" >'."$tot"."</ul>";
 
 my $vars={
 		'sessione' => "true",
@@ -39,5 +39,4 @@ my $vars={
 		'amministratore' => "true",
 		'lista_utenti' => $lista_utenti,
 	};
-print $cgi->header('text/html');
 $template->process($file,$vars) || die $template->error();

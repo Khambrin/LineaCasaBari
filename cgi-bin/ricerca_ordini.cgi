@@ -29,7 +29,7 @@ else
 	$cod=$ENV{'QUERY_STRING'};
 }
 
-my $error="false";
+my $messaggio="false";
 my @cod_ordini=$doc->findnodes("Ordini/Ordine/Codice/text()");
 
 if(@cod_ordini)
@@ -42,26 +42,26 @@ if(@cod_ordini)
 			if($i ne $cod)
 			{
 				print "non uguale";
-				$error="il codice inserito non corrisponde a nessun ordine esistente";
+				$messaggio="il codice inserito non corrisponde a nessun ordine esistente";
 			}
 			else
 			{
-				$error="false";
+				$messaggio="false";
 				last;
 			}
 		}
 	}
 	else
 	{
-		$error="inserisci un codice per la ricerca";
+		$messaggio="inserisci un codice per la ricerca";
 	}
 }
 else
 {
-	$error="non ci sono ordini";
+	$messaggio="non ci sono ordini";
 }
 my $vars;
-if($error eq "false")
+if($messaggio eq "false")
 {
 	my $tot;
 	push my @ordine, $doc->findnodes("Ordini/Ordine[Codice='$cod']/Codice/text()");
@@ -97,7 +97,7 @@ if($error eq "false")
 	}
 
 	$y=0;
-	$tot=$tot.'<li class="gestione-block"><div class="gestione-button_block"><button class="button" type="submit">elimina selezionati</button></div><input type="hidden" name="ordine" value="'."$cod".'"/></form><form action="togli_ordine.cgi" method="post"><input type="hidden" name="ordine" value="'."$cod".'"/><div><button class="button" type="submit">togli ordine</button></div></form></li>';
+	$tot=$tot.'<li class="gestione-block"><div class="gestione-button_block"><button class="button" type="submit">elimina selezionati</button><input type="hidden" name="ordine" value="'."$cod".'"/></form><form action="togli_ordine.cgi" method="post"><input type="hidden" name="ordine" value="'."$cod".'"/><button class="button" type="submit">togli ordine</button></form></div></li>';
 	my $lista_ordine='<ul class="gestione-aggiungi_form">'."$tot"."</ul>";
 	$vars={
 		'sessione' => "true",
@@ -114,7 +114,7 @@ else
 		'email' => $email,
 		'amministratore' => "true",
 		'list' => "false",
-		'error' => $error,
+		'messaggio' => $messaggio,
 	};
 }
 my $file='gestione_ordini_temp.html';

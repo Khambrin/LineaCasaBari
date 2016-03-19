@@ -12,7 +12,7 @@ my $cgi=new CGI;
 
 my $parser=XML::LibXML->new;
 my $doc=$parser->parse_file("../data/Utenti.xml");
-my @errors=();
+my @messaggi=();
 my %values;
 foreach my $p (param())
 {
@@ -23,20 +23,20 @@ if ($doc->findnodes("Utenti/Utente/Email[text()='$values{email}']"))
 {
 	if (!$doc->findnodes("Utenti/Utente[Email[text()='$values{email}']]/Password[text()='$values{password}']"))
 	{
-		push @errors, "La password inserita è errata.";
+		push @messaggi, "La password inserita è errata.";
 	}
 }
 else
 {
-	push @errors, "L'email inserita è errata.";
+	push @messaggi, "L'email inserita è errata.";
 }
 
-if (@errors)
+if (@messaggi)
 {
 	print $cgi->header('text/html');
 	my $file='login_temp.html';
 	my $vars={
-		'error' => "<ul>"."<li>[@errors]</li>"."</ul>"
+		'messaggio' => "<ul>"."<li>[@messaggi]</li>"."</ul>"
 		};
 	my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
