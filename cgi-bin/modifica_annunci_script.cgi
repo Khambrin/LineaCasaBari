@@ -26,9 +26,8 @@ my $titolo=param("titolo_edit");
 
 
 my $annuncio_node=$doc->findnodes("Annunci/Annuncio[Titolo='$titolo']");
-
 my $fcontenuto=$doc->findnodes("Annunci/Annuncio[Titolo='$titolo']/Testo/text()");
-
+my $afoto=$doc->findnodes("Annunci/Annuncio[Titolo='$titolo']/Immagine/text()");
 
 
 
@@ -37,10 +36,7 @@ my $vcontenuto='<textarea id="gestione_annunci-textarea" rows="100" cols="100" n
 
 my $vt_form='<input class= "input" type="text" name="titolo" value="'."$titolo".'"/>';
 
-# 
-
-
-#
+#Per ragioni di sicurezza rimossa possibilità riuso foto   my $vf_form='<input type="file" name="immagine" value="'."$afoto".'"/>';
 
 
 
@@ -54,6 +50,7 @@ my $vars={
 		'prova'=>"salveeeeeeee",
 		'vtitolo'=>$vt_form,
 		'vcontenuto'=>$vcontenuto,
+		#'vfoto'=>$vf_form,
 	};
 
 print $cgi->header('text/html');

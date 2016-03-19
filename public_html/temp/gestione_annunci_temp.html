@@ -140,9 +140,7 @@
 					<div>[% error %]</div>
                 </form>
 				[% ELSIF pagina == 'edit' %]
-					<span>[% email %]</span>
-					<span>[% prova %]</span>
-					<span>[% amministratore %]</span>
+					
 
                 <form method="post" action="edit_annuncio.cgi" enctype="multipart/form-data">
                     <ul div id="edit-form">
@@ -158,7 +156,7 @@
                             <label id="gestione-textarea_label">Testo:</label>
                         </li>
                         <li class="gestione-block">
-                            <textarea id="gestione_annunci-textarea" rows="100" cols="100" name="testo" value="vecchio testo annuncio"></textarea>
+                            [% vcontenuto %]
                         </li>
                         <li class="gestione-block">
                             <div id="gestione-file_label">
