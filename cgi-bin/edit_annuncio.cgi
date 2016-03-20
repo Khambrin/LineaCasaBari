@@ -18,6 +18,11 @@ my $pagina=param("pagina");
 my @errors=();
 my %values;
 
+#
+my $parser=XML::LibXML->new;
+my $document=$parser->parse_file("../data/Annunci.xml");
+#
+
 foreach my $p (param())
 {
 	$values{$p}=param($p);
@@ -57,6 +62,13 @@ if (@errors)
 }
 else
 {
+	###
+	####
+	my $vecchiotitolo=$values{"oldtitolo"};
+	my $annuncio_node=$document->findnodes("Annunci/Annuncio[Titolo='$vecchiotitolo']");
+	$annuncio_node->[0]->parentNode->removeChild($annuncio_node->[0]);
+	####
+	###
 	my $doc,my $root;
 	if (-e "../data/Annunci.xml")
 	{

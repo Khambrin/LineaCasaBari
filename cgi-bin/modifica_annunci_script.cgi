@@ -38,7 +38,7 @@ my $vt_form='<input class= "input" type="text" name="titolo" value="'."$titolo".
 
 #Per ragioni di sicurezza rimossa possibilità riuso foto   my $vf_form='<input type="file" name="immagine" value="'."$afoto".'"/>';
 
-
+my $hiddentitle='<input type="hidden" name="oldtitolo" value="'."$titolo".'"/>';
 
 
 my $file='gestione_annunci_temp.html';
@@ -50,6 +50,7 @@ my $vars={
 		'prova'=>"salveeeeeeee",
 		'vtitolo'=>$vt_form,
 		'vcontenuto'=>$vcontenuto,
+		'oldtitolo'=>$hiddentitle,
 		#'vfoto'=>$vf_form,
 	};
 
