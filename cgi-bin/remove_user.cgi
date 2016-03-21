@@ -20,14 +20,14 @@ my $template=Template->new({
 
 my @users=$doc->findnodes("Utenti/Utente/Email/text()");
 my $file='togli_utenti_temp.html';
-my $tot;
+my $tot='<form class="togli_utenti-pulsante" action="remove_user_form.cgi" method="post">';
 foreach my $i (@users)
 {
-	my $x='<li class="gestione-block">'."$i".'<form class="togli_utenti-pulsante" action="remove_user_form.cgi" method="post"><div class="gestione-button_block"><button class="button" type="submit">Rimuovi</button><input type="hidden" name="email" value="'."$i".'"/></div></form></li>';
+	my $x='<li class="gestione-block"><div class="gestione-button_block"><label class="gestione-labels">'."$i".'</label><button class="button" type="submit"> Rimuovi </button></div><input type="hidden" name="email" value="'."$i".'"/></li>';
 	$tot=$tot.$x;
 }
 
-my $lista_utenti='<ul class="gestione-aggiungi_form" >'."$tot"."</ul>";
+my $lista_utenti='<ul class="gestione-aggiungi_form" >'."$tot"."</form></ul>";
 
 my $vars={
 		'sessione' => "true",
@@ -35,4 +35,5 @@ my $vars={
 		'amministratore' => "true",
 		'lista_utenti' => $lista_utenti,
 	};
+print $cgi->header('text/html');
 $template->process($file,$vars) || die $template->error();
