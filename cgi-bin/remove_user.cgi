@@ -6,12 +6,9 @@ use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use strict;
 use Template;
 use CGI::Session;
-use Switch;
 use XML::LibXML;
 
 my $cgi=new CGI;
-
-
 my $session = CGI::Session->load();
 my $email=$session->param("email");
 
@@ -22,7 +19,6 @@ my $template=Template->new({
 	});
 
 my @users=$doc->findnodes("Utenti/Utente/Email/text()");
-
 my $file='togli_utenti_temp.html';
 my $tot;
 foreach my $i (@users)
