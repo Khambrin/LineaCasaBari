@@ -20,7 +20,7 @@ my $template=Template->new({
 
 my @users=$doc->findnodes("Utenti/Utente/Email/text()");
 my $file='togli_utenti_temp.html';
-my $tot='<form class="togli_utenti-pulsante" action="remove_user_form.cgi" method="post">';
+my $tot='<form action="remove_user_form.cgi" method="post">';
 foreach my $i (@users)
 {
 	my $x='<li class="gestione-block"><div class="gestione-button_block"><label class="gestione-labels">'."$i".'</label><button class="button" type="submit"> Rimuovi </button></div><input type="hidden" name="email" value="'."$i".'"/></li>';

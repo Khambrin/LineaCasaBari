@@ -66,7 +66,7 @@
                 [% IF sessione == 'true' %]
 				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
 				[% IF amministratore == 'true' %]
-				<li id="current"><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
+				<li class="current"><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 				[% END %]
 				<li><a href="logout_script.cgi">Logout</a></li>
 				[% ELSE %]
@@ -110,8 +110,8 @@
                 </ul>
             </div><div id="right-col">
                 <div>
-                <a class="sub_menu_link" href="gestione_prodotti_script.cgi?aggiungi">
-                    <div class="sub_menu_block"><span class="sub_menu_text">Aggiungi prodotto</span></div></a><a class="sub_menu_link" href="gestione_prodotti_script.cgi?rimuovi_modifica"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica prodotto</span></div></a>
+                    [% IF pagina == 'aggiungi' %]<a href="gestione_prodotti_script.cgi?aggiungi"><div class="sub_menu_block_active"><span class="sub_menu_text_active">Aggiungi prodotto</span></div></a><a href="gestione_prodotti_script.cgi?rimuovi_modifica"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica prodotto</span></div></a>
+                    [% ELSIF pagina == 'rimuovi_modifica' %]<a href="gestione_prodotti_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi prodotto</span></div></a><a href="gestione_prodotti_script.cgi?rimuovi_modifica"><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica prodotto</span></div></a>[% END %]
                 </div>
             	[% IF pagina == 'aggiungi' %]
                 <form method="post" action="aggiungi_prodotto_form.cgi" enctype="multipart/form-data">
@@ -172,17 +172,15 @@
                 </form>
 				[% ELSIF pagina == 'rimuovi_modifica' %]
                     <form method="post" action="ricerca_prodotto.cgi">
-                        <ul id="gestione_prodotti-rimuovi_modifica_form">
-                            <li id="gestione_prodotti-search_label_block">
-                                <label id="gestione_prodotti-search_label">Cerca un prodotto:</label>
-                            </li>
-                            <li id="gestione_prodotti-search_input_block">
-                                <div id="commonSearchInputLeft"></div><div id="commonSearchInputMiddle"><input id="commonSearchInput" type="text"/></div><div id="commonSearchInputRight"></div>
-                <div id="commonSearchButtonContainer">
-                    <input id="commonSearchButton" type="submit" value=""/>
-                </div>
-                            </li>
-                        </ul>
+						<ul class="gestione-aggiungi_form">
+							<li class="gestione-block">
+								<label class="gestione-labels">Cerca un prodotto:</label>
+								<div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text"/></div><div class="inputRight"></div>
+							</li
+						</ul>
+						<div class="gestione-button_block">
+							<button class="button" type="submit">Cerca</button>
+						</div>     
                     </form>
 				[% END %]
             </div>        
