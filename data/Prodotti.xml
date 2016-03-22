@@ -1,0 +1,23 @@
+<Prodotti>
+	<Prodotto>
+		<Codice>666</Codice>
+		<Nome>Piatto</Nome>
+		<Descrizione>Piatto molto bello</Descrizione>
+		<Categoria>Tavola</Categoria>
+		<Prezzo>900</Prezzo>
+		<Data_aggiunta>1234</Data_aggiunta>
+		<Valutazione>10.2</Valutazione>
+		<Immagine></Immagine>
+		<Tag>Piatto</Tag>
+		<Recensione>
+			<Titolo>Recensione Piatto</Titolo>
+			<Nome_visualizzato>Navid</Nome_visualizzato>
+			<Data_pubblicazione>1234</Data_pubblicazione>
+			<Testo>dofijdofjrogijaojgorajg</Testo>
+			<Voto_prodotto>5</Voto_prodotto>
+			<Voto_recensione>2</Voto_recensione>
+		</Recensione>
+	</Prodotto>
+</Prodotti>
+
+

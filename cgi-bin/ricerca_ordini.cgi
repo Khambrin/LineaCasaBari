@@ -41,7 +41,6 @@ if(@cod_ordini)
 		{
 			if($i ne $cod)
 			{
-				print "non uguale";
 				$messaggio="il codice inserito non corrisponde a nessun ordine esistente";
 			}
 			else

@@ -175,13 +175,15 @@
 						<ul class="gestione-aggiungi_form">
 							<li class="gestione-block">
 								<label class="gestione-labels">Cerca un prodotto:</label>
-								<div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text"/></div><div class="inputRight"></div>
+								<div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="codice" type="text"/></div><div class="inputRight"></div>
 							</li
 						</ul>
 						<div class="gestione-button_block">
 							<button class="button" type="submit">Cerca</button>
 						</div>     
                     </form>
+                    [% IF messaggio != 'false' %]<div class="messaggio-error">[% messaggio %]</div>[% END %]
+					[% lista_prodotti %]
 				[% END %]
             </div>        
         </div>

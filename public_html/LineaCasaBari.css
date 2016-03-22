@@ -1288,6 +1288,7 @@ body
         border-bottom: 1px solid;
         border-left: 1px solid;
         height: 55em;
+        overflow: scroll;
     }
     #right-col li
     {
@@ -1407,15 +1408,6 @@ body
     #gestione-file_label{
         display: block;
         padding-bottom: 1em;
-    }
-    
-    #gestione_prodotti-rimuovi_modifica_form{
-        text-align: center;
-    }
-   
-    #gestione_prodotti-search_label_block{
-        padding-bottom: 2em;
-        margin-top: 2em;
     }
 }
 /*-------------------------------------------------------------Generale----------------------------*/
