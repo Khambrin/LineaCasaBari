@@ -7,7 +7,7 @@
 		<Prezzo>900</Prezzo>
 		<Data_aggiunta>1234</Data_aggiunta>
 		<Valutazione>10.2</Valutazione>
-		<Immagine></Immagine>
+		<Immagine>immagine</Immagine>
 		<Tag>Piatto</Tag>
 		<Recensione>
 			<Titolo>Recensione Piatto</Titolo>
