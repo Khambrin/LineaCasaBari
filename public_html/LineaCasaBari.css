@@ -444,7 +444,7 @@ body
         background-image:url(images/tavola.jpg);
         background-repeat:no-repeat;
         background-size: contain;
-        padding-top:5em;
+        padding-top:3%;
         width: 20%;
         height: 16em;
 	text-align:center;
@@ -457,7 +457,7 @@ body
         background-image:url(images/tovaglie.jpg);
         background-repeat:no-repeat;
         background-size: contain;
-        padding-top:5em;
+        padding-top:3%;
         width: 20%;
         height: 16em;
 	text-align:center;
