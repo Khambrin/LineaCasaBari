@@ -71,9 +71,9 @@ if($messaggio eq "false")
 	push @prodotto, $doc->findnodes("Prodotti/Prodotto[Codice='$cod']/Valutazione/text()");
 	push @prodotto, $doc->findnodes("Prodotti/Prodotto[Codice='$cod']/Immagine/text()");
 	my $num_tag=$doc->findvalue("count(Prodotti/Prodotto[Codice='$cod']/Tag)");
-	for(my $x=0; $x<$num_tag;$x++)
+	for(my $x=1; $x<=$num_tag;$x++)
 	{
-		push @prodotto, $doc->findnodes("Prodotti/Prodotto[Codice='$cod']/Tag/text()");
+		push @prodotto, $doc->findnodes("Prodotti/Prodotto[Codice='$cod']/Tag[$x]/text()");
 	}
 	my @label = ('Codice','Nome','Descrizione','Categoria','Prezzo','Data aggiunta','Immagine');
 	for(my $x=0; $x<$num_tag;$x++)
@@ -85,7 +85,7 @@ if($messaggio eq "false")
 	my $i;
 	for($i=0; $i<2;$i++)
 	{
-		my $x='<li class="gestione-block"><label class="gestione-labels">'."@label[$i]: </label>".'<div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name='."@label[$i]".'type="text" value='."@prodotto[$i]".'/></div><div class="inputRight"></div></li>';
+		my $x='<li class="gestione-block"><label class="gestione-labels">'."@label[$i]: </label>".'<div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name='."@label[$i]".'type="text" value='."@prodotto[$i]".' /></div><div class="inputRight"></div></li>';
 		$tot=$tot.$x;
 	}
 	
@@ -95,24 +95,25 @@ if($messaggio eq "false")
 		
 	for(; $i<6;$i++)
 	{
-		my $x='<li class="gestione-block"><label class="gestione-labels">'."@label[$i]: </label>".'<div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name='."@label[$i]".' type="text" value='."@prodotto[$i]".'/></div><div class="inputRight"></div></li>';
+		my $x='<li class="gestione-block"><label class="gestione-labels">'."@label[$i]: </label>".'<div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name='."@label[$i]".' type="text" value='."@prodotto[$i]".' /></div><div class="inputRight"></div></li>';
 		$tot=$tot.$x;
 	}
-	$i++;
-	
-	my $x='<li class="gestione-block"><label class="gestione-labels">Inserisci una nuova immagine: </label><img src='."@prodotto[$i]".' alt="foto prodotto" height="42" width="42"><input type="file" name="immagine"></li>';
+	my $read_directory="../images/prodotti";
+	my $immagine="$read_directory/@prodotto[$i]";
+	my $x='<li class="gestione-block"><label class="gestione-labels">Inserisci una nuova immagine: </label><img src='."$immagine".' alt="foto prodotto" height="60" width="60"><input type="file" name="immagine"></li>';
 	$tot=$tot.$x;
 	$i++;
+	
 	my $counter=1;
 	for(my $j=0; $j<$num_tag;$j++)
 	{
-		my $x='<li class="gestione-block"><label class="gestione-labels">Tag: </label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Tag'."$counter".' type="text" value='."@prodotto[$i]".'/></div><div class="inputRight"></div></li>';
+		my $x='<li class="gestione-block"><label class="gestione-labels">Tag: </label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Tag'."$counter".' type="text" value='."@prodotto[$i]".' /></div><div class="inputRight"></div></li>';
 		$i++;
 		$counter++;
 		$tot=$tot.$x;
 	}
 	
-	$tot=$tot.'<li class="gestione-block"><div class="gestione-button_block"><button class="button" type="submit">modifica</button><input type="hidden" name="prodotto" value="'."$cod".'"/></form><form action="togli_prodotto.cgi" method="post"><input type="hidden" name="prodotto" value="'."$cod".'"/><button class="button" type="submit">togli prodotto</button></form></div></li>';
+	$tot=$tot.'<li class="gestione-block"><div class="gestione-button_block"><button class="button" type="submit">modifica</button><input type="hidden" name="prodotto" value="'."$cod".'"/></form><form action="togli_prodotto.cgi" method="post"><input type="hidden" name="prodotto" value="'."$cod".'" /><button class="button" type="submit">togli prodotto</button></form></div></li>';
 	my $lista_prodotto='<ul class="gestione-aggiungi_form">'."$tot"."</ul>";
 	$vars={
 		'sessione' => "true",
