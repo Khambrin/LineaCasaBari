@@ -36,7 +36,7 @@ if (@messaggi)
 	print $cgi->header('text/html');
 	my $file='login_temp.html';
 	my $vars={
-		'messaggio' => "<ul>"."<li>[@messaggi]</li>"."</ul>"
+		'messaggio_login' => "<ul>"."<li>[@messaggi]</li>"."</ul>"
 		};
 	my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
