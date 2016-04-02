@@ -16,6 +16,8 @@ my $session = CGI::Session->load();
 my $email=$session->param("email");
 
 my $amministratore=$session->param("amministratore");
+my $mex=$cgi->param("messaggio");
+my $ias=$cgi->param("iscrizione_avvenuta");
 
 my $vars;
 
@@ -52,6 +54,8 @@ if ($session->is_empty)
 	$vars={
 		'sessione' => "false",
 		'lista_annunci' => $lista_annunci,
+		'messaggio'=>$mex,
+		'iscrizione_avvenuta'=>$ias,
 	};
 }
 
@@ -62,6 +66,8 @@ else
 		'email' => $email,
 		'amministratore' => $amministratore,
 		'lista_annunci' => $lista_annunci,
+		'messaggio'=>$mex,
+		'iscrizione_avvenuta'=>$ias,
 	};
 }
 print $cgi->header('text/html');
