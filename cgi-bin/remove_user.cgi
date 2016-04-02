@@ -11,6 +11,8 @@ use XML::LibXML;
 my $cgi=new CGI;
 my $session = CGI::Session->load();
 my $email=$session->param("email");
+my $mex=$cgi->param("messaggio_newsletter");
+my $ias=$cgi->param("iscrizione_avvenuta");
 
 my $parser=XML::LibXML->new;
 my $doc=$parser->parse_file("../data/Utenti.xml");
@@ -34,6 +36,8 @@ my $vars={
 		'email' => $email,
 		'amministratore' => "true",
 		'lista_utenti' => $lista_utenti,
+		'messaggio_newsletter'=>$mex,
+		'iscrizione_avvenuta'=>$ias,
 	};
 print $cgi->header('text/html');
 $template->process($file,$vars) || die $template->error();

@@ -122,8 +122,9 @@
 							<button class="button" type="submit">Cerca</button>
 					</div>
                 </form>
-                [% IF messaggio != 'false' %]<div class="messaggio-error">[% messaggio %]</div>[% END %]
+                [% IF messaggio_ordini != 'false' %]<div class="messaggio-error">[% messaggio_ordini %]</div>[% END %]
 				[% lista_ordini %]
+
             </div>        
         </div>
     </div>
@@ -174,15 +175,27 @@
             <div id="last-footer-block">
                 <ul>
                     <li>
-                        <form id="newsletter">
-                            <div class="inputLeft"></div><div id="newsletterInputMiddle"><input id="newsletter-input" type="text"/></div><div class="inputRight"></div>
+                        
+			[% IF messaggio_newsletter != 'false' %]
+			<div><p>[% messaggio_newsletter %]</p></div>
+			[% END %]
+			[% IF iscrizione_avvenuta != 'false' %]
+			<div>[% iscrizione_avvenuta %]</div>
+			[% END %]
+			<form id="newsletter" method="get" action="add_newsletter.cgi" enctype="text/plain">
+                            <div class="inputLeft"></div><div id="newsletterInputMiddle"><input id="newsletter-input" type="text" name="iscrizione"/></div><div class="inputRight"></div>
                             <div id="newsletter-buttonContainer">
                                 <input id="newsletter-button" type="submit" value=""/>
                             </div>
+
+				<input class= "input" type="hidden" name="pagina_nl" value="gestione_ordini_temp.html"/>
+
+
                         </form>
+  
                     </li>
                     <li>
-                        <a  id="facebook-link" href="facebook.html">
+                        <a  id="facebook-link" href="https://www.facebook.com/lineacasabari/">
                             <span id="facebook-button"></span>
                         </a>
                     </li>

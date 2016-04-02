@@ -36,7 +36,7 @@ if ($void_address)
 	{
 		$vars={
 			'sessione' => "false",
-			'messaggio' => $void_address,
+			'messaggio_newsletter' => $void_address,
 		};
 	}
 
@@ -46,7 +46,7 @@ if ($void_address)
 			'sessione' => "true",
 			'email' => $email,
 			'amministratore' => $amministratore,
-			'messaggio' => $void_address,
+			'messaggio_newsletter' => $void_address,
 		};
 	}
 	
@@ -60,7 +60,7 @@ if ($void_address)
 	}
 	else
 	{
-		print $cgi->redirect($page_nl.'?messaggio='.$void_address);
+		print $cgi->redirect($page_nl.'?messaggio_newsletter='.$void_address);
 	}
 }
 else

@@ -12,6 +12,8 @@ my $cgi=new CGI;
 
 my $session = CGI::Session->load();
 my $email=$session->param("email");
+my $mex=$cgi->param("messaggio_newsletter");
+my $ias=$cgi->param("iscrizione_avvenuta");
 
 my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
@@ -38,6 +40,8 @@ my $vars={
 		'lista_prodotti' => $lista_prodotti,
 		'pagina' => $ENV{'QUERY_STRING'},
 		'hidden' => $hidden,
+		'messaggio_newsletter'=>$mex,
+		'iscrizione_avvenuta'=>$ias,
 	};
 print $cgi->header('text/html');
 $template->process($file,$vars) || die $template->error();
