@@ -7,6 +7,7 @@ use strict;
 use Template;
 use CGI::Session;
 use XML::LibXML;
+use File::Basename;
 
 my $cgi=new CGI;
 print $cgi->header('text/html');
@@ -82,25 +83,33 @@ if($messaggio eq "false")
 	}
 	
 	my $tot='<form action="modifica_prodotti.cgi" method="post" enctype="multipart/form-data">';
-	my $i;
-	for($i=0; $i<2;$i++)
+	my $i=0;
+	for($i;$i<2;$i++)
 	{
 		my $x='<li class="gestione-block"><label class="gestione-labels">'."@label[$i]: </label>".'<div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name='."@label[$i]".'type="text" value='."@prodotto[$i]".' /></div><div class="inputRight"></div></li>';
 		$tot=$tot.$x;
 	}
 	
-	my $x='<li class="gestione-block"><label class="gestione-labels">'."@label[$i]: </label>".'<textarea id="gestione_prodotti-textarea rows="50" cols="50" name='."@label[$i]".'>'." @prodotto[$i]".'</textarea>/></li>';
+	my $x='<li class="gestione-block"><label class="gestione-labels">'."@label[$i]: </label>".'<textarea id="gestione_prodotti-textarea rows="50" cols="50" name='."@label[$i]".'>'."@prodotto[$i]".' </textarea></li>';
 	$i++;
 	$tot=$tot.$x;
+	my $splitstring= (split (/_/, basename(@prodotto[$i])));
+	my $x='<li class="gestione-block"><label class="gestione-labels">La categoria &egrave '."$splitstring".' scegli la nuova: </label><select name='."@label[$i]".'><option value="lista_nozze">Lista nozze</option><option value="porcellane">Porcellane</option><option value="paralumi">Paralumi</option><option value="pentole">Pentole</option><option value="per_la_tavola">Per la tavola</option><option value="tovaglie">Tovaglie</option></select></li>';
+	$tot=$tot.$x;
+	$i++;
 		
 	for(; $i<6;$i++)
 	{
 		my $x='<li class="gestione-block"><label class="gestione-labels">'."@label[$i]: </label>".'<div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name='."@label[$i]".' type="text" value='."@prodotto[$i]".' /></div><div class="inputRight"></div></li>';
 		$tot=$tot.$x;
 	}
+	
+	my $filespec="@prodotto[$i]";
+	my $path= dirname $filespec;
+	my $filename=basename $filespec;
 	my $read_directory="../images/prodotti";
-	my $immagine="$read_directory/@prodotto[$i]";
-	my $x='<li class="gestione-block"><label class="gestione-labels">Inserisci una nuova immagine: </label><img src='."$immagine".' alt="foto prodotto" height="60" width="60"><input type="file" name="immagine"></li>';
+	my $immagine="$read_directory/$filename";
+	my $x='<li class="gestione-block"><label class="gestione-labels">Inserisci una nuova immagine: </label><img src='."$immagine".' alt="foto prodotto" height="100" width="100"><input type="file" name="immagine"></li>';
 	$tot=$tot.$x;
 	$i++;
 	
