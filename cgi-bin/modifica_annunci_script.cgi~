@@ -43,6 +43,7 @@ my $vars={
 		'email' => $email,
 		'amministratore' => "true",
 		'pagina' => "edit",
+		'prova'=>"salveeeeeeee",
 		'vtitolo'=>$vt_form,
 		'vcontenuto'=>$vcontenuto,
 		'oldtitolo'=>$hiddentitle,

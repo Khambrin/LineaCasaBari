@@ -109,6 +109,66 @@
                     <li class="subtitle_link">Gestisci gli indirizzi di spedizione</li>
                 </ul>
             </div><div id="right-col">
+		<form method="post" action="edit_account.cgi" enctype="multipart/form-data">
+                    <ul div id="edit-form">
+                        <li class="gestione-block">
+                            <label class="gestione-labels">Email:</label>
+                            <div class="inputLeft"></div>
+				<div class="gestione-inputMiddle">
+					[% vemail %]
+				</div>
+			    <div class="inputRight"></div>
+                        </li>
+			<li class="gestione-block">
+                            <label class="gestione-labels">Nome:</label>
+                            <div class="inputLeft"></div>
+				<div class="gestione-inputMiddle">
+					[% vnome %]
+				</div>
+			    <div class="inputRight"></div>
+                        </li>
+			<li class="gestione-block">
+                            <label class="gestione-labels">Cognome:</label>
+                            <div class="inputLeft"></div>
+				<div class="gestione-inputMiddle">
+					[% vcognome %]
+				</div>
+			    <div class="inputRight"></div>
+                        </li>
+			<li class="gestione-block">
+                            <label class="gestione-labels">Telefono:</label>
+                            <div class="inputLeft"></div>
+				<div class="gestione-inputMiddle">
+					[% vtelefono %]
+				</div>
+			    <div class="inputRight"></div>
+                        </li>
+                        <li class="gestione-block">
+                            <label class="gestione-labels">Inserire la Password corrente:</label>
+                            <div class="inputLeft"></div>
+				<div class="gestione-inputMiddle">
+					<input class= "input" type="password" name="vecchia_password" />
+				</div>
+			    <div class="inputRight"></div>
+				
+                        </li>
+                        <li class="gestione-block">
+                            <label class="gestione-labels">Inserire la nuova Password:</label>
+                            <div class="inputLeft"></div>
+				<div class="gestione-inputMiddle">
+					<input class= "input" type="password" name="nuova_password" />
+				</div>
+			    <div class="inputRight"></div>
+				
+                        </li>
+			
+                    </ul>
+                    <div id="gestione-button_block">
+                        <button class="button" type="submit">Modifica Account</button>
+                    </div>
+					<div>[% hidden %]</div>
+					<div>[% messaggio %]</div>
+                </form>
             </div>        
         </div>
     </div>
