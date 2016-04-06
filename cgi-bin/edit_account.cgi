@@ -109,11 +109,6 @@ else
 		}
 		my $error_message="<ul>"."$error_message_aux"."</ul>";
 
-		my $parser=XML::LibXML->new();
-		my $doc=$parser->parse_file("../data/Utenti.xml");
-		my $root=$doc->documentElement();
-	
-
 		my $old_name=$doc->findnodes("Utenti/Utente[Email='$email']/Nome/text()");
 		my $old_surname=$doc->findnodes("Utenti/Utente[Email='$email']/Cognome/text()");
 		my $old_tel=$doc->findnodes("Utenti/Utente[Email='$email']/Telefono/text()");
@@ -143,12 +138,12 @@ else
 	####
 	
 	my $utente_node=$doc->findnodes("Utenti/Utente[Email='$email']");
-	my $via=$doc->findnodes("Utenti/Utente[Email='$email']/Indirizzo/Via/Text()");
-	my $ncivico=$doc->findnodes("Utenti/Utente[Email='$email']/Indirizzo/Numero_civico/Text()");
-	my $citta=$doc->findnodes("Utenti/Utente[Email='$email']/Indirizzo/Città/Text()");
-	my $prov=$doc->findnodes("Utenti/Utente[Email='$email']/Indirizzo/Provincia/Text()");
-	my $cap=$doc->findnodes("Utenti/Utente[Email='$email']/Indirizzo/CAP/Text()");
-	my $admin=$doc->findnodes("Utenti/Utente[Email='$email']/Amministratore/Text()");
+	my $via=$doc->findnodes("Utenti/Utente[Email='$email']/Indirizzo/Via");
+	my $ncivico=$doc->findnodes("Utenti/Utente[Email='$email']/Indirizzo/Numero_civico");
+	my $citta=$doc->findnodes("Utenti/Utente[Email='$email']/Indirizzo/Città");
+	my $prov=$doc->findnodes("Utenti/Utente[Email='$email']/Indirizzo/Provincia");
+	my $cap=$doc->findnodes("Utenti/Utente[Email='$email']/Indirizzo/CAP");
+	my $admin=$doc->findnodes("Utenti/Utente[Email='$email']/Amministratore");
 
 	$utente_node->[0]->parentNode->removeChild($utente_node->[0]);
 
@@ -162,7 +157,7 @@ else
 	
 	my $cognome_tag=$doc->createElement("Cognome");
 	$cognome_tag->appendTextNode($values{'nuovo_cognome'});
-	$utente_tag->appendChild($nome_tag);
+	$utente_tag->appendChild($cognome_tag);
 
 	my $telefono_tag=$doc->createElement("Telefono");
 	$telefono_tag->appendTextNode($values{'nuovo_telefono'});
@@ -178,14 +173,14 @@ else
 	#
 	my $admin_tag=$doc->createElement("Amministratore");
 	$admin_tag->appendTextNode($admin);
-	$utente_tag->appendChild($password_tag);
+	$utente_tag->appendChild($admin_tag);
 	#creare indirizzo tag
 	my $indirizzo_tag=$doc->createElement("Indirizzo");	
 	$utente_tag->appendChild($indirizzo_tag);
 	#
-	my $admin_tag=$doc->createElement("Via");
-	$admin_tag->appendTextNode($admin);
-	$indirizzo_tag->appendChild($admin_tag);
+	my $via_tag=$doc->createElement("Via");
+	$via_tag->appendTextNode($via);
+	$indirizzo_tag->appendChild($via_tag);
 
 	my $ncivico_tag=$doc->createElement("Numero_civico");
 	$ncivico_tag->appendTextNode($ncivico);
