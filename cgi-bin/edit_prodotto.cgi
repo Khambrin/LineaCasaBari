@@ -68,10 +68,11 @@ $prodotto_tag->appendChild($data_tag);
 
 my $immagine_tag=$doc->createElement("Immagine");
 my $immagine;
+my $upload_directory="../public_html/images/prodotti";
+my $read_directory="../images/prodotti";
 if ($values{'Immagine'})
 {
-	my $upload_directory="../public_html/images/prodotti";
-	my $read_directory="../images/prodotti";
+	
 	my $upload_filehandle=$cgi->upload("Immagine");
 	open (UPLOADFILE,">$upload_directory/$values{'Immagine'}") or die "$!";
 	binmode UPLOADFILE;
@@ -84,7 +85,7 @@ if ($values{'Immagine'})
 }
 else
 {
-	$immagine=" ";
+	$immagine="$upload_directory/$values{'old_image'}";
 }
 $immagine_tag->appendTextNode($immagine);
 $prodotto_tag->appendChild($immagine_tag);
@@ -109,5 +110,5 @@ $prodotto_tag->appendChild($tag_tag);
 open (XML,">","../data/Prodotti.xml");
 print XML $doc->toString();
 close(XML);
-print $cgi->redirect("ricerca_prodotto.cgi");
+print $cgi->redirect("ricerca_prodotto.cgi?modified");
 

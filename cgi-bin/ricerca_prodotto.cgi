@@ -32,32 +32,43 @@ else
 my $messaggio="false";
 my @cod_prodotti=$doc->findnodes("Prodotti/Prodotto/Codice/text()");
 
-if(@cod_prodotti)
+if($ENV{'QUERY_STRING'}eq "modified")
 {
-	if($cod>=0)
+	$messaggio="modifica effettuata con successo";
+}
+elsif($ENV{'QUERY_STRING'}eq "deleted")
+{
+	$messaggio="eliminazione effettuata con successo";
+}
+else
+{
+	if(@cod_prodotti)
 	{
-		my $i;
-		foreach $i (@cod_prodotti)
+		if($cod>=0)
 		{
-			if($i ne $cod)
+			my $i;
+			foreach $i (@cod_prodotti)
 			{
-				$messaggio="il codice inserito non corrisponde a nessun prodotto esistente";
+				if($i ne $cod)
+				{
+					$messaggio="il codice inserito non corrisponde a nessun prodotto esistente";
+				}
+				else
+				{
+					$messaggio="false";
+					last;
+				}
 			}
-			else
-			{
-				$messaggio="false";
-				last;
-			}
+		}
+		else
+		{
+			$messaggio="inserisci un codice per la ricerca";
 		}
 	}
 	else
 	{
-		$messaggio="inserisci un codice per la ricerca";
+		$messaggio="non ci sono prodotti";
 	}
-}
-else
-{
-	$messaggio="non ci sono prodotti";
 }
 my $vars;
 
@@ -111,20 +122,28 @@ if($messaggio eq "false")
 	my $filename=basename $filespec;
 	my $read_directory="../images/prodotti";
 	my $immagine="$read_directory/$filename";
-	$x='<li class="gestione-block"><label class="gestione-labels">Inserisci una nuova immagine: </label><img src='."$immagine".' alt="foto prodotto" height="100" width="100"><input type="file" name="immagine"></li>';
+	$x='<li class="gestione-block"><label class="gestione-labels">Inserisci una nuova immagine: </label><img src='."$immagine".' alt="foto prodotto" height="100" width="100"><input type="file" name="Immagine"></li>';
 	$tot=$tot.$x;
 	$i++;
 		
-	my $counter=1;
-	for(my $j=0; $j<$num_tag;$j++)
-	{
-		$x='<li class="gestione-block"><label class="gestione-labels">Tag: </label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Tag'."$counter".' type="text" value='."@prodotto[$i]".' /></div><div class="inputRight"></div></li>';
-		$i++;
-		$counter++;
-		$tot=$tot.$x;
-	}
+	$x='<li class="gestione-block"><label class="gestione-labels">Tag: </label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Tag1" type="text" value='."@prodotto[$i]".' /></div><div class="inputRight"></div></li>';
+	$i++;
+	$tot=$tot.$x;
 	
-	$tot=$tot.'<li class="gestione-block"><div class="gestione-button_block"><button class="button" type="submit">modifica</button><input type="hidden" name="old_cod" value="'."$cod".'"/><input type="hidden" name="num_tag" value="'."$num_tag".'"/></form><form action="togli_prodotto.cgi" method="post"><input type="hidden" name="prodotto" value="'."$cod".'" /><button class="button" type="submit">togli prodotto</button></form></div></li>';
+	$x='<li class="gestione-block"><label class="gestione-labels">Tag: </label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Tag2" type="text" value='."@prodotto[$i]".' /></div><div class="inputRight"></div></li>';
+	$i++;
+	$tot=$tot.$x;
+	
+	$x='<li class="gestione-block"><label class="gestione-labels">Tag: </label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Tag3" type="text" value='."@prodotto[$i]".' /></div><div class="inputRight"></div></li>';
+	$i++;
+	$tot=$tot.$x;
+	
+	$x='<li class="gestione-block"><label class="gestione-labels">Tag: </label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Tag4" type="text" value='."@prodotto[$i]".' /></div><div class="inputRight"></div></li>';
+	$i++;
+	$tot=$tot.$x;
+	
+	
+	$tot=$tot.'<li class="gestione-block"><div class="gestione-button_block"><button class="button" type="submit">modifica</button><input type="hidden" name="old_cod" value="'."$cod".'"/><input type="hidden" name="old_image" value="'."$filename".'"/></form><form action="togli_prodotto.cgi" method="post"><input type="hidden" name="prodotto" value="'."$cod".'" /><button class="button" type="submit">togli prodotto</button></form></div></li>';
 	my $lista_prodotto='<ul class="gestione-aggiungi_form">'."$tot"."</ul>";
 	$vars={
 		'sessione' => "true",
