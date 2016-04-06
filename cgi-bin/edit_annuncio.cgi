@@ -78,6 +78,7 @@ else
 
 	my $vecchiotitolo=$values{"oldtitolo"};
 	my $annuncio_node=$doc->findnodes("Annunci/Annuncio[Titolo='$vecchiotitolo']");
+	my $old_immagine=$doc->findnodes("Annunci/Annuncio[Titolo='$vecchiotitolo']/Immagine");
 	$annuncio_node->[0]->parentNode->removeChild($annuncio_node->[0]);
 
 	my $annuncio_tag=$doc->createElement("Annuncio");	
@@ -115,8 +116,9 @@ else
 			$immagine="$read_directory/$values{'immagine'}";
 		}
 		else
-		{
-			$immagine=" ";
+		{	
+			my $upload_directory="../public_html/images/annunci";
+			$immagine="$upload_directory/$old_immagine";
 		}
 		$immagine_tag->appendTextNode($immagine);
 		$annuncio_tag->appendChild($immagine_tag);
