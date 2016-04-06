@@ -134,15 +134,8 @@ else
 		$template->process($file,$vars) || die $template->error();
 	}
 	
-	
-	####
-	
 	my $utente_node=$doc->findnodes("Utenti/Utente[Email='$email']");
 	my $via=$doc->findnodes("Utenti/Utente[Email='$email']/Indirizzo/Via");
-	my $ncivico=$doc->findnodes("Utenti/Utente[Email='$email']/Indirizzo/Numero_civico");
-	my $citta=$doc->findnodes("Utenti/Utente[Email='$email']/Indirizzo/Città");
-	my $prov=$doc->findnodes("Utenti/Utente[Email='$email']/Indirizzo/Provincia");
-	my $cap=$doc->findnodes("Utenti/Utente[Email='$email']/Indirizzo/CAP");
 	my $admin=$doc->findnodes("Utenti/Utente[Email='$email']/Amministratore");
 
 	$utente_node->[0]->parentNode->removeChild($utente_node->[0]);
@@ -170,34 +163,13 @@ else
 	my $password_tag=$doc->createElement("Password");
 	$password_tag->appendTextNode($values{'nuova_password'});
 	$utente_tag->appendChild($password_tag);
-	#
+	
 	my $admin_tag=$doc->createElement("Amministratore");
 	$admin_tag->appendTextNode($admin);
 	$utente_tag->appendChild($admin_tag);
-	#creare indirizzo tag
-	my $indirizzo_tag=$doc->createElement("Indirizzo");	
-	$utente_tag->appendChild($indirizzo_tag);
-	#
-	my $via_tag=$doc->createElement("Via");
-	$via_tag->appendTextNode($via);
-	$indirizzo_tag->appendChild($via_tag);
+	
+	$session->param("email", $values{nuova_email});
 
-	my $ncivico_tag=$doc->createElement("Numero_civico");
-	$ncivico_tag->appendTextNode($ncivico);
-	$indirizzo_tag->appendChild($ncivico_tag);
-
-	my $citta_tag=$doc->createElement("Città");
-	$citta_tag->appendTextNode($citta);
-	$indirizzo_tag->appendChild($citta_tag);
-
-	my $prov_tag=$doc->createElement("Provincia");
-	$prov_tag->appendTextNode($prov);
-	$indirizzo_tag->appendChild($prov_tag);
-
-	my $cap_tag=$doc->createElement("CAP");
-	$cap_tag->appendTextNode($cap);
-	$indirizzo_tag->appendChild($cap_tag);
-	#
 	open (XML,">","../data/Utenti.xml");
 	print XML $doc->toString();
 	close(XML);

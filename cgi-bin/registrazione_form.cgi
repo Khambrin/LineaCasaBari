@@ -81,14 +81,7 @@ else
 			$value_tag->appendTextNode($values{lc $k});
 			$utente_tag->appendChild($value_tag);
 		}
-		my $indirizzo=$doc->createElement("Indirizzo");
-		$utente_tag->appendChild($indirizzo);
-		my @indirizzo_tags=("Via","Numero_civico","Città","Provincia","CAP");
-		foreach my $x (@indirizzo_tags)
-		{
-			my $indirizzo_tag=$doc->createElement($x);
-			$indirizzo->appendChild($indirizzo_tag);
-		}
+		
 		my @novalue_tags=("Telefono","Amministratore");
 		foreach my $i (@novalue_tags)
 		{
