@@ -29,7 +29,7 @@ foreach my $p (param())
 
 if (!$values{"nuova_email"})
 {
-	push @errors, "Devi completare il campo email.";
+	push @errors, "Devi inserire l'indirizzo email.";
 }
 if (!$values{"vecchia_password"})
 {
@@ -50,12 +50,32 @@ if (@errors)
 		my $x="<li>$i".'</li>';
 		$error_message_aux=$error_message_aux.$x;
 	}
+	##
 	my $error_message="<ul>"."$error_message_aux"."</ul>";
+
+	my $parser=XML::LibXML->new();
+	my $doc=$parser->parse_file("../data/Utenti.xml");
+	my $root=$doc->documentElement();
+	
+	
+	my $old_name=$doc->findnodes("Utenti/Utente[Email='$email']/Nome/text()");
+	my $old_surname=$doc->findnodes("Utenti/Utente[Email='$email']/Cognome/text()");
+	my $old_tel=$doc->findnodes("Utenti/Utente[Email='$email']/Telefono/text()");
+
+	my $old_em_form='<input class= "input" type="text" name="nuova_email" value="'."$email".'"/>';
+	my $old_name_form='<input class= "input" type="text" name="nuovo_nome" value="'."$old_name".'"/>';
+	my $old_surname_form='<input class= "input" type="text" name="nuovo_cognome" value="'."$old_surname".'"/>';
+	my $old_tel_form='<input class= "input" type="text" name="nuovo_telefono" value="'."$old_tel".'"/>';
+	##
 	my $vars={
 		'sessione' => "true",
 		'email' => $email,
 		'amministratore' => $amministratore,
-		'error' => $error_message,
+		'messaggio' => $error_message,
+		'vemail'=>$old_em_form,
+		'vnome'=>$old_name_form,
+		'vcognome'=>$old_surname_form,
+		'vtelefono'=>$old_tel_form,
 	};
 	my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
@@ -66,21 +86,14 @@ else
 {
 	
 	my $doc,my $root;
-	if (-e "../data/Utenti.xml")
-	{
-		my $parser=XML::LibXML->new();
-		$doc=$parser->parse_file("../data/Utenti.xml");
-		$root=$doc->documentElement();
-	}
-	else
-	{
-		$doc=XML::LibXML::Document->new("1.0","UTF-8");
-		$root=$doc->createElement("Annunci");
-		$doc->setDocumentElement($root);
-	}
+	
+	my $parser=XML::LibXML->new();
+	$doc=$parser->parse_file("../data/Utenti.xml");
+	$root=$doc->documentElement();
+	
 	####
-	$old_pw=$doc->findnodes("Utenti/Utente[Email='$email']/Password/text()");
-	if ($values{"vacchia_password"}!=$old_pw)
+	my $old_pw=$doc->findnodes("Utenti/Utente[Email='$email']/Password/text()");
+	if ($values{"vecchia_password"} ne $old_pw)
 	{
 		push @errors, "Password corrente errata. Inserire la password corrente per apportare modifiche all'account.";
 	}
@@ -95,11 +108,30 @@ else
 			$error_message_aux=$error_message_aux.$x;
 		}
 		my $error_message="<ul>"."$error_message_aux"."</ul>";
+
+		my $parser=XML::LibXML->new();
+		my $doc=$parser->parse_file("../data/Utenti.xml");
+		my $root=$doc->documentElement();
+	
+
+		my $old_name=$doc->findnodes("Utenti/Utente[Email='$email']/Nome/text()");
+		my $old_surname=$doc->findnodes("Utenti/Utente[Email='$email']/Cognome/text()");
+		my $old_tel=$doc->findnodes("Utenti/Utente[Email='$email']/Telefono/text()");
+
+		my $old_em_form='<input class= "input" type="text" name="nuova_email" value="'."$email".'"/>';
+		my $old_name_form='<input class= "input" type="text" name="nuovo_nome" value="'."$old_name".'"/>';
+		my $old_surname_form='<input class= "input" type="text" name="nuovo_cognome" value="'."$old_surname".'"/>';
+		my $old_tel_form='<input class= "input" type="text" name="nuovo_telefono" value="'."$old_tel".'"/>';
+
 		my $vars={
 			'sessione' => "true",
 			'email' => $email,
 			'amministratore' => $amministratore,
-			'error' => $error_message,
+			'messaggio' => $error_message,
+			'vemail'=>$old_em_form,
+			'vnome'=>$old_name_form,
+			'vcognome'=>$old_surname_form,
+			'vtelefono'=>$old_tel_form,
 		};
 		my $template=Template->new({
 			INCLUDE_PATH => '../public_html/temp',
@@ -118,7 +150,7 @@ else
 	my $cap=$doc->findnodes("Utenti/Utente[Email='$email']/Indirizzo/CAP/Text()");
 	my $admin=$doc->findnodes("Utenti/Utente[Email='$email']/Amministratore/Text()");
 
-	$utente_node->[0]->parentNode->removeChild($annuncio_node->[0]);
+	$utente_node->[0]->parentNode->removeChild($utente_node->[0]);
 
 	my $utente_tag=$doc->createElement("Utente");	
 	$root->appendChild($utente_tag);
