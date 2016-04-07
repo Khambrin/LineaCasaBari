@@ -25,7 +25,7 @@ my $file='togli_utenti_temp.html';
 my $tot='<form action="remove_user_form.cgi" method="post">';
 foreach my $i (@users)
 {
-	my $x='<li class="gestione-block"><div class="gestione-button_block"><label class="gestione-labels">'."$i".'</label><button class="button" type="submit"> Rimuovi </button></div><input type="hidden" name="email" value="'."$i".'"/></li>';
+	my $x='<li class="gestione-block"><div class="gestione-button_block"><label class="gestione-labels">'."$i".'</label><form action="remove_user_form.cgi" method="post"><div class="gestione-button_block"><button class="button" type="submit">Rimuovi</button><input type="hidden" name="emailuser" value="'."$i".'"/></div></form></li>';
 	$tot=$tot.$x;
 }
 

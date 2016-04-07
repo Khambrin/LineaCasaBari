@@ -12,7 +12,7 @@ use XML::LibXML;
 my $cgi=new CGI;
 
 my $parser=XML::LibXML->new;
-my $utente=param("email");
+my $utente=param("emailuser");
 
 my $doc=$parser->parse_file("../data/Utenti.xml");
 my $utente_node=$doc->findnodes("Utenti/Utente[Email='$utente']");
