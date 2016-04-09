@@ -23,7 +23,7 @@ my $index=$cgi->param("indice_indirizzo");
 
 my $doc=$parser->parse_file("../data/Indirizzi.xml");
 my $indirizzi_node=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo");
-$indirizzi_node->[--$index]->parentNode->removeChild($indirizzi_node->[--$index]);
+$indirizzi_node->[$index]->parentNode->removeChild($indirizzi_node->[$index]);
 
 
 

@@ -109,7 +109,62 @@
                     <li class="subtitle_link">Gestisci gli indirizzi di spedizione</li>
                 </ul>
             </div><div id="right-col">
-			[% lista_indirizzi %]
+		[% IF pagina == 'edit' %]
+					
+		<div><p>Modifica indirizzo n. [% indice_controllo %] </p></div>
+               	 <form method="post" action="edit_indirizzo_script.cgi" enctype="multipart/form-data">
+                    <ul div id="edit-form">
+                        <li class="gestione-block">
+                            <label class="gestione-labels">Via:</label>
+                            <div class="inputLeft"></div>
+				<div class="gestione-inputMiddle">
+					[% vvia %]
+				</div>
+			    <div class="inputRight"></div>
+                        </li>
+			<li class="gestione-block">
+                            <label class="gestione-labels">Numero Civico:</label>
+                            <div class="inputLeft"></div>
+				<div class="gestione-inputMiddle">
+					[% vnumero %]
+				</div>
+			    <div class="inputRight"></div>
+                        </li>
+			<li class="gestione-block">
+                            <label class="gestione-labels">Città:</label>
+                            <div class="inputLeft"></div>
+				<div class="gestione-inputMiddle">
+					[% vcitta %]
+				</div>
+			    <div class="inputRight"></div>
+                        </li>
+			<li class="gestione-block">
+                            <label class="gestione-labels">Provincia:</label>
+                            <div class="inputLeft"></div>
+				<div class="gestione-inputMiddle">
+					[% vprovincia %]
+				</div>
+			    <div class="inputRight"></div>
+                        </li>
+			<li class="gestione-block">
+                            <label class="gestione-labels">CAP:</label>
+                            <div class="inputLeft"></div>
+				<div class="gestione-inputMiddle">
+					[% vcap %]
+				</div>
+			    <div class="inputRight"></div>
+                        </li>
+                        
+                    </ul>
+                    <div id="gestione-button_block">
+                        <button class="button" type="submit">Modifica Indirizzo</button>
+                    </div>
+					<div>[% hidden %]</div>
+					<div>[% messaggio %]</div>
+                </form>
+		[% ELSE %]
+			<span>[% lista_indirizzi %]</span>
+		[% END %]
             </div>        
         </div>
     </div>

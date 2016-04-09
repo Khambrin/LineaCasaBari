@@ -50,7 +50,7 @@ for (my $index=0; $index <=$#indirizzo_via; $index++)
 	my $x="<p>@indirizzo_cap[$index]</p>";
 	$tot=$tot.$x;	
 	my $x='<li><form class="togli_indirizzo-pulsante" action="remove_indirizzo.cgi" method="post"><div><input type="submit" value="Rimuovi"/><input type="hidden" name="indice_indirizzo" value="'."$index".'"/></div></form>
-<form class="modifica_indirizzo-pulsante" action="modifica_indirizzo.cgi" method="post"><div><input type="submit" value="Modifica"/><input type="hidden" name="indice_indirizzo_edit" value="'."$index".'"/></div></form>
+<form class="modifica_indirizzo-pulsante" action="edit_indirizzo_form.cgi" method="post"><div><input type="submit" value="Modifica"/><input type="hidden" name="indice_indirizzo_edit" value="'."$index".'"/></div></form>
 </li></div></div>';
 	$tot=$tot.$x;
 }
