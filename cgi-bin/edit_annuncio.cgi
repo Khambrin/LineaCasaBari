@@ -47,12 +47,30 @@ if (@errors)
 		$error_message_aux=$error_message_aux.$x;
 	}
 	my $error_message="<ul>"."$error_message_aux"."</ul>";
+
+	my $parser=XML::LibXML->new;
+	my $doc=$parser->parse_file("../data/Annunci.xml");
+	my $template=Template->new({
+		INCLUDE_PATH => '../public_html/temp',
+	});
+
+	my $titolo=$values{"oldtitolo"};
+	my $annuncio_node=$doc->findnodes("Annunci/Annuncio[Titolo='$titolo']");
+	my $fcontenuto=$doc->findnodes("Annunci/Annuncio[Titolo='$titolo']/Testo/text()");
+
+	my $vcontenuto='<textarea id="gestione_annunci-textarea" rows="100" cols="100" name="testo">'."$fcontenuto".'</textarea>';
+	my $vt_form='<input class= "input" type="text" name="titolo" value="'."$titolo".'"/>';
+	my $hiddentitle='<input class= "input" type="hidden" name="oldtitolo" value="'."$titolo".'"/>';
+
 	my $vars={
 		'sessione' => "true",
 		'email' => $email,
 		'amministratore' => "true",
 		'error' => $error_message,
-		'pagina' => $pagina,
+		'pagina' => "edit",
+		'vtitolo'=>$vt_form,
+		'vcontenuto'=>$vcontenuto,
+		'oldtitolo'=>$hiddentitle,
 	};
 	my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
