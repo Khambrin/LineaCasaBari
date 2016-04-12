@@ -59,14 +59,42 @@ if (@errors)
 		my $x="<li>$i".'</li>';
 		$error_message_aux=$error_message_aux.$x;
 	}
+
 	my $error_message="<ul>"."$error_message_aux"."</ul>";
+
+	my $parser=XML::LibXML->new;
+	my $doc=$parser->parse_file("../data/Indirizzi.xml");
+	my $template=Template->new({
+		INCLUDE_PATH => '../public_html/temp',
+		});
+	$ind=++$ind;
+	my $indirizzo_via=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[position()='$ind']/Via");
+	my $indirizzo_numero_civico=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[$ind]/Numero_civico/text()");
+	my $indirizzo_citta=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[$ind]/Città/text()");
+	my $indirizzo_provincia=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[$ind]/Provincia/text()");
+	my $indirizzo_cap=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[$ind]/CAP/text()");
+
+	my $via_form='<input class= "input" type="text" name="via" value="'."$indirizzo_via".'"/>';
+	my $numero_form='<input class= "input" type="text" name="numero" value="'."$indirizzo_numero_civico".'"/>';
+	my $citta_form='<input class= "input" type="text" name="citta" value="'."$indirizzo_citta".'"/>';
+	my $provincia_form='<input class= "input" type="text" name="provincia" value="'."$indirizzo_provincia".'"/>';
+	my $cap_form='<input class= "input" type="text" name="cap" value="'."$indirizzo_cap".'"/>';
+	my $hidden='<input type="hidden" name="index_script" value="'."$ind".'"/>';
+
+	
 	my $vars={
 		'sessione' => "true",
 		'email' => $email,
 		'amministratore' => "true",
 		'error' => $error_message,
-		'pagina' => $pagina,
-		#passare tutti i dati di edit_account.cgi
+		'pagina' => "edit",
+		'vvia'=>$via_form,
+		'vnumero'=>$numero_form,
+		'vcitta'=>$citta_form,
+		'vprovincia'=>$provincia_form,
+		'vcap'=>$cap_form,
+		'hidden'=>$hidden,
+		'indice_controllo'=>$ind,
 	};
 	my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
