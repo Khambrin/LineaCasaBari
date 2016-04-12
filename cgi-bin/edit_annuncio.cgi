@@ -144,26 +144,26 @@ else
 		$template->process($file,$vars) || die $template->error();
 	}
 	#
-else{
-	my $annuncio_tag=$doc->createElement("Annuncio");	
-	$root->appendChild($annuncio_tag);
+	else{
+		my $annuncio_tag=$doc->createElement("Annuncio");	
+		$root->appendChild($annuncio_tag);
 
-	my $titolo_tag=$doc->createElement("Titolo");
-	$titolo_tag->appendTextNode($values{'titolo'});
-	$annuncio_tag->appendChild($titolo_tag);
+		my $titolo_tag=$doc->createElement("Titolo");
+		$titolo_tag->appendTextNode($values{'titolo'});
+		$annuncio_tag->appendChild($titolo_tag);
 	
-	my ($sec,$min,$hour,$mday,$mon,$yr19,$wday,$yday,$isdst) = localtime(time);
-	my $year=$yr19+1900;
-	my $date="$mday/$mon/$year";
-	my $date_tag=$doc->createElement("Data");
-	$date_tag->appendTextNode($date);
-	$annuncio_tag->appendChild($date_tag);
+		my ($sec,$min,$hour,$mday,$mon,$yr19,$wday,$yday,$isdst) = localtime(time);
+		my $year=$yr19+1900;
+		my $date="$mday/$mon/$year";
+		my $date_tag=$doc->createElement("Data");
+		$date_tag->appendTextNode($date);
+		$annuncio_tag->appendChild($date_tag);
 
-	my $testo_tag=$doc->createElement("Testo");
-	$testo_tag->appendTextNode($values{'testo'});
-	$annuncio_tag->appendChild($testo_tag);
+		my $testo_tag=$doc->createElement("Testo");
+		$testo_tag->appendTextNode($values{'testo'});
+		$annuncio_tag->appendChild($testo_tag);
 
-	my $immagine_tag=$doc->createElement("Immagine");
+		my $immagine_tag=$doc->createElement("Immagine");
 		my $immagine;
 		if ($values{'immagine'})
 		{
@@ -186,10 +186,10 @@ else{
 		}
 		$immagine_tag->appendTextNode($immagine);
 		$annuncio_tag->appendChild($immagine_tag);
-
+	
 		open (XML,">","../data/Annunci.xml");
 		print XML $doc->toString();
 		close(XML);
 		print $cgi->redirect("modifica_annunci.cgi");
-}
+	}
 }
