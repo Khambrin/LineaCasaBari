@@ -50,7 +50,7 @@ if (@errors)
 		my $x="<li>$i".'</li>';
 		$error_message_aux=$error_message_aux.$x;
 	}
-	##
+	
 	my $error_message="<ul>"."$error_message_aux"."</ul>";
 
 	my $parser=XML::LibXML->new();
@@ -66,7 +66,7 @@ if (@errors)
 	my $old_name_form='<input class= "input" type="text" name="nuovo_nome" value="'."$old_name".'"/>';
 	my $old_surname_form='<input class= "input" type="text" name="nuovo_cognome" value="'."$old_surname".'"/>';
 	my $old_tel_form='<input class= "input" type="text" name="nuovo_telefono" value="'."$old_tel".'"/>';
-	##
+	
 	my $vars={
 		'sessione' => "true",
 		'email' => $email,
@@ -91,7 +91,6 @@ else
 	$doc=$parser->parse_file("../data/Utenti.xml");
 	$root=$doc->documentElement();
 	
-	####
 	my $old_pw=$doc->findnodes("Utenti/Utente[Email='$email']/Password/text()");
 	if ($values{"vecchia_password"} ne $old_pw)
 	{
@@ -135,7 +134,7 @@ else
 	}
 	
 	my $utente_node=$doc->findnodes("Utenti/Utente[Email='$email']");
-	my $via=$doc->findnodes("Utenti/Utente[Email='$email']/Indirizzo/Via");
+
 	my $admin=$doc->findnodes("Utenti/Utente[Email='$email']/Amministratore");
 
 	$utente_node->[0]->parentNode->removeChild($utente_node->[0]);
@@ -173,6 +172,29 @@ else
 	open (XML,">","../data/Utenti.xml");
 	print XML $doc->toString();
 	close(XML);
+
+	use XML::LibXML;
+	$parser=XML::LibXML->new();
+	$doc=$parser->parse_file("../data/Indirizzi.xml");
+	$root=$doc->documentElement();
+	
+	my $ric_canc=$doc->findnodes("Indirizzi/Utente[Email='$email']/Email/text()");
+	if($ric_canc eq $email)
+	{
+		my $utente_canc=$doc->findnodes("Indirizzi/Utente[Email='$email']");
+		my $email_canc=$doc->findnodes("Indirizzi/Utente[Email='$email']/Email");
+	
+		my $newemail_tag=$doc->createElement("Email");
+		$newemail_tag->appendTextNode($values{'nuova_email'});
+		$utente_canc->[0]->appendChild($newemail_tag); 
+	
+		$email_canc->[0]->parentNode->removeChild($email_canc->[0]);
+	}
+		
+	open (XML,">","../data/Indirizzi.xml");
+	print XML $doc->toString();
+	close(XML);
+
 	print $cgi->redirect("gestione_account.cgi");
 
 }
