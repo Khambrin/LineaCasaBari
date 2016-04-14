@@ -194,6 +194,30 @@ else
 	open (XML,">","../data/Indirizzi.xml");
 	print XML $doc->toString();
 	close(XML);
+###
+	$parser=XML::LibXML->new();
+	$doc=$parser->parse_file("../data/Ordini.xml");
+	$root=$doc->documentElement();
+	
+	my $ord_canc=$doc->findnodes("Ordini/Ordine[Utente='$email']/Utente/text()");
+	if($ord_canc eq $email)
+	{
+		my $ut_canc=$doc->findnodes("Ordini/Ordine[Utente='$email']");
+		my $em_canc=$doc->findnodes("Ordini/Ordine[Utente='$email']/Utente");
+	
+		my $newut_tag=$doc->createElement("Utente");
+		$newut_tag->appendTextNode($values{'nuova_email'});
+		$ut_canc->[0]->appendChild($newut_tag); 
+	
+		$ord_canc->[0]->parentNode->removeChild($ord_canc->[0]);
+	}
+		
+	open (XML,">","../data/Ordini.xml");
+	print XML $doc->toString();
+	close(XML);
+
+
+###
 
 	print $cgi->redirect("gestione_account.cgi");
 
