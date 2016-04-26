@@ -110,30 +110,32 @@
                 </ul>
             </div><div id="right-col">
                 <div>
-                <a class="sub_menu_link" href="gestione_annunci_script.cgi?aggiungi">
-                    <div class="sub_menu_block"><span class="sub_menu_text">Aggiungi annuncio</span></div></a><a class="sub_menu_link" href="modifica_annunci.cgi"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica annuncio</span></div></a>
+                [% IF pagina == 'aggiungi' %]
+					<a href="gestione_annunci_script.cgi?aggiungi"><div class="sub_menu_block_active"><span class="sub_menu_text_active">Aggiungi annuncio</span></div></a><a href="modifica_annunci.cgi?edit"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica annuncio</span></div></a>
+                [% ELSIF pagina == 'edit' %]
+					<a href="gestione_annunci_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi annuncio</span></div></a><a href="modifica_annunci.cgi?edit"><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica annuncio</span></div></a>[% END %]
                 </div>
                 [% IF pagina == 'aggiungi' %]
                 <form method="post" action="aggiungi_annuncio_form.cgi" enctype="multipart/form-data">
-                    <ul div id="gestione-aggiungi_form">
+                    <ul class="gestione-aggiungi_form">
                         <li class="gestione-block">
                             <label class="gestione-labels">Titolo:</label>
                             <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="titolo"/></div><div class="inputRight"></div>
                         </li>
                         <li class="gestione-block">
-                            <label id="gestione-textarea_label">Testo:</label>
+                            <label class="gestione-labels">Testo:</label>
                         </li>
                         <li class="gestione-block">
-                            <textarea id="gestione_annunci-textarea" rows="100" cols="100" name="testo"></textarea>
+                            <textarea class="gestione_textarea" name="testo"></textarea>
                         </li>
                         <li class="gestione-block">
-                            <div id="gestione-file_label">
+                            <div class="gestione-file_label">
                                 <label class="gestione-labels">Inserisci immagine:</label>
                             </div>
                             <input type="file" name="immagine"/>
                         </li>
                     </ul>
-                    <div id="gestione-button_block">
+                    <div class="gestione-button_block">
                         <button class="button" type="submit">Aggiungi annuncio</button>
                     </div>
 					
@@ -144,7 +146,7 @@
 					
 
                 <form method="post" action="edit_annuncio.cgi" enctype="multipart/form-data">
-                    <ul div id="edit-form">
+                    <ul class="gestione-aggiungi_form">
                         <li class="gestione-block">
                             <label class="gestione-labels">Titolo:</label>
                             <div class="inputLeft"></div>

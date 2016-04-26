@@ -39,7 +39,7 @@ my $vars={
 		'sessione' => "true",
 		'email' => $email,
 		'amministratore' => "true",
-		'pagina' => "modifica_annunci",
+		'pagina' => "edit",
 		'lista_annunci' => $lista_annunci,
 	};
 
