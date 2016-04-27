@@ -112,8 +112,11 @@
                 <div>
                 [% IF pagina == 'aggiungi' %]
 					<a href="gestione_annunci_script.cgi?aggiungi"><div class="sub_menu_block_active"><span class="sub_menu_text_active">Aggiungi annuncio</span></div></a><a href="modifica_annunci.cgi?edit"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica annuncio</span></div></a>
-                [% ELSIF pagina == 'edit' %]
+                [% ELSIF pagina == 'modifica_annunci' %]
+					<a href="gestione_annunci_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi annuncio</span></div></a><a href="modifica_annunci.cgi?edit"><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica annuncio</span></div></a>
+				[% ELSIF pagina == 'edit' %]
 					<a href="gestione_annunci_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi annuncio</span></div></a><a href="modifica_annunci.cgi?edit"><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica annuncio</span></div></a>[% END %]
+                
                 </div>
                 [% IF pagina == 'aggiungi' %]
                 <form method="post" action="aggiungi_annuncio_form.cgi" enctype="multipart/form-data">
@@ -140,7 +143,7 @@
                     </div>
 					
 					<div>[% hidden %]</div>
-					<div>[% messaggio %]</div>
+					<div class="messaggio-error">[% messaggio %]</div>
                 </form>
 				[% ELSIF pagina == 'edit' %]
 					
@@ -172,9 +175,9 @@
                     <div id="gestione-button_block">
                         <button class="button" type="submit">Modifica annuncio</button>
                     </div>
-					<div>[% error %]</div>
+					<div class="messaggio-error">[% error %]</div>
 					<div>[% hidden %]</div>
-					<div>[% messaggio %]</div>
+					<div class="messaggio-error">[% messaggio %]</div>
                 </form>
 		
 
@@ -198,7 +201,7 @@
             <div id="first-footer-block">
                 <span id="footer-logo"></span>
                 <ul>
-                    <li>Corso Umberto 1°, 51</li>
+                    <li>Corso Umberto 1&deg, 51</li>
                     <li>Albaredo d'Adige, VR</li>
                     <li><abbr title="telefono">Tel. </abbr> 045 7001911</li>
                     <li>lineacasabari@gmail.com</li>

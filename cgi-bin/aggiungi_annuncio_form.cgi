@@ -47,7 +47,7 @@ if (@messaggi)
 		'email' => $email,
 		'amministratore' => "true",
 		'messaggio' => $error_message,
-		'pagina' => $pagina,
+		'pagina' => "aggiungi",
 	};
 	my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
@@ -73,7 +73,7 @@ else
 	my $only=$doc->findnodes("Annunci/Annuncio[Titolo='$find_title']/Titolo/text()");
 	if ($find_title eq $only)
 	{
-		push @messaggi, "Titolo già utilizzato.";
+		push @messaggi, "Titolo gi&agrave utilizzato.";
 		print $cgi->header('text/html');
 		my $file='gestione_annunci_temp.html';
 		my $error_message_aux;
