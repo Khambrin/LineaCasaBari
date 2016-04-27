@@ -93,7 +93,7 @@
         <div id="col">
             <div id="left-col">
                 <ul>
-                    <li class="title_link"><a href="check_session.cgi?i_miei_ordini">I miei oridini</a></li>
+                    <li class="title_link"><a href="check_session.cgi?i_miei_ordini">I miei ordini</a></li>
                     <li class="subtitle_link">Guarda e modifica gli ordini recenti</li>
                 </ul>
                 <ul>
@@ -110,7 +110,7 @@
                 </ul>
             </div><div id="right-col">
 		<form method="post" action="edit_account.cgi" enctype="multipart/form-data">
-                    <ul div id="edit-form">
+                    <ul class="gestione-aggiungi_form">
                         <li class="gestione-block">
                             <label class="gestione-labels">Email:</label>
                             <div class="inputLeft"></div>
@@ -162,11 +162,11 @@
                         </li>
 			
                     </ul>
-                    <div id="gestione-button_block">
+                    <div class="gestione-button_block">
                         <button class="button" type="submit">Modifica Account</button>
                     </div>
 					<div>[% hidden %]</div>
-					<div>[% messaggio %]</div>
+					<div class="messaggio-error">[% messaggio %]</div>
                 </form>
             </div>        
         </div>
