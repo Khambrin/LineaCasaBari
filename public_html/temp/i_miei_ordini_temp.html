@@ -109,6 +109,8 @@
                     <li class="subtitle_link">Gestisci gli indirizzi di spedizione</li>
                 </ul>
             </div><div id="right-col">
+				[% IF messaggio_ordini != 'false' %]<div class="messaggio-error">[% messaggio_ordini %]</div>[% END %]
+				[% lista_ordini %]
                 
             </div>        
         </div>
