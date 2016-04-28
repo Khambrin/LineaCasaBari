@@ -32,7 +32,6 @@ switch($ENV{'QUERY_STRING'})
 	case 'termini_spedizione' { $file='termini_spedizione_temp.html'; }
 	case 'impostazioni_account' { $file='impostazioni_account_temp.html' }
 	case 'indirizzi' { $file='indirizzi_temp.html' }
-	case 'pagamenti' { $file='pagamenti_temp.html' }
 	case 'gestione_annunci' { $file='gestione_annunci_temp.html' }
 	case 'gestione_ordini' {$file='gestione_ordini_temp.html' }
 }
@@ -42,7 +41,7 @@ if ($session->is_empty)
 	$vars={
 		'sessione' => "false",
 	};
-	if ($ENV{'QUERY_STRING'} eq 'i_miei_ordini' or $ENV{'QUERY_STRING'} eq 'pagamenti' or $ENV{'QUERY_STRING'} eq 'impostazioni_account' 
+	if ($ENV{'QUERY_STRING'} eq 'i_miei_ordini' or $ENV{'QUERY_STRING'} eq 'impostazioni_account' 
 		or $ENV{'QUERY_STRING'} eq 'indirizzi' or $ENV{'QUERY_STRING'} eq 'togli_utenti' or $ENV{'QUERY_STRING'} eq 'gestione_prodotti' 
 		or $ENV{'QUERY_STRING'} eq 'gestione_ordini' or $ENV{'QUERY_STRING'} eq 'gestione_annunci')
 	{

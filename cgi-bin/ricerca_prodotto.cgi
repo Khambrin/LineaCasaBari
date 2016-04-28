@@ -143,7 +143,7 @@ if($messaggio eq "false")
 	$tot=$tot.$x;
 	
 	
-	$tot=$tot.'<li class="gestione-block"><div class="gestione-button_block"><button class="button" type="submit">modifica</button><input type="hidden" name="old_cod" value="'."$cod".'"/><input type="hidden" name="old_image" value="'."$filename".'"/></form><form action="togli_prodotto.cgi" method="post"><input type="hidden" name="prodotto" value="'."$cod".'" /><button class="button" type="submit">togli prodotto</button></form></div></li>';
+	$tot=$tot.'<li class="gestione-block"><div class="gestione-button_block"><button class="button" type="submit">Modifica</button><input type="hidden" name="old_cod" value="'."$cod".'"/><input type="hidden" name="old_image" value="'."$filename".'"/></form><form action="togli_prodotto.cgi" method="post"><input type="hidden" name="prodotto" value="'."$cod".'" /><button class="button" type="submit">togli prodotto</button></form></div></li>';
 	my $lista_prodotto='<ul class="gestione-aggiungi_form">'."$tot"."</ul>";
 	$vars={
 		'sessione' => "true",

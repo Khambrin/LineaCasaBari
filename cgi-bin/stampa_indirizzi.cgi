@@ -37,39 +37,39 @@ my $file='indirizzi_temp.html';
 my $tot;
 for (my $index=0; $index <=$#indirizzo_via; $index++)
 {	
-	my $x='<div id="info-container"><div class="info-text"><p>'."Indirizzo n.$index</p>";
+	my $x='<li class="gestione-block"><label class="gestione-labels">'."Indirizzo n. $index</label></li>";
 	$tot=$tot.$x;
-	my $x="<p>via @indirizzo_via[$index]</p>";
+	my $x='<li class="gestione-block"><label class="gestione-labels">'."via @indirizzo_via[$index]</label>";
 	$tot=$tot.$x;
-	my $x="<p>numero @indirizzo_numero_civico[$index]</p>";
+	my $x='<label class="gestione-labels">'."numero @indirizzo_numero_civico[$index]</label>";
 	$tot=$tot.$x;
-	my $x="<p>@indirizzo_citta[$index]</p>";
+	my $x='<label class="gestione-labels">'."@indirizzo_citta[$index]</label>";
 	$tot=$tot.$x;
-	my $x="<p>@indirizzo_provincia[$index]</p>";
+	my $x='<label class="gestione-labels">'."@indirizzo_provincia[$index]</label>";
 	$tot=$tot.$x;
-	my $x="<p>@indirizzo_cap[$index]</p>";
+	my $x='<label class="gestione-labels">'."@indirizzo_cap[$index]</label></li>";
 	$tot=$tot.$x;	
-	my $x='<li><form class="togli_indirizzo-pulsante" action="remove_indirizzo.cgi" method="post"><div><input type="submit" value="Rimuovi"/><input type="hidden" name="indice_indirizzo" value="'."$index".'"/></div></form>
-<form class="modifica_indirizzo-pulsante" action="edit_indirizzo_form.cgi" method="post"><div><input type="submit" value="Modifica"/><input type="hidden" name="indice_indirizzo_edit" value="'."$index".'"/></div></form>
-</li></div></div>';
+	my $x='
+	<li class="gestione-block">
+		<form action="remove_indirizzo.cgi" method="post">
+			<div class="gestione-button_block">
+				<button class="button" type="submit">Rimuovi</button>
+				<input type="hidden" name="indice_indirizzo" value="'."$index".'"/>
+			</div>
+		</form>
+		<form action="edit_indirizzo_form.cgi" method="post">
+			<div class="gestione-button_block">
+				<button class="button" type="submit">Modifica</button>
+				<input type="hidden" name="indice_indirizzo_edit" value="'."$index".'"/>
+			</div>
+		</form>
+	</li>';
 	$tot=$tot.$x;
 }
 
-my $lista_indirizzi="<ul>"."$tot"."</ul>";
+my $lista_indirizzi='<ul class="gestione-aggiungi_form">'."$tot"."</ul>";
 
-#if ($session->is_empty)
-#{
-#	$vars={
-#		'sessione' => "false",
-#		'lista_indirizzi' => $lista_indirizzi,
-#		'messaggio'=>$mex,
-#		'iscrizione_avvenuta'=>$ias,
-#	};
-#}
-
-#else
-#{
-	$vars={
+$vars={
 		'sessione' => "true",
 		'email' => $email,
 		'amministratore' => $amministratore,
@@ -77,6 +77,6 @@ my $lista_indirizzi="<ul>"."$tot"."</ul>";
 		'messaggio'=>$mex,
 		'iscrizione_avvenuta'=>$ias,
 	};
-#}
+
 print $cgi->header('text/html');
 $template->process($file,$vars) || die $template->error();
