@@ -33,11 +33,11 @@ my $indirizzo_provincia=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indiri
 my $indirizzo_cap=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[$ind]/CAP/text()");
 
 
-my $via_form='<ul class="gestione-aggiungi_form"><li class="gestione-block"><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="text" name="via" value="'."$indirizzo_via".'"/></div><div class="inputRight"></div></li>';
-my $numero_form='<li class="gestione-block"><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="text" name="numero" value="'."$indirizzo_numero_civico".'"/></div><div class="inputRight"></div></li>';
-my $citta_form='<li class="gestione-block"><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="text" name="citta" value="'."$indirizzo_citta".'"/></div><div class="inputRight"></div></li>';
-my $provincia_form='<li class="gestione-block"><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="text" name="provincia" value="'."$indirizzo_provincia".'"/></div><div class="inputRight"></div></li>';
-my $cap_form='<li class="gestione-block"><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="text" name="cap" value="'."$indirizzo_cap".'"/></div><div class="inputRight"></div></li></ul>';
+my $via_form='<input class= "input" type="text" name="via" value="'."$indirizzo_via".'"/>';
+my $numero_form='<input class= "input" type="text" name="numero" value="'."$indirizzo_numero_civico".'"/>';
+my $citta_form='<input class= "input" type="text" name="citta" value="'."$indirizzo_citta".'"/>';
+my $provincia_form='<input class= "input" type="text" name="provincia" value="'."$indirizzo_provincia".'"/>';
+my $cap_form='<input class= "input" type="text" name="cap" value="'."$indirizzo_cap".'"/>';
 
 $ind=--$index;
 my $hidden='<input type="hidden" name="index_script" value="'."$ind".'"/>';
