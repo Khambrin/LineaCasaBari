@@ -27,13 +27,13 @@ my $file='gestione_annunci_temp.html';
 my $tot;
 foreach my $i (@annuncio_titolo)
 {
-	my $x="<li>$i".'<form class="togli_annuncio-pulsante" action="remove_annuncio.cgi" method="post"><div><input type="submit" value="Rimuovi"/><input type="hidden" name="titolo" value="'."$i".'"/></div></form>
-<form class="modifica_annuncio-pulsante" action="modifica_annunci_script.cgi" method="post"><div><input type="submit" value="Modifica"/><input type="hidden" name="titolo_edit" value="'."$i".'"/></div></form>
+	my $x='<li class="gestione-block">'."$i".'<form action="remove_annuncio.cgi" method="post"><div><button class="button" type="submit" value="Rimuovi">Rimuovi</button><input type="hidden" name="titolo" value="'."$i".'"/></div></form>
+<form action="modifica_annunci_script.cgi" method="post"><div><button class="button" type="submit" value="Modifica">Modifica</button><input type="hidden" name="titolo_edit" value="'."$i".'"/></div></form>
 </li>';
 	$tot=$tot.$x;
 }
 
-my $lista_annunci="<ul>"."$tot"."</ul>";
+my $lista_annunci='<ul class="gestione-aggiungi_form">'."$tot</ul>";
 
 my $vars={
 		'sessione' => "true",

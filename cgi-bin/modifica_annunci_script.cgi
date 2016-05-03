@@ -32,7 +32,7 @@ my $fcontenuto=$doc->findnodes("Annunci/Annuncio[Titolo='$titolo']/Testo/text()"
 
 my $vcontenuto='<textarea class="gestione_textarea" name="testo">'."$fcontenuto".'</textarea>';
 
-my $vt_form='<div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="text" name="titolo" value="'."$titolo".'"/></div><div class="inputRight"></div>';
+my $vt_form='<input class= "input" type="text" name="titolo" value="'."$titolo".'"/>';
 
 my $hiddentitle='<input class= "input" type="hidden" name="oldtitolo" value="'."$titolo".'"/>';
 
