@@ -105,7 +105,50 @@
                     <li class="subtitle_link">Gestisci gli indirizzi di spedizione</li>
                 </ul>
             </div><div id="right-col">
-			[% IF pagina == 'edit' %]
+		<div>
+                [% IF pagina == 'aggiungi' %]
+					<a href="gestione_indirizzi_script.cgi?aggiungi"><div class="sub_menu_block_active"><span class="sub_menu_text_active">Aggiungi indirizzo</span></div></a><a href="modifica_annunci.cgi?edit"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica indirizzo</span></div></a>
+                [% ELSIF pagina == 'edit' %]
+					<a href="gestione_indirizzi_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi indirizzo</span></div></a><a href="stampa_indirizzi.cgi"><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica indirizzo</span></div></a>
+				[% ELSE %]
+					<a href="gestione_indirizzi_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi indirizzo</span></div></a><a href="stampa_indirizzi.cgi"><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica indirizzo</span></div></a>[% END %]
+                
+                </div>
+			[% IF pagina == 'aggiungi' %]
+	<form method="post" action="aggiungi_indirizzo_script.cgi" enctype="multipart/form-data">
+				<ul class="gestione-aggiungi_form">
+					<li class="gestione-block">
+						<label class="gestione-labels">Aggiungi indirizzo  </label>
+               	    <li class="gestione-block">
+                        <label class="gestione-labels">Via:</label>
+                        <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="text" name="via" /></div>
+						<div class="inputRight"></div>
+                    </li>
+					<li class="gestione-block">
+						<label class="gestione-labels">Numero Civico:</label>
+                        <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="text" name="numero" /></div><div class="inputRight"></div>
+                    </li>
+					<li class="gestione-block">
+                        <label class="gestione-labels">Citt&agrave;:</label>
+                        <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="text" name="citta" /></div><div class="inputRight"></div>
+                    </li>
+					<li class="gestione-block">
+                        <label class="gestione-labels">Provincia:</label>
+                        <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="text" name="provincia" /></div><div class="inputRight"></div>
+                    </li>
+					<li class="gestione-block">
+                        <label class="gestione-labels">CAP:</label>
+                        <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="text" name="cap" /></div><div class="inputRight"></div>
+                    </li>
+                 </ul>
+                 <div class="gestione-button_block">
+					<button class="button" type="submit">Modifica Indirizzo</button>
+                 </div>
+					<div>[% hidden %]</div>
+					<div class="messaggio-error">[% error %]</div>
+					<div class="messaggio-error">[% messaggio %]</div>
+          </form>
+			[% ELSIF pagina == 'edit' %]
 			<form method="post" action="edit_indirizzo_script.cgi" enctype="multipart/form-data">
 				<ul class="gestione-aggiungi_form">
 					<li class="gestione-block">
