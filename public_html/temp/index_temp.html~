@@ -1,18 +1,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"  xml:lang="it" lang="it">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Linea Casa Bari - Contatti</title>
-    <meta name="title" content="Linea Casa Bari - Contattaci" />
-    <meta name="description" content="Pagina per contattare i titolari del negozio Linea Casa Bari" />
-    <meta name="keywords" content="piatti, bicchieri, posate, porcellane, liste nozze, vasi, lampade, paralumi, contatti, messaggio" />
+    <title>Linea Casa Bari - Home</title>
+    <meta name="title" content="Linea Casa Bari"/>
+    <meta name="description" content="Home page del sito sul negozio Linea Casa Bari" />
+    <meta name="keywords" content="piatti, bicchieri, posate, porcellane, liste nozze, vasi, lampade, paralumi" />
     <meta name="language" content="italian it" />
     <meta name="author" content="Alessandro Bari, Navid Taha, Alice Sasso, Lorenzo Ferrarin" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <link href="../LineaCasaBari.css" rel="stylesheet" type="text/css" media="screen"/>
     <script type="text/javascript" src="../jquery-1.12.0.js"></script>
     <script type="text/javascript" src="../link_skipper.js"></script>
@@ -24,9 +23,9 @@
         <label for="drawer-toggle" id="drawer-toggle-label"></label>
        <div id="drawer">
             <ul>
-		<li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
+                <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
                 <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
-                <li><a href="stampa_annunci.cgi">Annunci</a></li>
+		<li><a href="stampa_annunci.cgi">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
 				[% IF sessione == 'true' %]
 				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>				
@@ -56,13 +55,14 @@
     
     <div id="menu">
         <span id="path">
-            Ti trovi in: Annunci</span>
+            <span>Ti trovi in: </span><span xml:lang="en">Home</span>
+        </span>
     
         <div id="nav">
             <ul>
-                <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
+                <li class="current"><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
                 <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
-                <li class="current"><a href="stampa_annunci.cgi">Annunci</a></li>
+                <li><a href="stampa_annunci.cgi">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
                 [% IF sessione == 'true' %]
 				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
@@ -90,15 +90,26 @@
             </form>
         </div>
     </div>
+    
     <div id="content">
-		<div>
-		<h2> Annunci </h2>
-		</div>
-
-		
-		<script src="../js/stampa_annunci.js"></script>  
-		
-		<noscript><div> [% lista_annunci %] </div></noscript>
+        <div id="listanozze"> 
+            <a href="../prodotti.html"><h2>Lista Nozze</h2></a>
+        </div>
+        <div id="porcellane"> 
+            <a href="../prodotti.html"><h2>Porcellane</h2></a>
+        </div>
+        <div id="lampade">
+            <a href="../prodotti.html"><h2>Paralumi</h2></a>
+        </div>
+        <div id="pentole">
+            <a href="../prodotti.html"><h2>Pentole</h2></a>
+        </div>
+        <div id="tavola">
+            <a href="../prodotti.html"><h2>Tavola</h2></a>
+        </div>
+        <div id="tovaglie"> 
+            <a href="../prodotti.html"><h2>Tovaglie</h2></a>
+        </div>
     </div>
     
     <div id="footer">
@@ -129,7 +140,8 @@
             <div class="footer-block">
                 <ul>
                     <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
-                	<li><a href="stampa_annunci.cgi">Annunci</a></li>
+                	<script> document.write('<li><a href="../temp/annunci_temp.html">Annunci</a></li>'); </script>
+                <noscript> [% IF true %]<li><a href="stampa_annunci.cgi">Annunci</a></li> [% END %]</noscript>
                 	<li><a href="check_session.cgi?contattaci">Contattaci</a></li>
                     [% IF sessione == 'true' %]
 					<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
@@ -149,7 +161,7 @@
                     <li>
                         
 			[% IF messaggio_newsletter != 'false' %]
-			<div><p>[% messaggio_newsletter %]</p></div>
+			<div>[% messaggio_newsletter %]</div>
 			[% END %]
 			[% IF iscrizione_avvenuta != 'false' %]
 			<div>[% iscrizione_avvenuta %]</div>
@@ -159,7 +171,7 @@
                             <div id="newsletter-buttonContainer">
                                 <input id="newsletter-button" type="submit" value=""/>
                             </div>
-<input class= "input" type="hidden" name="pagina_nl" value="stampa_annunci.cgi"/>
+<input class= "input" type="hidden" name="pagina_nl" value="index_temp.html"/>
                         </form>
 
 
@@ -171,6 +183,12 @@
                             <span id="facebook-button"></span>
                         </a>
                     </li>
+			
+
+
+
+
+
                     <li>
                         <div id="w3c-validation">
                             

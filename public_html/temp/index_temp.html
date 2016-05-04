@@ -25,8 +25,7 @@
             <ul>
                 <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
                 <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
-		<script> document.write('<li><a href="../temp/annunci_temp.html">Annunci</a></li>'); </script>
-                <noscript> <li><a href="stampa_annunci.cgi">Annunci</a></li> </noscript>
+		<li><a href="stampa_annunci.cgi">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
 				[% IF sessione == 'true' %]
 				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>				
@@ -63,8 +62,7 @@
             <ul>
                 <li class="current"><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
                 <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
-                <script> document.write('<li><a href="../temp/annunci_temp.html">Annunci</a></li>'); </script>
-                <noscript> <li><a href="stampa_annunci.cgi">Annunci</a></li> </noscript>
+                <li><a href="stampa_annunci.cgi">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
                 [% IF sessione == 'true' %]
 				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
@@ -142,8 +140,7 @@
             <div class="footer-block">
                 <ul>
                     <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
-                	<script> document.write('<li><a href="../temp/annunci_temp.html">Annunci</a></li>'); </script>
-                <noscript> [% IF true %]<li><a href="stampa_annunci.cgi">Annunci</a></li> [% END %]</noscript>
+                	<li><a href="stampa_annunci.cgi">Annunci</a></li>
                 	<li><a href="check_session.cgi?contattaci">Contattaci</a></li>
                     [% IF sessione == 'true' %]
 					<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
