@@ -24,7 +24,8 @@
         <label for="drawer-toggle" id="drawer-toggle-label"></label>
        <div id="drawer">
             <ul>
-                <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
+		<script>document.write('<li><a href="../cgi-bin/check_session.cgi?index"><span xml:lang="en">Home</span></a></li>');</script>
+                <noscript><li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li></noscript>
                 <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
                 <li><a href="stampa_annunci.cgi">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
@@ -60,7 +61,8 @@
     
         <div id="nav">
             <ul>
-                <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
+                <script>document.write('<li><a href="../cgi-bin/check_session.cgi?index"><span xml:lang="en">Home</span></a></li>');</script>
+                <noscript><li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li></noscript>
                 <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
                 <li class="current"><a href="stampa_annunci.cgi">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
@@ -95,10 +97,9 @@
 		<h2> Annunci </h2>
 		</div>
 
-
-		<script src="../js/stampa_annunci.js">
-				
-		</script>  
+		<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+		<script src="../js/stampa_annunci.js"></script>  
+		
 		<noscript><div> [% lista_annunci %] </div></noscript>
     </div>
     
