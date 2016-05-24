@@ -113,46 +113,19 @@
         </div>
         <div id="prodotti-centralContainer">
             <div id="prodotti-leftBlock">
-                <div id="prodotti-filterlabel">Filtra per</div>
+                <div id="prodotti-filterlabel">Sto filtrando per:</div>
                 <h2>Marche</h2>
             </div><div id="prodotti-rightBlock">
                 <div id="prodotti-categorie">
-                    <ul>
-                        <li><a href="liste_nozze.html">Liste nozze</a></li>
-                        <li><a href="porcellane.html">Porcellane</a></li>
-                        <li><a href="pentolame.html">Pentolame</a></li>
-                        <li><a href="tovaglie.html">Tovaglie</a></li>
-                        <li><a href="tavola.html">Tavola</a></li>
-                        <li><a href="paralumi.html">Paralumi</a></li>
-                    </ul>
+			[% stampa_categorie %]
                 </div>
             
                 <div id="prodotti-vetrina">
-
+			[% stampa_prodotti %]
                 </div>
             
                 <div id="prodotti-pageSelector">
-                    <a href="pagina_precedente.html">
-                        <span id="prodotti-frecciaPaginaPrecedente">
-                        </span>
-                    </a>
-                    <span id="prodotti-paginaPrecedente">
-                        Pagina precedente
-                    </span>
-                    <div id="prodotti-paginaNumeri">
-                        <ul>
-                            <li>1</li>
-                            <li>2</li>
-                            <li>3</li>
-                        </ul>
-                    </div>
-                    <span id="prodotti-paginaSuccessiva">
-                        <a href="pagina_successiva.html">Pagina successiva</a>
-                    </span>
-                    <a href="pagina_successiva.html">
-                        <span id="prodotti-frecciaPaginaSuccessiva">
-                        </span>
-                    </a>
+			[% stampa_pagine %]
                 </div>
             </div>
         </div>

@@ -1076,24 +1076,24 @@ body
     /*---------------------------------------- prodotti.html --------------------------------------------------------------------------------------*/
 
     #prodotti-leftBlock{
-        background-color: #cce5ff;
+        background-color: white;
         display: inline-block;
-        height: 25em;
+        height: 49.5em;
         width: 20%;
         vertical-align: middle;
     }
 
     #prodotti-rightBlock{
-        background-color: #E1E3E4;
+        background-color: white;
         display: inline-block;
         width: 80%;
-        height: 25em;
+        height: 49.5em;
         vertical-align: middle;
     }
 
     #prodotti-categorie{
         display: block;
-        background-color: #cce5ff;
+        background-color: #E1E3E4;
         height: 2em;
         text-align: center;
         line-height: 180%;
@@ -1110,8 +1110,8 @@ body
     }
 
     #prodotti-vetrina{
-        background-color: crimson;
-        height: 20em;
+        background-color: white;
+        min-height: 20em;
         width: 100%;
     }
 
@@ -1209,6 +1209,34 @@ body
     #prodotti-searchSortFormSelect {
         display: inline;
     }
+
+    .riga {
+	width: 100%;
+	height: 15em;
+	padding: 0.3em;
+	background-color: white;
+    }
+
+
+    .prodotto-singolo {
+	display: inline-block;
+	width: 25%;
+	height: 13em;
+	vertical-align: middle;
+	background-color: #E1E3E4;
+	padding: 1em;
+	text-align: center;
+	margin: 3.1em;
+	margin-top: 0.6em;
+    }
+
+    .prodotto-singolo ul {
+	list-style-type: none;
+    }
+
+    .prodotto-singolo img {
+	max-height: 8em; 
+   }
 
     /*------------------------------- login.html --------------------------------------------------------------------------------------------------*/
 
@@ -1344,7 +1372,7 @@ body
     {
 		display: inline-block;
         vertical-align: middle;
-        width: 30%;
+        width: 25%;
         border-bottom: 1px solid;
         height: 55em;
     }
@@ -1371,7 +1399,7 @@ body
     {
 		display: inline-block;
         vertical-align: middle;
-        width: 69%;
+        width: 74%;
         border-bottom: 1px solid;
         border-left: 1px solid;
         height: 55em;
