@@ -204,19 +204,24 @@ body
 
 #menu {
     display: none;
+    display: inline-block;
+    padding-bottom:4em;
+    
+    
 }
 
 #searchBar{
-    display: block;
+    display:inline-block;
     width: 100%;
     height: 3em;
     background-color: #E1E3E4;
-    padding-top: 0.2em;
+    
 }
 
 #searchContainer
 {
-    text-align: center;
+	text-align: center;
+    display:block;
 }
 
 #commonSearchInput{
@@ -848,8 +853,7 @@ body
         width: 100%;
         display: block;
         padding-top :1em;
-        padding-bottom: 2em;
-        height: 1em;
+        padding-bottom: 0.2em;
         background-color: #E1E3E4;
         border-top:0.1em;
     }
@@ -862,6 +866,11 @@ body
         padding-left: 1em;
     }
     
+    #content
+    {
+        display: block;
+        text-align: center;
+    }
     #nav
     {
         display: inline-block;
@@ -955,6 +964,7 @@ body
     {
         text-align: right;
         padding-right: 1em;
+        padding-bottom: 1em;
     }
 
     #commonSearchInput{
@@ -1075,14 +1085,6 @@ body
 
     /*---------------------------------------- prodotti.html --------------------------------------------------------------------------------------*/
 
-    #prodotti-leftBlock{
-        background-color: white;
-        display: inline-block;
-        height: 49.5em;
-        width: 20%;
-        vertical-align: middle;
-    }
-
     #prodotti-rightBlock{
         background-color: white;
         display: inline-block;
@@ -1176,16 +1178,11 @@ body
     }
 
     #prodotti-resultInfoBar {
-        background-color: aqua;
-    }
-
-    #prodotti-resultInfoBlock {
-        display: inline-block;
-        width: 22%;
-        height: 2.5em;
-        vertical-align: middle;
-        line-height: 250%;
-        text-align: center;
+        display:block;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        text-align: right;
+        
     }
 
     #prodotti-searchSortBlock {

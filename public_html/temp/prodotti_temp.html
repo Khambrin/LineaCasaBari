@@ -80,7 +80,7 @@
     </div>
     <div id="searchBar">
         <div id="searchContainer">
-            <form id="commonSearch">
+            <form id="commonSearch" method="post" action="ricerca.cgi">
                 <div id="commonSearchInputLeft"></div><div id="commonSearchInputMiddle"><input id="commonSearchInput" type="text"/></div><div id="commonSearchInputRight"></div>
                 <div id="commonSearchButtonContainer">
                     <input id="commonSearchButton" type="submit" value=""/>
@@ -91,31 +91,23 @@
     
     <div id="content">
         <div id="prodotti-resultInfoBar">
-            <span id="prodotti-resultInfoBlock">
-                1-k dei n risultati in "categoria"
-            </span>
-            <div id="prodotti-searchSortBlock">
-                <form id="prodotti-searchSortForm" method="post">
-                    <div id="prodotti-searchSortFormLabel">
-                        Ordina per
-                    </div>
-                    <div id="prodotti-searchSortFormSelect">
-                        <select>
-                            <option value="rilevanza">Rilevanza</option>
-                            <option value="prezzo_crescente">Prezzo crescente</option>
-                            <option value="prezzo_decrescente">Prezzo decrescente</option>
-                            <option value="media_recensioni_clienti">Media recensioni clienti</option>
-                            <option value="ultimi_arrivi">Ultimi arrivi</option>
-                        </select>
-                    </div>
-                </form>
-            </div>
-        </div>
+            <form id="prodotti-searchSortForm" method="post">
+              <div id="prodotti-searchSortFormLabel">
+                 Ordina per
+              </div>
+              <div id="prodotti-searchSortFormSelect">
+                 <select>
+                 <option value="rilevanza">Rilevanza</option>
+                 <option value="prezzo_crescente">Prezzo crescente</option>
+                 <option value="prezzo_decrescente">Prezzo decrescente</option>
+                 <option value="media_recensioni_clienti">Media recensioni clienti</option>
+                 <option value="ultimi_arrivi">Ultimi arrivi</option>
+                 </select>
+              </div>
+            </form>
+          </div>
         <div id="prodotti-centralContainer">
-            <div id="prodotti-leftBlock">
-                <div id="prodotti-filterlabel">Sto filtrando per:</div>
-                <h2>Marche</h2>
-            </div><div id="prodotti-rightBlock">
+           <div id="prodotti-rightBlock">
                 <div id="prodotti-categorie">
 			[% stampa_categorie %]
                 </div>
