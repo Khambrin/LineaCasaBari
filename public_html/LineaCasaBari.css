@@ -500,7 +500,7 @@ body
     padding-right: 0.5em;
 }
 
-/*--------------------------- registrazione.html -----------------------------------------------------------------------------------------------*/
+/*--------------------------- registrazione.html (unificato con gestione account e indirizzi)-----------------------------------------------------------------------------------------------*/
 
 #registrazione-container-mobile{
     display: block;
@@ -516,32 +516,40 @@ body
     padding-top: 1em;
 }
 
-.registrazione-Block{
+.form-Block{
     padding-top: 1em;
 }
 
-.registrazione-Block li{
+.form-Block li{
     list-style: none;
     padding-bottom: 2em;   
 }
 
-.registrazione-nomeLabel{
+.account-nomeLabel{
     padding-right: 6.3em;
 }
 
-.registrazione-cognomeLabel{
+.account-cognomeLabel{
     padding-right: 4.9em;
 }
-
-.registrazione-emailLabel{
+.account-telefonoLabel{
+    padding-right: 5.2em;
+}
+.account-passwordCorrenteLabel{
+    padding-right: 1.8em;
+}
+.account-passwordNuovaLabel{
+    padding-right: 2.3em;
+}
+.account-emailLabel{
     padding-right: 6.35em;
 }
 
-.registrazione-passwordLabel{
+.account-passwordLabel{
     padding-right: 4.9em;
 }
 
-.registrazione-confermapasswordLabel{
+.account-confermapasswordLabel{
     padding-right: 0.8em;
 }
 
@@ -869,7 +877,6 @@ body
     {
         display: block;
         text-align: center;
-        padding-top: 1em;
         padding-bottom: 2em;
     }
     #nav
@@ -1411,15 +1418,17 @@ body
         margin-top: 5em;
     }
 
-    #registrazione-container2{
-        width: 50%;
+    .form-container2{
+        margin-top: 1em;
+        width: 60%;
         margin: 0 auto;
         background-color: #E1E3E4;
         height: 35em;
         box-shadow: 1px 1px 1px 1px #888888; 
+        margin-bottom: 1em;
     }
 
-    #registrazione-container2 h2{
+    .form-container2 h2{
         padding-bottom: 1em;
         padding-top: 1em;
     }
@@ -1612,10 +1621,6 @@ body
     #gestione-codice{
         margin-top: 1em;
     }
-    .gestione-labels{
-        text-align: left;
-    }
-    
     .gestione-inputMiddle{
         display: inline-block;
         vertical-align: middle;
@@ -1625,21 +1630,9 @@ body
         background-repeat: repeat-x;
     }
     
-    .gestione-aggiungi_form{
-        display: inline-block;
-        width:40%;
-        text-align: center;
-        
-        
-    }
+    
     #gestione-center{
         display:inline-block;
-    }
-    .gestione-block{
-        display: block;
-        padding-bottom: 0.5em;
-        padding-top: 0.5em;
-        text-align: left;
     }
     .gestione-labels{
         padding-right: 1em;
@@ -1648,15 +1641,35 @@ body
         padding-top: 2em;
     }
     
-    .gestione-button_block{
-        text-align: center;
-        padding-bottom: 2em;
-    }
-    .gestione-file_label{
+   .gestione-file_label{
         display: block;
         padding-bottom: 1em;
     }
-}
+    #sub_menu_indirizzi{
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    .indirizzo-ViaLabel{
+        padding-right: 6.4em;
+    
+    }
+    .indirizzo-NumLabel{
+        padding-right: 1.5em;
+        
+    }
+    .indirizzo-CittaLabel{
+        padding-right: 5.9em;
+        
+    }
+    .indirizzo-ProvinciaLabel{
+        padding-right: 4.1em;
+        
+    }
+    .indirizzo-CapLabel{
+        padding-right: 6em;
+        
+    }
+
 /*-------------------------------------------------------------Generale----------------------------*/
 
 #nome_utente
