@@ -51,11 +51,10 @@ my $vars;
 if($messaggio eq "false")
 {
 	my $tot;
-	$tot=$tot.'<form>';
 	my @lista_ordini=$doc->findnodes("Ordini/Ordine[Utente='$email']/Codice/text()");
 	foreach my$i (@lista_ordini)
 	{
-		my $x='<li class="gestione-block"><h3>'."Codice: $i</h3></li>";
+		my $x='<li class="gestione-block"><h3 id="gestione-codice">'."Codice: $i</h3></li>";
 		$tot=$tot.$x;
 		my $x='<li class="gestione-block"><label class="gestione-labels">'."Utente: $email</label></li>";
 		$tot=$tot.$x;

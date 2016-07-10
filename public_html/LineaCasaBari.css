@@ -389,17 +389,15 @@ body
 
 #listanozze
     {
-	
         background-image:url(images/listanozze.jpg);
         background-repeat:no-repeat;
         background-size: contain;
         padding-top:3%;
-        width: 20%;
-        height: 16em;
-	text-align: center;
-	display:table;
-	margin-left: auto;
-	margin-right: auto;
+        width: 50%;
+        height: 20em;
+	    display:inline-block;
+        text-align: center;
+	    margin-left: 1em;
     }
 
 #porcellane
@@ -409,11 +407,11 @@ body
         background-repeat:no-repeat;
         background-size: contain;
         padding-top:3%;
-        width: 20%;
-        height: 16em;
-	text-align:center;
-	display:table;
-	margin:0 auto;
+        width: 50%;
+        height: 20em;
+	    display:inline-block;
+        text-align: center;
+	    margin-left: 1em;
     }
 
 #lampade
@@ -423,11 +421,11 @@ body
         background-repeat:no-repeat;
         background-size: contain;
         padding-top:3%;
-        width: 20%;
-        height: 16em;
-	text-align:center;
-	display:table;
-	margin:0 auto;
+        width: 50%;
+        height: 20em;
+	    display:inline-block;
+        text-align: center;
+	    margin-left: 1em;
     }
 
 #pentole
@@ -437,11 +435,11 @@ body
         background-repeat:no-repeat;
         background-size: contain;
         padding-top:3%;
-        width: 20%;
-        height: 16em;
-	text-align:center;
-	display:table;
-	margin:0 auto;
+        width: 50%;
+        height: 20em;
+	    display:inline-block;
+        text-align: center;
+	    margin-left: 1em;
     }
 #tavola
     {
@@ -450,11 +448,11 @@ body
         background-repeat:no-repeat;
         background-size: contain;
         padding-top:3%;
-        width: 20%;
-        height: 16em;
-	text-align:center;
-	display:table;
-	margin:0 auto;
+        width: 50%;
+        height: 20em;
+	    display:inline-block;
+        text-align: center;
+	    margin-left: 1em;
     }
 #tovaglie
     {
@@ -463,11 +461,11 @@ body
         background-repeat:no-repeat;
         background-size: contain;
         padding-top:3%;
-        width: 20%;
-        height: 16em;
-	text-align:center;
-	display:table;
-	margin:0 auto;
+        width: 50%;
+        height: 20em;
+	    display:inline-block;
+        text-align: center;
+	    margin-left: 1em;
     }
 /*---------------------------------------------------login.html ------------------------------------------------------------------------------*/
 
@@ -603,6 +601,7 @@ body
 
 #content h2{
     font-family: Georgia, serif;
+    margin-bottom: 1em;
 }
 
 #la_nostra_storia-titolo{
@@ -1567,6 +1566,7 @@ body
         border-top: 1px solid;
         border-color: black;
         vertical-align: middle;
+        border-left: 1px solid;
     }
     
     .sub_menu_block_active
@@ -1601,6 +1601,9 @@ body
         height: 10em;
     }
     
+    #gestione-codice{
+        margin-top: 1em;
+    }
     .gestione-labels{
         text-align: left;
     }
@@ -1615,13 +1618,20 @@ body
     }
     
     .gestione-aggiungi_form{
+        display: inline-block;
+        width:40%;
         text-align: center;
-        padding-top: 2em;
-    }
-	.gestione-block{
-        display: block;
-        padding-bottom: 2em;
         
+        
+    }
+    #gestione-center{
+        display:inline-block;
+    }
+    .gestione-block{
+        display: block;
+        padding-bottom: 0.5em;
+        padding-top: 0.5em;
+        text-align: left;
     }
     .gestione-labels{
         padding-right: 1em;
