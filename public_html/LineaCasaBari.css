@@ -707,6 +707,170 @@ body
     margin-bottom: 2em;
 }
 
+/*---------------------------------------- prodotti.html --------------------------------------------------------------------------------------*/
+
+    
+
+#prodotti-categorie
+{
+    background-color: #E1E3E4;
+    min-height: 2em;
+    text-align: center;
+    line-height: 180%;
+    margin: 1em;   
+}
+
+#prodotti-categorie li
+{
+    list-style: none;
+    padding-left: 0.75em;
+	padding-right: 0.75;
+}
+
+#prodotti-categorie a
+{
+    text-decoration: none;
+}
+
+#prodotti-vetrina
+{
+    background-color: white;
+    min-height: 20em;
+    width: 100%;
+}
+
+#prodotti-pageSelector
+{
+    background-color: chartreuse;
+    height: 2.5em;
+    width: 100%;
+    text-align: center;
+    line-height: 210%;
+}
+
+#prodotti-frecciaPaginaPrecedente 
+{
+    display: inline-block;
+    width: 5%;
+    height: 2em;
+    vertical-align: middle;
+    background-image: url(images/leftArrow.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#prodotti-paginaPrecedente 
+{
+    display: inline-block;
+    width: 20%;
+    height: 2em;
+    vertical-align: middle;
+}
+
+#prodotti-paginaNumeri
+{
+    display: inline-block;
+    width: 30%;
+    height: 2em;
+    vertical-align: middle;
+}
+
+#prodotti-pageSelector li
+{
+    list-style: none;
+    display: inline;
+    padding-left:1em;
+}
+
+#prodotti-pageSelector a
+{
+    text-decoration: none;
+}
+
+#prodotti-paginaSuccessiva 
+{
+    display: inline-block;
+    width: 20%;
+    height: 2em;
+    vertical-align: middle;
+}
+
+#prodotti-frecciaPaginaSuccessiva {
+    display: inline-block;
+    width: 5%;
+    height: 2em;
+    vertical-align: middle;
+    background-image: url(images/rightArrow.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#prodotti-resultInfoBar {
+    display:block;
+    padding-bottom: 0.5em;
+    text-align: right;
+}
+
+#prodotti-searchSortBlock 
+{
+    display: inline-block;
+    width: 77.61%;
+    height: 2.5em;
+    vertical-align: middle;
+    line-height: 250%;
+    text-align: right;
+}
+
+#prodotti-searchSortForm 
+{
+    padding-right: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+#prodotti-searchSortFormLabel 
+{
+    display: inline;
+    padding-right: 0.3em;
+}
+
+#prodotti-searchSortFormSelect {
+    display: inline;
+}
+
+.riga 
+{
+	padding: 0.3em;
+	background-color: white;
+}
+
+
+.prodotto-singolo 
+{
+	height: 13em;
+	vertical-align: middle;
+	background-color: #E1E3E4;
+	padding: 1em;
+	text-align: center;
+	margin-bottom: 0.5em;
+}
+
+.prodotto-singolo p 
+{
+	font-size: 200%;
+	font-weight: bold;
+}
+	
+.prodotto-singolo ul 
+{
+	list-style-type: none;
+}
+
+.prodotto-singolo img 
+{
+	max-height: 7em;
+	max-width: 100%;
+}
+
 /*-------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 @media screen and (min-width: 768px)

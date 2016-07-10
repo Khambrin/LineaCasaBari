@@ -50,7 +50,7 @@ if ($in{'Filter'}) {
 	$filter=$in{'Filter'};
 	}
 else {
-	$filter='No_filter';
+	$filter='Tutte';
 }
 
 my @prodotto_codice;
@@ -64,36 +64,31 @@ if($filter eq 'Liste_nozze'){
 					@prodotto_immagine=$doc->findnodes("Prodotti/Prodotto[Categoria='lista_nozze']/Immagine/text()");
 					@prodotto_prezzo=$doc->findnodes("Prodotti/Prodotto[Categoria='lista_nozze']/Prezzo/text()");
 					}
-else {
-if ($filter eq 'Porcellane'){ 
+elsif ($filter eq 'Porcellane'){ 
 					@prodotto_codice=$doc->findnodes("Prodotti/Prodotto[Categoria='porcellane']/Codice/text()");
 					@prodotto_nome=$doc->findnodes("Prodotti/Prodotto[Categoria='porcellane']/Nome/text()");
 					@prodotto_immagine=$doc->findnodes("Prodotti/Prodotto[Categoria='porcellane']/Immagine/text()");
 					@prodotto_prezzo=$doc->findnodes("Prodotti/Prodotto[Categoria='porcellane']/Prezzo/text()"); 
 					}
-else {
-if ($filter eq 'Pentole'){ 
+elsif ($filter eq 'Pentole'){ 
 					@prodotto_codice=$doc->findnodes("Prodotti/Prodotto[Categoria='pentolame']/Codice/text()");
 					@prodotto_nome=$doc->findnodes("Prodotti/Prodotto[Categoria='pentolame']/Nome/text()");
 					@prodotto_immagine=$doc->findnodes("Prodotti/Prodotto[Categoria='pentolame']/Immagine/text()");
 					@prodotto_prezzo=$doc->findnodes("Prodotti/Prodotto[Categoria='pentolame']/Prezzo/text()");
 					}
-else { 
-if ($filter eq 'Tovaglie'){ 
+elsif ($filter eq 'Tovaglie'){ 
 					@prodotto_codice=$doc->findnodes("Prodotti/Prodotto[Categoria='tovaglie']/Codice/text()");
 					@prodotto_nome=$doc->findnodes("Prodotti/Prodotto[Categoria='tovaglie']/Nome/text()");
 					@prodotto_immagine=$doc->findnodes("Prodotti/Prodotto[Categoria='tovaglie']/Immagine/text()");
 					@prodotto_prezzo=$doc->findnodes("Prodotti/Prodotto[Categoria='tovaglie']/Prezzo/text()");
 					}
-else {
-if ($filter eq 'Tavola'){ 
+elsif ($filter eq 'Tavola'){ 
 					@prodotto_codice=$doc->findnodes("Prodotti/Prodotto[Categoria='per_la_tavola']/Codice/text()");
 					@prodotto_nome=$doc->findnodes("Prodotti/Prodotto[Categoria='per_la_tavola']/Nome/text()");
 					@prodotto_immagine=$doc->findnodes("Prodotti/Prodotto[Categoria='per_la_tavola']/Immagine/text()");
 					@prodotto_prezzo=$doc->findnodes("Prodotti/Prodotto[Categoria='per_la_tavola']/Prezzo/text()");
 					}
-else {
-if ($filter eq 'Paralumi'){
+elsif ($filter eq 'Paralumi'){
 					@prodotto_codice=$doc->findnodes("Prodotti/Prodotto[Categoria='paralumi']/Codice/text()");
 					@prodotto_nome=$doc->findnodes("Prodotti/Prodotto[Categoria='paralumi']/Nome/text()");
 					@prodotto_immagine=$doc->findnodes("Prodotti/Prodotto[Categoria='paralumi']/Immagine/text()");
@@ -104,11 +99,6 @@ else			{
 					@prodotto_nome=$doc->findnodes("Prodotti/Prodotto/Nome/text()");
 					@prodotto_immagine=$doc->findnodes("Prodotti/Prodotto/Immagine/text()");
 					@prodotto_prezzo=$doc->findnodes("Prodotti/Prodotto/Prezzo/text()"); 
-				}
-}
-}
-}
-}
 }
 
 #gestione numero pagina
@@ -125,21 +115,18 @@ my $num_pagine=$#prodotto_codice/9;
 
 # stampa_categorie
 
+my @categorie = ("Tutte","Liste_nozze","Porcellane","Pentole","Tovaglie","Tavola","Paralumi");
 my $tot3;
-my $x='<ul><li><a href="prodotti.cgi?Page=0">Tutte</a></li>';
-$tot3=$tot3.$x;
-my $x='<li><a href="prodotti.cgi?Page=0&Filter=Liste_nozze">Liste nozze</a></li>';
-$tot3=$tot3.$x;
-my $x='<li><a href="prodotti.cgi?Page=0&Filter=Porcellane">Porcellane</a></li>';
-$tot3=$tot3.$x;
-my $x='<li><a href="prodotti.cgi?Page=0&Filter=Pentolame">Pentolame</a></li>';
-$tot3=$tot3.$x;
-my $x='<li><a href="prodotti.cgi?Page=0&Filter=Tovaglie">Tovaglie</a></li>';
-$tot3=$tot3.$x;
-my $x='<li><a href="prodotti.cgi?Page=0&Filter=Tavola">Tavola</a></li>';
-$tot3=$tot3.$x;
-my $x='<li><a href="prodotti.cgi?Page=0&Filter=Paralumi">Paralumi</a></li></ul>';
-$tot3=$tot3.$x;
+
+for (my $i=0; $i<=6; $i++) {
+	if( $filter eq @categorie[$i]) {
+		my $x='<li><span>'."@categorie[$i]".'</span></li>';
+		$tot3=$tot3.$x;
+	} else {
+		my $x='<li><a href="prodotti.cgi?Page=0&Filter='."@categorie[$i]".'">'."@categorie[$i]".'</a></li>';
+		$tot3=$tot3.$x;
+	} 
+}
 
 my $stampa_categorie="$tot3";
 
@@ -154,17 +141,13 @@ for (my $riga=0; $riga <= 2; $riga++)
 		if($index<=$#prodotto_codice) {
 		my $x='<div class="prodotto-singolo"><ul><a href="prodotto.cgi?Codice='."@prodotto_codice[$index]".'">';
 		$tot=$tot.$x;
-		my $x='<li class="nome-prodotto"><h2>'."@prodotto_nome[$index]".'</h2></li>';
+		my $x='<li class="nome-prodotto"><p>'."@prodotto_nome[$index]".'</p></li>';
 		$tot=$tot.$x;
-		my $x='<li class="immagine-prodotto"><img src="'."@prodotto_immagine[$index]".'" style="width:128px;height:128px;"/></li>';
+		my $x='<li class="immagine-prodotto"><img src="'."@prodotto_immagine[$index]".'"/></li>';
 		$tot=$tot.$x;
 		my $x='<li class="prezzo-prodotto"><h3>'."@prodotto_prezzo[$index]".'</h3></li>';
 		$tot=$tot.$x;
 		my $x='</a></ul></div>';
-		$tot=$tot.$x;
-		}
-		else {
-		my $x='<div class="prodotto-singolo"><ul></ul></div>';
 		$tot=$tot.$x;
 		}
 		$index++;
@@ -181,15 +164,27 @@ my $tot2;
 my $page_before=$page-1;
 my $page_after=$page+1;
 
-my $x='<a href="prodotti.cgi?Page='."$page_before".'"><span id="prodotti-frecciaPaginaPrecedente"></span></a><span id="prodotti-paginaPrecedente"><a href="prodotti.cgi?Page='."$page_before".'">Pagina precedente</a></span><div id="prodotti-paginaNumeri"><ul>';
+if($page == "0") {
+	my $x='';
+	$tot2=$tot2.$x;
+} else {
+	my $x='<a href="prodotti.cgi?Page='."$page_before".'"><span id="prodotti-frecciaPaginaPrecedente"></span></a><span id="prodotti-paginaPrecedente"><a href="prodotti.cgi?Page='."$page_before".'">Pagina precedente</a></span>';
+	$tot2=$tot2.$x;
+}
+my $x='<div id="prodotti-paginaNumeri"><ul>';
 $tot2=$tot2.$x;
 for (my $i=0; $i <= $num_pagine; $i++)
-	{
-		my $x='<li><a href="prodotti.cgi?Page='."$i".'">'."$i".'</a></li>';
-		$tot2=$tot2.$x;
-	}
-my $x='</ul></div><span id="prodotti-paginaSuccessiva"><a href="prodotti.cgi?Page='."$page_after".'">Pagina successiva</a></span><a href="prodotti.cgi?Page='."$page_after".'"><span id="prodotti-frecciaPaginaSuccessiva"></span></a>';
-$tot2=$tot2.$x;
+{
+	my $x='<li><a href="prodotti.cgi?Page='."$i".'">'."$i".'</a></li>';
+	$tot2=$tot2.$x;
+}
+if($page == $num_pagine) {
+	my $x='</ul></div>';
+	$tot2=$tot2.$x;
+} else {
+	my $x='</ul></div><span id="prodotti-paginaSuccessiva"><a href="prodotti.cgi?Page='."$page_after".'">Pagina successiva</a></span><a href="prodotti.cgi?Page='."$page_after".'"><span id="prodotti-frecciaPaginaSuccessiva"></span></a>';
+	$tot2=$tot2.$x;
+}
 
 my $stampa_pagine="$tot2";
 
