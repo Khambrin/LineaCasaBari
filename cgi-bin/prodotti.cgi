@@ -72,7 +72,7 @@ if ($filter eq 'Porcellane'){
 					@prodotto_prezzo=$doc->findnodes("Prodotti/Prodotto[Categoria='porcellane']/Prezzo/text()"); 
 					}
 else {
-if ($filter eq 'Pentolame'){ 
+if ($filter eq 'Pentole'){ 
 					@prodotto_codice=$doc->findnodes("Prodotti/Prodotto[Categoria='pentolame']/Codice/text()");
 					@prodotto_nome=$doc->findnodes("Prodotti/Prodotto[Categoria='pentolame']/Nome/text()");
 					@prodotto_immagine=$doc->findnodes("Prodotti/Prodotto[Categoria='pentolame']/Immagine/text()");
@@ -151,16 +151,22 @@ for (my $riga=0; $riga <= 2; $riga++)
 	$tot=$tot.$x;
 	for (my $colonna=0; $colonna <= 2; $colonna++)	
 	{
-		my $x='<div class="prodotto-singolo"><ul><a href="check_session.cgi?prodotti">';
+		if($index<=$#prodotto_codice) {
+		my $x='<div class="prodotto-singolo"><ul><a href="prodotto.cgi?Codice='."@prodotto_codice[$index]".'">';
 		$tot=$tot.$x;
 		my $x='<li class="nome-prodotto"><h2>'."@prodotto_nome[$index]".'</h2></li>';
 		$tot=$tot.$x;
-		my $x='<li class="immagine-prodotto"><img src='."@prodotto_immagine[$index]".'/></li>';
+		my $x='<li class="immagine-prodotto"><img src="'."@prodotto_immagine[$index]".'" style="width:128px;height:128px;"/></li>';
 		$tot=$tot.$x;
 		my $x='<li class="prezzo-prodotto"><h3>'."@prodotto_prezzo[$index]".'</h3></li>';
 		$tot=$tot.$x;
 		my $x='</a></ul></div>';
 		$tot=$tot.$x;
+		}
+		else {
+		my $x='<div class="prodotto-singolo"><ul></ul></div>';
+		$tot=$tot.$x;
+		}
 		$index++;
 	}
 	my $x='</div>';
