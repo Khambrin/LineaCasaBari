@@ -3,6 +3,7 @@
     
 	<xsd:complexType name="Tipo_recensione">
     	<xsd:sequence>
+			<xsd:element name="Email" type="xsd:string"/>
             <xsd:element name="Titolo" type="xsd:string"/>
             <xsd:element name="Nome_visualizzato" type="xsd:string"/>
             <xsd:element name="Data_pubblicazione" type="xsd:date"/>

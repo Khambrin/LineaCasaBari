@@ -52,6 +52,7 @@ my $prodotto_prezzo=$doc->findnodes("Prodotti/Prodotto[Codice='$Codice']/Prezzo/
 my $prodotto_data_aggiunta=$doc->findnodes("Prodotti/Prodotto[Codice='$Codice']/Data_aggiunta/text()");
 my $prodotto_valutazione=$doc->findnodes("Prodotti/Prodotto[Codice='$Codice']/Valutazione/text()");
 my $prodotto_immagine=$doc->findnodes("Prodotti/Prodotto[Codice='$Codice']/Immagine/text()");
+my @recensione_email=$doc->findnodes("Prodotti/Prodotto[Codice='$Codice']/Recensione/Email/text()");
 my @recensione_titolo=$doc->findnodes("Prodotti/Prodotto[Codice='$Codice']/Recensione/Titolo/text()");
 my @recensione_nome=$doc->findnodes("Prodotti/Prodotto[Codice='$Codice']/Recensione/Nome_visualizzato/text()");
 my @recensione_data=$doc->findnodes("Prodotti/Prodotto[Codice='$Codice']/Recensione/Data_pubblicazione/text()");
@@ -59,7 +60,8 @@ my @recensione_testo=$doc->findnodes("Prodotti/Prodotto[Codice='$Codice']/Recens
 my @recensione_votop=$doc->findnodes("Prodotti/Prodotto[Codice='$Codice']/Recensione/Voto_prodotto/text()");
 my @recensione_votor=$doc->findnodes("Prodotti/Prodotto[Codice='$Codice']/Recensione/Voto_recensione/text()");
 
-my $stampa_immagine='<img src="'."$prodotto_immagine".'" alt="Porcellane"/>';
+my $alt= substr @annuncio_immagine[$index], 19, -4;
+my $stampa_immagine='<img src="'."$prodotto_immagine".'" alt="'."$alt".'"/>';
 
 #gestione numero commenti
 my $Num_commenti;
@@ -76,7 +78,42 @@ if($Num_commenti > $#recensione_titolo) {
 }
 
 my $tot;
+my $already_reviewed = any { /$email/ } @recensione_email;
 
+if(!$already_reviewed) {
+	my $x='<form method="post" action="aggiungi_recensione_form.cgi" enctype="multipart/form-data">
+				<ul class="aggiungi_recensione_form">
+					<li class="gestione-block">
+                          <label class="gestione-labels">Titolo:</label>
+                          <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="titolo"/></div><div class="inputRight"></div>
+                    </li>
+					<li class="gestione-block">
+                          <label class="gestione-labels">Nome visualizzato:</label>
+                          <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="titolo"/></div><div class="inputRight"></div>
+                    </li>
+                    <li class="gestione-block">
+                        <label class="gestione-labels">Testo:</label>
+                    </li>
+                    <li class="gestione-block">
+                        <textarea class="gestione_textarea" name="testo"></textarea>
+                    </li>
+					<li><label class="gestione-labels"> Voto prodotto: <span>
+						<select name="voto">
+							<option value="1"> 1 </option>
+							<option value="1"> 2 </option>
+							<option value="1"> 3 </option>
+							<option value="1"> 4 </option>
+							<option value="1"> 5 </option>
+						</select></span></label>
+					</li>
+                    </ul>
+                    <div class="gestione-button_block">
+                       <button class="button" type="submit">Aggiungi recensione</button>
+                    </div>
+				<div>[% hidden %]</div>
+				<div class="messaggio-error">[% messaggio %]</div>';
+	my $tot=$tot.$x;
+}
 for (my $index=0; $index <= $Num_commenti; $index++)
 {
 	my $x='<div class="recensione-prodotto"><ul><li><h2 id="Titolo_recensione">'."@recensione_titolo[$index]";
@@ -88,7 +125,7 @@ for (my $index=0; $index <= $Num_commenti; $index++)
 	my $x='<li><h3 id="Nome_utente">'."@recensione_nome[$index]".'</h3></li>';
 	$tot=$tot.$x;
 	my $x='<li><p>'."@recensione_testo[$index]".'</p></li>';
-	if($email) {
+	if($email!=@recensione_email[$index]) {
 		my $x='<li>
 				<form action="vota_recensione" class="vota_recesione" method="post">
 				<p> Voto: <span>
@@ -104,7 +141,7 @@ for (my $index=0; $index <= $Num_commenti; $index++)
 				</li>';
 		$tot=$tot.$x;
 	}
-	if($amministratore) {
+	if($amministratore | $already_reviewed) {
 		my $x='<li><form action="elimina_recensione" class="elimina_recensione" method="post">
 				<p><input type="submit" value="Elimina recensione"/></p></form></li>';
 		$tot=$tot.$x;

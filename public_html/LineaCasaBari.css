@@ -1249,39 +1249,40 @@ body
 	
 	#Prodotto_main_container{
 		display: inline-block;
-        	vertical-align: middle;
-        	width: 100%;
+        vertical-align: middle;
+        width: 100%;
 		padding: 1em;
-  		height: 55em;
+  		min-height: 55em;
 	}
 	
 	#Presentazione_prodotto{
-        	vertical-align: middle;
-        	width: 100%;
-        	border-bottom: 1px solid;
+        vertical-align: middle;
+        width: 100%;
+        border-bottom: 1px solid;
 		padding: 1em;
-  	        height: 30em;		
+  	    height: 30em;		
 	}
 	
 	#left_col{
 		display: inline-block;
-                vertical-align: middle;
-  	        width: 35%;
- 	        height: 20em;
+        vertical-align: middle;
+  	    width: 35%;
+ 	    height: 20em;
 	}
 	
 	#left_col img {
-		max-width: 99%;		
+		max-height: 20em;
+		max-width: auto;		
 	}
 
 	#middle_col{
 		display: inline-block;
  		vertical-align: middle;
 		width: 40%;
-  	        height: 20em;
+  	    height: 20em;
 		background-color:#E1E3E4;
 		padding: 0.5em;
-  	        box-shadow: 1px 1px 1px 1px #888888;
+  	    box-shadow: 1px 1px 1px 1px #888888;
 	}
 
 	#middle_col li {
@@ -1291,9 +1292,9 @@ body
 	
 	#right_col{
 		display: inline-block;
-   	        vertical-align: middle;
-   	        width: 22%;
-   	        height: 20em;
+   	    vertical-align: middle;
+   	    width: 22%;
+   	    height: 20em;
 		background-color:#E1E3E4;
 		padding: 0.5em;
 		box-shadow: 1px 1px 1px 1px #888888;
@@ -1315,10 +1316,10 @@ body
 	}
 	
 	#Commenti_prodotto{
- 	        vertical-align: middle;
-        	width: 100%;
+ 	    vertical-align: middle;
+     	width: 100%;
 		padding: 1em;
-        	height: 20em;		
+      	min-height: 20em;		
 	}
 
 	#Commenti_prodotto li {
@@ -1335,7 +1336,7 @@ body
 		padding: 0.5em;
 		background-color:#E1E3E4;
 		margin-bottom: 0.5em;
-  	        box-shadow: 1px 1px 1px 1px #888888; 
+  	    box-shadow: 1px 1px 1px 1px #888888; 
 	}
 
 	.recensione-prodotto h2 {
@@ -1357,6 +1358,13 @@ body
 		color:white;
 	}
 
+	#recensioneTitolo-label {
+		padding-right: 6.05em;
+	}
+
+	#recensioneNome-label {
+		padding-right: 1em;
+	}
    
     /*------------------------------- login.html --------------------------------------------------------------------------------------------------*/
 
