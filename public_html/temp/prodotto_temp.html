@@ -150,38 +150,7 @@
 				</div>
 			</div>
 			<div id="Commenti_prodotto">
-			    <form method="post" action="aggiungi_recensione_form.cgi" enctype="multipart/form-data">
-					<ul class="aggiungi_recensione_form">
-						<li class="gestione-block">
-                           <label id="recensioneTitolo-label">Titolo:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="titolo"/></div><div class="inputRight"></div>
-                        </li>
-						<li class="gestione-block">
-                           <label id="recensioneNome-label">Nome visualizzato:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="titolo"/></div><div class="inputRight"></div>
-                        </li>
-                        <li class="gestione-block">
-                            <label id="recensioneTesto-label">Testo:</label>
-                        </li>
-                        <li class="gestione-block">
-                            <textarea class="gestione_textarea" name="testo"></textarea>
-                        </li>
-						<li><label id="recensioneVoto-label"> Voto prodotto: <span>
-							<select name="voto">
-								<option value="1"> 1 </option>
-								<option value="1"> 2 </option>
-								<option value="1"> 3 </option>
-								<option value="1"> 4 </option>
-								<option value="1"> 5 </option>
-							</select></span></label>
-						</li>
-                    </ul>
-                    <div class="gestione-button_block">
-                        <button class="button" type="submit">Aggiungi recensione</button>
-                    </div>
-					<div>[% hidden %]</div>
-					<div class="messaggio-error">[% messaggio %]</div>
-                </form>
+					[% recensione_form %]
 					[% prodotto_recensioni %]
 			</div>
 		</div>		

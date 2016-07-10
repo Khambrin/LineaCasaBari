@@ -60,8 +60,56 @@ my @recensione_testo=$doc->findnodes("Prodotti/Prodotto[Codice='$Codice']/Recens
 my @recensione_votop=$doc->findnodes("Prodotti/Prodotto[Codice='$Codice']/Recensione/Voto_prodotto/text()");
 my @recensione_votor=$doc->findnodes("Prodotti/Prodotto[Codice='$Codice']/Recensione/Voto_recensione/text()");
 
-my $alt= substr @annuncio_immagine[$index], 19, -4;
+my $alt= substr $prodotto_immagine, 19, -4;
 my $stampa_immagine='<img src="'."$prodotto_immagine".'" alt="'."$alt".'"/>';
+
+#gestione form della recensione
+
+my $tot;
+my $already_reviewed;
+if ((!$email) || ($email ~~ @recensione_email)) {
+	$already_reviewed = 1;
+} else {
+	$already_reviewed = 0;
+}
+
+my $recensione_form;
+if(!$already_reviewed) {
+	my $x='<form method="post" action="aggiungi_recensione_form.cgi" enctype="multipart/form-data">
+			<ul class="aggiungi_recensione_form">
+				<li class="gestione-block">
+                    <label id="recensioneTitolo-label">Titolo:</label>
+                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="titolo"/></div><div class="inputRight"></div>
+                </li>
+				<li class="gestione-block">
+                    <label id="recensioneNome-label">Nome visualizzato:</label>
+                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="titolo"/></div><div class="inputRight"></div>
+                </li>
+                <li class="gestione-block">
+                    <label id="recensioneTesto-label">Testo:</label>
+                </li>
+                <li class="gestione-block">
+                    <textarea class="gestione_textarea" name="testo"></textarea>
+                </li>
+				<li><label id="recensioneVoto-label"> Voto prodotto: <span>
+					<select name="voto">
+						<option value="1"> 1 </option>
+						<option value="1"> 2 </option>
+						<option value="1"> 3 </option>
+						<option value="1"> 4 </option>
+						<option value="1"> 5 </option>
+					</select></span></label>
+				</li>
+            </ul>
+            <div class="gestione-button_block">
+                <button type="submit">Aggiungi recensione</button>
+            </div>
+			<div>[% hidden %]</div>
+			<div class="messaggio-error">[% messaggio %]</div>
+           </form>';
+	my $tot=$tot.$x;
+	$recensione_form="$tot";
+}
 
 #gestione numero commenti
 my $Num_commenti;
@@ -77,43 +125,7 @@ if($Num_commenti > $#recensione_titolo) {
 	$Num_commenti=$#recensione_titolo;
 }
 
-my $tot;
-my $already_reviewed = any { /$email/ } @recensione_email;
 
-if(!$already_reviewed) {
-	my $x='<form method="post" action="aggiungi_recensione_form.cgi" enctype="multipart/form-data">
-				<ul class="aggiungi_recensione_form">
-					<li class="gestione-block">
-                          <label class="gestione-labels">Titolo:</label>
-                          <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="titolo"/></div><div class="inputRight"></div>
-                    </li>
-					<li class="gestione-block">
-                          <label class="gestione-labels">Nome visualizzato:</label>
-                          <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="titolo"/></div><div class="inputRight"></div>
-                    </li>
-                    <li class="gestione-block">
-                        <label class="gestione-labels">Testo:</label>
-                    </li>
-                    <li class="gestione-block">
-                        <textarea class="gestione_textarea" name="testo"></textarea>
-                    </li>
-					<li><label class="gestione-labels"> Voto prodotto: <span>
-						<select name="voto">
-							<option value="1"> 1 </option>
-							<option value="1"> 2 </option>
-							<option value="1"> 3 </option>
-							<option value="1"> 4 </option>
-							<option value="1"> 5 </option>
-						</select></span></label>
-					</li>
-                    </ul>
-                    <div class="gestione-button_block">
-                       <button class="button" type="submit">Aggiungi recensione</button>
-                    </div>
-				<div>[% hidden %]</div>
-				<div class="messaggio-error">[% messaggio %]</div>';
-	my $tot=$tot.$x;
-}
 for (my $index=0; $index <= $Num_commenti; $index++)
 {
 	my $x='<div class="recensione-prodotto"><ul><li><h2 id="Titolo_recensione">'."@recensione_titolo[$index]";
@@ -141,7 +153,7 @@ for (my $index=0; $index <= $Num_commenti; $index++)
 				</li>';
 		$tot=$tot.$x;
 	}
-	if($amministratore | $already_reviewed) {
+	if($amministratore | $email eq @recensione_email[$index]) {
 		my $x='<li><form action="elimina_recensione" class="elimina_recensione" method="post">
 				<p><input type="submit" value="Elimina recensione"/></p></form></li>';
 		$tot=$tot.$x;
@@ -167,6 +179,7 @@ if ($session->is_empty)
 		'prodotto_valutazione' =>$prodotto_valutazione,
 		'prodotto_recensioni' =>$stampa_recensioni,
 		'prodotto_immagine' =>$stampa_immagine,
+		'recensione_form' =>$recensione_form,
 	};
 }
 
@@ -185,7 +198,8 @@ else
 		'prodotto_data' =>$prodotto_data_aggiunta,
 		'prodotto_valutazione' =>$prodotto_valutazione,
 		'prodotto_recensioni' =>$stampa_recensioni,
-		'prodotto_immagine' =>$stampa_immagine,		
+		'prodotto_immagine' =>$stampa_immagine,
+		'recensione_form' =>$recensione_form,		
 	};
 }
 print $cgi->header('text/html');
