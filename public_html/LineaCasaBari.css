@@ -870,6 +870,8 @@ body
     {
         display: block;
         text-align: center;
+        padding-top: 1em;
+        padding-bottom: 2em;
     }
     #nav
     {
@@ -1085,20 +1087,16 @@ body
 
     /*---------------------------------------- prodotti.html --------------------------------------------------------------------------------------*/
 
-    #prodotti-rightBlock{
-        background-color: white;
-        display: inline-block;
-        width: 80%;
-        height: 49.5em;
-        vertical-align: middle;
-    }
+    
 
     #prodotti-categorie{
-        display: block;
+        display: inline-block;
         background-color: #E1E3E4;
         height: 2em;
         text-align: center;
         line-height: 180%;
+        margin: 1em;
+       
     }
 
     #prodotti-categorie li{
@@ -1179,7 +1177,6 @@ body
 
     #prodotti-resultInfoBar {
         display:block;
-        padding-top: 0.5em;
         padding-bottom: 0.5em;
         text-align: right;
         
@@ -1196,6 +1193,7 @@ body
 
     #prodotti-searchSortForm {
         padding-right: 0.5em;
+        padding-bottom: 0.5em;
     }
 
     #prodotti-searchSortFormLabel {
