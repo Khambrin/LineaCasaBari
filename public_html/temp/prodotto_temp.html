@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  xml:lang="it" lang="it">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Linea Casa Bari - Prodotti</title>
+    <meta name="title" content="Linea Casa Bari - Prodotti" />
+    <meta name="description" content="Pagina dei prodotti acquistabili nel negozio Linea Casa Bari" />
+    <meta name="keywords" content="piatti, bicchieri, posate, porcellane, liste nozze, vasi, lampade, paralumi, prodotti, descrizione, immagini, compera, carrello " />
+    <meta name="language" content="italian it" />
+    <meta name="author" content="Alessandro Bari, Navid Taha, Alice Sasso, Lorenzo Ferrarin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="../LineaCasaBari.css" rel="stylesheet" type="text/css" media="screen"/>
+    <script type="text/javascript" src="../jquery-1.12.0.js"></script>
+    <script type="text/javascript" src="../link_skipper.js"></script>
+</head>
+<body>
+    <div id="menu-drawer">
+        <input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
+        <label for="drawer-toggle" id="drawer-toggle-label"></label>
+       <div id="drawer">
+            <ul>
+                <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
+                <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
+                <li><a href="stampa_annunci.cgi">Annunci</a></li>
+                <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
+				[% IF sessione == 'true' %]
+				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>				
+				[% IF amministratore == 'true' %]
+				<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
+				[% END %]
+				<li><a href="logout_script.cgi">Logout</a></li>
+				[% ELSE %]
+                <li><a href="check_session.cgi?login">Accedi</a></li>
+                <li><a href="check_session.cgi?registrazione">Registrati</a></li>
+				[% END %]
+                <li><a href="check_session.cgi?la_nostra_storia">La nostra Storia</a></li>
+                <li><a href="check_session.cgi?termini_spedizione">Termini e Spedizione</a></li>
+                <li><a href="check_session.cgi?resi_rimborsi">Resi e Rimborsi</a></li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <a href="#content" class="skip">Salta al contenuto</a>
+    </div>
+    <div id="header">
+    <a href="check_session.cgi?index">
+        <span id="header-logo"></span>
+    </a>
+    <h1 id="nome_negozio">Linea Casa Bari</h1>
+    </div>
+    
+    <div id="menu">
+        <span id="path">
+            Ti trovi in: Prodotti</span>
+    
+        <div id="nav">
+            <ul>
+                <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
+                <li class="current"><a href="check_session.cgi?prodotti">Prodotti</a></li>
+                <li><a href="stampa_annunci.cgi">Annunci</a></li>
+                <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
+                [% IF sessione == 'true' %]
+				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
+				[% IF amministratore == 'true' %]
+				<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
+				[% END %]
+				<li><a href="logout_script.cgi">Logout</a></li>
+				[% ELSE %]
+				<li><a href="check_session.cgi?login">Accedi</a></li>
+                <li><a href="check_session.cgi?registrazione">Registrati</a></li>
+				[% END %]
+            </ul>
+        </div>
+		<div id="nome_utente">
+			<span>[% email %]</span>
+		</div>
+    </div>
+    <div id="searchBar">
+        <div id="searchContainer">
+            <form id="commonSearch">
+                <div id="commonSearchInputLeft"></div><div id="commonSearchInputMiddle"><input id="commonSearchInput" type="text"/></div><div id="commonSearchInputRight"></div>
+                <div id="commonSearchButtonContainer">
+                    <input id="commonSearchButton" type="submit" value=""/>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div id="content">
+
+    </div>
+		<div id="link_pagina_precedente">
+			<a href="prodotti.cgi">
+			Torna alla ricerca
+			</a>
+		</div>
+		<div id="Prodotto_main_container">
+			<div id="Presentazione_prodotto">
+				<div id="left_col"> <!-- Colonna in cui inserire l'immagine del prodotto -->
+					 [% prodotto_immagine %] 
+				</div><div id="middle_col"> <!-- Colonna in cui inserire la parte scritta della presentazione del prodotto -->
+				<ul>
+					<li>
+						<h1 id="Nome_prodotto"> [% prodotto_nome %] </h1>
+					</li>
+					<li>
+					    <p id="Categoria_prodotto"> Categoria: [% prodotto_categoria %] </p>
+					</li>
+					<li>
+						<h2 id="prezzo"> Prezzo: [% prodotto_prezzo %] </h2>
+					</li>
+					<li>
+						<p id="Descrizione_prodotto"> [% prodotto_descrizione %] </p>
+					</li>
+					<li>
+						<h3 id="Valutazione_prodotto"> Valutazione: [% prodotto_valutazione %] </h3>
+					</li>
+				</ul>
+				</div><div id="right_col"> <!-- colonna in cui inserire la parte relativa all'acquisto -->
+				<ul>
+					<li>
+						<h2> Acquista prodotto </h2>
+					</li>
+					<li>
+					<form action="compra_prodotto" id="compra_prodotto">					
+						<p> Quantità: <span>
+						<select name="quantità">
+							<option value="1"> 1 </option>
+							<option value="2"> 2 </option>
+							<option value="3"> 3 </option>
+							<option value="4"> 4 </option>
+						</select></span></p>
+						<p><input type="submit" value="Aggiungi al carrello"/></p>
+					</form>	
+					</li>	
+					<!-- versione alternativa con un button 
+					<form action="compra_prodotto" id="compra_prodotto">
+						<input type="button" value="Aggiungi al carrello" onclick="Aggiungi_carrello">
+					</form>	
+					-->
+					<li>
+					<form action="aggiungi prodotto alla lista desideri" id="prodotto_desideri">
+						<p><input type="submit" value="Aggiungi alla lisa desideri"/></p>
+					</form>
+					</li>
+				</ul>
+				</div>
+			</div>
+			<div id="Commenti_prodotto">
+					[% prodotto_recensioni %]
+			</div>
+		</div>		
+    <div id="footer">
+        <a href="#header">
+            <span id="torna-su">
+                Torna su
+            </span>
+        </a>
+        <div id="footer-container">
+            <div id="first-footer-block">
+                <span id="footer-logo"></span>
+                <ul>
+                    <li>Corso Umberto 1°, 51</li>
+                    <li>Albaredo d'Adige, VR</li>
+                    <li><abbr title="telefono">Tel. </abbr> 045 7001911</li>
+                    <li>lineacasabari@gmail.com</li>
+                </ul>
+            </div>
+           
+            <div class="footer-block">
+                <ul>
+                    <li><a href="check_session.cgi?la_nostra_storia">La nostra Storia</a></li>
+                    <li><a href="check_session.cgi?termini_spedizione">Termini e Spedizione</a></li>
+                    <li><a href="check_session.cgi?resi_rimborsi">Resi e Rimborsi</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-block">
+                <ul>
+                    <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
+                	<li><a href="stampa_annunci.cgi">Annunci</a></li>
+                	<li><a href="check_session.cgi?contattaci">Contattaci</a></li>
+                    [% IF sessione == 'true' %]
+					<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
+					[% IF amministratore == 'true' %]
+					<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
+					[% END %]
+					<li><a href="logout_script.cgi">Logout</a></li>
+					[% ELSE %]
+					<li><a href="check_session.cgi?login">Accedi</a></li>
+                	<li><a href="check_session.cgi?registrazione">Registrati</a></li>
+					[% END %]
+                </ul>
+            </div>
+            
+            <div id="last-footer-block">
+                <ul>
+                    <li>
+                        <form id="newsletter">
+                            <div class="inputLeft"></div><div id="newsletterInputMiddle"><input id="newsletter-input" type="text"/></div><div class="inputRight"></div>
+                            <div id="newsletter-buttonContainer">
+                                <input id="newsletter-button" type="submit" value=""/>
+                            </div>
+                        </form>
+                    </li>
+                    <li>
+                        <a  id="facebook-link" href="facebook.html">
+                            <span id="facebook-button"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <div id="w3c-validation">
+                            
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

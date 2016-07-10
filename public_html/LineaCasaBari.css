@@ -1235,6 +1235,132 @@ body
 	max-height: 8em; 
    }
 
+
+/*---------------------------------------- prodotto.html --------------------------------------------------------------------------------------*/
+	
+	#link_pagina_precedente{
+		
+	}
+	
+	#link_pagina_precedente a{
+		text-decoration: none;
+	}
+
+	#link_pagina_precedente a:hover{
+		text-decoration: underline;
+	}
+	
+	#Prodotto_main_container{
+		display: inline-block;
+        	vertical-align: middle;
+        	width: 100%;
+		padding: 1em;
+  		height: 55em;
+	}
+	
+	#Presentazione_prodotto{
+        	vertical-align: middle;
+        	width: 100%;
+        	border-bottom: 1px solid;
+		padding: 1em;
+  	        height: 30em;		
+	}
+	
+	#left_col{
+		display: inline-block;
+                vertical-align: middle;
+  	        width: 35%;
+ 	        height: 20em;
+	}
+	
+	#left_col img {
+		max-width: 99%;		
+	}
+
+	#middle_col{
+		display: inline-block;
+ 		vertical-align: middle;
+		width: 40%;
+  	        height: 20em;
+		background-color:#E1E3E4;
+		padding: 0.5em;
+  	        box-shadow: 1px 1px 1px 1px #888888;
+	}
+
+	#middle_col li {
+		list-style:none;
+		padding-bottom: 0.2em;
+	}
+	
+	#right_col{
+		display: inline-block;
+   	        vertical-align: middle;
+   	        width: 22%;
+   	        height: 20em;
+		background-color:#E1E3E4;
+		padding: 0.5em;
+		box-shadow: 1px 1px 1px 1px #888888;
+		margin-left: 0.1em;
+	}
+	
+	#right_col li {
+		list-style:none;
+		padding-bottom: 0.2em;
+	}
+
+	#right_col input[type=submit]{
+		background-color:orange;
+		border: none;
+		padding: 0.5em;
+		margin: 0.1em;
+		cursor: pointer;
+		box-shadow: 1px 1px 1px 1px #888888;
+	}
+	
+	#Commenti_prodotto{
+ 	        vertical-align: middle;
+        	width: 100%;
+		padding: 1em;
+        	height: 20em;		
+	}
+
+	#Commenti_prodotto li {
+		list-style: none;
+		padding-bottom: 0.2em;	
+	}
+	
+	#commenti_prodotto h2 {
+		color: white;
+		background-color: #295380; 
+	}	
+	
+	.recensione-prodotto {
+		padding: 0.5em;
+		background-color:#E1E3E4;
+		margin-bottom: 0.5em;
+  	        box-shadow: 1px 1px 1px 1px #888888; 
+	}
+
+	.recensione-prodotto h2 {
+		color: white;
+		background-color: #295380; 
+	}	
+
+	.recensione-prodotto input[type=submit]{
+		background-color:#295380;
+		color: white;
+		border: none;
+		padding: 0.3em;
+		margin: 0.1em;
+		cursor: pointer;
+		box-shadow: 1px 1px 1px 1px #888888;
+	}
+
+	.recensione-prodotto span{
+		color:white;
+	}
+
+   
     /*------------------------------- login.html --------------------------------------------------------------------------------------------------*/
 
     #login-container-mobile{
