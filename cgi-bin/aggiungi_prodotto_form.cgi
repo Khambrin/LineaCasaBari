@@ -107,6 +107,7 @@ else
 		if ($values{'immagine'})
 		{
 			my $upload_directory="../public_html/images/prodotti";
+			my $load_directory="../images/prodotti";
 			my $upload_filehandle=$cgi->upload("immagine");
 			open (UPLOADFILE,">$upload_directory/$values{'immagine'}") or die "$!";
 			binmode UPLOADFILE;
@@ -115,7 +116,7 @@ else
 				print UPLOADFILE;
 			}
 			close UPLOADFILE;
-			$immagine="$upload_directory/$values{'immagine'}";
+			$immagine="$load_directory/$values{'immagine'}";
 		}
 		else
 		{
