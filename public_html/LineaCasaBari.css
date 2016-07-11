@@ -398,6 +398,7 @@ body
 	    display:inline-block;
         text-align: center;
 	    margin-left: 1em;
+        margin-top: 2em;
     }
 
 #porcellane
@@ -412,6 +413,7 @@ body
 	    display:inline-block;
         text-align: center;
 	    margin-left: 1em;
+        margin-top: 1em;
     }
 
 #lampade
@@ -426,6 +428,7 @@ body
 	    display:inline-block;
         text-align: center;
 	    margin-left: 1em;
+         margin-top: 1em;
     }
 
 #pentole
@@ -440,6 +443,7 @@ body
 	    display:inline-block;
         text-align: center;
 	    margin-left: 1em;
+         margin-top: 1em;
     }
 #tavola
     {
@@ -453,6 +457,7 @@ body
 	    display:inline-block;
         text-align: center;
 	    margin-left: 1em;
+         margin-top: 1em;
     }
 #tovaglie
     {
@@ -466,6 +471,7 @@ body
 	    display:inline-block;
         text-align: center;
 	    margin-left: 1em;
+         margin-top: 1em;
     }
 /*---------------------------------------------------login.html ------------------------------------------------------------------------------*/
 
@@ -809,6 +815,7 @@ body
     display:block;
     padding-bottom: 0.5em;
     text-align: right;
+    padding-top: 1em;
 }
 
 #prodotti-searchSortBlock 
@@ -1675,6 +1682,7 @@ body
     #col
     {
         width: 100%;
+        
     }
     #left-col
     {
@@ -1712,6 +1720,7 @@ body
         border-left: 1px solid;
         height: 55em;
         overflow: scroll;
+        padding-top: 2em;
     }
     #right-col li
     {
@@ -1852,3 +1861,8 @@ body
     padding-top: 1em;
     color: #295380;
 }
+
+    #titolo{
+        margin-top: 2em;
+        margin-bottom: 1em;
+    }
