@@ -22,14 +22,14 @@ my $template=Template->new({
 
 my @users=$doc->findnodes("Utenti/Utente/Email/text()");
 my $file='togli_utenti_temp.html';
-my $tot='<form action="remove_user_form.cgi" method="post">';
+my $tot;
 foreach my $i (@users)
 {
-	my $x='<li class="gestione-block"><div class="gestione-button_block"><label class="gestione-labels">'."$i".'</label><form action="remove_user_form.cgi" method="post"><div class="gestione-button_block"><button class="button" type="submit">Rimuovi</button><input type="hidden" name="emailuser" value="'."$i".'"/></div></form></li>';
+	my $x='<li><div><label>'."$i".'</label><form action="remove_user_form.cgi" method="post"><button class="button-utente" type="submit">Rimuovi</button></div><input type="hidden" name="emailuser" value="'."$i".'"/></form></li>';
 	$tot=$tot.$x;
 }
 
-my $lista_utenti='<ul class="gestione-aggiungi_form" >'."$tot"."</form></ul>";
+my $lista_utenti='<div class="form-container2"><h2>Rimuovi utente</h2><ul class="form-Block" >'."$tot"."</ul></div>";
 
 my $vars={
 		'sessione' => "true",

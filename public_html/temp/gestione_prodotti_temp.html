@@ -99,23 +99,24 @@
                     <li class="subtitle_link">Togli, aggiungi e modifica gli annunci</li>
                 </ul>
             </div><div id="right-col">
-                <div>
+                <div id="sub_menu">
                     [% IF pagina == 'aggiungi' %]<a href="gestione_prodotti_script.cgi?aggiungi"><div class="sub_menu_block_active"><span class="sub_menu_text_active">Aggiungi prodotto</span></div></a><a href="gestione_prodotti_script.cgi?rimuovi_modifica"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica prodotto</span></div></a>
                     [% ELSIF pagina == 'rimuovi_modifica' %]<a href="gestione_prodotti_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi prodotto</span></div></a><a href="gestione_prodotti_script.cgi?rimuovi_modifica"><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica prodotto</span></div></a>[% END %]
                 </div>
             	[% IF pagina == 'aggiungi' %]
-                <form method="post" action="aggiungi_prodotto_form.cgi" enctype="multipart/form-data">
-                    <ul class="gestione-aggiungi_form">
-                        <li class="gestione-block">
-                            <label class="gestione-labels">Nome:</label>
+            	<div class="form-container2">
+					<form method="post" action="aggiungi_prodotto_form.cgi" enctype="multipart/form-data">
+                    <ul class="form-Block">
+                        <li>
+                            <label>Nome:</label>
                             <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="nome"/></div><div class="inputRight"></div>
                         </li>
-                        <li class="gestione-block">
-                            <label class="gestione-labels">Prezzo:</label>
+                        <li>
+                            <label>Prezzo:</label>
                             <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="prezzo"/></div><div class="inputRight"></div>
                         </li>
-                        <li class="gestione-block">
-                            <label class="gestione-labels">Categoria:</label>
+                        <li>
+                            <label id="prodotto-categoriaLabel">Categoria:</label>
                             <select name="categoria">
                                 <option value="lista_nozze">Lista nozze</option>
                                 <option value="porcellane">Porcellane</option>
@@ -125,36 +126,36 @@
                                 <option value="tovaglie">Tovaglie</option>
                             </select>
                         </li>
-                        <li class="gestione-block">
-                            <label class="gestione-labels">Descrizione:</label>
+                        <li>
+                            <label>Descrizione:</label>
                         </li>
-                        <li class="gestione-block">
+                        <li>
                             <textarea class="gestione_textarea" name="descrizione"></textarea>
                         </li>
-                        <li class="gestione-block">
-                            <label class="gestione-labels">Tag 1</label>
+                        <li>
+                            <label>Tag 1:</label>
                             <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag1"/></div><div class="inputRight"></div>
                         </li>
-                        <li class="gestione-block">
-                            <label class="gestione-labels">Tag 2</label>
+                        <li>
+                            <label>Tag 2:</label>
                             <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag2"/></div><div class="inputRight"></div>
                         </li>
-                        <li class="gestione-block">
-                            <label class="gestione-labels">Tag 3</label>
+                        <li>
+                            <label>Tag 3:</label>
                             <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag3"/></div><div class="inputRight"></div>
                         </li>
-                        <li class="gestione-block">
-                            <label class="gestione-labels">Tag 4</label>
+                        <li>
+                            <label">Tag 4:</label>
                             <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag4"/></div><div class="inputRight"></div>
                         </li>
-                        <li class="gestione-block">
-                            <div class="gestione-file_label">
-                                <label class="gestione-labels">Inserisci immagine:</label>
+                        <li>
+                            <div>
+                                <label>Inserisci immagine:</label>
                             </div>
                             <input type="file" name="immagine"/>
                         </li>
                     </ul>
-                    <div class="gestione-button_block">
+                    <div>
                         <button class="button" type="submit">Aggiungi prodotto</button>
                     </div>
 					<div>[% hidden %]</div>
@@ -162,13 +163,13 @@
                 </form>
 				[% ELSIF pagina == 'rimuovi_modifica' %]
                     <form method="post" action="ricerca_prodotto.cgi">
-						<ul class="gestione-aggiungi_form">
-							<li class="gestione-block">
-								<label class="gestione-labels">Cerca un prodotto:</label>
+						<ul class="form-Block">
+							<li>
+								<label>Cerca un prodotto:</label>
 								<div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="codice" type="text"/></div><div class="inputRight"></div>
 							</li
 						</ul>
-						<div class="gestione-button_block">
+						<div>
 							<button class="button" type="submit">Cerca</button>
 						</div>     
                     </form>

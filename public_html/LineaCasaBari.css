@@ -134,6 +134,7 @@ body
     height: 3em;
     width: 20%;
     padding-bottom:0.5em;
+    margin-bottom: 0.5em;
 }
 
 .inputLeft {
@@ -1601,13 +1602,12 @@ body
         width: 60%;
         margin: 0 auto;
         background-color: #E1E3E4;
-        height: 35em;
+        height: auto;
         box-shadow: 1px 1px 1px 1px #888888; 
         margin-bottom: 1em;
     }
 
     .form-container2 h2{
-        padding-bottom: 1em;
         padding-top: 1em;
     }
 
@@ -1748,8 +1748,12 @@ body
 
 /*------------------------------------------------ gestione sito ----------------------------------------------------------------------------------*/
 
-    .togli_utenti-pulsante{
-        display: inline-block;
+    .button-utente{
+        display:  inline-block;
+        margin-bottom: 2em;
+        height: 2.5em;
+        width: 12%;
+        
     }
     
     .sub_menu_block{
@@ -1825,7 +1829,7 @@ body
         display: block;
         padding-bottom: 1em;
     }
-    #sub_menu_indirizzi{
+    #sub_menu{
         margin-top: 1em;
         margin-bottom: 1em;
     }
@@ -1849,6 +1853,58 @@ body
         padding-right: 6em;
         
     }
+    #prodotto-categoriaLabel{
+        padding-right: 4.7em;
+    }
+    #prodotto-codiceLabel{
+        padding-right: 4.7em;
+        
+    }
+    #prodotto-nomeLabel{
+        padding-right: 4.9em;
+        
+    }
+    #prodotto-descrizioneLabel{
+        padding-left: 6.8em;
+        padding-right: 2em;
+    }
+    #prodotto-categoriaricLabel{
+        padding-right: 3em;
+        
+    }
+    #prodotto-prezzoLabel{
+        padding-right: 4.7em;
+        
+    }
+    #prodotto-dataLabel{
+        padding-right: 1.8em;
+    }
+    #prodotto-immagineLabel{
+        padding-right: 2em;
+        
+    }
+    .prodotto-tagLabel{
+        padding-right: 5.8em;
+        
+    }
+    #prodotto-cat{
+        margin-bottom: 2em;
+    }
+    #prodotto-cod{
+        padding-top: 1em;
+    }
+    #form-containerprodotto{
+        margin-top: 1em;
+        width: 80%;
+        margin: 0 auto;
+        background-color: #E1E3E4;
+        height: auto;
+        box-shadow: 1px 1px 1px 1px #888888; 
+        margin-bottom: 1em;
+        
+    }
+    
+    
 
 /*-------------------------------------------------------------Generale----------------------------*/
 
