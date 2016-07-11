@@ -1374,7 +1374,7 @@ body
     #prodotti-searchSortFormSelect {
         display: inline;
     }
-
+	
     .riga {
 	width: 100%;
 	height: 15em;
@@ -1391,7 +1391,7 @@ body
 	background-color: #E1E3E4;
 	padding: 1em;
 	text-align: center;
-	margin: 3.1em;
+	margin-right: 1.65em;
 	margin-top: 0.6em;
     }
 
@@ -1399,8 +1399,15 @@ body
 	list-style-type: none;
     }
 
+	.prodotto-singolo p {
+	font-size: 200%;
+	font-weight: bold;
+	}
+	
+	
     .prodotto-singolo img {
-	max-height: 8em; 
+	max-height: 7em;
+	max-width: 100%;
    }
 
 
