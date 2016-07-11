@@ -54,60 +54,103 @@ my $prodotto_valutazione=$doc->findnodes("Prodotti/Prodotto[Codice='$Codice']/Va
 my $prodotto_immagine=$doc->findnodes("Prodotti/Prodotto[Codice='$Codice']/Immagine/text()");
 my @recensione_email=$doc->findnodes("Prodotti/Prodotto[Codice='$Codice']/Recensione/Email/text()");
 my @recensione_titolo=$doc->findnodes("Prodotti/Prodotto[Codice='$Codice']/Recensione/Titolo/text()");
-my @recensione_nome=$doc->findnodes("Prodotti/Prodotto[Codice='$Codice']/Recensione/Nome_visualizzato/text()");
+my @recensione_nome=$doc->findnodes("Prodotti/Prodotto[Codice='$Codice']/Recensione/Nome/text()");
 my @recensione_data=$doc->findnodes("Prodotti/Prodotto[Codice='$Codice']/Recensione/Data_pubblicazione/text()");
 my @recensione_testo=$doc->findnodes("Prodotti/Prodotto[Codice='$Codice']/Recensione/Testo/text()");
-my @recensione_votop=$doc->findnodes("Prodotti/Prodotto[Codice='$Codice']/Recensione/Voto_prodotto/text()");
+my @recensione_votop=$doc->findnodes("Prodotti/Prodotto[Codice='$Codice']/Recensione/Voto/text()");
 my @recensione_votor=$doc->findnodes("Prodotti/Prodotto[Codice='$Codice']/Recensione/Voto_recensione/text()");
 
 my $alt= substr $prodotto_immagine, 19, -4;
 my $stampa_immagine='<img src="'."$prodotto_immagine".'" alt="'."$alt".'"/>';
 
+
+#gestione filtri ritorno alla ricerca
+my $filter;
+if ($in{'Filter'}) {
+	$filter=$in{'Filter'};
+	}
+else {
+	$filter='Tutte';
+}
+
+my $page;
+if ($in{'Page'}) {
+	$page=$in{'Page'};
+	}
+else {
+	$page=0;
+}
+
+my $x='<a href="prodotti.cgi?Page='."$page".'&Filter='."$filter".'"> Torna ai risultati della ricerca per "'."$filter".'" </a>';
+my $Pagina_precedente="$x";
+
+
+
 #gestione form della recensione
 
 my $tot;
 my $already_reviewed;
-if ((!$email) || ($email ~~ @recensione_email)) {
+if ((!$email) || grep(/^$email/, @recensione_email)) {
 	$already_reviewed = 1;
 } else {
 	$already_reviewed = 0;
 }
 
+#my $hidden='<input type="hidden" name="" value="'."$ENV{'QUERY_STRING'}".'"/>';
+
 my $recensione_form;
 if(!$already_reviewed) {
-	my $x='<form method="post" action="aggiungi_recensione_form.cgi" enctype="multipart/form-data">
+	my $x='<form method="post" action="aggiungi_recensione_form.cgi?Codice='."$prodotto_codice".'&Page='."$page".'&Filter='."$filter".'" enctype="multipart/form-data">
 			<ul class="aggiungi_recensione_form">
 				<li class="gestione-block">
                     <label id="recensioneTitolo-label">Titolo:</label>
                     <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="titolo"/></div><div class="inputRight"></div>
-                </li>
-				<li class="gestione-block">
-                    <label id="recensioneNome-label">Nome visualizzato:</label>
-                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="titolo"/></div><div class="inputRight"></div>
-                </li>
-                <li class="gestione-block">
+                </li>';
+	my $tot=$tot.$x;
+	if ($in{'Errtitle'}) {
+		my $x='<li class="error"> Devi completare il campo titolo </li>';
+		$tot=$tot.$x;
+	}
+	my $x='<li class="gestione-block">
+                <label id="recensioneNome-label">Nome visualizzato:</label>
+                <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="nome"/></div><div class="inputRight"></div>
+            </li>';
+	my $tot=$tot.$x;
+	if ($in{'Errname'}) {
+		my $x='<li class="error"> Devi completare il campo nome </li>';
+		$tot=$tot.$x;
+	}
+	my $x='<li class="gestione-block">
                     <label id="recensioneTesto-label">Testo:</label>
                 </li>
                 <li class="gestione-block">
                     <textarea class="gestione_textarea" name="testo"></textarea>
-                </li>
-				<li><label id="recensioneVoto-label"> Voto prodotto: <span>
-					<select name="voto">
-						<option value="1"> 1 </option>
-						<option value="1"> 2 </option>
-						<option value="1"> 3 </option>
-						<option value="1"> 4 </option>
-						<option value="1"> 5 </option>
-					</select></span></label>
-				</li>
-            </ul>
+                </li>';
+	my $tot=$tot.$x;
+	if ($in{'Errtext'}) {
+		my $x='<li class="error"> Devi completare il campo testo	</li>';
+		$tot=$tot.$x;
+	}
+	my $x='<li><label id="recensioneVoto-label"> Voto prodotto: <span>
+				<select name="voto">
+					<option value="1"> 1 </option>
+					<option value="2"> 2 </option>
+					<option value="3"> 3 </option>
+					<option value="4"> 4 </option>
+					<option value="5"> 5 </option>
+				</select></span></label>
+			</li>';
+	my $tot=$tot.$x;
+	if ($in{'Errvote'}) {
+		my $x='<li class="error"> Devi selezionare un voto </li>';
+		$tot=$tot.$x;
+	}
+	my $x='</ul>
             <div class="gestione-button_block">
                 <button type="submit">Aggiungi recensione</button>
             </div>
-			<div>[% hidden %]</div>
-			<div class="messaggio-error">[% messaggio %]</div>
            </form>';
-	my $tot=$tot.$x;
+	$tot=$tot.$x;
 	$recensione_form="$tot";
 }
 
@@ -137,6 +180,7 @@ for (my $index=0; $index <= $Num_commenti; $index++)
 	my $x='<li><h3 id="Nome_utente">'."@recensione_nome[$index]".'</h3></li>';
 	$tot=$tot.$x;
 	my $x='<li><p>'."@recensione_testo[$index]".'</p></li>';
+	$tot=$tot.$x;
 	if($email!=@recensione_email[$index]) {
 		my $x='<li>
 				<form action="vota_recensione" class="vota_recesione" method="post">
@@ -180,6 +224,7 @@ if ($session->is_empty)
 		'prodotto_recensioni' =>$stampa_recensioni,
 		'prodotto_immagine' =>$stampa_immagine,
 		'recensione_form' =>$recensione_form,
+		'pagina_precedente' =>$Pagina_precedente,
 	};
 }
 
@@ -199,7 +244,8 @@ else
 		'prodotto_valutazione' =>$prodotto_valutazione,
 		'prodotto_recensioni' =>$stampa_recensioni,
 		'prodotto_immagine' =>$stampa_immagine,
-		'recensione_form' =>$recensione_form,		
+		'recensione_form' =>$recensione_form,
+		'pagina_precedente' =>$Pagina_precedente,		
 	};
 }
 print $cgi->header('text/html');

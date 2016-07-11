@@ -1,0 +1,133 @@
+#!/usr/bin/perl -w
+
+use CGI qw(:standard);
+use CGI::Cookie;
+use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
+use strict;
+use Template;
+use CGI::Session;
+use XML::LibXML;
+use File::Basename;
+
+my $cgi=new CGI;
+
+my $session = CGI::Session->load();
+my $email=$session->param("email");
+my %values;
+my %in;
+
+if (length ($ENV{'QUERY_STRING'}) > 0){
+    my $buffer = $ENV{'QUERY_STRING'};
+    my @pairs = split(/&/, $buffer);
+	my $name;
+	my $value;
+    foreach my $pair (@pairs){
+        ($name, $value) = split(/=/, $pair);
+        $value =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack("C", hex($1))/eg;
+		$in{$name} = $value; 
+    }
+}
+
+#memorizzo tutti i valori necessari a ritornare alla pagina del prodotto correttamente
+
+my $filter;
+if ($in{'Filter'}) {
+	$filter=$in{'Filter'};
+	}
+else {
+	$filter='Tutte';
+}
+
+my $page;
+if ($in{'Page'}) {
+	$page=$in{'Page'};
+	}
+else {
+	$page=0;
+}
+
+my $codice=$in{'Codice'};
+
+
+foreach my $p (param())
+{
+	$values{$p}=param($p);
+}
+
+#gestione degli errori
+
+my $errors;
+
+if (!$values{"titolo"})
+{
+	my $x="&Errtitle=1";
+	$errors=$errors.$x;
+}
+if (!$values{"nome"})
+{
+	my $x="&Errname=1";
+	$errors=$errors.$x;
+}
+if (!$values{"testo"})
+{
+	my $x="&Errtext=1";
+	$errors=$errors.$x;
+}
+if (!$values{"voto"})
+{
+	my $x="&Errvote=1";
+	$errors=$errors.$x;
+}
+
+if ($errors)
+{
+	print $cgi->redirect('prodotto.cgi?Codice='."$codice".'&Filter='."$filter".'&Page='."$page"."$errors");
+}
+else
+{
+	my $doc,my $root;
+	my $parser=XML::LibXML->new();
+	$doc=$parser->parse_file("../data/Prodotti.xml");
+	$root=$doc->documentElement();
+
+	my $prodotto_node=$doc->findnodes("Prodotti/Prodotto[Codice='$codice']");
+
+	my $recensione_tag=$doc->createElement("Recensione");	
+	$prodotto_node->[0]->appendChild($recensione_tag);
+
+	my $email_tag=$doc->createElement("Email");
+	$email_tag->appendTextNode($email);
+	$recensione_tag->appendChild($email_tag);
+	
+	my $titolo_tag=$doc->createElement("Titolo");
+	$titolo_tag->appendTextNode($values{'titolo'});
+	$recensione_tag->appendChild($titolo_tag);
+	
+	my $nome_tag=$doc->createElement("Nome");
+	$nome_tag->appendTextNode($values{'nome'});
+	$recensione_tag->appendChild($nome_tag);
+
+	my ($sec,$min,$hour,$mday,$mon,$yr19,$wday,$yday,$isdst) = localtime(time);
+	my $year=$yr19+1900;
+	my $date="$mday/$mon/$year";
+	my $data_tag=$doc->createElement("Data_pubblicazione");
+	$data_tag->appendTextNode($date);
+	$recensione_tag->appendChild($data_tag);
+	
+	my $testo_tag=$doc->createElement("Testo");
+	$testo_tag->appendTextNode($values{'testo'});
+	$recensione_tag->appendChild($testo_tag);
+
+	my $votop_tag=$doc->createElement("Voto");
+	$votop_tag->appendTextNode($values{'voto'});
+	$recensione_tag->appendChild($votop_tag);
+
+	my $votor_tag=$doc->createElement("Voto_recensione");
+	$votor_tag->appendTextNode('0');
+	$recensione_tag->appendChild($votor_tag);
+
+	open (XML,">","../data/Prodotti.xml");
+	print XML $doc->toString();
+	close(XML);
+	print $cgi->redirect('prodotto.cgi?Codice='."$codice".'&Filter='."$filter".'&Page='."$page");
+}

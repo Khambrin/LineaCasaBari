@@ -139,7 +139,7 @@ for (my $riga=0; $riga <= 2; $riga++)
 	for (my $colonna=0; $colonna <= 2; $colonna++)	
 	{
 		if($index<=$#prodotto_codice) {
-		my $x='<div class="prodotto-singolo"><ul><a href="prodotto.cgi?Codice='."@prodotto_codice[$index]".'">';
+		my $x='<div class="prodotto-singolo"><ul><a href="prodotto.cgi?Codice='."@prodotto_codice[$index]".'"Filter='."$filter".'>';
 		$tot=$tot.$x;
 		my $x='<li class="nome-prodotto"><p>'."@prodotto_nome[$index]".'</p></li>';
 		$tot=$tot.$x;
