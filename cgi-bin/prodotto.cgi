@@ -164,8 +164,8 @@ else {
 	$Num_commenti=3;
 }
 
-if($Num_commenti > $#recensione_titolo) {
-	$Num_commenti=$#recensione_titolo;
+if($Num_commenti > $#recensione_email) {
+	$Num_commenti=$#recensione_email;
 }
 
 
@@ -173,15 +173,15 @@ for (my $index=0; $index <= $Num_commenti; $index++)
 {
 	my $x='<div class="recensione-prodotto"><ul><li><h2 id="Titolo_recensione">'."@recensione_titolo[$index]";
 	$tot=$tot.$x;
-	my $x='<span>'."@recensione_data[$index]".'</span>';
+	my $x='<span>'." @recensione_data[$index]".'</span>';
 	$tot=$tot.$x;
-	my $x='<span>'."@recensione_votor[$index]".'</span></h2></li>';
+	my $x='<span>'." @recensione_votor[$index]".'</span></h2></li>';
 	$tot=$tot.$x;
 	my $x='<li><h3 id="Nome_utente">'."@recensione_nome[$index]".'</h3></li>';
 	$tot=$tot.$x;
 	my $x='<li><p>'."@recensione_testo[$index]".'</p></li>';
 	$tot=$tot.$x;
-	if($email!=@recensione_email[$index]) {
+	if($email ne @recensione_email[$index]) {
 		my $x='<li>
 				<form action="vota_recensione" class="vota_recesione" method="post">
 				<p> Voto: <span>
@@ -197,14 +197,14 @@ for (my $index=0; $index <= $Num_commenti; $index++)
 				</li>';
 		$tot=$tot.$x;
 	}
-	if($amministratore | $email eq @recensione_email[$index]) {
+	if($amministratore eq 'true' || $email eq @recensione_email[$index]) {
 		my $x='<li><form action="elimina_recensione.cgi?Codice='."$prodotto_codice".'&Page='."$page".'&Filter='."$filter".'" class="elimina_recensione" method="post">
-				<p><input type="submit" value="Elimina recensione"/></p></li>
-				<input type="hidden" name="email_recensione" value="'."@recensione_email[$index]".'"/></form>';
+				<p><input type="submit" value="Elimina recensione"/></p>
+				<input type="hidden" name="email_recensione" value="'."@recensione_email[$index]".'"/></form></li>';
 		$tot=$tot.$x;
 	}
 	my $x='</ul></div>';
-	my $tot=$tot.$x;
+	$tot=$tot.$x;
 }	
 
 my $stampa_recensioni="$tot";

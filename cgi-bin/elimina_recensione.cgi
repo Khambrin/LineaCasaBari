@@ -50,12 +50,30 @@ my $codice=$in{'Codice'};
 
 my $parser=XML::LibXML->new;
 my $email_recensione=$cgi->param("email_recensione");
-
-
 my $doc=$parser->parse_file("../data/Prodotti.xml");
+
+#calcolo il voto del prodotto
+my $valutazione=0;
+my $num_voti=0;
+my @recensione_votop=$doc->findnodes("Prodotti/Prodotto[Codice='$codice']/Recensione/Voto/text()");
+foreach my $i (@recensione_votop) {
+	$valutazione="$valutazione"+"$i";
+	$num_voti++;
+}
+my $voto_recensione_eliminata=$doc->findnodes("Prodotti/Prodotto[Codice='$codice']/Recensione[Email='$email_recensione']/Voto/text()");
+$valutazione="$valutazione"-"$voto_recensione_eliminata";
+$num_voti--;
+$valutazione=$valutazione/$num_voti;
+
+my $prodotto_valutazione=$doc->findnodes("Prodotti/Prodotto[Codice='$codice']/Valutazione");
+
+my $valutazione_tag=$doc->createElement("Valutazione");
+$valutazione_tag->appendTextNode($valutazione);
+$prodotto_valutazione->[0]->replaceNode($valutazione_tag);	
+
+
 my $prodotto_node=$doc->findnodes("Prodotti/Prodotto[Codice='$codice']/Recensione[Email='$email_recensione']");
 $prodotto_node->[0]->parentNode->removeChild($prodotto_node->[0]);
-
 
 
 open(XML,">","../data/Prodotti.xml");

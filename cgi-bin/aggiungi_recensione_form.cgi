@@ -79,6 +79,7 @@ if (!$values{"voto"})
 	$errors=$errors.$x;
 }
 
+
 if ($errors)
 {
 	print $cgi->redirect('prodotto.cgi?Codice='."$codice".'&Filter='."$filter".'&Page='."$page"."$errors");
@@ -89,8 +90,25 @@ else
 	my $parser=XML::LibXML->new();
 	$doc=$parser->parse_file("../data/Prodotti.xml");
 	$root=$doc->documentElement();
+		
+	#calcolo il voto del prodotto
+	my $valutazione=0;
+	my $num_voti=0;
+	my @recensione_votop=$doc->findnodes("Prodotti/Prodotto[Codice='$codice']/Recensione/Voto/text()");
+	foreach my $i (@recensione_votop) {
+		$valutazione="$valutazione"+"$i";
+		$num_voti++;
+	}
+	$valutazione=$valutazione+$values{"voto"};
+	$num_voti++;
+	$valutazione=$valutazione/$num_voti;
 
 	my $prodotto_node=$doc->findnodes("Prodotti/Prodotto[Codice='$codice']");
+
+	my $prodotto_valutazione=$doc->findnodes("Prodotti/Prodotto[Codice='$codice']/Valutazione");
+	my $valutazione_tag=$doc->createElement("Valutazione");
+	$valutazione_tag->appendTextNode($valutazione);
+	$prodotto_valutazione->[0]->replaceNode($valutazione_tag);	
 
 	my $recensione_tag=$doc->createElement("Recensione");	
 	$prodotto_node->[0]->appendChild($recensione_tag);
