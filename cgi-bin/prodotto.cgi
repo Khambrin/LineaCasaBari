@@ -198,8 +198,9 @@ for (my $index=0; $index <= $Num_commenti; $index++)
 		$tot=$tot.$x;
 	}
 	if($amministratore | $email eq @recensione_email[$index]) {
-		my $x='<li><form action="elimina_recensione" class="elimina_recensione" method="post">
-				<p><input type="submit" value="Elimina recensione"/></p></form></li>';
+		my $x='<li><form action="elimina_recensione.cgi?Codice='."$prodotto_codice".'&Page='."$page".'&Filter='."$filter".'" class="elimina_recensione" method="post">
+				<p><input type="submit" value="Elimina recensione"/></p></li>
+				<input type="hidden" name="email_recensione" value="'."@recensione_email[$index]".'"/></form>';
 		$tot=$tot.$x;
 	}
 	my $x='</ul></div>';
