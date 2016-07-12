@@ -1081,14 +1081,10 @@ body
     
     .current
     {
-	padding:1em;
-	background-color: #295380;
+        padding:1em;
+        background-color: #295380;
+        color: white;
     }
-    .current a
-    {
-		color: white;
-    }
-
     #torna-su
     {
         text-align: center;
@@ -1688,7 +1684,7 @@ body
     {
 		display: inline-block;
         vertical-align: middle;
-        width: 24%;
+        width: 24.19201946258%;
         border-bottom: 1px solid;
         height: 55em;
     }
@@ -1761,6 +1757,8 @@ body
         border-color: black;
         vertical-align: middle;
         border-left: 1px solid;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
     }
     
     .sub_menu_block_active
@@ -1775,6 +1773,8 @@ body
         background-color: #295380;
         border-color: black;
         vertical-align: middle;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
     }
     
     .sub_menu_text{
@@ -1905,6 +1905,7 @@ body
         background-color: #295380;
         vertical-align: middle;
         color: white;
+        padding-right: 0.5em;
         
     }
     
@@ -1919,8 +1920,13 @@ body
 .messaggio-error{
     padding-top: 1em;
     color: #295380;
+    padding-bottom: 1em;
 }
-
+    .messaggio-error li{
+        list-style: none;
+        padding-right: 0.5em;
+        
+    }
     #titolo{
         margin-top: 2em;
         margin-bottom: 1em;

@@ -64,7 +64,7 @@
                 <li><a href="stampa_annunci.cgi">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
                 [% IF sessione == 'true' %]
-				<li class="current"><a href="check_session.cgi?i_miei_ordini">Account</a></li>
+				<li class="current">Account</li>
 				[% IF amministratore == 'true' %]
 				<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 				[% END %]
@@ -205,18 +205,19 @@
 
             <div class="footer-block">
                 <ul>
-                    <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
-                	<li><a href="stampa_annunci.cgi">Annunci</a></li>
-                	<li><a href="check_session.cgi?contattaci">Contattaci</a></li>
-                    [% IF sessione == 'true' %]
-					<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
+                    <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
+					<li><a href="check_session.cgi?prodotti">Prodotti</a></li>
+					<li><a href="stampa_annunci.cgi">Annunci</a></li>
+					<li><a href="check_session.cgi?contattaci">Contattaci</a></li>
+					[% IF sessione == 'true' %]
+					<li class="current">Account</li>
 					[% IF amministratore == 'true' %]
 					<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 					[% END %]
 					<li><a href="logout_script.cgi">Logout</a></li>
 					[% ELSE %]
 					<li><a href="check_session.cgi?login">Accedi</a></li>
-                	<li><a href="check_session.cgi?registrazione">Registrati</a></li>
+					<li><a href="check_session.cgi?registrazione">Registrati</a></li>
 					[% END %]
                 </ul>
             </div>

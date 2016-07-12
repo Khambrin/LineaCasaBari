@@ -50,7 +50,7 @@ if (@messaggi)
 	print $cgi->header('text/html');
 	my $file='registrazione_temp.html';
 	my $vars={
-		'messaggio' => "<ul>"."<li>[@messaggi]</li>"."</ul>"
+		'messaggio_registrazione' => "<ul>"."<li>@messaggi</li>"."</ul>"
 	};
 	my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',

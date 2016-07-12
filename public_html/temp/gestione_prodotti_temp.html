@@ -55,7 +55,7 @@
     
     <div id="menu">
         <span id="path">
-            Ti trovi in: Account</span>
+            Ti trovi in: Gestione sito</span>
     
         <div id="nav">
             <ul>
@@ -145,7 +145,7 @@
                             <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag3"/></div><div class="inputRight"></div>
                         </li>
                         <li>
-                            <label">Tag 4:</label>
+                            <label>Tag 4:</label>
                             <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag4"/></div><div class="inputRight"></div>
                         </li>
                         <li>
@@ -167,7 +167,7 @@
 							<li>
 								<label>Cerca un prodotto:</label>
 								<div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="codice" type="text"/></div><div class="inputRight"></div>
-							</li
+                            </li>
 						</ul>
 						<div>
 							<button class="button" type="submit">Cerca</button>
@@ -188,7 +188,7 @@
 
 	
     </div>
-
+    </div>
     <div id="footer">
         <a href="#header">
             <span id="torna-su">
@@ -216,18 +216,19 @@
 
             <div class="footer-block">
                 <ul>
-                    <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
-                	<li><a href="stampa_annunci.cgi">Annunci</a></li>
-                	<li><a href="check_session.cgi?contattaci">Contattaci</a></li>
-                    [% IF sessione == 'true' %]
+					<li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
+					<li><a href="check_session.cgi?prodotti">Prodotti</a></li>
+					<li><a href="stampa_annunci.cgi">Annunci</a></li>
+					<li><a href="check_session.cgi?contattaci">Contattaci</a></li>
+					[% IF sessione == 'true' %]
 					<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
 					[% IF amministratore == 'true' %]
-					<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
+					<li class="current"><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 					[% END %]
 					<li><a href="logout_script.cgi">Logout</a></li>
 					[% ELSE %]
 					<li><a href="check_session.cgi?login">Accedi</a></li>
-                	<li><a href="check_session.cgi?registrazione">Registrati</a></li>
+					<li><a href="check_session.cgi?registrazione">Registrati</a></li>
 					[% END %]
                 </ul>
             </div>

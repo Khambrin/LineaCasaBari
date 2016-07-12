@@ -38,19 +38,48 @@ my $old_surname_form='<input class= "input" type="text" name="nuovo_cognome" val
 my $old_tel_form='<input class= "input" type="text" name="nuovo_telefono" value="'."$old_tel".'"/>';
 
 
-
-
-my $file='impostazioni_account_temp.html';
-my $vars={
-		'sessione' => "true",
-		'email' => $email,
-		'amministratore' => $amministratore,
-		'vemail'=>$old_em_form,
-		'vnome'=>$old_name_form,
-		'vcognome'=>$old_surname_form,
-		'vtelefono'=>$old_tel_form,
-		
-	};
-
+my $vars;
+my $file;
+if($ENV{'QUERY_STRING'} eq 'ok')
+{
+			$vars={
+					'log' => "login effettuato con successo",
+					'sessione' => "true",
+					'email' => $email,
+					'amministratore' => $amministratore,
+					'vemail'=>$old_em_form,
+					'vnome'=>$old_name_form,
+					'vcognome'=>$old_surname_form,
+					'vtelefono'=>$old_tel_form,	
+				};
+	$file='impostazioni_account_temp.html';
+}
+elsif ($ENV{'QUERY_STRING'} eq 'exit')
+{
+			$vars={
+					'log' => "logout effettuato con successo",
+					'sessione' => "false",
+					'email' => $email,
+					'amministratore' => $amministratore,
+					'vemail'=>$old_em_form,
+					'vnome'=>$old_name_form,
+					'vcognome'=>$old_surname_form,
+					'vtelefono'=>$old_tel_form,
+				};
+				$file='login_temp.html';
+}
+else
+{
+	$vars={
+			'sessione' => "true",
+			'email' => $email,
+			'amministratore' => $amministratore,
+			'vemail'=>$old_em_form,
+			'vnome'=>$old_name_form,
+			'vcognome'=>$old_surname_form,
+			'vtelefono'=>$old_tel_form,		
+		};
+		$file='impostazioni_account_temp.html';
+}
 print $cgi->header('text/html');
 $template->process($file,$vars) || die $template->error();

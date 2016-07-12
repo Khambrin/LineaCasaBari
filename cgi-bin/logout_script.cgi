@@ -13,5 +13,5 @@ my $session = CGI::Session->load();
 $session->delete();
 $session->flush();
 
-print $cgi->redirect('check_session.cgi?login');
+print $cgi->redirect('check_session.cgi?logout');
 

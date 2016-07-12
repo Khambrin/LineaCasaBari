@@ -47,6 +47,10 @@ if ($session->is_empty)
 	{
 		$file='login_temp.html';
 	}
+	elsif ($ENV{'QUERY_STRING'} eq 'logout')
+	{
+		print $cgi->redirect("gestione_account.cgi?exit");
+	}
 }
 else
 {	
@@ -60,11 +64,8 @@ else
 	};
 	if ($ENV{'QUERY_STRING'} eq 'login' or  $ENV{'QUERY_STRING'} eq 'registrazione')
 	{
-		print $cgi->redirect("gestione_account.cgi");
-		
-		#$file='index_temp.html';
+		print $cgi->redirect("gestione_account.cgi?ok");
 	}
-	
 	if ($ENV{'QUERY_STRING'} eq 'togli_utenti')
 	{
 		print $cgi->redirect("remove_user.cgi");
