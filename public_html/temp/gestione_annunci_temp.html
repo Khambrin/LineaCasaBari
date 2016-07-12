@@ -92,73 +92,77 @@
                 </ul>
                 <ul>
                     <li class="title_link"><a href="check_session.cgi?gestione_ordini">Gestione ordini</a></li>
-                    <li class="subtitle_link">Visualizza informazioni e modifica gli ordini</li>
+                    <li class="subtitle_link">Visualizza info e modifica gli ordini</li>
                 </ul>
-                <ul>
-                    <li id="left_menu_arrow" class="title_link">Gestione annunci</li>
-                    <li class="subtitle_link">Togli, aggiungi e modifica gli annunci</li>
+                <ul id="left-menu-active">
+						<li class="title_link">Gestione annunci</li>
+						<li class="subtitle_link">Togli, aggiungi e modifica gli annunci</li>
                 </ul>
             </div><div id="right-col">
-                <div>
+                <div id="sub_menu">
                 [% IF pagina == 'aggiungi' %]
-					<a href="gestione_annunci_script.cgi?aggiungi"><div class="sub_menu_block_active"><span class="sub_menu_text_active">Aggiungi annuncio</span></div></a><a href="modifica_annunci.cgi?edit"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica annuncio</span></div></a>
+					<div class="sub_menu_block_active"><span class="sub_menu_text_active">Aggiungi annuncio</span></div><a href="modifica_annunci.cgi?edit"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica annuncio</span></div></a>
                 [% ELSIF pagina == 'modifica_annunci' %]
-					<a href="gestione_annunci_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi annuncio</span></div></a><a href="modifica_annunci.cgi?edit"><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica annuncio</span></div></a>
+					<a href="gestione_annunci_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi annuncio</span></div></a><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica annuncio</span></div>
 				[% ELSIF pagina == 'edit' %]
-					<a href="gestione_annunci_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi annuncio</span></div></a><a href="modifica_annunci.cgi?edit"><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica annuncio</span></div></a>[% END %]
+					<a href="gestione_annunci_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi annuncio</span></div></a><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica annuncio</span></div>[% END %]
                 
                 </div>
                 [% IF pagina == 'aggiungi' %]
+                <div class="form-container2">
+					<h2>Aggiungi un annuncio</h2>
                 <form method="post" action="aggiungi_annuncio_form.cgi" enctype="multipart/form-data">
-                    <ul class="gestione-aggiungi_form">
-                        <li class="gestione-block">
-                            <label class="gestione-labels">Titolo:</label>
+                    <ul class="form-Block">
+                        <li>
+                            <label class="annunci-titoloLabel">Titolo:</label>
                             <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="titolo"/></div><div class="inputRight"></div>
                         </li>
-                        <li class="gestione-block">
-                            <label class="gestione-labels">Testo:</label>
+                        <li>
+                            <label class="annunci-testoLabel">Testo:</label>
                         </li>
-                        <li class="gestione-block">
+                        <li>
                             <textarea class="gestione_textarea" name="testo"></textarea>
                         </li>
-                        <li class="gestione-block">
+                        <li>
                             <div class="gestione-file_label">
-                                <label class="gestione-labels">Inserisci immagine:</label>
+                                <label class="annunci-immagineLabel">Inserisci immagine:</label>
                             </div>
                             <input type="file" name="immagine"/>
                         </li>
                     </ul>
-                    <div class="gestione-button_block">
+                    <div>
                         <button class="button" type="submit">Aggiungi annuncio</button>
                     </div>
 					
 					<div>[% hidden %]</div>
 					<div class="messaggio-error">[% messaggio %]</div>
                 </form>
+                </div>
 				[% ELSIF pagina == 'edit' %]
 					
-
+				<div class="form-container2">
+					<h2>Rimuovi o Modifica un annuncio</h2>
                 <form method="post" action="edit_annuncio.cgi" enctype="multipart/form-data">
-                    <ul class="gestione-aggiungi_form">
-                        <li class="gestione-block">
-                            <label class="gestione-labels">Titolo:</label>
+                    <ul class="form-Block">
+                        <li>
+                            <label class="annunci-titoloLabel">Titolo:</label>
                             <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vtitolo %]</div><div class="inputRight"></div>
                         </li>
-                        <li class="gestione-block">
-                            <label id="gestione-textarea_label">Testo:</label>
+                        <li>
+                            <label class="annunci-testoLabel">Testo:</label>
                         </li>
-                        <li class="gestione-block">
+                        <li>
                             [% vcontenuto %]
                         </li>
-                        <li class="gestione-block">
+                        <li>
                             <div id="gestione-file_label">
-                                <label class="gestione-labels">Inserisci immagine:</label>
+                                <label class="annunci-immagineLabel">Inserisci immagine:</label>
                             </div>
                             <input type="file" name="immagine"/>
                         </li>
 						<div>[% oldtitolo %]</div>
 						<li>
-							<div id="gestione-button_block">
+							<div>
                         		<button class="button" type="submit">Modifica annuncio</button>
 							</div>
 						</li>

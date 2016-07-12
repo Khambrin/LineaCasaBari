@@ -58,10 +58,13 @@ else
 		'amministratore' => $amministratore,
 		'messaggio'=> "false",
 	};
-	if ($ENV{'QUERY_STRING'} eq 'login' or $ENV{'QUERY_STRING'} eq 'registrazione')
+	if ($ENV{'QUERY_STRING'} eq 'login' or  $ENV{'QUERY_STRING'} eq 'registrazione')
 	{
-		$file='index_temp.html';
+		print $cgi->redirect("gestione_account.cgi");
+		
+		#$file='index_temp.html';
 	}
+	
 	if ($ENV{'QUERY_STRING'} eq 'togli_utenti')
 	{
 		print $cgi->redirect("remove_user.cgi");

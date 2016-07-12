@@ -1688,7 +1688,7 @@ body
     {
 		display: inline-block;
         vertical-align: middle;
-        width: 25%;
+        width: 24%;
         border-bottom: 1px solid;
         height: 55em;
     }
@@ -1715,7 +1715,7 @@ body
     {
 		display: inline-block;
         vertical-align: middle;
-        width: 74%;
+        width: 75.5%;
         border-bottom: 1px solid;
         border-left: 1px solid;
         height: 55em;
@@ -1733,13 +1733,6 @@ body
         font-size: 1.5em;        
     }
     
-    #left_menu_arrow
-    {
-        background-image: url(images/rightArrow2.png);
-        background-repeat: no-repeat;
-        background-position: right;
-        background-size: 2em; 
-    }
     
     .subtitle_link
     {
@@ -1801,10 +1794,6 @@ body
         width: 60%;
         height: 10em;
     }
-    
-    #gestione-codice{
-        margin-top: 1em;
-    }
     .gestione-inputMiddle{
         display: inline-block;
         vertical-align: middle;
@@ -1818,38 +1807,31 @@ body
     #gestione-center{
         display:inline-block;
     }
-    .gestione-labels{
-        padding-right: 1em;
-    }
     #gestione-textarea_block{
         padding-top: 2em;
     }
     
-   .gestione-file_label{
-        display: block;
-        padding-bottom: 1em;
-    }
     #sub_menu{
         margin-top: 1em;
         margin-bottom: 1em;
     }
-    .indirizzo-ViaLabel{
+    #indirizzo-ViaLabel{
         padding-right: 6.4em;
     
     }
-    .indirizzo-NumLabel{
+    #indirizzo-NumLabel{
         padding-right: 1.5em;
         
     }
-    .indirizzo-CittaLabel{
+    #indirizzo-CittaLabel{
         padding-right: 5.9em;
         
     }
-    .indirizzo-ProvinciaLabel{
+    #indirizzo-ProvinciaLabel{
         padding-right: 4.1em;
         
     }
-    .indirizzo-CapLabel{
+    #indirizzo-CapLabel{
         padding-right: 6em;
         
     }
@@ -1903,7 +1885,28 @@ body
         margin-bottom: 1em;
         
     }
-    
+    #ordini-cerca{
+       padding-bottom: 1em;    
+    }
+    .ordini-block{
+        padding-bottom:1em; 
+    }
+    .annunci-testoLabel{
+        padding-right: 19em;
+    }
+    .annunci-titoloLabel
+    {
+        padding-right: 7em;
+    }
+    .annunci-immagineLabel{
+        padding-right: 13.5em;
+    }
+    #left-menu-active{
+        background-color: #295380;
+        vertical-align: middle;
+        color: white;
+        
+    }
     
 
 /*-------------------------------------------------------------Generale----------------------------*/

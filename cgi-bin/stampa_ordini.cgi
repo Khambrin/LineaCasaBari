@@ -54,23 +54,23 @@ if($messaggio eq "false")
 	my @lista_ordini=$doc->findnodes("Ordini/Ordine[Utente='$email']/Codice/text()");
 	foreach my$i (@lista_ordini)
 	{
-		my $x='<li class="gestione-block"><h3 id="gestione-codice">'."Codice: $i</h3></li>";
+		my $x='<li><h2>'."Codice: $i</h2></li>";
 		$tot=$tot.$x;
-		my $x='<li class="gestione-block"><label class="gestione-labels">'."Utente: $email</label></li>";
+		my $x='<li><label>'."Utente: $email</label></li>";
 		$tot=$tot.$x;
 		my $data=$doc->findnodes("Ordini/Ordine[Codice=$i]/Data/text()");
-		my $x='<li class="gestione-block"><label class="gestione-labels">'."Data: $data</label></li>";
+		my $x='<li><label>'."Data: $data</label></li>";
 		$tot=$tot.$x;
 		my $num_prodotto=$doc->findvalue("count(Ordini/Ordine[Codice='$i']/Prodotto)");
 		for(my $y=1; $y<=$num_prodotto;$y++)
 		{
 			my $prodotto=$doc->findnodes("Ordini/Ordine[Codice=$i]/Prodotto[$y]/text()");
-			my $x='<li class="gestione-block"><label class="gestione-labels">'."Prodotto: $prodotto</label></li>";
+			my $x='<li><label>'."Prodotto: $prodotto</label></li>";
 			$tot=$tot.$x;
 		}
 	}
 	
-	my $lista_ordine='<ul class="gestione-aggiungi_form">'."$tot"."</ul>";
+	my $lista_ordine='<div class="form-container2"><ul class="form-Block">'."$tot"."</ul></div>";
 	$vars={
 		'sessione' => "true",
 		'email' => $email,

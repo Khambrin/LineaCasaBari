@@ -90,18 +90,18 @@
                     <li class="title_link"><a href="gestione_account.cgi">Impostazioni account</a></li>
                     <li class="subtitle_link">Gestione password, e-mail</li>
                 </ul>
-                <ul>
-                    <li id="left_menu_arrow" class="title_link">Indirizzi</li>
+                <ul id="left-menu-active">
+                    <li class="title_link">Indirizzi</li>
                     <li class="subtitle_link">Gestisci gli indirizzi di spedizione</li>
                 </ul>
             </div><div id="right-col">
 		<div id="sub_menu">
                 [% IF pagina == 'aggiungi' %]
-					<a href="gestione_indirizzi_script.cgi?aggiungi"><div class="sub_menu_block_active"><span class="sub_menu_text_active">Aggiungi indirizzo</span></div></a><a href="stampa_indirizzi.cgi"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica indirizzo</span></div></a>
+					<div class="sub_menu_block_active"><span class="sub_menu_text_active">Aggiungi indirizzo</span></div><a href="stampa_indirizzi.cgi"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica indirizzo</span></div></a>
                 [% ELSIF pagina == 'edit' %]
-					<a href="gestione_indirizzi_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi indirizzo</span></div></a><a href="stampa_indirizzi.cgi"><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica indirizzo</span></div></a>
+					<a href="gestione_indirizzi_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi indirizzo</span></div></a><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica indirizzo</span></div>
 				[% ELSE %]
-					<a href="gestione_indirizzi_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi indirizzo</span></div></a><a href="stampa_indirizzi.cgi"><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica indirizzo</span></div></a>[% END %]
+					<a href="gestione_indirizzi_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi indirizzo</span></div></a><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica indirizzo</span></div>[% END %]
                 
                 </div>
 			[% IF pagina == 'aggiungi' %]
@@ -110,28 +110,28 @@
 				<form method="post" action="aggiungi_indirizzo_script.cgi" enctype="multipart/form-data">
 				<ul class="form-Block">
 					<li>
-                        <label class="indirizzo-ViaLabel">Via:</label>
+                        <label id="indirizzo-ViaLabel">Via:</label>
                         <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="text" name="via" /></div><div class="inputRight"></div>
                     </li>
 					<li>
-						<label class="indirizzo-NumLabel">Numero Civico:</label>
+						<label id="indirizzo-NumLabel">Numero Civico:</label>
                         <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="text" name="numero" /></div><div class="inputRight"></div>
                     </li>
 					<li>
-                        <label class="indirizzo-CittaLabel">Citt&agrave;:</label>
+                        <label id="indirizzo-CittaLabel">Citt&agrave;:</label>
                         <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="text" name="citta" /></div><div class="inputRight"></div>
                     </li>
 					<li>
-                        <label class="indirizzo-ProvinciaLabel">Provincia:</label>
+                        <label id="indirizzo-ProvinciaLabel">Provincia:</label>
                         <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="text" name="provincia" /></div><div class="inputRight"></div>
                     </li>
 					<li>
-                        <label class="indirizzo-CapLabel">CAP:</label>
+                        <label id="indirizzo-CapLabel">CAP:</label>
                         <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="text" name="cap" /></div><div class="inputRight"></div>
                     </li>
                  </ul>
                  <div>
-					<button class="button" type="submit">Aggiungi Indirizzo</button>
+					<button id="button" type="submit">Aggiungi Indirizzo</button>
                  </div>
 					<div>[% hidden %]</div>
 					<div class="messaggio-error">[% error %]</div>
@@ -144,23 +144,23 @@
 				<form method="post" action="edit_indirizzo_script.cgi" enctype="multipart/form-data">
 				<ul class="form-Block">
 					<li>
-                        <label class="indirizzo-ViaLabel">Via:</label>
+                        <label>Via:</label>
                         <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vvia %]</div><div class="inputRight"></div>
                     </li>
 					<li>
-						<label class="indirizzo-NumLabel">Numero Civico:</label>
+						<label>Numero Civico:</label>
                         <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vnumero %]</div><div class="inputRight"></div>
                     </li>
 					<li>
-                        <label class="indirizzo-CittaLabel">Citt&agrave;:</label>
+                        <label>Citt&agrave;:</label>
                         <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vcitta %]</div><div class="inputRight"></div>
                     </li>
 					<li>
-                        <label class="indirizzo-ProvinciaLabel">Provincia:</label>
+                        <label>Provincia:</label>
                         <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vprovincia %]</div><div class="inputRight"></div>
                     </li>
 					<li>
-                        <label class="indirizzo-CapLabel">CAP:</label>
+                        <label>CAP:</label>
                         <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vcap %]</div><div class="inputRight"></div>
                     </li>
                  </ul>

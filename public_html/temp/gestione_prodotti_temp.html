@@ -86,13 +86,13 @@
                     <li class="title_link"><a href="check_session.cgi?togli_utenti">Togli utenti</a></li>
                     <li class="subtitle_link">Elimina un utente iscritto</li>
                 </ul>
-                <ul>
-                    <li id="left_menu_arrow" class="title_link">Gestione prodotti</li>
+                <ul id="left-menu-active">
+                    <li class="title_link">Gestione prodotti</li>
                     <li class="subtitle_link">Togli, aggiungi e modifica i prodotti</li>
                 </ul>
                 <ul>
                     <li class="title_link"><a href="check_session.cgi?gestione_ordini">Gestione ordini</a></li>
-                    <li class="subtitle_link">Visualizza informazioni e modifica gli ordini</li>
+                    <li class="subtitle_link">Visualizza info e modifica gli ordini</li>
                 </ul>
                 <ul>
                     <li class="title_link"><a href="check_session.cgi?gestione_annunci">Gestione annunci</a></li>
@@ -100,8 +100,8 @@
                 </ul>
             </div><div id="right-col">
                 <div id="sub_menu">
-                    [% IF pagina == 'aggiungi' %]<a href="gestione_prodotti_script.cgi?aggiungi"><div class="sub_menu_block_active"><span class="sub_menu_text_active">Aggiungi prodotto</span></div></a><a href="gestione_prodotti_script.cgi?rimuovi_modifica"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica prodotto</span></div></a>
-                    [% ELSIF pagina == 'rimuovi_modifica' %]<a href="gestione_prodotti_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi prodotto</span></div></a><a href="gestione_prodotti_script.cgi?rimuovi_modifica"><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica prodotto</span></div></a>[% END %]
+                    [% IF pagina == 'aggiungi' %]<div class="sub_menu_block_active"><span class="sub_menu_text_active">Aggiungi prodotto</span></div><a href="gestione_prodotti_script.cgi?rimuovi_modifica"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica prodotto</span></div></a>
+                    [% ELSIF pagina == 'rimuovi_modifica' %]<a href="gestione_prodotti_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi prodotto</span></div></a><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica prodotto</span></div>[% END %]
                 </div>
             	[% IF pagina == 'aggiungi' %]
             	<div class="form-container2">
