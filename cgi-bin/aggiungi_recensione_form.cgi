@@ -141,7 +141,7 @@ else
 	$recensione_tag->appendChild($votop_tag);
 
 	my $votor_tag=$doc->createElement("Voto_recensione");
-	$votor_tag->appendTextNode('0');
+	$votor_tag->appendTextNode('');
 	$recensione_tag->appendChild($votor_tag);
 
 	open (XML,">","../data/Prodotti.xml");

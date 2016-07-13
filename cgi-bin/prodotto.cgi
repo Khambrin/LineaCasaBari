@@ -96,8 +96,6 @@ if ((!$email) || grep(/^$email/, @recensione_email)) {
 	$already_reviewed = 0;
 }
 
-#my $hidden='<input type="hidden" name="" value="'."$ENV{'QUERY_STRING'}".'"/>';
-
 my $recensione_form;
 if(!$already_reviewed) {
 	my $x='<form method="post" action="aggiungi_recensione_form.cgi?Codice='."$prodotto_codice".'&Page='."$page".'&Filter='."$filter".'" enctype="multipart/form-data">
@@ -181,18 +179,20 @@ for (my $index=0; $index <= $Num_commenti; $index++)
 	$tot=$tot.$x;
 	my $x='<li><p>'."@recensione_testo[$index]".'</p></li>';
 	$tot=$tot.$x;
-	if($email ne @recensione_email[$index]) {
+	my @recensione_emailvoto=$doc->findnodes("Prodotti/Prodotto[Codice='$Codice']/Recensione[Email='@recensione_email[$index]']/Email_voto/text()");
+	if(!grep( /^$email$/, @recensione_emailvoto ) && ($email ne @recensione_email[$index]) && $email) {
 		my $x='<li>
-				<form action="vota_recensione" class="vota_recesione" method="post">
+				<form action="vota_recensione.cgi?Codice='."$prodotto_codice".'&Page='."$page".'&Filter='."$filter".'" class="vota_recesione" method="post">
 				<p> Voto: <span>
 				<select name="voto">
 					<option value="1"> 1 </option>
-					<option value="1"> 2 </option>
-					<option value="1"> 3 </option>
-					<option value="1"> 4 </option>
-					<option value="1"> 5 </option>
+					<option value="2"> 2 </option>
+					<option value="3"> 3 </option>
+					<option value="4"> 4 </option>
+					<option value="5"> 5 </option>
 				</select></span></p>
 				<p><input type="submit" value="Vota recensione"/></p>
+				<input type="hidden" name="email_recensione" value="'."@recensione_email[$index]".'"/>
 				</form>
 				</li>';
 		$tot=$tot.$x;

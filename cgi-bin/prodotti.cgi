@@ -123,7 +123,7 @@ for (my $i=0; $i<=6; $i++) {
 		my $x='<li><span>'."@categorie[$i]".'</span></li>';
 		$tot3=$tot3.$x;
 	} else {
-		my $x='<li><a href="prodotti.cgi?Page=0&Filter='."@categorie[$i]".'">'."@categorie[$i]".'</a></li>';
+		my $x='<li><a href="prodotti.cgi?Page='."$page".'&Filter='."@categorie[$i]".'">'."@categorie[$i]".'</a></li>';
 		$tot3=$tot3.$x;
 	} 
 }
@@ -139,7 +139,7 @@ for (my $riga=0; $riga <= 2; $riga++)
 	for (my $colonna=0; $colonna <= 2; $colonna++)	
 	{
 		if($index<=$#prodotto_codice) {
-		my $x='<div class="prodotto-singolo"><ul><a href="prodotto.cgi?Codice='."@prodotto_codice[$index]".'"Filter='."$filter".'>';
+		my $x='<div class="prodotto-singolo"><ul><a href="prodotto.cgi?Codice='."@prodotto_codice[$index]".'&Filter='."$filter".'&Page='."$page".'">';
 		$tot=$tot.$x;
 		my $x='<li class="nome-prodotto"><p>'."@prodotto_nome[$index]".'</p></li>';
 		$tot=$tot.$x;
@@ -168,21 +168,21 @@ if($page == "0") {
 	my $x='';
 	$tot2=$tot2.$x;
 } else {
-	my $x='<a href="prodotti.cgi?Page='."$page_before".'"><span id="prodotti-frecciaPaginaPrecedente"></span></a><span id="prodotti-paginaPrecedente"><a href="prodotti.cgi?Page='."$page_before".'">Pagina precedente</a></span>';
+	my $x='<a href="prodotti.cgi?Page='."$page_before".'&Filter='."$filter".'"><span id="prodotti-frecciaPaginaPrecedente"></span></a><span id="prodotti-paginaPrecedente"><a href="prodotti.cgi?Page='."$page_before".'&Filter='."$filter".'">Pagina precedente</a></span>';
 	$tot2=$tot2.$x;
 }
 my $x='<div id="prodotti-paginaNumeri"><ul>';
 $tot2=$tot2.$x;
 for (my $i=0; $i <= $num_pagine; $i++)
 {
-	my $x='<li><a href="prodotti.cgi?Page='."$i".'">'."$i".'</a></li>';
+	my $x='<li><a href="prodotti.cgi?Page='."$i".'&Filter='."$filter".'">'."$i".'</a></li>';
 	$tot2=$tot2.$x;
 }
 if($page == $num_pagine) {
 	my $x='</ul></div>';
 	$tot2=$tot2.$x;
 } else {
-	my $x='</ul></div><span id="prodotti-paginaSuccessiva"><a href="prodotti.cgi?Page='."$page_after".'">Pagina successiva</a></span><a href="prodotti.cgi?Page='."$page_after".'"><span id="prodotti-frecciaPaginaSuccessiva"></span></a>';
+	my $x='</ul></div><span id="prodotti-paginaSuccessiva"><a href="prodotti.cgi?Page='."$page_after".'&Filter='."$filter".'">Pagina successiva</a></span><a href="prodotti.cgi?Page='."$page_after".'&Filter='."$filter".'"><span id="prodotti-frecciaPaginaSuccessiva"></span></a>';
 	$tot2=$tot2.$x;
 }
 
