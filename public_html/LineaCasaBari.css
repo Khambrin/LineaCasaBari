@@ -614,6 +614,8 @@ body
 
 /*-------------------------------------- la_nostra_storia.html --------------------------------------------------------------------------------*/
 
+
+
 #content h2{
     font-family: Georgia, serif;
     margin-bottom: 1em;
@@ -625,59 +627,63 @@ body
     padding-bottom: 1.5em;
 }
 
-#linea-tempo li
-{
-    list-style: none;
-    display: inline-block;
-    padding-left: 1em;
-    padding-right: 1em;
-    transform:rotate(-20deg);
-    text-decoration: none;
-    background-color:#295380;
-    margin-left: 1em;
-    margin-right: 1em;
-    padding:0.5em;
-}
-
-#linea-tempo
-{
-    display: inline-block;
-    width: 99%;
-    height: 2.7em;
-    text-align: center;
-    padding-bottom: 4em;
-}
+    #linea-tempo
+    {
+        display: inline-block;
+        width: 99%;
+        height: 2.7em;
+        text-align: center;
+        padding-bottom: 1em;
+        margin-bottom: 1em;
+    }
 
 
-#linea-tempo a
-{
-    text-decoration: none;
-}
-
-#linea-tempo-testo h3
-{
-    padding-top: 0.4em;
-    padding-bottom: 0.4em;
-    margin-bottom: 1em;
-    background-color: #E1E3E4;
-    font-family: Georgia, serif;
-}
+    #linea-tempo a
+    {
+        text-decoration: none;
+        color: white;
+    }
 
 
-.linea-tempo-su
-{
-    width: 45%;
-    background-color: #E1E3E4;
-    margin-bottom: 3em;
-    display: inline-block;
-    padding-top:0.5em;
-    padding-bottom:0.5em;
-}
 
-.linea-tempo-su a
-{
-    text-decoration: none;
-}
+  #linea-tempo li
+    {
+        list-style: none;
+        display: inline-block;
+        padding-left: 1em;
+        padding-right: 1em;
+        transform:rotate(-20deg);
+        text-decoration: none;
+        background-color:#295380;
+        margin-left: 1em;
+        margin-right: 1em;
+        padding:0.5em;
+        color: white;
+        box-shadow: 1px 1px 1px 1px #888888;
+	    
+    }
+
+  
+    .linea-tempo-su
+    {
+        width: 45%;
+        background-color: #295380;
+        margin-bottom: 3em;
+        display: inline-block;
+        padding-top:0.5em;
+        padding-bottom:0.5em;   
+        box-shadow: 1px 1px 1px #888888;  
+    }
+
+
+    .linea-tempo-su a
+    {
+        text-decoration: none;
+        color: white;
+    }
+
+
+
 
 /*------------------- termini e spedizione/resi e rimborsi  -----------------------------------------------------------------------------------*/
 
@@ -1174,93 +1180,7 @@ body
 
     /*-------------------------------------- la_nostra_storia.html desktop --------------------------------------------------------------------------------*/
 
-    #linea-tempo li
-    {
-        list-style: none;
-        display: inline-block;
-        padding-left: 1em;
-        padding-right: 1em;
-        transform:rotate(-20deg);
-        text-decoration: none;
-        background-color:#295380;
-        margin-left: 1em;
-        margin-right: 1em;
-        padding:0.5em;
-        color: white;
-        box-shadow: 1px 1px 1px 1px #888888;
 
-    }
-    
-    #linea-tempo
-    {
-        display: inline-block;
-        width: 99%;
-        height: 2.7em;
-        text-align: center;
-    }
-
-    #linea-tempo-testo
-    {
-        text-align: center;
-        margin: auto;
-        padding-top: 4em;
-        padding-bottom: 2em;
-        width: 45%;    
-    }
-
-    .linea-tempo-testo-li
-    {
-        padding-bottom: 1em;
-        margin-bottom: 1em;
-        list-style: none;
-        background-color: #E1E3E4;
-        box-shadow: 1px 1px 1px 1px #888888;
-
-    }
-
-    #linea-tempo a
-    {
-        text-decoration: none;
-        color: white;
-    }
-
-    #linea-tempo-testo h3
-    {
-        padding-top: 0.4em;
-        padding-bottom: 0.4em;
-        margin-bottom: 1em;
-        background-color: #295380;
-        font-family: Georgia, serif;
-        color: white;
-    }
-
-    #linea-tempo-testo p
-    {
-        padding-left: 1em;
-        padding-right: 1em;
-    }
-
-    #linea-tempo-testo a
-    {
-        text-decoration: none;
-    }
-
-    .linea-tempo-su
-    {
-        width: 45%;
-        background-color: #295380;
-        margin-bottom: 3em;
-        display: inline-block;
-        padding-top:0.5em;
-        padding-bottom:0.5em;   
-        box-shadow: 1px 1px 1px #888888;  
-    }
-
-    .linea-tempo-su a
-    {
-        text-decoration: none;
-        color: white;
-    }
 
     /*---------------------------------------- prodotti.html --------------------------------------------------------------------------------------*/
 
