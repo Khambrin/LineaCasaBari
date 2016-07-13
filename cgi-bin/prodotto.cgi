@@ -246,7 +246,8 @@ else
 		'prodotto_recensioni' =>$stampa_recensioni,
 		'prodotto_immagine' =>$stampa_immagine,
 		'recensione_form' =>$recensione_form,
-		'pagina_precedente' =>$Pagina_precedente,		
+		'pagina_precedente' =>$Pagina_precedente,
+		'codice_prodotto' =>$Codice,		
 	};
 }
 print $cgi->header('text/html');
