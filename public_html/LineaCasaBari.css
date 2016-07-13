@@ -716,8 +716,6 @@ body
 
 /*---------------------------------------- prodotti.html --------------------------------------------------------------------------------------*/
 
-    
-
 #prodotti-categorie
 {
     background-color: #E1E3E4;
@@ -731,7 +729,7 @@ body
 {
     list-style: none;
     padding-left: 0.75em;
-	padding-right: 0.75;
+    padding-right: 0.75em;
 }
 
 #prodotti-categorie a
@@ -786,7 +784,6 @@ body
 {
     list-style: none;
     display: inline;
-    padding-left:1em;
 }
 
 #prodotti-pageSelector a
@@ -1268,19 +1265,30 @@ body
         background-color: #E1E3E4;
         height: 2em;
         text-align: center;
-        line-height: 180%;
+        line-height: 200%;
         margin: 1em;
-       
     }
 
     #prodotti-categorie li{
         display: inline;
         list-style: none;
-        padding-left: 3.5em;
+        padding-left: 0.75em;
+	padding-right: 0.75em;
     }
 
     #prodotti-categorie a{
         text-decoration: none;
+    }
+
+    #prodotti-categorie a:hover{
+        text-decoration: underline;
+    }
+
+    .categoria_attiva
+    {
+        background-color: #295380;
+        color: white;
+	padding: 0.4em;
     }
 
     #prodotti-vetrina{
@@ -1290,12 +1298,12 @@ body
     }
 
     #prodotti-pageSelector{
-        background-color: chartreuse;
+        background-color: #E1E3E4;
         display: inline-block;
         height: 2.5em;
-        width: 100%;
+        width: 78%;
         text-align: center;
-        line-height: 210%;
+        line-height: 220%;
     }
 
     #prodotti-frecciaPaginaPrecedente {
@@ -1322,10 +1330,18 @@ body
         vertical-align: middle;
     }
 
+    .pagina_attiva
+    {
+        background-color: #295380;
+        color: white;
+	padding: 0.65em;
+    }
+
     #prodotti-pageSelector li{
         list-style: none;
         display: inline;
-        padding-left:1em;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
     }
 
     #prodotti-pageSelector a{
@@ -1395,7 +1411,8 @@ body
 	background-color: #E1E3E4;
 	padding: 1em;
 	text-align: center;
-	margin-right: 1.65em;
+	margin-right: 0.825em;
+	margin-left: 0.825em;
 	margin-top: 0.6em;
     }
 
@@ -1403,16 +1420,24 @@ body
 	list-style-type: none;
     }
 
-	.prodotto-singolo p {
+    .prodotto-singolo a {
+        text-decoration: none;
+    }
+
+    .prodotto-singolo a:hover {
+        text-decoration: underline;
+    }
+
+    .prodotto-singolo p {
 	font-size: 200%;
 	font-weight: bold;
-	}
+    }
 	
 	
     .prodotto-singolo img {
 	max-height: 7em;
 	max-width: 100%;
-   }
+     }
 
 
 /*---------------------------------------- prodotto.html --------------------------------------------------------------------------------------*/

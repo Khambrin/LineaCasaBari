@@ -58,7 +58,7 @@ my @prodotto_nome;
 my @prodotto_immagine;
 my @prodotto_prezzo;
 
-if($filter eq 'Liste_nozze'){ 
+if($filter eq 'Liste nozze'){ 
 					@prodotto_codice=$doc->findnodes("Prodotti/Prodotto[Categoria='lista_nozze']/Codice/text()");
 					@prodotto_nome=$doc->findnodes("Prodotti/Prodotto[Categoria='lista_nozze']/Nome/text()");
 					@prodotto_immagine=$doc->findnodes("Prodotti/Prodotto[Categoria='lista_nozze']/Immagine/text()");
@@ -115,18 +115,23 @@ my $num_pagine=$#prodotto_codice/9;
 
 # stampa_categorie
 
-my @categorie = ("Tutte","Liste_nozze","Porcellane","Pentole","Tovaglie","Tavola","Paralumi");
+my @categorie = ("Tutte","Liste nozze","Porcellane","Pentole","Tovaglie","Tavola","Paralumi");
 my $tot3;
+my $x="<ul>";
+$tot3=$tot3.$x;
 
 for (my $i=0; $i<=6; $i++) {
 	if( $filter eq @categorie[$i]) {
-		my $x='<li><span>'."@categorie[$i]".'</span></li>';
+		my $x='<li class="categoria_attiva"><span>'."@categorie[$i]".'</span></li>';
 		$tot3=$tot3.$x;
 	} else {
-		my $x='<li><a href="prodotti.cgi?Page='."$page".'&Filter='."@categorie[$i]".'">'."@categorie[$i]".'</a></li>';
+		my $x='<li><a href="prodotti.cgi?Filter='."@categorie[$i]".'">'."@categorie[$i]".'</a></li>';
 		$tot3=$tot3.$x;
 	} 
 }
+
+my $x="</ul>";
+$tot3=$tot3.$x;
 
 my $stampa_categorie="$tot3";
 
@@ -175,8 +180,13 @@ my $x='<div id="prodotti-paginaNumeri"><ul>';
 $tot2=$tot2.$x;
 for (my $i=0; $i <= $num_pagine; $i++)
 {
-	my $x='<li><a href="prodotti.cgi?Page='."$i".'&Filter='."$filter".'">'."$i".'</a></li>';
-	$tot2=$tot2.$x;
+	if ($i=="$page") {
+		my $x='<li class="pagina_attiva"><span>'."$i".'</span></li>';
+		$tot2=$tot2.$x;
+	} else {
+		my $x='<li><a href="prodotti.cgi?Page='."$i".'&Filter='."$filter".'">'."$i".'</a></li>';
+		$tot2=$tot2.$x;
+	}
 }
 if($page == $num_pagine) {
 	my $x='</ul></div>';
