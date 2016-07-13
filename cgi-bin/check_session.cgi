@@ -34,6 +34,7 @@ switch($ENV{'QUERY_STRING'})
 	case 'indirizzi' { $file='indirizzi_temp.html' }
 	case 'gestione_annunci' { $file='gestione_annunci_temp.html' }
 	case 'gestione_ordini' {$file='gestione_ordini_temp.html' }
+	
 }
 
 if ($session->is_empty)
@@ -50,6 +51,13 @@ if ($session->is_empty)
 	elsif ($ENV{'QUERY_STRING'} eq 'logout')
 	{
 		print $cgi->redirect("gestione_account.cgi?exit");
+	}
+	elsif ($ENV{'QUERY_STRING'} eq 'registrato')
+	{
+		$file='login_temp.html';
+		$vars={
+			'messaggio'=> "registrazione avvenuta con successo",
+		};
 	}
 }
 else

@@ -21,9 +21,16 @@ foreach my $chiave (keys %values)
 {
 	if (!$values{$chiave})
 	{
-		push @messaggi, "Devi completare il campo '$chiave'.";
+		if($chiave eq "conf_password")
+		{
+			push @messaggi, "Devi confermare la password";
+		}
+		else
+		{
+			push @messaggi, "Devi completare il campo '$chiave'";
+		}
 	}
-	if ($chiave eq "email")
+	elsif ($chiave eq "email")
 	{
 		#controlli sul campo email
 		if (!$values{$chiave}=~ /^[^ ,@]+\@([a-z0-9-]+\.)+[a-z]+$/)
@@ -31,12 +38,12 @@ foreach my $chiave (keys %values)
 			push @messaggi, "Indirizzo email inserito non valido.";
 		}
 	}
-	if ($chiave eq "password")
+	elsif ($chiave eq "password")
 	{
 		#controlli sul campo password
 		
 	}
-	if ($chiave eq "conf_password")
+	elsif ($chiave eq "conf_password")
 	{
 		if ($values{$chiave} ne $pwd)
 		{
@@ -49,8 +56,19 @@ if (@messaggi)
 {
 	print $cgi->header('text/html');
 	my $file='registrazione_temp.html';
-	my $vars={
-		'messaggio_registrazione' => "<ul>"."<li>@messaggi</li>"."</ul>"
+	my $tot;
+	my $x;
+	my $i=0;
+	foreach my$k (@messaggi)
+	{
+		my$aux=@messaggi[$i];
+		$i=$i+1;
+		$x="<li>"."$aux".'</li>'; 
+		$tot=$tot.$x;
+	}
+	$tot="<ul>"."$tot"."</ul>";
+	my$vars={
+		'messaggio_registrazione'=> $tot,
 	};
 	my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
@@ -95,6 +113,7 @@ else
 		open (XML,">","../data/Utenti.xml");
 		print XML $doc->toString();
 		close(XML);
-		print $cgi->redirect("auto_login.cgi?$values{'email'}");
+		print $cgi->redirect("check_session.cgi?registrato");
 }
+
 

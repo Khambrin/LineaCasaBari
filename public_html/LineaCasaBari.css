@@ -1684,7 +1684,7 @@ body
     {
 		display: inline-block;
         vertical-align: middle;
-        width: 24.19201946258%;
+        width: 24.5%;
         border-bottom: 1px solid;
         height: 55em;
     }
@@ -1924,7 +1924,7 @@ body
 }
     .messaggio-error li{
         list-style: none;
-        padding-right: 0.5em;
+        padding-bottom: 1em;
         
     }
     #titolo{
