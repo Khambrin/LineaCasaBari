@@ -210,7 +210,8 @@ body
 {
     text-align: center;
     background-color:#295380;
-    padding:0.5em;
+    /*padding:0.5em;*/
+    height: 6.5em;
     z-index: 0;
 }
 
@@ -237,7 +238,7 @@ body
 #menu {
     display: none;
     display: inline-block;
-    padding-bottom:4em;
+    padding-bottom: 4em;
     
     
 }
@@ -1065,16 +1066,16 @@ body
     #header h1
     {
         display: inline-block;
-	height: 2,7em;
+	   /*height: 0.5em;*/
         width: 79%;
-	padding-top: 0em;
+        margin-bottom: 1.5em;
     }
 
     #menu
     {
         width: 100%;
         display: block;
-        padding-top :1em;
+        padding-top: 1em;
         padding-bottom: 0.2em;
         background-color: #E1E3E4;
         border-top:0.1em;
