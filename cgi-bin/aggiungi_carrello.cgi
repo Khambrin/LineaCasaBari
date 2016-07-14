@@ -18,6 +18,39 @@ my $session = CGI::Session->load();
 my $email=$session->param("email");
 my $quantita=param("quantita");
 my $prodotto=param("codice_prodotto");
+my %in;
+
+if (length ($ENV{'QUERY_STRING'}) > 0){
+    my $buffer = $ENV{'QUERY_STRING'};
+    my @pairs = split(/&/, $buffer);
+	my $name;
+	my $value;
+    foreach my $pair (@pairs){
+        ($name, $value) = split(/=/, $pair);
+        $value =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack("C", hex($1))/eg;
+		$in{$name} = $value; 
+    }
+}
+
+#memorizzo tutti i valori necessari a ritornare alla pagina del prodotto correttamente
+
+my $filter;
+if ($in{'Filter'}) {
+	$filter=$in{'Filter'};
+	}
+else {
+	$filter='Tutte';
+}
+
+my $page;
+if ($in{'Page'}) {
+	$page=$in{'Page'};
+	}
+else {
+	$page=0;
+}
+
+my $codice=$in{'Codice'};
 
 
 
@@ -92,8 +125,5 @@ print XML $doc->toString();
 close(XML);
 
 my $messaggio="Prodotto aggiunto correttamente al carrello";
-print $cgi->redirect("prodotto.cgi?");
-=pod
-Codice=$prodotto&Filter=Tutte&Page=0&$messaggio");
-=cut
+print $cgi->redirect('prodotto.cgi?Codice='."$codice".'&Filter='."$filter".'&Page='."$page".'&Messaggio='."$messaggio");
 

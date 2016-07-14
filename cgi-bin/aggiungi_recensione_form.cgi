@@ -73,12 +73,6 @@ if (!$values{"testo"})
 	my $x="&Errtext=1";
 	$errors=$errors.$x;
 }
-if (!$values{"voto"})
-{
-	my $x="&Errvote=1";
-	$errors=$errors.$x;
-}
-
 
 if ($errors)
 {

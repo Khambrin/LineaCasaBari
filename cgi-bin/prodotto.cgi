@@ -84,6 +84,16 @@ else {
 my $x='<a href="prodotti.cgi?Page='."$page".'&Filter='."$filter".'"> Torna ai risultati della ricerca per "'."$filter".'" </a>';
 my $Pagina_precedente="$x";
 
+my $query_string='?Codice='."$prodotto_codice".'&Page='."$page".'&Filter='."$filter";
+
+#gestione messaggio d'errore di aggiungi al carrello
+my $messaggio;
+if ($in{'Messaggio'}) {
+	$messaggio=$in{'Messaggio'};
+	}
+else {
+	$messaggio='';
+}
 
 
 #gestione form della recensione
@@ -98,7 +108,7 @@ if ((!$email) || grep(/^$email/, @recensione_email)) {
 
 my $recensione_form;
 if(!$already_reviewed) {
-	my $x='<form method="post" action="aggiungi_recensione_form.cgi?Codice='."$prodotto_codice".'&Page='."$page".'&Filter='."$filter".'" enctype="multipart/form-data">
+	my $x='<form method="post" action="aggiungi_recensione_form.cgi'."$query_string".'" enctype="multipart/form-data">
 			<ul class="aggiungi_recensione_form">
 				<li class="gestione-block">
                     <label id="recensioneTitolo-label">Titolo:</label>
@@ -106,7 +116,7 @@ if(!$already_reviewed) {
                 </li>';
 	my $tot=$tot.$x;
 	if ($in{'Errtitle'}) {
-		my $x='<li class="error"> Devi completare il campo titolo </li>';
+		my $x='<li class="messaggio-error"> Devi completare il campo titolo </li>';
 		$tot=$tot.$x;
 	}
 	my $x='<li class="gestione-block">
@@ -115,7 +125,7 @@ if(!$already_reviewed) {
             </li>';
 	my $tot=$tot.$x;
 	if ($in{'Errname'}) {
-		my $x='<li class="error"> Devi completare il campo nome </li>';
+		my $x='<li class="messaggio-error"> Devi completare il campo nome </li>';
 		$tot=$tot.$x;
 	}
 	my $x='<li class="gestione-block">
@@ -126,7 +136,7 @@ if(!$already_reviewed) {
                 </li>';
 	my $tot=$tot.$x;
 	if ($in{'Errtext'}) {
-		my $x='<li class="error"> Devi completare il campo testo	</li>';
+		my $x='<li class="messaggio-error"> Devi completare il campo testo	</li>';
 		$tot=$tot.$x;
 	}
 	my $x='<li><label id="recensioneVoto-label"> Voto prodotto: <span>
@@ -139,10 +149,6 @@ if(!$already_reviewed) {
 				</select></span></label>
 			</li>';
 	my $tot=$tot.$x;
-	if ($in{'Errvote'}) {
-		my $x='<li class="error"> Devi selezionare un voto </li>';
-		$tot=$tot.$x;
-	}
 	my $x='</ul>
             <div class="gestione-button_block">
                 <button type="submit">Aggiungi recensione</button>
@@ -182,7 +188,7 @@ for (my $index=0; $index <= $Num_commenti; $index++)
 	my @recensione_emailvoto=$doc->findnodes("Prodotti/Prodotto[Codice='$Codice']/Recensione[Email='@recensione_email[$index]']/Email_voto/text()");
 	if(!grep( /^$email$/, @recensione_emailvoto ) && ($email ne @recensione_email[$index]) && $email) {
 		my $x='<li>
-				<form action="vota_recensione.cgi?Codice='."$prodotto_codice".'&Page='."$page".'&Filter='."$filter".'" class="vota_recesione" method="post">
+				<form action="vota_recensione.cgi'."$query_string".'" class="vota_recesione" method="post">
 				<p> Voto: <span>
 				<select name="voto">
 					<option value="1"> 1 </option>
@@ -198,7 +204,7 @@ for (my $index=0; $index <= $Num_commenti; $index++)
 		$tot=$tot.$x;
 	}
 	if($amministratore eq 'true' || $email eq @recensione_email[$index]) {
-		my $x='<li><form action="elimina_recensione.cgi?Codice='."$prodotto_codice".'&Page='."$page".'&Filter='."$filter".'" class="elimina_recensione" method="post">
+		my $x='<li><form action="elimina_recensione.cgi'."$query_string".'" class="elimina_recensione" method="post">
 				<p><input type="submit" value="Elimina recensione"/></p>
 				<input type="hidden" name="email_recensione" value="'."@recensione_email[$index]".'"/></form></li>';
 		$tot=$tot.$x;
@@ -226,6 +232,8 @@ if ($session->is_empty)
 		'prodotto_immagine' =>$stampa_immagine,
 		'recensione_form' =>$recensione_form,
 		'pagina_precedente' =>$Pagina_precedente,
+		'query_string' =>$query_string,
+		'messaggio' =>$messaggio,
 	};
 }
 
@@ -247,7 +255,9 @@ else
 		'prodotto_immagine' =>$stampa_immagine,
 		'recensione_form' =>$recensione_form,
 		'pagina_precedente' =>$Pagina_precedente,
-		'codice_prodotto' =>$Codice,		
+		'codice_prodotto' =>$Codice,
+		'query_string' =>$query_string,
+		'messaggio' =>$messaggio,		
 	};
 }
 print $cgi->header('text/html');

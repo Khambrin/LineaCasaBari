@@ -4,10 +4,10 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Linea Casa Bari - Prodotti</title>
-    <meta name="title" content="Linea Casa Bari - Prodotti" />
-    <meta name="description" content="Pagina dei prodotti acquistabili nel negozio Linea Casa Bari" />
-    <meta name="keywords" content="piatti, bicchieri, posate, porcellane, liste nozze, vasi, lampade, paralumi, prodotti, descrizione, immagini, compera, carrello " />
+    <title>Linea Casa Bari - Prodotto</title>
+    <meta name="title" content="Linea Casa Bari - Prodotto" />
+    <meta name="description" content="Pagina del singolo prodotto acquistabile nel negozio Linea Casa Bari" />
+    <meta name="keywords" content="prodotti, descrizione, immagini, compera, carrello " />
     <meta name="language" content="italian it" />
     <meta name="author" content="Alessandro Bari, Navid Taha, Alice Sasso, Lorenzo Ferrarin" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -127,7 +127,7 @@
 						<h2> Acquista prodotto </h2>
 					</li>
 					<li>
-					<form action="aggiungi_carrello.cgi" method="post" id="compra_prodotto">					
+					<form action="aggiungi_carrello.cgi[% query_string %]" method="post" id="compra_prodotto">					
 						<p> Quantit&agrave;: <span>
 						<select name="quantita">
 							<option value="1"> 1 </option>
@@ -145,8 +145,7 @@
 					</form>	
 					-->
 					<li>
-					<form action="aggiungi_desideri.cgi" id="prodotto_desideri">
-						<input type="hidden" name="codice_prodotto" value="[% codice_prodotto %]" />
+					<form action="aggiungi prodotto alla lista desideri" id="prodotto_desideri">
 						<p><input type="submit" value="Aggiungi alla lista desideri"/></p>
 					</form>
 					</li>

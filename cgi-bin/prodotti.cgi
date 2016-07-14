@@ -150,7 +150,7 @@ for (my $riga=0; $riga <= 2; $riga++)
 		$tot=$tot.$x;
 		my $x='<li class="immagine-prodotto"><img src="'."@prodotto_immagine[$index]".'"/></li>';
 		$tot=$tot.$x;
-		my $x='<li class="prezzo-prodotto"><h3>'."@prodotto_prezzo[$index]".'</h3></li>';
+		my $x='<li class="prezzo-prodotto"><h3>'."@prodotto_prezzo[$index]".' &#8364</h3></li>';
 		$tot=$tot.$x;
 		my $x='</a></ul></div>';
 		$tot=$tot.$x;

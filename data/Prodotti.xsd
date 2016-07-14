@@ -8,7 +8,7 @@
             <xsd:element name="Nome_visualizzato" type="xsd:string"/>
             <xsd:element name="Data_pubblicazione" type="xsd:date"/>
             <xsd:element name="Testo" type="xsd:string"/>
-            <xsd:element name="Voto_prodotto" type="xsd:float"/>
+            <xsd:element name="Voto_prodotto" type="xsd:int"/>
     		<xsd:element name="Voto_recensione" type="xsd:int"/>
 			<xsd:element name="Email_voto" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
     	</xsd:sequence>
