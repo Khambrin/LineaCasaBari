@@ -784,7 +784,7 @@ body
 
 #prodotti-vetrina
 {
-    background-color: white;
+    background-color: #E1E3E4;
     min-height: 20em;
     width: 100%;
 }
@@ -796,6 +796,7 @@ body
     width: 100%;
     text-align: center;
     line-height: 210%;
+    margin-top: 1em;
 }
 
 #prodotti-frecciaPaginaPrecedente 
@@ -890,7 +891,7 @@ body
 .riga 
 {
 	padding: 0.3em;
-	background-color: white;
+	background-color: #E1E3E4;
 }
 
 
@@ -898,7 +899,7 @@ body
 {
 	height: 13em;
 	vertical-align: middle;
-	background-color: #E1E3E4;
+	background-color: white;
 	padding: 1em;
 	text-align: center;
 	margin-bottom: 0.5em;
@@ -1251,7 +1252,7 @@ body
     }
 
     #prodotti-vetrina{
-        background-color: white;
+        background-color: #E1E3E4;
         min-height: 20em;
         width: 100%;
     }
@@ -1263,6 +1264,7 @@ body
         width: 78%;
         text-align: center;
         line-height: 220%;
+	margin-top: 1em;
     }
 
     #prodotti-frecciaPaginaPrecedente {
@@ -1358,7 +1360,7 @@ body
 	width: 100%;
 	height: 15em;
 	padding: 0.3em;
-	background-color: white;
+	background-color: #E1E3E4;
     }
 
 
@@ -1373,6 +1375,7 @@ body
 	margin-right: 0.825em;
 	margin-left: 0.825em;
 	margin-top: 0.6em;
+	background-color: white;
     }
 
     .prodotto-singolo ul {
