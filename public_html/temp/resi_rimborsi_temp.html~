@@ -4,10 +4,10 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Linea Casa Bari - Account</title>
-    <meta name="title" content="Linea Casa Bari - Account" />
-    <meta name="description" content="Pagina per gestire l'account del negozio Linea Casa Bari" />
-    <meta name="keywords" content="account, ordini, pagamenti, impostazioni, indirizzi, gestione" />
+    <title>Linea Casa Bari - Resi e Rimborsi</title>
+    <meta name="title" content="Linea Casa Bari - Resi e Rimborsi"/>
+    <meta name="description" content="Informativa su resi e rimborsi Linea Casa Bari" />
+    <meta name="keywords" content="piatti, bicchieri, posate, porcellane, liste nozze, vasi, lampade, paralumi, resi, rimborsi" />
     <meta name="language" content="italian it" />
     <meta name="author" content="Alessandro Bari, Navid Taha, Alice Sasso, Lorenzo Ferrarin" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,8 +29,7 @@
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
 				[% IF sessione == 'true' %]
 				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
-				<li><a href="check_session.cgi?carrello">Carrello</a></li>
-				<li><a href="check_session.cgi?lista_desideri">Lista dei Desideri</a></li>				
+				<li><a href="check_session.cgi?carrello">Carrello</a></li>				
 				[% IF amministratore == 'true' %]
 				<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 				[% END %]
@@ -57,18 +56,18 @@
     
     <div id="menu">
         <span id="path">
-            Ti trovi in: Account</span>
+            Ti trovi in: Resi e Rimborsi
+        </span>
     
         <div id="nav">
             <ul>
-                <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
+				<li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
                 <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
                 <li><a href="stampa_annunci.cgi">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
                 [% IF sessione == 'true' %]
-				<li class="current">Account</li>
+				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
 				<li><a href="check_session.cgi?carrello">Carrello</a></li>
-				<li><a href="check_session.cgi?lista_desideri">Lista dei Desideri</a></li>
 				[% IF amministratore == 'true' %]
 				<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 				[% END %]
@@ -84,64 +83,15 @@
 		</div>
     </div>
     <div id="content">
-        <div id="col">
-            <div id="left-col">
-                <ul>
-                    <li class="title_link"><a href="check_session.cgi?i_miei_ordini">I miei ordini</a></li>
-                    <li class="subtitle_link">Guarda e modifica gli ordini recenti</li>
-                </ul>
-                <ul id="left-menu-active">
-                    <li class="title_link">Impostazioni account</li>
-                    <li class="subtitle_link">Gestione password, e-mail</li>
-                </ul>
-                <ul>
-                    <li class="title_link"><a href="gestione_indirizzi_script.cgi?aggiungi">Indirizzi</a></li>
-                    <li class="subtitle_link">Gestisci gli indirizzi di spedizione</li>
-                </ul>
-            </div><div id="right-col">
-				<div class="messaggio-error">[% log %]</div>
-				<div class="form-container2">
-					<h2>Modifica il tuo account</h2>
-					<form method="post" action="edit_account.cgi" enctype="multipart/form-data">
-					<ul class="form-Block">
-						<li>
-                            <label class="account-emailLabel">Email:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vemail %]</div><div class="inputRight"></div>
-                        </li>
-						<li>
-                            <label class="account-nomeLabel">Nome:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vnome %]</div><div class="inputRight"></div>
-                        </li>
-						<li>
-                            <label class="account-cognomeLabel">Cognome:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vcognome %]</div><div class="inputRight"></div>
-                        </li>
-						<li>
-                            <label class="account-telefonoLabel">Telefono:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vtelefono %]</div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="account-passwordCorrenteLabel">Password corrente:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="password" name="vecchia_password"/></div><div class="inputRight"></div>	
-                        </li>
-
-                        <li>
-                            <label class="account-passwordNuovaLabel">Nuova Password:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="password" name="nuova_password" /></div><div class="inputRight"></div>	
-                        </li>
-			
-                    </ul>
-                    <div>
-                        <button class="button" type="submit">Modifica Account</button>
-                    </div>
-					<div>[% hidden %]</div>
-					<div class="messaggio-error">[% messaggio %]</div>
-                </form>
-                </div>
-            </div>        
-        </div>
+        <h2 id="resi_rimb_term_sped-h2">Resi e Rimborsi</h2>
+        <div id="info-container">
+            <h3>Diritto di recesso</h3>
+            <div class="info-text">
+                <p>Si ha il diritto di recedere dal contratto, indicando le ragioni, entro 10 giorni dal ricevimento del prodotto o nel caso di acquisto di pi&ugrave; prodotti consegnati separatamente con un solo ordine, 10 giorni dal ricevimento dell'ultimo prodotto. Per esercitare il diritto di recesso si deve compilare un modulo cliccando su &quot;recedi&quot; accanto all' ordine dal quale si intende recedere. A seguito di questa richiesta sar&agrave; mandata una mail di conferma di esercizio del recesso, all'indirizzo mail usato per registrarsi, contenente il modulo di reso da inserire nel pacco e le istruzioni per procedere alla restituzione del prodotto. Si ricorda di inserire il modulo di reso compilato nel pacco insieme al prodotto e di spedirlo a: Linea Casa Bari, Corso Umberto 1, 51 Albaredo d'Adige 37041 (VR) - ITALIA. Per rispettare il termine di recesso, &egrave; sufficiente inviare la richiesta tramite il form prima della scadenza del periodo di recesso. In alternativa al reso online pu&ograve; essere inviata una dichiarazione esplicita, tramite e-mail a lineacasabari@gmail.com, della decisione di recessione allegando il modulo di recesso. Se recedi saranno rimborsati i pagamenti effettuati, comprensivi dei costi di consegna (ad eccezione dei costi supplementari derivanti dall'eventuale scelta di un tipo di consegna diverso dal tipo meno costoso di consegna standard offerta), senza indebito ritardo e in ogni caso non oltre 14 giorni da quando la nostra sede ricever&agrave; la decisione di recedere. Detti rimborsi saranno effettuati utilizzando lo stesso mezzo di pagamento usato per la transazione iniziale, salvo la richiesta esplicita di rimborso su diverso mezzo di pagamento, in tale caso saranno a vostro carico eventuali costi aggiuntivi derivanti dal diverso mezzo di pagamento. Il rimborso pu&ograve; essere sospeso fino al ricevimento dei beni oppure fino all&rsquo;avvenuta dimostrazione da parte vostra di aver rispedito i beni. Se il prodotto &egrave; stato ricevuto, si &egrave; pregati di restituirlo alla nostra sede senza indebito ritardo e, in ogni caso, entro 14 giorni dal giorno in cui &egrave; stato comunicato il recesso. Il termine &egrave; rispettato se vengono rispediti i beni prima della scadenza del periodo di 14 giorni. I costi diretti per la restituzione dei beni saranno a vostro carico. Si &egrave; ritenuti responsabili solo della diminuzione del valore dei beni risultante da una manipolazione diversa da quella necessaria per stabilirne la natura, le caratteristiche ed il funzionamento.</p>
+            </div>            
+        </div>        
     </div>
-
+    
     <div id="footer">
         <a href="#header">
             <span id="torna-su">
@@ -163,20 +113,19 @@
                 <ul>
                     <li><a href="check_session.cgi?la_nostra_storia">La nostra Storia</a></li>
                     <li><a href="check_session.cgi?termini_spedizione">Termini e Spedizione</a></li>
-                    <li><a href="check_session.cgi?resi_rimborsi">Resi e Rimborsi</a></li>
+                    <li class="current">Resi e Rimborsi</li>
                 </ul>
             </div>
 
             <div class="footer-block">
                 <ul>
-                    <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
+					<li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
 					<li><a href="check_session.cgi?prodotti">Prodotti</a></li>
 					<li><a href="stampa_annunci.cgi">Annunci</a></li>
 					<li><a href="check_session.cgi?contattaci">Contattaci</a></li>
 					[% IF sessione == 'true' %]
-					<li class="current">Account</li>
+					<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
 					<li><a href="check_session.cgi?carrello">Carrello</a></li>
-					<li><a href="check_session.cgi?lista_desideri">Lista dei Desideri</a></li>
 					[% IF amministratore == 'true' %]
 					<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 					[% END %]
@@ -191,15 +140,24 @@
             <div id="last-footer-block">
                 <ul>
                     <li>
-                        <form id="newsletter">
-                            <div class="inputLeft"></div><div id="newsletterInputMiddle"><input id="newsletter-input" type="text"/></div><div class="inputRight"></div>
+                        
+			[% IF messaggio_newsletter != 'false' %]
+			<div><p>[% messaggio_newletter %]</p></div>
+			[% END %]
+			[% IF iscrizione_avvenuta != 'false' %]
+			<div>[% iscrizione_avvenuta %]</div>
+			[% END %]
+			<form id="newsletter" method="get" action="add_newsletter.cgi" enctype="text/plain">
+                            <div class="inputLeft"></div><div id="newsletterInputMiddle"><input id="newsletter-input" type="text" name="iscrizione"/></div><div class="inputRight"></div>
                             <div id="newsletter-buttonContainer">
                                 <input id="newsletter-button" type="submit" value=""/>
                             </div>
+<input class= "input" type="hidden" name="pagina_nl" value="resi_rimborsi_temp.html"/>
                         </form>
+    
                     </li>
                     <li>
-                        <a  id="facebook-link" href="facebook.html">
+                        <a  id="facebook-link" href="https://www.facebook.com/lineacasabari/">
                             <span id="facebook-button"></span>
                         </a>
                     </li>

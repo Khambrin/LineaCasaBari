@@ -25,14 +25,13 @@
             <ul>
                 <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
                 <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
-                <li><a href="stampa_annunci.cgi">Annunci</a></li>
+                <li><a href="check_session.cgi?annunci">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
 				[% IF sessione == 'true' %]
 				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
-				<li><a href="check_session.cgi?carrello">Carrello</a></li>
-				<li><a href="check_session.cgi?lista_desideri">Lista dei Desideri</a></li>				
+				<li><a href="check_session.cgi?carrello">Carrello</a></li>				
 				[% IF amministratore == 'true' %]
-				<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
+				<li class="current"><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 				[% END %]
 				<li><a href="logout_script.cgi">Logout</a></li>
 				[% ELSE %]
@@ -68,9 +67,8 @@
                 [% IF sessione == 'true' %]
 				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
 				<li><a href="check_session.cgi?carrello">Carrello</a></li>
-				<li><a href="check_session.cgi?lista_desideri">Lista dei Desideri</a></li>
 				[% IF amministratore == 'true' %]
-				<li class="current">Gestione sito</li>
+				<li class="current"><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 				[% END %]
 				<li><a href="logout_script.cgi">Logout</a></li>
 				[% ELSE %]
@@ -90,35 +88,109 @@
                     <li class="title_link"><a href="check_session.cgi?togli_utenti">Togli utenti</a></li>
                     <li class="subtitle_link">Elimina un utente iscritto</li>
                 </ul>
-                <ul>
-                    <li class="title_link"><a href="check_session.cgi?gestione_prodotti">Gestione prodotti</a></li>
+                <ul id="left-menu-active">
+                    <li class="title_link">Gestione prodotti</li>
                     <li class="subtitle_link">Togli, aggiungi e modifica i prodotti</li>
-                </ul><ul id="left-menu-active"><li class="title_link">Gestione ordini</li><li class="subtitle_link">Visualizza info e modifica gli ordini</li></ul>
-                
+                </ul>
+                <ul>
+                    <li class="title_link"><a href="check_session.cgi?gestione_ordini">Gestione ordini</a></li>
+                    <li class="subtitle_link">Visualizza info e modifica gli ordini</li>
+                </ul>
                 <ul>
                     <li class="title_link"><a href="check_session.cgi?gestione_annunci">Gestione annunci</a></li>
                     <li class="subtitle_link">Togli, aggiungi e modifica gli annunci</li>
                 </ul>
             </div><div id="right-col">
-                <form method="post" action="../cgi-bin/ricerca_ordini.cgi">
-                    <ul class="form-container">
-						<li>
-                            <div id="ordini-cerca"><label>Cerca un ordine:</label>
-                        	<div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="codice" type="text"/></div><div class="inputRight"></div>
-                        	</div>
-						</li
+                <div id="sub_menu">
+                    [% IF pagina == 'aggiungi' %]<div class="sub_menu_block_active"><span class="sub_menu_text_active">Aggiungi prodotto</span></div><a href="gestione_prodotti_script.cgi?rimuovi_modifica"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica prodotto</span></div></a>
+                    [% ELSIF pagina == 'rimuovi_modifica' %]<a href="gestione_prodotti_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi prodotto</span></div></a><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica prodotto</span></div>[% END %]
+                </div>
+            	[% IF pagina == 'aggiungi' %]
+            	<div class="form-container2">
+					<form method="post" action="aggiungi_prodotto_form.cgi" enctype="multipart/form-data">
+                    <ul class="form-Block">
+                        <li>
+                            <label>Nome:</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="nome"/></div><div class="inputRight"></div>
+                        </li>
+                        <li>
+                            <label>Prezzo:</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="prezzo"/></div><div class="inputRight"></div>
+                        </li>
+                        <li>
+                            <label id="prodotto-categoriaLabel">Categoria:</label>
+                            <select name="categoria">
+                                <option value="lista_nozze">Lista nozze</option>
+                                <option value="porcellane">Porcellane</option>
+                                <option value="paralumi">Paralumi</option>
+                                <option value="pentole">Pentole</option>
+                                <option value="per_la_tavola">Per la tavola</option>
+                                <option value="tovaglie">Tovaglie</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label>Descrizione:</label>
+                        </li>
+                        <li>
+                            <textarea class="gestione_textarea" name="descrizione"></textarea>
+                        </li>
+                        <li>
+                            <label>Tag 1:</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag1"/></div><div class="inputRight"></div>
+                        </li>
+                        <li>
+                            <label>Tag 2:</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag2"/></div><div class="inputRight"></div>
+                        </li>
+                        <li>
+                            <label>Tag 3:</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag3"/></div><div class="inputRight"></div>
+                        </li>
+                        <li>
+                            <label>Tag 4:</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag4"/></div><div class="inputRight"></div>
+                        </li>
+                        <li>
+                            <div>
+                                <label>Inserisci immagine:</label>
+                            </div>
+                            <input type="file" name="immagine"/>
+                        </li>
                     </ul>
                     <div>
-							<button class="button" type="submit">Cerca</button>
-					</div>
+                        <button class="button" type="submit">Aggiungi prodotto</button>
+                    </div>
+					<div>[% hidden %]</div>
+					<div class="messaggio-error">[% messaggio%]</div>
                 </form>
-                [% IF messaggio_ordini != 'false' %]<div class="messaggio-error">[% messaggio_ordini %]</div>[% END %]
-				[% lista_ordini %]
+				[% ELSIF pagina == 'rimuovi_modifica' %]
+                    <form method="post" action="ricerca_prodotto.cgi">
+						<ul class="form-Block">
+							<li>
+								<label>Cerca un prodotto:</label>
+								<div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="codice" type="text"/></div><div class="inputRight"></div>
+                            </li>
+						</ul>
+						<div>
+							<button class="button" type="submit">Cerca</button>
+						</div>     
+                    </form>
+                    [% IF messaggio!= 'false' %]<div class="messaggio-error">[% messaggio%]</div>[% END %]
+					[% lista_prodotti %]
+			
 
-            </div>        
+				[% ELSIF messaggio_newsletter != 'false' %]<div><p>Attenzione: obbligatorio inserire un indirizzo per l'iscrizione alla newsletter </p></div>
+				[% ELSIF iscrizione_avvenuta != 'false' %] <div><p>Iscritto con successo l'indirizzo alla newsletter </p></div>
+		   [% END %]
+
+			
+            </div>  
+      
         </div>
-    </div>
 
+	
+    </div>
+    </div>
     <div id="footer">
         <a href="#header">
             <span id="torna-su">
@@ -146,16 +218,15 @@
 
             <div class="footer-block">
                 <ul>
-                    <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
+					<li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
 					<li><a href="check_session.cgi?prodotti">Prodotti</a></li>
 					<li><a href="stampa_annunci.cgi">Annunci</a></li>
 					<li><a href="check_session.cgi?contattaci">Contattaci</a></li>
 					[% IF sessione == 'true' %]
 					<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
 					<li><a href="check_session.cgi?carrello">Carrello</a></li>
-					<li><a href="check_session.cgi?lista_desideri">Lista dei Desideri</a></li>
 					[% IF amministratore == 'true' %]
-					<li class="current">Gestione sito</li>
+					<li class="current"><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 					[% END %]
 					<li><a href="logout_script.cgi">Logout</a></li>
 					[% ELSE %]
@@ -169,7 +240,7 @@
                 <ul>
                     <li>
                         
-			[% IF messaggio_newsletter != 'false' %]
+			[% IF messaggio_newletter != 'false' %]
 			<div><p>[% messaggio_newsletter %]</p></div>
 			[% END %]
 			[% IF iscrizione_avvenuta != 'false' %]
@@ -181,7 +252,7 @@
                                 <input id="newsletter-button" type="submit" value=""/>
                             </div>
 
-				<input class= "input" type="hidden" name="pagina_nl" value="gestione_ordini_temp.html"/>
+				<input class= "input" type="hidden" name="pagina_nl" value="gestione_prodotti_script.cgi"/>
 
 
                         </form>

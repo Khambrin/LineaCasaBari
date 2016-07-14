@@ -29,8 +29,7 @@
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
 				[% IF sessione == 'true' %]
 				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
-				<li><a href="check_session.cgi?carrello">Carrello</a></li>
-				<li><a href="check_session.cgi?lista_desideri">Lista dei Desideri</a></li>				
+				<li><a href="check_session.cgi?carrello">Carrello</a></li>				
 				[% IF amministratore == 'true' %]
 				<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 				[% END %]
@@ -68,7 +67,6 @@
                 [% IF sessione == 'true' %]
 				<li class="current">Account</li>
 				<li><a href="check_session.cgi?carrello">Carrello</a></li>
-				<li><a href="check_session.cgi?lista_desideri">Lista dei Desideri</a></li>
 				[% IF amministratore == 'true' %]
 				<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 				[% END %]
@@ -86,12 +84,12 @@
     <div id="content">
         <div id="col">
             <div id="left-col">
-                <ul>
-                    <li class="title_link"><a href="check_session.cgi?i_miei_ordini">I miei ordini</a></li>
+                <ul id="left-menu-active">
+                    <li class="title_link">I miei ordini</li>
                     <li class="subtitle_link">Guarda e modifica gli ordini recenti</li>
                 </ul>
-                <ul id="left-menu-active">
-                    <li class="title_link">Impostazioni account</li>
+                <ul>
+                    <li class="title_link"><a href="gestione_account.cgi">Impostazioni account</a></li>
                     <li class="subtitle_link">Gestione password, e-mail</li>
                 </ul>
                 <ul>
@@ -99,45 +97,9 @@
                     <li class="subtitle_link">Gestisci gli indirizzi di spedizione</li>
                 </ul>
             </div><div id="right-col">
-				<div class="messaggio-error">[% log %]</div>
-				<div class="form-container2">
-					<h2>Modifica il tuo account</h2>
-					<form method="post" action="edit_account.cgi" enctype="multipart/form-data">
-					<ul class="form-Block">
-						<li>
-                            <label class="account-emailLabel">Email:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vemail %]</div><div class="inputRight"></div>
-                        </li>
-						<li>
-                            <label class="account-nomeLabel">Nome:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vnome %]</div><div class="inputRight"></div>
-                        </li>
-						<li>
-                            <label class="account-cognomeLabel">Cognome:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vcognome %]</div><div class="inputRight"></div>
-                        </li>
-						<li>
-                            <label class="account-telefonoLabel">Telefono:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vtelefono %]</div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="account-passwordCorrenteLabel">Password corrente:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="password" name="vecchia_password"/></div><div class="inputRight"></div>	
-                        </li>
-
-                        <li>
-                            <label class="account-passwordNuovaLabel">Nuova Password:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="password" name="nuova_password" /></div><div class="inputRight"></div>	
-                        </li>
-			
-                    </ul>
-                    <div>
-                        <button class="button" type="submit">Modifica Account</button>
-                    </div>
-					<div>[% hidden %]</div>
-					<div class="messaggio-error">[% messaggio %]</div>
-                </form>
-                </div>
+				[% IF messaggio_ordini != 'false' %]<div class="messaggio-error">[% messaggio_ordini %]</div>[% END %]
+				[% lista_ordini %]
+                
             </div>        
         </div>
     </div>
@@ -176,7 +138,6 @@
 					[% IF sessione == 'true' %]
 					<li class="current">Account</li>
 					<li><a href="check_session.cgi?carrello">Carrello</a></li>
-					<li><a href="check_session.cgi?lista_desideri">Lista dei Desideri</a></li>
 					[% IF amministratore == 'true' %]
 					<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 					[% END %]

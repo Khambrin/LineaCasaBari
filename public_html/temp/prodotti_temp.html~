@@ -4,10 +4,10 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Linea Casa Bari - Account</title>
-    <meta name="title" content="Linea Casa Bari - Account" />
-    <meta name="description" content="Pagina per gestire l'account del negozio Linea Casa Bari" />
-    <meta name="keywords" content="account, ordini, pagamenti, impostazioni, indirizzi, gestione" />
+    <title>Linea Casa Bari - Prodotti</title>
+    <meta name="title" content="Linea Casa Bari - Prodotti" />
+    <meta name="description" content="Pagina dei prodotti acquistabili nel negozio Linea Casa Bari" />
+    <meta name="keywords" content="piatti, bicchieri, posate, porcellane, liste nozze, vasi, lampade, paralumi, prodotti, descrizione, immagini, compera, carrello " />
     <meta name="language" content="italian it" />
     <meta name="author" content="Alessandro Bari, Navid Taha, Alice Sasso, Lorenzo Ferrarin" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,7 +16,6 @@
     <script type="text/javascript" src="../jquery-1.12.0.js"></script>
     <script type="text/javascript" src="../link_skipper.js"></script>
 </head>
-
 <body>
     <div id="menu-drawer">
         <input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
@@ -29,8 +28,7 @@
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
 				[% IF sessione == 'true' %]
 				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
-				<li><a href="check_session.cgi?carrello">Carrello</a></li>
-				<li><a href="check_session.cgi?lista_desideri">Lista dei Desideri</a></li>				
+				<li><a href="check_session.cgi?carrello">Carrello</a></li>				
 				[% IF amministratore == 'true' %]
 				<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 				[% END %]
@@ -57,18 +55,17 @@
     
     <div id="menu">
         <span id="path">
-            Ti trovi in: Account</span>
+            Ti trovi in: Prodotti</span>
     
         <div id="nav">
             <ul>
                 <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
-                <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
+                <li class="current">Prodotti</li>
                 <li><a href="stampa_annunci.cgi">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
                 [% IF sessione == 'true' %]
-				<li class="current">Account</li>
+				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
 				<li><a href="check_session.cgi?carrello">Carrello</a></li>
-				<li><a href="check_session.cgi?lista_desideri">Lista dei Desideri</a></li>
 				[% IF amministratore == 'true' %]
 				<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 				[% END %]
@@ -83,65 +80,52 @@
 			<span>[% email %]</span>
 		</div>
     </div>
-    <div id="content">
-        <div id="col">
-            <div id="left-col">
-                <ul>
-                    <li class="title_link"><a href="check_session.cgi?i_miei_ordini">I miei ordini</a></li>
-                    <li class="subtitle_link">Guarda e modifica gli ordini recenti</li>
-                </ul>
-                <ul id="left-menu-active">
-                    <li class="title_link">Impostazioni account</li>
-                    <li class="subtitle_link">Gestione password, e-mail</li>
-                </ul>
-                <ul>
-                    <li class="title_link"><a href="gestione_indirizzi_script.cgi?aggiungi">Indirizzi</a></li>
-                    <li class="subtitle_link">Gestisci gli indirizzi di spedizione</li>
-                </ul>
-            </div><div id="right-col">
-				<div class="messaggio-error">[% log %]</div>
-				<div class="form-container2">
-					<h2>Modifica il tuo account</h2>
-					<form method="post" action="edit_account.cgi" enctype="multipart/form-data">
-					<ul class="form-Block">
-						<li>
-                            <label class="account-emailLabel">Email:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vemail %]</div><div class="inputRight"></div>
-                        </li>
-						<li>
-                            <label class="account-nomeLabel">Nome:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vnome %]</div><div class="inputRight"></div>
-                        </li>
-						<li>
-                            <label class="account-cognomeLabel">Cognome:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vcognome %]</div><div class="inputRight"></div>
-                        </li>
-						<li>
-                            <label class="account-telefonoLabel">Telefono:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vtelefono %]</div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="account-passwordCorrenteLabel">Password corrente:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="password" name="vecchia_password"/></div><div class="inputRight"></div>	
-                        </li>
-
-                        <li>
-                            <label class="account-passwordNuovaLabel">Nuova Password:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="password" name="nuova_password" /></div><div class="inputRight"></div>	
-                        </li>
-			
-                    </ul>
-                    <div>
-                        <button class="button" type="submit">Modifica Account</button>
-                    </div>
-					<div>[% hidden %]</div>
-					<div class="messaggio-error">[% messaggio %]</div>
-                </form>
+    <div id="searchBar">
+        <div id="searchContainer">
+            <form id="commonSearch" method="post" action="ricerca.cgi">
+                <div id="commonSearchInputLeft"></div><div id="commonSearchInputMiddle"><input id="commonSearchInput" type="text"/></div><div id="commonSearchInputRight"></div>
+                <div id="commonSearchButtonContainer">
+                    <input id="commonSearchButton" type="submit" value=""/>
                 </div>
-            </div>        
+            </form>
         </div>
     </div>
-
+    
+    <div id="content">
+        <div id="prodotti-resultInfoBar">
+            <form id="prodotti-searchSortForm" method="post">
+              <div id="prodotti-searchSortFormLabel">
+                 Ordina per
+              </div>
+              <div id="prodotti-searchSortFormSelect">
+                 <select>
+                 <option value="rilevanza">Rilevanza</option>
+                 <option value="prezzo_crescente">Prezzo crescente</option>
+                 <option value="prezzo_decrescente">Prezzo decrescente</option>
+                 <option value="media_recensioni_clienti">Media recensioni clienti</option>
+                 <option value="ultimi_arrivi">Ultimi arrivi</option>
+                 </select>
+              </div>
+            </form>
+          </div>
+        <div id="prodotti-centralContainer">
+           <div id="prodotti-rightBlock">
+                <div id="prodotti-categorie">
+			[% stampa_categorie %]
+                </div>
+            
+                <div id="prodotti-vetrina">
+			[% stampa_prodotti %]
+                </div>
+            
+                <div id="prodotti-pageSelector">
+			[% stampa_pagine %]
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
     <div id="footer">
         <a href="#header">
             <span id="torna-su">
@@ -170,13 +154,12 @@
             <div class="footer-block">
                 <ul>
                     <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
-					<li><a href="check_session.cgi?prodotti">Prodotti</a></li>
+					<li class="current">Prodotti</li>
 					<li><a href="stampa_annunci.cgi">Annunci</a></li>
 					<li><a href="check_session.cgi?contattaci">Contattaci</a></li>
 					[% IF sessione == 'true' %]
-					<li class="current">Account</li>
+					<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
 					<li><a href="check_session.cgi?carrello">Carrello</a></li>
-					<li><a href="check_session.cgi?lista_desideri">Lista dei Desideri</a></li>
 					[% IF amministratore == 'true' %]
 					<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 					[% END %]
@@ -191,18 +174,28 @@
             <div id="last-footer-block">
                 <ul>
                     <li>
-                        <form id="newsletter">
-                            <div class="inputLeft"></div><div id="newsletterInputMiddle"><input id="newsletter-input" type="text"/></div><div class="inputRight"></div>
+                        
+			[% IF messaggio_newsletter != 'false' %]
+			<div><p>[% messaggio_newsletter %]</p></div>
+			[% END %]
+			[% IF iscrizione_avvenuta != 'false' %]
+			<div>[% iscrizione_avvenuta %]</div>
+			[% END %]
+			<form id="newsletter" method="get" action="add_newsletter.cgi" enctype="text/plain">
+                            <div class="inputLeft"></div><div id="newsletterInputMiddle"><input id="newsletter-input" type="text" name="iscrizione"/></div><div class="inputRight"></div>
                             <div id="newsletter-buttonContainer">
                                 <input id="newsletter-button" type="submit" value=""/>
                             </div>
+<input class= "input" type="hidden" name="pagina_nl" value="prodotti_temp.html"/>
                         </form>
+    
                     </li>
                     <li>
-                        <a  id="facebook-link" href="facebook.html">
+                        <a  id="facebook-link" href="https://www.facebook.com/lineacasabari/">
                             <span id="facebook-button"></span>
                         </a>
                     </li>
+
                     <li>
                         <div id="w3c-validation">
                             

@@ -29,7 +29,8 @@
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
 				[% IF sessione == 'true' %]
 				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
-				<li><a href="check_session.cgi?carrello">Carrello</a></li>				
+				<li><a href="check_session.cgi?carrello">Carrello</a></li>
+				<li><a href="check_session.cgi?lista_desideri">Lista dei Desideri</a></li>				
 				[% IF amministratore == 'true' %]
 				<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 				[% END %]
@@ -67,6 +68,7 @@
                 [% IF sessione == 'true' %]
 				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
 				<li><a href="check_session.cgi?carrello">Carrello</a></li>
+				<li><a href="check_session.cgi?lista_desideri">Lista dei desideri</a></li>
 				[% IF amministratore == 'true' %]
 				<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 				[% END %]
@@ -185,6 +187,7 @@
 					[% IF sessione == 'true' %]
 					<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
 					<li><a href="check_session.cgi?carrello">Carrello</a></li>
+					<li><a href="check_session.cgi?lista_desideri">Lista dei Desideri</a></li>
 					[% IF amministratore == 'true' %]
 					<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 					[% END %]

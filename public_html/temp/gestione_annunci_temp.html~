@@ -21,18 +21,17 @@
     <div id="menu-drawer">
         <input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
         <label for="drawer-toggle" id="drawer-toggle-label"></label>
-       <div id="drawer">
+        <div id="drawer">
             <ul>
                 <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
                 <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
-                <li><a href="stampa_annunci.cgi">Annunci</a></li>
+                <li><a href="check_session.cgi?annunci">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
 				[% IF sessione == 'true' %]
 				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
-				<li><a href="check_session.cgi?carrello">Carrello</a></li>
-				<li><a href="check_session.cgi?lista_desideri">Lista dei Desideri</a></li>				
+				<li><a href="check_session.cgi?carrello">Carrello</a></li>				
 				[% IF amministratore == 'true' %]
-				<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
+				<li class="current"><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 				[% END %]
 				<li><a href="logout_script.cgi">Logout</a></li>
 				[% ELSE %]
@@ -57,7 +56,7 @@
     
     <div id="menu">
         <span id="path">
-            Ti trovi in: Account</span>
+            Ti trovi in: Gestione sito</span>
     
         <div id="nav">
             <ul>
@@ -66,11 +65,10 @@
                 <li><a href="stampa_annunci.cgi">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
                 [% IF sessione == 'true' %]
-				<li class="current">Account</li>
+				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
 				<li><a href="check_session.cgi?carrello">Carrello</a></li>
-				<li><a href="check_session.cgi?lista_desideri">Lista dei Desideri</a></li>
 				[% IF amministratore == 'true' %]
-				<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
+				<li class="current">Gestione sito</li>
 				[% END %]
 				<li><a href="logout_script.cgi">Logout</a></li>
 				[% ELSE %]
@@ -87,57 +85,97 @@
         <div id="col">
             <div id="left-col">
                 <ul>
-                    <li class="title_link"><a href="check_session.cgi?i_miei_ordini">I miei ordini</a></li>
-                    <li class="subtitle_link">Guarda e modifica gli ordini recenti</li>
-                </ul>
-                <ul id="left-menu-active">
-                    <li class="title_link">Impostazioni account</li>
-                    <li class="subtitle_link">Gestione password, e-mail</li>
+                    <li class="title_link"><a href="check_session.cgi?togli_utenti">Togli utenti</a></li>
+                    <li class="subtitle_link">Elimina un utente iscritto</li>
                 </ul>
                 <ul>
-                    <li class="title_link"><a href="gestione_indirizzi_script.cgi?aggiungi">Indirizzi</a></li>
-                    <li class="subtitle_link">Gestisci gli indirizzi di spedizione</li>
+                    <li class="title_link"><a href="check_session.cgi?gestione_prodotti">Gestione prodotti</a></li>
+                    <li class="subtitle_link">Togli, aggiungi e modifica i prodotti</li>
+                </ul>
+                <ul>
+                    <li class="title_link"><a href="check_session.cgi?gestione_ordini">Gestione ordini</a></li>
+                    <li class="subtitle_link">Visualizza info e modifica gli ordini</li>
+                </ul>
+                <ul id="left-menu-active">
+						<li class="title_link">Gestione annunci</li>
+						<li class="subtitle_link">Togli, aggiungi e modifica gli annunci</li>
                 </ul>
             </div><div id="right-col">
-				<div class="messaggio-error">[% log %]</div>
-				<div class="form-container2">
-					<h2>Modifica il tuo account</h2>
-					<form method="post" action="edit_account.cgi" enctype="multipart/form-data">
-					<ul class="form-Block">
-						<li>
-                            <label class="account-emailLabel">Email:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vemail %]</div><div class="inputRight"></div>
-                        </li>
-						<li>
-                            <label class="account-nomeLabel">Nome:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vnome %]</div><div class="inputRight"></div>
-                        </li>
-						<li>
-                            <label class="account-cognomeLabel">Cognome:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vcognome %]</div><div class="inputRight"></div>
-                        </li>
-						<li>
-                            <label class="account-telefonoLabel">Telefono:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vtelefono %]</div><div class="inputRight"></div>
+                <div id="sub_menu">
+                [% IF pagina == 'aggiungi' %]
+					<div class="sub_menu_block_active"><span class="sub_menu_text_active">Aggiungi annuncio</span></div><a href="modifica_annunci.cgi?edit"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica annuncio</span></div></a>
+                [% ELSIF pagina == 'modifica_annunci' %]
+					<a href="gestione_annunci_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi annuncio</span></div></a><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica annuncio</span></div>
+				[% ELSIF pagina == 'edit' %]
+					<a href="gestione_annunci_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi annuncio</span></div></a><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica annuncio</span></div>[% END %]
+                
+                </div>
+                [% IF pagina == 'aggiungi' %]
+                <div class="form-container2">
+					<h2>Aggiungi un annuncio</h2>
+                <form method="post" action="aggiungi_annuncio_form.cgi" enctype="multipart/form-data">
+                    <ul class="form-Block">
+                        <li>
+                            <label class="annunci-titoloLabel">Titolo:</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="titolo"/></div><div class="inputRight"></div>
                         </li>
                         <li>
-                            <label class="account-passwordCorrenteLabel">Password corrente:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="password" name="vecchia_password"/></div><div class="inputRight"></div>	
+                            <label class="annunci-testoLabel">Testo:</label>
                         </li>
-
                         <li>
-                            <label class="account-passwordNuovaLabel">Nuova Password:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="password" name="nuova_password" /></div><div class="inputRight"></div>	
+                            <textarea class="gestione_textarea" name="testo"></textarea>
                         </li>
-			
+                        <li>
+                            <div class="gestione-file_label">
+                                <label class="annunci-immagineLabel">Inserisci immagine:</label>
+                            </div>
+                            <input type="file" name="immagine"/>
+                        </li>
                     </ul>
                     <div>
-                        <button class="button" type="submit">Modifica Account</button>
+                        <button class="button" type="submit">Aggiungi annuncio</button>
                     </div>
+					
 					<div>[% hidden %]</div>
 					<div class="messaggio-error">[% messaggio %]</div>
                 </form>
                 </div>
+				[% ELSIF pagina == 'edit' %]
+					
+				<div class="form-container2">
+					<h2>Rimuovi o Modifica un annuncio</h2>
+                <form method="post" action="edit_annuncio.cgi" enctype="multipart/form-data">
+                    <ul class="form-Block">
+                        <li>
+                            <label class="annunci-titoloLabel">Titolo:</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vtitolo %]</div><div class="inputRight"></div>
+                        </li>
+                        <li>
+                            <label class="annunci-testoLabel">Testo:</label>
+                        </li>
+                        <li>
+                            [% vcontenuto %]
+                        </li>
+                        <li>
+                            <div id="gestione-file_label">
+                                <label class="annunci-immagineLabel">Inserisci immagine:</label>
+                            </div>
+                            <input type="file" name="immagine"/>
+                        </li>
+						<div>[% oldtitolo %]</div>
+						<li>
+							<div>
+                        		<button class="button" type="submit">Modifica annuncio</button>
+							</div>
+						</li>
+                    </ul>
+					<div class="messaggio-error">[% error %]</div>
+					<div>[% hidden %]</div>
+					<div class="messaggio-error">[% messaggio %]</div>
+                </form>
+				[% ELSE %]
+					<span>[% lista_annunci %]</span>				
+				[% END %]
             </div>        
         </div>
     </div>
@@ -174,11 +212,10 @@
 					<li><a href="stampa_annunci.cgi">Annunci</a></li>
 					<li><a href="check_session.cgi?contattaci">Contattaci</a></li>
 					[% IF sessione == 'true' %]
-					<li class="current">Account</li>
+					<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
 					<li><a href="check_session.cgi?carrello">Carrello</a></li>
-					<li><a href="check_session.cgi?lista_desideri">Lista dei Desideri</a></li>
 					[% IF amministratore == 'true' %]
-					<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
+					<li class="current">Gestione sito</li>
 					[% END %]
 					<li><a href="logout_script.cgi">Logout</a></li>
 					[% ELSE %]
@@ -191,15 +228,27 @@
             <div id="last-footer-block">
                 <ul>
                     <li>
-                        <form id="newsletter">
-                            <div class="inputLeft"></div><div id="newsletterInputMiddle"><input id="newsletter-input" type="text"/></div><div class="inputRight"></div>
+                        
+			[% IF messaggio_newsletter != 'false' %]
+			<div><p>[% messaggio_newsletter %]</p></div>
+			[% END %]
+			[% IF iscrizione_avvenuta != 'false' %]
+			<div>[% iscrizione_avvenuta %]</div>
+			[% END %]
+			<form id="newsletter" method="get" action="add_newsletter.cgi" enctype="text/plain">
+                            <div class="inputLeft"></div><div id="newsletterInputMiddle"><input id="newsletter-input" type="text" name="iscrizione"/></div><div class="inputRight"></div>
                             <div id="newsletter-buttonContainer">
                                 <input id="newsletter-button" type="submit" value=""/>
                             </div>
+
+				<input class= "input" type="hidden" name="pagina_nl" value="gestione_annunci_temp.html"/>
+
+
                         </form>
+  
                     </li>
                     <li>
-                        <a  id="facebook-link" href="facebook.html">
+                        <a  id="facebook-link" href="https://www.facebook.com/lineacasabari/">
                             <span id="facebook-button"></span>
                         </a>
                     </li>

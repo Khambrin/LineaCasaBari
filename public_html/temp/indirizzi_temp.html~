@@ -29,8 +29,7 @@
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
 				[% IF sessione == 'true' %]
 				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
-				<li><a href="check_session.cgi?carrello">Carrello</a></li>
-				<li><a href="check_session.cgi?lista_desideri">Lista dei Desideri</a></li>				
+				<li><a href="check_session.cgi?carrello">Carrello</a></li>				
 				[% IF amministratore == 'true' %]
 				<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 				[% END %]
@@ -68,7 +67,6 @@
                 [% IF sessione == 'true' %]
 				<li class="current">Account</li>
 				<li><a href="check_session.cgi?carrello">Carrello</a></li>
-				<li><a href="check_session.cgi?lista_desideri">Lista dei Desideri</a></li>
 				[% IF amministratore == 'true' %]
 				<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 				[% END %]
@@ -90,54 +88,94 @@
                     <li class="title_link"><a href="check_session.cgi?i_miei_ordini">I miei ordini</a></li>
                     <li class="subtitle_link">Guarda e modifica gli ordini recenti</li>
                 </ul>
-                <ul id="left-menu-active">
-                    <li class="title_link">Impostazioni account</li>
+                <ul>
+                    <li class="title_link"><a href="gestione_account.cgi">Impostazioni account</a></li>
                     <li class="subtitle_link">Gestione password, e-mail</li>
                 </ul>
-                <ul>
-                    <li class="title_link"><a href="gestione_indirizzi_script.cgi?aggiungi">Indirizzi</a></li>
+                <ul id="left-menu-active">
+                    <li class="title_link">Indirizzi</li>
                     <li class="subtitle_link">Gestisci gli indirizzi di spedizione</li>
                 </ul>
             </div><div id="right-col">
-				<div class="messaggio-error">[% log %]</div>
-				<div class="form-container2">
-					<h2>Modifica il tuo account</h2>
-					<form method="post" action="edit_account.cgi" enctype="multipart/form-data">
-					<ul class="form-Block">
-						<li>
-                            <label class="account-emailLabel">Email:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vemail %]</div><div class="inputRight"></div>
-                        </li>
-						<li>
-                            <label class="account-nomeLabel">Nome:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vnome %]</div><div class="inputRight"></div>
-                        </li>
-						<li>
-                            <label class="account-cognomeLabel">Cognome:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vcognome %]</div><div class="inputRight"></div>
-                        </li>
-						<li>
-                            <label class="account-telefonoLabel">Telefono:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vtelefono %]</div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="account-passwordCorrenteLabel">Password corrente:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="password" name="vecchia_password"/></div><div class="inputRight"></div>	
-                        </li>
-
-                        <li>
-                            <label class="account-passwordNuovaLabel">Nuova Password:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="password" name="nuova_password" /></div><div class="inputRight"></div>	
-                        </li>
-			
-                    </ul>
-                    <div>
-                        <button class="button" type="submit">Modifica Account</button>
-                    </div>
-					<div>[% hidden %]</div>
-					<div class="messaggio-error">[% messaggio %]</div>
-                </form>
+		<div id="sub_menu">
+                [% IF pagina == 'aggiungi' %]
+					<div class="sub_menu_block_active"><span class="sub_menu_text_active">Aggiungi indirizzo</span></div><a href="stampa_indirizzi.cgi"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica indirizzo</span></div></a>
+                [% ELSIF pagina == 'edit' %]
+					<a href="gestione_indirizzi_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi indirizzo</span></div></a><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica indirizzo</span></div>
+				[% ELSE %]
+					<a href="gestione_indirizzi_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi indirizzo</span></div></a><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica indirizzo</span></div>[% END %]
+                
                 </div>
+			[% IF pagina == 'aggiungi' %]
+			<div class="form-container2">
+				<h2>Aggiungi indirizzo</h2>
+				<form method="post" action="aggiungi_indirizzo_script.cgi" enctype="multipart/form-data">
+				<ul class="form-Block">
+					<li>
+                        <label id="indirizzo-ViaLabel">Via:</label>
+                        <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="text" name="via" /></div><div class="inputRight"></div>
+                    </li>
+					<li>
+						<label id="indirizzo-NumLabel">Numero Civico:</label>
+                        <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="text" name="numero" /></div><div class="inputRight"></div>
+                    </li>
+					<li>
+                        <label id="indirizzo-CittaLabel">Citt&agrave;:</label>
+                        <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="text" name="citta" /></div><div class="inputRight"></div>
+                    </li>
+					<li>
+                        <label id="indirizzo-ProvinciaLabel">Provincia:</label>
+                        <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="text" name="provincia" /></div><div class="inputRight"></div>
+                    </li>
+					<li>
+                        <label id="indirizzo-CapLabel">CAP:</label>
+                        <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="text" name="cap" /></div><div class="inputRight"></div>
+                    </li>
+                 </ul>
+                 <div>
+					<button id="button" type="submit">Aggiungi Indirizzo</button>
+                 </div>
+					<div>[% hidden %]</div>
+					<div class="messaggio-error">[% error %]</div>
+					<div class="messaggio-error">[% messaggio %]</div>
+			</form>
+          </div>
+			[% ELSIF pagina == 'edit' %]
+			<div class="form-container2">
+				<h2>Modifica indirizzo n. [% indice_controllo %] </h2>
+				<form method="post" action="edit_indirizzo_script.cgi" enctype="multipart/form-data">
+				<ul class="form-Block">
+					<li>
+                        <label>Via:</label>
+                        <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vvia %]</div><div class="inputRight"></div>
+                    </li>
+					<li>
+						<label>Numero Civico:</label>
+                        <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vnumero %]</div><div class="inputRight"></div>
+                    </li>
+					<li>
+                        <label>Citt&agrave;:</label>
+                        <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vcitta %]</div><div class="inputRight"></div>
+                    </li>
+					<li>
+                        <label>Provincia:</label>
+                        <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vprovincia %]</div><div class="inputRight"></div>
+                    </li>
+					<li>
+                        <label>CAP:</label>
+                        <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vcap %]</div><div class="inputRight"></div>
+                    </li>
+                 </ul>
+                 <div>
+					<button class="button" type="submit">Modifica Indirizzo</button>
+                 </div>
+					<div>[% hidden %]</div>
+					<div class="messaggio-error">[% error %]</div>
+					<div class="messaggio-error">[% messaggio %]</div>
+          </form>
+		[% ELSE %]
+			<span>[% lista_indirizzi %]</span>
+		[% END %]
             </div>        
         </div>
     </div>
@@ -176,7 +214,6 @@
 					[% IF sessione == 'true' %]
 					<li class="current">Account</li>
 					<li><a href="check_session.cgi?carrello">Carrello</a></li>
-					<li><a href="check_session.cgi?lista_desideri">Lista dei Desideri</a></li>
 					[% IF amministratore == 'true' %]
 					<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 					[% END %]
