@@ -34,7 +34,7 @@ switch($ENV{'QUERY_STRING'})
 	case 'indirizzi' { $file='indirizzi_temp.html' }
 	case 'gestione_annunci' { $file='gestione_annunci_temp.html' }
 	case 'gestione_ordini' {$file='gestione_ordini_temp.html' }
-	
+	case 'lista_desideri' {$file='lista_desideri_temp.html' }
 }
 
 if ($session->is_empty)
