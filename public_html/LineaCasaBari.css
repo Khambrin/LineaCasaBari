@@ -18,7 +18,6 @@ body{
 
 .messaggio-error{
     padding-top: 1em;
-    /*color: #295380;*/
     color:  red;
     padding-bottom: 1em;
 }
@@ -35,7 +34,6 @@ body{
 .messaggio-confirm{
     padding-top: 1em;
     color: #295380;
-    color:  red;
     padding-bottom: 1em;
 }
     .messaggio-confirm li{
@@ -545,6 +543,7 @@ body
 #registrazione-container-mobile{
     display: block;
     text-align: center;
+    height: auto;
 }
 
 #registrazione-container{
