@@ -43,10 +43,14 @@ if ($session->is_empty)
 		'sessione' => "false",
 	};
 	if ($ENV{'QUERY_STRING'} eq 'i_miei_ordini' or $ENV{'QUERY_STRING'} eq 'impostazioni_account' 
-		or $ENV{'QUERY_STRING'} eq 'indirizzi' or $ENV{'QUERY_STRING'} eq 'togli_utenti' or $ENV{'QUERY_STRING'} eq 'gestione_prodotti' 
-		or $ENV{'QUERY_STRING'} eq 'gestione_ordini' or $ENV{'QUERY_STRING'} eq 'gestione_annunci')
+		or $ENV{'QUERY_STRING'} eq 'indirizzi' or $ENV{'QUERY_STRING'} eq 'togli_utenti' 
+		or $ENV{'QUERY_STRING'} eq 'gestione_prodotti' or $ENV{'QUERY_STRING'} eq 'gestione_ordini' 
+		or $ENV{'QUERY_STRING'} eq 'gestione_annunci' or $ENV{'QUERY_STRING'} eq 'carrello')
 	{
 		$file='login_temp.html';
+		$vars={
+				'messaggio' => "Accedi prima di continuare",
+			}
 	}
 	elsif ($ENV{'QUERY_STRING'} eq 'logout')
 	{
@@ -56,7 +60,7 @@ if ($session->is_empty)
 	{
 		$file='login_temp.html';
 		$vars={
-			'messaggio'=> "registrazione avvenuta con successo",
+			'messaggio'=> "Registrazione avvenuta con successo ora puoi accedere",
 		};
 	}
 }
@@ -90,6 +94,12 @@ else
 	{
 		print $cgi->redirect("stampa_ordini.cgi");
 	}
+	
+	if($ENV{'QUERY_STRING'} eq 'carrello')
+	{
+		print $cgi->redirect("stampa_carrello.cgi");
+	}
+
 }
 	print $cgi->header('text/html');
 	$template->process($file,$vars) || die $template->error();

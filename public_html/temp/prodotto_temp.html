@@ -27,7 +27,8 @@
                 <li><a href="stampa_annunci.cgi">Annunci</a></li>
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
 				[% IF sessione == 'true' %]
-				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>				
+				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
+				<li><a href="check_session.cgi?carrello">Carrello</a></li>				
 				[% IF amministratore == 'true' %]
 				<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 				[% END %]
@@ -64,6 +65,7 @@
                 <li><a href="check_session.cgi?contattaci">Contattaci</a></li>
                 [% IF sessione == 'true' %]
 				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
+				<li><a href="check_session.cgi?carrello">Carrello</a></li>
 				[% IF amministratore == 'true' %]
 				<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 				[% END %]
@@ -145,7 +147,7 @@
 						<p><input type="submit" value="Aggiungi alla lisa desideri"/></p>
 					</form>
 					</li>
-					<li><div class="messaggio-error">[%messaggio]</div></li>
+					<li><div class="messaggio-error">[% messaggio %]</div></li>
 				</ul>
 				</div>
 			</div>
@@ -187,6 +189,7 @@
 					<li><a href="check_session.cgi?contattaci">Contattaci</a></li>
 					[% IF sessione == 'true' %]
 					<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
+					<li><a href="check_session.cgi?carrello">Carrello</a></li>
 					[% IF amministratore == 'true' %]
 					<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 					[% END %]

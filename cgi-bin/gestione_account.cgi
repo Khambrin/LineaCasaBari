@@ -43,7 +43,7 @@ my $file;
 if($ENV{'QUERY_STRING'} eq 'ok')
 {
 			$vars={
-					'log' => "login effettuato con successo",
+					'log' => "Login effettuato con successo",
 					'sessione' => "true",
 					'email' => $email,
 					'amministratore' => $amministratore,
@@ -57,7 +57,7 @@ if($ENV{'QUERY_STRING'} eq 'ok')
 elsif ($ENV{'QUERY_STRING'} eq 'exit')
 {
 			$vars={
-					'log' => "logout effettuato con successo",
+					'log' => "Logout effettuato con successo",
 					'sessione' => "false",
 					'email' => $email,
 					'amministratore' => $amministratore,

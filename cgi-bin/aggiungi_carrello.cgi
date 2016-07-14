@@ -35,8 +35,8 @@ else
 	$root=$doc->createElement("Carrelli");
 	$doc->setDocumentElement($root);	
 }
-my $carrello_esistente=$doc->findnodes("Carrelli/Carrello[Utente='$email']");
-if($carrello_esistente=0)
+my @carrello_esistente=$doc->findnodes("Carrelli/Carrello[Utente='$email']");
+if(!@carrello_esistente[0])
 {
 	my $carrello_tag=$doc->createElement("Carrello");	
 	$root->appendChild($carrello_tag);
@@ -57,11 +57,11 @@ if($carrello_esistente=0)
 }
 else
 {
-	my $prodotto_esistente=$doc->findnodes("Carrelli/Carrello[Utente='$email']/Elemento[Prodotto='$prodotto']");
-	if($prodotto_esistente=0)
+	my @prodotto_esistente=$doc->findnodes("Carrelli/Carrello[Utente='$email']/Elemento[Prodotto='$prodotto']");
+	if(!@prodotto_esistente[0])
 	{
 		my $element_tag=$doc->createElement("Elemento");
-		$carrello_esistente->appendChild($element_tag);
+		@carrello_esistente[0]->appendChild($element_tag);
 		
 		my $prodotto_tag=$doc->createElement("Prodotto");
 		$element_tag->appendChild($prodotto_tag);
@@ -92,5 +92,8 @@ print XML $doc->toString();
 close(XML);
 
 my $messaggio="Prodotto aggiunto correttamente al carrello";
-print $cgi->redirect("prodotto.cgi?Codice=$prodotto&Filter=Tutte&Page=0&$messaggio");
+print $cgi->redirect("prodotto.cgi?");
+=pod
+Codice=$prodotto&Filter=Tutte&Page=0&$messaggio");
+=cut
 
