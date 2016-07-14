@@ -10,39 +10,6 @@ html,
 body{
     height: 100%;
 }
-
-#nome_utente
-{
-	padding-left:1em;
-}
-
-.messaggio-error{
-    padding-top: 1em;
-    /*color: #295380;*/
-    color:  red;
-    padding-bottom: 1em;
-}
-    .messaggio-error li{
-        list-style: none;
-        padding-bottom: 1em;
-        
-    }
-    #titolo{
-        margin-top: 2em;
-        margin-bottom: 1em;
-    }
-
-.messaggio-confirm{
-    padding-top: 1em;
-    color: #295380;
-    color:  red;
-    padding-bottom: 1em;
-}
-    .messaggio-confirm li{
-        list-style: none;
-        padding-bottom: 1em;
-    }
-
     
 #drawer-toggle{
     position: absolute;
@@ -166,7 +133,7 @@ body
 .button {
     height: 3em;
     width: 20%;
-    padding-bottom:0.1em;
+    padding-bottom:0.5em;
     margin-bottom: 0.5em;
 }
 
@@ -647,8 +614,6 @@ body
 
 /*-------------------------------------- la_nostra_storia.html --------------------------------------------------------------------------------*/
 
-
-
 #content h2{
     font-family: Georgia, serif;
     margin-bottom: 1em;
@@ -660,104 +625,94 @@ body
     padding-bottom: 1.5em;
 }
 
-    #linea-tempo
-    {
-        display: inline-block;
-        width: 99%;
-        height: 2.7em;
-        text-align: center;
-        padding-bottom: 1em;
-        margin-bottom: 1em;
-    }
+#linea-tempo li
+{
+    list-style: none;
+    display: inline-block;
+    padding-left: 1em;
+    padding-right: 1em;
+    transform:rotate(-20deg);
+    text-decoration: none;
+    background-color:#295380;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding:0.5em;
+}
+
+#linea-tempo
+{
+    display: inline-block;
+    width: 99%;
+    height: 2.7em;
+    text-align: center;
+    padding-bottom: 4em;
+}
 
 
-    #linea-tempo a
-    {
-        text-decoration: none;
-        color: white;
-    }
+#linea-tempo a
+{
+    text-decoration: none;
+}
+
+#linea-tempo-testo h3
+{
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    margin-bottom: 1em;
+    background-color: #E1E3E4;
+    font-family: Georgia, serif;
+}
 
 
+.linea-tempo-su
+{
+    width: 45%;
+    background-color: #E1E3E4;
+    margin-bottom: 3em;
+    display: inline-block;
+    padding-top:0.5em;
+    padding-bottom:0.5em;
+}
 
-  #linea-tempo li
-    {
-        list-style: none;
-        display: inline-block;
-        padding-left: 1em;
-        padding-right: 1em;
-        transform:rotate(-20deg);
-        text-decoration: none;
-        background-color:#295380;
-        margin-left: 1em;
-        margin-right: 1em;
-        padding:0.5em;
-        color: white;
-        box-shadow: 1px 1px 1px 1px #888888;
-	    
-    }
-
-  
-    .linea-tempo-su
-    {
-        width: 45%;
-        background-color: #295380;
-        margin-bottom: 3em;
-        display: inline-block;
-        padding-top:0.5em;
-        padding-bottom:0.5em;   
-        box-shadow: 1px 1px 1px #888888;  
-    }
-
-
-    .linea-tempo-su a
-    {
-        text-decoration: none;
-        color: white;
-    }
-
-
-
+.linea-tempo-su a
+{
+    text-decoration: none;
+}
 
 /*------------------- termini e spedizione/resi e rimborsi  -----------------------------------------------------------------------------------*/
 
-   #resi_rimb_term_sped-h2{
-        margin-top: 1em;
-        text-align: center;
-        padding-bottom: 1.5em;
-        font-family: Georgia, serif;
-    }
-    
-    #info-container
-    {
-        text-align: center;
-        width: 80%;
-        margin: auto;
-    }
+#resi_rimb_term_sped-h2{
+    margin-top: 1em;
+    text-align: center;
+}
 
-    #info-container h3
-    {
-        background-color: #295380;
-        width: 100%;
-        text-align: center;
-        display: inline-block;
-        margin-top: 1.5em;
-        margin: auto;
-        padding-bottom: 0.5em;
-        padding-top: 0.5em;
-        box-shadow: 1px 1px 1px 1px #888888;
-        color: white;
-    }
+#info-container
+{
+    text-align: center;
+    width: 90%;
+    margin: auto;
+}
 
-    .info-text
-    {
-        text-align: justify;
-        padding: 1.5em;
-        width: 100%;
-        background-color:#E1E3E4; 
-        display: inline-block;
-        margin-bottom: 2em;
-        box-shadow: 1px 1px 1px 1px #888888;
-    }
+#info-container h3
+{
+    background-color: #FFFFFF;
+    width: 90%;
+    text-align: center;
+    display: inline-block;
+    margin-top: 1.5em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+}
+
+.info-text
+{
+    text-align: justify;
+    padding: 1.5em;
+    width: 90%;
+    background-color:#295380; 
+    display: inline-block;
+    margin-bottom: 2em;
+}
 
 /*---------------------------------------- prodotti.html --------------------------------------------------------------------------------------*/
 
@@ -784,7 +739,7 @@ body
 
 #prodotti-vetrina
 {
-    background-color: white;
+    background-color: #E1E3E4;
     min-height: 20em;
     width: 100%;
 }
@@ -796,6 +751,7 @@ body
     width: 100%;
     text-align: center;
     line-height: 210%;
+    margin-top: 1em;
 }
 
 #prodotti-frecciaPaginaPrecedente 
@@ -890,7 +846,7 @@ body
 .riga 
 {
 	padding: 0.3em;
-	background-color: white;
+	background-color: #E1E3E4;
 }
 
 
@@ -898,8 +854,8 @@ body
 {
 	height: 13em;
 	vertical-align: middle;
-	background-color: #E1E3E4;
 	padding: 1em;
+	background-color: white;
 	text-align: center;
 	margin-bottom: 0.5em;
 }
@@ -1213,7 +1169,93 @@ body
 
     /*-------------------------------------- la_nostra_storia.html desktop --------------------------------------------------------------------------------*/
 
+    #linea-tempo li
+    {
+        list-style: none;
+        display: inline-block;
+        padding-left: 1em;
+        padding-right: 1em;
+        transform:rotate(-20deg);
+        text-decoration: none;
+        background-color:#295380;
+        margin-left: 1em;
+        margin-right: 1em;
+        padding:0.5em;
+        color: white;
+        box-shadow: 1px 1px 1px 1px #888888;
 
+    }
+    
+    #linea-tempo
+    {
+        display: inline-block;
+        width: 99%;
+        height: 2.7em;
+        text-align: center;
+    }
+
+    #linea-tempo-testo
+    {
+        text-align: center;
+        margin: auto;
+        padding-top: 4em;
+        padding-bottom: 2em;
+        width: 45%;    
+    }
+
+    .linea-tempo-testo-li
+    {
+        padding-bottom: 1em;
+        margin-bottom: 1em;
+        list-style: none;
+        background-color: #E1E3E4;
+        box-shadow: 1px 1px 1px 1px #888888;
+
+    }
+
+    #linea-tempo a
+    {
+        text-decoration: none;
+        color: white;
+    }
+
+    #linea-tempo-testo h3
+    {
+        padding-top: 0.4em;
+        padding-bottom: 0.4em;
+        margin-bottom: 1em;
+        background-color: #295380;
+        font-family: Georgia, serif;
+        color: white;
+    }
+
+    #linea-tempo-testo p
+    {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    #linea-tempo-testo a
+    {
+        text-decoration: none;
+    }
+
+    .linea-tempo-su
+    {
+        width: 45%;
+        background-color: #295380;
+        margin-bottom: 3em;
+        display: inline-block;
+        padding-top:0.5em;
+        padding-bottom:0.5em;   
+        box-shadow: 1px 1px 1px #888888;  
+    }
+
+    .linea-tempo-su a
+    {
+        text-decoration: none;
+        color: white;
+    }
 
     /*---------------------------------------- prodotti.html --------------------------------------------------------------------------------------*/
 
@@ -1251,7 +1293,7 @@ body
     }
 
     #prodotti-vetrina{
-        background-color: white;
+        background-color: #E1E3E4;
         min-height: 20em;
         width: 100%;
     }
@@ -1263,6 +1305,7 @@ body
         width: 78%;
         text-align: center;
         line-height: 220%;
+	margin-top: 1em;
     }
 
     #prodotti-frecciaPaginaPrecedente {
@@ -1358,7 +1401,7 @@ body
 	width: 100%;
 	height: 15em;
 	padding: 0.3em;
-	background-color: white;
+	background-color: #E1E3E4;
     }
 
 
@@ -1367,12 +1410,12 @@ body
 	width: 25%;
 	height: 13em;
 	vertical-align: middle;
-	background-color: #E1E3E4;
 	padding: 1em;
 	text-align: center;
 	margin-right: 0.825em;
 	margin-left: 0.825em;
 	margin-top: 0.6em;
+	background-color: white;
     }
 
     .prodotto-singolo ul {
@@ -1620,7 +1663,12 @@ body
 
     /*------------------- termini e spedizione/resi e rimborsi  -----------------------------------------------------------------------------------*/
     
-
+    #resi_rimb_term_sped-h2{
+        margin-top: 1em;
+        text-align: center;
+        padding-bottom: 1.5em;
+        font-family: Georgia, serif;
+    }
     
     #info-container
     {
@@ -1629,7 +1677,30 @@ body
         margin: auto;
     }
 
+    #info-container h3
+    {
+        background-color: #295380;
+        width: 100%;
+        text-align: center;
+        display: inline-block;
+        margin-top: 1.5em;
+        margin: auto;
+        padding-bottom: 0.5em;
+        padding-top: 0.5em;
+        box-shadow: 1px 1px 1px 1px #888888;
+        color: white;
+    }
 
+    .info-text
+    {
+        text-align: justify;
+        padding: 1.5em;
+        width: 100%;
+        background-color:#E1E3E4; 
+        display: inline-block;
+        margin-bottom: 2em;
+        box-shadow: 1px 1px 1px 1px #888888;
+    }
      /*------------------- account  -----------------------------------------------------------------------------------*/
     #col
     {
@@ -1868,3 +1939,22 @@ body
 
 /*-------------------------------------------------------------Generale----------------------------*/
 
+#nome_utente
+{
+	padding-left:1em;
+}
+
+.messaggio-error{
+    padding-top: 1em;
+    color: #295380;
+    padding-bottom: 1em;
+}
+    .messaggio-error li{
+        list-style: none;
+        padding-bottom: 1em;
+        
+    }
+    #titolo{
+        margin-top: 2em;
+        margin-bottom: 1em;
+    }
