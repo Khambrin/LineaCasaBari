@@ -10,6 +10,39 @@ html,
 body{
     height: 100%;
 }
+
+#nome_utente
+{
+	padding-left:1em;
+}
+
+.messaggio-error{
+    padding-top: 1em;
+    /*color: #295380;*/
+    color:  red;
+    padding-bottom: 1em;
+}
+    .messaggio-error li{
+        list-style: none;
+        padding-bottom: 1em;
+        
+    }
+    #titolo{
+        margin-top: 2em;
+        margin-bottom: 1em;
+    }
+
+.messaggio-confirm{
+    padding-top: 1em;
+    color: #295380;
+    color:  red;
+    padding-bottom: 1em;
+}
+    .messaggio-confirm li{
+        list-style: none;
+        padding-bottom: 1em;
+    }
+
     
 #drawer-toggle{
     position: absolute;
@@ -1835,22 +1868,3 @@ body
 
 /*-------------------------------------------------------------Generale----------------------------*/
 
-#nome_utente
-{
-	padding-left:1em;
-}
-
-.messaggio-error{
-    padding-top: 1em;
-    color: #295380;
-    padding-bottom: 1em;
-}
-    .messaggio-error li{
-        list-style: none;
-        padding-bottom: 1em;
-        
-    }
-    #titolo{
-        margin-top: 2em;
-        margin-bottom: 1em;
-    }
