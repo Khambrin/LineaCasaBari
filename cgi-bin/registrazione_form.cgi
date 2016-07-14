@@ -41,6 +41,8 @@ foreach my $chiave (keys %values)
 	elsif ($chiave eq "password")
 	{
 		#controlli sul campo password
+        #minimo 8 caratteri, massimo 20
+        #deve avere sia numeri che lettere
 		
 	}
 	elsif ($chiave eq "conf_password")
