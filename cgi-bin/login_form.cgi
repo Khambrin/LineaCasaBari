@@ -23,12 +23,12 @@ if ($doc->findnodes("Utenti/Utente/Email[text()='$values{email}']"))
 {
 	if (!$doc->findnodes("Utenti/Utente[Email[text()='$values{email}']]/Password[text()='$values{password}']"))
 	{
-		push @messaggi, "La password inserita è errata.";
+		push @messaggi, "La password inserita &egrave errata";
 	}
 }
 else
 {
-	push @messaggi, "L'email inserita è errata.";
+	push @messaggi, "L'email inserita &egrave errata";
 }
 
 if (@messaggi)
@@ -36,7 +36,7 @@ if (@messaggi)
 	print $cgi->header('text/html');
 	my $file='login_temp.html';
 	my $vars={
-		'messaggio' => "<ul>"."<li>[@messaggi]</li>"."</ul>"
+		'messaggio' => "<ul>"."<li>@messaggi</li>"."</ul>"
 		};
 	my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
