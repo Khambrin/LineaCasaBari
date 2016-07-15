@@ -1443,7 +1443,8 @@ body
 	
 	#left_col img {
 		max-height: 20em;
-		max-width: auto;		
+		max-width: auto;
+  	    box-shadow: 1px 1px 1px 1px #888888;		
 	}
 
 	#middle_col{

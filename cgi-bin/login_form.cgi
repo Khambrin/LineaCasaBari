@@ -50,5 +50,9 @@ else
 	my $cookie=$cgi->cookie(CGISESSID => $session->id);
 	$session->param("email", $values{email});
 	$session->param("amministratore", $amministratore);
+	if ($values{query_string} ne "impostazioni_account") {
+	print $cgi->redirect(-uri => 'check_session.cgi?'."$values{query_string}", -cookie => $cookie);
+	} else {
 	print $cgi->redirect(-uri => 'check_session.cgi?login', -cookie => $cookie);
+	}
 }

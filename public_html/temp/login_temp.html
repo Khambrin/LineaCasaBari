@@ -94,6 +94,11 @@
                             <label class="login-passwordLabel">Password:</label>
                             <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password" name="password"/></div><div class="inputRight"></div>
                         </li>
+			[% IF $query_string !=0 %]
+                        <li>
+			<input type="hidden" name="query_string" value="[% query_string %]"/>
+                        </li>
+			[% END %]
                     </ul>
                     <div>
                         <button class="button" type="submit">Accedi</button>
@@ -155,7 +160,7 @@
                             <div id="newsletter-buttonContainer">
                                 <input id="newsletter-button" type="submit" value=""/>
                             </div>
-<input class= "input" type="hidden" name="pagina_nl" value="login_temp.html"/>
+			<input class= "input" type="hidden" name="pagina_nl" value="login_temp.html"/>
                         </form>
            
                     </li>

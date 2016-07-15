@@ -45,11 +45,13 @@ if ($session->is_empty)
 	if ($ENV{'QUERY_STRING'} eq 'i_miei_ordini' or $ENV{'QUERY_STRING'} eq 'impostazioni_account' 
 		or $ENV{'QUERY_STRING'} eq 'indirizzi' or $ENV{'QUERY_STRING'} eq 'togli_utenti' 
 		or $ENV{'QUERY_STRING'} eq 'gestione_prodotti' or $ENV{'QUERY_STRING'} eq 'gestione_ordini' 
-		or $ENV{'QUERY_STRING'} eq 'gestione_annunci' or $ENV{'QUERY_STRING'} eq 'carrello')
+		or $ENV{'QUERY_STRING'} eq 'gestione_annunci' or $ENV{'QUERY_STRING'} eq 'carrello' 
+		or $ENV{'QUERY_STRING'} eq 'gestione_account')
 	{
 		$file='login_temp.html';
 		$vars={
 				'messaggio' => "Accedi prima di continuare",
+				'query_string' => "$ENV{'QUERY_STRING'}",
 			}
 	}
 	elsif ($ENV{'QUERY_STRING'} eq 'logout')
@@ -98,6 +100,10 @@ else
 	if($ENV{'QUERY_STRING'} eq 'carrello')
 	{
 		print $cgi->redirect("stampa_carrello.cgi");
+	}
+	if($ENV{'QUERY_STRING'} eq 'gestione_indirizzi')
+	{
+		print $cgi->redirect("gestione_indirizzi_script.cgi?aggiungi");
 	}
 
 }
