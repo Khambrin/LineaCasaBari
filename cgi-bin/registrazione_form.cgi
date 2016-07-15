@@ -34,24 +34,36 @@ foreach my $chiave (keys %values)
 	elsif ($chiave eq "email")
 	{
 		#controlli sul campo email
-		if (!$values{$chiave}=~ /^[^ ,@]+\@([a-z0-9-]+\.)+[a-z]+$/)
+		my $email=$values{$chiave};
+		my $regex=$email=~ /^[a-z0-9.]+\@[a-z0-9.-]+$/;
+		if (not $regex)
 		{
-			push @messaggi, "Indirizzo email inserito non valido.";
+			push @messaggi, "Indirizzo email inserito non valido";
 			$email_value="";
 		}
+		#controllo email presente o no nel sistema
 	}
 	elsif ($chiave eq "password")
 	{
-		#controlli sul campo password
-        #minimo 8 caratteri, massimo 20
-        #deve avere sia numeri che lettere
 		
+		if (length($pwd)>20)
+		{
+			push @messaggi, "La password inserita &egrave troppo lunga";
+		}
+		if (length($pwd)<8)
+		{
+			push @messaggi, "La password inserita &egrave troppo corta";
+		}
+		if ($values{$chiave} =~ m/[^a-zA-Z0-9]/)
+		{
+			push @messaggi, "La password inserita contiene caratteri non consentiti";
+		}
 	}
 	elsif ($chiave eq "conf_password")
 	{
 		if ($values{$chiave} ne $pwd)
 		{
-			push @messaggi, "La conferma della password non corrisponde.";
+			push @messaggi, "La conferma della password non corrisponde";
 		}
 	}
 }
