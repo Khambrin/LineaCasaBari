@@ -17,6 +17,7 @@ foreach my $p (param())
 }
 
 my $pwd=$values{"password"};
+my $email_value=$values{'email'};
 foreach my $chiave (keys %values)
 {
 	if (!$values{$chiave})
@@ -36,6 +37,7 @@ foreach my $chiave (keys %values)
 		if (!$values{$chiave}=~ /^[^ ,@]+\@([a-z0-9-]+\.)+[a-z]+$/)
 		{
 			push @messaggi, "Indirizzo email inserito non valido.";
+			$email_value="";
 		}
 	}
 	elsif ($chiave eq "password")
@@ -61,16 +63,19 @@ if (@messaggi)
 	my $tot;
 	my $x;
 	my $i=0;
-	foreach my$k (@messaggi)
+	foreach my $k (@messaggi)
 	{
-		my$aux=@messaggi[$i];
+		my $aux=@messaggi[$i];
 		$i=$i+1;
 		$x="<li>"."$aux".'</li>'; 
 		$tot=$tot.$x;
 	}
 	$tot="<ul>"."$tot"."</ul>";
-	my$vars={
+	my $vars={
 		'messaggio_registrazione'=> $tot,
+		'nomeValue'=> 'value="'."$values{'nome'}".'"',
+		'cognomeValue'=> 'value="'."$values{'cognome'}".'"',
+		'emailValue'=> 'value="'."$email_value".'"',
 	};
 	my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
