@@ -62,7 +62,7 @@ if ($session->is_empty)
 	{
 		$file='login_temp.html';
 		$vars={
-			'messaggio'=> "Registrazione avvenuta con successo ora puoi accedere",
+			'log'=> "Registrazione avvenuta con successo ora puoi accedere",
 		};
 	}
 }
