@@ -32,9 +32,18 @@ my @prodotti=$doc->findnodes("Liste/Lista[Utente='$email']/Prodotto/text()");
 
 my $file='lista_desideri_temp.html';
 my $tot;
-for (my $index=0; $index <=$#prodotti; $index++)
+
+#for (my $index=0; $index <=$#prodotti; $index++)
+#{	
+#	my $x=@prodotti[$index];
+#	$tot=$tot.$x;
+#}
+
+foreach my $index (@prodotti)
 {	
-	my $x=@prodotti[$index];
+	my $x='<li>Prodotto: '."$index".'</li>';
+	$tot=$tot.$x;
+	my $x='<li><form action="remove_desiderio.cgi" method="post"><div><button class="button" type="submit">Rimuovi Prodotto</button><input type="hidden" name="cod_desiderio" value="'."$index".'"/></div></form></li>';
 	$tot=$tot.$x;
 }
 
