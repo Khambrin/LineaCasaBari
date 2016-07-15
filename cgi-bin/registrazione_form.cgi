@@ -16,6 +16,11 @@ foreach my $p (param())
 	$values{$p}=param($p);
 }
 
+my $doc;
+my $parser=XML::LibXML->new();
+$doc=$parser->parse_file("../data/Utenti.xml");
+my @lista_email=$doc->findnodes("Utenti/Utente/Email/text()");
+
 my $pwd=$values{"password"};
 my $email_value=$values{'email'};
 foreach my $chiave (keys %values)
@@ -41,7 +46,9 @@ foreach my $chiave (keys %values)
 			push @messaggi, "Indirizzo email inserito non valido";
 			$email_value="";
 		}
-		#controllo email presente o no nel sistema
+		if (grep( /^$email_value$/, @lista_email )) {
+			push @messaggi, "Indirizzo email gi&aacute; utilizzato"
+		}
 	}
 	elsif ($chiave eq "password")
 	{
