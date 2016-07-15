@@ -52,14 +52,15 @@ else
 		$tot=$tot.$x;
 		my $x='<li><label class="carrello-quantitaLabel">Quantit&agrave: </label>'." @lista_quantita[$k]".'</li>';
 		$tot=$tot.$x;
-		my $x='<li><label class="carrello-quantitaTogliLabel">Diminuisci quantit&agrave:</label><div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="togli_quantita'."$k".'"/></div><div class="inputRight"></div></li>';
+		my $x='<li><label class="carrello-quantitaTogliLabel">Diminuisci quantit&agrave:</label><div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="togli_quantita-'."$k".'"/></div><div class="inputRight"></div></li>';
 		$tot=$tot.$x;
-		my $x='<li><label class="carrello-prodottoTogliLabel">Togli il prodotto interamente:</label><input type="checkbox" name="Elimina prodotto" value="elimina-prodotto'."$k".'"/></li>';
+		my $x='<li><label class="carrello-prodottoTogliLabel">Togli il prodotto interamente:</label><input type="checkbox" name="elimina_prodotto-'."$k".'" value="1"/></li>';
 		$tot=$tot.$x;
-		$k=$k+1;
+		$k++;
+		
 	}
 	
-	my $lista_carrello='<form action="carrello_togli_quantita_prodotto.cgi" method="post"><div class="form-container2"><ul class="form-Block">'."$tot"."</ul><button class=".'"button"'." type=".'"submit"'." value=".'"togli"'.">Togli</button></div></form>";
+	my $lista_carrello='<form action="carrello_togli_quantita_prodotto.cgi" method="post"><div class="form-container2"><ul class="form-Block">'."$tot".'</ul><button class="button" type="submit" value="togli">Togli</button></div></form>';
 	
 	$vars={
 		'sessione' => "true",
