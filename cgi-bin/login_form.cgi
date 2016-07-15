@@ -23,12 +23,12 @@ if ($doc->findnodes("Utenti/Utente/Email[text()='$values{email}']"))
 {
 	if (!$doc->findnodes("Utenti/Utente[Email[text()='$values{email}']]/Password[text()='$values{password}']"))
 	{
-		push @messaggi, "La password inserita &egrave errata";
+		push @messaggi, "La password inserita è errata.";
 	}
 }
 else
 {
-	push @messaggi, "L'email inserita &egrave errata";
+	push @messaggi, "L'email inserita è errata.";
 }
 
 if (@messaggi)
@@ -36,7 +36,7 @@ if (@messaggi)
 	print $cgi->header('text/html');
 	my $file='login_temp.html';
 	my $vars={
-		'messaggio' => "<ul>"."<li>@messaggi</li>"."</ul>"
+		'messaggio' => "<ul>"."<li>[@messaggi]</li>"."</ul>"
 		};
 	my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
@@ -50,7 +50,7 @@ else
 	my $cookie=$cgi->cookie(CGISESSID => $session->id);
 	$session->param("email", $values{email});
 	$session->param("amministratore", $amministratore);
-	if ($values{query_string} ne "impostazioni_account") {
+	if ($values{query_string} && $values{query_string} ne "impostazioni_account") {
 	print $cgi->redirect(-uri => 'check_session.cgi?'."$values{query_string}", -cookie => $cookie);
 	} else {
 	print $cgi->redirect(-uri => 'check_session.cgi?login', -cookie => $cookie);
