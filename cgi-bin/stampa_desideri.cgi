@@ -45,6 +45,8 @@ foreach my $index (@prodotti)
 	$tot=$tot.$x;
 	my $x='<li><form action="remove_desiderio.cgi" method="post"><div><button class="button" type="submit">Rimuovi Prodotto</button><input type="hidden" name="cod_desiderio" value="'."$index".'"/></div></form></li>';
 	$tot=$tot.$x;
+	my $x='<li><form action="aggiungi_carrello.cgi" method="post"><div><button class="button" type="submit">Aggiungi al Carrello</button><input type="hidden" name="codice_prodotto" value="'."$index".'"/></div></form></li>';
+	$tot=$tot.$x;
 }
 
 my $lista_desideri="<ul>"."$tot"."</ul>";
