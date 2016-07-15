@@ -50,7 +50,7 @@ if ($session->is_empty)
 	{
 		$file='login_temp.html';
 		$vars={
-				'messaggio' => "Accedi prima di continuare",
+				'lol' => "Accedi prima di continuare",
 				'query_string' => "$ENV{'QUERY_STRING'}",
 			}
 	}
