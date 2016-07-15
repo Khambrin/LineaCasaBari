@@ -145,9 +145,10 @@
 					</form>	
 					-->
 					<li>
-					<form action="aggiungi prodotto alla lista desideri" id="prodotto_desideri">
-						<p><input type="submit" value="Aggiungi alla lista desideri"/></p>
-					</form>
+					<form action="aggiungi_desideri.cgi" id="prodotto_desideri">
+						<input type="hidden" name="codice_prodotto" value="[% codice_prodotto %]" />
+ 						<p><input type="submit" value="Aggiungi alla lista desideri"/></p>
+ 					</form>
 					</li>
 					<li><div class="messaggio-error">[% messaggio %]</div></li>
 				</ul>
