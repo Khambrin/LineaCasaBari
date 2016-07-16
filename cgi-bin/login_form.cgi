@@ -19,6 +19,8 @@ foreach my $p (param())
 	$values{$p}=param($p);
 }
 
+$values{email}=lc $values{email};
+
 if ($doc->findnodes("Utenti/Utente/Email[text()='$values{email}']"))
 {
 	if (!$doc->findnodes("Utenti/Utente[Email[text()='$values{email}']]/Password[text()='$values{password}']"))

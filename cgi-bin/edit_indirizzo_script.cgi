@@ -25,7 +25,7 @@ my $parser=XML::LibXML->new;
 
 foreach my $p (param())
 {
-	$values{$p}=param($p);
+	$values{$p}=lc param($p);
 }
 
 if (!$values{"via"})

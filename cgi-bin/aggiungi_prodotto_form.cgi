@@ -19,7 +19,7 @@ my %values;
 
 foreach my $p (param())
 {
-	$values{$p}=param($p);
+	$values{$p}=lc param($p);
 }
 
 if (!$values{"nome"})
