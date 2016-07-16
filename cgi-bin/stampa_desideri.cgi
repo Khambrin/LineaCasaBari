@@ -33,21 +33,19 @@ my @prodotti=$doc->findnodes("Liste/Lista[Utente='$email']/Prodotto/text()");
 my $file='lista_desideri_temp.html';
 my $tot;
 
-#for (my $index=0; $index <=$#prodotti; $index++)
-#{	
-#	my $x=@prodotti[$index];
-#	$tot=$tot.$x;
-#}
 
-foreach my $index (@prodotti)
+for (my $index=0; $index <=$#prodotti; $index++)
 {	
-	my $x='<li>Prodotto: '."$index".'</li>';
+	my $x='<li>Prodotto: '."@prodotti[$index]".'</li>';
 	$tot=$tot.$x;
-	my $x='<li><form action="remove_desiderio.cgi" method="post"><div><button class="button" type="submit">Rimuovi Prodotto</button><input type="hidden" name="cod_desiderio" value="'."$index".'"/></div></form></li>';
+	my $x='<li><form action="remove_desiderio.cgi" method="post"><div><button class="button" type="submit">Rimuovi Prodotto</button><input type="hidden" name="indice_desiderio" value="'."$index".'"/></div></form></li>';
 	$tot=$tot.$x;
-	my $x='<li><form action="aggiungi_carrello.cgi" method="post"><div><button class="button" type="submit">Aggiungi al Carrello</button><input type="hidden" name="codice_prodotto" value="'."$index".'"/></div></form></li>';
+	my $x='<li><form action="aggiungi_carrello.cgi" method="post"><div><button class="button" type="submit">Aggiungi al Carrello</button><input type="hidden" name="codice_prodotto" value="'."@prodotti[$index]".'"/></div></form></li>';
 	$tot=$tot.$x;
 }
+
+
+
 
 my $lista_desideri="<ul>"."$tot"."</ul>";
 
