@@ -32,9 +32,11 @@ body{
     }
 
 .messaggio-confirm{
+    display: block;
     padding-top: 1em;
     color: #295380;
     padding-bottom: 1em;
+    text-align: center;
 }
     .messaggio-confirm li{
         list-style: none;
@@ -211,7 +213,8 @@ body
     text-align: center;
     background-color:#295380;
     /*padding:0.5em;*/
-    height: 6.5em;
+    padding-top: 0.5em;
+    height: 9.5em;
     z-index: 0;
 }
 
@@ -237,7 +240,7 @@ body
 
 #menu {
     display: none;
-    display: inline-block;
+    /*display: inline-block;*/
     padding-bottom: 4em;
     
     
@@ -924,130 +927,6 @@ body
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------------------------*/
-
-@media screen and (min-width: 768px)
-{
-
-    #drawer{
-        position: fixed;
-        top: 0;
-        right: -300px;
-        height: 100%;
-        width: 300px;
-        background: #295380;
-        overflow-x: hidden;
-        overflow-y: scroll;
-        -webkit-overflow-scrolling: touch;
-        z-index: 1;
-    }
-    
-    #drawer li{
-        padding-top: 2em;
-        padding-bottom: 2em;
-        text-align: center;
-        list-style: none;
-        width: 100%;
-        border-bottom: 1px solid;
-	color: white;
-    }
-    
-    #drawer-toggle:checked ~ #drawer-toggle-label{
-        height: 100%;
-        width: calc(100% - 300px);
-        background: rgba(255,255,255,.8);
-    }
-    
-    #drawer-toggle:checked ~ #drawer-toggle-label,
-    #drawer-toggle:checked ~ header{
-        right: 300px;
-    }
-    
-    #drawer-toggle:checked ~ #drawer{
-        right: 0px;
-    }
-    
-    #drawer-toggle:checked ~ #content{
-        margin-right: 300px;
-    }
-
-    .button {
-        height: 3em;
-        width: 20%;
-    }
-
-    .inputLeft {
-        display: inline-block;
-        background-image: url(images/input_left.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        width: 12px;
-        height: 2em;
-        vertical-align: middle;
-        margin-right: -0.3em;
-    }
-
-    .inputMiddle {
-        display: inline-block;
-        vertical-align: middle;
-        background-image: url(images/input_middle.png);
-        width: 40%;
-        background-size: contain;
-        background-repeat: repeat-x;
-    }
-
-    .inputRight {
-        display: inline-block;
-        vertical-align: middle;
-        background-image:url(images/input_right.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        height: 2em;
-        width: 12px;
-    }
-
-    .input{
-        background-color: transparent;
-        border: none;
-        width: 100%;
-        height: 2em;
-        font-size: 1em;
-    }
-
-    #header
-    {
-        text-align: center;
-        background-color:#295380;
-        padding:0.5em;
-        z-index: 0;
-    }
-
-    #header-logo
-    {
-        background-image:url(images/logo.png);
-        background-repeat:no-repeat;
-        background-size: contain;
-        display: inline-block;
-        width: 15%;
-        height: 8em;
-    }
-
-    #header h1
-    {
-        display: inline-block;
-        width: 79%;
-        height: 2.7em;
-        vertical-align: middle;
-        color: aliceblue;
-
-    }
-
-    #menu {
-        display: none;
-    }
-}
-
-
-
 /*-------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 @media screen and (min-width: 806px)
@@ -1873,4 +1752,3 @@ body
     
 
 /*-------------------------------------------------------------Generale----------------------------*/
-
