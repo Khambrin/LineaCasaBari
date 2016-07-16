@@ -99,7 +99,11 @@ else
 	
 	if($ENV{'QUERY_STRING'} eq 'carrello')
 	{
-		print $cgi->redirect("stampa_carrello.cgi");
+		print $cgi->redirect("stampa_carrello.cgi?false");
+	}
+	if($ENV{'QUERY_STRING'} eq 'carrello-modificato')
+	{
+		print $cgi->redirect("stampa_carrello.cgi?modificato");
 	}
 	if($ENV{'QUERY_STRING'} eq 'gestione_indirizzi')
 	{

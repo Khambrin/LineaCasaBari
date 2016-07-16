@@ -27,9 +27,17 @@ my $template=Template->new({
 my $messaggio="false";
 my @utente_carrello=$doc->findnodes("Carrelli/Carrello[Utente='$email']");
 my $vars;
+my $key=$ENV{'QUERY_STRING'};
 if(!@utente_carrello[0])
 {
-	$messaggio="il tuo carrello &egrave; vuoto, visita la pagina Prodotti per comporne uno";
+	if ($key eq 'false')
+	{
+		$messaggio="il tuo carrello &egrave; vuoto, visita la pagina Prodotti per comporne uno";
+	}
+	elsif ($key eq 'modificato')
+	{
+		$messaggio="modifica effettuata con successo, ora il tuo carrello &egrave; vuoto";
+	}
 	$vars={
 		'sessione' => "true",
 		'email' => $email,
@@ -39,6 +47,10 @@ if(!@utente_carrello[0])
 }
 else
 {
+	if ($key eq 'modificato')
+	{
+		$messaggio="modifica effettuata con successo";
+	}
 	my $tot;
 	my @lista_prodotti=$doc->findnodes("Carrelli/Carrello[Utente='$email']/Elemento/Prodotto/text()");
 	my @lista_quantita=$doc->findnodes("Carrelli/Carrello[Utente='$email']/Elemento/Quantita/text()");
@@ -60,13 +72,14 @@ else
 		
 	}
 	
-	my $lista_carrello='<form action="carrello_togli_quantita_prodotto.cgi" method="post"><div class="form-container2"><ul class="form-Block">'."$tot".'</ul><button class="button" type="submit" value="togli">Togli</button></div></form>';
+	my $lista_carrello='<div class="form-container2"><form action="carrello_togli_quantita_prodotto.cgi" method="post"><ul class="form-Block">'."$tot".'</ul><button class="button" type="submit" value="togli">Togli</button></form><form action="stampa-acquisto.cgi" method="post"><button class="button" type="submit" value="accquista">Acquista</button></form></div>';
 	
 	$vars={
 		'sessione' => "true",
 		'email' => $email,
 		'amministratore' => $amministratore,
 		'lista_carrello' => $lista_carrello,
+		'messaggio'=> $messaggio,
 	};
 }
 

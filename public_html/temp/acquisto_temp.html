@@ -4,9 +4,9 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Linea Casa Bari - Carrello</title>
-    <meta name="title" content="Linea Casa Bari - Carrello" />
-    <meta name="description" content="Pagina per gestire il proprio carrello" />
+    <title>Linea Casa Bari - Acquisto</title>
+    <meta name="title" content="Linea Casa Bari - Acquisto" />
+    <meta name="description" content="Pagina per completare il proprio acquisto on-line" />
     <meta name="keywords" content="carrello, acquisti, carrello acquisti" />
     <meta name="language" content="italian it" />
     <meta name="author" content="Alessandro Bari, Navid Taha, Alice Sasso, Lorenzo Ferrarin" />
@@ -47,7 +47,7 @@
     
     <div id="menu">
         <span id="path">
-            Ti trovi in: Carrello </span>
+            Ti trovi in: Carrello-Acquisto </span>
     
         <div id="nav">
             <ul>
@@ -75,8 +75,21 @@
     </div>
     
     <div id="content">
-        [% IF messaggio != 'false' %]<div class="messaggio-confirm">[% messaggio %]</div>[% END %]
-        [% lista_carrello %]
+       <div class="form-container2">
+		   <ul>
+			<li><label id="acquisto-mpagamentoLabel">Metodo di Pagamento</label>
+			<select>
+				<option value="carta_credito">Carta di Credito</option>
+				<option value="bonifico">Bonifico</option>
+				<option value="contrassegno">Contrassegno</option>
+				<option value="pay_pal">Pay Pal</option>
+				<option value="carta_prepagata">Carta Prepagata</option>
+			</select></li>
+			<li>
+				
+			</li>
+			</ul>
+       </div>
     </div>
     
     <div id="footer">
