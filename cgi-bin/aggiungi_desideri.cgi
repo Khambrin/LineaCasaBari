@@ -51,8 +51,8 @@ if(!@lista_esistente[0])
 else
 {
 my $lista_tag=@lista_esistente[0];
-	my @prodotto_esistente=$doc->findnodes("Liste/Lista[Utente='$email']/Prodotto='$prodotto'");
-	if(!@prodotto_esistente[0])
+	my $prodotto_esistente=$doc->findnodes("Liste/Lista[Utente='$email' and Prodotto='$prodotto']");
+	if(!$prodotto_esistente)
 	{
 		my $prodotto_tag=$doc->createElement("Prodotto");
 		$lista_tag->appendChild($prodotto_tag);
