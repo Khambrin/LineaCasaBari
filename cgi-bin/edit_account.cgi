@@ -24,7 +24,7 @@ my $parser=XML::LibXML->new;
 
 foreach my $p (param())
 {
-	$values{$p}=lc param($p);
+	$values{$p}=param($p);
 }
 
 if (!$values{"nuova_email"})
