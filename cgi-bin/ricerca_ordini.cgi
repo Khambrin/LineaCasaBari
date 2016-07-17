@@ -66,20 +66,22 @@ if($messaggio eq "false")
 	push my @ordine, $doc->findnodes("Ordini/Ordine[Codice='$cod']/Codice/text()");
 	push @ordine, $doc->findnodes("Ordini/Ordine[Codice='$cod']/Utente/text()");
 	push @ordine, $doc->findnodes("Ordini/Ordine[Codice='$cod']/Data/text()");
+	push @ordine, $doc->findnodes("Ordini/Ordine[Codice='$cod']/Mpagamento/text()");
+	push @ordine, $doc->findnodes("Ordini/Ordine[Codice='$cod']/Indirizzo/text()");
 	my $num_prodotto=$doc->findvalue("count(Ordini/Ordine[Codice='$cod']/Prodotto)");
 	for(my $x=0; $x<$num_prodotto;$x++)
 	{
 		push @ordine, $doc->findnodes("Ordini/Ordine[Codice='$cod']/Prodotto/text()");
 	}
 
-	my @label = ('Codice','Utente','Data' );
+	my @label = ('Codice','Utente','Data','Metodo di pagamento','Indirizzo' );
 	for(my $x=0; $x<$num_prodotto;$x++)
 	{
 		push @label, "Prodotto";
 	}
 
 	my $y=0;
-	for(my $i=0; $i<3;$i++)
+	for(my $i=0; $i<5;$i++)
 	{
 		my $x='<li class="ordini-block">'.'<form>'.'<label class="gestione-labels">'."@label[$i]: @ordine[$y]</label></form></li>";
 		$y++;

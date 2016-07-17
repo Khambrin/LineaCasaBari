@@ -64,6 +64,12 @@ if($messaggio eq "false")
 		my $data=$doc->findnodes("Ordini/Ordine[Codice=$i]/Data/text()");
 		my $x='<li><label>'."Data: $data</label></li>";
 		$tot=$tot.$x;
+		my $mpagamento=$doc->findnodes("Ordini/Ordine[Codice=$i]/Mpagamento/text()");
+		my $x='<li><label>'."Metodo di pagamento: $mpagamento</label></li>";
+		$tot=$tot.$x;
+		my $indi=$doc->findnodes("Ordini/Ordine[Codice=$i]/Indirizzo/text()");
+		my $x='<li><label>'."Indirizzo: $indi</label></li>";
+		$tot=$tot.$x;
 		my $num_prodotto=$doc->findvalue("count(Ordini/Ordine[Codice='$i']/Prodotto)");
 		for(my $y=1; $y<=$num_prodotto;$y++)
 		{

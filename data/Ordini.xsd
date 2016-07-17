@@ -6,6 +6,8 @@
 			<xsd:element name="Codice" type="xsd:string"/>
     		<xsd:element name="Utente" type="xsd:string"/>
     		<xsd:element name="Data_ordine" type="xsd:date"/>
+    		<xsd:element name="Mpagamento" type="xsd:string"/>
+    		<xsd:element name="Indirizzo" type="xsd:integer"/>
 			<xsd:element name="Prodotto_ordinato" type="xsd:string" maxOccurs="unbounded"/>
     	</xsd:sequence>
     </xsd:complexType>

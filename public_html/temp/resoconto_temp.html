@@ -4,10 +4,10 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Linea Casa Bari - Acquisto</title>
-    <meta name="title" content="Linea Casa Bari - Acquisto" />
-    <meta name="description" content="Pagina per completare il proprio acquisto on-line" />
-    <meta name="keywords" content="carrello, acquisti, carrello acquisti" />
+    <title>Linea Casa Bari - Resoconto</title>
+    <meta name="title" content="Linea Casa Bari - Resoconto" />
+    <meta name="description" content="Pagina per verificare la correttezza del proprio acquisto on-line" />
+    <meta name="keywords" content="carrello, acquisti, carrello acquisti, resoconto, verifica" />
     <meta name="language" content="italian it" />
     <meta name="author" content="Alessandro Bari, Navid Taha, Alice Sasso, Lorenzo Ferrarin" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -47,7 +47,7 @@
     
     <div id="menu">
         <span id="path">
-            Ti trovi in: Carrello-Acquisto </span>
+            Ti trovi in: Carrello-Acquisto-Resoconto </span>
     
         <div id="nav">
             <ul>
@@ -75,31 +75,7 @@
     </div>
     
     <div id="content">
-       <div class="form-container2">
-		   <form action="stampa_resoconto.cgi" method="post">
-			   <ul>
-				<li>
-					<label id="acquisto-mpagamentoLabel">Metodo di Pagamento</label>
-					<select name="mpagamento-select">
-						<option value="carta_credito">Carta di Credito</option>
-						<option value="bonifico">Bonifico</option>
-						<option value="contrassegno">Contrassegno</option>
-						<option value="pay_pal">Pay-Pal</option>
-						<option value="carta_prepagata">Carta Prepagata</option>
-					</select>
-				</li>
-				<li>
-					<label id="acquisto-indirizziLabel">Indirizzo di spedizione: &#40;aggiungine altri dalla specifica sezione di Account&#41;</label>
-					<ul>
-						[% lista_indirizzi %]
-					</ul>
-				</li>
-				<li>
-					<button class="button" type="submit">Procedi</button>
-				</li>
-				</ul>
-			</form>
-       </div>
+       [% lista_acquisto %]
     </div>
     
     <div id="footer">
