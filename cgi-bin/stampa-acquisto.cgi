@@ -6,87 +6,57 @@ use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use strict;
 use Template;
 use CGI::Session;
+use Switch;
 use XML::LibXML;
 
 my $cgi=new CGI;
+
 my $session = CGI::Session->load();
+
 my $email=$session->param("email");
+my $amministratore=$session->param("amministratore");
+
+
+my $vars;
 
 my $parser=XML::LibXML->new;
 my $doc=$parser->parse_file("../data/Indirizzi.xml");
 my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
 	});
-=pod
-my $messaggio="false";
-my @utente_ordini=$doc->findnodes("Ordini/Ordine/Utente/text()");
 
-if(@utente_ordini)
-{
-	my $i;
-	foreach $i (@utente_ordini)
-	{
-		if($i ne $email)
-		{
-			$messaggio="non hai eseguito alcun ordine";
-		}
-		else
-		{
-			$messaggio="false";
-			last;
-		}
-	}
+my @indirizzo_via=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo/Via/text()");
+my @indirizzo_numero_civico=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo/Numero_civico/text()");
+my @indirizzo_citta=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo/Città/text()");
+my @indirizzo_provincia=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo/Provincia/text()");
+my @indirizzo_cap=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo/CAP/text()");
+
+my $file='acquisto_temp.html';
+my $tot;
+for (my $index=0; $index <=$#indirizzo_via; $index++)
+{	
+	my $x='<li><label>'."Indirizzo n. $index</label>".'<input type="checkbox" name="indirizzo" value="'."$index".'"/></li>';
+	$tot=$tot.$x;
+	my $x='<li><label>'."via @indirizzo_via[$index]</label></li>";
+	$tot=$tot.$x;
+	my $x='<li><label>'."numero @indirizzo_numero_civico[$index]</label></li>";
+	$tot=$tot.$x;
+	my $x='<li><label>'."@indirizzo_citta[$index]</label></li>";
+	$tot=$tot.$x;
+	my $x='<li><label>'."@indirizzo_provincia[$index]</label></li>";
+	$tot=$tot.$x;
+	my $x='<li><label>'."@indirizzo_cap[$index]</label></li>";
+	$tot=$tot.$x;	
 }
-else
-{
-	$messaggio="non ci sono ordini";
-}
 
-my $vars;
+my $lista_indirizzi=$tot;
 
-
-if($messaggio eq "false")
-{
-	my $tot;
-	my @lista_ordini=$doc->findnodes("Ordini/Ordine[Utente='$email']/Codice/text()");
-	foreach my$i (@lista_ordini)
-	{
-		my $x='<li><h2>'."Codice: $i</h2></li>";
-		$tot=$tot.$x;
-		my $x='<li><label>'."Utente: $email</label></li>";
-		$tot=$tot.$x;
-		my $data=$doc->findnodes("Ordini/Ordine[Codice=$i]/Data/text()");
-		my $x='<li><label>'."Data: $data</label></li>";
-		$tot=$tot.$x;
-		my $num_prodotto=$doc->findvalue("count(Ordini/Ordine[Codice='$i']/Prodotto)");
-		for(my $y=1; $y<=$num_prodotto;$y++)
-		{
-			my $prodotto=$doc->findnodes("Ordini/Ordine[Codice=$i]/Prodotto[$y]/text()");
-			my $x='<li><label>'."Prodotto: $prodotto</label></li>";
-			$tot=$tot.$x;
-		}
-	}
-	
-	my $lista_ordine='<div class="form-container2"><ul class="form-Block">'."$tot"."</ul></div>";
-	$vars={
+$vars={
 		'sessione' => "true",
 		'email' => $email,
-		'list' => "true",
 		'amministratore' => $amministratore,
-		'lista_ordini' => $lista_ordine,
+		'lista_indirizzi' => $lista_indirizzi,
 	};
-}
-else
-{
-	$vars={
-		'sessione' => "true",
-		'email' => $email,
-		'list' => "false",
-		'amministratore' => $amministratore,
-		'messaggio' => $messaggio,
-	};
-}
-my $file='i_miei_ordini_temp.html';
+
+print $cgi->header('text/html');
 $template->process($file,$vars) || die $template->error();
-
-=cut

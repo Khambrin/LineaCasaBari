@@ -76,19 +76,29 @@
     
     <div id="content">
        <div class="form-container2">
-		   <ul>
-			<li><label id="acquisto-mpagamentoLabel">Metodo di Pagamento</label>
-			<select>
-				<option value="carta_credito">Carta di Credito</option>
-				<option value="bonifico">Bonifico</option>
-				<option value="contrassegno">Contrassegno</option>
-				<option value="pay_pal">Pay Pal</option>
-				<option value="carta_prepagata">Carta Prepagata</option>
-			</select></li>
-			<li>
-				
-			</li>
-			</ul>
+		   <form action="stampa_resoconto.cgi" method="post">
+			   <ul>
+				<li>
+					<label id="acquisto-mpagamentoLabel">Metodo di Pagamento</label>
+					<select>
+						<option value="carta_credito">Carta di Credito</option>
+						<option value="bonifico">Bonifico</option>
+						<option value="contrassegno">Contrassegno</option>
+						<option value="pay_pal">Pay-Pal</option>
+						<option value="carta_prepagata">Carta Prepagata</option>
+					</select>
+				</li>
+				<li>
+					<label id="acquisto-indirizziLabel">Indirizzo di spedizione: &#40;aggiungine altri dalla specifica sezione di Account&#41;</label>
+					<ul>
+						[% lista_indirizzi %]
+					</ul>
+				</li>
+				<li>
+					<button class="button" type="submit">Procedi</button>
+				</li>
+				</ul>
+			</form>
        </div>
     </div>
     
