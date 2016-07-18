@@ -670,7 +670,7 @@ body
         width: 99%;
         height: 2.7em;
         text-align: center;
-        padding-bottom: 1em;
+        padding-bottom: 5em;
         margin-bottom: 1em;
     }
 
@@ -687,17 +687,14 @@ body
     {
         list-style: none;
         display: inline-block;
-        padding-left: 1em;
-        padding-right: 1em;
         transform:rotate(-20deg);
         text-decoration: none;
         background-color:#295380;
         margin-left: 1em;
         margin-right: 1em;
-        padding:0.5em;
+        padding: 0.5em;
         color: white;
         box-shadow: 1px 1px 1px 1px #888888;
-	    
     }
 
   
