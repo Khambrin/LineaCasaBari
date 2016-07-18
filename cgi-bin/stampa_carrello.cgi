@@ -32,11 +32,15 @@ if(!@utente_carrello[0])
 {
 	if ($key eq 'false')
 	{
-		$messaggio="il tuo carrello &egrave; vuoto, visita la pagina Prodotti per comporne uno";
+		$messaggio="Il tuo carrello &egrave; vuoto, visita la pagina Prodotti per comporne uno";
 	}
 	elsif ($key eq 'modificato')
 	{
-		$messaggio="modifica effettuata con successo, ora il tuo carrello &egrave; vuoto";
+		$messaggio="Modifica effettuata con successo, ora il tuo carrello &egrave; vuoto";
+	}
+	elsif ($key eq 'svuotato')
+	{
+		$messaggio="Ordine effettuato con successo, ora il tuo carrello &egrave; vuoto";
 	}
 	$vars={
 		'sessione' => "true",

@@ -19,33 +19,40 @@ my $email=$session->param("email");
 my $parser=XML::LibXML->new;
 my $doc=$parser->parse_file("../data/Utenti.xml");
 my $amministratore=$doc->findnodes("Utenti/Utente[Email='$email']/Amministratore/text()");
-my $doc=$parser->parse_file("../data/Ordini.xml");
 my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
 	});
 
 my $messaggio="false";
-my @utente_ordini=$doc->findnodes("Ordini/Ordine/Utente/text()");
 
-if(@utente_ordini)
+if(-e "../data/Ordini.xml")
 {
-	my $i;
-	foreach $i (@utente_ordini)
+	$doc=$parser->parse_file("../data/Ordini.xml");
+	my @utente_ordini=$doc->findnodes("Ordini/Ordine/Utente/text()");
+	if(@utente_ordini)
 	{
-		if($i ne $email)
+		my $i;
+		foreach $i (@utente_ordini)
 		{
-			$messaggio="non hai eseguito alcun ordine";
+			if($i ne $email)
+			{
+				$messaggio="non hai eseguito alcun ordine";
+			}
+			else
+			{
+				$messaggio="false";
+				last;
+			}
 		}
-		else
-		{
-			$messaggio="false";
-			last;
-		}
+	}
+	else
+	{
+		$messaggio="non hai effettuato nessun ordine";
 	}
 }
 else
 {
-	$messaggio="non ci sono ordini";
+	$messaggio="non hai effettuato nessun ordine";
 }
 
 my $vars;
@@ -95,7 +102,7 @@ else
 		'email' => $email,
 		'list' => "false",
 		'amministratore' => $amministratore,
-		'messaggio' => $messaggio,
+		'messaggio_ordini' => $messaggio,
 	};
 }
 my $file='i_miei_ordini_temp.html';

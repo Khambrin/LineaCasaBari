@@ -16,77 +16,98 @@ my $cgi=new CGI;
 
 my $session = CGI::Session->load();
 my $email=$session->param("email");
-my $mpagamento=param("mpagamento");
-my $indirizzo=param("indirizzo");indirizzo
+my $mpagamento=param('mpagamento');
+if($mpagamento eq 'carta_credito')
+{
+	$mpagamento='carta di credito';
+}
+elsif($mpagamento eq 'pay_pal')
+{
+	$mpagamento='PayPal';
+}
+elsif($mpagamento eq 'carta_prepagata')
+{
+	$mpagamento='Carta prepagata';
+}
+
+my $indirizzo=param("indirizzo");
 my $parser=XML::LibXML->new;
 my $carrello_doc=$parser->parse_file("../data/Carrelli.xml");
 my $num_prodotti=$carrello_doc->findvalue("count(Carrelli/Carrello[Utente='$email']/Elemento)");
 
 my $new=0;
+my $ordini_doc;
+my $root;
 if (-e "../data/Ordini.xml")
 {
 	my $parser=XML::LibXML->new();
-	$doc=$parser->parse_file("../data/Ordini.xml");
-	$root=$doc->documentElement();
+	$ordini_doc=$parser->parse_file("../data/Ordini.xml");
+	$root=$ordini_doc->documentElement();
 }
 else
 {
-	$doc=XML::LibXML::Document->new("1.0","UTF-8");
-	$root=$doc->createElement("Ordini");
-	$doc->setDocumentElement($root);
+	$ordini_doc=XML::LibXML::Document->new("1.0","UTF-8");
+	$root=$ordini_doc->createElement("Ordini");
+	$ordini_doc->setDocumentElement($root);
 	$new=1;	
 }
 
-my $ordine_tag=$doc->createElement("Ordine");	
+my $ordine_tag=$ordini_doc->createElement("Ordine");	
 $root->appendChild($ordine_tag);
 
 if($new==0)
 {
-	my $last_id=$doc->findvalue("Ordini/Ordine[last()]/Codice");
-	$id=$last_id+1;
-	my $id_tag=$doc->createElement("Codice");
+	my $last_id=$ordini_doc->findvalue("Ordini/Ordine[last()]/Codice");
+	my $id=$last_id+1;
+	my $id_tag=$ordini_doc->createElement("Codice");
 	$id_tag->appendTextNode($id);
 	$ordine_tag->appendChild($id_tag);
 }
 else
 {
-	$id=1;
-	my $id_tag=$doc->createElement("Codice");
+	my $id=1;
+	my $id_tag=$ordini_doc->createElement("Codice");
 	$id_tag->appendTextNode($id);
 	$ordine_tag->appendChild($id_tag);
 }
 
-my $utente_tag=$doc->createElement("Utente");
+my $utente_tag=$ordini_doc->createElement("Utente");
 $utente_tag->appendTextNode($email);
 $ordine_tag->appendChild($utente_tag);
 
 my ($sec,$min,$hour,$mday,$mon,$yr19,$wday,$yday,$isdst) = localtime(time);
 my $year=$yr19+1900;
 my $date="$mday/$mon/$year";
-my $date_tag=$doc->createElement("Data");
+my $date_tag=$ordini_doc->createElement("Data");
 $date_tag->appendTextNode($date);
 $ordine_tag->appendChild($date_tag);
 	
-my $pagamento_tag=$doc->createElement("Mpagamento");
+my $pagamento_tag=$ordini_doc->createElement("Mpagamento");
 $pagamento_tag->appendTextNode($mpagamento);
 $ordine_tag->appendChild($pagamento_tag);
 	
-my $indirizzo_tag=$doc->createElement("Indirizzo");
+my $indirizzo_tag=$ordini_doc->createElement("Indirizzo");
 $ordine_tag->appendChild($indirizzo_tag);
 $indirizzo_tag->appendTextNode($indirizzo);
 
-for(my$i=1;$i<=num_prodotti;$i++)	
+for(my$i=1;$i<=$num_prodotti;$i++)	
 {
 	my $cod=param('prodotto'."$i".'');
-	prodotto_tag=$doc->createElement("Prodotto");
+	my $prodotto_tag=$ordini_doc->createElement("Prodotto_ordinato");
 	$ordine_tag->appendChild($indirizzo_tag);
 	$prodotto_tag->appendTextNode($cod);
 }
 
 open (XML,">","../data/Ordini.xml");
-print XML $doc->toString();
+print XML $ordini_doc->toString();
 close(XML);
-#manca svuotare carrello e redirect su check session con svuotato
-my $messaggio="Prodotto aggiunto correttamente al carrello";
-print $cgi->redirect('prodotto.cgi?Codice='."$codice".'&Filter='."$filter".'&Page='."$page".'&Messaggio='."$messaggio");
+
+my $carrello = $carrello_doc->findnodes("Carrelli/Carrello[Utente='$email']");
+$carrello->[0]->parentNode->removeChild($carrello->[0]);
+
+open (XML,">","../data/Carrelli.xml");
+print XML $carrello_doc->toString();
+close(XML);
+print $cgi->redirect('check_session.cgi?carrello-svuotato');
+
 

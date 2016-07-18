@@ -46,11 +46,12 @@ if ($session->is_empty)
 		or $ENV{'QUERY_STRING'} eq 'indirizzi' or $ENV{'QUERY_STRING'} eq 'togli_utenti' 
 		or $ENV{'QUERY_STRING'} eq 'gestione_prodotti' or $ENV{'QUERY_STRING'} eq 'gestione_ordini' 
 		or $ENV{'QUERY_STRING'} eq 'gestione_annunci' or $ENV{'QUERY_STRING'} eq 'carrello' 
-		or $ENV{'QUERY_STRING'} eq 'gestione_account')
+		or $ENV{'QUERY_STRING'} eq 'gestione_account' or $ENV{'QUERY_STRING'} eq 'gestione_indirizzi' 
+		or $ENV{'QUERY_STRING'} eq 'carrello-svuotato' or $ENV{'QUERY_STRING'} eq 'carrello-modificato')
 	{
 		$file='login_temp.html';
 		$vars={
-				'lol' => "Accedi prima di continuare",
+				'log' => "Accedi prima di continuare",
 				'query_string' => "$ENV{'QUERY_STRING'}",
 			}
 	}

@@ -90,7 +90,9 @@ elsif($pagamento eq 'carta_prepagata')
 	my $x='<li><label id="resoconto-prepagataLabel">Inserire codice: </label><div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="codPaypal"/></div><div class="inputRight"></div></li>';
 	$tot=$tot.$x;
 }
-my $x='<li><button class="button" type="submit" value="conferma">Conferma</button><input type="hidden" name="mpagamento" value="'."$pagamento".'"><input type="hidden" name="indirizzo" value="'."$indi".'"><li>';
+my $x='<li><button class="button" type="submit" value="conferma">Conferma</button><li>';
+$tot=$tot.$x;
+my $x='<input type="hidden" name="mpagamento" value="'."$pagamento".'"/><input type="hidden" name="indirizzo" value="'."$indi".'"/>';
 $tot=$tot.$x;
 
 my $lista_acquisto='<div class="form-container2"><form action="aggiungi-ordine.cgi" method="post"><ul>'."$tot".'</ul></form></div>';
