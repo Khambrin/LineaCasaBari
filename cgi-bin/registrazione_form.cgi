@@ -55,22 +55,22 @@ foreach my $chiave (keys %values)
 		
 		if (length($pwd)>20)
 		{
-			push @messaggi, "La password inserita &egrave troppo lunga";
+			push @messaggi, "La password inserita &egrave troppo lunga, massimo 20 caratteri";
 		}
 		if (length($pwd)<8)
 		{
-			push @messaggi, "La password inserita &egrave troppo corta";
+			push @messaggi, "La password inserita &egrave troppo corta, minimo 8 caratteri";
 		}
 		if ($values{$chiave} =~ m/[^a-zA-Z0-9]/)
 		{
-			push @messaggi, "La password inserita contiene caratteri non consentiti";
+			push @messaggi, "La password inserita contiene caratteri non consentiti, caratteti permessi lettere minuscole maiuscole e numeri";
 		}
 	}
 	elsif ($chiave eq "conf_password")
 	{
 		if ($values{$chiave} ne $pwd)
 		{
-			push @messaggi, "La conferma della password non corrisponde";
+			push @messaggi, "Le password non corrispondono";
 		}
 	}
 }
