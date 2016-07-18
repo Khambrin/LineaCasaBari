@@ -185,7 +185,7 @@ body
     display: inline-block;
     vertical-align: middle;
     background-image: url(../images/input_middle.png);
-    width: 40%;
+    width: 60%;
     background-size: contain;
     background-repeat: repeat-x;
 }
@@ -532,6 +532,7 @@ body
 .login-Block li{
     list-style: none;
     padding-bottom: 2em;
+    
 }
 
 .login-emailLabel{
