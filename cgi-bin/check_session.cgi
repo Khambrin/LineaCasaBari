@@ -105,6 +105,10 @@ else
 	{
 		print $cgi->redirect("stampa_carrello.cgi?modificato");
 	}
+	if($ENV{'QUERY_STRING'} eq 'carrello-svuotato')
+	{
+		print $cgi->redirect("stampa_carrello.cgi?svuotato");
+	}
 	if($ENV{'QUERY_STRING'} eq 'gestione_indirizzi')
 	{
 		print $cgi->redirect("gestione_indirizzi_script.cgi?aggiungi");

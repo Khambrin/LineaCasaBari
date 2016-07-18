@@ -9,33 +9,38 @@ use CGI::Session;
 use Switch;
 use XML::LibXML;
 
-my $template=Template->new({
-		INCLUDE_PATH => '../public_html/temp',
-	});
 my $cgi=new CGI;
+print $cgi->header('text/html');
 my $session = CGI::Session->load();
-
 my $email=$session->param("email");
+
 my $amministratore=$session->param("amministratore");
 my $email=$session->param("email");
 my $pagamento=param("mpagamento-select");
 
 my $parser=XML::LibXML->new;
 my $carrello_doc=$parser->parse_file("../data/Carrelli.xml");
-my $prodotto_doc=$parser->parse_file("../data/Prodotti.xml");
-
+my $parser2=XML::LibXML->new;
+my $prodotto_doc=$parser2->parse_file("../data/Prodotti.xml");
+my $template=Template->new({
+		INCLUDE_PATH => '../public_html/temp',
+	});
 my $num_prodotti=$carrello_doc->findvalue("count(Carrelli/Carrello[Utente='$email']/Elemento)");
 my $tot_prodotto=0;
-for(my $i=0; $i<$num_prodotti; $i++)
+my $tot;
+for(my $i=1; $i<=$num_prodotti; $i++)
 {
 	my @cod=$carrello_doc->findnodes("Carrelli/Carrello[Utente='$email']/Elemento[$i]/Prodotto/text()");
 	my $codice=@cod[0]->string_value;
+	my $x='<input type="hidden" name="prodotto'."$i".' value="'."$codice".'">';
+	$tot=$tot.$x;
 	my @prz=$prodotto_doc->findnodes("Prodotti/Prodotto[Codice='$codice']/Prezzo/text()");
 	my $prezzo=@prz[0]->string_value;
 	$tot_prodotto=$tot_prodotto+$prezzo;
+	
 }
 
-my $tot;
+
 
 my $x='<li><h2>Resoconto</h2></li>';
 $tot=$tot.$x;
@@ -43,11 +48,11 @@ $tot=$tot.$x;
 my $x='<li><label id="resoconto-costoLabel">Prezzo totale: </label>'."$tot_prodotto".'</li>';
 $tot=$tot.$x;
 
-my $x='<li><label id="resoconto-mpagLabel">Metodo scelto: ';
+my $indi=param('indirizzo');
+my $x='<li><p>Hai scelto l&#180;indirizzo numero: '."$indi".'</p></li>';
 $tot=$tot.$x;
 
-my $indi=param('indirizzo');
-my $x='<li><p>Hai scelto l&#180;indirizzo numero: '."$indi".'</p><div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="codCcredito"/></div><div class="inputRight"></div></li>';
+my $x='<li><label id="resoconto-mpagLabel">Metodo scelto: ';
 $tot=$tot.$x;
 
 if($pagamento eq 'carta_credito')
@@ -85,7 +90,7 @@ elsif($pagamento eq 'carta_prepagata')
 	my $x='<li><label id="resoconto-prepagataLabel">Inserire codice: </label><div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="codPaypal"/></div><div class="inputRight"></div></li>';
 	$tot=$tot.$x;
 }
-my $x='<li><button class="button" type="submit" value="conferma">Conferma</button><li>';
+my $x='<li><button class="button" type="submit" value="conferma">Conferma</button><input type="hidden" name="mpagamento" value="'."$pagamento".'"><input type="hidden" name="indirizzo" value="'."$indi".'"><li>';
 $tot=$tot.$x;
 
 my $lista_acquisto='<div class="form-container2"><form action="aggiungi-ordine.cgi" method="post"><ul>'."$tot".'</ul></form></div>';
