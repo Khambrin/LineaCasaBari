@@ -678,7 +678,6 @@ body
     #linea-tempo a
     {
         text-decoration: none;
-        color: white;
     }
 
 
@@ -689,11 +688,10 @@ body
         display: inline-block;
         transform:rotate(-20deg);
         text-decoration: none;
-        background-color:#295380;
+        background-color:#E1E3E4;
         margin-left: 1em;
         margin-right: 1em;
         padding: 0.5em;
-        color: white;
         box-shadow: 1px 1px 1px 1px #888888;
     }
 
@@ -701,7 +699,7 @@ body
     .linea-tempo-su
     {
         width: 45%;
-        background-color: #295380;
+        background-color: #E1E3E4;
         margin-bottom: 3em;
         display: inline-block;
         padding-top:0.5em;
@@ -713,7 +711,6 @@ body
     .linea-tempo-su a
     {
         text-decoration: none;
-        color: white;
     }
 
 
