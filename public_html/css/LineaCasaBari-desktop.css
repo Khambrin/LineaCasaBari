@@ -555,6 +555,10 @@
     .form-container2 h2{
         padding-top: 1em;
     }
+    
+    .form-container2 li{
+        list-style: none;
+    }
 
 /*--------------------------- contattaci.html ----------------------------------------------------------------------------------------------------*/
     
@@ -736,23 +740,23 @@
         margin-top: 1em;
         margin-bottom: 1em;
     }
-    #indirizzo-ViaLabel{
+    .indirizzo-ViaLabel{
         padding-right: 6.4em;
     
     }
-    #indirizzo-NumLabel{
+    .indirizzo-NumLabel{
         padding-right: 1.5em;
         
     }
-    #indirizzo-CittaLabel{
+    .indirizzo-CittaLabel{
         padding-right: 5.9em;
         
     }
-    #indirizzo-ProvinciaLabel{
+    .indirizzo-ProvinciaLabel{
         padding-right: 4.1em;
         
     }
-    #indirizzo-CapLabel{
+    .indirizzo-CapLabel{
         padding-right: 6em;
         
     }

@@ -33,7 +33,6 @@ my @prodotti=$doc->findnodes("Liste/Lista[Utente='$email']/Prodotto/text()");
 my $file='lista_desideri_temp.html';
 my $tot;
 
-
 for (my $index=0; $index <=$#prodotti; $index++)
 {	
 	my $x='<li>Prodotto: '."@prodotti[$index]".'</li>';
@@ -47,7 +46,7 @@ for (my $index=0; $index <=$#prodotti; $index++)
 
 
 
-my $lista_desideri="<ul>"."$tot"."</ul>";
+my $lista_desideri='<div class="form-container2"><h2>Lista dei Desideri</h2><ul>'."$tot".'</ul></div>';
 
 if ($session->is_empty)
 {

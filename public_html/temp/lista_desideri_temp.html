@@ -4,10 +4,10 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Linea Casa Bari - Contatti</title>
-    <meta name="title" content="Linea Casa Bari - Contattaci" />
-    <meta name="description" content="Pagina per contattare i titolari del negozio Linea Casa Bari" />
-    <meta name="keywords" content="piatti, bicchieri, posate, porcellane, liste nozze, vasi, lampade, paralumi, contatti, messaggio" />
+    <title>Linea Casa Bari - Lista dei Desideri</title>
+    <meta name="title" content="Linea Casa Bari - Lista dei Desideri" />
+    <meta name="description" content="Pagina per gestire la propia lista dei desideri" />
+    <meta name="keywords" content="lista dei desideri, gestione, aggiungi, togli" />
     <meta name="language" content="italian it" />
     <meta name="author" content="Alessandro Bari, Navid Taha, Alice Sasso, Lorenzo Ferrarin" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -85,17 +85,8 @@
 		</div>
     </div>
     <div id="content">
-		<h2 id="titolo"> Lista dei Desideri </h2>
-		
-
-
-
+		[% IF messaggio != 'false' %][% messaggio %][% END %]
 		[% lista_desideri %]
-
-
-
-
-
     </div>
     
     <div id="footer">
