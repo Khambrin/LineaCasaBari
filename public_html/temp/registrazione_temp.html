@@ -92,11 +92,28 @@
                     <div class="messaggio-error">[% messaggio_registrazione %]</div>
                 </form>
         </div>
-        
+	<script type="text/javascript">
+	function validateForm() {
+    		var str  = recform.password.value;
+    		var n = str.length;
+    		if(n<8) {
+			document.getElementById("shortpassword").innerHTML = "Password troppo corta, minimo 8 caratteri";
+			document.getElementById("longpassword").innerHTML = "";
+        		return false;
+
+    		}
+		else if(n>20) {
+			document.getElementById("shortpassword").innerHTML = "";
+			document.getElementById("longpassword").innerHTML = "Password troppo lunga, massimo 20 caratteri";
+        		return false;
+    		}
+    		return true;
+	}
+	</script> 
         <div id="registrazione-container">
             <div class="form-container2">
-                <h2>Crea un account</h2>
-                <form action="../cgi-bin/registrazione_form.cgi" method="post">
+                <h2>Crea un account</h2> 
+                <form name="recform" action="../cgi-bin/registrazione_form.cgi"  method="post" onsubmit="return validateForm()">
                     <ul class="form-Block">
                         <li>
                             <label class="account-nomeLabel">Nome:</label>
@@ -120,10 +137,12 @@
                         </li>
                     </ul>
                     <div>
-                        <button class="button" type="submit" value="registrazione">Registrati</button>
+                        <button class="button" type="submit" value="registrazione" onclick="myFunction()" >Registrati</button>
                     </div>
+		<div class="js-message-error"> <p id="shortpassword"></p> <p id="longpassword"></p> </div>
                     <div class="messaggio-error">[% messaggio_registrazione %]</div>
                 </form>
+
             </div>
         
         </div>
