@@ -12,8 +12,7 @@
     <meta name="author" content="Alessandro Bari, Navid Taha, Alice Sasso, Lorenzo Ferrarin" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <link href="../css/LineaCasaBari.css" rel="stylesheet" type="text/css" media="screen"/>
-    <link href="../css/LineaCasaBari-desktop.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link href="../LineaCasaBari.css" rel="stylesheet" type="text/css" media="screen"/>
     <script type="text/javascript" src="../js/jquery-1.12.0.js"></script>
     <script type="text/javascript" src="../js/link_skipper.js"></script>
 </head>
@@ -100,10 +99,36 @@
                     <li class="subtitle_link">Gestisci gli indirizzi di spedizione</li>
                 </ul>
             </div><div id="right-col">
+		<script type="text/javascript">
+		function validateForm() {
+    			var str  = modacform.nuova_password.value;
+			var snt  = modacform.telefono.value;
+    			var n = str.length;
+			var t = snt.length;
+    			if(n<8) {
+				document.getElementById("shortpassword").innerHTML = "Nuova Password troppo corta, minimo 8 caratteri";
+				document.getElementById("longpassword").innerHTML = "";
+        			return false;
+	
+    			}
+			else if(n>20) {
+				document.getElementById("shortpassword").innerHTML = "";
+				document.getElementById("longpassword").innerHTML = "Nuova Password troppo lunga, massimo 20 caratteri";
+        			return false;
+    			}
+			if(t<8 || t>15 ) { //ITU-T recommendation E.164
+				document.getElementById("ernumber").innerHTML = "Numero non valido";
+        			return false;
+	
+    			}
+			
+    			return true;
+		}	
+		</script>
 				<div class="messaggio-confirm">[% log %]</div>
 				<div class="form-container2">
 					<h2>Modifica il tuo account</h2>
-					<form method="post" action="edit_account.cgi" enctype="multipart/form-data">
+					<form name="modacform" method="post" action="edit_account.cgi" onsubmit="return validateForm()" enctype="multipart/form-data">
 					<ul class="form-Block">
 						<li>
                             <label class="account-emailLabel">Email:</label>
@@ -136,6 +161,7 @@
                         <button class="button" type="submit">Modifica Account</button>
                     </div>
 					<div>[% hidden %]</div>
+					<div class="js-message-error"> <p id="shortpassword"></p> <p id="longpassword"></p> <p id="ernumber"></p> </div>
 					<div class="messaggio-error">[% messaggio %]</div>
                 </form>
                 </div>
