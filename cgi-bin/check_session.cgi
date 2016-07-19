@@ -34,6 +34,7 @@ switch($ENV{'QUERY_STRING'})
 	case 'gestione_annunci' { $file='gestione_annunci_temp.html' }
 	case 'gestione_ordini' {$file='gestione_ordini_temp.html' }
 	case 'lista_desideri' {$file='lista_desideri_temp.html' }
+    case 'gestione_account' { $file='impostazioni_account_temp.html' }
 }
 
 if ($session->is_empty)
