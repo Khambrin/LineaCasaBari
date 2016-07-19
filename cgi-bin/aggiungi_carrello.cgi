@@ -51,7 +51,7 @@ else {
 }
 
 my $codice=$in{'Codice'};
-
+if(!$codice){$codice=$prodotto;}
 
 
 my $doc,my $root;
