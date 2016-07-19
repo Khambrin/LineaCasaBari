@@ -833,3 +833,31 @@
         padding-right: 0.5em;
         
     }
+
+/*-------------------------------------------- MAPPA DEL SITO ------------------------------------------------------------------------*/
+    
+    #sitemap-container{
+        display: block;
+        width: 80%;
+        text-align: center;
+        margin-bottom: 5em;
+        margin-top: 2em;
+        margin-left: auto;
+        margin-right: auto;
+        height: 25em;
+        box-shadow: 1px 1px 1px 1px #888888;
+        background-color: #E1E3E4;
+    }
+    
+    #sitemap-container h2{
+        padding-top: 1em;
+    }
+    
+    #home-block{
+        display: inline-block;
+        width: 20%;
+        height: 3em;
+        background-color: mintcream;
+        box-shadow: 1px 1px 1px 1px #888888;
+        
+    }
