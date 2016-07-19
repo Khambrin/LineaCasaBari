@@ -100,6 +100,26 @@
                     <li class="subtitle_link">Gestisci gli indirizzi di spedizione</li>
                 </ul>
             </div><div id="right-col">
+
+		<script type="text/javascript">
+		function valnewindForm() {// aggiungi indirizzo
+    			
+			var provincia  = newindform.provincia.value;//due lettere
+			var cap  = newindform.cap.value;//5 cifre
+
+    			var nprov = provincia.length;
+			var ncap = provincia.length;
+			
+    			if(nprov!=2) {
+				document.getElementById("shortprov").innerHTML = "Inserisci una provincia valida, ad esempio PD";
+				document.getElementById("lencap").innerHTML = "";
+        			return false;
+			}
+    			
+    			return true;
+		}	
+		</script>
+
 		<div id="sub_menu">
                 [% IF pagina == 'aggiungi' %]
 					<div class="sub_menu_block_active"><span class="sub_menu_text_active">Aggiungi indirizzo</span></div><a href="stampa_indirizzi.cgi"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica indirizzo</span></div></a>
@@ -112,7 +132,7 @@
 			[% IF pagina == 'aggiungi' %]
 			<div class="form-container2">
 				<h2>Aggiungi indirizzo</h2>
-				<form method="post" action="aggiungi_indirizzo_script.cgi" enctype="multipart/form-data">
+				<form name="newindform" method="post" action="aggiungi_indirizzo_script.cgi" onsubmit="return valnewindForm()" enctype="multipart/form-data">
 				<ul class="form-Block">
 					<li>
                         <label class="indirizzo-ViaLabel">Via:</label>
