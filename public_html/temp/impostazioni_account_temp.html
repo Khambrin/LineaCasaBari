@@ -104,7 +104,7 @@
 		<script type="text/javascript">
 		function validateForm() {
     			var str  = modacform.nuova_password.value;
-			var snt  = modacform.telefono.value;
+			var snt  = modacform.nuovo_telefono.value;
     			var n = str.length;
 			var t = snt.length;
     			if(n<8) {
@@ -118,12 +118,14 @@
 				document.getElementById("longpassword").innerHTML = "Nuova Password troppo lunga, massimo 20 caratteri";
         			return false;
     			}
-			if(t<8 || t>15 ) { //ITU-T recommendation E.164
+			if(t<8 | t>15 ) { //ITU-T recommendation E.164
 				document.getElementById("ernumber").innerHTML = "Numero non valido";
         			return false;
 	
     			}
-			
+			var rgx = /((\+)?(\d*))/;
+    			var scr = rgx.test(t);
+			if(scr==false){document.getElementById("ernumber").innerHTML = "Numero non valido, simboli"; return false;}
     			return true;
 		}	
 		</script>
