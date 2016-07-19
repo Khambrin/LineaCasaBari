@@ -17,8 +17,37 @@ my $cgi=new CGI;
 my $session = CGI::Session->load();
 my $email=$session->param("email");
 my $prodotto=param("codice_prodotto");
+my $codice=$prodotto;
 
 
+my %in;
+
+if (length ($ENV{'QUERY_STRING'}) > 0){
+    my $buffer = $ENV{'QUERY_STRING'};
+    my @pairs = split(/&/, $buffer);
+	my $name;
+	my $value;
+    foreach my $pair (@pairs){
+        ($name, $value) = split(/=/, $pair);
+        $value =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack("C", hex($1))/eg;
+		$in{$name} = $value; 
+    }
+}
+my $filter;
+if ($in{'Filter'}) {
+	$filter=$in{'Filter'};
+	}
+else {
+	$filter='Tutte';
+}
+
+my $page;
+if ($in{'Page'}) {
+	$page=$in{'Page'};
+	}
+else {
+	$page=0;
+}
 
 my $doc,my $root;
 	my $id=0, my $valutazione="";
@@ -64,8 +93,5 @@ print XML $doc->toString();
 close(XML);
 
 my $messaggio="Prodotto aggiunto correttamente alla lista dei desideri";
-print $cgi->redirect("prodotto.cgi?");
-=pod
-Codice=$prodotto&Filter=Tutte&Page=0&$messaggio");
-=cut
+print $cgi->redirect('prodotto.cgi?Codice='."$codice".'&Filter='."$filter".'&Page='."$page".'&Messaggio='."$messaggio");
 
