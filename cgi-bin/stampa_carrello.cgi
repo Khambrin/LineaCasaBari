@@ -9,11 +9,11 @@ use CGI::Session;
 use XML::LibXML;
 
 my $cgi=new CGI;
-print $cgi->header('text/html');
 my $session = CGI::Session->load();
 if ($session->is_empty) {
 	print $cgi->redirect('check_session.cgi?carrello');
 }
+print $cgi->header('text/html');
 my $email=$session->param("email");
 
 my $parser=XML::LibXML->new;

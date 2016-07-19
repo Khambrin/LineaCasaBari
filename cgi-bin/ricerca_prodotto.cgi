@@ -10,8 +10,11 @@ use XML::LibXML;
 use File::Basename;
 
 my $cgi=new CGI;
-print $cgi->header('text/html');
 my $session = CGI::Session->load();
+if ($session->is_empty) {
+	print $cgi->redirect('check_session.cgi?gestione_prodotti');
+}
+print $cgi->header('text/html');
 my $email=$session->param("email");
 
 my $parser=XML::LibXML->new;

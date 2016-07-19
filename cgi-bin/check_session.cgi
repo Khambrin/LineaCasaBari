@@ -31,7 +31,6 @@ switch($ENV{'QUERY_STRING'})
 	case 'resi_rimborsi' { $file='resi_rimborsi_temp.html'; }
 	case 'termini_spedizione' { $file='termini_spedizione_temp.html'; }
 	case 'impostazioni_account' { $file='impostazioni_account_temp.html' }
-	case 'indirizzi' { $file='indirizzi_temp.html' }
 	case 'gestione_annunci' { $file='gestione_annunci_temp.html' }
 	case 'gestione_ordini' {$file='gestione_ordini_temp.html' }
 	case 'lista_desideri' {$file='lista_desideri_temp.html' }
@@ -47,7 +46,9 @@ if ($session->is_empty)
 		or $ENV{'QUERY_STRING'} eq 'gestione_prodotti' or $ENV{'QUERY_STRING'} eq 'gestione_ordini' 
 		or $ENV{'QUERY_STRING'} eq 'gestione_annunci' or $ENV{'QUERY_STRING'} eq 'carrello' 
 		or $ENV{'QUERY_STRING'} eq 'gestione_account' or $ENV{'QUERY_STRING'} eq 'gestione_indirizzi' 
-		or $ENV{'QUERY_STRING'} eq 'carrello-svuotato' or $ENV{'QUERY_STRING'} eq 'carrello-modificato')
+		or $ENV{'QUERY_STRING'} eq 'carrello-svuotato' or $ENV{'QUERY_STRING'} eq 'carrello-modificato'
+		or $ENV{'QUERY_STRING'} eq 'stampa_indirizzi'	or $ENV{'QUERY_STRING'} eq 'edit_indirizzo'
+		or $ENV{'QUERY_STRING'} eq 'stampa_desideri')
 	{
 		$file='login_temp.html';
 		$vars={
@@ -97,7 +98,6 @@ else
 	{
 		print $cgi->redirect("stampa_ordini.cgi");
 	}
-	
 	if($ENV{'QUERY_STRING'} eq 'carrello')
 	{
 		print $cgi->redirect("stampa_carrello.cgi?false");
@@ -113,6 +113,14 @@ else
 	if($ENV{'QUERY_STRING'} eq 'gestione_indirizzi')
 	{
 		print $cgi->redirect("gestione_indirizzi_script.cgi?aggiungi");
+	}
+	if ($ENV{'QUERY_STRING'} eq 'stampa_indirizzi' or  $ENV{'QUERY_STRING'} eq 'edit_indirizzo')
+	{
+		print $cgi->redirect("stampa_indirizzi.cgi");
+	}
+	if($ENV{'QUERY_STRING'} eq 'stampa_desideri')
+	{
+		print $cgi->redirect("stampa_desideri.cgi");
 	}
 
 }
