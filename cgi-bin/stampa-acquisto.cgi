@@ -35,17 +35,17 @@ my $file='acquisto_temp.html';
 my $tot;
 for (my $index=0; $index <=$#indirizzo_via; $index++)
 {	
-	my $x='<li><label>'."Indirizzo n. $index</label>".'<input type="checkbox" name="indirizzo" value="'."$index".'"/></li>';
+	my $x='<li><label id="acquisto-indirizzoLabel">'."Indirizzo n. $index</label>".'<input type="checkbox" name="indirizzo" value="'."$index".'"/></li>';
 	$tot=$tot.$x;
-	my $x='<li><label>'."via @indirizzo_via[$index]</label></li>";
+	my $x='<li><label>'."Via: @indirizzo_via[$index]</label></li>";
 	$tot=$tot.$x;
-	my $x='<li><label>'."numero @indirizzo_numero_civico[$index]</label></li>";
+	my $x='<li><label>'."Numero: @indirizzo_numero_civico[$index]</label></li>";
 	$tot=$tot.$x;
-	my $x='<li><label>'."@indirizzo_citta[$index]</label></li>";
+	my $x='<li><label>'."Citt&agrave;: @indirizzo_citta[$index]</label></li>";
 	$tot=$tot.$x;
-	my $x='<li><label>'."@indirizzo_provincia[$index]</label></li>";
+	my $x='<li><label>'."Provincia: @indirizzo_provincia[$index]</label></li>";
 	$tot=$tot.$x;
-	my $x='<li><label>'."@indirizzo_cap[$index]</label></li>";
+	my $x='<li><label>'."CAP: @indirizzo_cap[$index]</label></li>";
 	$tot=$tot.$x;	
 }
 

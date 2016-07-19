@@ -37,22 +37,24 @@ my @indirizzo_cap=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo/CA
 
 my $file='indirizzi_temp.html';
 my $tot;
-for (my $index=0; $index <=$#indirizzo_via; $index++)
+my $counter=0;
+for (my $index=1; $index <=$#indirizzo_via+1; $index++)
 {	
 	my $x='<div class="form-container2"><ul class="form-Block"><h2>'."Indirizzo n. $index</h2>";
 	$tot=$tot.$x;
-	my $x='<li><label>'."via @indirizzo_via[$index]</label></li>";
+	my $x='<li><label>'."Via: @indirizzo_via[$counter]</label></li>";
 	$tot=$tot.$x;
-	my $x='<li><label>'."numero @indirizzo_numero_civico[$index]</label></li>";
+	my $x='<li><label>'."Numero: @indirizzo_numero_civico[$counter]</label></li>";
 	$tot=$tot.$x;
-	my $x='<li><label>'."@indirizzo_citta[$index]</label></li>";
+	my $x='<li><label>'."Citt&agrave;: @indirizzo_citta[$counter]</label></li>";
 	$tot=$tot.$x;
-	my $x='<li><label>'."@indirizzo_provincia[$index]</label></li>";
+	my $x='<li><label>'."Provincia: @indirizzo_provincia[$counter]</label></li>";
 	$tot=$tot.$x;
-	my $x='<li><label>'."@indirizzo_cap[$index]</label></li>";
+	my $x='<li><label>'."CAP: @indirizzo_cap[$counter]</label></li>";
 	$tot=$tot.$x;	
 	my $x='<li><form action="remove_indirizzo.cgi" method="post"><div><button class="button" type="submit">Rimuovi</button><input type="hidden" name="indice_indirizzo" value="'."$index".'"/></div></form><form action="edit_indirizzo_form.cgi" method="post"><div><button class="button" type="submit">Modifica</button><input type="hidden" name="indice_indirizzo_edit" value="'."$index".'"/></div></form></li></ul></div>';
 	$tot=$tot.$x;
+	$counter++;
 }
 
 my $lista_indirizzi=$tot;

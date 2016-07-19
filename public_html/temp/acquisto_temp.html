@@ -76,9 +76,10 @@
     </div>
     
     <div id="content">
+	<div class="generic-container">
        <div class="form-container2">
 		   <form action="stampa_resoconto.cgi" method="post">
-			   <ul>
+			   <ul class="form-Block">
 				<li>
 					<label id="acquisto-mpagamentoLabel">Metodo di Pagamento</label>
 					<select name="mpagamento-select">
@@ -91,7 +92,7 @@
 				</li>
 				<li>
 					<label id="acquisto-indirizziLabel">Indirizzo di spedizione: &#40;aggiungine altri dalla specifica sezione di Account&#41;</label>
-					<ul>
+					<ul class="form-Block">
 						[% lista_indirizzi %]
 					</ul>
 				</li>
@@ -100,6 +101,7 @@
 				</li>
 				</ul>
 			</form>
+       </div>
        </div>
     </div>
     

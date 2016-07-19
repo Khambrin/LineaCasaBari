@@ -168,6 +168,8 @@ body
     width: 30%;
     padding-bottom:0.1em;
     margin-bottom: 0.5em;
+    margin-top: 1em;
+    display: inline-block;
 }
 
 .inputLeft {
@@ -421,6 +423,7 @@ body
 .generic-container{
     margin-top: 2em;
 }
+
 /*---------------------------------------------------index_temp.html ------------------------------------------------------------------------------*/
 
 
@@ -563,12 +566,13 @@ body
 }
 
 .form-Block{
-    padding-top: 1em;
+  padding-top: 1em;
+    
 }
 
 .form-Block li{
     list-style: none;
-    padding-bottom: 2em;   
+    padding-bottom: 0.5em;   
 }
 
 .account-nomeLabel{
@@ -941,9 +945,42 @@ body
 }
 .carrello-quantitaTogliLabel{
     padding-right: 1.5em;
-    padding-left: 3em;
+    padding-left: 2em;
 }
 .carrello-prodottoTogliLabel{
     padding-right: 0.5em;
     padding-left: 3em;
+}
+.carrello-form{
+    display: inline;
+    margin-left: 1em;
+}
+.carrello_left_col{
+    display: inline-block;
+    vertical-align: middle;
+  	width: 25%;
+ 	height: 10em;
+    margin-bottom: 1em;
+    
+}
+.carrello_left_col img {
+	max-height: 7em;
+	max-width: 100%;
+  	box-shadow: 1px 1px 1px 1px #888888;	
+    vertical-align: middle;
+    margin-top: 1em;
+}
+.carrello_right_col{
+    display: inline-block;
+   	vertical-align: middle;
+   	width: 60%;
+   	height: 10em;
+	background-color:#E1E3E4;
+	padding: 0.5em;
+	margin-left: 0.1em;
+    margin-bottom: 1em;
+    
+}
+#acquisto-indirizzoLabel{
+    padding-right: 1em;
 }

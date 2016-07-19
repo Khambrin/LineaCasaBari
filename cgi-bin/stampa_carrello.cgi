@@ -60,23 +60,32 @@ else
 	my @lista_quantita=$doc->findnodes("Carrelli/Carrello[Utente='$email']/Elemento/Quantita/text()");
 	
 	my $k=0;
-	my $x='<li><h2>'."Il tuo carrello</h2></li>";
-	$tot=$tot.$x;
+	my $parser=XML::LibXML->new;
+	my $doc=$parser->parse_file("../data/Prodotti.xml");
+	
 	foreach my$i (@lista_prodotti)
 	{
-		my $x='<li><h3 class="carrello-prodottoh3">Prodotto: '."$i".'</h3></li>';
+		my $prodotto_immagine=$doc->findnodes("Prodotti/Prodotto[Codice='$i']/Immagine/text()");
+		my $alt= substr $prodotto_immagine, 19, -4;
+		my $stampa_immagine='<img src="'."$prodotto_immagine".'" alt="'."$alt".'"/>';
+		my $x='<fieldset><div class="carrello_left_col">'."$stampa_immagine".'</div>';
+		$tot=$tot.$x;
+		my $x='<div class="carrello_right_col"><li><h3 class="carrello-prodottoh3">Prodotto: '."$i".'</h3></li>';
 		$tot=$tot.$x;
 		my $x='<li><label class="carrello-quantitaLabel">Quantit&agrave: '." @lista_quantita[$k]".'</label></li>';
 		$tot=$tot.$x;
 		my $x='<li><label class="carrello-quantitaTogliLabel">Diminuisci quantit&agrave:</label><div class="inputLeft"></div><div class="input-carrello"><input class="input" type="text" name="togli_quantita-'."$k".'"/></div><div class="inputRight"></div></li>';
 		$tot=$tot.$x;
-		my $x='<li><label class="carrello-prodottoTogliLabel">Togli il prodotto interamente:</label><input type="checkbox" name="elimina_prodotto-'."$k".'" value="1"/></li>';
+		my $x='<li><label class="carrello-prodottoTogliLabel">Togli il prodotto interamente:</label><input type="checkbox" name="elimina_prodotto-'."$k".'" value="1"/></li></div></fieldset>';
 		$tot=$tot.$x;
+		
 		$k++;
 		
 	}
-	
-	my $lista_carrello='<div class="generic-container"><div class="form-container2"><form action="carrello_togli_quantita_prodotto.cgi" method="post"><ul class="form-Block">'."$tot".'</ul><button class="button" type="submit" value="togli">Togli</button></form><form action="stampa-acquisto.cgi" method="post"><button class="button" type="submit" value="accquista">Acquista</button></form></div></div>';
+	my $x='<button class="button" type="submit" value="togli">Togli</button></form><form class="carrello-form" action="stampa-acquisto.cgi" method="post"><button class="button" type="submit" value="acquista">Acquista</button></form>';
+	$tot=$tot.$x;
+
+	my $lista_carrello='<div class="generic-container"><div class="form-container2"><h2>Il tuo carrello</h2><form class="carrello-form" action="carrello-edit.cgi" method="post"><ul class="form-Block">'."$tot".'</ul></div></div>';
 	
 	$vars={
 		'sessione' => "true",

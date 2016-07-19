@@ -25,6 +25,8 @@ my $prodotto_doc=$parser2->parse_file("../data/Prodotti.xml");
 my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
 	});
+my $indi=param('indirizzo');
+	
 my $num_prodotti=$carrello_doc->findvalue("count(Carrelli/Carrello[Utente='$email']/Elemento)");
 my $tot_prodotto=0;
 my $tot;
@@ -48,7 +50,7 @@ $tot=$tot.$x;
 my $x='<li><label id="resoconto-costoLabel">Prezzo totale: </label>'."$tot_prodotto".'</li>';
 $tot=$tot.$x;
 
-my $indi=param('indirizzo');
+
 my $x='<li><p>Hai scelto l&#180;indirizzo numero: '."$indi".'</p></li>';
 $tot=$tot.$x;
 
