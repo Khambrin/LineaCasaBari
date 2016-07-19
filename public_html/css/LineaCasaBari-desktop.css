@@ -560,6 +560,12 @@
         list-style: none;
         
     }
+    
+    .form-container2 label{
+        text-align: left;
+        display: inline-block;
+        width: 17%;
+    }
 
 /*--------------------------- contattaci.html ----------------------------------------------------------------------------------------------------*/
     
@@ -573,19 +579,6 @@
         text-align: center;
         margin-bottom: 5em;
         margin-top: 2em;
-    }
-
-    #contattaci-container2 {
-        width: 50%;
-        box-shadow: 1px 1px 1px 1px #888888;
-        margin: 0 auto;
-        height: 38.5em;
-        background-color: #E1E3E4;
-    }
-
-    #contattaci-container2 h2{
-        padding-top: 1em;
-        padding-bottom: 1em;
     }
 
     /*------------------- termini e spedizione/resi e rimborsi  -----------------------------------------------------------------------------------*/
@@ -859,14 +852,15 @@
         width: 20%;
         height: 3em;
         background-color: white;
-        box-shadow: 1px 1px 1px 1px #888888;
-        
+        box-shadow: 1px 1px 1px 1px #888888;    
     }
+    
     #home-block a{
         font-size: 1.8em;
         line-height: 1.6em;
         text-decoration: none;
     }
+    
     .sitemap-block{
         margin-top: 2em;
         padding-top: 1em;
@@ -878,10 +872,12 @@
         box-shadow: 1px 1px 1px 1px #888888;
         vertical-align: middle;
     }
+    
     .sitemap-block li{
         list-style: none;
         padding-top: 1em;
     }
+    
     .sitemap-block a{
         text-decoration: none;
     }

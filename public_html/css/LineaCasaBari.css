@@ -540,14 +540,6 @@ body
     
 }
 
-.login-emailLabel{
-    padding-right: 1.9em;
-}
-
-.login-passwordLabel{
-    padding-right: 0.5em;
-}
-
 /*--------------------------- registrazione.html (unificato con gestione account e indirizzi)-----------------------------------------------------------------------------------------------*/
 
 #registrazione-container-mobile{
@@ -573,34 +565,6 @@ body
 .form-Block li{
     list-style: none;
     padding-bottom: 0.5em;   
-}
-
-.account-nomeLabel{
-    padding-right: 6.3em;
-}
-
-.account-cognomeLabel{
-    padding-right: 4.9em;
-}
-.account-telefonoLabel{
-    padding-right: 5.2em;
-}
-.account-passwordCorrenteLabel{
-    padding-right: 1.8em;
-}
-.account-passwordNuovaLabel{
-    padding-right: 2.3em;
-}
-.account-emailLabel{
-    padding-right: 6.35em;
-}
-
-.account-passwordLabel{
-    padding-right: 4.9em;
-}
-
-.account-confermapasswordLabel{
-    padding-right: 0.8em;
 }
 
 /*--------------------------- contattaci.html ----------------------------------------------------------------------------------------------------*/
@@ -638,23 +602,6 @@ body
     width: 80%;
     height: 10em;
 }
-
-.contattaci-nomeLabel {
-    padding-right: 2.3em;
-}
-
-.contattaci-cognomeLabel {
-    padding-right: 0.7em;
-}
-
-.contattaci-emailLabel {
-    padding-right: 2.2em;
-}
-
-.contattaci-telefonoLabel {
-    padding-right: 1em;
-}
-
 /*-------------------------------------- la_nostra_storia.html --------------------------------------------------------------------------------*/
 
 
