@@ -418,7 +418,9 @@ body
     vertical-align: middle;
 }
 
-
+.generic-container{
+    margin-top: 2em;
+}
 /*---------------------------------------------------index_temp.html ------------------------------------------------------------------------------*/
 
 
@@ -921,5 +923,27 @@ body
 	max-width: 100%;
 }
 
-/*-------------------------------------------------------------------------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------Carrello---------------------------------------------------------------------------------------------------------*/
+.input-carrello{
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url(../images/input_middle.png);
+    width: 4%;
+    background-size: contain;
+    background-repeat: repeat-x;
+    
+}
+.carrello-prodottoh3{
+    padding-right: 3em; 
+}
+.carrello-quantitaLabel{
+    padding-right: 5.5em;
+}
+.carrello-quantitaTogliLabel{
+    padding-right: 1.5em;
+    padding-left: 3em;
+}
+.carrello-prodottoTogliLabel{
+    padding-right: 0.5em;
+    padding-left: 3em;
+}
