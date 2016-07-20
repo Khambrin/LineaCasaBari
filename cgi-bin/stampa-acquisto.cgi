@@ -26,6 +26,7 @@ my $template=Template->new({
 	});
 
 my @indirizzo_via=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo/Via/text()");
+my $num_indi=$doc->findvalue("count(Indirizzi/Utente[Email='$email']/Indirizzo)");
 my @indirizzo_numero_civico=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo/Numero_civico/text()");
 my @indirizzo_citta=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo/Città/text()");
 my @indirizzo_provincia=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo/Provincia/text()");
@@ -34,22 +35,22 @@ my @indirizzo_cap=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo/CA
 my $file='acquisto_temp.html';
 my $tot;
 my $counter=0;
-if($#indirizzo_via>=1)
+if($num_indi)
 {
-	my $x='<li><label id="acquisto-indirizzoLabel">'."Indirizzo n. 1</label>".'<input type="checkbox" name="indirizzo" value="1" checked/></li>';
+	my $x='<li><p>'."Indirizzo n. 1</p>".'<input type="checkbox" name="indirizzo" value="1" checked/></li>';
 	$tot=$tot.$x;
-	my $x='<li><label>'."Via: @indirizzo_via[$counter]</label></li>";
+	my $x='<li><p>'."Via: @indirizzo_via[$counter]</p></li>";
 	$tot=$tot.$x;
-	my $x='<li><label>'."Numero: @indirizzo_numero_civico[$counter]</label></li>";
+	my $x='<li><p>'."Numero: @indirizzo_numero_civico[$counter]</p></li>";
 	$tot=$tot.$x;
-	my $x='<li><label>'."Citt&agrave;: @indirizzo_citta[$counter]</label></li>";
+	my $x='<li><p>'."Citt&agrave;: @indirizzo_citta[$counter]</p></li>";
 	$tot=$tot.$x;
-	my $x='<li><label>'."Provincia: @indirizzo_provincia[$counter]</label></li>";
+	my $x='<li><p>'."Provincia: @indirizzo_provincia[$counter]</p></li>";
 	$tot=$tot.$x;
-	my $x='<li><label>'."CAP: @indirizzo_cap[$counter]</label></li>";
+	my $x='<li><p>'."CAP: @indirizzo_cap[$counter]</p></li>";
 	$tot=$tot.$x;	
 	$counter++;
-}
+
 for (my $index=2; $index <=$#indirizzo_via; $index++)
 {	
 	my $x='<li><label id="acquisto-indirizzoLabel">'."Indirizzo n. $index</label>".'<input type="checkbox" name="indirizzo" value="'."$index".'"/></li>';
@@ -78,3 +79,8 @@ $vars={
 
 print $cgi->header('text/html');
 $template->process($file,$vars) || die $template->error();
+}
+else
+{
+	
+}
