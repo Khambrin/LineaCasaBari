@@ -12,9 +12,6 @@ use XML::LibXML;
 my $cgi=new CGI;
 
 my $session = CGI::Session->load();
-if ($session->is_empty) {
-	print $cgi->redirect('check_session.cgi?stampa_indirizzi');
-}
 my $email=$session->param("email");
 my $amministratore=$session->param("amministratore");
 my $mex=$cgi->param("messaggio");
@@ -58,15 +55,30 @@ for (my $index=1; $index <=$#indirizzo_via+1; $index++)
 }
 
 my $lista_indirizzi=$tot;
-
-$vars={
-		'sessione' => "true",
-		'email' => $email,
-		'amministratore' => $amministratore,
-		'lista_indirizzi' => $lista_indirizzi,
-		'messaggio'=>$mex,
-		'iscrizione_avvenuta'=>$ias,
-	};
+if($ENV{'QUERY_STRING'} eq 'rimosso')
+{
+	$vars={
+			'sessione' => "true",
+			'email' => $email,
+			'amministratore' => $amministratore,
+			'lista_indirizzi' => $lista_indirizzi,
+			'messaggio'=>$mex,
+			'messaggio_confirm'=>"Indirizzo rimosso con successo",
+			'iscrizione_avvenuta'=>$ias,
+		};
+}
+else
+{
+	$vars={
+			'sessione' => "true",
+			'email' => $email,
+			'amministratore' => $amministratore,
+			'lista_indirizzi' => $lista_indirizzi,
+			'messaggio'=>$mex,
+			'messaggio_confirm'=> "false",
+			'iscrizione_avvenuta'=>$ias,
+		};
+}
 
 print $cgi->header('text/html');
 $template->process($file,$vars) || die $template->error();

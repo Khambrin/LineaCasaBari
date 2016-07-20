@@ -112,19 +112,9 @@ else
 		my $cap_tag=$doc->createElement("CAP");
 		$cap_tag->appendTextNode($values{'cap'});
 		$indirizzo_tag->appendChild($cap_tag);
-
-		
-		open (XML,">","../data/Indirizzi.xml");
-		print XML $doc->toString();
-		close(XML);
-		print $cgi->redirect("gestione_indirizzi_script.cgi?aggiungi");
 	}
-	
 	else
 	{
-	
-		
-
 ##
 		my $utente_tag=$doc->createElement("Utente");	
 		$root->appendChild($utente_tag);
@@ -156,13 +146,9 @@ else
 		$cap_tag->appendTextNode($values{'cap'});
 		$indirizzo_tag->appendChild($cap_tag);
 
-
-		open (XML,">","../data/Indirizzi.xml");
-		print XML $doc->toString();
-		close(XML);
-		print $cgi->redirect("gestione_indirizzi_script.cgi?aggiungi");
-
-	}
-
-
+}
+open (XML,">","../data/Indirizzi.xml");
+print XML $doc->toString();
+close(XML);
+print $cgi->redirect("check_session.cgi?aggiungi-indirizzo-ok");
 }

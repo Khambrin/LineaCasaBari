@@ -49,7 +49,9 @@ if ($session->is_empty)
 		or $ENV{'QUERY_STRING'} eq 'gestione_account' or $ENV{'QUERY_STRING'} eq 'gestione_indirizzi' 
 		or $ENV{'QUERY_STRING'} eq 'carrello-svuotato' or $ENV{'QUERY_STRING'} eq 'carrello-modificato'
 		or $ENV{'QUERY_STRING'} eq 'stampa_indirizzi'	or $ENV{'QUERY_STRING'} eq 'edit_indirizzo'
-		or $ENV{'QUERY_STRING'} eq 'stampa_desideri' or $ENV{'QUERY_STRING'} eq 'desiderio-rimosso')
+		or $ENV{'QUERY_STRING'} eq 'stampa_desideri' or $ENV{'QUERY_STRING'} eq 'desiderio-rimosso'
+		or $ENV{'QUERY_STRING'} eq 'aggiungi-indirizzo' or $ENV{'QUERY_STRING'} eq 'stampa_indirizzi'
+		or $ENV{'QUERY_STRING'} eq 'stampa_indirizzi_rimosso')
 	{
 		$file='login_temp.html';
 		$vars={
@@ -111,10 +113,6 @@ else
 	{
 		print $cgi->redirect("stampa_carrello.cgi?svuotato");
 	}
-	if($ENV{'QUERY_STRING'} eq 'gestione_indirizzi')
-	{
-		print $cgi->redirect("gestione_indirizzi_script.cgi?aggiungi");
-	}
 	if ($ENV{'QUERY_STRING'} eq 'stampa_indirizzi' or  $ENV{'QUERY_STRING'} eq 'edit_indirizzo')
 	{
 		print $cgi->redirect("stampa_indirizzi.cgi");
@@ -127,7 +125,22 @@ else
 	{
 		print $cgi->redirect("stampa_desideri.cgi?rimosso");
 	}
-
+	if($ENV{'QUERY_STRING'} eq 'aggiungi-indirizzo')
+	{
+		print $cgi->redirect("gestione_indirizzi_script.cgi?nonaggiunto");
+	}
+	if($ENV{'QUERY_STRING'} eq 'aggiungi-indirizzo-ok')
+	{
+		print $cgi->redirect("gestione_indirizzi_script.cgi?aggiunto");
+	}
+	if($ENV{'QUERY_STRING'} eq 'stampa_indirizzi')
+	{
+		print $cgi->redirect("stampa_indirizzi.cgi")
+	}
+	if($ENV{'QUERY_STRING'} eq 'stampa_indirizzi_rimosso')
+	{
+		print $cgi->redirect("stampa_indirizzi.cgi?rimosso")
+	}
 }
 	print $cgi->header('text/html');
 	$template->process($file,$vars) || die $template->error();

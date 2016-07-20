@@ -31,7 +31,7 @@ open(XML,">","../data/Indirizzi.xml");
 print XML $doc->toString();
 close(XML);
 
-print $cgi->redirect('stampa_indirizzi.cgi');
+print $cgi->redirect('check_session.cgi?stampa_indirizzi_rimosso');
 
 
 

@@ -100,7 +100,7 @@
                     <li class="subtitle_link">Gestisci gli indirizzi di spedizione</li>
                 </ul>
             </div><div id="right-col">
-
+			
 		<script type="text/javascript">
 		function valnewindForm() {// aggiungi indirizzo
     			
@@ -122,14 +122,14 @@
 
 		<div id="sub_menu">
                 [% IF pagina == 'aggiungi' %]
-					<div class="sub_menu_block_active"><span class="sub_menu_text_active">Aggiungi indirizzo</span></div><a href="stampa_indirizzi.cgi"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica indirizzo</span></div></a>
+					<div class="sub_menu_block_active"><span class="sub_menu_text_active">Aggiungi indirizzo</span></div><a href="check_session.cgi?stampa_indirizzi"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica indirizzo</span></div></a>
                 [% ELSIF pagina == 'edit' %]
-					<a href="gestione_indirizzi_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi indirizzo</span></div></a><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica indirizzo</span></div>
+					<a href="check_session.cgi?aggiungi-indirizzo"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi indirizzo</span></div></a><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica indirizzo</span></div>
 				[% ELSE %]
-					<a href="gestione_indirizzi_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi indirizzo</span></div></a><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica indirizzo</span></div>[% END %]
-                
-                </div>
+					<a href="check_session.cgi?aggiungi-indirizzo"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi indirizzo</span></div></a><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica indirizzo</span></div>[% END %]
+		</div>
 			[% IF pagina == 'aggiungi' %]
+			[% IF messaggio_confirm != 'false' %]<div class="messaggio-confirm">[% messaggio_confirm %]</div>[% END %]
 			<div class="form-container2">
 				<h2>Aggiungi indirizzo</h2>
 				<form name="newindform" method="post" action="aggiungi_indirizzo_script.cgi" onsubmit="return valnewindForm()" enctype="multipart/form-data">
@@ -197,6 +197,7 @@
 					<div class="messaggio-error">[% messaggio %]</div>
           </form>
 		[% ELSE %]
+		[% IF messaggio_confirm != 'false' %]<div class="messaggio-confirm">[% messaggio_confirm %]</div>[% END %]
 			<span>[% lista_indirizzi %]</span>
 		[% END %]
             </div>        
