@@ -51,7 +51,7 @@ if ($session->is_empty)
 		or $ENV{'QUERY_STRING'} eq 'stampa_indirizzi'	or $ENV{'QUERY_STRING'} eq 'edit_indirizzo'
 		or $ENV{'QUERY_STRING'} eq 'stampa_desideri' or $ENV{'QUERY_STRING'} eq 'desiderio-rimosso'
 		or $ENV{'QUERY_STRING'} eq 'aggiungi-indirizzo' or $ENV{'QUERY_STRING'} eq 'stampa_indirizzi'
-		or $ENV{'QUERY_STRING'} eq 'stampa_indirizzi_rimosso')
+		or $ENV{'QUERY_STRING'} eq 'stampa_indirizzi_rimosso'or $ENV{'QUERY_STRING'} eq 'stampa_indirizzi_modifica')
 	{
 		$file='login_temp.html';
 		$vars={
@@ -140,6 +140,10 @@ else
 	if($ENV{'QUERY_STRING'} eq 'stampa_indirizzi_rimosso')
 	{
 		print $cgi->redirect("stampa_indirizzi.cgi?rimosso")
+	}
+	if($ENV{'QUERY_STRING'} eq 'stampa_indirizzi_modifica')
+	{
+		print $cgi->redirect("stampa_indirizzi.cgi?modificato")
 	}
 }
 	print $cgi->header('text/html');

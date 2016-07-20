@@ -13,9 +13,6 @@ my $cgi=new CGI;
 
 
 my $session = CGI::Session->load();
-if ($session->is_empty) {
-	print $cgi->redirect('check_session.cgi?edit_indirizzo');
-}
 my $email=$session->param("email");
 my $amministratore=$session->param("amministratore");
 my $index=$cgi->param("indice_indirizzo_edit");

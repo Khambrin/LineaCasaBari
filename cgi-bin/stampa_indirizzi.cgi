@@ -67,6 +67,18 @@ if($ENV{'QUERY_STRING'} eq 'rimosso')
 			'iscrizione_avvenuta'=>$ias,
 		};
 }
+elsif($ENV{'QUERY_STRING'} eq 'modificato')
+{
+	$vars={
+			'sessione' => "true",
+			'email' => $email,
+			'amministratore' => $amministratore,
+			'lista_indirizzi' => $lista_indirizzi,
+			'messaggio'=>$mex,
+			'messaggio_confirm'=> "Indirizzo modificato con successo",
+			'iscrizione_avvenuta'=>$ias,
+		};
+}
 else
 {
 	$vars={
