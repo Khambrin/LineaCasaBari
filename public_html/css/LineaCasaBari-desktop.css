@@ -785,22 +785,14 @@
     .ordini-block{
         padding-bottom:1em; 
     }
-    .annunci-testoLabel{
+    #annunci-testoLabel{
         padding-right: 19em;
-    }
-    .annunci-titoloLabel
-    {
-        padding-right: 7em;
-    }
-    .annunci-immagineLabel{
-        padding-right: 13.5em;
     }
     #left-menu-active{
         background-color: #295380;
         vertical-align: middle;
         color: white;
         padding-right: 0.5em;
-        
     }
 
 /*-------------------------------------------- MAPPA DEL SITO ------------------------------------------------------------------------*/
