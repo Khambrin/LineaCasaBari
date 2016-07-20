@@ -709,60 +709,7 @@
         margin-top: 1em;
         margin-bottom: 1em;
     }
-    .indirizzo-ViaLabel{
-        padding-right: 6.4em;
     
-    }
-    .indirizzo-NumLabel{
-        padding-right: 1.5em;
-        
-    }
-    .indirizzo-CittaLabel{
-        padding-right: 5.9em;
-        
-    }
-    .indirizzo-ProvinciaLabel{
-        padding-right: 4.1em;
-        
-    }
-    .indirizzo-CapLabel{
-        padding-right: 6em;
-        
-    }
-    #prodotto-categoriaLabel{
-        padding-right: 4.7em;
-    }
-    #prodotto-codiceLabel{
-        padding-right: 4.7em;
-        
-    }
-    #prodotto-nomeLabel{
-        padding-right: 4.9em;
-        
-    }
-    #prodotto-descrizioneLabel{
-        padding-left: 6.8em;
-        padding-right: 2em;
-    }
-    #prodotto-categoriaricLabel{
-        padding-right: 3em;
-        
-    }
-    #prodotto-prezzoLabel{
-        padding-right: 4.7em;
-        
-    }
-    #prodotto-dataLabel{
-        padding-right: 1.8em;
-    }
-    #prodotto-immagineLabel{
-        padding-right: 2em;
-        
-    }
-    .prodotto-tagLabel{
-        padding-right: 5.8em;
-        
-    }
     #prodotto-cat{
         margin-bottom: 2em;
     }
