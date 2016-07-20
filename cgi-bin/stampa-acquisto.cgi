@@ -75,12 +75,18 @@ $vars={
 		'email' => $email,
 		'amministratore' => $amministratore,
 		'lista_indirizzi' => $lista_indirizzi,
+		'messaggio'=> "false",
 	};
-
-print $cgi->header('text/html');
-$template->process($file,$vars) || die $template->error();
 }
 else
 {
-	
+	$vars={
+		'sessione' => "true",
+		'email' => $email,
+		'amministratore' => $amministratore,
+		'messaggio'=> "Aggiungi un indirizzo dalla specifica sezione di Account",
+		
+	};
 }
+print $cgi->header('text/html');
+$template->process($file,$vars) || die $template->error();

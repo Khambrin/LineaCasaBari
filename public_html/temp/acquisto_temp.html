@@ -78,6 +78,7 @@
     <div id="content">
 	<div class="generic-container">
        <div class="form-container2">
+		   [% IF messaggio=='false' %]
 		   <form action="stampa_resoconto.cgi" method="post">
 			   <ul class="form-Block">
 				<li>
@@ -91,7 +92,7 @@
 					</select>
 				</li>
 				<li>
-					<label id="acquisto-indirizziLabel">Indirizzo di spedizione: &#40;aggiungine altri dalla specifica sezione di Account&#41;</label>
+					<p>Indirizzo di spedizione:</p>
 					<ul class="form-Block">
 						[% lista_indirizzi %]
 					</ul>
@@ -101,6 +102,8 @@
 				</li>
 				</ul>
 			</form>
+			[% ELSE %]<div class="messaggio-confirm">[% messaggio %]</div>
+			[% END%]
        </div>
        </div>
     </div>
