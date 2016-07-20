@@ -7,10 +7,12 @@ contattaci
 mappa sito
 relazione
 css stampa
-validare
+validare e inserire immagini w3c in footer
 aggiungere tutte le pagine a check session
 togliere sottolineatura da tutti i link (prodotti prodotto)
 controllare ti trovi in e tutti gli header
 allineamento di label e elementi input a sinistra in modo da allinearli
 aggiungi lista desideri rimanda alla pag prodotto ma senza immagine e descrizione
 iscrizione newsletter tutte le pagine
+Controllare che tutte le pagine abbiano link check_session.cgi?nome_pagina
+Controllare e sistemare il drawer in tutte le pagine
