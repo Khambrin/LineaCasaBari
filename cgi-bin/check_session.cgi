@@ -31,7 +31,6 @@ switch($ENV{'QUERY_STRING'})
 	case 'resi_rimborsi' { $file='resi_rimborsi_temp.html'; }
 	case 'termini_spedizione' { $file='termini_spedizione_temp.html'; }
 	case 'impostazioni_account' { $file='impostazioni_account_temp.html' }
-	case 'gestione_annunci' { $file='gestione_annunci_temp.html' }
 	case 'gestione_ordini' {$file='gestione_ordini_temp.html' }
 	case 'lista_desideri' {$file='lista_desideri_temp.html' }
     case 'gestione_account' { $file='impostazioni_account_temp.html' }
