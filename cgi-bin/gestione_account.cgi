@@ -35,10 +35,10 @@ my $old_tel=$doc->findnodes("Utenti/Utente[Email='$email']/Telefono/text()");
 
 
 
-my $old_em_form='<input class= "input" type="text" name="nuova_email" value="'."$email".'"/>';
-my $old_name_form='<input class= "input" type="text" name="nuovo_nome" value="'."$old_name".'"/>';
-my $old_surname_form='<input class= "input" type="text" name="nuovo_cognome" value="'."$old_surname".'"/>';
-my $old_tel_form='<input class= "input" type="text" name="nuovo_telefono" value="'."$old_tel".'"/>';
+my $old_em_form='<input class="input" type="text" name="nuova_email" value="'."$email".'"/>';
+my $old_name_form='<input class="input" type="text" name="nuovo_nome" value="'."$old_name".'"/>';
+my $old_surname_form='<input class="input" type="text" name="nuovo_cognome" value="'."$old_surname".'"/>';
+my $old_tel_form='<input class="input" type="text" name="nuovo_telefono" value="'."$old_tel".'"/>';
 
 
 my $vars;
