@@ -36,7 +36,7 @@ if(-e "../data/Ordini.xml")
 		{
 			if($i ne $email)
 			{
-				$messaggio="non hai eseguito alcun ordine";
+				$messaggio="Non hai eseguito alcun ordine";
 			}
 			else
 			{
@@ -47,12 +47,12 @@ if(-e "../data/Ordini.xml")
 	}
 	else
 	{
-		$messaggio="non hai effettuato nessun ordine";
+		$messaggio="Non hai effettuato nessun ordine";
 	}
 }
 else
 {
-	$messaggio="non hai effettuato nessun ordine";
+	$messaggio="Non hai effettuato nessun ordine";
 }
 
 my $vars;
