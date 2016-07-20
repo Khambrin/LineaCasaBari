@@ -97,7 +97,7 @@
                     <li class="subtitle_link">Gestione password, e-mail</li>
                 </ul>
                 <ul>
-                    <li class="title_link"><a href="check_session.cgi?aggiungi-indirizzo">Indirizzi</a></li>
+                    <li class="title_link"><a href="check_session.cgi?gestione_indirizzi">Indirizzi</a></li>
                     <li class="subtitle_link">Gestisci gli indirizzi di spedizione</li>
                 </ul>
             </div><div id="right-col">
@@ -119,20 +119,24 @@
 				document.getElementById("longpassword").innerHTML = "Nuova Password troppo lunga, massimo 20 caratteri";
         			return false;
     			}
-			if(t<8 | t>15 ) { //ITU-T recommendation E.164
+			if(t<8 | t>15) { //ITU-T recommendation E.164
 				document.getElementById("ernumber").innerHTML = "Numero non valido";
         			return false;
 	
     			}
-			var rgx = /((\+)?(\d*))/;
-    			var scr = rgx.test(t);//gli altri =""
-			if(scr==false){document.getElementById("ernumber").innerHTML = "Numero non valido, simboli"; return false;}
+			var rgx = /^\+?([0-9]){8,15}$/;
+    			var scr = rgx.test(snt);
+			if(scr==false){
+				document.getElementById("ernumber").innerHTML = "Numero non valido, uso di caratteri proibiti"; 
+				return false;
+			}
     			
 			
-			var rgem = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+			var rgem = /^[^\s@]+@[^\s@]+\.[^\s@]+$/ ;
 			var gem = rgem.test(sem);
 			if(gem==false){
-			document.getElementById("eremail").innerHTML = "mail non valida"; return false;
+				document.getElementById("eremail").innerHTML = "mail non valida"; 
+				return false;
 			}
 			return true;
 		}	
