@@ -81,7 +81,7 @@ else
 		'amministratore' => $amministratore,
 		'messaggio'=> "false",
 	};
-	if ($ENV{'QUERY_STRING'} eq 'login' or  $ENV{'QUERY_STRING'} eq 'registrazione')
+	if ($ENV{'QUERY_STRING'} eq 'login' or  $ENV{'QUERY_STRING'} eq 'registrazione' or $ENV{'QUERY_STRING'} eq 'gestione_account')
 	{
 		print $cgi->redirect("gestione_account.cgi?ok");
 	}
