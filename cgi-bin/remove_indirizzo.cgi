@@ -15,7 +15,7 @@ my $email=$session->param("email");
 
 my $parser=XML::LibXML->new;
 my $index=$cgi->param("indice_indirizzo");
-
+$index=$index-1;
 
 
 #my $annuncio_node=$doc->findnodes("Annunci/Annuncio[Titolo='$titolo']");
@@ -23,7 +23,7 @@ my $index=$cgi->param("indice_indirizzo");
 
 my $doc=$parser->parse_file("../data/Indirizzi.xml");
 my $indirizzi_node=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo");
-$indirizzi_node->[$index-1]->parentNode->removeChild($indirizzi_node->[$index-1]);
+$indirizzi_node->[$index]->parentNode->removeChild($indirizzi_node->[$index]);
 
 
 

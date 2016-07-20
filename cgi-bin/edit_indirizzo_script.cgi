@@ -67,7 +67,7 @@ if (@errors)
 	my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
 		});
-	$ind=++$ind;
+	
 	my $indirizzo_via=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[position()='$ind']/Via");
 	my $indirizzo_numero_civico=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[$ind]/Numero_civico/text()");
 	my $indirizzo_citta=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[$ind]/Città/text()");
@@ -110,7 +110,7 @@ else
 	$doc=$parser->parse_file("../data/Indirizzi.xml");
 	$root=$doc->documentElement();
 
-	
+	$ind--;
 	my $indirizzo_canc=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo");
 	$indirizzo_canc->[$ind]->parentNode->removeChild($indirizzo_canc->[$ind]);
 

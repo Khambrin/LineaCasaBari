@@ -27,13 +27,13 @@ my $template=Template->new({
 	});
 
 
-my $ind=++$index;
 
-my $indirizzo_via=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[position()='$ind']/Via");
-my $indirizzo_numero_civico=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[$ind]/Numero_civico/text()");
-my $indirizzo_citta=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[$ind]/Città/text()");
-my $indirizzo_provincia=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[$ind]/Provincia/text()");
-my $indirizzo_cap=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[$ind]/CAP/text()");
+
+my $indirizzo_via=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[position()='$index']/Via");
+my $indirizzo_numero_civico=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[$index]/Numero_civico/text()");
+my $indirizzo_citta=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[$index]/Città/text()");
+my $indirizzo_provincia=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[$index]/Provincia/text()");
+my $indirizzo_cap=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[$index]/CAP/text()");
 
 
 my $via_form='<input class= "input" type="text" name="via" value="'."$indirizzo_via".'"/>';
@@ -42,8 +42,7 @@ my $citta_form='<input class= "input" type="text" name="citta" value="'."$indiri
 my $provincia_form='<input class= "input" type="text" name="provincia" value="'."$indirizzo_provincia".'"/>';
 my $cap_form='<input class= "input" type="text" name="cap" value="'."$indirizzo_cap".'"/>';
 
-$ind=--$index;
-my $hidden='<input type="hidden" name="index_script" value="'."$ind".'"/>';
+my $hidden='<input type="hidden" name="index_script" value="'."$index".'"/>';
 
 my $file='indirizzi_temp.html';
 my $vars={
@@ -57,7 +56,7 @@ my $vars={
 		'vprovincia'=>$provincia_form,
 		'vcap'=>$cap_form,
 		'hidden'=>$hidden,
-		'indice_controllo'=>$ind,
+		'indice_controllo'=>$index,
 	};
 
 print $cgi->header('text/html');

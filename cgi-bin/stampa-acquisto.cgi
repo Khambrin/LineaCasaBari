@@ -33,20 +33,22 @@ my @indirizzo_cap=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo/CA
 
 my $file='acquisto_temp.html';
 my $tot;
-for (my $index=0; $index <=$#indirizzo_via; $index++)
+my $counter=0;
+for (my $index=1; $index <=$#indirizzo_via; $index++)
 {	
 	my $x='<li><label id="acquisto-indirizzoLabel">'."Indirizzo n. $index</label>".'<input type="checkbox" name="indirizzo" value="'."$index".'"/></li>';
 	$tot=$tot.$x;
-	my $x='<li><label>'."Via: @indirizzo_via[$index]</label></li>";
+	my $x='<li><label>'."Via: @indirizzo_via[$counter]</label></li>";
 	$tot=$tot.$x;
-	my $x='<li><label>'."Numero: @indirizzo_numero_civico[$index]</label></li>";
+	my $x='<li><label>'."Numero: @indirizzo_numero_civico[$counter]</label></li>";
 	$tot=$tot.$x;
-	my $x='<li><label>'."Citt&agrave;: @indirizzo_citta[$index]</label></li>";
+	my $x='<li><label>'."Citt&agrave;: @indirizzo_citta[$counter]</label></li>";
 	$tot=$tot.$x;
-	my $x='<li><label>'."Provincia: @indirizzo_provincia[$index]</label></li>";
+	my $x='<li><label>'."Provincia: @indirizzo_provincia[$counter]</label></li>";
 	$tot=$tot.$x;
-	my $x='<li><label>'."CAP: @indirizzo_cap[$index]</label></li>";
+	my $x='<li><label>'."CAP: @indirizzo_cap[$counter]</label></li>";
 	$tot=$tot.$x;	
+	$counter++;
 }
 
 my $lista_indirizzi=$tot;
