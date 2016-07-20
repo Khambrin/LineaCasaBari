@@ -195,6 +195,10 @@
         display: inline-block;
         width: 17%;
     }
+    
+    #right-col label{
+        width: 22%;
+    }
 
     /*-------------------------------------- la_nostra_storia.html desktop --------------------------------------------------------------------------------*/
     #linea-tempo
@@ -693,7 +697,6 @@
         background-size: contain;
         background-repeat: repeat-x;
     }
-    
     
     #gestione-center{
         display:inline-block;
