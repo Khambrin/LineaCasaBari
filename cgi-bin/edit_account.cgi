@@ -18,8 +18,11 @@ my $amministratore=$session->param("amministratore");
 my @errors=();
 my %values;
 
+my $doc;
+my $parser=XML::LibXML->new();
+$doc=$parser->parse_file("../data/Utenti.xml");
+my @lista_email=$doc->findnodes("Utenti/Utente/Email/text()");
 
-my $parser=XML::LibXML->new;
 
 
 foreach my $p (param())
@@ -39,6 +42,19 @@ if (!$values{"nuova_password"})
 {
 	push @errors, "Devi inserire la nuova password.";
 }
+
+
+#
+my $regex=$values{"nuova_email"}=~ /^[a-z0-9.]+\@[a-z0-9.-]+$/;
+if (not $regex)
+{
+	push @errors, "Indirizzo email inserito non valido";
+}
+if (grep( /^$values{"nuova_email"}$/, @lista_email )) {
+	push @errors, "Indirizzo email gi&aacute; utilizzato"
+}
+#
+
 
 if (@errors)
 {
@@ -194,7 +210,7 @@ else
 	open (XML,">","../data/Indirizzi.xml");
 	print XML $doc->toString();
 	close(XML);
-###
+
 	$parser=XML::LibXML->new();
 	$doc=$parser->parse_file("../data/Ordini.xml");
 	$root=$doc->documentElement();
@@ -215,9 +231,6 @@ else
 	open (XML,">","../data/Ordini.xml");
 	print XML $doc->toString();
 	close(XML);
-
-
-###
 
 	print $cgi->redirect("gestione_account.cgi");
 
