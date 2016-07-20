@@ -1,0 +1,16 @@
+ordina per (prodotti)
+compatibilità altri browser
+controllare padding top form-container2
+lista desideri messaggi feedback con apposita classe
+indirizzi messaggi feedback con apposita classe
+contattaci
+mappa sito
+relazione
+css stampa
+validare
+aggiungere tutte le pagine a check session
+togliere sottolineatura da tutti i link (prodotti prodotto)
+controllare ti trovi in e tutti gli header
+allineamento di label e elementi input a sinistra in modo da allinearli
+
+

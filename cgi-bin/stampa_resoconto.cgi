@@ -26,7 +26,7 @@ my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
 	});
 my $indi=param('indirizzo');
-	
+
 my $num_prodotti=$carrello_doc->findvalue("count(Carrelli/Carrello[Utente='$email']/Elemento)");
 my $tot_prodotto=0;
 my $tot;
