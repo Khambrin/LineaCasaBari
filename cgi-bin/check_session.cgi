@@ -50,7 +50,7 @@ if ($session->is_empty)
 		or $ENV{'QUERY_STRING'} eq 'gestione_account' or $ENV{'QUERY_STRING'} eq 'gestione_indirizzi' 
 		or $ENV{'QUERY_STRING'} eq 'carrello-svuotato' or $ENV{'QUERY_STRING'} eq 'carrello-modificato'
 		or $ENV{'QUERY_STRING'} eq 'stampa_indirizzi'	or $ENV{'QUERY_STRING'} eq 'edit_indirizzo'
-		or $ENV{'QUERY_STRING'} eq 'stampa_desideri')
+		or $ENV{'QUERY_STRING'} eq 'stampa_desideri' or $ENV{'QUERY_STRING'} eq 'desiderio-rimosso')
 	{
 		$file='login_temp.html';
 		$vars={
@@ -123,6 +123,10 @@ else
 	if($ENV{'QUERY_STRING'} eq 'stampa_desideri')
 	{
 		print $cgi->redirect("stampa_desideri.cgi");
+	}
+	if ($ENV{'QUERY_STRING'} eq 'desiderio-rimosso')
+	{
+		print $cgi->redirect("stampa_desideri.cgi?rimosso");
 	}
 
 }

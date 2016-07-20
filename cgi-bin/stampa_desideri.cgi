@@ -35,7 +35,8 @@ my @prodotti=$doc->findnodes("Liste/Lista[Utente='$email']/Prodotto/text()");
 my $file='lista_desideri_temp.html';
 my $tot;
 
-for (my $index=0; $index <=$#prodotti; $index++)
+my $index=0;
+for (; $index <=$#prodotti; $index++)
 {	
 	my $x='<li>Prodotto: '."@prodotti[$index]".'</li>';
 	$tot=$tot.$x;
@@ -44,30 +45,41 @@ for (my $index=0; $index <=$#prodotti; $index++)
 	my $x='<li><form action="aggiungi_carrello.cgi" method="post"><div><button class="button" type="submit">Aggiungi al Carrello</button><input type="hidden" name="codice_prodotto" value="'."@prodotti[$index]".'"/></div></form></li>';
 	$tot=$tot.$x;
 }
-
-
-
-
-my $lista_desideri='<div class="form-container2"><h2>Lista dei Desideri</h2><ul>'."$tot".'</ul></div>';
-
-if ($session->is_empty)
+my $lista_desideri;
+my $messaggio="false";
+if($index)
 {
-	$vars={
-		'sessione' => "false",
-		'lista_desideri' => $lista_desideri,
-		'messaggio_newsletter'=>$mex,
-		'iscrizione_avvenuta'=>$ias,
-	};
-}
-
-else
-{
+	if($ENV{'QUERY_STRING'} eq 'rimosso')
+	{
+		$messaggio="Prodotto rimosso con successo";
+	}
+	$lista_desideri='<div class="generic-container"><div class="form-container2"><h2>Lista dei Desideri</h2><ul>'."$tot".'</ul></div></div>';
 	$vars={
 		'sessione' => "true",
 		'email' => $email,
 		'amministratore' => $amministratore,
 		'lista_desideri' => $lista_desideri,
+		'messaggio'=> $messaggio,
 		'messaggio_newsletter'=>$mex,
+		'iscrizione_avvenuta'=>$ias,
+	};
+}
+else
+{
+	if($ENV{'QUERY_STRING'} eq 'rimosso')
+	{
+		$messaggio="Prodotto rimosso con successo, ora la tua lista &egrave; vuota, per aggiungere qualcosa visita la pagina Prodotti";
+	}
+	else
+	{
+		$messaggio="La tua lista &egrave; vuota, per aggiungere qualcosa visita la pagina Prodotti";
+	}
+	$vars={
+		'sessione' => "true",
+		'email' => $email,
+		'amministratore' => $amministratore,
+		'messaggio'=> $messaggio,
+		'messaggio_newsletter'=> $mex,
 		'iscrizione_avvenuta'=>$ias,
 	};
 }

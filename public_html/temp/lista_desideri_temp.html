@@ -85,10 +85,9 @@
 		</div>
     </div>
     <div id="content">
-		[% IF messaggio != 'false' %][% messaggio %][% END %]
+		[% IF messaggio != "false" %]<div class="messaggio-confirm">[% messaggio %]</div>[% END %]
 		[% lista_desideri %]
-    </div>
-    
+    </div>    
     <div id="footer">
         <a href="#header">
             <span id="torna-su">

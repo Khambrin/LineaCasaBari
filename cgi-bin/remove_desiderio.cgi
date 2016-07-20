@@ -32,7 +32,7 @@ open(XML,">","../data/Desideri.xml");
 print XML $doc->toString();
 close(XML);
 
-print $cgi->redirect('stampa_desideri.cgi?rimosso');
+print $cgi->redirect('check_session.cgi?desiderio-rimosso');
 
 
 
