@@ -109,8 +109,9 @@
                     [% ELSIF pagina == 'rimuovi_modifica' %]<a href="gestione_prodotti_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi prodotto</span></div></a><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica prodotto</span></div>[% END %]
                 </div>
             	[% IF pagina == 'aggiungi' %]
+		<script type="text/javascript" src="../js/add_product.js"></script>
             	<div class="form-container2">
-					<form method="post" action="aggiungi_prodotto_form.cgi" enctype="multipart/form-data">
+					<form name="productform" method="post" action="aggiungi_prodotto_form.cgi" onsubmit="return prForm()" enctype="multipart/form-data">
                     <ul class="form-Block">
                         <li>
                             <label>Nome:</label>
@@ -165,6 +166,7 @@
                         <button class="button" type="submit">Aggiungi prodotto</button>
                     </div>
 					<div>[% hidden %]</div>
+					<div class="js-message-error"> <p id="formatoprezzo"></p>  </div>
 					<div class="messaggio-error">[% messaggio%]</div>
                 </form>
 				[% ELSIF pagina == 'rimuovi_modifica' %]
