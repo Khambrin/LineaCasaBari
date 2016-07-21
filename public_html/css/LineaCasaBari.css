@@ -585,41 +585,7 @@ body
     padding-bottom: 0.5em;   
 }
 
-/*--------------------------- contattaci.html ----------------------------------------------------------------------------------------------------*/
-    
-#contattaci-container-mobile{
-    display: block;
-    text-align: center;
-}
-    
-#contattaci-container {
-    display: none;
-}
 
-#contattaci-container-mobile h2{
-    padding-top: 1em;
-    padding-bottom: 1em;
-}
-
-.contattaci-Block li {
-    list-style: none;
-    padding-bottom: 2em;
-}
-
-.contattaci-Block-li{
-    padding-bottom: 2em;
-}
-
-.contattaci-messaggioLabelBlock{
-    text-align: left;
-    padding-left: 3.2em;
-    padding-bottom: 0.5em;
-}
-
-.contattaci-messaggioTextArea {
-    width: 80%;
-    height: 10em;
-}
 /*-------------------------------------- la_nostra_storia.html --------------------------------------------------------------------------------*/
 
 

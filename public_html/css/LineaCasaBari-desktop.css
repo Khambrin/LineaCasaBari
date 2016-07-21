@@ -531,19 +531,6 @@
         display: none;
     }
     
-/*--------------------------- contattaci.html ----------------------------------------------------------------------------------------------------*/
-    
-    #contattaci-container-mobile{
-        display: none;
-    }
-    
-    #contattaci-container {
-        display: block;
-        width: 100%;
-        text-align: center;
-        margin-bottom: 5em;
-        margin-top: 2em;
-    }
 
     /*------------------- termini e spedizione/resi e rimborsi  -----------------------------------------------------------------------------------*/
     
