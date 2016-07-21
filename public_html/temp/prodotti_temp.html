@@ -85,8 +85,8 @@
     </div>
     <div id="searchBar">
         <div id="searchContainer">
-            <form id="commonSearch" method="post" action="ricerca.cgi">
-                <div id="commonSearchInputLeft"></div><div id="commonSearchInputMiddle"><input id="commonSearchInput" type="text"/></div><div id="commonSearchInputRight"></div>
+            <form id="commonSearch" method="post" action="prodotti.cgi[% query_string %]">
+                <div id="commonSearchInputLeft"></div><div id="commonSearchInputMiddle"><input class="input" name="query" id="commonSearchInput" type="text"/></div><div id="commonSearchInputRight"></div>
                 <div id="commonSearchButtonContainer">
                     <input id="commonSearchButton" type="submit" value=""/>
                 </div>
