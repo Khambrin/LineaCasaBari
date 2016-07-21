@@ -31,6 +31,7 @@ my @indirizzo_numero_civico=$doc->findnodes("Indirizzi/Utente[Email='$email']/In
 my @indirizzo_citta=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo/Città/text()");
 my @indirizzo_provincia=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo/Provincia/text()");
 my @indirizzo_cap=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo/CAP/text()");
+my $num_indirizzi=$doc->findvalue("count(Indirizzi/Utente[Email='$email']/Indirizzo)");
 
 my $file='indirizzi_temp.html';
 my $tot;
@@ -57,7 +58,9 @@ for (my $index=1; $index <=$#indirizzo_via+1; $index++)
 my $lista_indirizzi=$tot;
 if($ENV{'QUERY_STRING'} eq 'rimosso')
 {
-	$vars={
+	if($num_indirizzi)
+	{
+		$vars={
 			'sessione' => "true",
 			'email' => $email,
 			'amministratore' => $amministratore,
@@ -65,7 +68,20 @@ if($ENV{'QUERY_STRING'} eq 'rimosso')
 			'messaggio'=>$mex,
 			'messaggio_confirm'=>"Indirizzo rimosso con successo",
 			'iscrizione_avvenuta'=>$ias,
-		};
+			};
+	}
+	else
+	{
+		$vars={
+			'sessione' => "true",
+			'email' => $email,
+			'amministratore' => $amministratore,
+			'lista_indirizzi' => $lista_indirizzi,
+			'messaggio'=>$mex,
+			'messaggio_confirm'=>"Indirizzo rimosso con successo, ora la tua lista indirizzi &egrave; vuota",
+			'iscrizione_avvenuta'=>$ias,
+			};
+	}
 }
 elsif($ENV{'QUERY_STRING'} eq 'modificato')
 {
@@ -81,7 +97,9 @@ elsif($ENV{'QUERY_STRING'} eq 'modificato')
 }
 else
 {
-	$vars={
+	if($num_indirizzi)
+	{
+		$vars={
 			'sessione' => "true",
 			'email' => $email,
 			'amministratore' => $amministratore,
@@ -89,7 +107,20 @@ else
 			'messaggio'=>$mex,
 			'messaggio_confirm'=> "false",
 			'iscrizione_avvenuta'=>$ias,
-		};
+			};
+	}
+	else
+	{
+		$vars={
+			'sessione' => "true",
+			'email' => $email,
+			'amministratore' => $amministratore,
+			'lista_indirizzi' => $lista_indirizzi,
+			'messaggio'=>$mex,
+			'messaggio_confirm'=> "La tua lista indirizzi &egrave; vuota",
+			'iscrizione_avvenuta'=>$ias,
+			};
+	}
 }
 
 print $cgi->header('text/html');
