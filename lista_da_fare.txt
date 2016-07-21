@@ -7,7 +7,6 @@ relazione
 css stampa
 validare e inserire immagini w3c in footer
 mettere sottolineatura da tutti i link
-controllare tutti i trovi in e tutti gli header
 allineamento di label e elementi input a sinistra in modo da allinearli
 iscrizione newsletter tutte le pagine
 Controllare che tutte le pagine abbiano link check_session.cgi?nome_pagina

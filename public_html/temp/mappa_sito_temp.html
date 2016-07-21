@@ -27,21 +27,22 @@
                 <li><a href="check_session.cgi?index"><span xml:lang="en">Home</span></a></li>
                 <li><a href="check_session.cgi?prodotti">Prodotti</a></li>
                 <li><a href="stampa_annunci.cgi">Annunci</a></li>
-				[% IF sessione == 'true' %]
+                [% IF sessione == 'true' %]
 				<li><a href="check_session.cgi?i_miei_ordini">Account</a></li>
 				<li><a href="check_session.cgi?carrello">Carrello</a></li>
-				<li><a href="stampa_desideri.cgi">Lista dei Desideri</a></li>				
+				<li><a href="stampa_desideri.cgi">Lista dei desideri</a></li>
 				[% IF amministratore == 'true' %]
 				<li><a href="check_session.cgi?togli_utenti">Gestione sito</a></li>
 				[% END %]
 				<li><a href="logout_script.cgi">Logout</a></li>
 				[% ELSE %]
-                <li><a href="check_session.cgi?login">Accedi</a></li>
+				<li><a href="check_session.cgi?login">Accedi</a></li>
                 <li><a href="check_session.cgi?registrazione">Registrati</a></li>
 				[% END %]
-                <li><a href="check_session.cgi?la_nostra_storia">La nostra Storia</a></li>
+				<li><a href="check_session.cgi?la_nostra_storia">La nostra Storia</a></li>
                 <li><a href="check_session.cgi?termini_spedizione">Termini e Spedizione</a></li>
                 <li><a href="check_session.cgi?resi_rimborsi">Resi e Rimborsi</a></li>
+                <li class="current">Mappa del sito</li>
             </ul>
         </div>
     </div>
