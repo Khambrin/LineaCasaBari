@@ -94,19 +94,20 @@
     
     <div id="content">
         <div id="prodotti-resultInfoBar">
-            <form id="prodotti-searchSortForm" method="post">
+            <form id="prodotti-searchSortForm" method="post" action="prodotti.cgi[% query_string %]">
               <div id="prodotti-searchSortFormLabel">
                  Ordina per
               </div>
               <div id="prodotti-searchSortFormSelect">
-                 <select>
-                 <option value="rilevanza">Rilevanza</option>
-                 <option value="prezzo_crescente">Prezzo crescente</option>
-                 <option value="prezzo_decrescente">Prezzo decrescente</option>
-                 <option value="media_recensioni_clienti">Media recensioni clienti</option>
-                 <option value="ultimi_arrivi">Ultimi arrivi</option>
+                 <select name="ordinamento" onchange="this.form.submit()">
+                 <option [% IF order == 'prezzo_crescente' %] selected [% END %] value="prezzo_crescente">Prezzo crescente</option>
+                 <option [% IF order == 'prezzo_decrescente' %] selected [% END %] value="prezzo_decrescente">Prezzo decrescente</option>
+                 <option [% IF order == 'media_recensioni_crescente' %] selected [% END %] value="media_recensioni_crescente">Media recensioni crescente</option>
+                 <option [% IF order == 'media_recensioni_decrescente' %] selected [% END %] value="media_recensioni_decrescente">Media recensioni decrescente</option>
+                 <option [% IF order == 'ultimi_arrivi' %] selected [% END %] value="ultimi_arrivi">Ultimi arrivi</option>
                  </select>
               </div>
+			  <noscript><input type="submit" value="Ordina risultati" /></noscript>
             </form>
           </div>
         <div id="prodotti-centralContainer">

@@ -90,6 +90,57 @@ if($in{'Query'} || $get_query) {
 	@prodotto_codice=$doc->findnodes("Prodotti/Prodotto/Codice/text()");
 }
 
+#gestione ordinamento prodotti
+
+my @prodotto_codice_ordinato;
+my %ordered;
+my $order=param("ordinamento");
+if($order eq 'prezzo_crescente') {
+	foreach my $codice (@prodotto_codice) {
+		my $prodotto_prezzo=$doc->findnodes('Prodotti/Prodotto[Codice="'."$codice".'"]/Prezzo/text()');
+		$ordered{$codice} = "$prodotto_prezzo";
+	}
+	foreach my $codice (sort { $ordered{$a} <=> $ordered{$b} } keys %ordered) {
+		push (@prodotto_codice_ordinato, $codice);
+	}
+} elsif ($order eq 'prezzo_decrescente') {
+	foreach my $codice (@prodotto_codice) {
+		my $prodotto_prezzo=$doc->findnodes('Prodotti/Prodotto[Codice="'."$codice".'"]/Prezzo/text()');
+		$ordered{$codice} = "$prodotto_prezzo";
+	}
+	foreach my $codice (sort { $ordered{$b} <=> $ordered{$a} } keys %ordered) {
+		push (@prodotto_codice_ordinato, $codice);
+	}
+} elsif ($order eq 'media_recensioni_decrescente') {
+	foreach my $codice (@prodotto_codice) {
+		my $prodotto_voto=$doc->findnodes('Prodotti/Prodotto[Codice="'."$codice".'"]/Valutazione/text()');
+		$ordered{$codice} = "$prodotto_voto";
+	}
+	foreach my $codice (sort { $ordered{$b} <=> $ordered{$a} } keys %ordered) {
+		push (@prodotto_codice_ordinato, $codice);
+	}
+} elsif ($order eq 'media_recensioni_crescente') {
+	foreach my $codice (@prodotto_codice) {
+		my $prodotto_voto=$doc->findnodes('Prodotti/Prodotto[Codice="'."$codice".'"]/Valutazione/text()');
+		$ordered{$codice} = "$prodotto_voto";
+	}
+	foreach my $codice (sort { $ordered{$a} <=> $ordered{$b} } keys %ordered) {
+		push (@prodotto_codice_ordinato, $codice);
+	}
+} elsif ($order eq 'ultimi_arrivi') {
+	foreach my $codice (@prodotto_codice) {
+		my $prodotto_data=$doc->findnodes('Prodotti/Prodotto[Codice="'."$codice".'"]/Data_aggiunta/text()');
+		$ordered{$codice} = "$prodotto_data";
+	}
+	foreach my $codice (sort { $ordered{$b} <=> $ordered{$a} } keys %ordered) {
+		push (@prodotto_codice_ordinato, $codice);
+	}
+} else {
+	foreach my $codice (@prodotto_codice) {
+		push (@prodotto_codice_ordinato, $codice)
+	}
+}
+
 #gestione filtri pagina
 my $filter;
 if ($in{'Filter'}) {
@@ -100,60 +151,39 @@ else {
 }
 
 if($filter eq 'Liste nozze'){ 
-					foreach my $i (@prodotto_codice) {
-						push (@prodotti_codice, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="lista_nozze"]/Codice/text()'));
-						push (@prodotto_nome, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="lista_nozze"]/Nome/text()'));
-						push (@prodotto_immagine, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="lista_nozze"]/Immagine/text()'));
-						push (@prodotto_prezzo, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="lista_nozze"]/Prezzo/text()'));
-						}
-					}					
-elsif ($filter eq 'Porcellane'){ 
-					foreach my $i (@prodotto_codice) {
-						push (@prodotti_codice, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="porcellane"]/Codice/text()'));
-						push (@prodotto_nome, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="porcellane"]/Nome/text()'));
-						push (@prodotto_immagine, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="porcellane"]/Immagine/text()'));
-						push (@prodotto_prezzo, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="porcellane"]/Prezzo/text()'));
-						}
-					}
-elsif ($filter eq 'Pentole'){ 
-					foreach my $i (@prodotto_codice) {
-						push (@prodotti_codice, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="pentolame"]/Codice/text()'));
-						push (@prodotto_nome, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="pentolame"]/Nome/text()'));
-						push (@prodotto_immagine, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="pentolame"]/Immagine/text()'));
-						push (@prodotto_prezzo, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="pentolame"]/Prezzo/text()'));
-						}
-					}
-elsif ($filter eq 'Tovaglie'){ 
-					foreach my $i (@prodotto_codice) {
-						push (@prodotti_codice, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="tovaglie"]/Codice/text()'));
-						push (@prodotto_nome, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="tovaglie"]/Nome/text()'));
-						push (@prodotto_immagine, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="tovaglie"]/Immagine/text()'));
-						push (@prodotto_prezzo, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="tovaglie"]/Prezzo/text()'));
-						}
-					}
-elsif ($filter eq 'Tavola'){ 
-					foreach my $i (@prodotto_codice) {
-						push (@prodotti_codice, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="per_la_tavola"]/Codice/text()'));
-						push (@prodotto_nome, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="per_la_tavola"]/Nome/text()'));
-						push (@prodotto_immagine, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="per_la_tavola"]/Immagine/text()'));
-						push (@prodotto_prezzo, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="per_la_tavola"]/Prezzo/text()'));
-						}
-					}
-elsif ($filter eq 'Paralumi'){
-					foreach my $i (@prodotto_codice) {
-						push (@prodotti_codice, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="paralumi"]/Codice/text()'));
-						push (@prodotto_nome, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="paralumi"]/Nome/text()'));
-						push (@prodotto_immagine, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="paralumi"]/Immagine/text()'));
-						push (@prodotto_prezzo, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="paralumi"]/Prezzo/text()'));
-						}
-					}
-else			{ 
-	foreach my $i (@prodotto_codice) {
-	push (@prodotti_codice, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'"]/Codice/text()'));
+	foreach my $i (@prodotto_codice_ordinato) {
+		push (@prodotti_codice, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="lista_nozze"]/Codice/text()'));
+	}
+} elsif ($filter eq 'Porcellane'){ 
+	foreach my $i (@prodotto_codice_ordinato) {
+		push (@prodotti_codice, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="porcellane"]/Codice/text()'));
+	}
+} elsif ($filter eq 'Pentole'){
+	foreach my $i (@prodotto_codice_ordinato) {
+		push (@prodotti_codice, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="pentolame"]/Codice/text()'));
+	}
+} elsif ($filter eq 'Tovaglie'){
+	foreach my $i (@prodotto_codice_ordinato) {
+		push (@prodotti_codice, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="tovaglie"]/Codice/text()'));
+	}
+} elsif ($filter eq 'Tavola'){
+	foreach my $i (@prodotto_codice_ordinato) {
+		push (@prodotti_codice, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="per_la_tavola"]/Codice/text()'));
+	}
+} elsif ($filter eq 'Paralumi'){
+	foreach my $i (@prodotto_codice_ordinato) {
+		push (@prodotti_codice, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'" and Categoria="paralumi"]/Codice/text()'));
+	}
+} else { 
+	foreach my $i (@prodotto_codice_ordinato) {
+		push (@prodotti_codice, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'"]/Codice/text()'));
+	}
+}
+
+foreach my $i (@prodotti_codice) {
 	push (@prodotto_nome, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'"]/Nome/text()'));
 	push (@prodotto_immagine, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'"]/Immagine/text()'));
 	push (@prodotto_prezzo, $doc->findnodes('Prodotti/Prodotto[Codice="'."$i".'"]/Prezzo/text()'));
-	}
 }
 
 #gestione numero pagina
@@ -265,6 +295,7 @@ if ($session->is_empty)
 		'messaggio_newsletter'=>$mex,
 		'iscrizione_avvenuta'=>$ias,
 		'query_string' =>$query_string,
+		'order' =>$order,
 	};
 }
 
@@ -280,6 +311,7 @@ else
 		'messaggio_newsletter'=>$mex,
 		'iscrizione_avvenuta'=>$ias,
 		'query_string' =>$query_string,
+		'order' =>$order,
 	};
 }
 print $cgi->header('text/html');
