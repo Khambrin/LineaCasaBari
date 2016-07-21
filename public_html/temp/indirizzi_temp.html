@@ -101,25 +101,7 @@
                 </ul>
             </div><div id="right-col">
 			
-		<script type="text/javascript">
-		function valnewindForm() {// aggiungi indirizzo
-    			
-			var provincia  = newindform.provincia.value;//due lettere
-			var cap  = newindform.cap.value;//5 cifre
-
-    			var nprov = provincia.length;
-			var ncap = provincia.length;
-			
-    			if(nprov!=2) {
-				document.getElementById("shortprov").innerHTML = "Inserisci una provincia valida, ad esempio PD";
-				document.getElementById("lencap").innerHTML = "";
-        			return false;
-			}
-    			
-    			return true;
-		}	
-		</script>
-
+		
 		<div id="sub_menu">
                 [% IF pagina == 'aggiungi' %]
 					<div class="sub_menu_block_active"><span class="sub_menu_text_active">Aggiungi indirizzo</span></div><a href="check_session.cgi?stampa_indirizzi"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica indirizzo</span></div></a>
@@ -130,9 +112,11 @@
 		</div>
 			[% IF pagina == 'aggiungi' %]
 			[% IF messaggio_confirm != 'false' %]<div class="messaggio-confirm">[% messaggio_confirm %]</div>[% END %]
+			<script type="text/javascript" src="../js/add_address.js"></script>
 			<div class="form-container2">
+
 				<h2>Aggiungi indirizzo</h2>
-				<form name="newindform" method="post" action="aggiungi_indirizzo_script.cgi" onsubmit="return valnewindForm()" enctype="multipart/form-data">
+				<form name="addressform" method="post" action="aggiungi_indirizzo_script.cgi" onsubmit="return addForm()" enctype="multipart/form-data">
 				<ul class="form-Block">
 					<li>
                         <label>Via:</label>
@@ -159,6 +143,7 @@
 					<button class="button" type="submit">Aggiungi Indirizzo</button>
                  </div>
 					<div>[% hidden %]</div>
+					<div class="js-message-error"> <p id="twoprov"></p> <p id="digitscap"></p> </div>
 					<div class="messaggio-error">[% error %]</div>
 					<div class="messaggio-error">[% messaggio %]</div>
 			</form>
@@ -193,6 +178,7 @@
                  <div>
 					<button class="button" type="submit">Modifica Indirizzo</button>
                  </div>
+					
 					<div>[% hidden %]</div>
 					<div class="messaggio-error">[% error %]</div>
 					<div class="messaggio-error">[% messaggio %]</div>
