@@ -17,3 +17,5 @@ link menu sovrapposti con schermo più piccolo (mettere contattaci sotto sul foo
 aggiungere * su campi form obbligatori
 controllare lang parole in inglese
 togliere link dal logo navid merda
+aggiungere bottone indietro a pagina modifica indirizzi, in modo da visualizzare di nuovo la lista di indirizzi
+
