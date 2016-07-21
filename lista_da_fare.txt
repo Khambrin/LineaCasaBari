@@ -2,7 +2,6 @@ ordina per (prodotti)
 compatibilità altri browser
 controllare padding top form-container2
 css lista desideri
-contattaci
 mappa sito
 relazione
 css stampa
@@ -16,3 +15,5 @@ Controllare e sistemare il drawer in tutte le pagine
 Aggiungere controllo dimensione upload immagine
 link menu sovrapposti con schermo più piccolo (mettere contattaci sotto sul footer?)
 aggiungere * su campi form obbligatori
+controllare lang parole in inglese
+togliere link dal logo navid merda
