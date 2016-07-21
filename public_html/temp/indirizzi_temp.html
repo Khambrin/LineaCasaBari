@@ -150,9 +150,10 @@
           </div>
 			[% ELSIF pagina == 'edit' %]
 			[% IF messaggio_confirm != 'false' %]<div class="messaggio-confirm">[% messaggio_confirm %]</div>[% END %]
+			<script type="text/javascript" src="../js/edit_address.js"></script>
 			<div class="form-container2">
 				<h2>Modifica indirizzo n. [% indice_controllo %] </h2>
-				<form method="post" action="edit_indirizzo_script.cgi" enctype="multipart/form-data">
+				<form name="editaddressform" method="post" action="edit_indirizzo_script.cgi" onsubmit="return editForm()" enctype="multipart/form-data">
 				<ul class="form-Block">
 					<li>
                         <label class="indirizzo-ViaLabel">Via:</label>
@@ -180,6 +181,7 @@
                  </div>
 					
 					<div>[% hidden %]</div>
+					<div class="js-message-error"> <p id="edittwoprov"></p> <p id="editdigitscap"></p> </div>
 					<div class="messaggio-error">[% error %]</div>
 					<div class="messaggio-error">[% messaggio %]</div>
           </form>

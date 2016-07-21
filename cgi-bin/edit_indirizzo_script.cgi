@@ -49,6 +49,15 @@ if (!$values{"cap"})
 	push @errors, "Devi completare il campo CAP.";
 }
 
+my $regex=$values{"provincia"}=~ /^[a-zA-Z][a-zA-Z]+$/;
+{
+	if(!$regex){push @errors, "Inserisci una provincia valida, ad esempio PD";}
+}
+my $regex=$values{"cap"}=~ /^[0-9]{5}$/;
+{
+	if(!$regex){push @errors, "Inserisci un CAP valido";}
+}
+
 if (@errors)
 {
 	print $cgi->header('text/html');
