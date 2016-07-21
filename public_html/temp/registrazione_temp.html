@@ -60,47 +60,6 @@
         </div>
     </div>
     <div id="content">
-        <div id="registrazione-container-mobile">
-            <h2>Crea un account</h2>
-                <form>
-                    <ul class="form-Block">
-                        <li>
-                            <label class="account-nomeLabel">Nome:</label>
-                        </li>
-                        <li>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="nome"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="account-cognomeLabel">Cognome:</label>
-                        </li>
-                        <li>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="cognome"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="account-emailLabel">Email:</label>
-                        </li>
-                        <li>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="email"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="account-passwordLabel">Password:</label>
-                        </li>
-                        <li>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password" name="password"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="account-confermapasswordLabel">Conferma password:</label>
-                        </li>
-                        <li>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password" name="conf_password"/></div><div class="inputRight"></div>
-                        </li>
-                    </ul>
-                    <div>
-                        <button class="button" type="submit" value="registrazione">Registrati</button>
-                    </div>
-                    <div class="messaggio-error">[% messaggio_registrazione %]</div>
-                </form>
-        </div>
 	<script type="text/javascript">
 	function validateForm() {
     		var str  = recform.password.value;
@@ -119,39 +78,36 @@
     		return true;
 	}
 	</script> 
-            <div class="form-container2">
-                <h2>Crea un account</h2> 
-                <form name="recform" action="../cgi-bin/registrazione_form.cgi"  method="post" onsubmit="return validateForm()">
-                    <ul class="form-Block">
-                        <li>
-                            <label>Nome:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="nome" [% nomeValue %] /></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label>Cognome:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="cognome" [% cognomeValue %] /></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label>Email:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="email" [% emailValue %] /></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label>Password:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password" name="password"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label>Conferma password:</label>
-                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password" name="conf_password"/></div><div class="inputRight"></div>
-                        </li>
-                    </ul>
-                    <div>
-                        <button class="button" type="submit" value="registrazione" onclick="myFunction()" >Registrati</button>
-                    </div>
-		<div class="js-message-error"> <p id="shortpassword"></p> <p id="longpassword"></p> </div>
-                    <div class="messaggio-error">[% messaggio_registrazione %]</div>
-                </form>
-
-            </div>
+        <div class="form-container2">
+            <h2>Crea un account</h2> 
+            <form name="recform" action="../cgi-bin/registrazione_form.cgi"  method="post" onsubmit="return validateForm()">
+                <ul class="form-Block">
+                    <li>
+                        <label>Nome:</label>                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="nome" [% nomeValue %] /></div><div class="inputRight"></div>
+                    </li>
+                    <li>
+                        <label>Cognome:</label>
+                        <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="cognome" [% cognomeValue %] /></div><div class="inputRight"></div>
+                    </li>
+                    <li>
+                        <label>Email:</label>
+                        <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="email" [% emailValue %] /></div><div class="inputRight"></div>
+                    </li>
+                    <li>
+                        <label>Password:</label>                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password" name="password"/></div><div class="inputRight"></div>
+                    </li>
+                    <li>
+                        <label>Conferma password:</label>
+                        <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="password" name="conf_password"/></div><div class="inputRight"></div>
+                    </li>
+                </ul>
+                <div>
+                    <button class="button" type="submit" value="registrazione" onclick="myFunction()" >Registrati</button>
+                </div>
+                <div class="js-message-error"><p id="shortpassword"></p><p id="longpassword"></p></div>
+                <div class="messaggio-error">[% messaggio_registrazione %]</div>
+            </form>
+        </div>
     </div>
     
     <div id="footer">

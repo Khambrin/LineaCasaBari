@@ -560,21 +560,6 @@ body
 
 /*--------------------------- registrazione.html (unificato con gestione account e indirizzi)-----------------------------------------------------------------------------------------------*/
 
-#registrazione-container-mobile{
-    display: block;
-    text-align: center;
-    height: auto;
-}
-
-#registrazione-container{
-    display: none;
-}
-
-#registrazione-container-mobile h2{
-    padding-bottom: 1em;
-    padding-top: 1em;
-}
-
 .form-Block{
   padding-top: 1em;
     
@@ -584,7 +569,6 @@ body
     list-style: none;
     padding-bottom: 0.5em;   
 }
-
 
 /*-------------------------------------- la_nostra_storia.html --------------------------------------------------------------------------------*/
 
