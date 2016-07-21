@@ -23,7 +23,6 @@ switch($ENV{'QUERY_STRING'})
 {
 	case 'index' { $file='index_temp.html'; }
 	case 'annunci' { $file='annunci_temp.html'; }
-	case 'contattaci' { $file='contattaci_temp.html'; }
 	case 'registrazione' { $file='registrazione_temp.html'; }
 	case 'login' { $file='login_temp.html'; }
 	case 'la_nostra_storia' { $file='la_nostra_storia_temp.html'; }

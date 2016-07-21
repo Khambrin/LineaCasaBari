@@ -15,3 +15,4 @@ Controllare che tutte le pagine abbiano link check_session.cgi?nome_pagina
 Controllare e sistemare il drawer in tutte le pagine
 Aggiungere controllo dimensione upload immagine
 link menu sovrapposti con schermo più piccolo (mettere contattaci sotto sul footer?)
+aggiungere * su campi form obbligatori
