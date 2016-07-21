@@ -13,9 +13,9 @@ iscrizione newsletter tutte le pagine
 Controllare che tutte le pagine abbiano link check_session.cgi?nome_pagina
 Controllare e sistemare il drawer in tutte le pagine
 Aggiungere controllo dimensione upload immagine
-link menu sovrapposti con schermo più piccolo (mettere contattaci sotto sul footer?)
+link menu sovrapposti con schermo più piccolo
 aggiungere * su campi form obbligatori
-controllare lang parole in inglese
-togliere link dal logo navid merda
 aggiungere bottone indietro a pagina modifica indirizzi, in modo da visualizzare di nuovo la lista di indirizzi
-
+form per le recensioni da mettere in un container e mettere un h2 che dice cosè
+controlli su cod carta credito carrello
+controllare aggiunta metodo di pagamento a xml
