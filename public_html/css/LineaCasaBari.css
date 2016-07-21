@@ -430,6 +430,12 @@ body
     height: auto;
 }
 
+.form-container2 p{
+    text-align: left;
+    display: inline-block;
+    padding-right: 2em;
+}
+
 .form-container2 h2{
     padding-top: 1em;
 }

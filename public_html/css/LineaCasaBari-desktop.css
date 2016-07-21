@@ -572,7 +572,7 @@
         border-bottom: 1px solid;
         border-left: 1px solid;
         height: 55em;
-        overflow: scroll;
+        overflow-y: scroll;
         padding-top: 2em;
     }
     #right-col li
