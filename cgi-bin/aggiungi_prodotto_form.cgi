@@ -19,7 +19,7 @@ my %values;
 
 foreach my $p (param())
 {
-	$values{$p}=lc param($p);
+	$values{$p}=param($p);
 }
 
 if (!$values{"nome"})
@@ -34,6 +34,13 @@ if (!$values{"descrizione"})
 {
 	push @messaggi, "Devi completare il campo descrizione.";
 }
+
+
+my $regex=$values{"prezzo"}=~ /^[0-9]+\,[0-9]{2}$/;
+{
+	if(!$regex){push @messaggi, "Inserisci un prezzo valido";}
+}
+
 
 if (@messaggi)
 {
@@ -127,25 +134,25 @@ else
 		if ($values{"tag1"})
 		{
 			my $tag1_tag=$doc->createElement("Tag");
-			$tag1_tag->appendTextNode($values{"tag1"});
+			$tag1_tag->appendTextNode($values{lc"tag1"});
 			$prodotto_tag->appendChild($tag1_tag);
 		}
 		if ($values{"tag2"})
 		{
 			my $tag2_tag=$doc->createElement("Tag");
-			$tag2_tag->appendTextNode($values{"tag2"});
+			$tag2_tag->appendTextNode($values{lc"tag2"});
 			$prodotto_tag->appendChild($tag2_tag);
 		}
 		if ($values{"tag3"})
 		{
 			my $tag3_tag=$doc->createElement("Tag");
-			$tag3_tag->appendTextNode($values{"tag3"});
+			$tag3_tag->appendTextNode($values{lc"tag3"});
 			$prodotto_tag->appendChild($tag3_tag);
 		}
 		if ($values{"tag4"})
 		{
 			my $tag4_tag=$doc->createElement("Tag");
-			$tag4_tag->appendTextNode($values{"tag4"});
+			$tag4_tag->appendTextNode($values{lc"tag4"});
 			$prodotto_tag->appendChild($tag4_tag);
 		}
 		open (XML,">","../data/Prodotti.xml");
