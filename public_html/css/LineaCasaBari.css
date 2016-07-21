@@ -424,6 +424,26 @@ body
     margin-top: 2em;
 }
 
+.form-container2{
+    display: block;
+    text-align: center;
+    height: auto;
+}
+
+.form-container2 h2{
+    padding-top: 1em;
+}
+    
+.form-container2 li{
+    list-style: none;
+}
+
+.form-container2 label{
+    text-align: left;
+    display: inline-block;
+    width: 20%;
+}
+
 /*---------------------------------------------------index_temp.html ------------------------------------------------------------------------------*/
 
 
@@ -516,11 +536,7 @@ body
     }
 /*---------------------------------------------------login.html ------------------------------------------------------------------------------*/
 
-#login-container {
-    display: none;
-}
-
-#login-container-mobile{
+/*#login-container-mobile{
     display: block;
     text-align: center;
 }
@@ -528,7 +544,9 @@ body
 #login-container-mobile h2{
     padding-bottom: 1em;
     padding-top: 1em;
-}
+}*/
+
+
 
 .login-Block{
     padding-top: 1em;

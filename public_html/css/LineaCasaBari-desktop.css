@@ -176,23 +176,11 @@
         margin-left: auto;
         margin-right: auto;
         background-color: #E1E3E4;
-        height: auto;
         box-shadow: 1px 1px 1px 1px #888888; 
         margin-bottom: 1em;
     }
-
-    .form-container2 h2{
-        padding-top: 1em;
-    }
-    
-    .form-container2 li{
-        list-style: none;
-        
-    }
     
     .form-container2 label{
-        text-align: left;
-        display: inline-block;
         width: 17%;
     }
     
