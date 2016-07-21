@@ -7,14 +7,13 @@ relazione
 css stampa
 validare e inserire immagini w3c in footer
 mettere sottolineatura da tutti i link
-allineamento di label e elementi input a sinistra in modo da allinearli
+allineamento di label e elementi input a sinistra in modo da allinearli e 2 bottoni allineati
 iscrizione newsletter tutte le pagine
 Controllare che tutte le pagine abbiano link check_session.cgi?nome_pagina
-Controllare e sistemare il drawer in tutte le pagine
 Aggiungere controllo dimensione upload immagine
 link menu sovrapposti con schermo più piccolo
 aggiungere * su campi form obbligatori
 aggiungere bottone indietro a pagina modifica indirizzi, in modo da visualizzare di nuovo la lista di indirizzi
 form per le recensioni da mettere in un container e mettere un h2 che dice cosè
-controlli su cod carta credito carrello
+bug su aggiungi-ordine.cgi
 controllare aggiunta metodo di pagamento a xml
