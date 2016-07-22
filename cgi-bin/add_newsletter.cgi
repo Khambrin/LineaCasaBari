@@ -50,18 +50,13 @@ if ($void_address)
 		};
 	}
 	
-	if($page_nl =~ /html/)
-	{
-		print $cgi->header('text/html');
-		my $template=Template->new({
-			INCLUDE_PATH => '../public_html/temp',
-		});
-		$template->process($file,$vars) || die $template->error();
-	}
-	else
-	{
-		print $cgi->redirect($page_nl.'?messaggio_newsletter='.$void_address);
-	}
+	print $cgi->header('text/html');
+	my $template=Template->new({
+		INCLUDE_PATH => '../public_html/temp',
+	});
+	
+	my $file='newsletter_temp.html';
+	$template->process($file,$vars) || die $template->error();
 }
 else
 {
@@ -79,7 +74,7 @@ else
 		$doc->setDocumentElement($root);
 	}
 
-	my $mail_tag=$doc->createElement("mail");
+	my $mail_tag=$doc->createElement("Email");
 	$mail_tag->appendTextNode($mail_iscrizione);
 	$root->appendChild($mail_tag);
 	
@@ -104,24 +99,23 @@ else
 	}
 	
 	
-	if($page_nl =~ /html/)
-	{
-		print $cgi->header('text/html');
-		my $template=Template->new({
-			INCLUDE_PATH => '../public_html/temp',
-		});
-		$template->process($file,$vars) || die $template->error();
-	}
-	else
-	{
-		print $cgi->redirect($page_nl.'?iscrizione_avvenuta='.$greetings);
-	}
+	
+	
+		
+	
+	
 
 	open (XML,">","../data/Newsletter.xml");
 	print XML $doc->toString();
 	close(XML);
 	
-
+	print $cgi->header('text/html');
+	my $template=Template->new({
+		INCLUDE_PATH => '../public_html/temp',
+	});
+	
+	my $file='newsletter_temp.html';
+	$template->process($file,$vars) || die $template->error();
 
 
 }
