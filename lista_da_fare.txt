@@ -11,7 +11,7 @@ iscrizione newsletter tutte le pagine
 Controllare che tutte le pagine abbiano link check_session.cgi?nome_pagina
 Aggiungere controllo dimensione upload immagine
 link menu sovrapposti con schermo più piccolo
-aggiungere * su campi form obbligatori
 aggiungere bottone indietro a pagina modifica indirizzi, in modo da visualizzare di nuovo la lista di indirizzi
 form per le recensioni da mettere in un container e mettere un h2 che dice cosè
 Dimensioni immagini tag <img> vanno messe dentro css
+modifica account controlli da togliere modificare

@@ -13,9 +13,7 @@ my $cgi=new CGI;
 
 
 my $session = CGI::Session->load();
-if ($session->is_empty) {
-	print $cgi->redirect('check_session.cgi?impostazioni_account');
-}
+
 my $email=$session->param("email");
 my $amministratore=$session->param("amministratore");
 
