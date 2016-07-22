@@ -41,6 +41,10 @@ my $regex=$values{"prezzo"}=~ /^[0-9]+\,[0-9]{2}$/;
 	if(!$regex){push @messaggi, "Inserisci un prezzo valido";}
 }
 
+if ($values{"immagine"}) {
+	my $image_size = -s $values{"immagine"};
+	if($image_size > 200000) {push @messaggi, "Immagine troppo grande";}
+}
 
 if (@messaggi)
 {
