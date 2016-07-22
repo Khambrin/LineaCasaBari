@@ -12,7 +12,6 @@ use XML::LibXML;
 my $cgi=new CGI;
 print $cgi->header('text/html');
 my $session = CGI::Session->load();
-my $email=$session->param("email");
 
 my $amministratore=$session->param("amministratore");
 my $email=$session->param("email");
@@ -34,7 +33,7 @@ for(my $i=1; $i<=$num_prodotti; $i++)
 {
 	my @cod=$carrello_doc->findnodes("Carrelli/Carrello[Utente='$email']/Elemento[$i]/Prodotto/text()");
 	my $codice=@cod[0]->string_value;
-	my $x='<input type="hidden" name="prodotto'."$i".' value="'."$codice".'">';
+	my $x='<input type="hidden" name="prodotto'."$i".'" value="'."$codice".'">';
 	$tot=$tot.$x;
 	my @prz=$prodotto_doc->findnodes("Prodotti/Prodotto[Codice='$codice']/Prezzo/text()");
 	my $prezzo=@prz[0]->string_value;
@@ -61,7 +60,7 @@ if($pagamento eq 'carta_credito')
 {
 	my $x='Carta di credito</p><li>';
 	$tot=$tot.$x;
-	my $x='<li><label>Inserire codice: </label><div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="codCcredito"/></div><div class="inputRight"></div></li>';
+	my $x='<li><label>Inserire codice: </label><div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="codice"/></div><div class="inputRight"></div></li>';
 	$tot=$tot.$x;
 }
 elsif($pagamento eq 'bonifico')
@@ -82,14 +81,14 @@ elsif($pagamento eq 'pay_pal')
 {
 	my $x='Pay pal</label><li>';
 	$tot=$tot.$x;
-	my $x='<li><label>Inserire codice: </label><div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="codPaypal"/></div><div class="inputRight"></div></li>';
+	my $x='<li><label>Inserire codice: </label><div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="codice"/></div><div class="inputRight"></div></li>';
 	$tot=$tot.$x;
 }
 elsif($pagamento eq 'carta_prepagata')
 {
 	my $x='Carta prepagata</p><li>';
 	$tot=$tot.$x;
-	my $x='<li><label>Inserire codice: </label><div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="codPaypal"/></div><div class="inputRight"></div></li>';
+	my $x='<li><label>Inserire codice: </label><div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="codice"/></div><div class="inputRight"></div></li>';
 	$tot=$tot.$x;
 }
 my $x='<li><button class="button" type="submit" value="conferma">Conferma</button><li>';
