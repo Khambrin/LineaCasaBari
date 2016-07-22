@@ -31,7 +31,7 @@ if (!$mail_iscrizione)
 if ($void_address)
 {
 	
-	my $file=$page_nl;
+	
 	if ($session->is_empty)
 	{
 		$vars={
@@ -73,13 +73,17 @@ else
 		$root=$doc->createElement("Newsletter");
 		$doc->setDocumentElement($root);
 	}
+####
+#my $old_surname=$doc->findnodes("Utenti/Utente[Email='$email']/Cognome/text()");
+#my $ric_canc=$doc->findnodes("Indirizzi/Utente[Email='$email']/Email/text()");
 
+####
 	my $mail_tag=$doc->createElement("Email");
 	$mail_tag->appendTextNode($mail_iscrizione);
 	$root->appendChild($mail_tag);
 	
 	
-	my $file=$page_nl;
+	
 	if ($session->is_empty)
 	{
 		$vars={
@@ -98,12 +102,6 @@ else
 		};
 	}
 	
-	
-	
-	
-		
-	
-	
 
 	open (XML,">","../data/Newsletter.xml");
 	print XML $doc->toString();
@@ -116,7 +114,4 @@ else
 	
 	my $file='newsletter_temp.html';
 	$template->process($file,$vars) || die $template->error();
-
-
 }
-
