@@ -42,7 +42,7 @@ for (; $index <=$#prodotti; $index++)
 	my $x='<fieldset><ul><li>Prodotto: '."@prodotti[$index]".'</li>';
 	$tot=$tot.$x;
 	my $prodotto_immagine=$pro->findnodes("Prodotti/Prodotto[Codice='@prodotti[$index]']/Immagine/text()");
-	my $alt= substr $prodotto_immagine, 19, -4;
+	my $alt= "immagine del prodotto @prodotti[$index]";
 	my $stampa_immagine='<img src="'."$prodotto_immagine".'" alt="'."$alt".'" height="45" width="45"/>';
 	my $x='<li>'."$stampa_immagine".'</li>';
 	$tot=$tot.$x;
