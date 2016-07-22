@@ -862,7 +862,11 @@ body
 }
 .carrello-form{
     display: inline;
-    margin-left: 1em;
+}
+
+.carrello-form button{
+    /*padding-left: 4em;
+    padding-right: 4em;*/
 }
 .carrello_left_col{
     display: inline-block;
