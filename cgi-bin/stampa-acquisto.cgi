@@ -51,21 +51,22 @@ if($num_indi)
 	$tot=$tot.$x;	
 	$counter++;
 
-for (my $index=2; $index <=$#indirizzo_via; $index++)
+for (my $index=1; $index <=$#indirizzo_via; ++$index)
 {	
-	my $x='<li><label id="acquisto-indirizzoLabel">'."Indirizzo n. $index</label>".'<input type="checkbox" name="indirizzo" value="'."$index".'"/></li>';
+	my $num_x=$index+1;
+	my $x='<li><label id="acquisto-indirizzoLabel">'."Indirizzo n. $num_x </label>".'<input type="checkbox" name="indirizzo" value="'."$index".'"/></li>';
 	$tot=$tot.$x;
-	my $x='<li><label>'."Via: @indirizzo_via[$counter]</label></li>";
+	my $x='<li><p>'."Via: @indirizzo_via[$index]</p></li>";
 	$tot=$tot.$x;
-	my $x='<li><label>'."Numero: @indirizzo_numero_civico[$counter]</label></li>";
+	my $x='<li><label>'."Numero: @indirizzo_numero_civico[$index]</label></li>";
 	$tot=$tot.$x;
-	my $x='<li><label>'."Citt&agrave;: @indirizzo_citta[$counter]</label></li>";
+	my $x='<li><label>'."Citt&agrave;: @indirizzo_citta[$index]</label></li>";
 	$tot=$tot.$x;
-	my $x='<li><label>'."Provincia: @indirizzo_provincia[$counter]</label></li>";
+	my $x='<li><label>'."Provincia: @indirizzo_provincia[$index]</label></li>";
 	$tot=$tot.$x;
-	my $x='<li><label>'."CAP: @indirizzo_cap[$counter]</label></li>";
+	my $x='<li><label>'."CAP: @indirizzo_cap[$index]</label></li>";
 	$tot=$tot.$x;	
-	$counter++;
+	
 }
 
 my $lista_indirizzi=$tot;
