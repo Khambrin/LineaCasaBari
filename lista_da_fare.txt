@@ -1,4 +1,3 @@
-ordina per (prodotti)
 compatibilità altri browser
 controllare padding top form-container2
 css lista desideri

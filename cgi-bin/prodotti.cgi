@@ -220,7 +220,7 @@ for (my $i=0; $i<=6; $i++) {
 		my $x='<li class="categoria_attiva"><span>'."@categorie[$i]".'</span></li>';
 		$tot3=$tot3.$x;
 	} else {
-		my $x='<li><a href="prodotti.cgi?Filter='."@categorie[$i]".'">'."@categorie[$i]".'</a></li>';
+		my $x='<li><a href="prodotti.cgi?Filter='."@categorie[$i]".'&Page='."$page".'&Query='."$query".'&Order='."$order".'">'."@categorie[$i]".'</a></li>';
 		$tot3=$tot3.$x;
 	} 
 }
