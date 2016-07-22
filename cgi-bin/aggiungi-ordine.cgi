@@ -10,8 +10,6 @@ use XML::LibXML;
 use File::Basename;
 use Switch;
 
-
-
 my $cgi=new CGI;
 
 my $session = CGI::Session->load();
@@ -32,81 +30,71 @@ elsif($mpagamento eq 'carta_prepagata')
 
 my $indirizzo=param("indirizzo");
 my $parser=XML::LibXML->new;
-my $carrello_doc=$parser->parse_file("../data/Carrelli.xml");
-my $num_prodotti=$carrello_doc->findvalue("count(Carrelli/Carrello[Utente='$email']/Elemento)");
+my $doc=$parser->parse_file("../data/Carrelli.xml");
+my $num_prodotti=$doc->findvalue("count(Carrelli/Carrello[Utente='$email']/Elemento)");
 
-my $new=0;
-my $ordini_doc;
+my $doc;
 my $root;
 if (-e "../data/Ordini.xml")
 {
 	my $parser=XML::LibXML->new();
-	$ordini_doc=$parser->parse_file("../data/Ordini.xml");
-	$root=$ordini_doc->documentElement();
+	$doc=$parser->parse_file("../data/Ordini.xml");
+	$root=$doc->documentElement();
 }
 else
 {
-	$ordini_doc=XML::LibXML::Document->new("1.0","UTF-8");
-	$root=$ordini_doc->createElement("Ordini");
-	$ordini_doc->setDocumentElement($root);
-	$new=1;	
+	$doc=XML::LibXML::Document->new("1.0","UTF-8");
+	$root=$doc->createElement("Ordini");
+	$doc->setDocumentElement($root);	
 }
 
-my $ordine_tag=$ordini_doc->createElement("Ordine");	
+my $ordine_tag=$doc->createElement("Ordine");	
 $root->appendChild($ordine_tag);
 
-if($new==0)
-{
-	my $last_id=$ordini_doc->findvalue("Ordini/Ordine[last()]/Codice");
-	my $id=$last_id+1;
-	my $id_tag=$ordini_doc->createElement("Codice");
-	$id_tag->appendTextNode($id);
-	$ordine_tag->appendChild($id_tag);
-}
-else
-{
-	my $id=1;
-	my $id_tag=$ordini_doc->createElement("Codice");
-	$id_tag->appendTextNode($id);
-	$ordine_tag->appendChild($id_tag);
-}
+my $last_id=$doc->findvalue("Ordini/Ordine[last()]/Codice");
+my $id=$last_id+1;
+my $id_tag=$doc->createElement("Codice");
+$ordine_tag->appendChild($id_tag);
+$id_tag->appendTextNode($id);
 
-my $utente_tag=$ordini_doc->createElement("Utente");
-$utente_tag->appendTextNode($email);
+my $utente_tag=$doc->createElement("Utente");
 $ordine_tag->appendChild($utente_tag);
+$utente_tag->appendTextNode($email);
 
 my ($sec,$min,$hour,$mday,$mon,$yr19,$wday,$yday,$isdst) = localtime(time);
 my $year=$yr19+1900;
 my $date="$mday/$mon/$year";
-my $date_tag=$ordini_doc->createElement("Data");
-$date_tag->appendTextNode($date);
+my $date_tag=$doc->createElement("Data");
 $ordine_tag->appendChild($date_tag);
+$date_tag->appendTextNode($date);
 	
-my $pagamento_tag=$ordini_doc->createElement("Mpagamento");
-$pagamento_tag->appendTextNode($mpagamento);
+my $pagamento_tag=$doc->createElement("Mpagamento");
 $ordine_tag->appendChild($pagamento_tag);
+$pagamento_tag->appendTextNode($mpagamento);
 	
-my $indirizzo_tag=$ordini_doc->createElement("Indirizzo");
+my $indirizzo_tag=$doc->createElement("Indirizzo");
 $ordine_tag->appendChild($indirizzo_tag);
 $indirizzo_tag->appendTextNode($indirizzo);
 
 for(my$i=1;$i<=$num_prodotti;$i++)	
 {
-	my $cod=param('prodotto'."$i".'');
-	my $prodotto_tag=$ordini_doc->createElement("Prodotto_ordinato");
+	my $cod=param('$i');
+	my $prodotto_tag=$doc->createElement("Prodotto_ordinato");
 	$ordine_tag->appendChild($indirizzo_tag);
 	$prodotto_tag->appendTextNode($cod);
 }
 
 open (XML,">","../data/Ordini.xml");
-print XML $ordini_doc->toString();
+print XML $doc->toString();
 close(XML);
 
-my $carrello = $carrello_doc->findnodes("Carrelli/Carrello[Utente='$email']");
+my $parser=XML::LibXML->new();
+$doc=$parser->parse_file("../data/Carrelli.xml");
+my $carrello = $doc->findnodes("Carrelli/Carrello[Utente='$email']");
 $carrello->[0]->parentNode->removeChild($carrello->[0]);
 
 open (XML,">","../data/Carrelli.xml");
-print XML $carrello_doc->toString();
+print XML $doc->toString();
 close(XML);
 print $cgi->redirect('check_session.cgi?carrello-svuotato');
 

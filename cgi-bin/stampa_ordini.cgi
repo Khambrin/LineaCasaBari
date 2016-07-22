@@ -47,12 +47,12 @@ if(-e "../data/Ordini.xml")
 	}
 	else
 	{
-		$messaggio="Non hai effettuato nessun ordine";
+				$messaggio="Non hai eseguito alcun ordine";
 	}
 }
 else
 {
-	$messaggio="Non hai effettuato nessun ordine";
+				$messaggio="Non hai eseguito alcun ordine";
 }
 
 my $vars;
