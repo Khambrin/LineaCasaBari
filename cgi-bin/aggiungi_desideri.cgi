@@ -33,6 +33,7 @@ if (length ($ENV{'QUERY_STRING'}) > 0){
 		$in{$name} = $value; 
     }
 }
+
 my $filter;
 if ($in{'Filter'}) {
 	$filter=$in{'Filter'};
@@ -48,6 +49,24 @@ if ($in{'Page'}) {
 else {
 	$page=0;
 }
+
+my $query;
+if ($in{'Query'}) {
+	$query=$in{'Query'};
+}
+
+my $order;
+if ($in{'Order'}) {
+	$order=$in{'Order'};
+}
+
+my $query_string;
+if($query) {
+	$query_string='?Codice='."$codice".'&Filter='."$filter".'&Page='."$page".'&Query='."$query".'&Order='."$order";
+} else {
+	$query_string='?Codice='."$codice".'&Filter='."$filter".'&Page='."$page".'&Order='."$order";
+}
+
 
 my $doc,my $root;
 	my $id=0, my $valutazione="";
@@ -93,5 +112,5 @@ print XML $doc->toString();
 close(XML);
 
 my $messaggio="Prodotto aggiunto correttamente alla lista dei desideri";
-print $cgi->redirect('prodotto.cgi?Codice='."$codice".'&Filter='."$filter".'&Page='."$page".'&Messaggio='."$messaggio");
+print $cgi->redirect('prodotto.cgi'."$query_string".'&Messaggio='."$messaggio");
 

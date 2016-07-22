@@ -44,8 +44,24 @@ else {
 	$page=0;
 }
 
+my $query;
+if ($in{'Query'}) {
+	$query=$in{'Query'};
+}
+
+my $order;
+if ($in{'Order'}) {
+	$order=$in{'Order'};
+}
+
 my $codice=$in{'Codice'};
 
+my $query_string;
+if($query) {
+	$query_string='?Codice='."$codice".'&Filter='."$filter".'&Page='."$page".'&Query='."$query".'&Order='."$order";
+} else {
+	$query_string='?Codice='."$codice".'&Filter='."$filter".'&Page='."$page".'&Order='."$order";
+}
 
 
 my $parser=XML::LibXML->new;
@@ -84,6 +100,6 @@ open(XML,">","../data/Prodotti.xml");
 print XML $doc->toString();
 close(XML);
 
-print $cgi->redirect('prodotto.cgi?Codice='."$codice".'&Filter='."$filter".'&Page='."$page");
+print $cgi->redirect('prodotto.cgi'."$query_string");
 
 

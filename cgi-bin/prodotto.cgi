@@ -81,10 +81,38 @@ else {
 	$page=0;
 }
 
-my $x='<a href="prodotti.cgi?Page='."$page".'&Filter='."$filter".'"> Torna ai risultati della ricerca per "'."$filter".'" </a>';
-my $Pagina_precedente="$x";
+my $query;
+if ($in{'Query'}) {
+	$query=$in{'Query'};
+}
 
-my $query_string='?Codice='."$prodotto_codice".'&Page='."$page".'&Filter='."$filter";
+my $order;
+if ($in{'Order'}) {
+	$order=$in{'Order'};
+}
+
+my $query_string_prodotti;
+if($query) {
+	$query_string_prodotti='?Filter='."$filter".'&Page='."$page".'&Query='."$query".'&Order='."$order";
+} else {
+	$query_string_prodotti='?Filter='."$filter".'&Page='."$page".'&Order='."$order";
+}
+
+my $Pagina_precedente;
+if($query) {
+	my $x='<a href="prodotti.cgi'."$query_string_prodotti".'"> Torna ai risultati della ricerca per "'."$query".'" </a>';
+	$Pagina_precedente="$x";
+} else {
+	my $x='<a href="prodotti.cgi'."$query_string_prodotti".'"> Torna ai risultati della ricerca per categoria "'."$filter".'" </a>';
+	$Pagina_precedente="$x";
+}
+
+my $query_string;
+if($query) {
+	$query_string='?Codice='."$prodotto_codice".'&Filter='."$filter".'&Page='."$page".'&Query='."$query".'&Order='."$order";
+} else {
+	$query_string='?Codice='."$prodotto_codice".'&Filter='."$filter".'&Page='."$page".'&Order='."$order";
+}
 
 #gestione messaggio d'errore di aggiungi al carrello
 my $messaggio;

@@ -58,11 +58,11 @@ my $query;
 
 my @codici=$doc->findnodes("Prodotti/Prodotto/Codice/text()");
 if($in{'Query'} || $get_query) {
-	if ($in{'Query'}) {
-		$query = $in{'Query'};
-	} else {
+	if ($get_query) {
 		$query = $get_query;
-	}
+	} elsif ($in{'Query'}) {
+		$query = $in{'Query'};
+	} 
 	my @words = split(/ /, $query);
 	my %priority;
 	foreach my $z (@words) {
@@ -92,9 +92,19 @@ if($in{'Query'} || $get_query) {
 
 #gestione ordinamento prodotti
 
+my $get_order=param("ordinamento");
+my $order;
+if ($get_order) {
+	$order = $get_order;
+} elsif ($in{'Order'}) {
+	$order = $in{'Order'};
+} else {
+	$order = 'ultimi_arrivi'
+}
+
 my @prodotto_codice_ordinato;
 my %ordered;
-my $order=param("ordinamento");
+
 if($order eq 'prezzo_crescente') {
 	foreach my $codice (@prodotto_codice) {
 		my $prodotto_prezzo=$doc->findnodes('Prodotti/Prodotto[Codice="'."$codice".'"]/Prezzo/text()');
@@ -193,10 +203,10 @@ if ($in{'Page'}) {
 	$page=$in{'Page'};
 	}
 else {
-	$page=0;
+	$page=1;
 }
-my $index=$page*9;
-my $num_pagine=$#prodotti_codice/9;
+my $index=($page-1)*9;
+my $num_pagine=($#prodotti_codice/9)+1;
 
 # stampa_categorie
 
@@ -222,6 +232,13 @@ my $stampa_categorie="$tot3";
 
 # stampa_prodotti
 
+my $query_string_prodotto;
+if($query) {
+	$query_string_prodotto='&Filter='."$filter".'&Page='."$page".'&Query='."$query".'&Order='."$order";
+} else {
+	$query_string_prodotto='&Filter='."$filter".'&Page='."$page".'&Order='."$order";
+}
+
 for (my $riga=0; $riga <= 2; $riga++)	
 {
 	my $x='<div class="riga">';
@@ -229,7 +246,7 @@ for (my $riga=0; $riga <= 2; $riga++)
 	for (my $colonna=0; $colonna <= 2; $colonna++)	
 	{
 		if($index<=$#prodotti_codice) {
-		my $x='<div class="prodotto-singolo"><ul><a href="prodotto.cgi?Codice='."@prodotti_codice[$index]".'&Filter='."$filter".'&Page='."$page".'">';
+		my $x='<div class="prodotto-singolo"><ul><a href="prodotto.cgi?Codice='."@prodotti_codice[$index]"."$query_string_prodotto".'">';
 		$tot=$tot.$x;
 		my $x='<li class="nome-prodotto"><p>'."@prodotto_nome[$index]".'</p></li>';
 		$tot=$tot.$x;
@@ -254,7 +271,7 @@ my $tot2;
 my $page_before=$page-1;
 my $page_after=$page+1;
 
-if($page == "0") {
+if($page == "1") {
 	my $x='';
 	$tot2=$tot2.$x;
 } else {
@@ -263,7 +280,7 @@ if($page == "0") {
 }
 my $x='<div id="prodotti-paginaNumeri"><ul>';
 $tot2=$tot2.$x;
-for (my $i=0; $i <= $num_pagine; $i++)
+for (my $i=1; $i <= $num_pagine; $i++)
 {
 	if ($i=="$page") {
 		my $x='<li class="pagina_attiva"><span>'."$i".'</span></li>';
@@ -283,7 +300,13 @@ if($page == $num_pagine) {
 
 my $stampa_pagine="$tot2";
 
-my $query_string='?Page='."$page".'&Filter='."$filter";
+
+my $query_string;
+if($query) {
+	$query_string='?Filter='."$filter".'&Page='."$page".'&Query='."$query".'&Order='."$order";
+} else {
+	$query_string='?Filter='."$filter".'&Page='."$page".'&Order='."$order";
+}
 
 if ($session->is_empty)
 {

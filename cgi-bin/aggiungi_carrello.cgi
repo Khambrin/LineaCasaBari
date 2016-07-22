@@ -53,6 +53,25 @@ else {
 my $codice=$in{'Codice'};
 if(!$codice){$codice=$prodotto;}
 
+my $query;
+if ($in{'Query'}) {
+	$query=$in{'Query'};
+}
+
+my $order;
+if ($in{'Order'}) {
+	$order=$in{'Order'};
+}
+
+my $query_string;
+if($query) {
+	$query_string='?Codice='."$codice".'&Filter='."$filter".'&Page='."$page".'&Query='."$query".'&Order='."$order";
+} else {
+	$query_string='?Codice='."$codice".'&Filter='."$filter".'&Page='."$page".'&Order='."$order";
+}
+
+
+
 
 my $doc,my $root;
 	my $id=0, my $valutazione="";
@@ -125,5 +144,5 @@ print XML $doc->toString();
 close(XML);
 
 my $messaggio="Prodotto aggiunto correttamente al carrello";
-print $cgi->redirect('prodotto.cgi?Codice='."$codice".'&Filter='."$filter".'&Page='."$page".'&Messaggio='."$messaggio");
+print $cgi->redirect('prodotto.cgi'."$query_string".'&Messaggio='."$messaggio");
 
