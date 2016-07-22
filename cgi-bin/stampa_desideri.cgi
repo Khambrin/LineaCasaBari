@@ -39,16 +39,16 @@ my $tot;
 my $index=0;
 for (; $index <=$#prodotti; $index++)
 {	
-	my $x='<fieldset><li>Prodotto: '."@prodotti[$index]".'</li>';
+	my $x='<li>Prodotto: '."@prodotti[$index]".'</li>';
 	$tot=$tot.$x;
 	my $prodotto_immagine=$pro->findnodes("Prodotti/Prodotto[Codice='@prodotti[$index]']/Immagine/text()");
 	my $alt= substr $prodotto_immagine, 19, -4;
-	my $stampa_immagine='<img src="'."$prodotto_immagine".'" alt="'."$alt".'"height="45" width="45"/>';
-	my $x='<div>'."$stampa_immagine".'</div>';
+	my $stampa_immagine='<img src="'."$prodotto_immagine".'" alt="'."$alt".'" height="45" width="45"/>';
+	my $x='<li>'."$stampa_immagine".'</li>';
 	$tot=$tot.$x;
 	my $x='<li><form action="remove_desiderio.cgi" method="post"><div><button class="button" type="submit">Rimuovi Prodotto</button><input type="hidden" name="indice_desiderio" value="'."$index".'"/></div></form></li>';
 	$tot=$tot.$x;
-	my $x='<li><form action="aggiungi_carrello.cgi" method="post"><div><button class="button" type="submit">Aggiungi al Carrello</button><input type="hidden" name="codice_prodotto" value="'."@prodotti[$index]".'"/></div></form></li></fieldset>';
+	my $x='<li><form action="aggiungi_carrello.cgi" method="post"><div><button class="button" type="submit">Aggiungi al Carrello</button><input type="hidden" name="codice_prodotto" value="'."@prodotti[$index]".'"/></div></form></li>';
 	$tot=$tot.$x;
 }
 my $lista_desideri;
@@ -59,7 +59,7 @@ if($index)
 	{
 		$messaggio="Prodotto rimosso con successo";
 	}
-	$lista_desideri='<div class="generic-container"><div class="form-container2"><h2>Lista dei Desideri</h2><ul>'."$tot".'</ul></div></div>';
+	$lista_desideri='<div class="generic-container"><div class="form-container2"><h2>Lista dei Desideri</h2><fieldset><ul>'."$tot".'</ul></fieldset></div></div>';
 	$vars={
 		'sessione' => "true",
 		'email' => $email,
