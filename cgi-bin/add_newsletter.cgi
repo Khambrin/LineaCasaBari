@@ -73,11 +73,7 @@ else
 		$root=$doc->createElement("Newsletter");
 		$doc->setDocumentElement($root);
 	}
-####
-#my $old_surname=$doc->findnodes("Utenti/Utente[Email='$email']/Cognome/text()");
-#my $ric_canc=$doc->findnodes("Indirizzi/Utente[Email='$email']/Email/text()");
 
-####
 	my $mail_tag=$doc->createElement("Email");
 	$mail_tag->appendTextNode($mail_iscrizione);
 	$root->appendChild($mail_tag);
