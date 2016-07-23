@@ -136,9 +136,9 @@ if ((!$email) || grep(/^$email/, @recensione_email)) {
 
 my $recensione_form;
 if(!$already_reviewed) {
-	my $x='<form method="post" action="aggiungi_recensione_form.cgi'."$query_string".'" enctype="multipart/form-data">
+	my $x='<h3>Aggiungi una recensione</h3><form method="post" action="aggiungi_recensione_form.cgi'."$query_string".'" enctype="multipart/form-data">
 			<ul class="aggiungi_recensione_form">
-				<li class="gestione-block">
+				<li>
                     <label id="recensioneTitolo-label">Titolo:</label>
                     <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="titolo"/></div><div class="inputRight"></div>
                 </li>';
@@ -147,7 +147,7 @@ if(!$already_reviewed) {
 		my $x='<li class="messaggio-error"> Devi completare il campo titolo </li>';
 		$tot=$tot.$x;
 	}
-	my $x='<li class="gestione-block">
+	my $x='<li>
                 <label id="recensioneNome-label">Nome visualizzato:</label>
                 <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="nome"/></div><div class="inputRight"></div>
             </li>';
@@ -156,10 +156,10 @@ if(!$already_reviewed) {
 		my $x='<li class="messaggio-error"> Devi completare il campo nome </li>';
 		$tot=$tot.$x;
 	}
-	my $x='<li class="gestione-block">
+	my $x='<li>
                     <label id="recensioneTesto-label">Testo:</label>
                 </li>
-                <li class="gestione-block">
+                <li>
                     <textarea class="gestione_textarea" name="testo"></textarea>
                 </li>';
 	my $tot=$tot.$x;

@@ -11,7 +11,9 @@ use XML::LibXML;
 my $cgi=new CGI;
 
 my $session = CGI::Session->load();
-
+if ($session->is_empty) {
+	print $cgi->redirect('check_session.cgi?gestione_indirizzi');
+}
 my $email=$session->param("email");
 
 my $template=Template->new({

@@ -10,8 +10,12 @@ use Switch;
 use XML::LibXML;
 
 my $cgi=new CGI;
-print $cgi->header('text/html');
+
 my $session = CGI::Session->load();
+if ($session->is_empty) {
+	print $cgi->redirect('check_session.cgi?stampa_acquisto');
+}
+print $cgi->header('text/html');
 
 my $amministratore=$session->param("amministratore");
 my $email=$session->param("email");

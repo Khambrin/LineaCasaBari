@@ -6,10 +6,9 @@ css stampa
 validare e inserire immagini w3c in footer
 allineamento di label e elementi input a sinistra in modo da allinearli e 2 bottoni allineati (css dei form)
 iscrizione newsletter tutte le pagine
-Controllare che tutte le pagine abbiano link check_session.cgi?nome_pagina
 Aggiungere controllo dimensione upload immagine
 link menu sovrapposti con schermo più piccolo
-form per le recensioni da mettere in un container e mettere un h2 che dice cosè
 Dimensioni immagini tag <img> vanno messe dentro css
-modifica account controlli da togliere modificare
+modifica account controlli da togliere modificare + bug che mi ha tolto la password dall xml sbagliando ad inserirla
 serve un qualcosa (bottone link ecc) per poter tornare a tutti i prodotti togliendo i risultati della ricerca. 
+indirizzi non stampa gli errori di feedback (penso sia un errore di js perchè perl sembra giusto)

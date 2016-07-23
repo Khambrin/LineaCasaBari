@@ -32,7 +32,6 @@ switch($ENV{'QUERY_STRING'})
 	case 'impostazioni_account' { $file='impostazioni_account_temp.html' }
 	case 'gestione_ordini' {$file='gestione_ordini_temp.html' }
 	case 'lista_desideri' {$file='lista_desideri_temp.html' }
-    case 'gestione_account' { $file='impostazioni_account_temp.html' }
 	case 'mappa_sito' { $file='mappa_sito_temp.html' }
 }
 
@@ -45,12 +44,13 @@ if ($session->is_empty)
 		or $ENV{'QUERY_STRING'} eq 'indirizzi' or $ENV{'QUERY_STRING'} eq 'togli_utenti' 
 		or $ENV{'QUERY_STRING'} eq 'gestione_prodotti' or $ENV{'QUERY_STRING'} eq 'gestione_ordini' 
 		or $ENV{'QUERY_STRING'} eq 'gestione_annunci' or $ENV{'QUERY_STRING'} eq 'carrello' 
-		or $ENV{'QUERY_STRING'} eq 'gestione_account' or $ENV{'QUERY_STRING'} eq 'gestione_indirizzi' 
+		or $ENV{'QUERY_STRING'} eq 'gestione_account_normal' or $ENV{'QUERY_STRING'} eq 'gestione_indirizzi' 
 		or $ENV{'QUERY_STRING'} eq 'carrello-svuotato' or $ENV{'QUERY_STRING'} eq 'carrello-modificato'
 		or $ENV{'QUERY_STRING'} eq 'stampa_indirizzi'	or $ENV{'QUERY_STRING'} eq 'edit_indirizzo'
 		or $ENV{'QUERY_STRING'} eq 'stampa_desideri' or $ENV{'QUERY_STRING'} eq 'desiderio-rimosso'
 		or $ENV{'QUERY_STRING'} eq 'aggiungi-indirizzo' or $ENV{'QUERY_STRING'} eq 'stampa_indirizzi'
-		or $ENV{'QUERY_STRING'} eq 'stampa_indirizzi_rimosso'or $ENV{'QUERY_STRING'} eq 'stampa_indirizzi_modifica')
+		or $ENV{'QUERY_STRING'} eq 'stampa_indirizzi_rimosso'or $ENV{'QUERY_STRING'} eq 'stampa_indirizzi_modifica'
+		or $ENV{'QUERY_STRING'} eq 'stampa_acquisto')
 	{
 		$file='login_temp.html';
 		$vars={
@@ -129,7 +129,7 @@ else
 	{
 		print $cgi->redirect("stampa_desideri.cgi?rimosso");
 	}
-	if($ENV{'QUERY_STRING'} eq 'aggiungi-indirizzo')
+	if($ENV{'QUERY_STRING'} eq 'aggiungi-indirizzo' or $ENV{'QUERY_STRING'} eq 'gestione_indirizzi' )
 	{
 		print $cgi->redirect("gestione_indirizzi_script.cgi?nonaggiunto");
 	}
@@ -148,6 +148,10 @@ else
 	if($ENV{'QUERY_STRING'} eq 'stampa_indirizzi_modifica')
 	{
 		print $cgi->redirect("stampa_indirizzi.cgi?modificato")
+	}
+	if( $ENV{'QUERY_STRING'} eq 'stampa_acquisto')
+	{
+		print $cgi->redirect("stampa-acquisto.cgi")
 	}
 }
 	print $cgi->header('text/html');
