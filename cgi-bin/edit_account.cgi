@@ -30,28 +30,32 @@ foreach my $p (param())
 	$values{$p}=param($p);
 }
 
-if (!$values{"nuova_email"})
+=podif (!$values{"nuova_email"})
 {
 	push @errors, "Devi inserire l'indirizzo email.";
 }
-if (!$values{"vecchia_password"})
+=cut
+if ($values{"nuova_password"} and !$values{"vecchia_password"})
 {
-	push @errors, "Devi inserire la password corrente.";
+	push @errors, "Devi inserire la vecchia password per poterla cambiare.";
 }
-if (!$values{"nuova_password"})
+=pod if (!$values{"nuova_password"})
 {
 	push @errors, "Devi inserire la nuova password.";
 }
+=cut
 
-
-#
-my $regex=$values{"nuova_email"}=~ /^[a-z0-9.]+\@[a-z0-9.-]+$/;
-if (not $regex)
+if($values{"nuova_email"} ne $email)
 {
-	push @errors, "Indirizzo email inserito non valido";
-}
-if (grep( /^$values{"nuova_email"}$/, @lista_email )) {
-	push @errors, "Indirizzo email gi&aacute; utilizzato"
+	my $regex=$values{"nuova_email"}=~ /^[a-z0-9.]+\@[a-z0-9.-]+$/;
+	if (not $regex)
+	{
+		push @errors, "Indirizzo email inserito non valido";
+	}
+	if (grep( /^$values{"nuova_email"}$/, @lista_email ))
+	{
+		push @errors, "Indirizzo email gi&aacute; utilizzato"
+	}
 }
 #
 

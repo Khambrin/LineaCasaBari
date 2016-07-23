@@ -1,17 +1,15 @@
 compatibilità altri browser
-controllare padding top form-container2
 css lista desideri
 mappa sito
 relazione
 css stampa
 validare e inserire immagini w3c in footer
-mettere sottolineatura da tutti i link
-allineamento di label e elementi input a sinistra in modo da allinearli e 2 bottoni allineati
+allineamento di label e elementi input a sinistra in modo da allinearli e 2 bottoni allineati (css dei form)
 iscrizione newsletter tutte le pagine
 Controllare che tutte le pagine abbiano link check_session.cgi?nome_pagina
 Aggiungere controllo dimensione upload immagine
 link menu sovrapposti con schermo più piccolo
-aggiungere bottone indietro a pagina modifica indirizzi, in modo da visualizzare di nuovo la lista di indirizzi
 form per le recensioni da mettere in un container e mettere un h2 che dice cosè
 Dimensioni immagini tag <img> vanno messe dentro css
 modifica account controlli da togliere modificare
+serve un qualcosa (bottone link ecc) per poter tornare a tutti i prodotti togliendo i risultati della ricerca. 
