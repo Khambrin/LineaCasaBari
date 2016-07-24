@@ -58,6 +58,11 @@ if($values{"nuova_email"} ne $email)
 	}
 }
 #
+if (!$values{"nuova_password"})
+{
+	$values{"nuova_password"}=$values{"vecchia_password"};
+}
+
 
 
 if (@errors)
