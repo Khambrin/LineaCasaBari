@@ -4,11 +4,9 @@ relazione
 css stampa
 validare e inserire immagini w3c in footer (bari)
 allineamento di label e elementi input a sinistra in modo da allinearli e 2 bottoni allineati (css dei form)(navid)
-iscrizione newsletter tutte le pagine (alice)
 Aggiungere controllo dimensione upload immagine
 link menu sovrapposti con schermo più piccolo
 Dimensioni immagini tag <img> vanno messe dentro css
-modifica account controlli da togliere modificare + bug che mi ha tolto la password dall xml sbagliando ad inserirla (alice)
 serve un qualcosa (bottone link ecc) per poter tornare a tutti i prodotti togliendo i risultati della ricerca. (lorenzo)
 indirizzi non stampa gli errori di feedback (penso sia un errore di js perchè perl sembra giusto) (alice)
 home disporre immagini in modo da evitare lo scroll. (bari)
