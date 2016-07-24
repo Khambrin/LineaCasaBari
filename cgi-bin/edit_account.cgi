@@ -58,12 +58,29 @@ if($values{"nuova_email"} ne $email)
 	}
 }
 #
-if (!$values{"nuova_password"})
+
+if (!$values{"vecchia_password"})
 {
-	$values{"nuova_password"}=$values{"vecchia_password"};
+	my $doc,my $root;
+	
+	my $parser=XML::LibXML->new();
+	$doc=$parser->parse_file("../data/Utenti.xml");
+	$root=$doc->documentElement();
+	
+	my $old_pw=$doc->findnodes("Utenti/Utente[Email='$email']/Password/text()");
+	$values{"vecchia_password"}=$old_pw;
+	$values{"nuova_password"}=$old_pw;
 }
 
-
+if ($values{"vecchia_password"})
+{
+	if (!$values{"nuova_password"})
+	{
+		
+		
+		$values{"nuova_password"}=$values{"vecchia_password"};
+	}
+}
 
 if (@errors)
 {
@@ -244,3 +261,4 @@ else
 	print $cgi->redirect("gestione_account.cgi");
 
 }
+
