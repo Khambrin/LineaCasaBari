@@ -1,5 +1,4 @@
 compatibilità altri browser
-css lista desideri 
 relazione
 css stampa
 validare e inserire immagini w3c in footer (bari)
@@ -8,5 +7,5 @@ Aggiungere controllo dimensione upload immagine
 link menu sovrapposti con schermo più piccolo
 Dimensioni immagini tag <img> vanno messe dentro css
 serve un qualcosa (bottone link ecc) per poter tornare a tutti i prodotti togliendo i risultati della ricerca. (lorenzo)
-home disporre immagini in modo da evitare lo scroll. (bari)
 classe errori javascript. (alice)
+il bug su modifica account resta .. se si sbagli psw rovina xml cancellando la psw dell'utente
