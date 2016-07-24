@@ -5,6 +5,9 @@
     -moz-box-sizing: border-box;
     -o-box-sizing: border-box;
 }
+* a:hover{
+    text-decoration: underline;
+}
     
 html,
 body{
@@ -455,91 +458,150 @@ body
 
 
 #listanozze
-    {
-        background-image:url(../images/listanozze.jpg);
-        background-repeat:no-repeat;
-        background-size: contain;
-        padding-top:3%;
-        width: 50%;
-        height: 20em;
-	    display:inline-block;
-        text-align: center;
-	    margin-left: 1em;
-        margin-top: 2em;
-    }
+{
+    background-image:url(../images/listanozze.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    display: inline-block;
+    height: 10em;
+	width: 23%;
+    vertical-align: middle;
+    background-color: #E1E3E4;
+    padding: 1em;
+    
+    margin-right: 0.825em;
+    margin-left: 0.825em;
+    margin-top: 0.6em;
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px #888888;
+}
+#listanozze a
+{
+    text-decoration: none;
+}
 
 #porcellane
-    {
-	
-        background-image:url(../images/porcellane.jpg);
-        background-repeat:no-repeat;
-        background-size: contain;
-        padding-top:3%;
-        width: 50%;
-        height: 20em;
-	    display:inline-block;
-        text-align: center;
-	    margin-left: 1em;
-        margin-top: 1em;
-    }
+{
+    background-image:url(../images/porcellane.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    display: inline-block;
+    height: 10em;
+	width: 23%;
+    vertical-align: middle;
+    background-color: #E1E3E4;
+    padding: 1em;
+    text-align: center;
+    margin-right: 0.825em;
+    margin-left: 0.825em;
+    margin-top: 0.6em;
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px #888888;
+}
+#porcellane a{
+    text-decoration: none;
+}
 
 #lampade
-    {
-	
-        background-image:url(../images/lampade.jpg);
-        background-repeat:no-repeat;
-        background-size: contain;
-        padding-top:3%;
-        width: 50%;
-        height: 20em;
-	    display:inline-block;
-        text-align: center;
-	    margin-left: 1em;
-        margin-top: 1em;
-    }
-
+{
+    background-image:url(../images/lampade.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    display: inline-block;
+    height: 10em;
+	width: 23%;
+    vertical-align: middle;
+    background-color: #E1E3E4;
+    padding: 1em;
+    text-align: center;
+    margin-right: 0.825em;
+    margin-left: 0.825em;
+    margin-top: 0.6em;
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px #888888;
+}
+#lampade a{
+    text-decoration: none;
+}
 #pentole
-    {
-	
-        background-image:url(../images/pentole.jpg);
-        background-repeat:no-repeat;
-        background-size: contain;
-        padding-top:3%;
-        width: 50%;
-        height: 20em;
-	    display:inline-block;
-        text-align: center;
-	    margin-left: 1em;
-        margin-top: 1em;
-    }
+{
+    background-image:url(../images/pentole.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    display: inline-block;
+    height: 10em;
+	width: 23%;
+    vertical-align: middle;
+    background-color: #E1E3E4;
+    padding: 1em;
+    text-align: center;
+    margin-right: 0.825em;
+    margin-left: 0.825em;
+    margin-top: 0.6em;
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px #888888;
+}
+#pentole a{
+    text-decoration: none;
+}
 #tavola
-    {
-	
-        background-image:url(../images/tavola.jpg);
-        background-repeat:no-repeat;
-        background-size: contain;
-        padding-top:3%;
-        width: 50%;
-        height: 20em;
-	    display:inline-block;
-        text-align: center;
-	    margin-left: 1em;
-        margin-top: 1em;
-    }
+{
+    background-image:url(../images/tavola.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    display: inline-block;
+    height: 10em;
+	width: 23%;
+    vertical-align: middle;
+    background-color: #E1E3E4;
+    padding: 1em;
+    text-align: center;
+    margin-right: 0.825em;
+    margin-left: 0.825em;
+    margin-top: 0.6em;
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px #888888;
+}
+#tavola a{
+    text-decoration: none;
+}
 #tovaglie
-    {
-	
-        background-image:url(../images/tovaglie.jpg);
-        background-repeat:no-repeat;
-        background-size: contain;
-        padding-top:3%;
-        width: 50%;
-        height: 20em;
-	    display:inline-block;
-        text-align: center;
-	    margin-left: 1em;
-        margin-top: 1em;
-    }
+{
+	background-image:url(../images/tovaglie.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    display: inline-block;
+    height: 10em;
+	width: 23%;
+    vertical-align: middle;
+    background-color: #E1E3E4;
+    padding: 1em;
+    text-align: center;
+    margin-right: 0.825em;
+    margin-left: 0.825em;
+    margin-top: 0.6em;
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px #888888;
+}
+   
+ #tovaglie a{
+    text-decoration: none;
+}
+
+#categorie-vetrina
+{
+    max-height: 10em;
+    width: 100%;
+}
+
+.riga_index
+{
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+    display: inline-block;
+    width: 100%;
+}
+    
 /*---------------------------------------------------login.html ------------------------------------------------------------------------------*/
 
 .login-Block{
