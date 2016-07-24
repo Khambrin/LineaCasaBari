@@ -1,11 +1,13 @@
 compatibilità altri browser
 relazione
 css stampa
-validare e inserire immagini w3c in footer (bari)
+validare e inserire immagini w3c in footer (navid)
 allineamento di label e elementi input a sinistra in modo da allinearli e 2 bottoni allineati (css dei form)(navid)
 Aggiungere controllo dimensione upload immagine
 link menu sovrapposti con schermo più piccolo
 Dimensioni immagini tag <img> vanno messe dentro css
 serve un qualcosa (bottone link ecc) per poter tornare a tutti i prodotti togliendo i risultati della ricerca. (lorenzo)
 classe errori javascript. (alice)
-il bug su modifica account resta .. se si sbagli psw rovina xml cancellando la psw dell'utente
+messaggi feedback errori indirizzi (bari)
+bug se si cambia email. email cambiata solo su il primo ordine con vecchia mail (bari)
+controllare modifica account su check session (bari)

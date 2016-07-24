@@ -51,7 +51,7 @@ if ($session->is_empty)
 		or $ENV{'QUERY_STRING'} eq 'stampa_desideri' or $ENV{'QUERY_STRING'} eq 'desiderio-rimosso'
 		or $ENV{'QUERY_STRING'} eq 'aggiungi-indirizzo' or $ENV{'QUERY_STRING'} eq 'stampa_indirizzi'
 		or $ENV{'QUERY_STRING'} eq 'stampa_indirizzi_rimosso'or $ENV{'QUERY_STRING'} eq 'stampa_indirizzi_modifica'
-		or $ENV{'QUERY_STRING'} eq 'stampa_acquisto')
+		or $ENV{'QUERY_STRING'} eq 'stampa_acquisto' or $ENV{'QUERY_STRING'} eq 'gestione_account_mod')
 	{
 		$file='login_temp.html';
 		$vars={
@@ -153,6 +153,10 @@ else
 	if( $ENV{'QUERY_STRING'} eq 'stampa_acquisto')
 	{
 		print $cgi->redirect("stampa-acquisto.cgi")
+	}
+	if( $ENV{'QUERY_STRING'} eq 'gestione_account_mod')
+	{
+		print $cgi->redirect("gestione_account.cgi?mod")
 	}
 }
 	print $cgi->header('text/html');

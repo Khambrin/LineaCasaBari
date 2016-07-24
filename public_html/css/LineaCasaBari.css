@@ -20,9 +20,9 @@ body{
 }
 
 .messaggio-error{
-    padding-top: 1em;
+    padding-top: 0.5em;
     color:  red;
-    padding-bottom: 1em;
+    padding-bottom: 0.5em;
 }
     .messaggio-error li{
         list-style: none;
@@ -36,9 +36,9 @@ body{
 
 .messaggio-confirm{
     display: block;
-    padding-top: 1em;
+    padding-top: 0.5em;
     color: #295380;
-    padding-bottom: 1em;
+    padding-bottom: 0.5em;
     text-align: center;
 }
     .messaggio-confirm li{
