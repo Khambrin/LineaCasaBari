@@ -8,5 +8,5 @@ Aggiungere controllo dimensione upload immagine
 link menu sovrapposti con schermo più piccolo
 Dimensioni immagini tag <img> vanno messe dentro css
 serve un qualcosa (bottone link ecc) per poter tornare a tutti i prodotti togliendo i risultati della ricerca. (lorenzo)
-indirizzi non stampa gli errori di feedback (penso sia un errore di js perchè perl sembra giusto) (alice)
 home disporre immagini in modo da evitare lo scroll. (bari)
+classe errori javascript. (alice)
