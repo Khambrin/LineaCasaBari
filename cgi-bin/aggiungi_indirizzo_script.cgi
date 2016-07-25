@@ -43,10 +43,32 @@ if (!$values{"cap"})
 	push @messaggi, "Devi completare il campo CAP.";
 }
 
-
+if (@messaggi)
+{
+	print $cgi->header('text/html');
+	my $file='indirizzi_temp.html';
+	my $error_message_aux;
+	foreach my $i (@messaggi)
+	{
+		my $x="<li>$i".'</li>';
+		$error_message_aux=$error_message_aux.$x;
+	}
+	my $error_message="<ul>"."$error_message_aux"."</ul>";
+	my $vars={
+		'sessione' => "true",
+		'email' => $email,
+		'amministratore' => "true",
+		'messaggio' => $error_message,
+		'pagina' => "aggiungi",
+	};
+	my $template=Template->new({
+		INCLUDE_PATH => '../public_html/temp',
+	});
+	$template->process($file,$vars) || die $template->error();
+}
 		
 
-my $regex=$values{"provincia"}=~ /^[a-zA-Z][a-zA-Z]+$/;
+my $regex=$values{"provincia"}=~ /^[a-zA-Z][a-zA-Z]$/;
 {
 	if(!$regex){push @messaggi, "Inserisci una provincia valida, ad esempio PD";}
 }
