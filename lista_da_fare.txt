@@ -12,6 +12,8 @@ controllare regexp di provincia sembra non funzionare (bari/alice)
 i dati inseriti aggiungi indirizzo devono restare in caso siano appropiati ma c'è un errore in un altro campo (bari/alice)
 controllo su inserimento carta di credito 
 problemi con newsletter se aggiungi prodotto da errore compare Attenzione: obbligatorio inserire un indirizzo per l'iscrizione alla newsletter (alice)
+se cambi immagine ad un prodotto cambia limmagine di un altro prodotto
+
 
 Domande prof:
 
