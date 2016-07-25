@@ -46,9 +46,9 @@ for (; $index <=$#prodotti; $index++)
 	my $stampa_immagine='<img src="'."$prodotto_immagine".'" alt="'."$alt".'" height="45" width="45"/>';
 	my $x='<li>'."$stampa_immagine".'</li>';
 	$tot=$tot.$x;
-	my $x='<li><form action="remove_desiderio.cgi" method="post"><div><button class="button" type="submit">Rimuovi Prodotto</button><input type="hidden" name="indice_desiderio" value="'."$index".'"/></div></form></li>';
+	my $x='<li><form action="remove_desiderio.cgi" method="post" class="side-element"><div class="side-element"><button class="button" type="submit">Rimuovi Prodotto</button><input type="hidden" name="indice_desiderio" value="'."$index".'"/></div></form>';
 	$tot=$tot.$x;
-	my $x='<li><form action="aggiungi_carrello.cgi" method="post"><div><button class="button" type="submit">Aggiungi al Carrello</button><input type="hidden" name="codice_prodotto" value="'."@prodotti[$index]".'"/></div></form></li></ul></fieldset>';
+	my $x='<form action="aggiungi_carrello.cgi" method="post" class="side-element"><div class="side-element"><button class="button" type="submit">Aggiungi al Carrello</button><input type="hidden" name="codice_prodotto" value="'."@prodotti[$index]".'"/></div></form></li></ul></fieldset>';
 	$tot=$tot.$x;
 }
 my $lista_desideri;
