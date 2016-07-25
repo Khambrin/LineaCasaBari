@@ -39,11 +39,11 @@ my $tot;
 my $index=0;
 for (; $index <=$#prodotti; $index++)
 {	
-	my $x='<fieldset><ul><li>Prodotto: '."@prodotti[$index]".'</li>';
+	my $x='<fieldset><ul class="lista-desideri-block"><li><p>Prodotto: '."@prodotti[$index]".'</p></li>';
 	$tot=$tot.$x;
 	my $prodotto_immagine=$pro->findnodes("Prodotti/Prodotto[Codice='@prodotti[$index]']/Immagine/text()");
 	my $alt= "immagine del prodotto @prodotti[$index]";
-	my $stampa_immagine='<img src="'."$prodotto_immagine".'" alt="'."$alt".'" height="45" width="45"/>';
+	my $stampa_immagine='<img src="'."$prodotto_immagine".'" alt="'."$alt".'" class="img-product"/>';
 	my $x='<li>'."$stampa_immagine".'</li>';
 	$tot=$tot.$x;
 	my $x='<li><form action="remove_desiderio.cgi" method="post" class="side-element"><div class="side-element"><button class="button" type="submit">Rimuovi Prodotto</button><input type="hidden" name="indice_desiderio" value="'."$index".'"/></div></form>';
