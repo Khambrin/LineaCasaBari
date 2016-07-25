@@ -23,12 +23,30 @@ my $template=Template->new({
 
 my $hidden='<input type="hidden" name="pagina" value="'."$ENV{'QUERY_STRING'}".'"/>';
 my $file='gestione_annunci_temp.html';
-my $vars={
-		'sessione' => "true",
-		'email' => $email,
-		'amministratore' => "true",
-		'pagina' => $ENV{'QUERY_STRING'},
-		'hidden' => $hidden,
+my $vars;
+my $messaggio_confirm=0;
+if ($ENV{'QUERY_STRING'} eq "aggiunto")
+{
+	$messaggio_confirm="Annuncio aggiunto con successo";
+	 $vars={
+			'sessione' => "true",
+			'email' => $email,
+			'amministratore' => "true",
+			'messaggio_confirm' => $messaggio_confirm,
+			'pagina' => "aggiungi",
+			'hidden' => $hidden,
 	};
+}
+else
+{
+	 $vars={
+			'sessione' => "true",
+			'email' => $email,
+			'amministratore' => "true",
+			'messaggio-confirm' => $messaggio_confirm,
+			'pagina' => $ENV{'QUERY_STRING'},
+			'hidden' => $hidden,
+	};
+}
 print $cgi->header('text/html');
 $template->process($file,$vars) || die $template->error();

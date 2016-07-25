@@ -111,6 +111,8 @@
                 
                 </div>
                 [% IF pagina == 'aggiungi' %]
+                <div class="messaggio-error">[% messaggio %]</div>
+					[% IF messaggio_confirm != 0 %]<div class="messaggio-confirm">[% messaggio_confirm %]</div> [% END %]
                 <div class="form-container2">
 					<h2>Aggiungi un annuncio</h2>
                 <form method="post" action="aggiungi_annuncio_form.cgi" enctype="multipart/form-data">
@@ -139,11 +141,10 @@
                     </div>
 					
 					<div>[% hidden %]</div>
-					<div class="messaggio-error">[% messaggio %]</div>
                 </form>
                 </div>
 				[% ELSIF pagina == 'edit' %]
-					
+				[% IF messaggio_confirm != 0 %]<div class="messaggio-confirm">[% messaggio_confirm %]</div> [% END %]
 				<div class="form-container2">
 					<h2>Rimuovi o Modifica un annuncio</h2>
                 <form method="post" action="edit_annuncio.cgi" enctype="multipart/form-data">
@@ -176,6 +177,7 @@
 					<div class="messaggio-error">[% messaggio %]</div>
                 </form>
 				[% ELSE %]
+				[% IF messaggio_confirm != 0 %]<div class="messaggio-confirm">[% messaggio_confirm %]</div> [% END %]
 					<span>[% lista_annunci %]</span>				
 				[% END %]
             </div>        

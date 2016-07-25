@@ -37,14 +37,40 @@ foreach my $i (@annuncio_titolo)
 }
 
 my $lista_annunci='<div class="form-container2"><h2>Modifica annunci</h2><ul class="form-Block">'."$tot</ul></div>";
-
-my $vars={
+my $vars;
+my $messaggio_confirm=0;
+if ($ENV{'QUERY_STRING'} eq 'rimosso')
+{
+	$messaggio_confirm="Annuncio rimosso con successo";
+	$vars={
+		'sessione' => "true",
+		'email' => $email,
+		'amministratore' => "true",
+		'messaggio_confirm' => $messaggio_confirm,
+		'pagina' => "modifica_annunci",
+		'lista_annunci' => $lista_annunci,
+	};
+}
+elsif ($ENV{'QUERY_STRING'} eq 'modificato')
+{
+	$messaggio_confirm="Annuncio modificato con successo";
+  $vars={
+		'sessione' => "true",
+		'email' => $email,
+		'amministratore' => "true",
+		'pagina' => "edit",
+		'lista_annunci' => $lista_annunci,
+	};
+}
+else
+{
+  $vars={
 		'sessione' => "true",
 		'email' => $email,
 		'amministratore' => "true",
 		'pagina' => "modifica_annunci",
 		'lista_annunci' => $lista_annunci,
 	};
-
+}
 print $cgi->header('text/html');
 $template->process($file,$vars) || die $template->error();

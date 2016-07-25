@@ -13,6 +13,10 @@ use File::Basename;
 my $cgi=new CGI;
 
 my $session = CGI::Session->load();
+if ($session->is_empty) {
+	print $cgi->redirect('check_session.cgi?modifica_annunci');
+}
+
 my $email=$session->param("email");
 my $pagina=param("pagina");
 my @errors=();
@@ -190,6 +194,6 @@ else
 		open (XML,">","../data/Annunci.xml");
 		print XML $doc->toString();
 		close(XML);
-		print $cgi->redirect("modifica_annunci.cgi");
+		print $cgi->redirect("check_session.cgi?modifica_annunci");
 	}
 }

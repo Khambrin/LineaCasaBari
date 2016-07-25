@@ -10,7 +10,10 @@ use Switch;
 use XML::LibXML;
 
 my $cgi=new CGI;
-
+my $session = CGI::Session->load();
+if ($session->is_empty) {
+	print $cgi->redirect('check_session.cgi?rimosso_annuncio');
+}
 my $parser=XML::LibXML->new;
 my $titolo=param("titolo");
 
@@ -22,7 +25,7 @@ open(XML,">","../data/Annunci.xml");
 print XML $doc->toString();
 close(XML);
 
-print $cgi->redirect('modifica_annunci.cgi');
+print $cgi->redirect('check_session.cgi?rimosso_annuncio');
 
 
 
