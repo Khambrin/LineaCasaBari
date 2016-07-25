@@ -8,7 +8,6 @@ Aggiungere controllo dimensione upload immagine
 link menu sovrapposti con schermo più piccolo
 Dimensioni immagini tag <img> vanno messe dentro css
 serve un qualcosa (bottone link ecc) per poter tornare a tutti i prodotti togliendo i risultati della ricerca. (lorenzo)
-classe errori javascript. (alice)
 i dati inseriti su recensione prodotto devono restare in caso siano appropiati ma c'è un errore in un altro campo (lorenzo)
 controllare regexp di provincia sembra non funzionare (bari/alice)
 i dati inseriti aggiungi indirizzo devono restare in caso siano appropiati ma c'è un errore in un altro campo (bari/alice)
