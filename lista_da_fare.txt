@@ -8,6 +8,5 @@ link menu sovrapposti con schermo più piccolo
 Dimensioni immagini tag <img> vanno messe dentro css
 serve un qualcosa (bottone link ecc) per poter tornare a tutti i prodotti togliendo i risultati della ricerca. (lorenzo)
 classe errori javascript. (alice)
-messaggi feedback errori indirizzi (bari)
-bug se si cambia email. email cambiata solo su il primo ordine con vecchia mail (bari)
-controllare modifica account su check session (bari)
+controllare regexp di provincia sembra non funzionare (bari/alice)
+i dati inseriti aggiungi indirizzo devono restare in caso siano appropiati ma c'è un errore in un altro campo (bari/alice)
