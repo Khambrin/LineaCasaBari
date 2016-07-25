@@ -9,12 +9,25 @@ link menu sovrapposti con schermo più piccolo
 Dimensioni immagini tag <img> vanno messe dentro css
 controllare regexp di provincia sembra non funzionare (bari/alice)
 i dati inseriti aggiungi indirizzo devono restare in caso siano appropiati ma c'è un errore in un altro campo (bari/alice)
-controllo su inserimento carta di credito 
+controllo su inserimento carta di credito (bari)
 problemi con newsletter se aggiungi prodotto da errore compare Attenzione: obbligatorio inserire un indirizzo per l'iscrizione alla newsletter (alice)
 se cambi immagine ad un prodotto cambia limmagine di un altro prodotto
-
+controllare tutta gestione annunci che passi per check session (bari)
+mettere apposto modifica annuncio (bari)
 
 Domande prof:
 
 1) Dimensione massima immagini uppabili
 2) Chiarimenti riguardo codice preso online e inserimento guide nei riferimenti in relazione
+
+
+
+
+
+
+
+
+
+
+
+
