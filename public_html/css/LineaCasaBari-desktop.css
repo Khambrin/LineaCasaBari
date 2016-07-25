@@ -190,20 +190,7 @@
     
     .side-element{
         display: inline;
-        padding-left: 1em;
     }
-    
-    .img-product{
-        max-height: 10em;
-		max-width: auto;
-  	    box-shadow: 1px 1px 1px 1px #888888;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 1em;
-        margin-bottom: 1em;
-    }
-    
-    
 
     /*-------------------------------------- la_nostra_storia.html desktop --------------------------------------------------------------------------------*/
     #linea-tempo
@@ -723,6 +710,11 @@
         padding-right: 0.5em;
     }
 
+    #immagine_annuncio img 
+    {
+	max-width: 9em;
+    }
+
 /*-------------------------------------------- MAPPA DEL SITO ------------------------------------------------------------------------*/
     
     #sitemap-container{
@@ -775,15 +767,4 @@
     
     .sitemap-block a{
         text-decoration: none;
-    }
-/*------------------------------------ LISTA DEI DESIDERI --------------------------------------------------------------------------------------*/
-    
-    .lista-desideri-block li{
-        padding-top: 1em;
-        padding-bottom: 1em;
-    }
-    
-    .lista-desideri-block p{
-        font-size: 1.2em;
-        font-weight: bold;
     }
