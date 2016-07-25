@@ -543,7 +543,7 @@
 
     /*------------------- termini e spedizione/resi e rimborsi  -----------------------------------------------------------------------------------*/
         
-    #info-container
+    .info-container
     {
         text-align: center;
         width: 45%;
@@ -727,9 +727,9 @@
         padding-right: 0.5em;
     }
 
-    #immagine_annuncio img 
+    .immagine_annuncio img 
     {
-	max-width: 9em;
+	   max-width: 9em;
     }
 
 /*-------------------------------------------- MAPPA DEL SITO ------------------------------------------------------------------------*/

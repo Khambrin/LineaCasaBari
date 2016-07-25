@@ -33,21 +33,21 @@ my @annuncio_testo=$doc->findnodes("Annunci/Annuncio/Testo/text()");
 my @annuncio_immagine=$doc->findnodes("Annunci/Annuncio/Immagine/text()");
 
 my $file='annunci_temp.html';
-my $tot;
+my $lista_annunci;
 for (my $index=0; $index <=$#annuncio_titolo; $index++)
 {	
-	my $x='<div id="info-container"> <h3>'."@annuncio_titolo[$index]".'</h3>';
-	$tot=$tot.$x;
+	my $x='<div class="info-container"><h3>'."@annuncio_titolo[$index]".'</h3>';
+	$lista_annunci=$lista_annunci.$x;
 	my $x='<div class="info-text"><p>'."@annuncio_data[$index]".'</p>';
-	$tot=$tot.$x;
-	my $x="<p>@annuncio_testo[$index]".'<p>';
-	$tot=$tot.$x;
+	$lista_annunci=$lista_annunci.$x;
+	my $x="<p>@annuncio_testo[$index]".'</p>';
+	$lista_annunci=$lista_annunci.$x;
 	my $alt= substr @annuncio_immagine[$index], 18, -4;
-	my $x='<div id="immagine_annuncio"><img src="'."@annuncio_immagine[$index]".'" alt="'."$alt".'"></div></div></div>';
-	$tot=$tot.$x;
+	my $x='<div class="immagine_annuncio"><img src="'."@annuncio_immagine[$index]".'" alt="'."$alt".'"/></div></div></div>';
+	$lista_annunci=$lista_annunci.$x;
 }
 
-my $lista_annunci="<ul>"."$tot"."</ul>";
+
 
 if ($session->is_empty)
 {
