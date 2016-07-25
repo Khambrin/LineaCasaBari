@@ -703,14 +703,14 @@ body
         font-family: Georgia, serif;
     }
     
-    #info-container
+    .info-container
     {
         text-align: center;
         width: 80%;
         margin: auto;
     }
 
-    #info-container h3
+    .info-container h3
     {
         background-color: #295380;
         width: 100%;
@@ -736,7 +736,10 @@ body
         word-wrap: break-word;
     }
     
-    
+    .info-text p{
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
 
 /*---------------------------------------- prodotti.html --------------------------------------------------------------------------------------*/
 
@@ -962,4 +965,15 @@ body
 }
 #acquisto-indirizzoLabel{
     padding-right: 1em;
+}
+
+/*------------------------------------------------------- ANNUNCI ---------------------------------------------------------------------*/
+.immagine_annuncio{
+    text-align: center;
+    margin-top: 2em;
+}
+
+.immagine_annuncio img 
+{
+    max-width: 30em;
 }
