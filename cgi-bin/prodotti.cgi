@@ -99,7 +99,7 @@ if ($get_order) {
 } elsif ($in{'Order'}) {
 	$order = $in{'Order'};
 } else {
-	$order = 'ultimi_arrivi'
+	$order = 'standard'
 }
 
 my @prodotto_codice_ordinato;
@@ -306,6 +306,7 @@ if($query) {
 	$query_string='?Filter='."$filter".'&Page='."$page".'&Query='."$query".'&Order='."$order";
 } else {
 	$query_string='?Filter='."$filter".'&Page='."$page".'&Order='."$order";
+	$query='no_query';
 }
 
 if ($session->is_empty)
@@ -319,6 +320,7 @@ if ($session->is_empty)
 		'iscrizione_avvenuta'=>$ias,
 		'query_string' =>$query_string,
 		'order' =>$order,
+		'query' =>$query,
 	};
 }
 
@@ -335,6 +337,7 @@ else
 		'iscrizione_avvenuta'=>$ias,
 		'query_string' =>$query_string,
 		'order' =>$order,
+		'query' =>$query,
 	};
 }
 print $cgi->header('text/html');
