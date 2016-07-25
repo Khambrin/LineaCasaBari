@@ -107,6 +107,8 @@
                 </div>
             	[% IF pagina == 'aggiungi' %]
 		<script type="text/javascript" src="../js/add_product.js"></script>
+		<div class="messaggio-error"> <p id="formatoprezzo"></p>  </div>
+		<div class="messaggio-error">[% messaggio%]</div>
             	<div class="form-container2">
 					<form name="productform" method="post" action="aggiungi_prodotto_form.cgi" onsubmit="return prForm()" enctype="multipart/form-data">
                     <ul class="form-Block">
@@ -164,8 +166,7 @@
                         <button class="button" type="submit">Aggiungi prodotto</button>
                     </div>
 					<div>[% hidden %]</div>
-					<div class="js-message-error"> <p id="formatoprezzo"></p>  </div>
-					<div class="messaggio-error">[% messaggio%]</div>
+
                 </form>
 				[% ELSIF pagina == 'rimuovi_modifica' %]
                     <form method="post" action="ricerca_prodotto.cgi">

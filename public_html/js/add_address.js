@@ -1,9 +1,13 @@
 
 function addForm() {// aggiungi indirizzo
 
-
-
-
+	var via1  = editaddressform.via.value;
+	var num1  = editaddressform.numero.value;
+	var cit1  = editaddressform.citta.value;
+			
+	if(via1==false){ document.getElementById("editvia").innerHTML = "Inserisci una via"; return false;}
+	if(num1==false){ document.getElementById("editnum").innerHTML = "Inserisci un numero civico"; return false;}
+	if(cit1==false){ document.getElementById("editcit").innerHTML = "Inserisci una città"; return false;}
 
 	var pro1  = addressform.provincia.value;//2 letters
 	var cap1  = addressform.cap.value;//5 digits
