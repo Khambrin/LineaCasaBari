@@ -16,7 +16,11 @@ my $email=$session->param("email");
 my $pagina=param("pagina");
 my @messaggi=();
 my %values;
-
+my $via_value="";
+my $numero_value="";
+my $citta_value="";
+my $provincia_value="";
+my $cap_value="";
 foreach my $p (param())
 {
 	$values{$p}=lc param($p);
@@ -26,55 +30,55 @@ if (!$values{"via"})
 {
 	push @messaggi, "Devi completare il campo via.";
 }
+else
+{
+	$via_value=$values{"via"};
+		
+}
 if (!$values{"numero"})
 {
 	push @messaggi, "Devi completare il campo numero civico.";
+}
+else
+{
+	$numero_value=$values{"numero"};
 }
 if (!$values{"citta"})
 {
 	push @messaggi, "Devi completare il campo citta.";
 }
+else
+{
+	$citta_value=$values{"citta"};
+}
 if (!$values{"provincia"})
 {
 	push @messaggi, "Devi completare il campo provincia.";
 }
+else
+{
+	$provincia_value=$values{"provincia"};
+	my $regex=$values{"provincia"}=~ /^[a-zA-Z][a-zA-Z]$/;
+	if(!$regex)
+	{
+		push @messaggi, "Inserisci una provincia valida, ad esempio PD";
+		$provincia_value="";
+	}
+}
+
 if (!$values{"cap"})
 {
 	push @messaggi, "Devi completare il campo CAP.";
 }
-
-if (@messaggi)
+else
 {
-	print $cgi->header('text/html');
-	my $file='indirizzi_temp.html';
-	my $error_message_aux;
-	foreach my $i (@messaggi)
+	$cap_value=$values{"cap"};
+	my $regex=$values{"cap"}=~ /^[0-9]{5}$/;
+	if(!$regex)
 	{
-		my $x="<li>$i".'</li>';
-		$error_message_aux=$error_message_aux.$x;
+		push @messaggi, "Inserisci un CAP valido";
+		$cap_value="";
 	}
-	my $error_message="<ul>"."$error_message_aux"."</ul>";
-	my $vars={
-		'sessione' => "true",
-		'email' => $email,
-		'amministratore' => "true",
-		'messaggio' => $error_message,
-		'pagina' => "aggiungi",
-	};
-	my $template=Template->new({
-		INCLUDE_PATH => '../public_html/temp',
-	});
-	$template->process($file,$vars) || die $template->error();
-}
-		
-
-my $regex=$values{"provincia"}=~ /^[a-zA-Z][a-zA-Z]$/;
-{
-	if(!$regex){push @messaggi, "Inserisci una provincia valida, ad esempio PD";}
-}
-my $regex=$values{"cap"}=~ /^[0-9]{5}$/;
-{
-	if(!$regex){push @messaggi, "Inserisci un CAP valido";}
 }
 
 if (@messaggi)
@@ -91,7 +95,11 @@ if (@messaggi)
 	my $vars={
 		'sessione' => "true",
 		'email' => $email,
-		'amministratore' => "true",
+		'via_value' => 'value="'."$via_value".'"',
+		'numero_value' => 'value="'."$numero_value".'"',
+		'citta_value' => 'value="'."$citta_value".'"',
+		'provincia_value' => 'value="'."$provincia_value".'"',
+		'cap_value' => 'value="'."$cap_value".'"',
 		'messaggio' => $error_message,
 		'pagina' => "aggiungi",
 	};
@@ -115,9 +123,6 @@ else
 		$root=$doc->createElement("Indirizzi");
 		$doc->setDocumentElement($root);
 	}
-
-
-
 
 	my $indirizzi_node=$doc->findnodes("Indirizzi/Utente[Email='$email']");	
 
