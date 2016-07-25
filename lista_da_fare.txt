@@ -1,6 +1,7 @@
 compatibilità altri browser
 relazione
 css stampa
+css mobile
 validare e inserire immagini w3c in footer (navid)
 allineamento di label e elementi input a sinistra in modo da allinearli e 2 bottoni allineati (css dei form)(navid)
 Aggiungere controllo dimensione upload immagine
@@ -9,3 +10,11 @@ Dimensioni immagini tag <img> vanno messe dentro css
 serve un qualcosa (bottone link ecc) per poter tornare a tutti i prodotti togliendo i risultati della ricerca. (lorenzo)
 classe errori javascript. (alice)
 i dati inseriti su recensione prodotto devono restare in caso siano appropiati ma c'è un errore in un altro campo (lorenzo)
+controllare regexp di provincia sembra non funzionare (bari/alice)
+i dati inseriti aggiungi indirizzo devono restare in caso siano appropiati ma c'è un errore in un altro campo (bari/alice)
+
+
+Domande prof:
+
+1) Dimensione massima immagini uppabili
+2) Chiarimenti riguardo codice preso online e inserimento guide nei riferimenti in relazione
