@@ -117,13 +117,13 @@
                     <ul class="form-Block">
                         <li>
                             <label>* Titolo:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="titolo"/></div><div class="inputRight"></div>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="titolo" [% titolo_value %]/></div><div class="inputRight"></div>
                         </li>
                         <li>
                             <label id="annunci-testoLabel">* Testo:</label>
                         </li>
                         <li>
-                            <textarea class="gestione_textarea" name="testo"></textarea>
+                            <textarea class="gestione_textarea" name="testo">[% testo_value %]</textarea>
                         </li>
                         <li>
                             <div class="gestione-file_label">

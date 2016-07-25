@@ -16,6 +16,10 @@ my $email=$session->param("email");
 my $pagina=param("pagina");
 my @messaggi=();
 my %values;
+my $nome_value="";
+my $prezzo_value="";
+my $descrizione_value="";
+
 
 foreach my $p (param())
 {
@@ -24,21 +28,35 @@ foreach my $p (param())
 
 if (!$values{"nome"})
 {
-	push @messaggi, "Devi completare il campo nome.";
+	push @messaggi, "Devi completare il campo nome";
+}
+else
+{
+	$nome_value=$values{"nome"};
+		
 }
 if (!$values{"prezzo"})
 {
-	push @messaggi, "Devi completare il campo prezzo.";
+	push @messaggi, "Devi completare il campo prezzo";
+}
+else
+{
+	$prezzo_value=$values{"prezzo"};
+	my $regex=$values{"prezzo"}=~ /^[0-9]+\,[0-9]{2}$/;
+	if(!$regex)
+	{
+		push @messaggi, "Inserisci un prezzo valido";
+		$prezzo_value="";
+	}
+		
 }
 if (!$values{"descrizione"})
 {
-	push @messaggi, "Devi completare il campo descrizione.";
+	push @messaggi, "Devi completare il campo descrizione";
 }
-
-
-my $regex=$values{"prezzo"}=~ /^[0-9]+\,[0-9]{2}$/;
+else
 {
-	if(!$regex){push @messaggi, "Inserisci un prezzo valido";}
+	$descrizione_value=$values{"via"};
 }
 
 if ($values{"immagine"}) {
@@ -61,6 +79,9 @@ if (@messaggi)
 		'sessione' => "true",
 		'email' => $email,
 		'amministratore' => "true",
+		'nome_value'=> 'value="'."$nome_value".'"',
+		'prezzo_value' => 'value="'."$prezzo_value".'"',
+		'descrizione_value' => $descrizione_value,
 		'messaggio' => $error_message,
 		'pagina' => $pagina,
 	};

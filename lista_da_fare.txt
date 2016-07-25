@@ -11,7 +11,8 @@ serve un qualcosa (bottone link ecc) per poter tornare a tutti i prodotti toglie
 i dati inseriti su recensione prodotto devono restare in caso siano appropiati ma c'è un errore in un altro campo (lorenzo)
 controllare regexp di provincia sembra non funzionare (bari/alice)
 i dati inseriti aggiungi indirizzo devono restare in caso siano appropiati ma c'è un errore in un altro campo (bari/alice)
-
+controllo su inserimento carta di credito 
+problemi con newsletter se aggiungi prodotto da errore compare Attenzione: obbligatorio inserire un indirizzo per l'iscrizione alla newsletter (alice)
 
 Domande prof:
 

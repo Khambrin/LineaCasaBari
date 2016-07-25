@@ -16,6 +16,8 @@ my $email=$session->param("email");
 my $pagina=param("pagina");
 my @messaggi=();
 my %values;
+my $titolo_value="";
+my $testo_value="";
 
 foreach my $p (param())
 {
@@ -24,11 +26,19 @@ foreach my $p (param())
 
 if (!$values{"titolo"})
 {
-	push @messaggi, "Devi completare il campo titolo.";
+	push @messaggi, "Devi completare il campo titolo";
+}
+else
+{
+	$titolo_value=$values{"titolo"};
 }
 if (!$values{"testo"})
 {
-	push @messaggi, "Devi completare il campo testo.";
+	push @messaggi, "Devi completare il campo testo";
+}
+else
+{
+	$testo_value=$values{"testo"};	
 }
 
 if (@messaggi)
@@ -46,6 +56,8 @@ if (@messaggi)
 		'sessione' => "true",
 		'email' => $email,
 		'amministratore' => "true",
+		'titolo_value' => 'value="'."$titolo_value".'"',
+		'testo_value' => $testo_value,
 		'messaggio' => $error_message,
 		'pagina' => "aggiungi",
 	};

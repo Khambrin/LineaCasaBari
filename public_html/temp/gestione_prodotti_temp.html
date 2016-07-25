@@ -114,11 +114,11 @@
                     <ul class="form-Block">
                         <li>
                             <label>* Nome:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="nome"/></div><div class="inputRight"></div>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="nome" [% nome_value %]/></div><div class="inputRight"></div>
                         </li>
                         <li>
                             <label>* Prezzo:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="prezzo"/></div><div class="inputRight"></div>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="prezzo" [% pezzo_value %]/></div><div class="inputRight"></div>
 			<span> &#8364; </span>                        
 			</li>
                         <li>
@@ -133,10 +133,10 @@
                             </select>
                         </li>
                         <li>
-                            <label>Descrizione:</label>
+                            <label>* Descrizione:</label>
                         </li>
                         <li>
-                            <textarea class="gestione_textarea" name="descrizione"></textarea>
+                            <textarea class="gestione_textarea" name="descrizione" >[% descrizione_value %]</textarea>
                         </li>
                         <li>
                             <label>Tag 1:</label>
