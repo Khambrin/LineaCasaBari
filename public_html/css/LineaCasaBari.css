@@ -733,7 +733,10 @@ body
         display: inline-block;
         margin-bottom: 2em;
         box-shadow: 1px 1px 1px 1px #888888;
+        word-wrap: break-word;
     }
+    
+    
 
 /*---------------------------------------- prodotti.html --------------------------------------------------------------------------------------*/
 
