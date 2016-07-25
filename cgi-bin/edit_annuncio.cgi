@@ -99,56 +99,12 @@ else
 	}
 
 	my $vecchiotitolo=$values{"oldtitolo"};
-	my $annuncio_node=$doc->findnodes("Annunci/Annuncio[Titolo='$vecchiotitolo']/Titolo");
+	my $vecchio_codice=$doc->findnodes("Annunci/Annuncio[Titolo='$vecchiotitolo']/Codice/text()");
+	my $annuncio_node=$doc->findnodes("Annunci/Annuncio[Titolo='$vecchiotitolo']/Codice");
 	my $old_immagine=$doc->findnodes("Annunci/Annuncio[Titolo='$vecchiotitolo']/Immagine");
 	$annuncio_node->[0]->parentNode->removeChild($annuncio_node->[0]);
-	#
-	my $find_title=$values{'titolo'};
-	my $only=$doc->findnodes("Annunci/Annuncio[Titolo='$find_title']/Titolo/text()");
-	if ($find_title eq $only)
-	{
-		push @errors, "Titolo già utilizzato.";
-		print $cgi->header('text/html');
-		my $file='gestione_annunci_temp.html';
-		my $error_message_aux;
-		foreach my $i (@errors)
-		{
-			my $x="<li>$i".'</li>';
-			$error_message_aux=$error_message_aux.$x;
-		}
-		my $error_message="<ul>"."$error_message_aux"."</ul>";
 	
-		my $parser=XML::LibXML->new;
-		my $doc=$parser->parse_file("../data/Annunci.xml");
-		my $template=Template->new({
-			INCLUDE_PATH => '../public_html/temp',
-		});
 	
-		my $titolo=$values{"oldtitolo"};
-		my $annuncio_node=$doc->findnodes("Annunci/Annuncio[Titolo='$titolo']");
-		my $fcontenuto=$doc->findnodes("Annunci/Annuncio[Titolo='$titolo']/Testo/text()");
-	
-		my $vcontenuto='<textarea id="gestione_annunci-textarea" rows="100" cols="100" name="testo">'."$fcontenuto".'</textarea>';
-		my $vt_form='<input class= "input" type="text" name="titolo" value="'."$titolo".'"/>';
-		my $hiddentitle='<input class= "input" type="hidden" name="oldtitolo" value="'."$titolo".'"/>';
-	
-		my $vars={
-			'sessione' => "true",
-			'email' => $email,
-			'amministratore' => "true",
-			'error' => $error_message,
-			'pagina' => "edit",
-			'vtitolo'=>$vt_form,
-			'vcontenuto'=>$vcontenuto,
-			'oldtitolo'=>$hiddentitle,
-		};
-		my $template=Template->new({
-			INCLUDE_PATH => '../public_html/temp',
-		});
-		$template->process($file,$vars) || die $template->error();
-	}
-	#
-	else{
 		my $annuncio_tag=$doc->createElement("Annuncio");	
 		$root->appendChild($annuncio_tag);
 
@@ -195,5 +151,5 @@ else
 		print XML $doc->toString();
 		close(XML);
 		print $cgi->redirect("check_session.cgi?modifica_annunci");
-	}
+	
 }

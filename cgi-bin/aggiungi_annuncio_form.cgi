@@ -72,64 +72,26 @@ if (@messaggi)
 else
 {
 	my $doc,my $root;
+	my $codice_annuncio=0;
 	if (-e "../data/Annunci.xml")
 	{
 		my $parser=XML::LibXML->new();
 		$doc=$parser->parse_file("../data/Annunci.xml");
 		$root=$doc->documentElement();
+
+		my $last_codice=$doc->findvalue("Annunci/Annuncio[last()]/Codice");
+		$codice_annuncio=$last_codice+1;
+		
 	}
 	else
 	{
 		$doc=XML::LibXML::Document->new("1.0","UTF-8");
 		$root=$doc->createElement("Annunci");
 		$doc->setDocumentElement($root);
+
+		$codice_annuncio=1;
 	}
-	my $find_title=$values{'titolo'};
-	my $only=$doc->findnodes("Annunci/Annuncio[Titolo='$find_title']/Titolo/text()");
-	if ($find_title eq $only)
-	{
-		push @messaggi, "Titolo gi&agrave utilizzato.";
-		print $cgi->header('text/html');
-		my $file='gestione_annunci_temp.html';
-		my $error_message_aux;
-		foreach my $i (@messaggi)
-		{
-			my $x="<li>$i".'</li>';
-			$error_message_aux=$error_message_aux.$x;
-		}
-		my $error_message="<ul>"."$error_message_aux"."</ul>";
 	
-		my $parser=XML::LibXML->new;
-		my $doc=$parser->parse_file("../data/Annunci.xml");
-		my $template=Template->new({
-			INCLUDE_PATH => '../public_html/temp',
-		});
-	
-		my $titolo=$values{"oldtitolo"};
-		my $annuncio_node=$doc->findnodes("Annunci/Annuncio[Titolo='$titolo']");
-		my $fcontenuto=$doc->findnodes("Annunci/Annuncio[Titolo='$titolo']/Testo/text()");
-	
-		my $vcontenuto='<textarea id="gestione_annunci-textarea" rows="100" cols="100" name="testo">'."$fcontenuto".'</textarea>';
-		my $vt_form='<input class= "input" type="text" name="titolo" value="'."$titolo".'"/>';
-		my $hiddentitle='<input class= "input" type="hidden" name="oldtitolo" value="'."$titolo".'"/>';
-	
-		my $vars={
-			'sessione' => "true",
-			'email' => $email,
-			'amministratore' => "true",
-			'messaggio' => $error_message,
-			'pagina' => "aggiungi",
-			'vtitolo'=>$vt_form,
-			'vcontenuto'=>$vcontenuto,
-			'oldtitolo'=>$hiddentitle,
-		};
-		my $template=Template->new({
-			INCLUDE_PATH => '../public_html/temp',
-		});
-		$template->process($file,$vars) || die $template->error();
-	}
-	else
-	{
 		my $annuncio_tag=$doc->createElement("Annuncio");	
 		$root->appendChild($annuncio_tag);
 
@@ -137,6 +99,15 @@ else
 		$titolo_tag->appendTextNode($values{'titolo'});
 		$annuncio_tag->appendChild($titolo_tag);
 	
+		
+	
+
+		
+
+		my $codice_tag=$doc->createElement("Codice");
+		$codice_tag->appendTextNode($codice_annuncio);
+		$annuncio_tag->appendChild($codice_tag);
+
 		my ($sec,$min,$hour,$mday,$mon,$yr19,$wday,$yday,$isdst) = localtime(time);
 		my $year=$yr19+1900;
 		my $date="$mday/$mon/$year";
@@ -175,5 +146,5 @@ else
 		print XML $doc->toString();
 		close(XML);
 		print $cgi->redirect("check_session.cgi?aggiunto");
-	}
+
 }

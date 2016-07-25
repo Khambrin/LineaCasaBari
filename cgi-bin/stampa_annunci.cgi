@@ -28,6 +28,7 @@ my $template=Template->new({
 	});
 
 my @annuncio_titolo=$doc->findnodes("Annunci/Annuncio/Titolo/text()");
+my @annuncio_codice=$doc->findnodes("Annunci/Annuncio/Codice/text()");
 my @annuncio_data=$doc->findnodes("Annunci/Annuncio/Data/text()");
 my @annuncio_testo=$doc->findnodes("Annunci/Annuncio/Testo/text()");
 my @annuncio_immagine=$doc->findnodes("Annunci/Annuncio/Immagine/text()");
