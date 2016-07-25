@@ -73,26 +73,41 @@ foreach my $p (param())
 #gestione degli errori
 
 my $errors;
+my $default;
 
 if (!$values{"titolo"})
 {
 	my $x="&Errtitle=1";
 	$errors=$errors.$x;
+} else {
+	my $title=$values{"titolo"};
+	my $x='&Title='."$title"; 
+	$default=$default.$x;
 }
+
 if (!$values{"nome"})
 {
 	my $x="&Errname=1";
 	$errors=$errors.$x;
+} else {
+	my $nome=$values{"nome"};
+	my $x='&Nome='."$nome";
+	$default=$default.$x;
 }
+
 if (!$values{"testo"})
 {
 	my $x="&Errtext=1";
 	$errors=$errors.$x;
+} else {
+	my $testo=$values{"testo"};
+	my $x='&Testo='."$testo";
+	$default=$default.$x;
 }
 
 if ($errors)
 {
-	print $cgi->redirect('prodotto.cgi'."$query_string"."$errors");
+	print $cgi->redirect('prodotto.cgi'."$query_string"."$errors"."$default");
 }
 else
 {

@@ -140,7 +140,7 @@ if(!$already_reviewed) {
 			<ul class="aggiungi_recensione_form">
 				<li>
                     <label id="recensioneTitolo-label">Titolo:</label>
-                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="titolo"/></div><div class="inputRight"></div>
+                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="titolo" value="'."$in{'Title'}".'"/></div><div class="inputRight"></div>
                 </li>';
 	my $tot=$tot.$x;
 	if ($in{'Errtitle'}) {
@@ -149,7 +149,7 @@ if(!$already_reviewed) {
 	}
 	my $x='<li>
                 <label id="recensioneNome-label">Nome visualizzato:</label>
-                <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="nome"/></div><div class="inputRight"></div>
+                <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="nome" value="'."$in{'Nome'}".'"/></div><div class="inputRight"></div>
             </li>';
 	my $tot=$tot.$x;
 	if ($in{'Errname'}) {
@@ -160,7 +160,7 @@ if(!$already_reviewed) {
                     <label id="recensioneTesto-label">Testo:</label>
                 </li>
                 <li>
-                    <textarea class="gestione_textarea" name="testo"></textarea>
+                    <textarea class="gestione_textarea" name="testo">'."$in{'Testo'}".'</textarea>
                 </li>';
 	my $tot=$tot.$x;
 	if ($in{'Errtext'}) {
