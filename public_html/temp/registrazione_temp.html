@@ -59,25 +59,9 @@
         </div>
     </div>
     <div id="content">
-	<script type="text/javascript">
-	function validateForm() {
-    		var str  = recform.password.value;
-    		var n = str.length;
-    		if(n<8) {
-			document.getElementById("shortpassword").innerHTML = "Password troppo corta, minimo 8 caratteri";
-			document.getElementById("longpassword").innerHTML = "";
-        		return false;
-
-    		}
-		else if(n>20) {
-			document.getElementById("shortpassword").innerHTML = "";
-			document.getElementById("longpassword").innerHTML = "Password troppo lunga, massimo 20 caratteri";
-        		return false;
-    		}
-    		return true;
-	}
-	</script> 
-        <div class="messaggio-error"><p id="shortpassword"></p><p id="longpassword"></p></div>
+	
+	<script type="text/javascript" src="../js/registrazione.js"></script>
+        <div class="messaggio-error"><p id="shortpassword"></p><p id="longpassword"><p id="nom"><p id="cog"><p id="ema"><p id="emai"></p></div>
         <div class="messaggio-error">[% messaggio_registrazione %]</div>
         <div class="form-container2">
             <h2>Crea un account</h2> 
