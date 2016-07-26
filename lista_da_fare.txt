@@ -7,7 +7,6 @@ allineamento di label e elementi input a sinistra in modo da allinearli e 2 bott
 Aggiungere controllo dimensione upload immagine
 link menu sovrapposti con schermo più piccolo
 Dimensioni immagini tag <img> vanno messe dentro css
-controllo su inserimento carta di credito (bari)
 problemi con newsletter se aggiungi prodotto da errore compare Attenzione: obbligatorio inserire un indirizzo per l'iscrizione alla newsletter (alice)
 
 Domande prof:
