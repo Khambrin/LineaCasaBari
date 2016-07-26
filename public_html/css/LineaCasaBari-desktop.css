@@ -729,55 +729,19 @@
 /*-------------------------------------------- MAPPA DEL SITO ------------------------------------------------------------------------*/
     
     #sitemap-container{
-        display: block;
         width: 80%;
-        text-align: center;
-        margin-bottom: 5em;
-        margin-top: 2em;
-        margin-left: auto;
-        margin-right: auto;
         height: 27em;
-        box-shadow: 1px 1px 1px 1px #888888;
-        background-color: #E1E3E4;
     }
-    
-    #sitemap-container h2{
-        padding-top: 1em;
-    }
-    
+
     #home-block{
         display: inline-block;
         width: 20%;
-        height: 3em;
-        background-color: white;
-        box-shadow: 1px 1px 1px 1px #888888;    
     }
-    
-    #home-block a{
-        font-size: 1.8em;
-        line-height: 1.6em;
-        text-decoration: none;
-    }
-    
+     
     .sitemap-block{
-        margin-top: 2em;
-        padding-top: 1em;
         margin-right: 2em;
         display: inline-block;
         width: 20%;
-        height: 14em;
-        background-color: white;
-        box-shadow: 1px 1px 1px 1px #888888;
-        vertical-align: middle;
-    }
-    
-    .sitemap-block li{
-        list-style: none;
-        padding-top: 1em;
-    }
-    
-    .sitemap-block a{
-        text-decoration: none;
     }
 /*------------------------------------ LISTA DEI DESIDERI --------------------------------------------------------------------------------------*/
      

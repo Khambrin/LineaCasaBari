@@ -995,7 +995,7 @@ body
         margin-top: 2em;
         margin-left: auto;
         margin-right: auto;
-        height: 70em;
+        height: 75em;
         box-shadow: 1px 1px 1px 1px #888888;
         background-color: #E1E3E4;
     }
@@ -1025,9 +1025,10 @@ body
     
     .sitemap-block{
         padding-top: 1em;
-        margin-right: 2em;
+        margin-top: 2em;
+        margin-right: auto;
+        margin-left: auto;
         display: block;
-        margin: auto;
         width: 80%;
         height: 14em;
         background-color: white;
