@@ -5,7 +5,7 @@ css mobile
 validare e inserire immagini w3c in footer (navid)
 allineamento di label e elementi input a sinistra in modo da allinearli e 2 bottoni allineati (css dei form)(navid)
 Aggiungere controllo dimensione upload immagine
-link menu sovrapposti con schermo più piccolo
+link menu sovrapposti con schermo più piccolo (bari)
 Dimensioni immagini tag <img> vanno messe dentro css
 problemi con newsletter se aggiungi prodotto da errore compare Attenzione: obbligatorio inserire un indirizzo per l'iscrizione alla newsletter (alice)
 
