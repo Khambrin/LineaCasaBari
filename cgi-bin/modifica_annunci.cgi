@@ -24,14 +24,19 @@ my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
 	});
 
-my @annuncio_titolo=$doc->findnodes("Annunci/Annuncio/Titolo/text()");
+
+my @annuncio_codice=$doc->findnodes("Annunci/Annuncio/Codice/text()");
+
+
 
 my $file='gestione_annunci_temp.html';
 my $tot;
-foreach my $i (@annuncio_titolo)
+
+foreach my $i (@annuncio_codice)
 {
-	my $x='<li>'."$i".'<form action="remove_annuncio.cgi" method="post"><div><button class="button" type="submit" value="Rimuovi">Rimuovi</button><input type="hidden" name="titolo" value="'."$i".'"/></div></form>
-<form action="modifica_annunci_script.cgi" method="post"><div><button class="button" type="submit" value="Modifica">Modifica</button><input type="hidden" name="titolo_edit" value="'."$i".'"/></div></form>
+	my $annuncio_titolo=$doc->findnodes("Annunci/Annuncio[Codice='$i']/Titolo/text()");
+	my $x='<li>'."$annuncio_titolo".'<form action="remove_annuncio.cgi" method="post"><div><button class="button" type="submit" value="Rimuovi">Rimuovi</button><input type="hidden" name="codice" value="'."$i".'"/></div></form>
+<form action="modifica_annunci_script.cgi" method="post"><div><button class="button" type="submit" value="Modifica">Modifica</button><input type="hidden" name="codice_edit" value="'."$i".'"/></div></form>
 </li>';
 	$tot=$tot.$x;
 }

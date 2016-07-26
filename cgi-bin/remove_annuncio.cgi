@@ -15,10 +15,10 @@ if ($session->is_empty) {
 	print $cgi->redirect('check_session.cgi?rimosso_annuncio');
 }
 my $parser=XML::LibXML->new;
-my $titolo=param("titolo");
+my $codice=param("codice");
 
 my $doc=$parser->parse_file("../data/Annunci.xml");
-my $annuncio_node=$doc->findnodes("Annunci/Annuncio[Titolo='$titolo']");
+my $annuncio_node=$doc->findnodes("Annunci/Annuncio[Codice='$codice']");
 $annuncio_node->[0]->parentNode->removeChild($annuncio_node->[0]);
 
 open(XML,">","../data/Annunci.xml");

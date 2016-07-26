@@ -24,20 +24,19 @@ my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
 	});
 
-my $titolo=param("titolo_edit");
+my $codice=param("codice_edit");
 
 
 
-my $annuncio_node=$doc->findnodes("Annunci/Annuncio[Titolo='$titolo']");
-my $fcontenuto=$doc->findnodes("Annunci/Annuncio[Titolo='$titolo']/Testo/text()");
-
-
+my $annuncio_node=$doc->findnodes("Annunci/Annuncio[Codice='$codice']/Codice/text()");
+my $titolo=$doc->findnodes("Annunci/Annuncio[Codice='$codice']/Titolo/text()");
+my $fcontenuto=$doc->findnodes("Annunci/Annuncio[Codice='$codice']/Testo/text()");
 
 my $vcontenuto='<textarea class="gestione_textarea" name="testo">'."$fcontenuto".'</textarea>';
 
 my $vt_form='<input class= "input" type="text" name="titolo" value="'."$titolo".'"/>';
 
-my $hiddentitle='<input class= "input" type="hidden" name="oldtitolo" value="'."$titolo".'"/>';
+my $hiddencodice='<input class= "input" type="hidden" name="oldcodice" value="'."$codice".'"/>';
 
 
 my $file='gestione_annunci_temp.html';
@@ -48,7 +47,7 @@ my $vars={
 		'pagina' => "edit",
 		'vtitolo'=>$vt_form,
 		'vcontenuto'=>$vcontenuto,
-		'oldtitolo'=>$hiddentitle,
+		'oldcodice'=>$hiddencodice,
 	};
 
 print $cgi->header('text/html');

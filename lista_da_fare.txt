@@ -9,6 +9,9 @@ link menu sovrapposti con schermo più piccolo (navid)
 Dimensioni immagini tag <img> vanno messe dentro css (navid)
 controllare java (alice)
 edit annuncio modificare ci sta errore (alice)
+aggiungere messaggio feedback in caso si svuoti xml annunci (alice)
+togliere h2 da annunci temp gestione 
+controllare se xml annunci è vuoto
 
 Domande prof:
 

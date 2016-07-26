@@ -58,13 +58,14 @@ if (@errors)
 		INCLUDE_PATH => '../public_html/temp',
 	});
 
-	my $titolo=$values{"oldtitolo"};
-	my $annuncio_node=$doc->findnodes("Annunci/Annuncio[Titolo='$titolo']");
-	my $fcontenuto=$doc->findnodes("Annunci/Annuncio[Titolo='$titolo']/Testo/text()");
+	my $codice=$values{"oldcodice"};
+	my $annuncio_node=$doc->findnodes("Annunci/Annuncio[Codice='$codice']");
+	my $titolo=$doc->findnodes("Annunci/Annuncio[Codice='$codice']/Titolo/text()");
+	my $fcontenuto=$doc->findnodes("Annunci/Annuncio[Codice='$codice']/Testo/text()");
 
 	my $vcontenuto='<textarea id="gestione_annunci-textarea" rows="100" cols="100" name="testo">'."$fcontenuto".'</textarea>';
 	my $vt_form='<input class= "input" type="text" name="titolo" value="'."$titolo".'"/>';
-	my $hiddentitle='<input class= "input" type="hidden" name="oldtitolo" value="'."$titolo".'"/>';
+	my $hiddencodice='<input class= "input" type="hidden" name="oldcodice" value="'."$codice".'"/>';
 
 	my $vars={
 		'sessione' => "true",
@@ -74,7 +75,7 @@ if (@errors)
 		'pagina' => "edit",
 		'vtitolo'=>$vt_form,
 		'vcontenuto'=>$vcontenuto,
-		'oldtitolo'=>$hiddentitle,
+		'oldcodice'=>$hiddencodice,
 	};
 	my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
@@ -98,19 +99,32 @@ else
 		$doc->setDocumentElement($root);
 	}
 
-	my $vecchiotitolo=$values{"oldtitolo"};
-	my $vecchio_codice=$doc->findnodes("Annunci/Annuncio[Titolo='$vecchiotitolo']/Codice/text()");
-	my $annuncio_node=$doc->findnodes("Annunci/Annuncio[Titolo='$vecchiotitolo']/Codice");
-	my $old_immagine=$doc->findnodes("Annunci/Annuncio[Titolo='$vecchiotitolo']/Immagine");
+	my $codice=$values{"oldcodice"};
+	my $vecchio_codice=$doc->findnodes("Annunci/Annuncio[Codice='$codice']/Titolo/text()");
+	my $annuncio_node=$doc->findnodes("Annunci/Annuncio[Codice='$codice']");
+	my $old_testo=$doc->findnodes("Annunci/Annuncio[Codice='$codice']/Testo/text()");
+	my $old_immagine=$doc->findnodes("Annunci/Annuncio[Codice='$codice']/Immagine");
 	$annuncio_node->[0]->parentNode->removeChild($annuncio_node->[0]);
 	
-	
+		
 		my $annuncio_tag=$doc->createElement("Annuncio");	
 		$root->appendChild($annuncio_tag);
 
 		my $titolo_tag=$doc->createElement("Titolo");
 		$titolo_tag->appendTextNode($values{'titolo'});
 		$annuncio_tag->appendChild($titolo_tag);
+	
+		my $last_codice=$doc->findvalue("Annunci/Annuncio[last()]/Codice");
+		my $codice_annuncio=$last_codice+1;
+		
+		my $codice_tag=$doc->createElement("Codice");
+		$codice_tag->appendTextNode($codice_annuncio);
+		$annuncio_tag->appendChild($codice_tag);
+		
+		
+		
+	
+	
 	
 		my ($sec,$min,$hour,$mday,$mon,$yr19,$wday,$yday,$isdst) = localtime(time);
 		my $year=$yr19+1900;
