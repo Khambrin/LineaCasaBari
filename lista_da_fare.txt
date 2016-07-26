@@ -9,8 +9,6 @@ link menu sovrapposti con schermo più piccolo
 Dimensioni immagini tag <img> vanno messe dentro css
 controllo su inserimento carta di credito (bari)
 problemi con newsletter se aggiungi prodotto da errore compare Attenzione: obbligatorio inserire un indirizzo per l'iscrizione alla newsletter (alice)
-se cambi immagine ad un prodotto cambia limmagine di un altro prodotto
-trovato un bug. se non ce la sezione e mi salvo la pagina sui preferi e poi la apro se sbaglio la psw o mail poi accedo con i dati giusti lo considera come un login normale (lorenzo)
 
 Domande prof:
 
