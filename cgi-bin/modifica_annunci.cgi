@@ -58,7 +58,8 @@ elsif ($ENV{'QUERY_STRING'} eq 'modificato')
 		'sessione' => "true",
 		'email' => $email,
 		'amministratore' => "true",
-		'pagina' => "edit",
+		'messaggio_confirm' => $messaggio_confirm,
+		'pagina' => "modifica_annunci",
 		'lista_annunci' => $lista_annunci,
 	};
 }

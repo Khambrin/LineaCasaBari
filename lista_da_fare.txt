@@ -14,6 +14,7 @@ problemi con newsletter se aggiungi prodotto da errore compare Attenzione: obbli
 se cambi immagine ad un prodotto cambia limmagine di un altro prodotto
 controllare tutta gestione annunci che passi per check session (bari)
 mettere apposto modifica annuncio (bari)
+trovato un bug. se non ce la sezione e mi salvo la pagina sui preferi e poi la apro se sbaglio la psw o mail poi accedo con i dati giusti lo considera come un login normale (lorenzo)
 
 Domande prof:
 
