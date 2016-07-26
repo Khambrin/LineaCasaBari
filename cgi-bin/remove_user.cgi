@@ -32,7 +32,7 @@ foreach my $i (@users)
 	$tot=$tot.$x;
 }
 
-my $lista_utenti='<div class="form-container2"><h2>Rimuovi utente</h2><ul class="form-Block" >'."$tot"."</ul></div>";
+my $lista_utenti='<div class="generic-container"><div class="form-container2"><h2>Rimuovi utente</h2><ul class="form-Block" >'."$tot"."</ul></div></div>";
 
 my $vars={
 		'sessione' => "true",

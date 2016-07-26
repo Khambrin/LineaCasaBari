@@ -99,7 +99,7 @@ if($messaggio eq "false")
 
 	$y=0;
 	$tot=$tot.'<li class="ordini-block"><div><button class="button" type="submit">elimina selezionati</button><input type="hidden" name="ordine" value="'."$cod".'"/></form><form action="togli_ordine.cgi" method="post"><input type="hidden" name="ordine" value="'."$cod".'"/><button class="button" type="submit">togli ordine</button></form></div></li>';
-	my $lista_ordine='<ul class="gestione-aggiungi_form">'."$tot"."</ul>";
+	my $lista_ordine='<div class=generic-container"><div class="form-container2"><ul class="form-Block">'."$tot"."</ul></div></div>";
 	$vars={
 		'sessione' => "true",
 		'email' => $email,
@@ -115,7 +115,7 @@ else
 		'email' => $email,
 		'amministratore' => "true",
 		'list' => "false",
-		'messaggio' => $messaggio,
+		'messaggio_ordini' => $messaggio,
 	};
 }
 my $file='gestione_ordini_temp.html';

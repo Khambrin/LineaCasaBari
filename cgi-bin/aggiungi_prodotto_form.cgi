@@ -42,7 +42,7 @@ if (!$values{"prezzo"})
 else
 {
 	$prezzo_value=$values{"prezzo"};
-	my $regex=$values{"prezzo"}=~ /^[0-9]+\,[0-9]{2}$/;
+	my $regex=$values{"prezzo"}=~ /^[0-9]+(\,[0-9]{2})?$/;
 	if(!$regex)
 	{
 		push @messaggi, "Inserisci un prezzo valido";
@@ -56,7 +56,7 @@ if (!$values{"descrizione"})
 }
 else
 {
-	$descrizione_value=$values{"via"};
+	$descrizione_value=$values{"descrizione"};
 }
 
 if ($values{"immagine"}) {
@@ -183,6 +183,6 @@ else
 		open (XML,">","../data/Prodotti.xml");
 		print XML $doc->toString();
 		close(XML);
-		print $cgi->redirect("gestione_prodotti_script.cgi?aggiungi");
+		print $cgi->redirect("gestione_prodotti_script.cgi?aggiunto");
 }
 		

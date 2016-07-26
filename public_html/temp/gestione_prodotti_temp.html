@@ -106,8 +106,8 @@
                 </div>
             	[% IF pagina == 'aggiungi' %]
 		<script type="text/javascript" src="../js/add_product.js"></script>
-		<div class="messaggio-error"> <p id="formatoprezzo"></p>  </div>
-		<div class="messaggio-error">[% messaggio%]</div>
+		<div class="messaggio-error"><p id="formatoprezzo"></p>[% messaggio %]</div>
+		<div class="messaggio-confirm">[% messaggio_confirm %]</div>
             	<div class="form-container2">
 					<form name="productform" method="post" action="aggiungi_prodotto_form.cgi" onsubmit="return prForm()" enctype="multipart/form-data">
                     <ul class="form-Block">
@@ -168,6 +168,7 @@
 
                 </form>
 				[% ELSIF pagina == 'rimuovi_modifica' %]
+				[% IF messaggio!= 'false' %]<div class="messaggio-error">[% messaggio%]</div>[% END %]
                     <form method="post" action="ricerca_prodotto.cgi">
 						<ul class="form-Block">
 							<li>
@@ -179,12 +180,7 @@
 							<button class="button" type="submit">Cerca</button>
 						</div>     
                     </form>
-                    [% IF messaggio!= 'false' %]<div class="messaggio-error">[% messaggio%]</div>[% END %]
-					[% lista_prodotti %]
-			
-
-				[% ELSIF messaggio_newsletter != 'false' %]<div><p>Attenzione: obbligatorio inserire un indirizzo per l'iscrizione alla newsletter </p></div>
-				[% ELSIF iscrizione_avvenuta != 'false' %] <div><p>Iscritto con successo l'indirizzo alla newsletter </p></div>
+                    [% lista_prodotti %]
 		   [% END %]
 
 			
@@ -245,7 +241,7 @@
             <div id="last-footer-block">
                 <ul>
                     <li>
-                        <h3>Iscriviti alla newsletter</h3>
+                        <h3 id="news_h3">Iscriviti alla newsletter</h3>
 			<form id="newsletter" method="get" action="add_newsletter.cgi" enctype="text/plain">
                             <div class="inputLeft"></div><div id="newsletterInputMiddle"><input id="newsletter-input" type="text" name="iscrizione"/></div><div class="inputRight"></div>
                             <div id="newsletter-buttonContainer">

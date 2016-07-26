@@ -1,13 +1,14 @@
 compatibilità altri browser
 relazione
-css stampa
-css mobile
+css stampa (lorenzo)
+css mobile (lorenzo navid)
 validare e inserire immagini w3c in footer (navid)
-allineamento di label e elementi input a sinistra in modo da allinearli e 2 bottoni allineati (css dei form)(navid)
-Aggiungere controllo dimensione upload immagine
-link menu sovrapposti con schermo più piccolo (bari)
-Dimensioni immagini tag <img> vanno messe dentro css
-problemi con newsletter se aggiungi prodotto da errore compare Attenzione: obbligatorio inserire un indirizzo per l'iscrizione alla newsletter (alice)
+allineamento di label e elementi input a sinistra in modo da allinearli e 2 bottoni allineati (css dei form)(navid merda muoviti a farlo)
+Aggiungere controllo dimensione upload immagine (gaggi)
+link menu sovrapposti con schermo più piccolo (navid)
+Dimensioni immagini tag <img> vanno messe dentro css (navid)
+controllare java (alice)
+edit annuncio modificare ci sta errore (alice)
 
 Domande prof:
 

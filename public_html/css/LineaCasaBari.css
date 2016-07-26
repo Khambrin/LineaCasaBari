@@ -373,6 +373,10 @@ body
     display: block;
     text-align: center;
 }
+#news_h3
+{
+    padding-bottom: 0.5em;
+}
 
 #facebook-link {
     text-decoration: none;
