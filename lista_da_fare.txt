@@ -5,9 +5,9 @@ css mobile (lorenzo navid)
 validare e inserire immagini w3c in footer (navid)
 allineamento di label e elementi input a sinistra in modo da allinearli e 2 bottoni allineati (css dei form)(navid merda muoviti a farlo)
 Aggiungere controllo dimensione upload immagine (gaggi)
-link menu sovrapposti con schermo più piccolo (navid)
 Dimensioni immagini tag <img> vanno messe dentro css (navid)
-controllare java (alice)
+controllare javascript (alice)
+aggiungere hover sottolineatura link home page
 
 Domande prof:
 
