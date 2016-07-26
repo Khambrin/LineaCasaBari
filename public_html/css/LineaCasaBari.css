@@ -454,6 +454,12 @@ body
     width: 20%;
 }
 
+#content h2{
+    font-family: Georgia, serif;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
 /*---------------------------------------------------index_temp.html ------------------------------------------------------------------------------*/
 
 
@@ -631,10 +637,7 @@ body
 
 
 
-#content h2{
-    font-family: Georgia, serif;
-    margin-bottom: 1em;
-}
+
 
 #la_nostra_storia-titolo{
     text-align: center;
@@ -975,5 +978,5 @@ body
 
 .immagine_annuncio img 
 {
-    max-width: 30em;
+    max-width: 13em;
 }
