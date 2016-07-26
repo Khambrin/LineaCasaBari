@@ -81,9 +81,11 @@
 		</div>
     </div>
     <div id="content">
-		<h2 id="titolo">Annunci</h2>
-        [% lista_annunci %]
+		[% IF messaggio_confirm %]<div class="messaggio-confirm">[% messaggio_confirm %]</div>
+		[% ELSE %]<h2 id="titolo">Annunci</h2>
+        [% lista_annunci %][% END %]
     </div>
+    
     
     <div id="footer">
         <a href="#header">

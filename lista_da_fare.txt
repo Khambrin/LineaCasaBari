@@ -8,7 +8,6 @@ Aggiungere controllo dimensione upload immagine (gaggi)
 link menu sovrapposti con schermo più piccolo (navid)
 Dimensioni immagini tag <img> vanno messe dentro css (navid)
 controllare java (alice)
-controllare se xml annunci è vuoto
 
 Domande prof:
 
