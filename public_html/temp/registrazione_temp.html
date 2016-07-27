@@ -59,11 +59,11 @@
     <div id="content">
 	
 	<script type="text/javascript" src="../js/registrazione.js"></script>
-        <div class="messaggio-error"><p id="shortpassword"></p><p id="longpassword"><p id="nom"><p id="cog"><p id="ema"><p id="emai"></p></div>
+        <div class="messaggio-error"><p id="shortpassword"></p><p id="longpassword"><p id="nom"><p id="cog"><p id="emailrec"></p><p id="ema"></p><p id="cem"></p></div>
         <div class="messaggio-error">[% messaggio_registrazione %]</div>
         <div class="form-container2">
             <h2>Crea un account</h2> 
-            <form name="recform" action="../cgi-bin/registrazione_form.cgi"  method="post" onsubmit="return validateForm()">
+            <form id="recform" action="../cgi-bin/registrazione_form.cgi"  method="post" onsubmit="return validateForm()">
                 <ul class="form-Block">
                     <li>
                         <label>* Nome:</label>                            <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="nome" [% nomeValue %] /></div><div class="inputRight"></div>
@@ -96,7 +96,7 @@
     </div>
     
     <div id="footer">
-        <a id="torna-su-link" href="#header">
+        <a href="#header">
             <span id="torna-su">
                 Torna su
             </span>
