@@ -19,7 +19,7 @@ if ($session->is_empty)
 	{
 		print $cgi->redirect('check_session.cgi?gestione_account_mod');
 	}
-	else
+	elsif( $ENV{'QUERY_STRING'} ne 'exit')
 	{
 		print $cgi->redirect('check_session.cgi?gestione_account_normal');
 	}

@@ -57,7 +57,7 @@
     {
         display: inline-block;
         height: 2em;
-        width: 77%;
+        width: 78%;
         text-align: right;
     }
     
@@ -84,6 +84,7 @@
     .current
     {
         padding:1em;
+       
         background-color: #295380;
         color: white;
     }
