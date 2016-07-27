@@ -100,12 +100,12 @@
 		
 		<div id="sub_menu">
                 [% IF pagina == 'aggiungi' %]
-					<div class="sub_menu_block_active"><span class="sub_menu_text_active">Aggiungi indirizzo</span></div><a href="check_session.cgi?stampa_indirizzi"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica indirizzo</span></div></a>
+					<div class="sub_menu_block_active"><span class="sub_menu_text_active">Aggiungi indirizzo</span></div><div class="sub_menu_block"><a href="check_session.cgi?stampa_indirizzi"><span class="sub_menu_text">Rimuovi o modifica indirizzo</span></a></div>
                 [% ELSIF pagina == 'edit' %]
-					<a href="check_session.cgi?stampa_indirizzi"><div class="sub_menu_block"><span class="sub_menu_text">Indietro</span></div></a>
-					<a href="check_session.cgi?aggiungi-indirizzo"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi indirizzo</span></div></a><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica indirizzo</span></div>
+					<div class="sub_menu_block"><a href="check_session.cgi?stampa_indirizzi"><span class="sub_menu_text">Indietro</span></a></div>
+					<div class="sub_menu_block"><a href="check_session.cgi?aggiungi-indirizzo"><span class="sub_menu_text">Aggiungi indirizzo</span></a></div><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica indirizzo</span></div>
 				[% ELSE %]
-					<a href="check_session.cgi?aggiungi-indirizzo"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi indirizzo</span></div></a><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica indirizzo</span></div>[% END %]
+					<div class="sub_menu_block"><a href="check_session.cgi?aggiungi-indirizzo"><span class="sub_menu_text">Aggiungi indirizzo</span></a></div><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica indirizzo</span></div>[% END %]
 		</div>
 			[% IF pagina == 'aggiungi' %]
 			[% IF messaggio_confirm != 'false' %]<div class="messaggio-confirm">[% messaggio_confirm %]</div>[% END %]
