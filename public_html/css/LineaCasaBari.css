@@ -913,9 +913,15 @@ body
   	box-shadow: 1px 1px 1px 1px #888888;
 }
 
-.prodotto-singolo p 
+.nome-prodotto a 
 {
 	font-size: 200%;
+	font-weight: bold;
+}
+
+.prezzo-prodotto a 
+{
+	font-size: 150%;
 	font-weight: bold;
 }
 	
