@@ -93,9 +93,9 @@ if ($in{'Order'}) {
 
 my $query_string_prodotti;
 if($query) {
-	$query_string_prodotti='?Filter='."$filter".'&Page='."$page".'&Query='."$query".'&Order='."$order";
+	$query_string_prodotti='?Filter='."$filter".'&amp;Page='."$page".'&amp;Query='."$query".'&amp;Order='."$order";
 } else {
-	$query_string_prodotti='?Filter='."$filter".'&Page='."$page".'&Order='."$order";
+	$query_string_prodotti='?Filter='."$filter".'&amp;Page='."$page".'&amp;Order='."$order";
 }
 
 my $Pagina_precedente;
@@ -109,9 +109,9 @@ if($query) {
 
 my $query_string;
 if($query) {
-	$query_string='?Codice='."$prodotto_codice".'&Filter='."$filter".'&Page='."$page".'&Query='."$query".'&Order='."$order";
+	$query_string='?Codice='."$prodotto_codice".'&amp;Filter='."$filter".'&amp;Page='."$page".'&amp;Query='."$query".'&amp;Order='."$order";
 } else {
-	$query_string='?Codice='."$prodotto_codice".'&Filter='."$filter".'&Page='."$page".'&Order='."$order";
+	$query_string='?Codice='."$prodotto_codice".'&amp;Filter='."$filter".'&amp;Page='."$page".'&amp;Order='."$order";
 }
 
 #gestione messaggio d'errore di aggiungi al carrello
@@ -160,7 +160,7 @@ if(!$already_reviewed) {
                     <label id="recensioneTesto-label">Testo:</label>
                 </li>
                 <li>
-                    <textarea class="gestione_textarea" name="testo">'."$in{'Testo'}".'</textarea>
+                    <textarea class="gestione_textarea" name="testo" rows="" cols="">'."$in{'Testo'}".'</textarea>
                 </li>';
 	my $tot=$tot.$x;
 	if ($in{'Errtext'}) {
@@ -203,13 +203,13 @@ if($Num_commenti > $#recensione_email) {
 
 for (my $index=0; $index <= $Num_commenti; $index++)
 {
-	my $x='<div class="recensione-prodotto"><ul><li><h2 id="Titolo_recensione">'."@recensione_titolo[$index]";
+	my $x='<div class="recensione-prodotto"><ul><li><h2 class="Titolo_recensione">'."@recensione_titolo[$index]";
 	$tot=$tot.$x;
 	my $x='<span>'." @recensione_data[$index]".'</span>';
 	$tot=$tot.$x;
 	my $x='<span>'." @recensione_votor[$index]".'</span></h2></li>';
 	$tot=$tot.$x;
-	my $x='<li><h3 id="Nome_utente">'."@recensione_nome[$index]".'</h3></li>';
+	my $x='<li><h3 class="Nome_utente">'."@recensione_nome[$index]".'</h3></li>';
 	$tot=$tot.$x;
 	my $x='<li><p>'."@recensione_testo[$index]".'</p></li>';
 	$tot=$tot.$x;
@@ -226,7 +226,7 @@ for (my $index=0; $index <= $Num_commenti; $index++)
 					<option value="5"> 5 </option>
 				</select></span></p>
 				<p><input type="submit" value="Vota recensione"/></p>
-				<input type="hidden" name="email_recensione" value="'."@recensione_email[$index]".'"/>
+				<p><input type="hidden" name="email_recensione" value="'."@recensione_email[$index]".'"/></p>
 				</form>
 				</li>';
 		$tot=$tot.$x;
@@ -234,7 +234,7 @@ for (my $index=0; $index <= $Num_commenti; $index++)
 	if($amministratore eq 'true' || $email eq @recensione_email[$index]) {
 		my $x='<li><form action="elimina_recensione.cgi'."$query_string".'" class="elimina_recensione" method="post">
 				<p><input type="submit" value="Elimina recensione"/></p>
-				<input type="hidden" name="email_recensione" value="'."@recensione_email[$index]".'"/></form></li>';
+				<p><input type="hidden" name="email_recensione" value="'."@recensione_email[$index]".'"/></p></form></li>';
 		$tot=$tot.$x;
 	}
 	my $x='</ul></div>';
