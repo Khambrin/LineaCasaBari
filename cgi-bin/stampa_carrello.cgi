@@ -32,15 +32,15 @@ if(!@utente_carrello[0])
 {
 	if ($key eq 'false')
 	{
-		$messaggio="Il tuo carrello &egrave; vuoto, visita la pagina Prodotti per comporne uno";
+		$messaggio='Il tuo carrello &egrave; vuoto, visita la pagina <a href="check_session.cgi?prodotti">Prodotti</a> per comporne uno';
 	}
 	elsif ($key eq 'modificato')
 	{
-		$messaggio="Modifica effettuata con successo, ora il tuo carrello &egrave; vuoto";
+		$messaggio='Modifica effettuata con successo, ora il tuo carrello &egrave; vuoto. Torna alla pagina <a href="check_session.cgi?prodotti">Prodotti</a>';
 	}
 	elsif ($key eq 'svuotato')
 	{
-		$messaggio="Ordine effettuato con successo, ora il tuo carrello &egrave; vuoto";
+		$messaggio='Ordine effettuato con successo, ora il tuo carrello &egrave; vuoto. Torna alla pagina <a href="check_session.cgi?prodotti">Prodotti</a>';
 	}
 	$vars={
 		'sessione' => "true",

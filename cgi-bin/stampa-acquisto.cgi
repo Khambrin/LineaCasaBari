@@ -89,7 +89,7 @@ else
 		'sessione' => "true",
 		'email' => $email,
 		'amministratore' => $amministratore,
-		'messaggio'=> "Aggiungi un indirizzo dalla specifica sezione di Account",
+		'messaggio'=> 'Aggiungi un indirizzo dalla specifica sezione di <a href="check_session.cgi?aggiungi-indirizzo">Account</a>',
 		
 	};
 }
