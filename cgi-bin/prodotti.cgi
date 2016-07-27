@@ -220,7 +220,7 @@ for (my $i=0; $i<=6; $i++) {
 		my $x='<li class="categoria_attiva"><span>'."@categorie[$i]".'</span></li>';
 		$tot3=$tot3.$x;
 	} else {
-		my $x='<li><a href="prodotti.cgi?Filter='."@categorie[$i]".'&Page='."$page".'&Query='."$query".'&Order='."$order".'">'."@categorie[$i]".'</a></li>';
+		my $x='<li><a href="prodotti.cgi?Filter='."@categorie[$i]".'&amp;Page='."$page".'&amp;Query='."$query".'&amp;Order='."$order".'">'."@categorie[$i]".'</a></li>';
 		$tot3=$tot3.$x;
 	} 
 }
@@ -234,9 +234,9 @@ my $stampa_categorie="$tot3";
 
 my $query_string_prodotto;
 if($query) {
-	$query_string_prodotto='&Filter='."$filter".'&Page='."$page".'&Query='."$query".'&Order='."$order";
+	$query_string_prodotto='&amp;Filter='."$filter".'&amp;Page='."$page".'&amp;Query='."$query".'&amp;Order='."$order";
 } else {
-	$query_string_prodotto='&Filter='."$filter".'&Page='."$page".'&Order='."$order";
+	$query_string_prodotto='&amp;Filter='."$filter".'&amp;Page='."$page".'&amp;Order='."$order";
 }
 
 for (my $riga=0; $riga <= 2; $riga++)	
@@ -246,15 +246,15 @@ for (my $riga=0; $riga <= 2; $riga++)
 	for (my $colonna=0; $colonna <= 2; $colonna++)	
 	{
 		if($index<=$#prodotti_codice) {
-		my $x='<div class="prodotto-singolo"><ul><a href="prodotto.cgi?Codice='."@prodotti_codice[$index]"."$query_string_prodotto".'">';
+		my $x='<div class="prodotto-singolo"><ul>';
 		$tot=$tot.$x;
-		my $x='<li class="nome-prodotto"><p>'."@prodotto_nome[$index]".'</p></li>';
+		my $x='<li class="nome-prodotto"><a href="prodotto.cgi?Codice='."@prodotti_codice[$index]"."$query_string_prodotto".'">'."@prodotto_nome[$index]".'</a></li>';
 		$tot=$tot.$x;
-		my $x='<li class="immagine-prodotto"><img src="'."@prodotto_immagine[$index]".'"/></li>';
+		my $x='<li class="immagine-prodotto"><a href="prodotto.cgi?Codice='."@prodotti_codice[$index]"."$query_string_prodotto".'"><img src="'."@prodotto_immagine[$index]".'" alt=""/></a></li>';
 		$tot=$tot.$x;
-		my $x='<li class="prezzo-prodotto"><h3>'."@prodotto_prezzo[$index]".' &#8364</h3></li>';
+		my $x='<li class="prezzo-prodotto"><a href="prodotto.cgi?Codice='."@prodotti_codice[$index]"."$query_string_prodotto".'">'."@prodotto_prezzo[$index]".' &#8364;</a></li>';
 		$tot=$tot.$x;
-		my $x='</a></ul></div>';
+		my $x='</ul></div>';
 		$tot=$tot.$x;
 		}
 		$index++;
@@ -275,7 +275,7 @@ if($page == "1") {
 	my $x='';
 	$tot2=$tot2.$x;
 } else {
-	my $x='<a href="prodotti.cgi?Page='."$page_before".'&Filter='."$filter".'"><span id="prodotti-frecciaPaginaPrecedente"></span></a><span id="prodotti-paginaPrecedente"><a href="prodotti.cgi?Page='."$page_before".'&Filter='."$filter".'">Pagina precedente</a></span>';
+	my $x='<a href="prodotti.cgi?Page='."$page_before".'&amp;Filter='."$filter".'"><span id="prodotti-frecciaPaginaPrecedente"></span></a><span id="prodotti-paginaPrecedente"><a href="prodotti.cgi?Page='."$page_before".'&amp;Filter='."$filter".'">Pagina precedente</a></span>';
 	$tot2=$tot2.$x;
 }
 my $x='<div id="prodotti-paginaNumeri"><ul>';
@@ -286,7 +286,7 @@ for (my $i=1; $i <= $num_pagine; $i++)
 		my $x='<li class="pagina_attiva"><span>'."$i".'</span></li>';
 		$tot2=$tot2.$x;
 	} else {
-		my $x='<li><a href="prodotti.cgi?Page='."$i".'&Filter='."$filter".'">'."$i".'</a></li>';
+		my $x='<li><a href="prodotti.cgi?Page='."$i".'&amp;Filter='."$filter".'">'."$i".'</a></li>';
 		$tot2=$tot2.$x;
 	}
 }
@@ -294,7 +294,7 @@ if($page == $num_pagine) {
 	my $x='</ul></div>';
 	$tot2=$tot2.$x;
 } else {
-	my $x='</ul></div><span id="prodotti-paginaSuccessiva"><a href="prodotti.cgi?Page='."$page_after".'&Filter='."$filter".'">Pagina successiva</a></span><a href="prodotti.cgi?Page='."$page_after".'&Filter='."$filter".'"><span id="prodotti-frecciaPaginaSuccessiva"></span></a>';
+	my $x='</ul></div><span id="prodotti-paginaSuccessiva"><a href="prodotti.cgi?Page='."$page_after".'&amp;Filter='."$filter".'">Pagina successiva</a></span><a href="prodotti.cgi?Page='."$page_after".'&amp;Filter='."$filter".'"><span id="prodotti-frecciaPaginaSuccessiva"></span></a>';
 	$tot2=$tot2.$x;
 }
 
@@ -303,9 +303,9 @@ my $stampa_pagine="$tot2";
 
 my $query_string;
 if($query) {
-	$query_string='?Filter='."$filter".'&Page='."$page".'&Query='."$query".'&Order='."$order";
+	$query_string='?Filter='."$filter".'&amp;Page='."$page".'&amp;Query='."$query".'&amp;Order='."$order";
 } else {
-	$query_string='?Filter='."$filter".'&Page='."$page".'&Order='."$order";
+	$query_string='?Filter='."$filter".'&amp;Page='."$page".'&amp;Order='."$order";
 	$query='no_query';
 }
 

@@ -110,15 +110,15 @@
         	      </div>
         	      <div id="prodotti-searchSortFormSelect">
         	         <select name="ordinamento" onchange="this.form.submit()">
-        	         <option [% IF order == 'prezzo_crescente' %] selected [% END %] value="prezzo_crescente">Prezzo crescente</option>
-        	         <option [% IF order == 'prezzo_decrescente' %] selected [% END %] value="prezzo_decrescente">Prezzo decrescente</option>
-        	         <option [% IF order == 'media_recensioni_crescente' %] selected [% END %] value="media_recensioni_crescente">Media recensioni crescente</option>
-        	         <option [% IF order == 'media_recensioni_decrescente' %] selected [% END %] value="media_recensioni_decrescente">Media recensioni decrescente</option>
-                	 <option [% IF order == 'ultimi_arrivi' %] selected [% END %] value="ultimi_arrivi">Ultimi arrivi</option>
-                	 <option [% IF order == 'standard' %] selected [% END %] value="standard">Standard</option>
+        	         <option [% IF order == 'prezzo_crescente' %] selected="selected" [% END %] value="prezzo_crescente">Prezzo crescente</option>
+        	         <option [% IF order == 'prezzo_decrescente' %] selected="selected" [% END %] value="prezzo_decrescente">Prezzo decrescente</option>
+        	         <option [% IF order == 'media_recensioni_crescente' %] selected="selected" [% END %] value="media_recensioni_crescente">Media recensioni crescente</option>
+        	         <option [% IF order == 'media_recensioni_decrescente' %] selected="selected" [% END %] value="media_recensioni_decrescente">Media recensioni decrescente</option>
+                	 <option [% IF order == 'ultimi_arrivi' %] selected="selected" [% END %] value="ultimi_arrivi">Ultimi arrivi</option>
+                	 <option [% IF order == 'standard' %] selected="selected" [% END %] value="standard">Standard</option>
                 	 </select>
         	      </div>
-			<noscript><input type="submit" value="Ordina risultati" /></noscript>
+			<noscript><div><input type="submit" value="Ordina risultati" /></div></noscript>
         	    </form>
                 </div>
 	</div>
