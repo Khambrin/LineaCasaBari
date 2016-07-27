@@ -74,11 +74,11 @@ else
 {
 	if($ENV{'QUERY_STRING'} eq 'rimosso')
 	{
-		$messaggio="Prodotto rimosso con successo, ora la tua lista &egrave; vuota, per aggiungere qualcosa visita la pagina Prodotti";
+		$messaggio='Prodotto rimosso con successo, ora la tua lista &egrave; vuota, per aggiungere qualcosa visita la pagina<a href="prodotti.cgi">Prodotti</a>';
 	}
 	else
 	{
-		$messaggio="La tua lista &egrave; vuota, per aggiungere qualcosa visita la pagina Prodotti";
+		$messaggio='La tua lista &egrave; vuota, per aggiungere qualcosa visita la pagina <a href="prodotti.cgi">Prodotti</a>';
 	}
 	$vars={
 		'sessione' => "true",
