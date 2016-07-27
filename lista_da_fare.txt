@@ -2,6 +2,7 @@ compatibilità altri browser
 relazione
 css stampa (lorenzo)
 css mobile (lorenzo navid)
+Unificare link e hover (lorenzo)
 validare e inserire immagini w3c in footer (navid)
 allineamento di label e elementi input a sinistra in modo da allinearli e 2 bottoni allineati (css dei form)(navid merda muoviti a farlo)
 Aggiungere controllo dimensione upload immagine (gaggi)
