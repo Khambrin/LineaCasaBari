@@ -19,7 +19,7 @@ function addForm() {// aggiungi indirizzo
 	var dprov = rgprov.test(pro1);
 	if(dprov==false) {
 		document.getElementById("addtwoprov").innerHTML = "Inserisci una provincia valida, ad esempio PD";
-        	//return false;
+        	
 	}
 	else{document.getElementById("addtwoprov").innerHTML = "";}
 
@@ -29,7 +29,7 @@ function addForm() {// aggiungi indirizzo
 	var dcap = rgcap.test(cap1);
 	if(dcap==false) {
 		document.getElementById("adddigitscap").innerHTML = "Inserisci un CAP valido";
-        	//return false;
+        	
 	}
 	else{document.getElementById("adddigitscap").innerHTML = "";}
 	if(via1==false|num1==false|cit1==false|dprov==false|dcap==false){return false;}

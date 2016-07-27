@@ -110,7 +110,7 @@
 			[% IF pagina == 'aggiungi' %]
 			[% IF messaggio_confirm != 'false' %]<div class="messaggio-confirm">[% messaggio_confirm %]</div>[% END %]
 			<script type="text/javascript" src="../js/add_address.js"></script>
-			<div class="messaggio-error"> <p id="addtwoprov"></p> <p id="adddigitscap"></p> <p id="addvia"></p>  <p id="addnum"></p> <p id="addcit"></p> </div>
+			<div class="messaggio-error"> <p id="addvia"></p>  <p id="addnum"></p> <p id="addcit"></p> <p id="addtwoprov"></p> <p id="adddigitscap"></p>  </div>
 				<div class="messaggio-error">[% error %]</div>
 				<div class="messaggio-error">[% messaggio %]</div>
 			<div class="form-container2">
@@ -150,7 +150,7 @@
 			[% ELSIF pagina == 'edit' %]
 			[% IF messaggio_confirm != 'false' %]<div class="messaggio-confirm">[% messaggio_confirm %]</div>[% END %]
 			<script type="text/javascript" src="../js/edit_address.js"></script>
-					<div class="messaggio-error"> <p id="edittwoprov"></p> <p id="editdigitscap"></p> <p id="editvia"></p>  <p id="editnum"></p> <p id="editcit"></p> </div>
+					<div class="messaggio-error"> <p id="editvia"></p>  <p id="editnum"></p> <p id="editcit"></p> <p id="edittwoprov"></p> <p id="editdigitscap"></p>  </div>
 					<div class="messaggio-error">[% error %]</div>
 					<div class="messaggio-error">[% messaggio %]</div>
 			<div class="form-container2">
@@ -162,7 +162,7 @@
                         <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vvia %]</div><div class="inputRight"></div>
                     </li>
 					<li>
-						<label>Numero civico:</label>
+						<label>* Numero civico:</label>
                         <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vnumero %]</div><div class="inputRight"></div>
                     </li>
 					<li>
