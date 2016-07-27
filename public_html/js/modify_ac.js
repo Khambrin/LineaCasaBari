@@ -37,7 +37,7 @@
 			var rgem = /^[^\s@]+@[^\s@]+\.[^\s@]+$/ ;
 			var gem = rgem.test(sem);
 			if(gem==false){
-				document.getElementById("eremail").innerHTML = "mail non valida"; 
+				document.getElementById("eremail").innerHTML = "Email non valida"; 
 				return false;
 			}
 			return true;

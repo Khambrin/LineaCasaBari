@@ -117,7 +117,7 @@
 
 				<h2>Aggiungi indirizzo</h2>
 				
-				<form name="addressform" method="post" action="aggiungi_indirizzo_script.cgi" onsubmit="return addForm()" enctype="multipart/form-data">
+				<form id="addressform" method="post" action="aggiungi_indirizzo_script.cgi" onsubmit="return addForm()" enctype="multipart/form-data">
 				<ul class="form-Block">
 					<li>
                         <label>* Via:</label>
@@ -155,7 +155,7 @@
 					<div class="messaggio-error">[% messaggio %]</div>
 			<div class="form-container2">
 				<h2>Modifica indirizzo n. [% indice_controllo %] </h2>
-				<form name="editaddressform" method="post" action="edit_indirizzo_script.cgi" onsubmit="return editForm()" enctype="multipart/form-data">
+				<form id="editaddressform" method="post" action="edit_indirizzo_script.cgi" onsubmit="return editForm()" enctype="multipart/form-data">
 				<ul class="form-Block">
 					<li>
                         <label>* Via:</label>
