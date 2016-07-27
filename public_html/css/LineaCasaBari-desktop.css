@@ -88,6 +88,7 @@
         background-color: #295380;
         color: white;
     }
+
     #torna-su
     {
         text-align: center;
@@ -97,11 +98,13 @@
         border-bottom-color: aliceblue;
         display: block;
         width: 100%;
+    }
+
+    #torna-su-link {
 	text-decoration: none;
     }
 
-    #torna-su:hover 
-    {
+    #torna-su-link:hover {
 	text-decoration: underline;
     }
 
