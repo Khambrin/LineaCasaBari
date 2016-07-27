@@ -65,9 +65,9 @@ my $codice=$in{'Codice'};
 
 my $query_string;
 if($query) {
-	$query_string='?Codice='."$codice".'&Filter='."$filter".'&Page='."$page".'&Query='."$query".'&Order='."$order";
+	$query_string='?Codice='."$codice".'&amp;Filter='."$filter".'&amp;Page='."$page".'&amp;Query='."$query".'&amp;Order='."$order";
 } else {
-	$query_string='?Codice='."$codice".'&Filter='."$filter".'&Page='."$page".'&Order='."$order";
+	$query_string='?Codice='."$codice".'&amp;Filter='."$filter".'&amp;Page='."$page".'&amp;Order='."$order";
 }
 
 

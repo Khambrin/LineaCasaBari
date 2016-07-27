@@ -65,9 +65,9 @@ if ($in{'Order'}) {
 
 my $query_string;
 if($query) {
-	$query_string='?Codice='."$codice".'&Filter='."$filter".'&Page='."$page".'&Query='."$query".'&Order='."$order";
+	$query_string='?Codice='."$codice".'&amp;Filter='."$filter".'&amp;Page='."$page".'&amp;Query='."$query".'&amp;Order='."$order";
 } else {
-	$query_string='?Codice='."$codice".'&Filter='."$filter".'&Page='."$page".'&Order='."$order";
+	$query_string='?Codice='."$codice".'&amp;Filter='."$filter".'&amp;Page='."$page".'&amp;Order='."$order";
 }
 
 
@@ -144,5 +144,5 @@ print XML $doc->toString();
 close(XML);
 
 my $messaggio="Prodotto aggiunto correttamente al carrello";
-print $cgi->redirect('prodotto.cgi'."$query_string".'&Messaggio='."$messaggio");
+print $cgi->redirect('prodotto.cgi'."$query_string".'&amp;Messaggio='."$messaggio");
 

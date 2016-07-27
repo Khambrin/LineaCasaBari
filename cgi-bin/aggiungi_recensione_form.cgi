@@ -60,9 +60,9 @@ my $codice=$in{'Codice'};
 
 my $query_string;
 if($query) {
-	$query_string='?Codice='."$codice".'&Filter='."$filter".'&Page='."$page".'&Query='."$query".'&Order='."$order";
+	$query_string='?Codice='."$codice".'&amp;Filter='."$filter".'&amp;Page='."$page".'&amp;Query='."$query".'&amp;Order='."$order";
 } else {
-	$query_string='?Codice='."$codice".'&Filter='."$filter".'&Page='."$page".'&Order='."$order";
+	$query_string='?Codice='."$codice".'&amp;Filter='."$filter".'&amp;Page='."$page".'&amp;Order='."$order";
 }
 
 foreach my $p (param())
@@ -77,31 +77,31 @@ my $default;
 
 if (!$values{"titolo"})
 {
-	my $x="&Errtitle=1";
+	my $x="&amp;Errtitle=1";
 	$errors=$errors.$x;
 } else {
 	my $title=$values{"titolo"};
-	my $x='&Title='."$title"; 
+	my $x='&amp;Title='."$title"; 
 	$default=$default.$x;
 }
 
 if (!$values{"nome"})
 {
-	my $x="&Errname=1";
+	my $x="&amp;Errname=1";
 	$errors=$errors.$x;
 } else {
 	my $nome=$values{"nome"};
-	my $x='&Nome='."$nome";
+	my $x='&amp;Nome='."$nome";
 	$default=$default.$x;
 }
 
 if (!$values{"testo"})
 {
-	my $x="&Errtext=1";
+	my $x="&amp;Errtext=1";
 	$errors=$errors.$x;
 } else {
 	my $testo=$values{"testo"};
-	my $x='&Testo='."$testo";
+	my $x='&amp;Testo='."$testo";
 	$default=$default.$x;
 }
 
