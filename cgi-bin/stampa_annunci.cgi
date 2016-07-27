@@ -25,9 +25,18 @@ my $root;
 my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
 	});
-
+my $ sess;
+if ($session->is_empty) 
+{
+	$sess="false";
+}
+else
+{
+	$sess="true";
+}
+	
 my $file='annunci_temp.html';
-if ((-e "../data/Annunci.xml") and (my $counter=$doc->findvalue("count(Annunci/Annuncio)")) )
+if ((-e "../data/Annunci.xml") or (my $counter=$doc->findvalue("count(Annunci/Annuncio)")) )
 {
 	my $parser=XML::LibXML->new();
 	$doc=$parser->parse_file("../data/Annunci.xml");
@@ -52,8 +61,9 @@ if ((-e "../data/Annunci.xml") and (my $counter=$doc->findvalue("count(Annunci/A
 		my $x='<div class="immagine_annuncio"><img src="'."@annuncio_immagine[$index]".'" alt="'."$alt".'"/></div></div></div>';
 		$lista_annunci=$lista_annunci.$x;
 	}
+	
 		$vars={
-			'sessione' => "true",
+			'sessione' => $sess,
 			'email' => $email,
 			'amministratore' => $amministratore,
 			'lista_annunci' => $lista_annunci,
@@ -62,7 +72,7 @@ if ((-e "../data/Annunci.xml") and (my $counter=$doc->findvalue("count(Annunci/A
 else
 {
 	$vars={
-			'sessione' => "true",
+			'sessione' => $sess,
 			'email' => $email,
 			'amministratore' => $amministratore,
 			'messaggio_confirm' => "Non ci sono annunci"

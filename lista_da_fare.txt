@@ -7,7 +7,6 @@ allineamento di label e elementi input a sinistra in modo da allinearli e 2 bott
 Aggiungere controllo dimensione upload immagine (gaggi)
 Dimensioni immagini tag <img> vanno messe dentro css (navid)
 controllare javascript (alice)
-aggiungere hover sottolineatura link home page
 
 Domande prof:
 

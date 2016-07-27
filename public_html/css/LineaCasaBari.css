@@ -489,7 +489,12 @@ body
 #listanozze a
 {
     text-decoration: none;
+    
 }
+#listanozze a:hover{
+    text-decoration: underline;
+}
+
 
 #porcellane
 {
@@ -512,7 +517,9 @@ body
 #porcellane a{
     text-decoration: none;
 }
-
+#porcellane a:hover{
+    text-decoration: underline;
+}
 #lampade
 {
     background-image:url(../images/lampade.jpg);
@@ -533,6 +540,9 @@ body
 }
 #lampade a{
     text-decoration: none;
+}
+#lampade a:hover{
+    text-decoration: underline;
 }
 #pentole
 {
@@ -555,6 +565,9 @@ body
 #pentole a{
     text-decoration: none;
 }
+#pentole a:hover{
+    text-decoration: underline;
+}
 #tavola
 {
     background-image:url(../images/tavola.jpg);
@@ -575,6 +588,9 @@ body
 }
 #tavola a{
     text-decoration: none;
+}
+#tavola a:hover{
+    text-decoration: underline;
 }
 #tovaglie
 {
@@ -598,7 +614,9 @@ body
  #tovaglie a{
     text-decoration: none;
 }
-
+#tovaglie a:hover{
+    text-decoration: underline;
+}
 #categorie-vetrina
 {
     min-height: 100%;
