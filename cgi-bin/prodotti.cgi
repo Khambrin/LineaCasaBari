@@ -99,7 +99,7 @@ if ($get_order) {
 } elsif ($in{'Order'}) {
 	$order = $in{'Order'};
 } else {
-	$order = 'standard'
+	$order = 'rilevanza'
 }
 
 my @prodotto_codice_ordinato;
