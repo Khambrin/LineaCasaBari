@@ -8,7 +8,7 @@ allineamento di label e elementi input a sinistra in modo da allinearli e 2 bott
 Aggiungere controllo dimensione upload immagine (gaggi)
 Dimensioni immagini tag <img> vanno messe dentro css (navid)
 controllare javascript (alice)
-
+controllare che in tutti i form in caso di errore restino i campi inseriti in modo corretto 
 Domande prof:
 
 1) Dimensione massima immagini uppabili

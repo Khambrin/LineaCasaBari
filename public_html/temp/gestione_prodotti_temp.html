@@ -168,7 +168,8 @@
 
                 </form>
 				[% ELSIF pagina == 'rimuovi_modifica' %]
-				[% IF messaggio!= 'false' %]<div class="messaggio-error">[% messaggio%]</div>[% END %]
+				[% IF messaggio_confirm!= 'false' %]<div class="messaggio-confirm">[% messaggio_confirm%]</div>[% END %]
+				[% IF messaggio_error!= 'false' %]<div class="messaggio-error">[% messaggio_error %]</div>[% END %]
                     <form method="post" action="ricerca_prodotto.cgi">
 						<ul class="form-Block">
 							<li>
