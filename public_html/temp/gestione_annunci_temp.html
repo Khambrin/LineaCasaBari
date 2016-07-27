@@ -110,11 +110,13 @@
                 
                 </div>
                 [% IF pagina == 'aggiungi' %]
+		<script type="text/javascript" src="../js/add_announce.js"></script>
+		<div class="messaggio-error"> <p id="newtitolo"></p> <p id="newtesto"></p>  </div>
                 <div class="messaggio-error">[% messaggio %]</div>
 					[% IF messaggio_confirm != 0 %]<div class="messaggio-confirm">[% messaggio_confirm %]</div> [% END %]
                 <div class="form-container2">
 					<h2>Aggiungi un annuncio</h2>
-                <form method="post" action="aggiungi_annuncio_form.cgi" enctype="multipart/form-data">
+                <form id="announceform" method="post" action="aggiungi_annuncio_form.cgi" onsubmit="return newannForm()" enctype="multipart/form-data">
                     <ul class="form-Block">
                         <li>
                             <label>* Titolo:</label>
@@ -143,10 +145,12 @@
                 </form>
                 </div>
 				[% ELSIF pagina == 'edit' %]
+				<script type="text/javascript" src="../js/edit_announce.js"></script>
+		<div class="messaggio-error"> <p id="edittitolo"></p> <p id="edittesto"></p>  </div>
 				<div class="messaggio-confirm">[% IF messaggio_vuota != 'false' %][% messaggio_vuota %] [% END %] [% IF messaggio_confirm != 0 %][% messaggio_confirm %][% END %]</div> 
 				<div class="form-container2">
 					<h2>Rimuovi o Modifica un annuncio</h2>
-                <form method="post" action="edit_annuncio.cgi" enctype="multipart/form-data">
+                <form id="editannounceform" method="post" action="edit_annuncio.cgi" onsubmit="return editannForm()" enctype="multipart/form-data">
                     <ul class="form-Block">
                         <li>
                             <label class="annunci-titoloLabel">Titolo:</label>
