@@ -115,7 +115,8 @@
         	         <option [% IF order == 'media_recensioni_crescente' %] selected="selected" [% END %] value="media_recensioni_crescente">Media recensioni crescente</option>
         	         <option [% IF order == 'media_recensioni_decrescente' %] selected="selected" [% END %] value="media_recensioni_decrescente">Media recensioni decrescente</option>
                 	 <option [% IF order == 'ultimi_arrivi' %] selected="selected" [% END %] value="ultimi_arrivi">Ultimi arrivi</option>
-                	 [% IF $query != 'no_query' %]
+                	 [% IF query == 'no_query' %]
+			 [% ELSE %]
                 	 <option [% IF order == 'rilevanza' %] selected="selected" [% END %] value="rilevanza">Rilevanza</option>
 			 [% END %]                	 
 			</select>

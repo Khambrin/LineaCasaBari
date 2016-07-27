@@ -96,10 +96,12 @@ my $get_order=param("ordinamento");
 my $order;
 if ($get_order) {
 	$order = $get_order;
+} elsif ($query) {
+	$order = 'rilevanza';
 } elsif ($in{'Order'}) {
 	$order = $in{'Order'};
 } else {
-	$order = 'rilevanza'
+	$order = 'ultimi_arrivi';
 }
 
 my @prodotto_codice_ordinato;
