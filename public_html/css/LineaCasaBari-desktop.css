@@ -263,7 +263,7 @@
         width: 78%;
         text-align: center;
         line-height: 220%;
-	margin-top: 1em;
+	   margin-top: 1em;
     }
 
     #prodotti-frecciaPaginaPrecedente {
@@ -768,4 +768,23 @@
     .immagine_annuncio img 
     {
         max-width: 30em;
+    }
+    
+    
+    /*---------------------------------------------------index_temp.html ------------------------------------------------------------------------------*/
+
+    .riga_index
+    {
+        padding-top: 1em;
+        padding-bottom: 0.5em;
+    }
+    
+    .riga_index div{
+        display: inline-block;
+        width: 23%;
+        vertical-align: middle;
+        padding: 1em;
+        margin-right: 0.825em;
+        margin-left: 0.825em;
+        margin-top: 0.6em;
     }

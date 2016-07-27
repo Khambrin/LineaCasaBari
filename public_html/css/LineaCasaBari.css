@@ -466,25 +466,35 @@ body
 
 /*---------------------------------------------------index_temp.html ------------------------------------------------------------------------------*/
 
+#categorie-vetrina
+{
+    min-height: 100%;
+    width: 100%;
+}
 
+.riga_index
+{
+    display: block;
+    width: 100%;
+}
+
+.riga_index div{
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 10em;
+	width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px #888888;
+    background-color: #E1E3E4;
+}
 
 #listanozze
 {
-    background-image:url(../images/listanozze.jpg);
-    background-repeat:no-repeat;
-    background-size:cover;
-    display: inline-block;
-    height: 10em;
-	width: 23%;
-    vertical-align: middle;
-    background-color: #E1E3E4;
-    padding: 1em;
-    
-    margin-right: 0.825em;
-    margin-left: 0.825em;
-    margin-top: 0.6em;
-    background-color: white;
-    box-shadow: 1px 1px 1px 1px #888888;
+    background-image: url(../images/listanozze.jpg);
 }
 #listanozze a
 {
@@ -495,24 +505,9 @@ body
     text-decoration: underline;
 }
 
-
 #porcellane
 {
-    background-image:url(../images/porcellane.jpg);
-    background-repeat:no-repeat;
-    background-size:cover;
-    display: inline-block;
-    height: 10em;
-	width: 23%;
-    vertical-align: middle;
-    background-color: #E1E3E4;
-    padding: 1em;
-    text-align: center;
-    margin-right: 0.825em;
-    margin-left: 0.825em;
-    margin-top: 0.6em;
-    background-color: white;
-    box-shadow: 1px 1px 1px 1px #888888;
+    background-image: url(../images/porcellane.jpg);
 }
 #porcellane a{
     text-decoration: none;
@@ -523,20 +518,6 @@ body
 #lampade
 {
     background-image:url(../images/lampade.jpg);
-    background-repeat:no-repeat;
-    background-size:cover;
-    display: inline-block;
-    height: 10em;
-	width: 23%;
-    vertical-align: middle;
-    background-color: #E1E3E4;
-    padding: 1em;
-    text-align: center;
-    margin-right: 0.825em;
-    margin-left: 0.825em;
-    margin-top: 0.6em;
-    background-color: white;
-    box-shadow: 1px 1px 1px 1px #888888;
 }
 #lampade a{
     text-decoration: none;
@@ -547,20 +528,6 @@ body
 #pentole
 {
     background-image:url(../images/pentole.jpg);
-    background-repeat:no-repeat;
-    background-size:cover;
-    display: inline-block;
-    height: 10em;
-	width: 23%;
-    vertical-align: middle;
-    background-color: #E1E3E4;
-    padding: 1em;
-    text-align: center;
-    margin-right: 0.825em;
-    margin-left: 0.825em;
-    margin-top: 0.6em;
-    background-color: white;
-    box-shadow: 1px 1px 1px 1px #888888;
 }
 #pentole a{
     text-decoration: none;
@@ -571,20 +538,6 @@ body
 #tavola
 {
     background-image:url(../images/tavola.jpg);
-    background-repeat:no-repeat;
-    background-size:cover;
-    display: inline-block;
-    height: 10em;
-	width: 23%;
-    vertical-align: middle;
-    background-color: #E1E3E4;
-    padding: 1em;
-    text-align: center;
-    margin-right: 0.825em;
-    margin-left: 0.825em;
-    margin-top: 0.6em;
-    background-color: white;
-    box-shadow: 1px 1px 1px 1px #888888;
 }
 #tavola a{
     text-decoration: none;
@@ -594,21 +547,7 @@ body
 }
 #tovaglie
 {
-	background-image:url(../images/tovaglie.jpg);
-    background-repeat:no-repeat;
-    background-size:cover;
-    display: inline-block;
-    height: 10em;
-	width: 23%;
-    vertical-align: middle;
-    background-color: #E1E3E4;
-    padding: 1em;
-    text-align: center;
-    margin-right: 0.825em;
-    margin-left: 0.825em;
-    margin-top: 0.6em;
-    background-color: white;
-    box-shadow: 1px 1px 1px 1px #888888;
+	background-image: url(../images/tovaglie.jpg);
 }
    
  #tovaglie a{
@@ -617,19 +556,7 @@ body
 #tovaglie a:hover{
     text-decoration: underline;
 }
-#categorie-vetrina
-{
-    min-height: 100%;
-    width: 100%;
-}
 
-.riga_index
-{
-    padding-top: 1em;
-    padding-bottom: 0.5em;
-    display: inline-block;
-    width: 100%;
-}
     
 /*---------------------------------------------------login.html ------------------------------------------------------------------------------*/
 
