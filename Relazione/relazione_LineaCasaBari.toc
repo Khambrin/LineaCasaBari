@@ -1,0 +1,8 @@
+\select@language {italian}
+\select@language {italian}
+\contentsline {section}{\numberline {1}Introduzione}{2}{section.1}
+\contentsline {section}{\numberline {2}Analisi dei requisiti}{2}{section.2}
+\contentsline {section}{\numberline {3}Dati e informazioni}{2}{section.3}
+\contentsline {section}{\numberline {4}Applicazioni e servizi}{2}{section.4}
+\contentsline {section}{\numberline {5}Accessibilit\IeC {\`a} e stile}{2}{section.5}
+\contentsline {section}{\numberline {6}Strumenti e manutenzione}{2}{section.6}
