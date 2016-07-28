@@ -77,11 +77,17 @@ if (@errors)
 		INCLUDE_PATH => '../public_html/temp',
 		});
 	
-	my $indirizzo_via=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[position()='$ind']/Via");
-	my $indirizzo_numero_civico=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[$ind]/Numero_civico/text()");
-	my $indirizzo_citta=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[$ind]/Città/text()");
-	my $indirizzo_provincia=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[$ind]/Provincia/text()");
-	my $indirizzo_cap=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[$ind]/CAP/text()");
+	#my $indirizzo_via=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[position()='$ind']/Via");
+	#my $indirizzo_numero_civico=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[$ind]/Numero_civico/text()");
+	#my $indirizzo_citta=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[$ind]/Città/text()");
+	#my $indirizzo_provincia=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[$ind]/Provincia/text()");
+	#my $indirizzo_cap=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[$ind]/CAP/text()");
+
+	my $indirizzo_via=$values{via};
+	my $indirizzo_numero_civico=$values{numero};
+	my $indirizzo_citta=$values{citta};
+	my $indirizzo_provincia=$values{provincia};
+	my $indirizzo_cap=$values{cap};
 
 	my $via_form='<input class= "input" type="text" name="via" value="'."$indirizzo_via".'"/>';
 	my $numero_form='<input class= "input" type="text" name="numero" value="'."$indirizzo_numero_civico".'"/>';
@@ -90,6 +96,7 @@ if (@errors)
 	my $cap_form='<input class= "input" type="text" name="cap" value="'."$indirizzo_cap".'"/>';
 	my $hidden='<input type="hidden" name="index_script" value="'."$ind".'"/>';
 
+	
 	
 	my $vars={
 		'sessione' => "true",
