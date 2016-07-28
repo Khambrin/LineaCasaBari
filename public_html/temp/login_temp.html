@@ -57,14 +57,14 @@
         </div>
     </div>
     <div id="content">
-        <div class="messaggio-confirm">[% log %]</div>
+        <div class="messaggio-confirm">[% log %]</div> <div class="messaggio-error">[% messaggio %]</div>
         <div class="form-container2">
             <h2>Effettua l'accesso</h2>
             <form action="../cgi-bin/login_form.cgi" method="post">
                 <ul class="login-Block">
                     <li>
                         <label>* Email:</label>
-                        <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="email"/></div><div class="inputRight"></div>
+                        <div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="email" [% email_value %] /></div><div class="inputRight"></div>
                     </li>
                     <li>
                         <label>* Password:</label>
@@ -82,7 +82,7 @@
                 <div>
                     <button class="button" type="submit">Accedi</button>
                 </div>
-				<div class="messaggio-error">[% messaggio %]</div>
+				
             </form>
         </div>
     </div>

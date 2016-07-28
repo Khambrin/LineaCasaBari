@@ -40,6 +40,7 @@ if (@messaggi)
 	my $vars={
 		'messaggio' => "<ul>"."<li>@messaggi</li>"."</ul>",
 		'query_string' => "$values{query_string}",
+		'email_value' => 'value="'."$values{email}".'"',
 		};
 	my $template=Template->new({
 		INCLUDE_PATH => '../public_html/temp',
