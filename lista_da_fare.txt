@@ -7,10 +7,11 @@ validare e inserire immagini w3c in footer (navid)
 allineamento di label e elementi input a sinistra in modo da allinearli e 2 bottoni allineati (css dei form)(navid merda muoviti a farlo)
 Aggiungere controllo dimensione upload immagine (gaggi)
 Dimensioni immagini tag <img> vanno messe dentro css (navid)
-controllare javascript (alice)
-controllare che in tutti i form in caso di errore restino i campi inseriti in modo corretto (alice)
+controllare javascript[manca modifica prodotto] (alice)
+controllare che in tutti i form in caso di errore restino i campi inseriti in modo corretto[manca modifica prodotto] (alice)
 qundo aggiungo a carrello ritorna il messaggio vai su carrello per acquistare . "carrello" deve essere un link che va a carrello passando per check session
 modifica prodotto non è corretto il cgi, in caso di errori nel form vengono comunque salvate le modifiche errate
+CSS modifica annuncio dopo errore box testo troppo grande
 
 Domande prof:
 

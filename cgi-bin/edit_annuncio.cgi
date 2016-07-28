@@ -60,8 +60,11 @@ if (@errors)
 
 	my $codice=$values{"oldcodice"};
 	my $annuncio_node=$doc->findnodes("Annunci/Annuncio[Codice='$codice']");
-	my $titolo=$doc->findnodes("Annunci/Annuncio[Codice='$codice']/Titolo/text()");
-	my $fcontenuto=$doc->findnodes("Annunci/Annuncio[Codice='$codice']/Testo/text()");
+	#my $titolo=$doc->findnodes("Annunci/Annuncio[Codice='$codice']/Titolo/text()");
+	#my $fcontenuto=$doc->findnodes("Annunci/Annuncio[Codice='$codice']/Testo/text()");
+
+	my $titolo=$values{"titolo"};
+	my $fcontenuto=$values{"testo"};
 
 	my $vcontenuto='<textarea id="gestione_annunci-textarea" rows="100" cols="100" name="testo">'."$fcontenuto".'</textarea>';
 	my $vt_form='<input class= "input" type="text" name="titolo" value="'."$titolo".'"/>';
