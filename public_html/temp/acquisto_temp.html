@@ -82,8 +82,8 @@
     </div>
     
     <div id="content">
+	[% IF messaggio=='false' %]
 	<div class="generic-container">
-       [% IF messaggio=='false' %]
        <div class="form-container2">
 		   <form action="stampa_resoconto.cgi" method="post">
 			   <ul class="form-Block">
@@ -107,12 +107,11 @@
 					<button class="button" type="submit">Procedi</button>
 				</li>
 				</ul>
-			</form>
-			[% ELSE %]<div class="messaggio-confirm">[% messaggio %]</div>
-			
+			</form>		
+		</div>
        </div>
+       [% ELSE %]<div class="messaggio-confirm">[% messaggio %]</div>
        [% END%]
-       </div>
     </div>
     
     <div id="footer">
