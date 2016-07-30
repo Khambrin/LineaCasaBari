@@ -428,6 +428,45 @@ body
     vertical-align: middle;
 }
 
+
+#newslettertemp-input
+{
+    background-color: transparent;
+    border: none;
+    width: 97%;
+    height: 2.3em;
+    padding-left: 1em;
+}
+
+#newslettertempInputMiddle{
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url(../images/input_middle.png);
+    width: 70%;
+    height: 2em;
+    background-size: contain;
+    background-repeat: repeat-x;
+}
+
+#newslettertemp-buttonContainer{
+    display: inline;
+}
+
+#newslettertemp-button
+{
+    width: 13%;
+    height: 2em;
+    background-image:url(../images/email.png);
+    background-repeat:no-repeat;
+    background-color: transparent;
+    background-size: contain;
+    border: none;
+    vertical-align: middle;
+}
+
+
+
+
 .generic-container{
     margin-top: 2em;
 }

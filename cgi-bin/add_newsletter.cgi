@@ -20,7 +20,6 @@ my $void_address;
 
 
 my $mail_iscrizione =$cgi->param('iscrizione');
-my $page_nl =$cgi->param('pagina_nl');
 
 if (!$mail_iscrizione)
 {
