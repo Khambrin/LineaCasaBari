@@ -42,7 +42,7 @@ my $tot;
 my $counter=0;
 for (my $index=1; $index <=$#indirizzo_via+1; $index++)
 {	
-	my $x='<div class="form-container2"><ul class="form-Block"><h2>'."Indirizzo n. $index</h2>";
+	my $x='<div class="form-container2"><h2>'."Indirizzo n. $index".'</h2><ul class="form-Block">';
 	$tot=$tot.$x;
 	my $x='<li><label>'."Via: @indirizzo_via[$counter]</label></li>";
 	$tot=$tot.$x;
