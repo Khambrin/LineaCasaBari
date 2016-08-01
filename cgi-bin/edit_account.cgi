@@ -183,17 +183,17 @@ else
 		$root=$doc->documentElement();
 			
 		my $utente_canc=$doc->findnodes("Indirizzi/Utente[Email='$email']");
-		
-		my $email_canc=$doc->findnodes("Indirizzi/Utente[Email='$email']/Email");
-		my $newemail_tag=$doc->createElement("Email");
-		$newemail_tag->appendTextNode($values{'nuova_email'});
-		$utente_canc->[0]->appendChild($newemail_tag); 
-		$email_canc->[0]->parentNode->removeChild($email_canc->[0]);
+		if($utente_canc) {
+			my $email_canc=$doc->findnodes("Indirizzi/Utente[Email='$email']/Email");
+			my $newemail_tag=$doc->createElement("Email");
+			$newemail_tag->appendTextNode($values{'nuova_email'});
+			$utente_canc->[0]->appendChild($newemail_tag); 
+			$email_canc->[0]->parentNode->removeChild($email_canc->[0]);
 			
-		open (XML,">","../data/Indirizzi.xml");
-		print XML $doc->toString();
-		close(XML);
-	
+			open (XML,">","../data/Indirizzi.xml");
+			print XML $doc->toString();
+			close(XML);
+		}
 
 		$parser=XML::LibXML->new();
 		$doc=$parser->parse_file("../data/Ordini.xml");
@@ -201,19 +201,21 @@ else
 		
 		
 		my $num_canc=$doc->findvalue("count(Ordini/Ordine[Utente='$email'])");
-		my @utente_canc=$doc->findnodes("Ordini/Ordine[Utente='$email']");
-		my @email_canc=$doc->findnodes("Ordini/Ordine[Utente='$email']/Utente");
-		for(my $i=0;$i<$num_canc;$i++)
-		{
-			my $newemail_tag=$doc->createElement("Utente");
-			$newemail_tag->appendTextNode($values{'nuova_email'});
-			@utente_canc[$i]->appendChild($newemail_tag); 
-			@email_canc[$i]->parentNode->removeChild(@email_canc[$i]);
-		}
+		if($num_canc){
+			my @utente_canc=$doc->findnodes("Ordini/Ordine[Utente='$email']");
+			my @email_canc=$doc->findnodes("Ordini/Ordine[Utente='$email']/Utente");
+			for(my $i=0;$i<$num_canc;$i++)
+			{
+				my $newemail_tag=$doc->createElement("Utente");
+				$newemail_tag->appendTextNode($values{'nuova_email'});
+				@utente_canc[$i]->appendChild($newemail_tag); 
+				@email_canc[$i]->parentNode->removeChild(@email_canc[$i]);
+			}
 			
-		open (XML,">","../data/Ordini.xml");
-		print XML $doc->toString();
-		close(XML);
+			open (XML,">","../data/Ordini.xml");
+			print XML $doc->toString();
+			close(XML);
+		}
 	}
 	print $cgi->redirect("check_session.cgi?gestione_account_mod");
 }
