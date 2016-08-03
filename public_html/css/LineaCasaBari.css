@@ -229,9 +229,10 @@ body
     background-repeat:no-repeat;
     background-size: contain;
     display: block;
-    width: 40%;
+    width: 150px;
     height: 5em;
     margin: auto;
+    
 }
 
 #header h1
