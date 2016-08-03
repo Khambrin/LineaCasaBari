@@ -12,7 +12,7 @@ function addForm() {// aggiungi indirizzo
 	else{document.getElementById("addvia").innerHTML = "";}
 	if(num1==false){ document.getElementById("addnum").innerHTML = "Inserisci un numero civico"; }
 	else{document.getElementById("addnum").innerHTML = "";}
-	if(cit1==false){ document.getElementById("addcit").innerHTML = "Inserisci una città"; }
+	if(cit1==false){ document.getElementById("addcit").innerHTML = "Inserisci una citt&agrave;"; }
 	else{document.getElementById("addcit").innerHTML = ""; }
 
 	var rgprov = /^([A-Za-z]){2,2}$/ ;

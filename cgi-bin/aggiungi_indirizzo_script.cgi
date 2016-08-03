@@ -45,7 +45,7 @@ else
 }
 if (!$values{"citta"})
 {
-	push @messaggi, "Devi completare il campo citta.";
+	push @messaggi, "Devi completare il campo citta&agrave;.";
 }
 else
 {
