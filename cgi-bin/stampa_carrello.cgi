@@ -82,10 +82,10 @@ else
 		$k++;
 		
 	}
-	my $x='<div><button class="button" type="submit" value="togli">Togli</button></div></form><form class="carrello-form" action="stampa-acquisto.cgi" method="post"><div><button class="button" type="submit" value="acquista">Acquista</button></div></form>';
+	my $x='<div class="side-element"><button class="button" type="submit" value="togli">Togli</button></div></form><form class="side-element" action="stampa-acquisto.cgi" method="post"><div class="side-element"><button class="button" type="submit" value="acquista">Acquista</button></div></form>';
 	$tot=$tot.$x;
 
-	my $lista_carrello='<div class="generic-container"><div class="form-container2"><h2>Il tuo carrello</h2><form class="carrello-form" action="carrello-edit.cgi" method="post">'."$tot".'</div></div>';
+	my $lista_carrello='<div class="generic-container"><div class="form-container2"><h2>Il tuo carrello</h2><form class="side-element" action="carrello-edit.cgi" method="post">'."$tot".'</div></div>';
 	
 	$vars={
 		'sessione' => "true",

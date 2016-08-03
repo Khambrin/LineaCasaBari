@@ -923,18 +923,12 @@ body
     padding-right: 1.5em;
     padding-left: 2em;
 }
+
 .carrello-prodottoTogliLabel{
     padding-right: 0.5em;
     padding-left: 3em;
 }
-.carrello-form{
-    display: inline;
-}
 
-.carrello-form button{
-    /*padding-left: 4em;
-    padding-right: 4em;*/
-}
 .carrello_left_col{
     display: inline-block;
     vertical-align: middle;
@@ -959,7 +953,6 @@ body
 	padding: 0.5em;
 	margin-left: 0.1em;
     margin-bottom: 1em;
-    
 }
 #acquisto-indirizzoLabel{
     padding-right: 1em;
