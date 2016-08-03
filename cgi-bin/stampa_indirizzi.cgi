@@ -54,7 +54,7 @@ for (my $index=1; $index <=$#indirizzo_via+1; $index++)
 	$tot=$tot.$x;
 	my $x='<li><label>'."CAP: @indirizzo_cap[$counter]</label></li>";
 	$tot=$tot.$x;	
-	my $x='<li><form action="remove_indirizzo.cgi" method="post"><div><button class="button" type="submit">Rimuovi</button><input type="hidden" name="indice_indirizzo" value="'."$index".'"/></div></form><form action="edit_indirizzo_form.cgi" method="post"><div><button class="button" type="submit">Modifica</button><input type="hidden" name="indice_indirizzo_edit" value="'."$index".'"/></div></form></li></ul></div>';
+	my $x='<li><form class="side-element" action="remove_indirizzo.cgi" method="post"><div class="side-element"><button class="button" type="submit">Rimuovi</button><input type="hidden" name="indice_indirizzo" value="'."$index".'"/></div></form><form class="side-element" action="edit_indirizzo_form.cgi" method="post"><div class="side-element"><button class="button" type="submit">Modifica</button><input type="hidden" name="indice_indirizzo_edit" value="'."$index".'"/></div></form></li></ul></div>';
 	$tot=$tot.$x;
 	$counter++;
 }
