@@ -111,7 +111,43 @@ if($messaggio eq "false")
 	$tot=$tot.$x;
 	
 	my @splitstring= (split (/_/, basename(@prodotto[$i])));
-	$x='<li><label>La categoria &egrave '."@splitstring".' scegli la nuova:</label><select name="Categoria"><option value="lista_nozze">Lista nozze</option><option value="porcellane">Porcellane</option><option value="paralumi">Paralumi</option><option value="pentole">Pentole</option><option value="per_la_tavola">Per la tavola</option><option value="tovaglie">Tovaglie</option></select></li>';
+	$x='<li><label>La categoria &egrave '."@splitstring".' scegli la nuova:</label><select name="Categoria"><option value="lista_nozze"';
+	$tot=$tot.$x;
+	if(@prodotto[$i] eq "lista_nozze") {
+		$x=' selected="selected"';
+		$tot=$tot.$x;
+	}
+	$x='>Lista nozze</option><option value="porcellane"';
+	$tot=$tot.$x;
+	if(@prodotto[$i] eq "porcellane") {
+		$x=' selected="selected"';
+		$tot=$tot.$x;
+	}
+	$x='>Porcellane</option><option value="paralumi"';
+	$tot=$tot.$x;
+	if(@prodotto[$i] eq "paralumi") {
+		$x=' selected="selected"';
+		$tot=$tot.$x;
+	}
+	$x='>Paralumi</option><option value="pentole"';
+	$tot=$tot.$x;
+	if(@prodotto[$i] eq "pentole") {
+		$x=' selected="selected"';
+		$tot=$tot.$x;
+	}
+	$x='>Pentole</option><option value="per_la_tavola"';
+	$tot=$tot.$x;
+	if(@prodotto[$i] eq "per_la_tavola") {
+		$x=' selected="selected"';
+		$tot=$tot.$x;
+	}
+	$x='>Per la tavola</option><option value="tovaglie"';
+	$tot=$tot.$x;
+	if(@prodotto[$i] eq "tovaglie") {
+		$x=' selected="selected"';
+		$tot=$tot.$x;
+	}
+	$x='>Tovaglie</option></select></li>';
 	$tot=$tot.$x;
 	$i++;
 	
