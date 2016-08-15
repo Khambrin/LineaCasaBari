@@ -48,9 +48,21 @@ if (-e "../data/Annunci.xml")
 		foreach my $i (@annuncio_codice)
 		{
 			my $annuncio_titolo=$doc->findnodes("Annunci/Annuncio[Codice='$i']/Titolo/text()");
-			my $x='<li>'."$annuncio_titolo".'<form action="remove_annuncio.cgi" method="post"><div><button class="button" type="submit" value="Rimuovi">Rimuovi</button><input type="hidden" name="codice" value="'."$i".'"/></div></form>
-	<form action="modifica_annunci_script.cgi" method="post"><div><button class="button" type="submit" value="Modifica">Modifica</button><input type="hidden" name="codice_edit" value="'."$i".'"/></div></form>
-	</li>';
+			my $x='<li>'
+                ."<div>$annuncio_titolo</div>".
+                '<form class="side-element" action="remove_annuncio.cgi" method="post">
+                    <div class="side-element">
+                        <button class="button" type="submit" value="Rimuovi">Rimuovi</button>
+                        <input type="hidden" name="codice" value="'."$i".'"/>
+                    </div>
+                </form>
+                <form class="side-element" action="modifica_annunci_script.cgi" method="post">
+                    <div class="side-element">
+                        <button class="button" type="submit" value="Modifica">Modifica</button>
+                        <input type="hidden" name="codice_edit" value="'."$i".'"/>
+                    </div>
+                </form>
+                </li>';
 			$tot=$tot.$x;
 		}
 		 $lista_annunci='<div class="form-container2"><h2>Modifica annunci</h2><ul class="form-Block">'."$tot</ul></div>";

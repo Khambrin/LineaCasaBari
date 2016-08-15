@@ -102,90 +102,124 @@
             </div><div id="right-col">
                 <div id="sub_menu">
                 [% IF pagina == 'aggiungi' %]
-					<div class="sub_menu_block_active"><span class="sub_menu_text_active">Aggiungi annuncio</span></div><a href="modifica_annunci.cgi?edit"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica annuncio</span></div></a>
+					<div class="sub_menu_block_active">
+                        <span class="sub_menu_text_active">Aggiungi annuncio</span>
+                    </div><a href="modifica_annunci.cgi?edit"><span class="sub_menu_block">
+                            <span class="sub_menu_text">Rimuovi o modifica annuncio</span>
+                        </span></a>
                 [% ELSIF pagina == 'modifica_annunci' %]
-					<a href="gestione_annunci_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi annuncio</span></div></a><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica annuncio</span></div>
+					<a href="gestione_annunci_script.cgi?aggiungi">
+                        <span class="sub_menu_block">
+                            <span class="sub_menu_text">Aggiungi annuncio</span>
+                        </span></a><div class="sub_menu_block_active">
+                        <span class="sub_menu_text_active">Rimuovi o modifica annuncio</span></div>
 				[% ELSIF pagina == 'edit' %]
-					<a href="gestione_annunci_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi annuncio</span></div></a><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica annuncio</span></div>[% END %]
-                
+					<a href="gestione_annunci_script.cgi?aggiungi">
+                        <span class="sub_menu_block">
+                            <span class="sub_menu_text">Aggiungi annuncio</span>
+                        </span></a><div class="sub_menu_block_active">
+                        <span class="sub_menu_text_active">Rimuovi o modifica annuncio</span></div>
+                [% END %]
                 </div>
                 [% IF pagina == 'aggiungi' %]
-		<script type="text/javascript" src="../js/add_announce.js"></script>
-		<div class="messaggio-error"> <p id="newtitolo"></p> <p id="newtesto"></p>  </div>
-                <div class="messaggio-error">[% messaggio %]</div>
-					[% IF messaggio_confirm != 0 %]<div class="messaggio-confirm">[% messaggio_confirm %]</div> [% END %]
-                <div class="form-container2">
-					<h2>Aggiungi un annuncio</h2>
-                <form id="announceform" method="post" action="aggiungi_annuncio_form.cgi" onsubmit="return newannForm()" enctype="multipart/form-data">
-                    <ul class="form-Block">
-                        <li>
-                            <label>* Titolo:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="titolo" [% titolo_value %]/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label id="annunci-testoLabel">* Testo:</label>
-                        </li>
-                        <li>
-                            <textarea class="gestione_textarea" name="testo">[% testo_value %]</textarea>
-                        </li>
-                        <li>
-                            <div class="gestione-file_label">
-                                <label>Inserisci immagine:</label>
-                                <input type="file" name="immagine"/>
-                            </div>
-                            
-                        </li>
-                        <li>I campi con * sono obbligatori</li>
-                    </ul>
-                    <div>
-                        <button class="button" type="submit">Aggiungi annuncio</button>
+                    <script type="text/javascript" src="../js/add_announce.js"></script>
+                    <div class="messaggio-error">
+                        <p id="newtitolo"></p>
+                        <p id="newtesto"></p>
                     </div>
-					
-					<div>[% hidden %]</div>
-                </form>
-                </div>
+                    <div class="messaggio-error">[% messaggio %]</div>
+                    [% IF messaggio_confirm != 0 %]
+                    <div class="messaggio-confirm">[% messaggio_confirm %]</div>
+                    [% END %]
+                    <div class="form-container2">
+                        <h2>Aggiungi un annuncio</h2>
+                        <form id="announceform" method="post" action="aggiungi_annuncio_form.cgi" onsubmit="return newannForm()" enctype="multipart/form-data">
+                            <ul class="form-Block">
+                                <li>
+                                    <label>* Titolo:</label>
+                                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="titolo" [% titolo_value %]/></div><div class="inputRight"></div>
+                                </li>
+                                <li>
+                                    <label id="annunci-testoLabel">* Testo:</label>
+                                </li>
+                                <li>
+                                    <textarea class="gestione_textarea" name="testo">[% testo_value %]</textarea>
+                                </li>
+                                <li>
+                                    <div class="gestione-file_label">
+                                        <label>Inserisci immagine:</label>
+                                        <input type="file" name="immagine"/>
+                                    </div>
+                                </li>
+                                <li>I campi con * sono obbligatori</li>
+                            </ul>
+                            <div>
+                                <button class="button" type="submit">Aggiungi annuncio</button>
+                            </div>
+                            <div>[% hidden %]</div>
+                        </form>
+                    </div>
 				[% ELSIF pagina == 'edit' %]
 				<script type="text/javascript" src="../js/edit_announce.js"></script>
-		<div class="messaggio-error"> <p id="edittitolo"></p> <p id="edittesto"></p>  </div>
-				<div class="messaggio-confirm">[% IF messaggio_vuota != 'false' %][% messaggio_vuota %] [% END %] [% IF messaggio_confirm != 0 %][% messaggio_confirm %][% END %]</div> 
+                <div class="messaggio-error">
+                    <p id="edittitolo"></p>
+                    <p id="edittesto"></p>
+                </div>
+				<div class="messaggio-confirm">
+                    [% IF messaggio_vuota != 'false' %]
+                        [% messaggio_vuota %]
+                    [% END %]
+                    [% IF messaggio_confirm != 0 %]
+                        [% messaggio_confirm %]
+                    [% END %]
+                </div>
 				<div class="form-container2">
 					<h2>Rimuovi o Modifica un annuncio</h2>
-                <form id="editannounceform" method="post" action="edit_annuncio.cgi" onsubmit="return editannForm()" enctype="multipart/form-data">
-                    <ul class="form-Block">
-                        <li>
-                            <label class="annunci-titoloLabel">Titolo:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vtitolo %]</div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label class="annunci-testoLabel">Testo:</label>
-                        </li>
-                        <li>
-                            [% vcontenuto %]
-                        </li>
-                        <li>
-                            <div id="gestione-file_label">
-                                <label class="annunci-immagineLabel">Inserisci immagine:</label>
-                            </div>
-                            <input type="file" name="immagine"/>
-                        </li>
-						<div>[% oldcodice %]</div>
-						<li>
-							<div>
-                        		<button class="button" type="submit">Modifica annuncio</button>
-							</div>
-						</li>
-                    </ul>
-					<div class="messaggio-error">[% error %]</div>
-					<div>[% hidden %]</div>
-					<div class="messaggio-error">[% messaggio %]</div>
-                </form>
+                    <form id="editannounceform" method="post" action="edit_annuncio.cgi" onsubmit="return editannForm()" enctype="multipart/form-data">
+                        <ul class="form-Block">
+                            <li>
+                                <label class="annunci-titoloLabel">Titolo:</label>
+                                <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vtitolo %]</div><div class="inputRight"></div>
+                            </li>
+                            <li>
+                                <label class="annunci-testoLabel">Testo:</label>
+                            </li>
+                            <li>
+                                [% vcontenuto %]
+                            </li>
+                            <li>
+                                <div id="gestione-file_label">
+                                    <label class="annunci-immagineLabel">Inserisci immagine:</label>
+                                </div>
+                                <input type="file" name="immagine"/>
+                            </li>
+                            <div>[% oldcodice %]</div>
+                            <li>
+                                <div>
+                                    <button class="button" type="submit">Modifica annuncio</button>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="messaggio-error">[% error %]</div>
+                        <div>[% hidden %]</div>
+                        <div class="messaggio-error">[% messaggio %]</div>
+                    </form>
+                </div>
 				[% ELSE %]
-				[% IF messaggio_confirm != 0 %]<div class="messaggio-confirm">[% IF messaggio_vuota != 'false' %][% messaggio_vuota %] [% END %][% messaggio_confirm %]</div> [% END %]
-					[% IF lista_annunci !='false' %]<span>[% lista_annunci %]</span>[% END %]				
-				[% END %]
-            </div>        
+                    [% IF messaggio_confirm != 0 %]
+                        <div class="messaggio-confirm">
+                            [% IF messaggio_vuota != 'false' %]
+                                [% messaggio_vuota %]
+                            [% END %]
+                            [% messaggio_confirm %]
+                        </div>
+                    [% END %]
+                    [% IF lista_annunci !='false' %]
+                        [% lista_annunci %]
+                    [% END %]				
+                [% END %]
+            </div>
         </div>
-    </div>
 	</div>
 
     <div id="footer">

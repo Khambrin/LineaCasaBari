@@ -12,6 +12,7 @@ controllare che in tutti i form in caso di errore restino i campi inseriti in mo
 qundo aggiungo a carrello ritorna il messaggio vai su carrello per acquistare . "carrello" deve essere un link che va a carrello passando per check session
 modifica prodotto non è corretto il cgi, in caso di errori nel form vengono comunque salvate le modifiche errate
 CSS modifica annuncio dopo errore box testo troppo grande
+Aggiungere indicazione dimensione massima immagini, nei form di inserimento immagini (lorenzo).
 
 Domande prof:
 
