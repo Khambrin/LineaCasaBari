@@ -109,13 +109,13 @@ if($messaggio eq "false")
 	$i++;
 	
 	$x='<li>
-        <label>Descrizione:</label><textarea rows="" cols="" name="Descrizione">'."@prodotto[$i]".'</textarea>
+        <label>Descrizione:</label><textarea id="gestione-textarea" rows="" cols="" name="Descrizione">'."@prodotto[$i]".'</textarea>
     </li>';
 	$i++;
 	$tot=$tot.$x;
 	
 	my @splitstring= (split (/_/, basename(@prodotto[$i])));
-	$x='<li><label>La categoria &egrave; '."@splitstring".' scegli la nuova:</label><select name="Categoria"><option value="lista_nozze"';
+	$x='<li><label>La categoria &egrave;: '."@splitstring".'. Scegli la nuova:</label><select name="Categoria"><option value="lista_nozze"';
 	$tot=$tot.$x;
 	if(@prodotto[$i] eq "lista_nozze") {
 		$x=' selected="selected"';
@@ -173,7 +173,7 @@ if($messaggio eq "false")
 	my $read_directory="../images/prodotti";
 	my $immagine="$read_directory/$filename";
 	$x='<li>
-        <label>Inserisci una nuova immagine:</label><img src="'."$immagine".'" alt="foto prodotto" height="100" width="100" /><input type="file" name="Immagine" />
+        <label>Inserisci una nuova immagine:</label><img id="gestione-immagine_prodotto" src="'."$immagine".'" alt="foto prodotto" /><input type="file" name="Immagine" />
     </li>';
 	$tot=$tot.$x;
 	$i++;
