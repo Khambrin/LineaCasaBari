@@ -9,10 +9,11 @@ Aggiungere controllo dimensione upload immagine (gaggi)
 Dimensioni immagini tag <img> vanno messe dentro css (navid)
 controllare javascript[manca modifica prodotto] (alice)
 controllare che in tutti i form in caso di errore restino i campi inseriti in modo corretto[manca modifica prodotto] (alice)
-qundo aggiungo a carrello ritorna il messaggio vai su carrello per acquistare . "carrello" deve essere un link che va a carrello passando per check session
+quando aggiungo a carrello ritorna il messaggio vai su carrello per acquistare . "carrello" deve essere un link che va a carrello passando per check session
 modifica prodotto non è corretto il cgi, in caso di errori nel form vengono comunque salvate le modifiche errate
 CSS modifica annuncio dopo errore box testo troppo grande
 Aggiungere indicazione dimensione massima immagini, nei form di inserimento immagini (lorenzo).
+Aggiungere fieldset ai form grandi, in modo da separare la logica dei form.
 
 Domande prof:
 

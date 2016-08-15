@@ -28,11 +28,26 @@ my $file='togli_utenti_temp.html';
 my $tot;
 foreach my $i (@users)
 {
-	my $x='<li><div><label>'."$i".'</label><form action="remove_user_form.cgi" method="post"><button class="button-utente" type="submit">Rimuovi</button><input type="hidden" name="emailuser" value="'."$i".'"/></form></div></li>';
+	my $x='<li>
+            <label>'."$i".'</label>
+            <form class="side-element" action="remove_user_form.cgi" method="post">
+                <div class="side-element">
+                    <button class="button-utente" type="submit">Rimuovi</button>
+                    <input type="hidden" name="emailuser" value="'."$i".'"/>
+                </div>
+            </form>
+        </li>';
 	$tot=$tot.$x;
 }
 
-my $lista_utenti='<div class="generic-container"><div class="form-container2"><h2>Rimuovi utente</h2><ul class="form-Block" >'."$tot"."</ul></div></div>";
+my $lista_utenti='<div class="generic-container">
+            <div class="form-container2">
+                <h2>Rimuovi utente</h2>
+                <ul class="form-Block" >
+                    '."$tot"."
+                </ul>
+            </div>
+        </div>";
 
 my $vars={
 		'sessione' => "true",
