@@ -109,7 +109,7 @@ if($messaggio eq "false")
 	$i++;
 	
 	$x='<li>
-        <label>Descrizione:</label><textarea id="gestione-textarea" rows="" cols="" name="Descrizione">'."@prodotto[$i]".'</textarea>
+        <label>Descrizione:</label><textarea class="gestione_textarea" rows="" cols="" name="Descrizione">'."@prodotto[$i]".'</textarea>
     </li>';
 	$i++;
 	$tot=$tot.$x;

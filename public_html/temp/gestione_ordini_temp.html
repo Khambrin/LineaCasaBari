@@ -101,16 +101,19 @@
 					<form method="post" action="../cgi-bin/ricerca_ordini.cgi">
 						<ul class="form-container">
 							<li>
-								<div id="ordini-cerca"><label>Cerca un ordine:</label>
-								<div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="codice" type="text"/></div><div class="inputRight"></div>
+								<div id="ordini-cerca">
+                                    <label>Cerca un ordine:</label>
+								    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="codice" type="text"/></div><div class="inputRight"></div>
 								</div>
 							</li
 						</ul>
 						<div>
-								<button class="button" type="submit">Cerca</button>
+				            <button class="button" type="submit">Cerca</button>
 						</div>
 					</form>
-					[% IF messaggio_ordini != 'false' %]<div class="messaggio-error">[% messaggio_ordini %]</div>[% END %]
+					[% IF messaggio_ordini != 'false' %]
+                        <div class="messaggio-error">[% messaggio_ordini %]</div>
+                    [% END %]
 					[% lista_ordini %]
 				</div>
             </div>        

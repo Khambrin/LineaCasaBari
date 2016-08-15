@@ -143,6 +143,6 @@ open (XML,">","../data/Carrelli.xml");
 print XML $doc->toString();
 close(XML);
 
-my $messaggio="Prodotto aggiunto correttamente al carrello";
+my $messaggio='Prodotto aggiunto correttamente al carrello. Per effettuare l'."'".'acquisto procedi al <a href="check_session&#63;carrello">Carrello</a>.';
 print $cgi->redirect('prodotto.cgi'."$query_string".'&amp;Messaggio='."$messaggio");
 
