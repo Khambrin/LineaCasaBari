@@ -99,19 +99,23 @@ if($messaggio eq "false")
 	}
 	
 	
-	my $tot='<form action="edit_prodotto.cgi" method="post" enctype="multipart/form-data">';
+	my $tot;
 	my $i=0;
 	
-	my$x='<li><label>Nome:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Nome" type="text" value='."@prodotto[$i]".' /></div><div class="inputRight"></div></li>';
+	my$x='<li>
+        <label>Nome:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Nome" type="text" value="'."@prodotto[$i]".'" /></div><div class="inputRight"></div>
+    </li>';
 	$tot=$tot.$x;
 	$i++;
 	
-	$x='<li><label>Descrizione:</label><textarea rows="50" cols="50" name="Descrizione">'."@prodotto[$i]".'</textarea></li>';
+	$x='<li>
+        <label>Descrizione:</label><textarea rows="" cols="" name="Descrizione">'."@prodotto[$i]".'</textarea>
+    </li>';
 	$i++;
 	$tot=$tot.$x;
 	
 	my @splitstring= (split (/_/, basename(@prodotto[$i])));
-	$x='<li><label>La categoria &egrave '."@splitstring".' scegli la nuova:</label><select name="Categoria"><option value="lista_nozze"';
+	$x='<li><label>La categoria &egrave; '."@splitstring".' scegli la nuova:</label><select name="Categoria"><option value="lista_nozze"';
 	$tot=$tot.$x;
 	if(@prodotto[$i] eq "lista_nozze") {
 		$x=' selected="selected"';
@@ -151,11 +155,15 @@ if($messaggio eq "false")
 	$tot=$tot.$x;
 	$i++;
 	
-	$x='<li><label>Prezzo:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Prezzo" type="text" value='."@prodotto[$i]".' /></div><div class="inputRight"></div>&#8364;</li>';
+	$x='<li>
+        <label>Prezzo:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Prezzo" type="text" value="'."@prodotto[$i]".'" /></div><div class="inputRight"></div>&#8364;
+    </li>';
 	$tot=$tot.$x;
 	$i++;
 	
-	$x='<li><label>Data aggiunta:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Data" type="text" value='."@prodotto[$i]".' /></div><div class="inputRight"></div></li>';
+	$x='<li>
+        <label>Data aggiunta:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Data" type="text" value="'."@prodotto[$i]".'" /></div><div class="inputRight"></div>
+    </li>';
 	$tot=$tot.$x;
 	$i++;	
 	
@@ -164,31 +172,55 @@ if($messaggio eq "false")
 	my $filename=basename $filespec;
 	my $read_directory="../images/prodotti";
 	my $immagine="$read_directory/$filename";
-	$x='<li><label>Inserisci una nuova immagine:</label><img src='."$immagine".' alt="foto prodotto" height="100" width="100"><input type="file" name="Immagine"></li>';
+	$x='<li>
+        <label>Inserisci una nuova immagine:</label><img src="'."$immagine".'" alt="foto prodotto" height="100" width="100" /><input type="file" name="Immagine" />
+    </li>';
 	$tot=$tot.$x;
 	$i++;
 		
-	$x='<li><label>Tag:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Tag1" type="text" value='."@prodotto[$i]".' /></div><div class="inputRight"></div></li>';
+	$x='<li>
+        <label>Tag:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Tag1" type="text" value="'."@prodotto[$i]".'" /></div><div class="inputRight"></div>
+    </li>';
 	$i++;
 	$tot=$tot.$x;
 	
-	$x='<li><label>Tag:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Tag2" type="text" value='."@prodotto[$i]".' /></div><div class="inputRight"></div></li>';
+	$x='<li>
+        <label>Tag:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Tag2" type="text" value="'."@prodotto[$i]".'" /></div><div class="inputRight"></div>
+    </li>';
 	$i++;
 	$tot=$tot.$x;
 	
-	$x='<li><label>Tag:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Tag3" type="text" value='."@prodotto[$i]".' /></div><div class="inputRight"></div></li>';
+	$x='<li>
+        <label>Tag:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Tag3" type="text" value="'."@prodotto[$i]".'" /></div><div class="inputRight"></div>
+    </li>';
 	$i++;
 	$tot=$tot.$x;
 	
-	$x='<li><label>Tag:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Tag4" type="text" value='."@prodotto[$i]".' /></div><div class="inputRight"></div></li>';
+	$x='<li>
+            <label>Tag:</label>
+            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Tag4" type="text" value="'."@prodotto[$i]".'" /></div><div class="inputRight"></div>
+        </li>';
 	$i++;
 	$tot=$tot.$x;
 	
-	$x='<li><div><button class="button" type="submit">Modifica</button><input type="hidden" name="old_cod" value="'."$cod".'"/><input type="hidden" name="old_image" value="'."$filename".'"/></form><form action="togli_prodotto.cgi" method="post"><input type="hidden" name="prodotto" value="'."$cod".'" /><button class="button" type="submit">togli prodotto</button></form></div></li>';
-	$i++;
-	$tot=$tot.$x;
-	
-	my $lista_prodotto='<div class="form-container2"><ul class="form-Block">'."$tot".'</ul></div>';
+	my $lista_prodotto='<div class="form-container2">
+            <form class="side-element" action="edit_prodotto.cgi" method="post" enctype="multipart/form-data">
+                <ul class="form-Block">'
+                ."$tot".
+                '</ul>
+                <div class="side-element">
+                    <button class="button" type="submit">Modifica</button>
+                    <input type="hidden" name="old_cod" value="'."$cod".'"/>
+                    <input type="hidden" name="old_image" value="'."$filename".'"/>
+                </div>
+            </form>
+            <form class="side-element" action="togli_prodotto.cgi" method="post">
+                <div class="side-element">
+                    <input type="hidden" name="prodotto" value="'."$cod".'" />
+                    <button class="button" type="submit">Rimuovi</button>
+                </div>
+            </form>
+        </div>';
 	$vars={
 		'sessione' => "true",
 		'email' => $email,

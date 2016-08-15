@@ -101,96 +101,102 @@
                 </ul>
             </div><div id="right-col">
                 <div id="sub_menu">
-                    [% IF pagina == 'aggiungi' %]<div class="sub_menu_block_active"><span class="sub_menu_text_active">Aggiungi prodotto</span></div><a href="gestione_prodotti_script.cgi?rimuovi_modifica"><div class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica prodotto</span></div></a>
-                    [% ELSIF pagina == 'rimuovi_modifica' %]<a href="gestione_prodotti_script.cgi?aggiungi"><div class="sub_menu_block"><span class="sub_menu_text">Aggiungi prodotto</span></div></a><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica prodotto</span></div>[% END %]
+                    [% IF pagina == 'aggiungi' %]
+                        <div class="sub_menu_block_active"><span class="sub_menu_text_active">Aggiungi prodotto</span></div><a href="gestione_prodotti_script.cgi?rimuovi_modifica"><span class="sub_menu_block"><span class="sub_menu_text">Rimuovi o modifica prodotto</span></span></a>
+                    [% ELSIF pagina == 'rimuovi_modifica' %]
+                        <a href="gestione_prodotti_script.cgi?aggiungi"><span class="sub_menu_block"><span class="sub_menu_text">Aggiungi prodotto</span></span></a><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica prodotto</span></div>
+                    [% END %]
                 </div>
             	[% IF pagina == 'aggiungi' %]
-		<script type="text/javascript" src="../js/add_product.js"></script>
-		<div class="messaggio-error"><p id="formatoprezzo"></p>[% messaggio %]</div>
-		<div class="messaggio-confirm">[% messaggio_confirm %]</div>
-            	<div class="form-container2">
-					<form id="productform" method="post" action="aggiungi_prodotto_form.cgi" onsubmit="return prForm()" enctype="multipart/form-data">
-                    <ul class="form-Block">
-                        <li>
-                            <label>* Nome:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="nome" [% nome_value %]/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label>* Prezzo:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="prezzo" [% pezzo_value %]/></div><div class="inputRight"></div>
-			<span> &#8364; </span>                        
-			</li>
-                        <li>
-                            <label>* Categoria:</label>
-                            <select name="categoria">
-                                <option value="lista_nozze">Lista nozze</option>
-                                <option value="porcellane">Porcellane</option>
-                                <option value="paralumi">Paralumi</option>
-                                <option value="pentole">Pentole</option>
-                                <option value="per_la_tavola">Per la tavola</option>
-                                <option value="tovaglie">Tovaglie</option>
-                            </select>
-                        </li>
-                        <li>
-                            <label>* Descrizione:</label>
-                        </li>
-                        <li>
-                            <textarea class="gestione_textarea" name="descrizione" >[% descrizione_value %]</textarea>
-                        </li>
-                        <li>
-                            <label>Tag 1:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag1"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label>Tag 2:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag2"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label>Tag 3:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag3"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
-                            <label>Tag 4:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag4"/></div><div class="inputRight"></div>
-                        </li>
-                        <li>
+                    <script type="text/javascript" src="../js/add_product.js"></script>
+                    <div class="messaggio-error"><p id="formatoprezzo"></p>[% messaggio %]</div>
+                    <div class="messaggio-confirm">[% messaggio_confirm %]</div>
+            	    <div class="form-container2">
+                        <form id="productform" method="post" action="aggiungi_prodotto_form.cgi" onsubmit="return prForm()" enctype="multipart/form-data">
+                        <form id="productform" method="post" action="aggiungi_prodotto_form.cgi" onsubmit="return prForm()" enctype="multipart/form-data">
+                            <ul class="form-Block">
+                                <li>
+                                    <label>* Nome:</label>
+                                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="nome" [% nome_value %]/></div><div class="inputRight"></div>
+                                </li>
+                                <li>
+                                    <label>* Prezzo:</label>
+                                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="prezzo" [% pezzo_value %]/></div><div class="inputRight"></div>
+                                    <span>&#8364;</span>
+                                </li>
+                                <li>
+                                    <label>* Categoria:</label>
+                                    <select name="categoria">
+                                        <option value="lista_nozze">Lista nozze</option>
+                                        <option value="porcellane">Porcellane</option>
+                                        <option value="paralumi">Paralumi</option>
+                                        <option value="pentole">Pentole</option>
+                                        <option value="per_la_tavola">Per la tavola</option>
+                                        <option value="tovaglie">Tovaglie</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <label>* Descrizione:</label>
+                                </li>
+                                <li>
+                                    <textarea class="gestione_textarea" name="descrizione" >
+                                        [% descrizione_value %]
+                                    </textarea>
+                                </li>
+                                <li>
+                                    <label>Tag 1:</label>
+                                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag1"/></div><div class="inputRight"></div>
+                                </li>
+                                <li>
+                                    <label>Tag 2:</label>
+                                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag2"/></div><div class="inputRight"></div>
+                                </li>
+                                <li>
+                                    <label>Tag 3:</label>
+                                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag3"/></div><div class="inputRight"></div>
+                                </li>
+                                <li>
+                                    <label>Tag 4:</label>
+                                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag4"/></div><div class="inputRight"></div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <label>Inserisci immagine:</label>
+                                        <input type="file" name="immagine"/>
+                                    </div>
+                                </li>
+                                <li>I campi con * sono obbligatori</li>
+                            </ul>
                             <div>
-                                <label>Inserisci immagine:</label>
-                                <input type="file" name="immagine"/>
+                                <button class="button" type="submit">Aggiungi prodotto</button>
                             </div>
-                        </li>
-                        <li>I campi con * sono obbligatori</li>
-                    </ul>
-                    <div>
-                        <button class="button" type="submit">Aggiungi prodotto</button>
+                            <div>[% hidden %]</div>
+                        </form>
                     </div>
-					<div>[% hidden %]</div>
-
-                </form>
-				[% ELSIF pagina == 'rimuovi_modifica' %]
-				[% IF messaggio_confirm!= 'false' %]<div class="messaggio-confirm">[% messaggio_confirm%]</div>[% END %]
-				[% IF messaggio_error!= 'false' %]<div class="messaggio-error">[% messaggio_error %]</div>[% END %]
-                    <form method="post" action="ricerca_prodotto.cgi">
-						<ul class="form-Block">
-							<li>
-								<label>Cerca un prodotto:</label>
-								<div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="codice" type="text"/></div><div class="inputRight"></div>
-                            </li>
-						</ul>
-						<div>
-							<button class="button" type="submit">Cerca</button>
-						</div>     
-                    </form>
-                    [% lista_prodotti %]
-		   [% END %]
-
-			
-            </div>  
-      
+                    [% ELSIF pagina == 'rimuovi_modifica' %]
+                        [% IF messaggio_confirm!= 'false' %]
+                            <div class="messaggio-confirm">
+                                [% messaggio_confirm%]
+                            </div>
+                        [% END %]
+                        [% IF messaggio_error!= 'false' %]
+                            <div class="messaggio-error">
+                                [% messaggio_error %]
+                            </div>
+                        [% END %]
+                        <form method="post" action="ricerca_prodotto.cgi">
+                            <div class="form-Block">
+                                <label>Cerca un prodotto:</label>
+                                <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="codice" type="text"/></div><div class="inputRight"></div>
+                            </div>
+                            <div>
+                                <button class="button" type="submit">Cerca</button>
+                            </div>
+                        </form>
+                        [% lista_prodotti %]
+                  [% END %]
+            </div>
         </div>
-
-	
-    </div>
     </div>
     <div id="footer">
         <a id="torna-su-link" href="#header">
