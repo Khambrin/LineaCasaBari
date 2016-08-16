@@ -62,7 +62,6 @@ else
 my $vars;
 if($messaggio eq "false")
 {
-	my $tot;
 	push my @ordine, $doc->findnodes("Ordini/Ordine[Codice='$cod']/Codice/text()");
 	push @ordine, $doc->findnodes("Ordini/Ordine[Codice='$cod']/Utente/text()");
 	push @ordine, $doc->findnodes("Ordini/Ordine[Codice='$cod']/Data/text()");
@@ -75,61 +74,54 @@ if($messaggio eq "false")
 	}
 
 	my @label = ('Codice','Utente','Data','Metodo di pagamento','Indirizzo' );
-	for(my $x=0; $x<$num_prodotto;$x++)
-	{
-		push @label, "Prodotto";
-	}
-
 	my $y=0;
-	for(my $i=0; $i<5;$i++)
+    my $block1; 
+    my $block2;
+    my $n_label=scalar @label;
+	for(my $i=0; $i<$n_label;$i++)
 	{
 		my $x='<li class="ordini-block">'.
-                '<form>'.
-                    '<label class="gestione-labels">'
-                    ."@label[$i]: @ordine[$y]</label>
-                </form>
+                '<label class="gestione-labels">'
+                ."@label[$i]: @ordine[$y]</label>
             </li>";
 		$y++;
-		$tot=$tot.$x;
+		$block1=$block1.$x;
 	}
 	my $counter=1;
-	$tot=$tot.'<form action="elimina_prodotti_ordini.cgi" method="post">';
 	for(my $i=0; $i<$num_prodotto;$i++)
 	{
-		my $x='<li class="ordini-block">'
-                .'<div>
+		my $x='<div class="ordini-block">
                     <label class="gestione-labels">'
-                    ."@label[$y] $counter: @ordine[$y]</label>"
+                    ."Prodotto $counter: @ordine[$y]</label>"
                     .'<input type="checkbox" name="'
                     ."$counter"
                     .'" value="on"/>
-                </div>
-            </li>';
+                </div>';
 		$y++;
 		$counter++;
-		$tot=$tot.$x;
+		$block2=$block2.$x;
 	}
 
 	$y=0;
-	$tot=$tot.'<li class="ordini-block">
-                    <div>
-                        <button class="button" type="submit">elimina selezionati</button>
-                        <input type="hidden" name="ordine" value="'
-                        ."$cod".'"/>
+	$block2=$block2.'<div class="side-element">
+                    <button id="prodotto-eliminaSelezionati" class="button" type="submit">Elimina prodotti selezionati</button>
+                    <input type="hidden" name="ordine" value="'
+                    ."$cod".'"/>
+                </div>';
+	my $lista_ordine='<div class="form-container2">
+                        <ul class="form-Block">'
+                            ."$block1
+                        </ul>"
+                        .'<form class="side-element" action="elimina_prodotti_ordini.cgi" method="post">'
+                                ."$block2"
+                        .'</form>
+                        <form class="side-element" action="togli_ordine.cgi" method="post">
+                            <div class="side-element">
+                                <input type="hidden" name="ordine" value="'."$cod".'"/>
+                                <button class="button" type="submit">Rimuovi ordine</button>
+                            </div>
                         </form>
-                        <form action="togli_ordine.cgi" method="post">
-                            <input type="hidden" name="ordine" value="'."$cod".'"/>
-                            <button class="button" type="submit">togli ordine</button>
-                        </form>
-                    </div>
-                </li>';
-	my $lista_ordine='<div class=generic-container">
-                        <div class="form-container2">
-                            <ul class="form-Block">'
-                                ."$tot"
-                            ."</ul>
-                        </div>
-                    </div>";
+                    </div>';
 	$vars={
 		'sessione' => "true",
 		'email' => $email,

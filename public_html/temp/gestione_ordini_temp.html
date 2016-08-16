@@ -99,23 +99,22 @@
             </div><div id="right-col">
 				<div class="generic-container">
 					<form method="post" action="../cgi-bin/ricerca_ordini.cgi">
-						<ul class="form-container">
-							<li>
-								<div id="ordini-cerca">
-                                    <label>Cerca un ordine:</label>
-								    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="codice" type="text"/></div><div class="inputRight"></div>
-								</div>
-							</li
-						</ul>
+						<div class="form-container">
+                            <div id="ordini-cerca">
+                                <label>Cerca un ordine:</label>
+                                <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="codice" type="text"/></div><div class="inputRight"></div>
+                            </div>
+						</div>
 						<div>
 				            <button class="button" type="submit">Cerca</button>
 						</div>
 					</form>
+                </div>
 					[% IF messaggio_ordini != 'false' %]
                         <div class="messaggio-error">[% messaggio_ordini %]</div>
                     [% END %]
 					[% lista_ordini %]
-				</div>
+				
             </div>        
         </div>
     </div>

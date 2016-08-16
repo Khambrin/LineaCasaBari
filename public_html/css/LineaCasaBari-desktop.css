@@ -727,6 +727,10 @@
         margin-bottom: 1em;
     }
     
+    #prodotto-eliminaSelezionati{
+        width: 28%
+    }
+    
     #ordini-cerca{
        padding-bottom: 1em;    
     }

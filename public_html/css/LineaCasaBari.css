@@ -476,6 +476,7 @@ body
     display: block;
     text-align: center;
     height: auto;
+    padding-bottom: 1em;
 }
 
 .form-container2 p{
