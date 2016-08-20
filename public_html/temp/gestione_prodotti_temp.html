@@ -109,7 +109,7 @@
                 </div>
             	[% IF pagina == 'aggiungi' %]
                     <script type="text/javascript" src="../js/add_product.js"></script>
-                    <div class="messaggio-error"><p id="formatoprezzo"></p>[% messaggio %]</div>
+                    <div class="messaggio-error"><p id="newnome"></p><p id="newdescrizione"></p><p id="formatoprezzo"></p>[% messaggio %]</div>
                     <div class="messaggio-confirm">[% messaggio_confirm %]</div>
             	    <div class="form-container2">
                         <form id="productform" method="post" action="aggiungi_prodotto_form.cgi" onsubmit="return prForm()" enctype="multipart/form-data">
