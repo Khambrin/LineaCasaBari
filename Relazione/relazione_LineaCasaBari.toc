@@ -1,8 +1,15 @@
 \select@language {italian}
 \select@language {italian}
-\contentsline {section}{\numberline {1}Introduzione}{2}{section.1}
-\contentsline {section}{\numberline {2}Analisi dei requisiti}{2}{section.2}
-\contentsline {section}{\numberline {3}Dati e informazioni}{2}{section.3}
-\contentsline {section}{\numberline {4}Applicazioni e servizi}{2}{section.4}
-\contentsline {section}{\numberline {5}Accessibilit\IeC {\`a} e stile}{2}{section.5}
-\contentsline {section}{\numberline {6}Strumenti e manutenzione}{2}{section.6}
+\contentsline {section}{\numberline {1}Riferimenti informativi}{2}{section.1}
+\contentsline {section}{\numberline {2}Introduzione}{2}{section.2}
+\contentsline {section}{\numberline {3}Analisi dei requisiti}{2}{section.3}
+\contentsline {subsection}{\numberline {3.1}Utenti esterni}{2}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Utente non registrato}{2}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Utente registrato}{2}{subsubsection.3.1.2}
+\contentsline {subsection}{\numberline {3.2}Utenti interni}{2}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Amministratore}{2}{subsubsection.3.2.1}
+\contentsline {section}{\numberline {4}Dati e informazioni}{3}{section.4}
+\contentsline {subsection}{\numberline {4.1}Contenuti}{3}{subsection.4.1}
+\contentsline {section}{\numberline {5}Applicazioni e servizi}{3}{section.5}
+\contentsline {section}{\numberline {6}Accessibilit\IeC {\`a} e stile}{3}{section.6}
+\contentsline {section}{\numberline {7}Strumenti e manutenzione}{3}{section.7}

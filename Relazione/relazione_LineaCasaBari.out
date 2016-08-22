@@ -1,6 +1,13 @@
-\BOOKMARK [1][-]{section.1}{Introduzione}{}% 1
-\BOOKMARK [1][-]{section.2}{Analisi dei requisiti}{}% 2
-\BOOKMARK [1][-]{section.3}{Dati e informazioni}{}% 3
-\BOOKMARK [1][-]{section.4}{Applicazioni e servizi}{}% 4
-\BOOKMARK [1][-]{section.5}{Accessibilit\340 e stile}{}% 5
-\BOOKMARK [1][-]{section.6}{Strumenti e manutenzione}{}% 6
+\BOOKMARK [1][-]{section.1}{Riferimenti informativi}{}% 1
+\BOOKMARK [1][-]{section.2}{Introduzione}{}% 2
+\BOOKMARK [1][-]{section.3}{Analisi dei requisiti}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Utenti esterni}{section.3}% 4
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Utente non registrato}{subsection.3.1}% 5
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Utente registrato}{subsection.3.1}% 6
+\BOOKMARK [2][-]{subsection.3.2}{Utenti interni}{section.3}% 7
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Amministratore}{subsection.3.2}% 8
+\BOOKMARK [1][-]{section.4}{Dati e informazioni}{}% 9
+\BOOKMARK [2][-]{subsection.4.1}{Contenuti}{section.4}% 10
+\BOOKMARK [1][-]{section.5}{Applicazioni e servizi}{}% 11
+\BOOKMARK [1][-]{section.6}{Accessibilit\340 e stile}{}% 12
+\BOOKMARK [1][-]{section.7}{Strumenti e manutenzione}{}% 13

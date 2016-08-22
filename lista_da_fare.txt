@@ -14,6 +14,7 @@ Modifica prodotto e non metti l'immagine causa che l'immagine viene tolta, quand
 Sistemare link nel messaggio di aggiunta al carrello di un prodotto (non compare), fare lo stesso per l'aggiunta alla lista dei desideri. File: aggiungi_carrello.cgi
 aggiungi_desideri.cgi e prodotti.cgi. Trovi un esempio in stampa_carrello.cgi. (lorenzo)
 Nel caso si preme "togli" nel carrello senza aver selezionato nulla compare il messaggio "modifica effettuata" invece che "seleziona qualcosa da eliminare" in rosso. Sistemare anche il messaggio con la maiuscola all'inizio.
+Controllare e validare gli xml insieme agli xsd -> modificare intestazione file (navid), controllo validità contenuto (alice, lorenzo)
 
 Domande prof:
 

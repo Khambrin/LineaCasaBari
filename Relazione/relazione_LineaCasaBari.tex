@@ -22,12 +22,27 @@ Lo sviluppo del sito è stato conferme alle predisposizioni degli standard W3C, 
 	\subsection{Utenti esterni}
 		\subsubsection{Utente non registrato}
 		L'utente non registrato deve poter consultare il catalogo dei prodotti, tuttavia per l'acquisto dei prodotti dovrà registrarsi. Inoltre, ha la possibilità di consultare diverse informazioni, sia sui servizi proposti, che in generale sul sito e sulle novità di esso.  \\
-		Le informazioni che cerca devono essere accessibili nel minor numero di click, in quanto è stato riscontrato che la permanenza di utente nel sito dipende da quanto tempo è necessario reperire le informazioni utili.
+		Le informazioni che cerca devono essere accessibili nel minor numero di click, in quanto è stato riscontrato che la permanenza di utente nel sito dipende da quanto tempo è necessario per reperire le informazioni utili.
+		
+		\subsubsection{Utente registrato}
+		L'utente registrato visualizza la stessa versione del sito dell'utente non registrato, in modo da favorirne l'orientamento in esso. Tuttavia, ha la possibilità di effettuare degli ordini ed acquistare i prodotto offerti dal negozio. Inoltre, ha accesso alla sezione di gestione del proprio account, in cui ha la possibilità di modificare i dati del proprio account, aggiungere/modificare/rimuovere gli indirizzi di spedizione e %annullare
+		consultare gli ordini effettuati; è presente anche la lista dei desideri, in cui l'utente può salvare i suoi articoli preferiti in modo da ritrovarli successivamente.
 
 	\subsection{Utenti interni}
+		\subsubsection{Amministratore}
+		L'amministratore è la figura che gestisce il sito e lo mantiene. Si presume che non abbia intenzioni malevole verso di esso e che sia una persona esperta in tale ambito. Nonostante, sono stati previsti dei controlli, in modo da evitare eventuali distrazioni ed errori. \\
+		L'amministratore ha la possibilità di gestire il sito effettuando l'accesso con delle credenziali speciali, immesse direttamente nel database dell'applicativo, nello stesso form di login utilizzato dagli utenti. Potrà successivamente accedere alla sezione di gestione del sito tramite un link posto nell'intestazione del sito. In tale sezione, è possibile gestire (modifica/ rimozione/ aggiunta) i dati del database interno del sito, che sono rappresentati dagli utenti, ordini, prodotti e annunci. \\
+		Vengono mantenute le funzionalità offerte agli utenti, in modo da poterne verificare il funzionamento e la correttezza dal punto di vista dell'utente stesso, senza il bisogno di creare un altro account.
 
 \section{Dati e informazioni} % progettazione della base informativa
-
+	\subsection{Contenuti}
+	Il sito ha la necessità di salvare e reperire, da un'apposita base di dati XML, i seguenti dati:
+	\begin{itemize}
+		\item \textbf{Annunci}: rappresentano i messaggi contenenti novità ed informazioni riguardanti il negozio. La gestione di questi dati viene riservata all'amministratore;
+		\item \textbf{Utenti}: rappresentano gli utenti iscritti al sistema, compresi gli amministratori. Gli amministratore vengono individuati da un campo booleano e devono essere aggiunti a mano, modificando il file XML. La gestione di questi dati viene riservata all'amministratore;
+		\item \textbf{Prodotti}: rappresentano i prodotti offerti dal negozio ed acquistabili dagli utenti registrati. La gestione di questi dati viene riservata all'amministratore;
+		\item \textbf{Indirizzi}:
+	\end{itemize}
 \section{Applicazioni e servizi} % progettazione delle funzionalità
 
 \section{Accessibilità e stile} % progettazione dell'organizzazione
