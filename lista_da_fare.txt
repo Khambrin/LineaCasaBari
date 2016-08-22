@@ -6,10 +6,8 @@ Unificare link e hover (lorenzo)
 validare e inserire immagini w3c in footer (ognuno suo pagine)
 Aggiungere controllo dimensione upload immagine (gaggi)
 Dimensioni immagini tag <img> vanno messe dentro css (navid)
-controllare javascript (alice)
 javascrpt modifica prodotto (alice)
 quando aggiungo a carrello ritorna il messaggio vai su carrello per acquistare . "carrello" deve essere un link che va a carrello passando per check session
-modifica prodotto non è corretto il cgi, in caso di errori nel form vengono comunque salvate le modifiche errate
 CSS modifica annuncio dopo errore box testo troppo grande
 Aggiungere indicazione dimensione massima immagini, nei form di inserimento immagini (lorenzo).
 Modifica prodotto e non metti l'immagine causa che l'immagine viene tolta, quando invece dovrebbe rimanere. Se cambio immagine cancello quella vecchia xke non serve più a nulla (lorenzo).
