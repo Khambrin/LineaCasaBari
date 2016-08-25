@@ -79,7 +79,9 @@
 			<span>[% email %]</span>
 		</div>
     </div>
-    <div id="searchBar">
+    
+    <div id="content">
+	    <div id="searchBar">
         <div id="searchContainer">
             <form id="commonSearch" method="post" action="prodotti.cgi[% query_string %]">
                 <div id="commonSearchInputLeft"></div><div id="commonSearchInputMiddle"><input class="input" name="query" id="commonSearchInput" type="text"/></div><div id="commonSearchInputRight"></div>
@@ -89,8 +91,6 @@
             </form>
         </div>
     </div>
-    
-    <div id="content">
         <div id="prodotti-resultInfoBar">
 		[% IF query == 'no_query'%]
 		<div id="prodotti-searchresult">		

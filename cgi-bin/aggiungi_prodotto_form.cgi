@@ -93,7 +93,7 @@ if (@messaggi)
 else
 {
 	my $doc,my $root;
-	my $id=0, my $valutazione="";
+	my $id=0, my $valutazione=" ";
 	if (-e "../data/Prodotti.xml")
 	{
 		my $parser=XML::LibXML->new();

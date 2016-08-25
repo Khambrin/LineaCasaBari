@@ -40,6 +40,12 @@ if (!$values{"testo"})
 	push @errors, "Devi completare il campo testo.";
 }
 
+if ($values{"immagine"}) {
+	my $image_size = -s $values{"immagine"};
+	if($image_size > 200000) {push @messaggi, "Immagine troppo grande";}
+}
+
+
 if (@errors)
 {
 	print $cgi->header('text/html');

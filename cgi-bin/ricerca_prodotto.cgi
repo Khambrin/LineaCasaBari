@@ -165,6 +165,7 @@ if($messaggio eq "false")
         <label>Data aggiunta:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Data" type="text" value="'."@prodotto[$i]".'" /></div><div class="inputRight"></div>
     </li>';
 	$tot=$tot.$x;
+	$i++;
 	$i++;	
 	
 	my $filespec="@prodotto[$i]";
@@ -173,7 +174,7 @@ if($messaggio eq "false")
 	my $read_directory="../images/prodotti";
 	my $immagine="$read_directory/$filename";
 	$x='<li>
-        <label>Inserisci una nuova immagine:</label><img id="gestione-immagine_prodotto" src="'."$immagine".'" alt="foto prodotto" /><input type="file" name="Immagine" />
+        <label>Inserisci una nuova immagine di dimensione massima 200kB:</label><img id="gestione-immagine_prodotto" src="'."$immagine".'" alt="foto prodotto" /><input type="file" name="Immagine" />
     </li>';
 	$tot=$tot.$x;
 	$i++;
@@ -211,7 +212,7 @@ if($messaggio eq "false")
                 <div class="side-element">
                     <button class="button" type="submit">Modifica</button>
                     <input type="hidden" name="old_cod" value="'."$cod".'"/>
-                    <input type="hidden" name="old_image" value="'."$filename".'"/>
+                    <input type="hidden" name="old_image" value="'."$filespec".'"/>
                 </div>
             </form>
             <form class="side-element" action="togli_prodotto.cgi" method="post">

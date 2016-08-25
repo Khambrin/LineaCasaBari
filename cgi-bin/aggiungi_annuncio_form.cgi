@@ -44,6 +44,12 @@ else
 	$testo_value=$values{"testo"};	
 }
 
+if ($values{"immagine"}) {
+	my $image_size = -s $values{"immagine"};
+	if($image_size > 200000) {push @messaggi, "Immagine troppo grande";}
+}
+
+
 if (@messaggi)
 {
 	print $cgi->header('text/html');

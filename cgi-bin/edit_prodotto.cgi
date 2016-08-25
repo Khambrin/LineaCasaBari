@@ -33,6 +33,7 @@ my $tag2_value="";
 my $tag3_value="";
 my $tag4_value="";
 my $categoria_value="";
+my $immagine_value="";
 foreach my $p (param())
 {
 	$values{$p}=lc param($p);
@@ -80,6 +81,14 @@ else {
 	push @messaggi, "Il campo Data &egrave; risultato vuoto, &egrave; stato ripristinato il valore precedente";
 }
 
+if ($values{"Immagine"})
+{
+	$immagine_value=$values{"Immagine"};
+	my $image_size = -s $values{"Immagine"};
+	if($image_size > 200000) {push @messaggi, "Immagine troppo grande";}
+}
+
+
 if ($values{"Tag1"})
 {
 	$tag1_value=$values{"Tag1"};
@@ -96,6 +105,7 @@ if ($values{"Tag4"})
 {
 	$tag4_value=$values{"Tag4"};
 }
+
 if(@messaggi)
 {
 		my $template=Template->new({
@@ -125,7 +135,10 @@ if(@messaggi)
 		$data_value=$doc->findnodes("Prodotti/Prodotto[Codice='$cod']/Data_aggiunta/text()");
 	}
 	my $valutazione_value=$doc->findnodes("Prodotti/Prodotto[Codice='$cod']/Valutazione/text()");
-	my $immagine_value=$doc->findnodes("Prodotti/Prodotto[Codice='$cod']/Immagine/text()");
+	if($immagine_value eq "")
+	{
+		my $immagine_value=$doc->findnodes("Prodotti/Prodotto[Codice='$cod']/Immagine/text()");
+	}
 	if($tag1_value eq "")
 	{
 		$tag1_value=$doc->findnodes("Prodotti/Prodotto[Codice='$cod']/Tag[1]/text()");
@@ -201,6 +214,7 @@ if(@messaggi)
 	
 	$x='<li><label>Data aggiunta:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Data" type="text" value='."$data_value".' /></div><div class="inputRight"></div></li>';
 	$tot=$tot.$x;
+	$i++;
 	$i++;	
 	
 	my $filespec="$immagine_value";
@@ -208,7 +222,7 @@ if(@messaggi)
 	my $filename=basename $filespec;
 	my $read_directory="../images/prodotti";
 	my $immagine="$read_directory/$filename";
-	$x='<li><label>Inserisci una nuova immagine:</label><img src='."$immagine".' alt="foto prodotto" height="100" width="100"><input type="file" name="Immagine"></li>';
+	$x='<li><label>Inserisci una nuova immagine di dimensione massima 200kB:</label><img src='."$immagine".' alt="foto prodotto" height="100" width="100"><input type="file" name="Immagine"></li>';
 	$tot=$tot.$x;
 	$i++;
 		
@@ -228,7 +242,7 @@ if(@messaggi)
 	$i++;
 	$tot=$tot.$x;
 	
-	$x='<li><div><button class="button" type="submit">Modifica</button><input type="hidden" name="old_cod" value="'."$cod".'"/><input type="hidden" name="old_image" value="'."$filename".'"/></form><form action="togli_prodotto.cgi" method="post"><input type="hidden" name="prodotto" value="'."$cod".'" /><button class="button" type="submit">togli prodotto</button></form></div></li>';
+	$x='<li><div><button class="button" type="submit">Modifica</button><input type="hidden" name="old_cod" value="'."$cod".'"/><input type="hidden" name="old_image" value="'."$immagine_value".'"/></form><form action="togli_prodotto.cgi" method="post"><input type="hidden" name="prodotto" value="'."$cod".'" /><button class="button" type="submit">togli prodotto</button></form></div></li>';
 	$i++;
 	$tot=$tot.$x;
 	
@@ -258,6 +272,8 @@ else
 {
 	my $old_prodotto=$values{"old_cod"};
 	my $prodotto_node=$doc->findnodes("Prodotti/Prodotto[Codice='$old_prodotto']");
+	my $old_immagine=$doc->findnodes("Prodotti/Prodotto[Codice='$old_prodotto']/Immagine/text()");
+	my $valutazione=$doc->findnodes("Prodotti/Prodotto[Codice='$old_prodotto']/Valutazione/text()");
 	$prodotto_node->[0]->parentNode->removeChild($prodotto_node->[0]);
 	my $prodotto_tag=$doc->createElement("Prodotto");	
 	$root->appendChild($prodotto_tag);
@@ -279,6 +295,9 @@ else
 	my $data_tag=$doc->createElement("Data_aggiunta");
 	$data_tag->appendTextNode($values{'Data'});
 	$prodotto_tag->appendChild($data_tag);
+	my $valutazione_tag=$doc->createElement("Valutazione");
+	$valutazione_tag->appendTextNode($valutazione);
+	$prodotto_tag->appendChild($valutazione_tag);
 	my $immagine_tag=$doc->createElement("Immagine");
 	my $immagine;
 	my $upload_directory="../public_html/images/prodotti";
@@ -297,7 +316,7 @@ else
 	}
 	else
 	{
-		$immagine="$upload_directory/$values{'old_image'}";
+		$immagine=$old_immagine;
 	}
 	$immagine_tag->appendTextNode($immagine);
 	$prodotto_tag->appendChild($immagine_tag);
