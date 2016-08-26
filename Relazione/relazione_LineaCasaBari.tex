@@ -41,12 +41,48 @@ Lo sviluppo del sito è stato conferme alle predisposizioni degli standard W3C, 
 		\item \textbf{Annunci}: rappresentano i messaggi contenenti novità ed informazioni riguardanti il negozio. La gestione di questi dati viene riservata all'amministratore;
 		\item \textbf{Utenti}: rappresentano gli utenti iscritti al sistema, compresi gli amministratori. Gli amministratore vengono individuati da un campo booleano e devono essere aggiunti a mano, modificando il file XML. La gestione di questi dati viene riservata all'amministratore;
 		\item \textbf{Prodotti}: rappresentano i prodotti offerti dal negozio ed acquistabili dagli utenti registrati. La gestione di questi dati viene riservata all'amministratore;
-		\item \textbf{Indirizzi}:
+		\item \textbf{Indirizzi}: rappresentano gli indirizzi di spedizione degli utenti. La gestione di questi dati viene riservata all'utente registrato;
+		\item \textbf{Desideri}: rappresentano i prodotti aggiunti alla lista dei desideri da parte degli utenti. La gestione di questi dati viene riservata all'utente registrato;
+		\item \textbf{Newsletter}: rappresentano le email degli utenti iscritti al servizio di invio di email informative riguardanti il negozio. La gestione di questi dati viene riservata all'utente registrato;
+		\item \textbf{Ordini}: rappresentano il riepilogo degli acquisti effettuati dagli utenti con tutte le relative informazioni. La gestione di questi dati viene riservata sia agli utenti registrati, che all'amministratore;
+		\item \textbf{Carrelli}: rappresentano gli ordini effettuati da parte degli utenti, ma ancora non acquistati. La gestione di questi dati viene riservata all'utente registrato.
 	\end{itemize}
+	
+	\subsection{Schema dei dati}
+	Lo schema XSD utilizzato per modellare i dati è \textbf{``Tende alla veneziana''}, il quale favorisce il riuso e la flessibilità. E' caratterizzato dal possedere un unico elemento globale, l'elemento radice, e tanti tipi nominali ciascuno dei quali contiene definizioni di elementi locali associati a tipi nominali ed esterni.
+	
 \section{Applicazioni e servizi} % progettazione delle funzionalità
+	\subsection{Sezione amministratore}
+	Sono state previste le seguenti funzionalità, volte alla gestione del sito, messe a disposizione dell'amministratore:
+	\begin{itemize}
+		\item \textbf{Rimozione degli utenti}: è possibile visualizzare le email di ogni utente iscritto al sito e, nel caso, rimuoverne uno a scelta;
+		\item \textbf{Gestione prodotti}: è possibile aggiungere nuovi prodotti al sito, inserendo nome, prezzo, categoria, descrizione ed opzionalmente una immagine e dei tag aggiuntivi per descrivere ulteriormente il prodotto. Successivamente, è possibile rimuovere o modifica un prodotto specifico, presente nel database del sito;
+		\item \textbf{Gestione ordini}: è possibile rimuovere o modifica un ordine effettuato da un utente registrato al sito, inserendo il relativo codice in un apposito campo;
+		\item \textbf{Gestione annunci}: è possibile aggiungere un nuovo annuncio, il quale verrà visualizzato nell'apposita pagina sia agli utente iscritti che non, inserendo un titolo, del testo ed opzionalmente un'immagine. Successivamente, è possibile modificare o rimuovere un annuncio presente nel database del sito.
+	\end{itemize}
+	
+	\subsection{Sezione utente non registrato}
+	Sono state previste le seguenti funzionalità, utili a capire se il sito è utile alle proprie esigenze e ad accedere alla piattaforma, messe a disposizione dell'utente non registrato:
+	\begin{itemize}
+		\item \textbf{Login/Registrazione}: viene messa a disposizione una pagina per effettuare la registrazione al sito, tramite l'inserimento del nome, cognome, email (identificativo dell'utente), password e conferma della password. Successivamente, l'utente potrà effettuare l'accesso tramite la pagina di login, inserendo l'email e la password con cui si è registrato in precedenza. Tale pagina rimanderà successivamente l'utente alla pagina di gestione del proprio account;
+		\item \textbf{Home}: la pagina iniziale, che introduce l'utente al sito e ne illustra il contenuto. Vengono visualizzate le categorie di prodotti offerti dal sito;
+	\end{itemize}
+	\subsection{Sezione utente registrato}
+	
 
 \section{Accessibilità e stile} % progettazione dell'organizzazione
-
+	\subsection{Accessibilità}
+	
+		\subsubsection{Form}
+		%completamento automatico form con dati già presenti o inseriti precedentemente
+	
+		\subsubsection{Screen reader}
+		
+		\subsubsection{Immagini}
+		
+		\subsubsection{Colori}
 \section{Strumenti e manutenzione} % Progettazione fisica
-
+	\subsection{Strumenti di validazione}
+	
+	\subsection{Perl}
 \end{document}
