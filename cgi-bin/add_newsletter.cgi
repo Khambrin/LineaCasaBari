@@ -59,6 +59,7 @@ if ($void_address)
 }
 else
 {
+
 	my $doc,my $root; my $greetings="Iscrizione alla newsletter avvenuta con successo";
 	if (-e "../data/Newsletter.xml")
 	{
