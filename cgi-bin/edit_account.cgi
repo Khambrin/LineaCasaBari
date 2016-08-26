@@ -133,17 +133,6 @@ else
 	}
 	$utente_tag->appendChild($cognome_tag);
 
-	my $telefono_tag=$doc->createElement("Telefono");
-	if($values{'nuovo_telefono'})
-	{
-		$telefono_tag->appendTextNode($values{'nuovo_telefono'});
-	}
-	else
-	{
-		$telefono_tag->appendTextNode($old_tel);
-	}	
-	$utente_tag->appendChild($telefono_tag);
-	
 	my $email_tag=$doc->createElement("Email");
 	if($values{'nuova_email'})
 	{
@@ -166,6 +155,19 @@ else
 		$password_tag->appendTextNode($old_psw);
 	}
 	$utente_tag->appendChild($password_tag);
+
+	my $telefono_tag=$doc->createElement("Telefono");
+	if($values{'nuovo_telefono'})
+	{
+		$telefono_tag->appendTextNode($values{'nuovo_telefono'});
+	}
+	else
+	{
+		$telefono_tag->appendTextNode($old_tel);
+	}	
+	$utente_tag->appendChild($telefono_tag);
+	
+	
 	
 	my $admin_tag=$doc->createElement("Amministratore");
 	$admin_tag->appendTextNode($old_amm);
