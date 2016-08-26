@@ -70,6 +70,9 @@ if($query) {
 	$query_string='?Codice='."$codice".'&amp;Filter='."$filter".'&amp;Page='."$page".'&amp;Order='."$order";
 }
 
+if ($session->is_empty) {
+	print $cgi->redirect('check_session.cgi'."$query_string");
+}
 
 
 
@@ -143,6 +146,6 @@ open (XML,">","../data/Carrelli.xml");
 print XML $doc->toString();
 close(XML);
 
-my $messaggio='Prodotto aggiunto correttamente al carrello. Per effettuare l'."'".'acquisto procedi al <a href="check_session&#63;carrello">Carrello</a>.';
+my $messaggio='Prodotto aggiunto correttamente al carrello. Per effettuare l'."'".'acquisto procedi al';
 print $cgi->redirect('prodotto.cgi'."$query_string".'&amp;Messaggio='."$messaggio");
 

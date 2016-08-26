@@ -53,7 +53,8 @@ if ($session->is_empty)
 		or $ENV{'QUERY_STRING'} eq 'stampa_indirizzi_rimosso'or $ENV{'QUERY_STRING'} eq 'stampa_indirizzi_modifica'
 		or $ENV{'QUERY_STRING'} eq 'stampa_acquisto' or $ENV{'QUERY_STRING'} eq 'gestione_account_mod' 
 		or $ENV{'QUERY_STRING'} eq 'aggiunto' or $ENV{'QUERY_STRING'} eq 'aggiungi_annuncio'
-		or $ENV{'QUERY_STRING'} eq 'rimosso_annuncio'or $ENV{'QUERY_STRING'} eq 'modifica_annunci')
+		or $ENV{'QUERY_STRING'} eq 'rimosso_annuncio'or $ENV{'QUERY_STRING'} eq 'modifica_annunci'
+		or grep( /^Codice/, $ENV{'QUERY_STRING'}))
 	{
 		$file='login_temp.html';
 		$vars={
@@ -171,6 +172,10 @@ else
 	if($ENV{'QUERY_STRING'} eq 'modifica_annunci')
 	{
 			print $cgi->redirect('modifica_annunci.cgi?modificato')
+	}
+	if(grep( /^Codice/, $ENV{'QUERY_STRING'}))
+	{
+			print $cgi->redirect('prodotto.cgi?'."$ENV{'QUERY_STRING'}")
 	}
 }
 	print $cgi->header('text/html');

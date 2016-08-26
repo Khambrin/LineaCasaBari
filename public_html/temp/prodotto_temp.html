@@ -145,7 +145,10 @@
  						<p><input type="submit" value="Aggiungi alla lista desideri"/></p>
  					</form>
 					</li>
-					<li><div class="messaggio-confirm">[% messaggio %]</div></li>
+					[% IF !messaggio %]
+					[% ELSE %]
+					<li><div class="messaggio-confirm">[% messaggio %] <a href="check_session.cgi?carrello">Carrello.</a></div></li>
+					[% END %]
 				</ul>
 				</div>
 			</div>

@@ -50,6 +50,9 @@ else {
 	$page=0;
 }
 
+my $codice=$in{'Codice'};
+if(!$codice){$codice=$prodotto;}
+
 my $query;
 if ($in{'Query'}) {
 	$query=$in{'Query'};
@@ -65,6 +68,10 @@ if($query) {
 	$query_string='?Codice='."$codice".'&amp;Filter='."$filter".'&amp;Page='."$page".'&amp;Query='."$query".'&amp;Order='."$order";
 } else {
 	$query_string='?Codice='."$codice".'&amp;Filter='."$filter".'&amp;Page='."$page".'&amp;Order='."$order";
+}
+
+if ($session->is_empty) {
+	print $cgi->redirect('check_session.cgi'."$query_string");
 }
 
 

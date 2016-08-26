@@ -187,19 +187,7 @@ if(!$already_reviewed) {
 }
 
 #gestione numero commenti
-my $Num_commenti;
-
-if ($in{'Numcomm'}) {
-	$Num_commenti=$in{'Numcomm'};
-	}
-else {
-	$Num_commenti=3;
-}
-
-if($Num_commenti > $#recensione_email) {
-	$Num_commenti=$#recensione_email;
-}
-
+my $Num_commenti=$#recensione_email;
 
 for (my $index=0; $index <= $Num_commenti; $index++)
 {
