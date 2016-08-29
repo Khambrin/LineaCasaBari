@@ -152,7 +152,14 @@ else
 
 	my ($sec,$min,$hour,$mday,$mon,$yr19,$wday,$yday,$isdst) = localtime(time);
 	my $year=$yr19+1900;
-	my $date="$mday/$mon/$year";
+	
+	my $regex=$mon=~ /^[0-9]$/;
+		if($regex)
+		{
+			$mon="0".$mon;
+		}
+		
+		my $date="$year-$mon-$mday";
 	my $data_tag=$doc->createElement("Data_pubblicazione");
 	$data_tag->appendTextNode($date);
 	$recensione_tag->appendChild($data_tag);

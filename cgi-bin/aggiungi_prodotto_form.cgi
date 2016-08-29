@@ -125,7 +125,13 @@ else
 		}
 		my ($sec,$min,$hour,$mday,$mon,$yr19,$wday,$yday,$isdst) = localtime(time);
 		my $year=$yr19+1900;
-		my $date="$mday/$mon/$year";
+		my $regex=$mon=~ /^[0-9]$/;
+		if($regex)
+		{
+			$mon="0".$mon;
+		}
+		
+		my $date="$year-$mon-$mday";
 		my $date_tag=$doc->createElement("Data_aggiunta");
 		$date_tag->appendTextNode($date);
 		$prodotto_tag->appendChild($date_tag);
@@ -152,7 +158,7 @@ else
 		}
 		else
 		{
-			$immagine="";
+			$immagine=" ";
 		}
 		$immagine_tag->appendTextNode($immagine);
 		$prodotto_tag->appendChild($immagine_tag);
