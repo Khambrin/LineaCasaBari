@@ -15,7 +15,7 @@ function prForm() {//form aggiunta prodotto
 
 	var rgprezzo = /^[0-9]+(\,[0-9]{2})?$/;
 	var dprezzo = rgprezzo.test(prezzo1);
-	if(dprezzo==false) {document.getElementById("formatoprezzo").innerHTML = "Inserisci un prezzo valido, ad esempio 1,00 ";}
+	if(dprezzo==false) {document.getElementById("formatoprezzo").innerHTML = "Inserisci un prezzo valido, ad esempio 1,00 oppure 12";}
 	else{document.getElementById("formatoprezzo").innerHTML = "";}
 
 	if(nome1==false|descrizione1==false|dprezzo==false){return false;}
