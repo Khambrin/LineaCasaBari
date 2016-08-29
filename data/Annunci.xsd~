@@ -6,7 +6,6 @@
     <xsd:complexType name="Tipo_annuncio">
     	<xsd:sequence>
     		<xsd:element name="Titolo" type="xsd:string"/>
-		<xsd:element name="Codice" type="xsd:string"/>
     		<xsd:element name="Data" type="xsd:date"/>
     		<xsd:element name="Testo" type="xsd:string"/>
     		<xsd:element name="Immagine" type="xsd:string"/>
