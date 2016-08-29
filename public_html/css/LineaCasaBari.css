@@ -519,7 +519,7 @@ body
     width: 100%;
 }
 
-.riga_index div{
+.riga_index span{
     display: block;
     background-repeat: no-repeat;
     background-size: cover;
