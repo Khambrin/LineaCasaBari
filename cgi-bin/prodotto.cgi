@@ -136,7 +136,7 @@ if ((!$email) || grep(/^$email/, @recensione_email)) {
 
 my $recensione_form;
 if(!$already_reviewed) {
-	my $x='<h3>Aggiungi una recensione</h3><form id="addReviewForm" method="post" action="aggiungi_recensione_form.cgi'."$query_string".'" onsubmit="return newannForm()"  enctype="multipart/form-data">
+	my $x='<h3>Aggiungi una recensione</h3><form id="addReviewForm" method="post" action="aggiungi_recensione_form.cgi'."$query_string".'" onsubmit="return newReviewForm()"  enctype="multipart/form-data">
 			<ul class="aggiungi_recensione_form">
 				<li>
                     <label id="recensioneTitolo-label">Titolo:</label>
