@@ -173,6 +173,8 @@
                         </form>
                     </div>
                     [% ELSIF pagina == 'rimuovi_modifica' %]
+			 <script type="text/javascript" src="../js/edit_product.js"></script>
+			<div class="messaggio-error"><p id="editNome"></p><p id="editDescrizione"></p><p id="editFormatoPrezzo"></p></div>
                         [% IF messaggio_confirm!= 'false' %]
                             <div class="messaggio-confirm">
                                 [% messaggio_confirm%]

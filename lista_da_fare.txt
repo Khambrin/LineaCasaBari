@@ -7,7 +7,6 @@ validare e inserire immagini w3c in footer (ognuno suo pagine)
 Aggiungere controllo dimensione upload immagine (gaggi)
 Dimensioni immagini tag <img> vanno messe dentro css (navid)
 javascrpt modifica prodotto [ non parte ] (alice)
-javascrpt finire recensione(alice)
 quando aggiungo a carrello ritorna il messaggio vai su carrello per acquistare . "carrello" deve essere un link che va a carrello passando per check session
 Se cambio immagine in modifica prodotto cancello quella vecchia xke non serve più a nulla (lorenzo).
 Sistemare link nel messaggio di aggiunta al carrello di un prodotto (non compare), fare lo stesso per l'aggiunta alla lista dei desideri. File: aggiungi_carrello.cgi aggiungi_desideri.cgi e prodotti.cgi. Trovi un esempio in stampa_carrello.cgi(lorenzo)
