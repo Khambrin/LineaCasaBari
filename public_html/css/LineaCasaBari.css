@@ -374,9 +374,15 @@ body
     display: block;
     text-align: center;
 }
-#news_h3
+
+#news_label_container {
+    margin-bottom: 0.5em;
+}
+
+#news_label
 {
-    padding-bottom: 0.5em;
+    font-size: 1.3em;
+    font-weight: bold;
 }
 
 #facebook-link {
