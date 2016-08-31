@@ -106,29 +106,29 @@
 					<form id="modacform" method="post" action="edit_account.cgi" onsubmit="return validateForm()" enctype="multipart/form-data">
 					<ul class="form-Block">
 						<li>
-                            <label class="account-emailLabel">Email:</label>
+                            <label class="account-emailLabel" for="email">Email:</label>
                             <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vemail %]</div><div class="inputRight"></div>
                         </li>
 						<li>
-                            <label class="account-nomeLabel">Nome:</label>
+                            <label class="account-nomeLabel" for="nome">Nome:</label>
                             <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vnome %]</div><div class="inputRight"></div>
                         </li>
 						<li>
-                            <label class="account-cognomeLabel">Cognome:</label>
+                            <label class="account-cognomeLabel" for="cognome">Cognome:</label>
                             <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vcognome %]</div><div class="inputRight"></div>
                         </li>
 						<li>
-                            <label class="account-telefonoLabel">Telefono:</label>
+                            <label class="account-telefonoLabel" for="telefono">Telefono:</label>
                             <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vtelefono %]</div><div class="inputRight"></div>
                         </li>
                         <li>
-                            <label class="account-passwordCorrenteLabel">Password corrente:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="password" name="vecchia_password"/></div><div class="inputRight"></div>	
+                            <label class="account-passwordCorrenteLabel" for="vecchia_password">Password corrente:</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="vecchia_password" class="input" type="password" name="vecchia_password"/></div><div class="inputRight"></div>	
                         </li>
 
                         <li>
-                            <label class="account-passwordNuovaLabel">Nuova Password:</label>
-                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="password" name="nuova_password" /></div><div class="inputRight"></div>	
+                            <label class="account-passwordNuovaLabel" for="nuova_password">Nuova Password:</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="nuova_password" class= "input" type="password" name="nuova_password" /></div><div class="inputRight"></div>	
                         </li>
 			
                     </ul>

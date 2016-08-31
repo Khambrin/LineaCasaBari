@@ -107,48 +107,50 @@
 				[% ELSE %]
 					<div class="sub_menu_block"><a href="check_session.cgi?aggiungi-indirizzo"><span class="sub_menu_text">Aggiungi indirizzo</span></a></div><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica indirizzo</span></div>[% END %]
 		</div>
-			[% IF pagina == 'aggiungi' %]
-			[% IF messaggio_confirm != 'false' %]<div class="messaggio-confirm">[% messaggio_confirm %]</div>[% END %]
+            [% IF pagina == 'aggiungi' %]
+                [% IF messaggio_confirm != 'false' %]
+                    <div class="messaggio-confirm">[% messaggio_confirm %]</div>
+                [% END %]
 			<script type="text/javascript" src="../js/add_address.js"></script>
 			<div class="messaggio-error"> <p id="addvia"></p>  <p id="addnum"></p> <p id="addcit"></p> <p id="addtwoprov"></p> <p id="adddigitscap"></p>  </div>
 				<div class="messaggio-error">[% error %]</div>
 				<div class="messaggio-error">[% messaggio %]</div>
 			<div class="form-container2">
-
-				<h2>Aggiungi indirizzo</h2>
-				
-				<form id="addressform" method="post" action="aggiungi_indirizzo_script.cgi" onsubmit="return addForm()" enctype="multipart/form-data">
-				<ul class="form-Block">
-					<li>
-                        <label>* Via:</label>
-                        <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="text" name="via" [% via_value %] /></div><div class="inputRight"></div>
-                    </li>
-					<li>
-						<label>* Numero civico:</label>
-                        <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="text" name="numero" [% numero_value %] /></div><div class="inputRight"></div>
-                    </li>
-					<li>
-                        <label>* Citt&agrave;:</label>
-                        <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="text" name="citta" [% citta_value %]/></div><div class="inputRight"></div>
-                    </li>
-					<li>
-                        <label>* Provincia:</label>
-                        <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="text" name="provincia" [% provincia_value %] /></div><div class="inputRight"></div>
-                    </li>
-					<li>
-                        <label>* CAP:</label>
-                        <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class= "input" type="text" name="cap" [% cap_value %] /></div><div class="inputRight"></div>
-                    </li>
-                    <li>I campi con * sono obbligatori</li>
-                 </ul>
-                 <div>
-					<button class="button" type="submit">Aggiungi Indirizzo</button>
-                 </div>
-					<div>[% hidden %]</div>
-			</form>
-          </div>
-			[% ELSIF pagina == 'edit' %]
-			[% IF messaggio_confirm != 'false' %]<div class="messaggio-confirm">[% messaggio_confirm %]</div>[% END %]
+                <h2>Aggiungi indirizzo</h2>
+                <form id="addressform" method="post" action="aggiungi_indirizzo_script.cgi" onsubmit="return addForm()" enctype="multipart/form-data">
+                    <ul class="form-Block">
+                        <li>
+                            <label for="via">* Via:</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="via" class= "input" type="text" name="via" [% via_value %] /></div><div class="inputRight"></div>
+                        </li>
+                        <li>
+                            <label for="numero">* Numero civico:</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="numero" class= "input" type="text" name="numero" [% numero_value %] /></div><div class="inputRight"></div>
+                        </li>
+                        <li>
+                            <label for="citta">* Citt&agrave;:</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="citta" class= "input" type="text" name="citta" [% citta_value %]/></div><div class="inputRight"></div>
+                        </li>
+                        <li>
+                            <label for="provincia">* Provincia:</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="provincia" class= "input" type="text" name="provincia" [% provincia_value %] /></div><div class="inputRight"></div>
+                        </li>
+                        <li>
+                            <label for="cap">* CAP:</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="cap" class= "input" type="text" name="cap" [% cap_value %] /></div><div class="inputRight"></div>
+                        </li>
+                        <li>I campi con * sono obbligatori</li>
+                     </ul>
+                     <div>
+                        <button class="button" type="submit">Aggiungi Indirizzo</button>
+                     </div>
+                        <div>[% hidden %]</div>
+                </form>
+            </div>
+            [% ELSIF pagina == 'edit' %]
+                [% IF messaggio_confirm != 'false' %]
+                <div class="messaggio-confirm">[% messaggio_confirm %]</div>
+                [% END %]
 			<script type="text/javascript" src="../js/edit_address.js"></script>
 					<div class="messaggio-error"> <p id="editvia"></p>  <p id="editnum"></p> <p id="editcit"></p> <p id="edittwoprov"></p> <p id="editdigitscap"></p>  </div>
 					<div class="messaggio-error">[% error %]</div>
@@ -156,41 +158,45 @@
 			<div class="form-container2">
 				<h2>Modifica indirizzo n. [% indice_controllo %] </h2>
 				<form id="editaddressform" method="post" action="edit_indirizzo_script.cgi" onsubmit="return editForm()" enctype="multipart/form-data">
-				<ul class="form-Block">
-					<li>
-                        <label>* Via:</label>
-                        <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vvia %]</div><div class="inputRight"></div>
-                    </li>
-					<li>
-						<label>* Numero civico:</label>
-                        <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vnumero %]</div><div class="inputRight"></div>
-                    </li>
-					<li>
-                        <label>* Citt&agrave;:</label>
-                        <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vcitta %]</div><div class="inputRight"></div>
-                    </li>
-					<li>
-                        <label>* Provincia:</label>
-                        <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vprovincia %]</div><div class="inputRight"></div>
-                    </li>
-					<li>
-                        <label>* CAP:</label>
-                        <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vcap %]</div><div class="inputRight"></div>
-                    </li>
-		    <li>I campi con * sono obbligatori</li>
-                 </ul>
-                 <div>
-					<button class="button" type="submit">Modifica Indirizzo</button>
-                 </div>
-					
+                    <ul class="form-Block">
+                        <li>
+                            <label for="via">* Via:</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vvia %]</div><div class="inputRight"></div>
+                        </li>
+                        <li>
+                            <label for="numero">* Numero civico:</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vnumero %]</div><div class="inputRight"></div>
+                        </li>
+                        <li>
+                            <label for="citta">* Citt&agrave;:</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vcitta %]</div><div class="inputRight"></div>
+                        </li>
+                        <li>
+                            <label for="provincia">* Provincia:</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vprovincia %]</div><div class="inputRight"></div>
+                        </li>
+                        <li>
+                            <label for="cap">* CAP:</label>
+                            <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vcap %]</div><div class="inputRight"></div>
+                        </li>
+                        <li>I campi con * sono obbligatori</li>
+                     </ul>
+                     <div>
+                        <button class="button" type="submit">Modifica Indirizzo</button>
+                     </div>
 					<div>[% hidden %]</div>
-					
-          </form>
-		[% ELSE %]
-		[% IF messaggio_confirm != 'false' %]<div class="messaggio-confirm">[% messaggio_confirm %]</div>[% END %]
-			[% lista_indirizzi %]
-		[% END %]
-            </div>        
+                </form>
+            </div>
+            [% ELSE %]
+                [% IF messaggio_confirm != 'false' %]
+                    <div class="messaggio-confirm">[% messaggio_confirm %]</div>
+                [% END %]
+            <div class="form-container2">
+                [% lista_indirizzi %]
+            </div>
+            [% END %]
+            
+        </div>
         </div>
     </div>
 

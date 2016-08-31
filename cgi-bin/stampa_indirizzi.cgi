@@ -42,19 +42,34 @@ my $tot;
 my $counter=0;
 for (my $index=1; $index <=$#indirizzo_via+1; $index++)
 {	
-	my $x='<div class="form-container2"><h2>'."Indirizzo n. $index".'</h2><ul class="form-Block">';
+	my $x='<h2>'."Indirizzo n. $index".'</h2>
+            <ul class="form-Block">';
 	$tot=$tot.$x;
-	my $x='<li><label>'."Via: @indirizzo_via[$counter]</label></li>";
+	my $x='<li><p>'."Via: @indirizzo_via[$counter]</p></li>";
 	$tot=$tot.$x;
-	my $x='<li><label>'."Numero: @indirizzo_numero_civico[$counter]</label></li>";
+	my $x='<li><p>'."Numero: @indirizzo_numero_civico[$counter]</p></li>";
 	$tot=$tot.$x;
-	my $x='<li><label>'."Citt&agrave;: @indirizzo_citta[$counter]</label></li>";
+	my $x='<li><p>'."Citt&agrave;: @indirizzo_citta[$counter]</p></li>";
 	$tot=$tot.$x;
-	my $x='<li><label>'."Provincia: @indirizzo_provincia[$counter]</label></li>";
+	my $x='<li><p>'."Provincia: @indirizzo_provincia[$counter]</p></li>";
 	$tot=$tot.$x;
-	my $x='<li><label>'."CAP: @indirizzo_cap[$counter]</label></li>";
+	my $x='<li><p>'."CAP: @indirizzo_cap[$counter]</p></li>";
 	$tot=$tot.$x;	
-	my $x='<li><form class="side-element" action="remove_indirizzo.cgi" method="post"><div class="side-element"><button class="button" type="submit">Rimuovi</button><input type="hidden" name="indice_indirizzo" value="'."$index".'"/></div></form><form class="side-element" action="edit_indirizzo_form.cgi" method="post"><div class="side-element"><button class="button" type="submit">Modifica</button><input type="hidden" name="indice_indirizzo_edit" value="'."$index".'"/></div></form></li></ul></div>';
+	my $x='<li>
+        <form class="side-element" action="remove_indirizzo.cgi" method="post">
+            <div class="side-element">
+                <button class="button" type="submit">Rimuovi</button>
+                <input type="hidden" name="indice_indirizzo" value="'."$index".'"/>
+            </div>
+        </form>
+        <form class="side-element" action="edit_indirizzo_form.cgi" method="post">
+            <div class="side-element">
+                <button class="button" type="submit">Modifica</button>
+                <input type="hidden" name="indice_indirizzo_edit" value="'."$index".'"/>
+            </div>
+        </form>
+        </li>
+    </ul>';
 	$tot=$tot.$x;
 	$counter++;
 }

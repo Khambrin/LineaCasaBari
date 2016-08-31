@@ -67,24 +67,24 @@ if($messaggio eq "false")
 		my $x='<li><h2>'."Codice: $i</h2></li>";
 		$tot=$tot.$x;
 		my $data=$doc->findnodes("Ordini/Ordine[Codice='$i']/Data/text()");
-		my $x='<li><label>'."Data: $data</label></li>";
+		my $x='<li><p>'."Data: $data</p></li>";
 		$tot=$tot.$x;
 		my $mpagamento=$doc->findnodes("Ordini/Ordine[Codice='$i']/Mpagamento/text()");
-		my $x='<li><label>'."Metodo di pagamento: $mpagamento</label></li>";
+		my $x='<li><p>'."Metodo di pagamento: $mpagamento</p></li>";
 		$tot=$tot.$x;
 		my $indi=$doc->findnodes("Ordini/Ordine[Codice='$i']/Indirizzo/text()");
-		my $x='<li><label>'."Indirizzo: $indi</label></li>";
+		my $x='<li><p>'."Indirizzo: $indi</p></li>";
 		$tot=$tot.$x;
 		my $num_prodotto=$doc->findvalue("count(Ordini/Ordine[Codice='$i']/Prodotto)");
 		
 		for(my $y=1; $y<=$num_prodotto;$y++)
 		{
 			my $prodotto=$doc->findnodes("Ordini/Ordine[Codice='$i']/Prodotto[$y]/text()");
-			my $x='<li><label>'."Prodotto: $prodotto</label></li>";
+			my $x='<li><p>'."Prodotto: $prodotto</p></li>";
 			$tot=$tot.$x;
 			
 			my $quantita=$doc->findnodes("Ordini/Ordine[Codice='$i']/Quantita[$y]/text()");
-			my $x='<li><label>'."Quantit&agrave;: $quantita</label></li>";
+			my $x='<li><p>'."Quantit&agrave;: $quantita</p></li>";
 			$tot=$tot.$x;
 		}
 	}

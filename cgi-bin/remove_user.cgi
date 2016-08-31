@@ -29,7 +29,7 @@ my $tot;
 foreach my $i (@users)
 {
 	my $x='<li>
-            <label>'."$i".'</label>
+            <p>'."$i".'</p>
             <form class="side-element" action="remove_user_form.cgi" method="post">
                 <div class="side-element">
                     <button class="button-utente" type="submit">Rimuovi</button>
