@@ -125,19 +125,19 @@
                         <form id="announceform" method="post" action="aggiungi_annuncio_form.cgi" onsubmit="return newannForm()" enctype="multipart/form-data">
                             <ul class="form-Block">
                                 <li>
-                                    <label>* Titolo:</label>
-                                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="titolo" [% titolo_value %]/></div><div class="inputRight"></div>
+                                    <label for="titolo_annuncio">* Titolo:</label>
+                                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="titolo_annuncio" class="input" type="text" name="titolo" [% titolo_value %]/></div><div class="inputRight"></div>
                                 </li>
                                 <li>
-                                    <label id="annunci-testoLabel">* Testo:</label>
+                                    <label for="testo" id="annunci-testoLabel">* Testo:</label>
                                 </li>
                                 <li>
-                                    <textarea class="gestione_textarea" name="testo" cols="" rows="">[% testo_value %]</textarea>
+                                    <textarea id="testo" class="gestione_textarea" name="testo" cols="" rows="">[% testo_value %]</textarea>
                                 </li>
                                 <li>
                                     <div class="gestione-file_label">
-                                        <label>Inserisci immagine di dimensione massima 200kB:</label>
-                                        <input type="file" name="immagine"/>
+                                        <label for="immagine">Inserisci immagine di dimensione massima 200kB:</label>
+                                        <input id="immagine" type="file" name="immagine"/>
                                     </div>
                                 </li>
                                 <li>I campi con * sono obbligatori</li>
@@ -166,20 +166,20 @@
                     <form id="editannounceform" method="post" action="edit_annuncio.cgi" onsubmit="return editannForm()" enctype="multipart/form-data">
                         <ul class="form-Block">
                             <li>
-                                <label class="annunci-titoloLabel">Titolo:</label>
+                                <label for="titolo_annuncio" class="annunci-titoloLabel">Titolo:</label>
                                 <div class="inputLeft"></div><div class="gestione-inputMiddle">[% vtitolo %]</div><div class="inputRight"></div>
                             </li>
                             <li>
-                                <label class="annunci-testoLabel">Testo:</label>
+                                <label for="testo" class="annunci-testoLabel">Testo:</label>
                             </li>
                             <li>
                                 [% vcontenuto %]
                             </li>
                             <li>
                                 <div id="gestione-file_label">
-                                    <label class="annunci-immagineLabel">Inserisci immagine:</label>
+                                    <label for="immagine" class="annunci-immagineLabel">Inserisci immagine:</label>
                                 </div>
-                                <input type="file" name="immagine"/>
+                                <input id="immagine" type="file" name="immagine"/>
                             </li>
                             <li>[% oldcodice %]</li>
                             <li>

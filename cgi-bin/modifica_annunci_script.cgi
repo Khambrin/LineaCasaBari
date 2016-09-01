@@ -32,11 +32,11 @@ my $annuncio_node=$doc->findnodes("Annunci/Annuncio[Codice='$codice']/Codice/tex
 my $titolo=$doc->findnodes("Annunci/Annuncio[Codice='$codice']/Titolo/text()");
 my $fcontenuto=$doc->findnodes("Annunci/Annuncio[Codice='$codice']/Testo/text()");
 
-my $vcontenuto='<textarea class="gestione_textarea" name="testo" rows="" cols="">'."$fcontenuto".'</textarea>';
+my $vcontenuto='<textarea id="testo" class="gestione_textarea" name="testo" rows="" cols="">'."$fcontenuto".'</textarea>';
 
-my $vt_form='<input class="input" type="text" name="titolo" value="'."$titolo".'"/>';
+my $vt_form='<input id="titolo_annuncio" class="input" type="text" name="titolo" value="'."$titolo".'"/>';
 
-my $hiddencodice='<input class="input" type="hidden" name="oldcodice" value="'."$codice".'"/>';
+my $hiddencodice='<input id="codice" class="input" type="hidden" name="oldcodice" value="'."$codice".'"/>';
 
 
 my $file='gestione_annunci_temp.html';

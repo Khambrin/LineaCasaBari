@@ -81,8 +81,8 @@ if($messaggio eq "false")
 	for(my $i=0; $i<$n_label;$i++)
 	{
 		my $x='<li class="ordini-block">'.
-                '<label class="gestione-labels">'
-                ."@label[$i]: @ordine[$y]</label>
+                '<p class="gestione-labels">'
+                ."@label[$i]: @ordine[$y]</p>
             </li>";
 		$y++;
 		$block1=$block1.$x;
@@ -91,9 +91,9 @@ if($messaggio eq "false")
 	for(my $i=0; $i<$num_prodotto;$i++)
 	{
 		my $x='<div class="ordini-block">
-                    <label class="gestione-labels">'
+                    <label for="prodotto'."$counter".'" class="gestione-labels">'
                     ."Prodotto $counter: @ordine[$y]</label>"
-                    .'<input type="checkbox" name="'
+                    .'<input id="prodotto'."$counter".'" type="checkbox" name="'
                     ."$counter"
                     .'" value="on"/>
                 </div>';

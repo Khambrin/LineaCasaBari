@@ -22,7 +22,6 @@
     #header h1
     {
         display: inline-block;
-	   /*height: 0.5em;*/
         width: 79%;
         margin-bottom: 1.5em;
     }
@@ -768,6 +767,10 @@
     }
 /*------------------------------------ LISTA DEI DESIDERI --------------------------------------------------------------------------------------*/
      
+    .lista-desideri-block-border {
+        border: 1px solid;
+    }
+    
      .lista-desideri-block li{
          padding-top: 1em;
          padding-bottom: 1em;

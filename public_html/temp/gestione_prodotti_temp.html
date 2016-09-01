@@ -116,17 +116,17 @@
                         <form id="productform" method="post" action="aggiungi_prodotto_form.cgi" onsubmit="return prForm()" enctype="multipart/form-data">
                             <ul class="form-Block">
                                 <li>
-                                    <label>* Nome:</label>
-                                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="nome" [% nome_value %]/></div><div class="inputRight"></div>
+                                    <label for="nome">* Nome:</label>
+                                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="nome" class="input" type="text" name="nome" [% nome_value %]/></div><div class="inputRight"></div>
                                 </li>
                                 <li>
-                                    <label>* Prezzo:</label>
-                                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="prezzo" [% pezzo_value %]/></div><div class="inputRight"></div>
+                                    <label for="prezzo">* Prezzo:</label>
+                                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="prezzo" class="input" type="text" name="prezzo" [% pezzo_value %]/></div><div class="inputRight"></div>
                                     <span>&#8364;</span>
                                 </li>
                                 <li>
-                                    <label>* Categoria:</label>
-                                    <select name="categoria">
+                                    <label for="categoria">* Categoria:</label>
+                                    <select id="categoria" name="categoria">
                                         <option value="lista_nozze">Lista nozze</option>
                                         <option value="porcellane">Porcellane</option>
                                         <option value="paralumi">Paralumi</option>
@@ -136,33 +136,33 @@
                                     </select>
                                 </li>
                                 <li>
-                                    <label>* Descrizione:</label>
+                                    <label for="descrizione">* Descrizione:</label>
                                 </li>
                                 <li>
-                                    <textarea class="gestione_textarea" name="descrizione" rows="" cols="" >
+                                    <textarea id="descrizione" class="gestione_textarea" name="descrizione" rows="" cols="" >
                                         [% descrizione_value %]
                                     </textarea>
                                 </li>
                                 <li>
-                                    <label>Tag 1:</label>
-                                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag1"/></div><div class="inputRight"></div>
+                                    <label for="tag1">Tag 1:</label>
+                                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="tag1" class="input" type="text" name="tag1"/></div><div class="inputRight"></div>
                                 </li>
                                 <li>
-                                    <label>Tag 2:</label>
-                                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag2"/></div><div class="inputRight"></div>
+                                    <label for="tag2">Tag 2:</label>
+                                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="tag2" class="input" type="text" name="tag2"/></div><div class="inputRight"></div>
                                 </li>
                                 <li>
-                                    <label>Tag 3:</label>
-                                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag3"/></div><div class="inputRight"></div>
+                                    <label for="tag3">Tag 3:</label>
+                                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="tag3" class="input" type="text" name="tag3"/></div><div class="inputRight"></div>
                                 </li>
                                 <li>
-                                    <label>Tag 4:</label>
-                                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="tag4"/></div><div class="inputRight"></div>
+                                    <label for="tag4">Tag 4:</label>
+                                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="tag4" class="input" type="text" name="tag4"/></div><div class="inputRight"></div>
                                 </li>
                                 <li>
                                     <div>
-                                        <label>Inserisci immagine di dimensione massima 200kB:</label>
-                                        <input type="file" name="immagine"/>
+                                        <label for="immagine">Inserisci immagine di dimensione massima 200kB:</label>
+                                        <input id="immagine" type="file" name="immagine"/>
                                     </div>
                                 </li>
                                 <li>I campi con * sono obbligatori</li>
@@ -187,8 +187,8 @@
                         [% END %]
                         <form method="post" action="ricerca_prodotto.cgi">
                             <div class="form-Block">
-                                <label>Cerca un prodotto:</label>
-                                <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="codice" type="text"/></div><div class="inputRight"></div>
+                                <label for="codice">Cerca un prodotto:</label>
+                                <div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="codice" class="input" name="codice" type="text"/></div><div class="inputRight"></div>
                             </div>
                             <div>
                                 <button class="button" type="submit">Cerca</button>

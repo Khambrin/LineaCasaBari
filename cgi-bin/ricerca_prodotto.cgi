@@ -103,19 +103,19 @@ if($messaggio eq "false")
 	my $i=0;
 	
 	my$x='<li>
-        <label>Nome:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Nome" type="text" value="'."@prodotto[$i]".'" /></div><div class="inputRight"></div>
+        <label for="nome">Nome:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="nome" class="input" name="Nome" type="text" value="'."@prodotto[$i]".'" /></div><div class="inputRight"></div>
     </li>';
 	$tot=$tot.$x;
 	$i++;
 	
 	$x='<li>
-        <label>Descrizione:</label><textarea class="gestione_textarea" rows="" cols="" name="Descrizione">'."@prodotto[$i]".'</textarea>
+        <label for="descrizione">Descrizione:</label><textarea id="descrizione" class="gestione_textarea" rows="" cols="" name="Descrizione">'."@prodotto[$i]".'</textarea>
     </li>';
 	$i++;
 	$tot=$tot.$x;
 	
 	my @splitstring= (split (/_/, basename(@prodotto[$i])));
-	$x='<li><label>La categoria &egrave;: '."@splitstring".'. Scegli la nuova:</label><select name="Categoria"><option value="lista_nozze"';
+	$x='<li><label for="categoria">La categoria &egrave;: '."@splitstring".'. Scegli la nuova:</label><select id="categoria" name="Categoria"><option value="lista_nozze"';
 	$tot=$tot.$x;
 	if(@prodotto[$i] eq "lista_nozze") {
 		$x=' selected="selected"';
@@ -156,13 +156,13 @@ if($messaggio eq "false")
 	$i++;
 	
 	$x='<li>
-        <label>Prezzo:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Prezzo" type="text" value="'."@prodotto[$i]".'" /></div><div class="inputRight"></div>&#8364;
+        <label for="prezzo">Prezzo:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="prezzo" class="input" name="Prezzo" type="text" value="'."@prodotto[$i]".'" /></div><div class="inputRight"></div>&#8364;
     </li>';
 	$tot=$tot.$x;
 	$i++;
 	
 	$x='<li>
-        <label>Data aggiunta:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Data" type="text" value="'."@prodotto[$i]".'" /></div><div class="inputRight"></div>
+        <label for="data">Data aggiunta:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="data" class="input" name="Data" type="text" value="'."@prodotto[$i]".'" /></div><div class="inputRight"></div>
     </li>';
 	$tot=$tot.$x;
 	$i++;
@@ -174,32 +174,32 @@ if($messaggio eq "false")
 	my $read_directory="../images/prodotti";
 	my $immagine="$read_directory/$filename";
 	$x='<li>
-        <label>Inserisci una nuova immagine di dimensione massima 200kB:</label><img id="gestione-immagine_prodotto" src="'."$immagine".'" alt="foto prodotto" /><input type="file" name="Immagine" />
+        <label for="immagine">Inserisci una nuova immagine (dimensione massima 200kB):</label><img id="gestione-immagine_prodotto" src="'."$immagine".'" alt="foto prodotto" /><input id="immagine" type="file" name="Immagine" />
     </li>';
 	$tot=$tot.$x;
 	$i++;
 		
 	$x='<li>
-        <label>Tag:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Tag1" type="text" value="'."@prodotto[$i]".'" /></div><div class="inputRight"></div>
+        <label for="tag1">Tag:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="tag1" class="input" name="Tag1" type="text" value="'."@prodotto[$i]".'" /></div><div class="inputRight"></div>
     </li>';
 	$i++;
 	$tot=$tot.$x;
 	
 	$x='<li>
-        <label>Tag:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Tag2" type="text" value="'."@prodotto[$i]".'" /></div><div class="inputRight"></div>
+        <label for="tag2">Tag:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="tag2" class="input" name="Tag2" type="text" value="'."@prodotto[$i]".'" /></div><div class="inputRight"></div>
     </li>';
 	$i++;
 	$tot=$tot.$x;
 	
 	$x='<li>
-        <label>Tag:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Tag3" type="text" value="'."@prodotto[$i]".'" /></div><div class="inputRight"></div>
+        <label for="tag3">Tag:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="tag3" class="input" name="Tag3" type="text" value="'."@prodotto[$i]".'" /></div><div class="inputRight"></div>
     </li>';
 	$i++;
 	$tot=$tot.$x;
 	
 	$x='<li>
-            <label>Tag:</label>
-            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Tag4" type="text" value="'."@prodotto[$i]".'" /></div><div class="inputRight"></div>
+            <label for="tag4">Tag:</label>
+            <div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="tag4" class="input" name="Tag4" type="text" value="'."@prodotto[$i]".'" /></div><div class="inputRight"></div>
         </li>';
 	$i++;
 	$tot=$tot.$x;

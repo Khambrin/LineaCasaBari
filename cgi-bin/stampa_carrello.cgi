@@ -70,22 +70,48 @@ else
 		my $stampa_immagine='<img src="'."$prodotto_immagine".'" alt="'."$alt".'"/>';
 		my $x='<div class="carrello_left_col">'."$stampa_immagine".'</div>';
 		$tot=$tot.$x;
-		my $x='<div class="carrello_right_col"><fieldset><ul class="form-Block"><li><h3 class="carrello-prodottoh3">Prodotto: '."$i".'</h3></li>';
+		my $x='<div class="carrello_right_col">
+            <fieldset>
+                <legend>Prodotto '."$i".'</legend>
+                <ul class="form-Block">
+                    <li>
+                        <h3 class="carrello-prodottoh3">Prodotto: '."$i".'</h3>
+                    </li>';
 		$tot=$tot.$x;
 		my $x='<li><p>Quantit&agrave;: '." @lista_quantita[$k]".'</p></li>';
 		$tot=$tot.$x;
-		my $x='<li><p>Diminuisci quantit&agrave;:</p><div class="inputLeft"></div><div class="input-carrello"><input class="input" type="text" name="togli_quantita-'."$k".'"/></div><div class="inputRight"></div></li>';
+		my $x='<li>
+                <p>Diminuisci quantit&agrave;:</p>
+                <div class="inputLeft"></div><div class="input-carrello"><input class="input" title="Diminuisci quantit&agrave;" type="text" name="togli_quantita-'."$k".'"/></div><div class="inputRight"></div>
+            </li>';
 		$tot=$tot.$x;
-		my $x='<li><p>Togli il prodotto interamente:</p><input type="checkbox" name="elimina_prodotto-'."$k".'" value="1"/></li></ul></fieldset></div>';
+		my $x='<li>
+                        <p>Togli il prodotto interamente:</p>
+                        <input title="Togli il prodotto interamente" type="checkbox" name="elimina_prodotto-'."$k".'" value="1"/>
+                    </li>
+                    </ul>
+                </fieldset>
+            </div>';
 		$tot=$tot.$x;
 		
 		$k++;
 		
 	}
-	my $x='<div class="side-element"><button class="button" type="submit" value="togli">Togli</button></div></form><form class="side-element" action="stampa-acquisto.cgi" method="post"><div class="side-element"><button class="button" type="submit" value="acquista">Acquista</button></div></form>';
+	my $x='<div class="side-element">
+                <button class="button" type="submit" value="togli">Togli</button>
+            </div>
+            </form>
+            <form class="side-element" action="stampa-acquisto.cgi" method="post">
+                <div class="side-element">
+                    <button class="button" type="submit" value="acquista">Acquista</button>
+                </div>
+            </form>';
 	$tot=$tot.$x;
 
-	my $lista_carrello='<div class="generic-container"><div class="form-container2"><h2>Il tuo carrello</h2><form class="side-element" action="carrello-edit.cgi" method="post">'."$tot".'</div></div>';
+	my $lista_carrello='<div class="generic-container"><div class="form-container2">
+                <h2>Il tuo carrello</h2>
+                <form class="side-element" action="carrello-edit.cgi" method="post">'."$tot".'</div>
+            </div>';
 	
 	$vars={
 		'sessione' => "true",

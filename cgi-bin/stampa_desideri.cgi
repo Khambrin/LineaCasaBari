@@ -39,7 +39,7 @@ my $tot;
 my $index=0;
 for (; $index <=$#prodotti; $index++)
 {	
-	my $x='<fieldset><ul class="lista-desideri-block"><li><p>Prodotto: '."@prodotti[$index]".'</p></li>';
+	my $x='<div class="lista-desideri-block-border"><ul class="lista-desideri-block"><li><p>Prodotto: '."@prodotti[$index]".'</p></li>';
 	$tot=$tot.$x;
 	my $prodotto_immagine=$pro->findnodes("Prodotti/Prodotto[Codice='@prodotti[$index]']/Immagine/text()");
 	my $alt= "immagine del prodotto @prodotti[$index]";
@@ -48,7 +48,7 @@ for (; $index <=$#prodotti; $index++)
 	$tot=$tot.$x;
 	my $x='<li><form action="remove_desiderio.cgi" method="post" class="side-element"><div class="side-element"><button class="button" type="submit">Rimuovi Prodotto</button><input type="hidden" name="indice_desiderio" value="'."$index".'"/></div></form>';
 	$tot=$tot.$x;
-	my $x='<form action="aggiungi_carrello.cgi" method="post" class="side-element"><div class="side-element"><button class="button" type="submit">Aggiungi al Carrello</button><input type="hidden" name="codice_prodotto" value="'."@prodotti[$index]".'"/></div></form></li></ul></fieldset>';
+	my $x='<form action="aggiungi_carrello.cgi" method="post" class="side-element"><div class="side-element"><button class="button" type="submit">Aggiungi al Carrello</button><input type="hidden" name="codice_prodotto" value="'."@prodotti[$index]".'"/></div></form></li></ul></div>';
 	$tot=$tot.$x;
 }
 my $lista_desideri;
