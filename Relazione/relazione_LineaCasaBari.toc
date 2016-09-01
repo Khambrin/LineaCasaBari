@@ -18,9 +18,10 @@
 \contentsline {section}{\numberline {6}Accessibilit\IeC {\`a} e stile}{5}{section.6}
 \contentsline {subsection}{\numberline {6.1}Accessibilit\IeC {\`a}}{5}{subsection.6.1}
 \contentsline {subsubsection}{\numberline {6.1.1}Form}{5}{subsubsection.6.1.1}
-\contentsline {subsubsection}{\numberline {6.1.2}Screen reader}{5}{subsubsection.6.1.2}
-\contentsline {subsubsection}{\numberline {6.1.3}Immagini}{5}{subsubsection.6.1.3}
-\contentsline {subsubsection}{\numberline {6.1.4}Colori}{5}{subsubsection.6.1.4}
-\contentsline {section}{\numberline {7}Strumenti e manutenzione}{5}{section.7}
-\contentsline {subsection}{\numberline {7.1}Strumenti di validazione}{5}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Perl}{5}{subsection.7.2}
+\contentsline {subsubsection}{\numberline {6.1.2}Screen reader}{6}{subsubsection.6.1.2}
+\contentsline {subsubsection}{\numberline {6.1.3}Immagini}{6}{subsubsection.6.1.3}
+\contentsline {subsubsection}{\numberline {6.1.4}Colori}{6}{subsubsection.6.1.4}
+\contentsline {subsubsection}{\numberline {6.1.5}Navigazione}{6}{subsubsection.6.1.5}
+\contentsline {section}{\numberline {7}Strumenti e manutenzione}{6}{section.7}
+\contentsline {subsection}{\numberline {7.1}Strumenti di validazione}{6}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Perl}{6}{subsection.7.2}

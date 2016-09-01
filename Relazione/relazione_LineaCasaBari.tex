@@ -86,13 +86,20 @@ Lo sviluppo del sito è stato conferme alle predisposizioni degli standard W3C, 
 	\subsection{Accessibilità}
 	
 		\subsubsection{Form}
-		%completamento automatico form con dati già presenti o inseriti precedentemente
+		Nella creazione dei form si è cercato di agevolare l'utente tramite i seguenti accorgimenti:
+		\begin{itemize}
+			\item sono stati previsti \texttt{fieldset} per la divisione di form di grandi dimensioni, in modo da rendere i form logicamente più comprensibili;
+			\item i label sono stati associati ai corrispondenti elementi del form tramite l'utilizzo dell'attributo \texttt{for}, in questo modo è possibile cliccare sul label per attivare l'elemento del form. Nel caso di assenza dei label, sono stati previsti i \texttt{title} agli elementi, in modo da fornire una descrizione della loro utilità, nel caso in cui l'utente posiziona il mouse sopra di essi;
+			\item i form sono stati forniti della funzionalità di recupero dei dati immessi precedentemente all'invio, nel caso l'utente abbia commesso un errore, in questo modo non dovrà completare di nuovo il form da zero. Questo è un grande vantaggio, sopratutto in casi di utenti meno abbienti o con problemi gravi.
+		\end{itemize}
 	
 		\subsubsection{Screen reader}
 		
 		\subsubsection{Immagini}
 		
 		\subsubsection{Colori}
+		
+		\subsubsection{Navigazione}
 \section{Strumenti e manutenzione} % Progettazione fisica
 	\subsection{Strumenti di validazione}
 	

@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.6.14)  30 AUG 2016 00:02
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.8.30)  2 SEP 2016 01:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **relazione_LineaCasaBari.tex
 (./relazione_LineaCasaBari.tex
 LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 3 languages loaded.
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
 (./layout.tex (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
@@ -283,8 +283,6 @@ File: babel.def 2013/12/03 3.9h Babel common definitions
 \babel@savecnt=\count90
 \U@D=\dimen111
 )
-\l@british = a dialect from \language\l@english 
-\l@UKenglish = a dialect from \language\l@english 
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
@@ -1447,7 +1445,7 @@ our preamble.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<logo.png, id=103, 43.362pt x 24.09pt>
+<logo.png, id=107, 43.362pt x 24.09pt>
 File: logo.png Graphic file (type png)
  <use logo.png>
 Package pdftex.def Info: logo.png used on input line 6.
@@ -1532,25 +1530,30 @@ Package pdftex.def Info: logo.png used on input line 75.
 AED: lastpage setting LastPage
 File: logo.png Graphic file (type png)
 <use logo.png>
-Package pdftex.def Info: logo.png used on input line 100.
+Package pdftex.def Info: logo.png used on input line 107.
 (pdftex.def)             Requested size: 42.68103pt x 23.71167pt.
  [5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 100.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 100.
+File: logo.png Graphic file (type png)
+ <use logo.png>
+Package pdftex.def Info: logo.png used on input line 107.
+(pdftex.def)             Requested size: 42.68103pt x 23.71167pt.
+ [6]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 107.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 107.
  (./relazione_LineaCasaBari.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 100.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 100.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 107.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 107.
 Package rerunfilecheck Info: File `relazione_LineaCasaBari.out' has not changed
 .
-(rerunfilecheck)             Checksum: 59CBDE8DD27DF60382ACA04808B16452;1563.
+(rerunfilecheck)             Checksum: 21B2C14C757C0EA0718563049E159CD5;1634.
  ) 
 Here is how much of TeX's memory you used:
- 26694 strings out of 495017
- 559850 string characters out of 6181021
- 737554 words of memory out of 5000000
- 29306 multiletter control sequences out of 15000+600000
+ 26695 strings out of 493304
+ 559876 string characters out of 6139871
+ 741811 words of memory out of 5000000
+ 29551 multiletter control sequences out of 15000+600000
  47377 words of font info for 37 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
+ 957 hyphenation exceptions out of 8191
  65i,15n,74p,823b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/d
 vips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/shar
@@ -1558,10 +1561,10 @@ e/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texm
 f/fonts/type1/public/lm/lmro10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt
 10.pfb>
-Output written on relazione_LineaCasaBari.pdf (6 pages, 201673 bytes).
+Output written on relazione_LineaCasaBari.pdf (7 pages, 204059 bytes).
 PDF statistics:
- 199 PDF objects out of 1000 (max. 8388607)
- 181 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
- 210 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 212 PDF objects out of 1000 (max. 8388607)
+ 193 compressed objects within 2 object streams
+ 32 named destinations out of 1000 (max. 500000)
+ 218 words of extra memory for PDF output out of 10000 (max. 10000000)
 
