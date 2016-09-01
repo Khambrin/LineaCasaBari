@@ -104,23 +104,11 @@
             </div><div id="right-col">
                 <div id="sub_menu">
                 [% IF pagina == 'aggiungi' %]
-					<div class="sub_menu_block_active">
-                        <span class="sub_menu_text_active">Aggiungi annuncio</span>
-                    </div><a href="modifica_annunci.cgi?edit"><span class="sub_menu_block">
-                            <span class="sub_menu_text">Rimuovi o modifica annuncio</span>
-                        </span></a>
+			<div class="sub_menu_block_active"><span class="sub_menu_text_active">Aggiungi annuncio</span></div><div class="sub_menu_block"><a href="modifica_annunci.cgi?edit"><span class="sub_menu_text">Rimuovi o modifica annuncio</span></a></div>
                 [% ELSIF pagina == 'modifica_annunci' %]
-					<a href="gestione_annunci_script.cgi?aggiungi">
-                        <span class="sub_menu_block">
-                            <span class="sub_menu_text">Aggiungi annuncio</span>
-                        </span></a><div class="sub_menu_block_active">
-                        <span class="sub_menu_text_active">Rimuovi o modifica annuncio</span></div>
+			<div class="sub_menu_block"><a href="gestione_annunci_script.cgi?aggiungi"><span class="sub_menu_text">Aggiungi annuncio</span></a></div><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica annuncio</span></div>
 				[% ELSIF pagina == 'edit' %]
-					<a href="gestione_annunci_script.cgi?aggiungi">
-                        <span class="sub_menu_block">
-                            <span class="sub_menu_text">Aggiungi annuncio</span>
-                        </span></a><div class="sub_menu_block_active">
-                        <span class="sub_menu_text_active">Rimuovi o modifica annuncio</span></div>
+			<div class="sub_menu_block"><a href="gestione_annunci_script.cgi?aggiungi"><span class="sub_menu_text">Aggiungi annuncio</span></a></div><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica annuncio</span></div>
                 [% END %]
                 </div>
                 [% IF pagina == 'aggiungi' %]
