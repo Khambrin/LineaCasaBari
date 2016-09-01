@@ -18,6 +18,8 @@
     <link href="../css/Print.css" rel="stylesheet" type="text/css" media="print"/>
     <script type="text/javascript" src="../js/jquery-1.12.0.js"></script>
     <script type="text/javascript" src="../js/link_skipper.js"></script>
+    <script type="text/javascript" src="../js/add_address.js"></script>
+    <script type="text/javascript" src="../js/edit_address.js"></script>
 </head>
 
 <body>
@@ -111,7 +113,6 @@
                 [% IF messaggio_confirm != 'false' %]
                     <div class="messaggio-confirm">[% messaggio_confirm %]</div>
                 [% END %]
-			<script type="text/javascript" src="../js/add_address.js"></script>
 			<div class="messaggio-error"> <p id="addvia"></p>  <p id="addnum"></p> <p id="addcit"></p> <p id="addtwoprov"></p> <p id="adddigitscap"></p>  </div>
 				<div class="messaggio-error">[% error %]</div>
 				<div class="messaggio-error">[% messaggio %]</div>
@@ -151,7 +152,6 @@
                 [% IF messaggio_confirm != 'false' %]
                 <div class="messaggio-confirm">[% messaggio_confirm %]</div>
                 [% END %]
-			<script type="text/javascript" src="../js/edit_address.js"></script>
 					<div class="messaggio-error"> <p id="editvia"></p>  <p id="editnum"></p> <p id="editcit"></p> <p id="edittwoprov"></p> <p id="editdigitscap"></p>  </div>
 					<div class="messaggio-error">[% error %]</div>
 					<div class="messaggio-error">[% messaggio %]</div>
