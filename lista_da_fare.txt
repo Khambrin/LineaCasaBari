@@ -3,8 +3,7 @@ relazione
 css stampa (lorenzo)
 css mobile (lorenzo navid)
 Unificare link e hover (lorenzo)
-validare e inserire immagini w3c in footer (ognuno suo pagine)
-Aggiungere controllo dimensione upload immagine (gaggi)
+inserire immagini w3c in footer (ognuno suo pagine)
 Dimensioni immagini tag <img> vanno messe dentro css (navid)
 javascrpt modifica prodotto [ non parte ] (alice)
 quando aggiungo a carrello ritorna il messaggio vai su carrello per acquistare . "carrello" deve essere un link che va a carrello passando per check session
