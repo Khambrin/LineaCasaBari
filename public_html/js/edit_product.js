@@ -19,5 +19,5 @@ function editProdottoFunzione() {//form aggiunta prodotto
 	else{document.getElementById("editFormatoprezzo").innerHTML = "";}
 
 	if(nome1==false|descrizione1==false|dprezzo==false){return false;}
-    	return true;
+    	else{return true;}
 }
