@@ -115,14 +115,21 @@ if($query) {
 }
 
 #gestione messaggio d'errore di aggiungi al carrello
-my $messaggio;
-if ($in{'Messaggio'}) {
-	$messaggio=$in{'Messaggio'};
+my $messaggiocarrello;
+if ($in{'MessaggioCarrello'}) {
+	$messaggiocarrello=$in{'MessaggioCarrello'};
 	}
 else {
-	$messaggio='';
+	$messaggiocarrello='';
 }
 
+my $messaggiodesideri;
+if ($in{'MessaggioDesideri'}) {
+	$messaggiodesideri=$in{'MessaggioDesideri'};
+	}
+else {
+	$messaggiodesideri='';
+}
 
 #gestione form della recensione
 
@@ -249,7 +256,8 @@ if ($session->is_empty)
 		'recensione_form' =>$recensione_form,
 		'pagina_precedente' =>$Pagina_precedente,
 		'query_string' =>$query_string,
-		'messaggio' =>$messaggio,
+		'messaggiocarrello' =>$messaggiocarrello,
+		'messaggiodesideri' =>$messaggiodesideri,
 	};
 }
 
@@ -273,7 +281,8 @@ else
 		'pagina_precedente' =>$Pagina_precedente,
 		'codice_prodotto' =>$Codice,
 		'query_string' =>$query_string,
-		'messaggio' =>$messaggio,		
+		'messaggiocarrello' =>$messaggiocarrello,		
+		'messaggiodesideri' =>$messaggiodesideri,		
 	};
 }
 print $cgi->header('text/html');
