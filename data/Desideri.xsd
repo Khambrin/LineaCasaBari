@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Utenti" xmlns="http://www.example.org/Utenti">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" >
+<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
 
-    <xsd:element name="Liste" type="Tipo_liste"/>
+    <xs:element name="Liste" type="Tipo_liste"/>
     	
-    <xsd:complexType name="Tipo_liste">
-    	<xsd:sequence>
-    		<xsd:element name="Lista" type="Tipo_lista" maxOccurs="unbounded"/>
-    	</xsd:sequence>
-    </xsd:complexType>
+    <xs:complexType name="Tipo_liste">
+    	<xs:sequence>
+    		<xs:element name="Lista" type="Tipo_lista" maxOccurs="unbounded"/>
+    	</xs:sequence>
+    </xs:complexType>
     
-	<xsd:complexType name="Tipo_lista">
-    	<xsd:sequence>
-    		<xsd:element name="Utente" type="xsd:string"/>
-    		<xsd:element name="Prodotto" type="xsd:string" maxOccurs="unbounded"/>
-    	</xsd:sequence>
-    </xsd:complexType>
+    <xs:complexType name="Tipo_lista">
+    	<xs:sequence>
+    		<xs:element name="Utente" type="xs:string"/>
+    		<xs:element name="Prodotto" type="xs:string" maxOccurs="unbounded"/>
+    	</xs:sequence>
+    </xs:complexType>
 
-</xsd:schema>
+</xs:schema>
 

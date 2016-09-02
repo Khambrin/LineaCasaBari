@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Ordini" xmlns="http://www.example.org/Ordini">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
 
-    <xsd:complexType name="Tipo_ordine">
-    	<xsd:sequence>
-			<xsd:element name="Codice" type="xsd:string"/>
-    		<xsd:element name="Utente" type="xsd:string"/>
-    		<xsd:element name="Data_ordine" type="xsd:date"/>
-    		<xsd:element name="Mpagamento" type="xsd:string"/>
-    		<xsd:element name="Indirizzo" type="xsd:integer"/>
-			<xsd:element name="Prodotto" type="xsd:string" maxOccurs="unbounded"/>
-			<xsd:element name="Quantita" type="xsd:integer" maxOccurs="unbounded"/>
-
-    	</xsd:sequence>
-    </xsd:complexType>
+    <xs:complexType name="Tipo_ordine">
+    	<xs:sequence>
+		<xs:element name="Codice" type="xs:string"/>
+    		<xs:element name="Utente" type="xs:string"/>
+    		<xs:element name="Data_ordine" type="xs:date"/>
+    		<xs:element name="Mpagamento" type="xs:string"/>
+    		<xs:element name="Indirizzo" type="xs:integer"/>
+		<xs:element name="Prodotto" type="xs:string" maxOccurs="unbounded"/>
+		<xs:element name="Quantita" type="xs:integer" maxOccurs="unbounded"/>
+    	</xs:sequence>
+    </xs:complexType>
 	
-	<xsd:complexType name="Tipo_ordini">
-		<xsd:sequence>
-			<xsd:element name="Ordine" type="Tipo_ordine" minOccurs="0" maxOccurs="unbounded"/>
-		</xsd:sequence>
-	</xsd:complexType>
+	<xs:complexType name="Tipo_ordini">
+		<xs:sequence>
+			<xs:element name="Ordine" type="Tipo_ordine" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
 
-	<xsd:element name="Ordini" type="Tipo_ordini"/>
-</xsd:schema>
+	<xs:element name="Ordini" type="Tipo_ordini"/>
+</xs:schema>

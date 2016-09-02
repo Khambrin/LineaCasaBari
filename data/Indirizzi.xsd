@@ -1,105 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Indirizzi" xmlns="http://www.example.org/Indirizzi">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
 
 
-<xsd:element name="Indirizzi" type="Tipo_indirizzi"/>
-<xsd:complexType name="Tipo_indirizzi">
-    	<xsd:sequence>
-    		<xsd:element name="Utente" type="Tipo_utente" minOccurs="0" maxOccurs="unbounded"/>
+    <xs:element name="Indirizzi" type="Tipo_indirizzi"/>
+
+    <xs:complexType name="Tipo_indirizzi">
+    	<xs:sequence>
+    		<xs:element name="Utente" type="Tipo_utente" minOccurs="0" maxOccurs="unbounded"/>   
+    	</xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Tipo_utente">
+    	<xs:sequence>
+    		<xs:element name="Email" type="xs:string"/>
+    		<xs:element name="Indirizzo" type="Tipo_indirizzo" minOccurs="0" maxOccurs="unbounded"/>
    
-    	</xsd:sequence>
-    </xsd:complexType>
-
-    <xsd:complexType name="Tipo_utente">
-    	<xsd:sequence>
-    		<xsd:element name="Email" type="xsd:string"/>
-    		<xsd:element name="Indirizzo" type="Tipo_indirizzo" minOccurs="0" maxOccurs="unbounded"/>
-   
-    	</xsd:sequence>
-    </xsd:complexType>
+    	</xs:sequence>
+    </xs:complexType>
 
 
-    <xsd:complexType name="Tipo_indirizzo">
-    	<xsd:sequence>
-            <xsd:element name="Via" type="Tipo_via"/>
-            <xsd:element name="Numero_civico" type="Tipo_numero_civico"/>
-            <xsd:element name="Città" type="Tipo_città"/>
-            <xsd:element name="Provincia" type="Tipo_provincia"/>
-            <xsd:element name="CAP" type="Tipo_CAP"/>
-        </xsd:sequence>
-    </xsd:complexType>
+    <xs:complexType name="Tipo_indirizzo">
+    	<xs:sequence>
+            <xs:element name="Via" type="Tipo_via"/>
+            <xs:element name="Numero_civico" type="Tipo_numero_civico"/>
+            <xs:element name="Città" type="Tipo_città"/>
+            <xs:element name="Provincia" type="Tipo_provincia"/>
+            <xs:element name="CAP" type="Tipo_CAP"/>
+        </xs:sequence>
+    </xs:complexType>
 
-	<xsd:simpleType name="Tipo_via">
-		<xsd:union>
-			<xsd:simpleType>
-				<xsd:restriction base="xsd:string">
-					<xsd:length value="0"/>
-				</xsd:restriction>
-			</xsd:simpleType>
-			<xsd:simpleType>
-				<xsd:restriction base="xsd:string">
-				</xsd:restriction>
-			</xsd:simpleType>
-		</xsd:union>
-	</xsd:simpleType>
+	<xs:simpleType name="Tipo_via">
+		<xs:union>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:length value="0"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:union>
+	</xs:simpleType>
 	
-	<xsd:simpleType name="Tipo_numero_civico">
-		<xsd:union>
-			<xsd:simpleType>
-				<xsd:restriction base="xsd:string">
-					<xsd:length value="0"/>
-				</xsd:restriction>
-			</xsd:simpleType>
-			<xsd:simpleType>
-				<xsd:restriction base="xsd:int">
-				</xsd:restriction>
-			</xsd:simpleType>
-		</xsd:union>
-	</xsd:simpleType>
+	<xs:simpleType name="Tipo_numero_civico">
+		<xs:union>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:length value="0"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType>
+				<xs:restriction base="xs:int">
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:union>
+	</xs:simpleType>
 
-	<xsd:simpleType name="Tipo_città">
-		<xsd:union>
-			<xsd:simpleType>
-				<xsd:restriction base="xsd:string">
-					<xsd:length value="0"/>
-				</xsd:restriction>
-			</xsd:simpleType>
-			<xsd:simpleType>
-				<xsd:restriction base="xsd:string">
-				</xsd:restriction>
-			</xsd:simpleType>
-		</xsd:union>
-	</xsd:simpleType>
+	<xs:simpleType name="Tipo_città">
+		<xs:union>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:length value="0"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:union>
+	</xs:simpleType>
 
-	<xsd:simpleType name="Tipo_provincia">
-		<xsd:union>
-			<xsd:simpleType>
-				<xsd:restriction base="xsd:string">
-					<xsd:length value="0"/>
-				</xsd:restriction>
-			</xsd:simpleType>
-			<xsd:simpleType>
-				<xsd:restriction base="xsd:string">
-				</xsd:restriction>
-			</xsd:simpleType>
-		</xsd:union>
-	</xsd:simpleType>
+	<xs:simpleType name="Tipo_provincia">
+		<xs:union>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:length value="0"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:union>
+	</xs:simpleType>
 
-	<xsd:simpleType name="Tipo_CAP">
-		<xsd:union>
-			<xsd:simpleType>
-				<xsd:restriction base="xsd:string">
-					<xsd:length value="0"/>
-				</xsd:restriction>
-			</xsd:simpleType>
-			<xsd:simpleType>
-				<xsd:restriction base="xsd:int">
-				</xsd:restriction>
-			</xsd:simpleType>
-		</xsd:union>
-	</xsd:simpleType>
+	<xs:simpleType name="Tipo_CAP">
+		<xs:union>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:length value="0"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:simpleType>
+				<xs:restriction base="xs:int">
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:union>
+	</xs:simpleType>
 	
 	
 
 	
-</xsd:schema>
+</xs:schema>

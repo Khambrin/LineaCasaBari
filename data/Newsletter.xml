@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Newsletter><Email>luke@gmail.com</Email><Email>loop@gmail.com</Email></Newsletter>
+<Newsletter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Newsletter.xsd"><Email>luke@gmail.com</Email><Email>loop@gmail.com</Email></Newsletter>

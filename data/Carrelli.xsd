@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Utenti" xmlns="http://www.example.org/Utenti">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" >
+<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
 
-     <xsd:element name="Carrelli" type="Tipo_carrelli"/>
+     <xs:element name="Carrelli" type="Tipo_carrelli"/>
     	
-	<xsd:complexType name="Tipo_carrelli">
-    	<xsd:sequence>
-    		<xsd:element name="Carrello" type="Tipo_carrello" minOccurs="0" maxOccurs="unbounded"/>
-    	</xsd:sequence>
-    </xsd:complexType>
+	<xs:complexType name="Tipo_carrelli">
+    	<xs:sequence>
+    		<xs:element name="Carrello" type="Tipo_carrello" minOccurs="0" maxOccurs="unbounded"/>
+    	</xs:sequence>
+    </xs:complexType>
     
-	<xsd:complexType name="Tipo_carrello">
-    	<xsd:sequence>
-    		<xsd:element name="Utente" type="xsd:string"/>
-    		<xsd:element name="Elemento" type="Tipo_elemento" minOccurs="0" maxOccurs="unbounded"/>
-    	</xsd:sequence>
-    </xsd:complexType>
+	<xs:complexType name="Tipo_carrello">
+    	<xs:sequence>
+    		<xs:element name="Utente" type="xs:string"/>
+    		<xs:element name="Elemento" type="Tipo_elemento" minOccurs="0" maxOccurs="unbounded"/>
+    	</xs:sequence>
+    </xs:complexType>
     
-    <xsd:complexType name="Tipo_elemento">
-    	<xsd:sequence>
-    		<xsd:element name="Prodotto" type="xsd:string"/>
-    		<xsd:element name="Quantita" type="xsd:int"/>
-    	</xsd:sequence>
-    </xsd:complexType>
-</xsd:schema>
+    <xs:complexType name="Tipo_elemento">
+    	<xs:sequence>
+    		<xs:element name="Prodotto" type="xs:string"/>
+    		<xs:element name="Quantita" type="xs:int"/>
+    	</xs:sequence>
+    </xs:complexType>
+</xs:schema>
