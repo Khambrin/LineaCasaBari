@@ -792,8 +792,6 @@
 
     .riga_index
     {
-        padding-top: 1em;
-        padding-bottom: 0.5em;
     }
     
     .riga_index div{
@@ -803,7 +801,6 @@
         padding: 1em;
         margin-right: 0.825em;
         margin-left: 0.825em;
-        margin-top: 0.6em;
     }
     
     /*---------------------------------------------------acquisto ------------------------------------------------------------------------------*/
