@@ -5,6 +5,10 @@
     -moz-box-sizing: border-box;
     -o-box-sizing: border-box;
 }
+* a{
+	text-decoration:none;
+}
+
 * a:hover{
     text-decoration: underline;
 }
@@ -111,7 +115,12 @@ body{
 #drawer li a{
 	color: white;
 }
-    
+
+#drawer li a:hover{
+	text-decoration: underline;
+}
+ 
+ 
 #drawer-toggle:checked ~ #drawer-toggle-label{
     height: 100%;
     width: 25%;
@@ -351,14 +360,6 @@ body
     padding-top: 0.5em;
 }
 
-#footer-container a{
-    text-decoration: none;
-}
-
-#footer-container a:hover{
-    text-decoration: underline;
-}
-
 #first-footer-block{
     display: block;
     text-align: center;
@@ -541,67 +542,31 @@ body
 {
     background-image: url(../images/listanozze.jpg);
 }
-#listanozze a
-{
-    text-decoration: none;
-    
-}
-#listanozze a:hover{
-    text-decoration: underline;
-}
 
 #porcellane
 {
     background-image: url(../images/porcellane.jpg);
 }
-#porcellane a{
-    text-decoration: none;
-}
-#porcellane a:hover{
-    text-decoration: underline;
-}
+
 #lampade
 {
     background-image:url(../images/lampade.jpg);
 }
-#lampade a{
-    text-decoration: none;
-}
-#lampade a:hover{
-    text-decoration: underline;
-}
+
 #pentole
 {
     background-image:url(../images/pentole.jpg);
 }
-#pentole a{
-    text-decoration: none;
-}
-#pentole a:hover{
-    text-decoration: underline;
-}
+
 #tavola
 {
     background-image:url(../images/tavola.jpg);
 }
-#tavola a{
-    text-decoration: none;
-}
-#tavola a:hover{
-    text-decoration: underline;
-}
+
 #tovaglie
 {
 	background-image: url(../images/tovaglie.jpg);
 }
-   
- #tovaglie a{
-    text-decoration: none;
-}
-#tovaglie a:hover{
-    text-decoration: underline;
-}
-
     
 /*---------------------------------------------------login.html ------------------------------------------------------------------------------*/
 
@@ -649,13 +614,6 @@ body
     }
 
 
-    #linea-tempo a
-    {
-        text-decoration: none;
-    }
-
-
-
   #linea-tempo li
     {
         list-style: none;
@@ -680,13 +638,6 @@ body
         padding-bottom:0.5em;   
         box-shadow: 1px 1px 1px #888888;  
     }
-
-
-    .linea-tempo-su a
-    {
-        text-decoration: none;
-    }
-
 
 
 
@@ -755,11 +706,6 @@ body
     padding-right: 0.75em;
 }
 
-#prodotti-categorie a
-{
-    text-decoration: none;
-}
-
 #prodotti-vetrina
 {
     background-color: #E1E3E4;
@@ -808,11 +754,6 @@ body
 {
     list-style: none;
     display: inline;
-}
-
-#prodotti-pageSelector a
-{
-    text-decoration: none;
 }
 
 #prodotti-paginaSuccessiva 
@@ -1004,7 +945,6 @@ body
     #home-block a{
         font-size: 1.8em;
         line-height: 1.6em;
-        text-decoration: none;
     }
     
     #sitemap-block-container{
@@ -1027,8 +967,4 @@ body
     .sitemap-block li{
         list-style: none;
         padding-top: 1em;
-    }
-    
-    .sitemap-block a{
-        text-decoration: none;
     }
