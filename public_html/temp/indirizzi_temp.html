@@ -102,12 +102,12 @@
 		
 		<div id="sub_menu">
                 [% IF pagina == 'aggiungi' %]
-					<div class="sub_menu_block_active"><span class="sub_menu_text_active">Aggiungi indirizzo</span></div><div class="sub_menu_block"><a href="check_session.cgi?stampa_indirizzi"><span class="sub_menu_text">Rimuovi o modifica indirizzo</span></a></div>
+					<div class="sub_menu_block_active"><span class="sub_menu_text_active">Aggiungi indirizzo</span></div><div class="sub_menu_block"><span class="sub_menu_text"><a href="check_session.cgi?stampa_indirizzi">Rimuovi o modifica indirizzo</a></span></div>
                 [% ELSIF pagina == 'edit' %]
-					<div class="sub_menu_block"><a href="check_session.cgi?stampa_indirizzi"><span class="sub_menu_text">Indietro</span></a></div>
-					<div class="sub_menu_block"><a href="check_session.cgi?aggiungi-indirizzo"><span class="sub_menu_text">Aggiungi indirizzo</span></a></div><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica indirizzo</span></div>
+					<div class="sub_menu_block"><span class="sub_menu_text"><a href="check_session.cgi?stampa_indirizzi">Indietro</a></span></div>
+					<div class="sub_menu_block"><span class="sub_menu_text"><a href="check_session.cgi?aggiungi-indirizzo">Aggiungi indirizzo</a></span></div><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica indirizzo</span></div>
 				[% ELSE %]
-					<div class="sub_menu_block"><a href="check_session.cgi?aggiungi-indirizzo"><span class="sub_menu_text">Aggiungi indirizzo</span></a></div><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica indirizzo</span></div>[% END %]
+					<div class="sub_menu_block"><span class="sub_menu_text"><a href="check_session.cgi?aggiungi-indirizzo">Aggiungi indirizzo</a></span></div><div class="sub_menu_block_active"><span class="sub_menu_text_active">Rimuovi o modifica indirizzo</span></div>[% END %]
 		</div>
             [% IF pagina == 'aggiungi' %]
                 [% IF messaggio_confirm != 'false' %]
