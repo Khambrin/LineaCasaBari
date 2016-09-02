@@ -50,49 +50,49 @@ for(my $i=1; $i<=$num_prodotti; $i++)
 my $x='<li><h2>Resoconto</h2></li>';
 $tot=$tot.$x;
 
-my $x='<li><p>Prezzo totale: '."$tot_prodotto ".'&#8364;</p></li>';
+my $x='<li class="resocontoLi"><p>Prezzo totale: '."$tot_prodotto ".'&#8364;</p></li>';
 $tot=$tot.$x;
 
 
-my $x='<li><p>Hai scelto l&#180;indirizzo numero: '."$indi".'</p></li>';
+my $x='<li class="resocontoLi"><p>Hai scelto l&#180;indirizzo numero: '."$indi".'</p></li>';
 $tot=$tot.$x;
 
-my $x='<li><p>Metodo scelto: ';
+my $x='<li class="resocontoLi"><p>Metodo scelto: ';
 $tot=$tot.$x;
 
 if($pagamento eq 'carta_credito')
 {
 	my $x='Carta di credito</p></li>';
 	$tot=$tot.$x;
-	my $x='<li><label>* Inserire codice: </label><div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="codice"/></div><div class="inputRight"></div></li>';
+	my $x='<li class="resocontoLi" ><label>* Inserire codice: </label><div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="codice"/></div><div class="inputRight"></div></li>';
 	$tot=$tot.$x;
 }
 elsif($pagamento eq 'bonifico')
 {
 	my $x='Bonifico</p></li>';
 	$tot=$tot.$x;
-	my $x='<li><p>Le nostre coordinate bancarie sono: IT	11	X	03268	10001	100000000000</p></li>';
+	my $x='<li class="resocontoLi"><p>Le nostre coordinate bancarie sono: IT	11	X	03268	10001	100000000000</p></li>';
 	$tot=$tot.$x;
 }
 elsif($pagamento eq 'contrassegno')
 {
 	my $x='Contrassegno</p></li>';
 	$tot=$tot.$x;
-	my $x='<li><p>Le invieremo una mail con data e ora di arrivo previsto della merce</p></li>';
+	my $x='<li class="resocontoLi"><p>Le invieremo una mail con data e ora di arrivo previsto della merce</p></li>';
 	$tot=$tot.$x;
 }
 elsif($pagamento eq 'pay_pal')
 {
 	my $x='Pay pal</p></li>';
 	$tot=$tot.$x;
-	my $x='<li><label>* Inserire codice: </label><div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="codice"/></div><div class="inputRight"></div></li>';
+	my $x='<li class="resocontoLi"><label>* Inserire codice: </label><div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="codice"/></div><div class="inputRight"></div></li>';
 	$tot=$tot.$x;
 }
 elsif($pagamento eq 'carta_prepagata')
 {
 	my $x='Carta prepagata</p></li>';
 	$tot=$tot.$x;
-	my $x='<li><label>* Inserire codice: </label><div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="codice"/></div><div class="inputRight"></div></li>';
+	my $x='<li class="resocontoLi"><label>* Inserire codice: </label><div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="codice"/></div><div class="inputRight"></div></li>';
 	$tot=$tot.$x;
 }
 my $x='<li>I campi con * sono obbligatori</li>';
@@ -101,7 +101,7 @@ $tot=$tot.$x;
 my $x='<li><button class="button" type="submit" value="conferma">Conferma</button></li>';
 $tot=$tot.$x;
 
-my $lista_acquisto='<div class="form-container2"><form action="aggiungi-ordine.cgi" method="post"><ul><li><input type="hidden" name="mpagamento" value="'."$pagamento".'"/><input type="hidden" name="indirizzo" value="'."$indi".'"/></li>'."$tot".'</ul></form></div>';
+my $lista_acquisto='<div class="generic-container"><div class="form-container2"><form action="aggiungi-ordine.cgi" method="post"><ul><li><input type="hidden" name="mpagamento" value="'."$pagamento".'"/><input type="hidden" name="indirizzo" value="'."$indi".'"/></li>'."$tot".'</ul></form></div></div>';
 
 my $vars={
 	'sessione' => "true",

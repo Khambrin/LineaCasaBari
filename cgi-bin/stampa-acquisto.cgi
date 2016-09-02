@@ -41,7 +41,7 @@ my $tot;
 my $counter=0;
 if($num_indi)
 {
-	my $x='<li><p>'."Indirizzo n. 1</p>".'<input type="radio" name="indirizzo" value="1" checked="checked"/></li>';
+	my $x='<li><p class="indiP">'."Indirizzo n. 1</p>".'<input type="radio" name="indirizzo" value="1" checked="checked"/></li>';
 	$tot=$tot.$x;
 	my $x='<li><p>'."Via: @indirizzo_via[$counter]</p></li>";
 	$tot=$tot.$x;
@@ -58,7 +58,7 @@ if($num_indi)
 for (my $index=1; $index <=$#indirizzo_via; ++$index)
 {	
 	my $num_x=$index+1;
-	my $x='<li><p>'."Indirizzo n. $num_x </p>".'<input type="radio" name="indirizzo" value="'."$index".'"/></li>';
+	my $x='<li><p class="indiP">'."Indirizzo n. $num_x </p>".'<input type="radio" name="indirizzo" value="'."$index".'"/></li>';
 	$tot=$tot.$x;
 	my $x='<li><p>'."Via: @indirizzo_via[$index]</p></li>";
 	$tot=$tot.$x;

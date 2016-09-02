@@ -51,14 +51,14 @@ if(($mpagamento eq 'carta_credito' or $mpagamento eq 'pay_pal' or $mpagamento eq
 		my $x='<li><h2>Resoconto</h2></li>';
 		$tot=$tot.$x;
 
-		my $x='<li><p>Prezzo totale: '."$tot_prodotto ".'&#8364;</p></li>';
+		my $x='<li class="resocontoLi"><p>Prezzo totale: '."$tot_prodotto ".'&#8364;</p></li>';
 		$tot=$tot.$x;
 
 
-		my $x='<li><p>Hai scelto l&#180;indirizzo numero: '."$indirizzo".'</p></li>';
+		my $x='<li class="resocontoLi"><p>Hai scelto l&#180;indirizzo numero: '."$indirizzo".'</p></li>';
 		$tot=$tot.$x;
 
-		my $x='<li><p>Metodo scelto: ';
+		my $x='<li class="resocontoLi"><p>Metodo scelto: ';
 		$tot=$tot.$x;
 
 		if($mpagamento eq 'carta_credito')

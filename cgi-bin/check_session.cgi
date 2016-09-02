@@ -47,7 +47,8 @@ if ($session->is_empty)
 		or $ENV{'QUERY_STRING'} eq 'gestione_annunci' or $ENV{'QUERY_STRING'} eq 'carrello' 
 		or $ENV{'QUERY_STRING'} eq 'gestione_account_normal' or $ENV{'QUERY_STRING'} eq 'gestione_indirizzi' 
 		or $ENV{'QUERY_STRING'} eq 'carrello-svuotato' or $ENV{'QUERY_STRING'} eq 'carrello-modificato'
-		or $ENV{'QUERY_STRING'} eq 'stampa_indirizzi'	or $ENV{'QUERY_STRING'} eq 'edit_indirizzo'
+		or $ENV{'QUERY_STRING'} eq 'carrello-non-modificato'or $ENV{'QUERY_STRING'} eq 'stampa_indirizzi'
+		or $ENV{'QUERY_STRING'} eq 'edit_indirizzo'
 		or $ENV{'QUERY_STRING'} eq 'stampa_desideri' or $ENV{'QUERY_STRING'} eq 'desiderio-rimosso'
 		or $ENV{'QUERY_STRING'} eq 'aggiungi-indirizzo' or $ENV{'QUERY_STRING'} eq 'stampa_indirizzi'
 		or $ENV{'QUERY_STRING'} eq 'stampa_indirizzi_rimosso'or $ENV{'QUERY_STRING'} eq 'stampa_indirizzi_modifica'
@@ -116,6 +117,10 @@ else
 	if($ENV{'QUERY_STRING'} eq 'carrello-modificato')
 	{
 		print $cgi->redirect("stampa_carrello.cgi?modificato");
+	}
+	if($ENV{'QUERY_STRING'} eq 'carrello-non-modificato')
+	{
+		print $cgi->redirect("stampa_carrello.cgi?non-modificato");
 	}
 	if($ENV{'QUERY_STRING'} eq 'carrello-svuotato')
 	{

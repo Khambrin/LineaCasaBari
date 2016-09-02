@@ -53,7 +53,11 @@ else
 {
 	if ($key eq 'modificato')
 	{
-		$messaggio="modifica effettuata con successo";
+		$messaggio="Modifica effettuata con successo";
+	}
+	if ($key eq 'non-modificato')
+	{
+		$messaggio="Nessuna modifica effettuata";
 	}
 	my $tot;
 	my @lista_prodotti=$doc->findnodes("Carrelli/Carrello[Utente='$email']/Elemento/Prodotto/text()");

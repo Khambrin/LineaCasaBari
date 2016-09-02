@@ -18,12 +18,14 @@ my $doc=$parser->parse_file("../data/Carrelli.xml");
 my $num_prodotti=$doc->findvalue("count(Carrelli/Carrello[Utente='$email']/Elemento)");
 my @all_quantita;
 my @all_prodotti;
+my $stop="true";
 
 for(my $i=0; $i<$num_prodotti;$i++)
 {
 	if(param("togli_quantita-"."$i"))
 	{
 		@all_quantita[$i]=param("togli_quantita-"."$i");
+		$stop="false";
 	}
 	else
 	{
@@ -33,6 +35,7 @@ for(my $i=0; $i<$num_prodotti;$i++)
 	if(param("elimina_prodotto-"."$i"))
 	{
 		@all_prodotti[$i]=1;
+		$stop="false";
 	}
 	else
 	{
@@ -94,6 +97,10 @@ for (my $i=0; $i< $num_prodotti; $i++)
 open(XML,">","../data/Carrelli.xml");
 print XML $doc->toString();
 close(XML);
+if ($stop eq 'true')
+{
+	print $cgi->redirect("check_session.cgi?carrello-non-modificato");
+}
 print $cgi->redirect("check_session.cgi?carrello-modificato");
 
 
