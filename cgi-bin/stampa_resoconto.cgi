@@ -37,7 +37,7 @@ for(my $i=1; $i<=$num_prodotti; $i++)
 {
 	my @cod=$carrello_doc->findnodes("Carrelli/Carrello[Utente='$email']/Elemento[$i]/Prodotto/text()");
 	my $codice=@cod[0]->string_value;
-	my $x='<input type="hidden" name="prodotto'."$i".'" value="'."$codice".'">';
+	my $x='<li><input type="hidden" name="prodotto'."$i".'" value="'."$codice".'"/></li>';
 	$tot=$tot.$x;
 	my @prz=$prodotto_doc->findnodes("Prodotti/Prodotto[Codice='$codice']/Prezzo/text()");
 	my $prezzo=@prz[0]->string_value;
@@ -98,16 +98,17 @@ elsif($pagamento eq 'carta_prepagata')
 my $x='<li>I campi con * sono obbligatori</li>';
 $tot=$tot.$x;
 
-my $x='<li><button class="button" type="submit" value="conferma">Conferma</button><li>';
+my $x='<li><button class="button" type="submit" value="conferma">Conferma</button></li>';
 $tot=$tot.$x;
 
-my $lista_acquisto='<div class="form-container2"><form action="aggiungi-ordine.cgi" method="post"><input type="hidden" name="mpagamento" value="'."$pagamento".'"/><input type="hidden" name="indirizzo" value="'."$indi".'"/><ul>'."$tot".'</ul>';
+my $lista_acquisto='<div class="form-container2"><form action="aggiungi-ordine.cgi" method="post"><ul><li><input type="hidden" name="mpagamento" value="'."$pagamento".'"/><input type="hidden" name="indirizzo" value="'."$indi".'"/></li>'."$tot".'</ul></form></div>';
 
 my $vars={
 	'sessione' => "true",
 	'email' => $email,
 	'lista_acquisto' => $lista_acquisto,
 	'amministratore'=>$amministratore,
+	'messaggio_errore'=>'false',
 };
 
 my $file='resoconto_temp.html';

@@ -82,7 +82,7 @@
     </div>
     
     <div id="content">
-		<div class="messaggio-error"> [% messaggio_errore %]</div>
+		[% IF messaggio_errore != 'false' %]<div class="messaggio-error"> [% messaggio_errore %]</div>[% END %]
 			[% lista_acquisto %]
     </div>
     

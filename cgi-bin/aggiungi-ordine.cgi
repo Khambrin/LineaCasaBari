@@ -20,10 +20,11 @@ my $mpagamento=param('mpagamento');
 my $indirizzo=param("indirizzo");
 my $codice=0;
 $codice=param('codice');
-
+my $messaggio_errore='false';
 
 if(($mpagamento eq 'carta_credito' or $mpagamento eq 'pay_pal' or $mpagamento eq 'carta_prepagata') and (!$codice ))#uso lo stesso cod di stampa_resoconto 
 {		
+		$messaggio_errore='Inserisci il codice della carta';
 		my $amministratore=$session->param("amministratore");
 		print $cgi->header('text/html');
 		my $parser=XML::LibXML->new;
@@ -40,7 +41,7 @@ if(($mpagamento eq 'carta_credito' or $mpagamento eq 'pay_pal' or $mpagamento eq
 		{
 			my @cod=$carrello_doc->findnodes("Carrelli/Carrello[Utente='$email']/Elemento[$i]/Prodotto/text()");
 			my $codice=@cod[0]->string_value;
-			my $x='<input type="hidden" name="prodotto'."$i".'" value="'."$codice".'">';
+			my $x='<li><input type="hidden" name="prodotto'."$i".'" value="'."$codice".'"/></li>';
 			$tot=$tot.$x;
 			my @prz=$prodotto_doc->findnodes("Prodotti/Prodotto[Codice='$codice']/Prezzo/text()");
 			my $prezzo=@prz[0]->string_value;
@@ -62,42 +63,42 @@ if(($mpagamento eq 'carta_credito' or $mpagamento eq 'pay_pal' or $mpagamento eq
 
 		if($mpagamento eq 'carta_credito')
 		{
-			my $x='Carta di credito</p><li>';
+			my $x='Carta di credito</p></li>';
 			$tot=$tot.$x;
 			my $x='<li><label>Inserire codice: </label><div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="codice"/></div><div class="inputRight"></div></li>';
 			$tot=$tot.$x;
 		}
 		elsif($mpagamento eq 'bonifico')
 		{
-			my $x='Bonifico</p><li>';
+			my $x='Bonifico</p></li>';
 			$tot=$tot.$x;
 			my $x='<li><p>Le nostre coordinate bancarie sono: IT	11	X	03268	10001	100000000000</p></li>';
 			$tot=$tot.$x;
 		}
 		elsif($mpagamento eq 'contrassegno')
 		{
-			my $x='Contrassegno</p><li>';
+			my $x='Contrassegno</p></li>';
 			$tot=$tot.$x;
 			my $x='<li><p>Le invieremo una mail con data e ora di arrivo previsto della merce</p></li>';
 			$tot=$tot.$x;
 		}
 		elsif($mpagamento eq 'pay_pal')
 		{
-			my $x='Pay pal</label><li>';
+			my $x='Pay pal</p></li>';
 			$tot=$tot.$x;
 			my $x='<li><label>Inserire codice: </label><div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="codice"/></div><div class="inputRight"></div></li>';
 			$tot=$tot.$x;
 		}
 		elsif($mpagamento eq 'carta_prepagata')
 		{
-			my $x='Carta prepagata</p><li>';
+			my $x='Carta prepagata</p></li>';
 			$tot=$tot.$x;
 			my $x='<li><label>Inserire codice: </label><div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="codice"/></div><div class="inputRight"></div></li>';
 			$tot=$tot.$x;
 		}
-		my $x='<li><button class="button" type="submit" value="conferma">Conferma</button><li>';
+		my $x='<li><button class="button" type="submit" value="conferma">Conferma</button></li>';
 		$tot=$tot.$x;
-		my $x='<input type="hidden" name="mpagamento" value="'."$mpagamento".'"/><input type="hidden" name="indirizzo" value="'."$indirizzo".'"/>';
+		my $x='<li><input type="hidden" name="mpagamento" value="'."$mpagamento".'"/><input type="hidden" name="indirizzo" value="'."$indirizzo".'"/></li>';
 		$tot=$tot.$x;
 
 		my $lista_acquisto='<div class="form-container2"><form action="aggiungi-ordine.cgi" method="post"><ul>'."$tot".'</ul></form></div>';
@@ -106,7 +107,7 @@ if(($mpagamento eq 'carta_credito' or $mpagamento eq 'pay_pal' or $mpagamento eq
 			'email' => $email,
 			'lista_acquisto' => $lista_acquisto,
 			'amministratore'=>$amministratore,
-			'messaggio_errore' => "Inserisci il codice della carta",
+			'messaggio_errore' => $messaggio_errore,
 		};
 
 		my $file='resoconto_temp.html';
