@@ -9,7 +9,6 @@ use CGI::Session;
 use Switch;
 use XML::LibXML;
 use File::Basename;
-
 my $cgi=new CGI;
 
 my $session = CGI::Session->load();
@@ -42,7 +41,7 @@ if (!$values{"testo"})
 
 if ($values{"immagine"}) {
 	my $image_size = -s $values{"immagine"};
-	if($image_size > 200000) {push @messaggi, "Immagine troppo grande";}
+	if($image_size > 200000) {push @errors, "Immagine troppo grande";}
 }
 
 
@@ -66,13 +65,11 @@ if (@errors)
 
 	my $codice=$values{"oldcodice"};
 	my $annuncio_node=$doc->findnodes("Annunci/Annuncio[Codice='$codice']");
-	#my $titolo=$doc->findnodes("Annunci/Annuncio[Codice='$codice']/Titolo/text()");
-	#my $fcontenuto=$doc->findnodes("Annunci/Annuncio[Codice='$codice']/Testo/text()");
-
+	
 	my $titolo=$values{"titolo"};
 	my $fcontenuto=$values{"testo"};
 
-	my $vcontenuto='<textarea id="gestione_annunci-textarea" rows="100" cols="100" name="testo">'."$fcontenuto".'</textarea>';
+	my $vcontenuto='<textarea class="gestione_annunci-textarea" rows="9" cols="40" name="testo">'."$fcontenuto".'</textarea>';
 	my $vt_form='<input class= "input" type="text" name="titolo" value="'."$titolo".'"/>';
 	my $hiddencodice='<input class= "input" type="hidden" name="oldcodice" value="'."$codice".'"/>';
 

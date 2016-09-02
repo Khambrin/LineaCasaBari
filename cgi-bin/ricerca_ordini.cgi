@@ -104,7 +104,7 @@ if($messaggio eq "false")
 
 	$y=0;
 	$block2=$block2.'<div class="side-element">
-                    <button id="prodotto-eliminaSelezionati" class="button" type="submit">Elimina prodotti selezionati</button>
+                    <button id="prodotto-eliminaSelezionati" class="button" type="submit">Elimina selezionati</button>
                     <input type="hidden" name="ordine" value="'
                     ."$cod".'"/>
                 </div>';

@@ -152,6 +152,7 @@
                 <div class="messaggio-error">
                     <p id="edittitolo"></p>
                     <p id="edittesto"></p>
+                    [% error %]
                 </div>
 				<div class="messaggio-confirm">
                     [% IF messaggio_vuota != 'false' %]
@@ -188,7 +189,6 @@
                                 </div>
                             </li>
                         </ul>
-                        <div class="messaggio-error">[% error %]</div>
                         <div>[% hidden %]</div>
                         <div class="messaggio-error">[% messaggio %]</div>
                     </form>
