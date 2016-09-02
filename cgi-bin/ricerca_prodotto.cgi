@@ -205,7 +205,7 @@ if($messaggio eq "false")
 	$tot=$tot.$x;
 	
 	my $lista_prodotto='<div class="form-container2">
-            <form id="editProdottoForm" class="side-element" action="edit_prodotto.cgi" method="post" onsubmit="return editProdottoFunzione(this)"  enctype="multipart/form-data">
+            <form id="editProdottoForm" class="side-element" action="edit_prodotto.cgi" method="post" onsubmit="return editProdottoFunzione()"  enctype="multipart/form-data">
                 <ul class="form-Block">'
                 ."$tot".
                 '</ul>

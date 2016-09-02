@@ -156,14 +156,14 @@ if(@messaggi)
 		$tag4_value=$doc->findnodes("Prodotti/Prodotto[Codice='$cod']/Tag[4]/text()");
 	}
 	
-	my $tot='<form id="editProdottoForm" action="edit_prodotto.cgi" method="post" onsubmit="return editProdottoFunzione(this)" enctype="multipart/form-data">';
+	my $tot='<form id="editProdottoForm" action="edit_prodotto.cgi" method="post" onsubmit="return editProdottoFunzione()" enctype="multipart/form-data">';
 	my $i=0;
 	
-	my$x='<li><label>Nome:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Nome" type="text" value='."$nome_value".' /></div><div class="inputRight"></div></li>';
+	my$x='<li><label>Nome:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="nome" class="input" name="Nome" type="text" value='."$nome_value".' /></div><div class="inputRight"></div></li>';
 	$tot=$tot.$x;
 	$i++;
 	
-	$x='<li><label>Descrizione:</label><textarea rows="50" cols="50" name="Descrizione">'."$descrizione_value".'</textarea></li>';
+	$x='<li><label>Descrizione:</label><textarea id="descrizione" rows="50" cols="50" name="Descrizione">'."$descrizione_value".'</textarea></li>';
 	$i++;
 	$tot=$tot.$x;
 	
@@ -208,7 +208,7 @@ if(@messaggi)
 	$tot=$tot.$x;
 	$i++;
 	
-	$x='<li><label>Prezzo:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Prezzo" type="text" value='."$prezzo_value".' /></div><div class="inputRight"></div>&#8364;</li>';
+	$x='<li><label>Prezzo:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="prezzo" class="input" name="Prezzo" type="text" value='."$prezzo_value".' /></div><div class="inputRight"></div>&#8364;</li>';
 	$tot=$tot.$x;
 	$i++;
 	
