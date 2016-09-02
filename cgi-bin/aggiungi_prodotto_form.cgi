@@ -130,6 +130,11 @@ else
 		{
 			$mon="0".$mon;
 		}
+		$regex=$mday=~ /^[0-9]$/;
+		if($regex)
+		{
+			$mday="0".$mday;
+		}
 		
 		my $date="$year-$mon-$mday";
 		my $date_tag=$doc->createElement("Data_aggiunta");

@@ -130,8 +130,6 @@ else
 	my $indirizzo_canc=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo");
 	$indirizzo_canc->[$ind]->parentNode->removeChild($indirizzo_canc->[$ind]);
 
-	#my $indirizzo_canc=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[Via=][Numero_civico]");
-	#$indirizzo_canc->[0]->parentNode->removeChild($indirizzo_canc->[0]);
 
 	my $indirizzi_node=$doc->findnodes("Indirizzi/Utente[Email='$email']");
 

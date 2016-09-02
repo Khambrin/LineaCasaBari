@@ -18,9 +18,6 @@ my $index=$cgi->param("indice_indirizzo");
 $index=$index-1;
 
 
-#my $annuncio_node=$doc->findnodes("Annunci/Annuncio[Titolo='$titolo']");
-#$annuncio_node->[0]->parentNode->removeChild($annuncio_node->[0]);
-
 my $doc=$parser->parse_file("../data/Indirizzi.xml");
 my $indirizzi_node=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo");
 $indirizzi_node->[$index]->parentNode->removeChild($indirizzi_node->[$index]);
