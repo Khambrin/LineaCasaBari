@@ -119,5 +119,5 @@ print XML $doc->toString();
 close(XML);
 
 my $messaggio="Prodotto aggiunto correttamente alla lista dei desideri";
-print $cgi->redirect('prodotto.cgi'."$query_string".'&amp;Messaggio='."$messaggio");
+print $cgi->redirect('prodotto.cgi'."$query_string".'&amp;MessaggioDesideri='."$messaggio");
 

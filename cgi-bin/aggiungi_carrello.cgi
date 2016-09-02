@@ -147,5 +147,5 @@ print XML $doc->toString();
 close(XML);
 
 my $messaggio='Prodotto aggiunto correttamente al carrello. Per effettuare l'."'".'acquisto procedi al';
-print $cgi->redirect('prodotto.cgi'."$query_string".'&amp;Messaggio='."$messaggio");
+print $cgi->redirect('prodotto.cgi'."$query_string".'&amp;MessaggioCarrello='."$messaggio");
 
