@@ -94,14 +94,45 @@ Lo sviluppo del sito è stato conferme alle predisposizioni degli standard W3C, 
 		\end{itemize}
 	
 		\subsubsection{Screen reader}
-		
+		Per facilitare l'utilizzo del sito agli utenti con problemi di lettura o di vista, costretti ad usare strumenti come gli screen reader, si sono i seguenti accorgimenti:
+		\begin{itemize}
+			\item tutte le immagini di contenuto sono state accompagnate da un testo di descrizione, tramite l'utilizzo dell'attributo \texttt{alt};
+			\item è stato fornito lo strumento link skipper, utile a saltare direttamente al contenuto, senza dover leggere tutti i link dell'header;
+			\item tutti i campi dei form sono stati accompagnati da un \texttt{label} o \texttt{title}.
+		\end{itemize}
 		\subsubsection{Immagini}
-		
+		Tutte le immagini di contenuto vengono accompagnate da un testo che ne descrive il contenuto, in questo modo si agevolano gli utenti con problemi di vista, oltre a fornire un aiuto nel caso in cui le immagini non vengano caricate correttamente. \\
+		Per le immagini di presentazione, cioè inserite tramite css, non sono previste tali accorgimenti in quanto la loro utilità è solo quella di abbellire e risaltare la grafica del sito.
 		\subsubsection{Colori}
 		
 		\subsubsection{Navigazione}
-\section{Strumenti e manutenzione} % Progettazione fisica
-	\subsection{Strumenti di validazione}
+		Per facilitare la navigazione agli utenti di ogni genere, sono stati previsti i seguenti accorgimenti:
+		\begin{itemize}
+			\item è stato creato un link per tornare all'inizio del contenuto, posizionato alla fine di esso e sopra il footer;
+			\item è stato creato un link skipper, nascosto agli utenti ed accessibile mediante la pressione del tasto tab, il quale permette di saltare i link dell'header e posizionarsi sul contenuto. Mediante l'utilizzo di uno script javascript, si è garantito il focus dei link del contenuto alla pressione del tabulatore, successivamente al salto del contenuto mediante il link skipper;
+			\item non è stato necessario ritoccare i tabindex, in quanto quelli di default previsti dai diversi browser si comportavano come previsto.
+		\end{itemize}
+\section{Strumenti e sviluppo} % Progettazione fisica
+	\subsection{Strumenti per la validazione}
+	
+		\subsubsection{W3C Markup Validator}
+		
+		\subsubsection{W3C CSS Validator}		
+		
+		\subsubsection{W3C XML Schema Validator}
+	
+	\subsection{Strumenti per l'accessibilità}
+	
+		\subsubsection{Total Validator}
+		%Strumento gradiazione colori
+		%Strumento browser testuale
+		
 	
 	\subsection{Perl}
+	
+	\subsection{HTML}
+	%utilizzo xhtml 4.1
+	\subsection{CSS}
+	%utilizzo CSS3
+	\subsection{Javascript}
 \end{document}
