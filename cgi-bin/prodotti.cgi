@@ -208,7 +208,12 @@ else {
 	$page=1;
 }
 my $index=($page-1)*9;
-my $num_pagine=($#prodotti_codice/9)+1;
+my $num_pagine;
+if(@prodotti_codice){
+	$num_pagine=($#prodotti_codice/9)+1;
+} else {
+	$num_pagine=1;
+}
 
 # stampa_categorie
 
