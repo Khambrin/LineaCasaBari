@@ -304,7 +304,9 @@ else
 	my $read_directory="../images/prodotti";
 	if ($values{'Immagine'})
 	{
-		unlink $old_immagine;
+		my @image= (split (/_/, basename($old_immagine)));
+			
+		unlink (''."@image".'')or die "Impossibile rimuovere l'immagine\n";
 		my $upload_filehandle=$cgi->upload("Immagine");
 		open (UPLOADFILE,">$upload_directory/$values{'Immagine'}") or die "$!";
 		binmode UPLOADFILE;
