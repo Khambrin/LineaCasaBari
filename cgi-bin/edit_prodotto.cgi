@@ -304,6 +304,7 @@ else
 	my $read_directory="../images/prodotti";
 	if ($values{'Immagine'})
 	{
+		unlink $old_immagine;
 		my $upload_filehandle=$cgi->upload("Immagine");
 		open (UPLOADFILE,">$upload_directory/$values{'Immagine'}") or die "$!";
 		binmode UPLOADFILE;

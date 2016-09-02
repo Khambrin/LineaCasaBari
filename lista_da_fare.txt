@@ -5,7 +5,7 @@ css mobile (lorenzo navid)
 Unificare link e hover (lorenzo)
 Dimensioni immagini tag <img> vanno messe dentro css (navid)
 javascrpt modifica prodotto [ non parte ] (alice)
-Se cambio immagine in modifica prodotto cancello quella vecchia xke non serve più a nulla (lorenzo).
+Se cambio immagine in modifica prodotto cancello quella vecchia xke non serve più a nulla (abari).
 xml xsd ->manca solo modificare intestazione file (navid)(alice, lorenzo)
 
 Domande prof:
