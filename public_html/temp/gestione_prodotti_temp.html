@@ -174,7 +174,6 @@
                         </form>
                     </div>
                     [% ELSIF pagina == 'rimuovi_modifica' %]
-			<div class="messaggio-error"><p id="editNome"></p><p id="editDescrizione"></p><p id="editFormatoPrezzo"></p></div>
                         [% IF messaggio_confirm!= 'false' %]
                             <div class="messaggio-confirm">
                                 [% messaggio_confirm%]
@@ -196,6 +195,7 @@
                         </form>
                         [% lista_prodotti %]
                   [% END %]
+			<div class="messaggio-error"><p id="editNome"></p><p id="editDescrizione"></p><p id="editFormatoPrezzo"></p></div>
             </div>
         </div>
     </div>
