@@ -143,7 +143,7 @@ if ((!$email) || grep(/^$email/, @recensione_email)) {
 
 my $recensione_form;
 if(!$already_reviewed) {
-	my $x='<h3>Aggiungi una recensione</h3><form id="addReviewForm" method="post" action="aggiungi_recensione_form.cgi'."$query_string".'" onsubmit="return newReviewForm()"  enctype="multipart/form-data">
+	my $x='<div class="form-container2"><h3>Aggiungi una recensione</h3><form id="addReviewForm" method="post" action="aggiungi_recensione_form.cgi'."$query_string".'" onsubmit="return newReviewForm()"  enctype="multipart/form-data">
 			<ul class="aggiungi_recensione_form">
 				<li>
                     <label id="recensioneTitolo-label">Titolo:</label>
@@ -188,7 +188,7 @@ if(!$already_reviewed) {
             <div class="gestione-button_block">
                 <button type="submit">Aggiungi recensione</button>
             </div>
-           </form>';
+           </form></div>';
 	$tot=$tot.$x;
 	$recensione_form="$tot";
 }
