@@ -1023,6 +1023,184 @@ body
     padding-right: 1em;
 }
 
+     /*------------------- account  -----------------------------------------------------------------------------------*/
+    
+    #left-col
+    {
+		text-align: center;
+        border-bottom: 1px solid;
+    }
+	
+    #left-col li
+    {
+         list-style: none;
+         
+    }
+    #left-col ul
+    {
+		margin-top: 0.1em;
+        padding-top: 0.5em;
+        padding-bottom: 0.2em;
+        border-bottom: 1px solid;
+        width: 100%;
+    }
+
+    #right-col
+    {
+		text-align: center;
+        border-bottom: 1px solid;
+        overflow-y: scroll;
+        
+    }
+    #right-col li
+    {
+         list-style: none;
+    }
+    
+    .title_link
+    {
+        font-weight: bold;
+        font-size: 1.5em;        
+    }
+    
+    
+    .subtitle_link
+    {
+        opacity: 0.6;
+    }
+
+
+
+/*------------------------------------------------ gestione sito ----------------------------------------------------------------------------------*/
+
+    .button-utente{
+        margin-bottom: 2em;
+        height: 2.5em;
+        width: 12%;
+    }
+    
+    .sub_menu_block{
+        display: inline-block;
+        height: 5em;
+        width: 40%;
+        text-align: center;
+        border: 1px solid;
+        background-color: #E1E3E4;
+        border-color: black;
+        vertical-align: middle;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        padding-bottom: 0.5em;
+        color: white;
+    }
+    
+    .sub_menu_block_active
+    {
+        display: inline-block;
+        height: 5em;
+        width: 40%;
+        text-align: center;
+        border-left: 1px solid;
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        background-color: #295380;
+        border-color: black;
+        vertical-align: middle;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+    
+    .sub_menu_text{
+        display: inline-block;
+        vertical-align: middle;
+        margin-top: 0.5em;
+    }
+    .sub_menu_text_active
+    {
+        display: inline-block;
+        vertical-align: middle;
+        margin-top: 0.5em;
+        color: white;
+    }
+    
+    .gestione_textarea{
+        width: 80%;
+        height: 10em;
+    }
+    
+    .gestione-inputMiddle{
+        display: inline-block;
+        vertical-align: middle;
+        background-image: url(../images/input_middle.png);
+        width: 30%;
+        background-size: contain;
+        background-repeat: repeat-x;
+    }
+    
+    #gestione-center{
+        display:inline-block;
+    }
+    
+    #gestione-textarea_block{
+        padding-top: 2em;
+    }
+    
+    #sub_menu{
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    
+    #gestione-immagine_prodotto{
+        width: 20%;
+        height: 5em;
+    }
+    
+    #prodotto-cat{
+        margin-bottom: 2em;
+    }
+    
+    #prodotto-cod{
+        padding-top: 1em;
+    }
+    
+    #form-containerprodotto{
+        margin-top: 1em;
+        width: 80%;
+        margin: 0 auto;
+        background-color: #E1E3E4;
+        height: auto;
+        box-shadow: 1px 1px 1px 1px #888888; 
+        margin-bottom: 1em;
+    }
+    
+    #prodotto-eliminaSelezionati{
+        width: 28%
+    }
+    
+    #ordini-cerca{
+       padding-bottom: 1em;    
+    }
+    
+    .ordini-block{
+        padding-bottom:1em; 
+    }
+    
+    #annunci-testoLabel{
+        padding-right: 19em;
+    }
+    
+    #left-menu-active{
+        background-color: #295380;
+        vertical-align: middle;
+        color: white;
+        padding-right: 0.5em;
+    }
+    
+    #gestione-file_label
+    {
+        padding-bottom: 1em;
+    }
+
 /*------------------------------------------------------- ANNUNCI ---------------------------------------------------------------------*/
 .immagine_annuncio{
     text-align: center;
