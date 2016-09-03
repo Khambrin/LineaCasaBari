@@ -116,16 +116,16 @@
                         <form id="productform" method="post" action="aggiungi_prodotto_form.cgi" onsubmit="return prForm()" enctype="multipart/form-data">
                             <ul class="form-Block">
                                 <li>
-                                    <label for="nome">* Nome:</label>
+                                    <p for="nome">* Nome:</p>
                                     <div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="nome" class="input" type="text" name="nome" [% nome_value %]/></div><div class="inputRight"></div>
                                 </li>
                                 <li>
-                                    <label for="prezzo">* Prezzo:</label>
+                                    <p for="prezzo">* Prezzo &#40;&#8364;&#41;: </p>
                                     <div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="prezzo" class="input" type="text" name="prezzo" [% pezzo_value %]/></div><div class="inputRight"></div>
-                                    <span>&#8364;</span>
+                                    
                                 </li>
                                 <li>
-                                    <label for="categoria">* Categoria:</label>
+                                    <p for="categoria">* Categoria:</p>
                                     <select id="categoria" name="categoria">
                                         <option value="lista_nozze">Lista nozze</option>
                                         <option value="porcellane">Porcellane</option>
@@ -136,32 +136,32 @@
                                     </select>
                                 </li>
                                 <li>
-                                    <label for="descrizione">* Descrizione:</label>
+                                    <p for="descrizione">* Descrizione:</p>
                                 </li>
                                 <li>
-                                    <textarea id="descrizione" class="gestione_textarea" name="descrizione" rows="" cols="" >
+                                    <textarea class="gestione_textarea" name="descrizione" rows="" cols="" >
                                         [% descrizione_value %]
                                     </textarea>
                                 </li>
                                 <li>
-                                    <label for="tag1">Tag 1:</label>
+                                    <p for="tag1">Tag 1:</p>
                                     <div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="tag1" class="input" type="text" name="tag1"/></div><div class="inputRight"></div>
                                 </li>
                                 <li>
-                                    <label for="tag2">Tag 2:</label>
+                                    <p for="tag2">Tag 2:</p>
                                     <div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="tag2" class="input" type="text" name="tag2"/></div><div class="inputRight"></div>
                                 </li>
                                 <li>
-                                    <label for="tag3">Tag 3:</label>
+                                    <p for="tag3">Tag 3:</p>
                                     <div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="tag3" class="input" type="text" name="tag3"/></div><div class="inputRight"></div>
                                 </li>
                                 <li>
-                                    <label for="tag4">Tag 4:</label>
+                                    <p for="tag4">Tag 4:</p>
                                     <div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="tag4" class="input" type="text" name="tag4"/></div><div class="inputRight"></div>
                                 </li>
                                 <li>
                                     <div>
-                                        <label for="immagine">Inserisci immagine di dimensione massima 200kB:</label>
+                                        <p for="immagine">Inserisci immagine di dimensione massima 200kB:</p>
                                         <input id="immagine" type="file" name="immagine"/>
                                     </div>
                                 </li>

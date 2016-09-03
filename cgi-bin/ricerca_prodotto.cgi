@@ -174,7 +174,7 @@ if($messaggio eq "false")
 	my $read_directory="../images/prodotti";
 	my $immagine="$read_directory/$filename";
 	$x='<li>
-        <label for="immagine">Inserisci una nuova immagine (dimensione massima 200kB):</label><img id="gestione-immagine_prodotto" src="'."$immagine".'" alt="foto prodotto" /><input id="immagine" type="file" name="Immagine" />
+        <label for="immagine" id="gestione-file_label">Inserisci una nuova immagine (dimensione massima 200kB):</label><img id="gestione-immagine_prodotto" src="'."$immagine".'" alt="foto prodotto" /><input id="immagine" type="file" name="Immagine" />
     </li>';
 	$tot=$tot.$x;
 	$i++;
@@ -204,24 +204,7 @@ if($messaggio eq "false")
 	$i++;
 	$tot=$tot.$x;
 	
-	my $lista_prodotto='<div class="form-container2">
-            <form id="editProdottoForm" class="side-element" action="edit_prodotto.cgi" method="post" onsubmit="return editProdottoFunzione()"  enctype="multipart/form-data">
-                <ul class="form-Block">'
-                ."$tot".
-                '</ul>
-                <div class="side-element">
-                    <button class="button" type="submit">Modifica</button>
-                    <input type="hidden" name="old_cod" value="'."$cod".'"/>
-                    <input type="hidden" name="old_image" value="'."$filespec".'"/>
-                </div>
-            </form>
-            <form class="side-element" action="togli_prodotto.cgi" method="post">
-                <div class="side-element">
-                    <input type="hidden" name="prodotto" value="'."$cod".'" />
-                    <button class="button" type="submit">Rimuovi</button>
-                </div>
-            </form>
-        </div>';
+	my $lista_prodotto='<div class="generic-container"><div class="form-container2"><form id="editProdottoForm" class="side-element" action="edit_prodotto.cgi" method="post" onsubmit="return editProdottoFunzione()"  enctype="multipart/form-data"><ul class="form-Block">'."$tot".'</ul><div class="side-element"><button class="button" type="submit">Modifica</button><input type="hidden" name="old_cod" value="'."$cod".'"/><input type="hidden" name="old_image" value="'."$filespec".'"/></div></form><form class="side-element" action="togli_prodotto.cgi" method="post"><div class="side-element"><input type="hidden" name="prodotto" value="'."$cod".'" /><button class="button" type="submit">Rimuovi</button></div></form></div></div>';
 	$vars={
 		'sessione' => "true",
 		'email' => $email,

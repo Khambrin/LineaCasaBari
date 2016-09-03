@@ -191,10 +191,10 @@
                 [% IF messaggio_confirm != 'false' %]
                     <div class="messaggio-confirm">[% messaggio_confirm %]</div>
                 [% END %]
-            <div class="form-container2">
+            [% IF messaggio_confirm == 'false' %]<div class="form-container2">
                 [% lista_indirizzi %]
             </div>
-            [% END %]
+            [% END %]            [% END %]
             
         </div>
         </div>
