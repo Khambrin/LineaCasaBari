@@ -48,7 +48,7 @@ for (; $index <=$#prodotti; $index++)
 	$tot=$tot.$x;
 	my $x='<li><form action="remove_desiderio.cgi" method="post" class="side-element"><div class="side-element"><button class="button" type="submit">Rimuovi Prodotto</button><input type="hidden" name="indice_desiderio" value="'."$index".'"/></div></form>';
 	$tot=$tot.$x;
-	my $x='<form action="aggiungi_carrello.cgi" method="post" class="side-element"><div class="side-element"><button class="button" type="submit">Aggiungi al Carrello</button><input type="hidden" name="codice_prodotto" value="'."@prodotti[$index]".'"/></div></form></li></ul></div>';
+	my $x='<form action="desideri_aggiungi_carrello.cgi" method="post" class="side-element"><div class="side-element"><button class="button" type="submit">Aggiungi al Carrello</button><input type="hidden" name="codice_prodotto" value="'."@prodotti[$index]".'"/></div></form></li></ul></div>';
 	$tot=$tot.$x;
 }
 my $lista_desideri;
@@ -58,6 +58,10 @@ if($index)
 	if($ENV{'QUERY_STRING'} eq 'rimosso')
 	{
 		$messaggio="Prodotto rimosso con successo";
+	}
+	elsif($ENV{'QUERY_STRING'} eq 'aggiunto')
+	{
+		$messaggio="Prodotto aggiunto con successo al <a href='check_session.cgi?carrello'>Carrello</a>";
 	}
 	$lista_desideri='<div class="generic-container"><div class="form-container2"><h2>Lista dei Desideri</h2>'."$tot".'</div></div>';
 	$vars={

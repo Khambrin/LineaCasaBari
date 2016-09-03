@@ -378,12 +378,13 @@
 	}
 
 	#recensioneTitolo-label {
-		padding-right: 6.05em;
+		margin-right: 4em;
 	}
-
-	#recensioneNome-label {
-		padding-right: 1em;
+    
+    #recensioneNome-label {
+		margin-right: 4em;
 	}
+    
    
     /*------------------------------- login.html --------------------------------------------------------------------------------------------------*/
 

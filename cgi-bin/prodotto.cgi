@@ -146,7 +146,7 @@ if(!$already_reviewed) {
 	my $x='<div class="form-container2"><h3>Aggiungi una recensione</h3><form id="addReviewForm" method="post" action="aggiungi_recensione_form.cgi'."$query_string".'" onsubmit="return newReviewForm()"  enctype="multipart/form-data">
 			<ul class="aggiungi_recensione_form">
 				<li>
-                    <label id="recensioneTitolo-label">Titolo:</label>
+                    <label id="recensioneTitolo-label">* Titolo:</label>
                     <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="titolo" value="'."$in{'Title'}".'"/></div><div class="inputRight"></div>
                 </li>';
 	my $tot=$tot.$x;
@@ -155,7 +155,7 @@ if(!$already_reviewed) {
 		$tot=$tot.$x;
 	}
 	my $x='<li>
-                <label id="recensioneNome-label">Nome visualizzato:</label>
+                <label id="recensioneNome-label">* Nome visualizzato:</label>
                 <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="nome" value="'."$in{'Nome'}".'"/></div><div class="inputRight"></div>
             </li>';
 	my $tot=$tot.$x;
@@ -164,7 +164,7 @@ if(!$already_reviewed) {
 		$tot=$tot.$x;
 	}
 	my $x='<li>
-                    <label id="recensioneTesto-label">Testo:</label>
+                    <label id="recensioneTesto-label">* Testo:</label>
                 </li>
                 <li>
                     <textarea class="gestione_textarea" name="testo" rows="" cols="">'."$in{'Testo'}".'</textarea>

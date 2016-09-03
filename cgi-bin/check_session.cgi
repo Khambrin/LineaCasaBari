@@ -55,7 +55,7 @@ if ($session->is_empty)
 		or $ENV{'QUERY_STRING'} eq 'stampa_acquisto' or $ENV{'QUERY_STRING'} eq 'gestione_account_mod' 
 		or $ENV{'QUERY_STRING'} eq 'aggiunto' or $ENV{'QUERY_STRING'} eq 'aggiungi_annuncio'
 		or $ENV{'QUERY_STRING'} eq 'rimosso_annuncio'or $ENV{'QUERY_STRING'} eq 'modifica_annunci'
-		or grep( /^Codice/, $ENV{'QUERY_STRING'}))
+		or $ENV{'QUERY_STRING'} eq 'desiderio_aggiunto' or grep( /^Codice/, $ENV{'QUERY_STRING'}))
 	{
 		$file='login_temp.html';
 		$vars={
@@ -137,6 +137,10 @@ else
 	if ($ENV{'QUERY_STRING'} eq 'desiderio-rimosso')
 	{
 		print $cgi->redirect("stampa_desideri.cgi?rimosso");
+	}
+	if ($ENV{'QUERY_STRING'} eq 'desiderio_aggiunto')
+	{
+		print $cgi->redirect("stampa_desideri.cgi?aggiunto");
 	}
 	if($ENV{'QUERY_STRING'} eq 'aggiungi-indirizzo' or $ENV{'QUERY_STRING'} eq 'gestione_indirizzi' )
 	{
