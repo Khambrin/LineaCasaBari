@@ -176,6 +176,9 @@
     .form-container2 label{
         width: 17%;
     }
+    .form-container2 p{
+        width: 30%;
+    }
     
     #right-col label{
         width: 22%;
@@ -564,7 +567,7 @@
     
     #annunci-testoP
     {
-        margin-right: 9em;
+        margin-right: 12em;
     }
     
     #left-menu-active{

@@ -4,8 +4,6 @@ css stampa (lorenzo)
 css mobile (lorenzo navid)
 Dimensioni immagini tag <img> vanno messe dentro css (navid)
 javascrpt modifica prodotto [ non parte ] codice presente su git, js giusto probaile bug su form (alice)
-Se cambio immagine in modifica prodotto cancello quella vecchia xke non serve più a nulla (abari).
-
 Domande prof:
 
 1) Dimensione massima immagini uppabili
