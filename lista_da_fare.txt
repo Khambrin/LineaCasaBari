@@ -1,7 +1,6 @@
 relazione
 css stampa (lorenzo)
 css mobile (lorenzo navid)
-Dimensioni immagini tag <img> vanno messe dentro css (navid)
 
 Domande prof:
 

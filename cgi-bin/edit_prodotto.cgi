@@ -222,7 +222,7 @@ if(@messaggi)
 	my $filename=basename $filespec;
 	my $read_directory="../images/prodotti";
 	my $immagine="$read_directory/$filename";
-	$x='<li><label>Inserisci una nuova immagine di dimensione massima 200kB:</label><img src='."$immagine".' alt="foto prodotto" height="100" width="100"><input type="file" name="Immagine"></li>';
+	$x='<li><label>Inserisci una nuova immagine di dimensione massima 200kB:</label><img id="editProdottoImg" src='."$immagine".' alt="foto prodotto"><input type="file" name="Immagine"></li>';
 	$tot=$tot.$x;
 	$i++;
 		
