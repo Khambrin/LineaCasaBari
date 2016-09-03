@@ -1,4 +1,3 @@
-compatibilità altri browser
 relazione
 css stampa (lorenzo)
 css mobile (lorenzo navid)
