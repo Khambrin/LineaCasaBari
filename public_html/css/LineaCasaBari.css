@@ -487,8 +487,6 @@ body
 .form-container2 p{
     text-align: left;
     display: inline-block;
-    padding-right: 2em;
-    width: 30%;
 }
 
 .form-container2 h2{
@@ -707,6 +705,12 @@ body
     padding-right: 0.75em;
 }
 
+.categoria_attiva
+{
+    background-color: #295380;
+    color: white;
+	padding: 0.4em;
+}
 
 #prodotti-vetrina
 {
@@ -750,6 +754,13 @@ body
     width: 15%;
     height: 2em;
     vertical-align: middle;
+}
+
+.pagina_attiva
+{
+    background-color: #295380;
+    color: white;
+	padding: 0.65em;
 }
 
 #prodotti-pageSelector li
@@ -977,32 +988,12 @@ body
     width: 4%;
     background-size: contain;
     background-repeat: repeat-x;
-    
-}
-.carrello-prodottoh3{
-    padding-right: 3em; 
-}
-.carrello-quantitaLabel{
-    padding-right: 5.5em;
-}
-.carrello-quantitaTogliLabel{
-    padding-right: 1.5em;
-    padding-left: 2em;
-}
-
-.carrello-prodottoTogliLabel{
-    padding-right: 0.5em;
-    padding-left: 3em;
 }
 
 .carrello_left_col{
-    display: inline-block;
-    vertical-align: middle;
-  	width: 25%;
- 	height: 10em;
     margin-bottom: 1em;
-    
 }
+
 .carrello_left_col img {
 	max-height: 7em;
 	max-width: 100%;
@@ -1011,10 +1002,6 @@ body
     margin-top: 1em;
 }
 .carrello_right_col{
-    display: inline-block;
-   	vertical-align: middle;
-   	width: 60%;
-   	height: 10em;
 	background-color:#E1E3E4;
 	padding: 0.5em;
 	margin-left: 0.1em;
@@ -1024,184 +1011,207 @@ body
     padding-right: 1em;
 }
 
-     /*------------------- account  -----------------------------------------------------------------------------------*/
-    
-    #left-col
-    {
-		text-align: center;
-        border-bottom: 1px solid;
-    }
+/*------------------- account  -----------------------------------------------------------------------------------*/
+  
+#left-col
+{
+	text-align: center;
+    border-bottom: 1px solid;
+}
 	
-    #left-col li
-    {
-         list-style: none;
-         
-    }
-    #left-col ul
-    {
-		margin-top: 0.1em;
-        padding-top: 0.5em;
-        padding-bottom: 0.2em;
-        border-bottom: 1px solid;
-        width: 100%;
-    }
+#left-col li
+{
+    list-style: none;
+}
 
-    #right-col
-    {
-		text-align: center;
-        border-bottom: 1px solid;
-        overflow-y: scroll;
-        
-    }
-    #right-col li
-    {
-         list-style: none;
-    }
+#left-col ul
+{
+	margin-top: 0.1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.2em;
+    border-bottom: 1px solid;
+    width: 100%;
+}
+
+#right-col
+{
+	text-align: center;
+    border-bottom: 1px solid;
+    overflow-y: scroll;
+}
+
+#right-col li
+{
+    list-style: none;
+}
     
-    .title_link
-    {
-        font-weight: bold;
-        font-size: 1.5em;        
-    }
+.title_link
+{
+    font-weight: bold;
+    font-size: 1.5em;        
+}
     
     
-    .subtitle_link
-    {
-        opacity: 0.6;
-    }
+.subtitle_link
+{
+    opacity: 0.6;
+}
 
 
 
 /*------------------------------------------------ gestione sito ----------------------------------------------------------------------------------*/
 
-    .button-utente{
-        margin-bottom: 2em;
-        height: 2.5em;
-        width: 12%;
-    }
+.button-utente{
+    margin-bottom: 2em;
+    height: 2.5em;
+    width: 12%;
+}
     
-    .sub_menu_block{
-        display: inline-block;
-        height: 5em;
-        width: 40%;
-        text-align: center;
-        border: 1px solid;
-        background-color: #E1E3E4;
-        border-color: black;
-        vertical-align: middle;
-        padding-left: 0.5em;
-        padding-right: 0.5em;
-        padding-bottom: 0.5em;
-        color: white;
-    }
+.sub_menu_block{
+    display: inline-block;
+    height: 5em;
+    width: 40%;
+    text-align: center;
+    border: 1px solid;
+    background-color: #E1E3E4;
+    border-color: black;
+    vertical-align: middle;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-bottom: 0.5em;
+    color: white;
+}
     
-    .sub_menu_block_active
-    {
-        display: inline-block;
-        height: 5em;
-        width: 40%;
-        text-align: center;
-        border-left: 1px solid;
-        border-top: 1px solid;
-        border-bottom: 1px solid;
-        background-color: #295380;
-        border-color: black;
-        vertical-align: middle;
-        padding-left: 0.5em;
-        padding-right: 0.5em;
-    }
+.sub_menu_block_active
+{
+    display: inline-block;
+    height: 5em;
+    width: 40%;
+    text-align: center;
+    border-left: 1px solid;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    background-color: #295380;
+    border-color: black;
+    vertical-align: middle;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
     
-    .sub_menu_text{
-        display: inline-block;
-        vertical-align: middle;
-        margin-top: 0.5em;
-    }
-    .sub_menu_text_active
-    {
-        display: inline-block;
-        vertical-align: middle;
-        margin-top: 0.5em;
-        color: white;
-    }
-    
-    .gestione_textarea{
-        width: 80%;
-        height: 10em;
-    }
-    
-    .gestione-inputMiddle{
-        display: inline-block;
-        vertical-align: middle;
-        background-image: url(../images/input_middle.png);
-        width: 30%;
-        background-size: contain;
-        background-repeat: repeat-x;
-    }
-    
-    #gestione-center{
-        display:inline-block;
-    }
-    
-    #gestione-textarea_block{
-        padding-top: 2em;
-    }
-    
-    #sub_menu{
-        margin-top: 1em;
-        margin-bottom: 1em;
-    }
-    
-    #gestione-immagine_prodotto{
-        width: 20%;
-        height: 5em;
-    }
-    
-    #prodotto-cat{
-        margin-bottom: 2em;
-    }
-    
-    #prodotto-cod{
-        padding-top: 1em;
-    }
-    
-    #form-containerprodotto{
-        margin-top: 1em;
-        width: 80%;
-        margin: 0 auto;
-        background-color: #E1E3E4;
-        height: auto;
-        box-shadow: 1px 1px 1px 1px #888888; 
-        margin-bottom: 1em;
-    }
-    
-    #prodotto-eliminaSelezionati{
-        width: 28%
-    }
-    
-    #ordini-cerca{
-       padding-bottom: 1em;    
-    }
-    
-    .ordini-block{
-        padding-bottom:1em; 
-    }
-    
-    #annunci-testoLabel{
-        padding-right: 19em;
-    }
-    
-    #left-menu-active{
-        background-color: #295380;
-        vertical-align: middle;
-        color: white;
-        padding-right: 0.5em;
-    }
-    
-    #gestione-file_label
-    {
-        padding-bottom: 1em;
-    }
+.sub_menu_text{
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 0.5em;
+}
 
+.sub_menu_text_active
+{
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 0.5em;
+    color: white;
+}
+    
+.gestione_textarea{
+    width: 80%;
+    height: 10em;
+}
+    
+.gestione-inputMiddle{
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url(../images/input_middle.png);
+    background-size: contain;
+    background-repeat: repeat-x;
+}
+    
+#gestione-center{
+    display:inline-block;
+}
+
+#gestione-textarea_block{
+    padding-top: 2em;
+}
+    
+#sub_menu{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+    
+#gestione-immagine_prodotto{
+    width: 20%;
+    height: 5em;
+}
+    
+#prodotto-cat{
+    margin-bottom: 2em;
+}
+    
+#prodotto-cod{
+    padding-top: 1em;
+}
+    
+#form-containerprodotto{
+    margin-top: 1em;
+    width: 80%;
+    margin: 0 auto;
+    background-color: #E1E3E4;
+    height: auto;
+    box-shadow: 1px 1px 1px 1px #888888; 
+    margin-bottom: 1em;
+}
+    
+#prodotto-eliminaSelezionati{
+    width: 28%
+}
+   
+#ordini-cerca{
+    padding-bottom: 1em;    
+}
+    
+.ordini-block{
+    padding-bottom:1em; 
+}
+    
+#annunci-testoLabel{
+    padding-right: 19em;
+}
+    
+#left-menu-active{
+    background-color: #295380;
+    vertical-align: middle;
+    color: white;
+    padding-right: 0.5em;
+}
+    
+#gestione-file_label
+{
+    padding-bottom: 1em;
+}
+
+	
+/*------------------------------------ LISTA DEI DESIDERI --------------------------------------------------------------------------------------*/
+     
+.lista-desideri-block-border {
+    border-bottom: 1px solid;
+}
+    
+	
+.lista-desideri-block img {
+	max-width: 80%;
+}
+
+.lista-desideri-block li{
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+     
+.lista-desideri-block p{
+    font-size: 1.2em;
+    font-weight: bold;
+} 
+
+	
 /*------------------------------------------------------- ANNUNCI ---------------------------------------------------------------------*/
 .immagine_annuncio{
     text-align: center;
@@ -1215,55 +1225,55 @@ body
 
 /*-------------------------------------------- MAPPA DEL SITO ------------------------------------------------------------------------*/
     
-    #sitemap-container{
-        display: block;
-        width: 90%;
-        text-align: center;
-        margin-bottom: 5em;
-        margin-top: 2em;
-        margin-left: auto;
-        margin-right: auto;
-        height: 75em;
-        box-shadow: 1px 1px 1px 1px #888888;
-        background-color: #E1E3E4;
-    }
-    
-    #sitemap-container h2{
-        padding-top: 1em;
-    }
-    
-    #home-block{
-        display: block;
-        margin: auto;
-        width: 80%;
-        height: 3em;
-        background-color: white;
-        box-shadow: 1px 1px 1px 1px #888888;    
-    }
-    
-    #home-block a{
-        font-size: 1.8em;
-        line-height: 1.6em;
-    }
-    
-    #sitemap-block-container{
-        margin-top: 1em;
+#sitemap-container{
+    display: block;
+    width: 90%;
+    text-align: center;
+    margin-bottom: 5em;
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    height: 75em;
+    box-shadow: 1px 1px 1px 1px #888888;
+    background-color: #E1E3E4;
 }
     
-    .sitemap-block{
-        padding-top: 1em;
-        margin-top: 2em;
-        margin-right: auto;
-        margin-left: auto;
-        display: block;
-        width: 80%;
-        height: 14em;
-        background-color: white;
-        box-shadow: 1px 1px 1px 1px #888888;
-        vertical-align: middle;
-    }
+#sitemap-container h2{
+    padding-top: 1em;
+}
     
-    .sitemap-block li{
-        list-style: none;
-        padding-top: 1em;
-    }
+#home-block{
+    display: block;
+    margin: auto;
+    width: 80%;
+    height: 3em;
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px #888888;    
+}
+    
+#home-block a{
+    font-size: 1.8em;
+    line-height: 1.6em;
+}
+    
+#sitemap-block-container{
+    margin-top: 1em;
+}
+    
+.sitemap-block{
+    padding-top: 1em;
+    margin-top: 2em;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    width: 80%;
+    height: 14em;
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px #888888;
+    vertical-align: middle;
+}
+    
+.sitemap-block li{
+    list-style: none;
+    padding-top: 1em;
+}
