@@ -207,13 +207,18 @@ if ($in{'Page'}) {
 else {
 	$page=1;
 }
-my $index=($page-1)*9;
+
 my $num_pagine;
 if(@prodotti_codice){
-	$num_pagine=($#prodotti_codice/9)+1;
+	$num_pagine=(int($#prodotti_codice/9))+1;
 } else {
 	$num_pagine=1;
 }
+
+if($page>$num_pagine){
+	$page=int($num_pagine);
+}
+my $index=($page-1)*9;
 
 # stampa_categorie
 
