@@ -156,7 +156,7 @@ if($messaggio eq "false")
 	$i++;
 	
 	$x='<li>
-        <label for="prezzo">Prezzo:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="prezzo" class="input" name="Prezzo" type="text" value="'."@prodotto[$i]".'" /></div><div class="inputRight"></div>&#8364;
+        <label for="prezzo">Prezzo &#40;&#8364;&#41;: </label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input id="prezzo" class="input" name="Prezzo" type="text" value="'."@prodotto[$i]".'" /></div><div class="inputRight"></div>
     </li>';
 	$tot=$tot.$x;
 	$i++;

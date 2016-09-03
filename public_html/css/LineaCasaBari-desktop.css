@@ -228,7 +228,7 @@
     {
         background-color: #295380;
         color: white;
-		padding: 0.4em;
+	padding: 0.4em;
     }
 
     #prodotti-pageSelector{
@@ -318,7 +318,10 @@
 	
 	
 /*---------------------------------------- prodotto.html --------------------------------------------------------------------------------------*/
-
+	
+	#link_pagina_precedente{
+        margin-top: 1em;		
+	}
 	
 	#Prodotto_main_container{
 		display: inline-block;
@@ -337,7 +340,7 @@
 	}
 	
 	#left_col img {
-		max-height: 20em;		
+		max-height: 20em;
 	}
 
 	#middle_col{
@@ -363,7 +366,7 @@
 
 	#Commenti_prodotto{
  	    vertical-align: middle;
-     	width: 100%;	
+     	width: 100%;
 	}
 
 	#recensioneTitolo-label {
@@ -444,7 +447,11 @@
         width: 24.5%;
         height: 45em;
     }
-
+    #left-col li
+    {
+         list-style: none;
+         
+    }
     #left-col ul
     {
         padding-top: 2em;
@@ -461,7 +468,22 @@
         height: 45em;
         
     }
-
+    #right-col li
+    {
+         list-style: none;
+    }
+    
+    .title_link
+    {
+        font-weight: bold;
+        font-size: 1.5em;        
+    }
+    
+    
+    .subtitle_link
+    {
+        opacity: 0.6;
+    }
 
 /*------------------------------------------------ gestione sito ----------------------------------------------------------------------------------*/
 
@@ -482,12 +504,74 @@
     
     
     .gestione_textarea{
-        width: 40%;
+        width: 60%;
+        height: 10em;
     }
     
     .gestione-inputMiddle{
         width: 30%;
         background-size: contain;
+        background-repeat: repeat-x;
+    }
+    
+    #gestione-center{
+        display:inline-block;
+    }
+    
+    #gestione-textarea_block{
+        padding-top: 2em;
+    }
+    
+    #sub_menu{
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    
+    #gestione-immagine_prodotto{
+        width: 20%;
+        height: 5em;
+    }
+    
+    #prodotto-cat{
+        margin-bottom: 2em;
+    }
+    
+    #prodotto-cod{
+        padding-top: 1em;
+    }
+    
+    #form-containerprodotto{
+        margin-top: 1em;
+        width: 80%;
+        margin: 0 auto;
+        background-color: #E1E3E4;
+        height: auto;
+        box-shadow: 1px 1px 1px 1px #888888; 
+        margin-bottom: 1em;
+    }
+    
+    #prodotto-eliminaSelezionati{
+        width: 28%
+    }
+    
+    #ordini-cerca{
+       padding-bottom: 1em;    
+    }
+    
+    .ordini-block{
+        padding-bottom:1em; 
+    }
+    
+    #annunci-testoP
+    {
+        margin-right: 9em;
+    }
+    
+    #left-menu-active{
+        background-color: #295380;
+        vertical-align: middle;
+        color: white;
+        padding-right: 0.5em;
     }
     
     #gestione-file_label
@@ -498,7 +582,19 @@
     #categoria
     {
         margin-left: 1em;
+        padding: 0.5em;
     }
+    #prodotto_catLabel
+    {
+        margin-right: 4em;
+    }
+    
+    #prodotto_descLabel
+    {
+        margin-right: 12em;
+    }
+    
+    
 /*-------------------------------------------- MAPPA DEL SITO ------------------------------------------------------------------------*/
     
     #sitemap-container{
@@ -517,8 +613,20 @@
         width: 20%;
     }
 /*------------------------------------ LISTA DEI DESIDERI --------------------------------------------------------------------------------------*/
-
-
+     
+    .lista-desideri-block-border {
+        border: 1px solid;
+    }
+    
+     .lista-desideri-block li{
+         padding-top: 1em;
+         padding-bottom: 1em;
+     }
+     
+     .lista-desideri-block p{
+         font-size: 1.2em;
+         font-weight: bold;
+     } 
 
 /*------------------------------------------------------- ANNUNCI ---------------------------------------------------------------------*/
     .immagine_annuncio img 
