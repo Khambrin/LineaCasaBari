@@ -4,10 +4,11 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
     <title>Linea Casa Bari - Prodotto</title>
     <meta name="title" content="Linea Casa Bari - Prodotto" />
     <meta name="description" content="Pagina del singolo prodotto acquistabile nel negozio Linea Casa Bari" />
-    <meta name="keywords" content="prodotti, descrizione, immagini, compera, carrello " />
+    <meta name="keywords" content="prodotti, descrizione, immagini, compera, carrello" />
     <meta name="language" content="italian it" />
     <meta name="author" content="Alessandro Bari, Navid Taha, Alice Sasso, Lorenzo Ferrarin" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -125,7 +126,7 @@
 					<li>
 					<form action="aggiungi_carrello.cgi[% query_string %]" method="post" id="compra_prodotto">					
 						<p> Quantit&agrave;: <span>
-						<select name="quantita">
+						<select title="scegli la quantit&agrave;" name="quantita">
 							<option value="1"> 1 </option>
 							<option value="2"> 2 </option>
 							<option value="3"> 3 </option>

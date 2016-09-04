@@ -222,27 +222,27 @@ if(@messaggi)
 	my $filename=basename $filespec;
 	my $read_directory="../images/prodotti";
 	my $immagine="$read_directory/$filename";
-	$x='<li><label>Inserisci una nuova immagine di dimensione massima 200kB:</label><img id="editProdottoImg" src='."$immagine".' alt="foto prodotto"><input type="file" name="Immagine"></li>';
+	$x='<li><label>Inserisci una nuova immagine di dimensione massima 200kB:</label><img id="editProdottoImg" src='."$immagine".' alt="foto prodotto"><input title="Inserisci immagine" type="file" name="Immagine"></li>';
 	$tot=$tot.$x;
 	$i++;
 		
-	$x='<li><label>Tag:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Tag1" type="text" value='."$tag1_value".' /></div><div class="inputRight"></div></li>';
+	$x='<li><label>Tag:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input title="Inserisci Tag1" class="input" name="Tag1" type="text" value='."$tag1_value".' /></div><div class="inputRight"></div></li>';
 	$i++;
 	$tot=$tot.$x;
 	
-	$x='<li><label>Tag:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Tag2" type="text" value='."$tag2_value".' /></div><div class="inputRight"></div></li>';
+	$x='<li><label>Tag:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input title="Inserisci Tag2" class="input" name="Tag2" type="text" value='."$tag2_value".' /></div><div class="inputRight"></div></li>';
 	$i++;
 	$tot=$tot.$x;
 	
-	$x='<li><label>Tag:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Tag3" type="text" value='."$tag3_value".' /></div><div class="inputRight"></div></li>';
+	$x='<li><label>Tag:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input title="Inserisci Tag3" class="input" name="Tag3" type="text" value='."$tag3_value".' /></div><div class="inputRight"></div></li>';
 	$i++;
 	$tot=$tot.$x;
 	
-	$x='<li><label>Tag:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" name="Tag4" type="text" value='."$tag4_value".' /></div><div class="inputRight"></div></li>';
+	$x='<li><label>Tag:</label><div class="inputLeft"></div><div class="gestione-inputMiddle"><input title="Inserisci Tag4" class="input" name="Tag4" type="text" value='."$tag4_value".' /></div><div class="inputRight"></div></li>';
 	$i++;
 	$tot=$tot.$x;
 	
-	$x='<li><div><button class="button" type="submit">Modifica</button><input type="hidden" name="old_cod" value="'."$cod".'"/><input type="hidden" name="old_image" value="'."$immagine_value".'"/></form><form action="togli_prodotto.cgi" method="post"><input type="hidden" name="prodotto" value="'."$cod".'" /><button class="button" type="submit">togli prodotto</button></form></div></li>';
+	$x='<li><div><button class="button" type="submit">Modifica</button><input title="Codice nascosto" type="hidden" name="old_cod" value="'."$cod".'"/><input title="Vecchia immagine" type="hidden" name="old_image" value="'."$immagine_value".'"/></form><form action="togli_prodotto.cgi" method="post"><input title="Nome prodotto" type="hidden" name="prodotto" value="'."$cod".'" /><button class="button" type="submit">togli prodotto</button></form></div></li>';
 	$i++;
 	$tot=$tot.$x;
 	

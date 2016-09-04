@@ -70,8 +70,8 @@ if (@errors)
 	my $fcontenuto=$values{"testo"};
 
 	my $vcontenuto='<textarea class="gestione_annunci-textarea" rows="9" cols="40" name="testo">'."$fcontenuto".'</textarea>';
-	my $vt_form='<input class= "input" type="text" name="titolo" value="'."$titolo".'"/>';
-	my $hiddencodice='<input class= "input" type="hidden" name="oldcodice" value="'."$codice".'"/>';
+	my $vt_form='<input class= "input" title="Inserisci titolo" type="text" name="titolo" value="'."$titolo".'"/>';
+	my $hiddencodice='<input class= "input" title="Codice nascosto" type="hidden" name="oldcodice" value="'."$codice".'"/>';
 
 	my $vars={
 		'sessione' => "true",

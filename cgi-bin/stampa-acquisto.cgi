@@ -41,7 +41,7 @@ my $tot;
 my $counter=0;
 if($num_indi)
 {
-	my $x='<li><p class="indiP">'."Indirizzo n. 1</p>".'<input type="radio" name="indirizzo" value="1" checked="checked"/></li>';
+	my $x='<li><p class="indiP">'."Indirizzo n. 1</p>".'<input type="radio" title="indirizzo di spedizione" name="indirizzo" value="1" checked="checked"/></li>';
 	$tot=$tot.$x;
 	my $x='<li><p>'."Via: @indirizzo_via[$counter]</p></li>";
 	$tot=$tot.$x;

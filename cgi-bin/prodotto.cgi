@@ -146,8 +146,8 @@ if(!$already_reviewed) {
 	my $x='<div class="form-container2"><h3>Aggiungi una recensione</h3><form id="addReviewForm" method="post" action="aggiungi_recensione_form.cgi'."$query_string".'" onsubmit="return newReviewForm()"  enctype="multipart/form-data">
 			<ul class="aggiungi_recensione_form">
 				<li>
-                    <label id="recensioneTitolo-label">* Titolo:</label>
-                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="titolo" value="'."$in{'Title'}".'"/></div><div class="inputRight"></div>
+                    <label for="titolo" id="recensioneTitolo-label">* Titolo:</label>
+                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" id="titolo" title="inserisci il titolo" name="titolo"  value="'."$in{'Title'}".'"/></div><div class="inputRight"></div>
                 </li>';
 	my $tot=$tot.$x;
 	if ($in{'Errtitle'}) {
@@ -155,8 +155,8 @@ if(!$already_reviewed) {
 		$tot=$tot.$x;
 	}
 	my $x='<li>
-                <label id="recensioneNome-label">* Nome visualizzato:</label>
-                <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" name="nome" value="'."$in{'Nome'}".'"/></div><div class="inputRight"></div>
+                <label for="nome" id="recensioneNome-label">* Nome visualizzato:</label>
+                <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" id="nome" title="inserisci il nome" name="nome" value="'."$in{'Nome'}".'"/></div><div class="inputRight"></div>
             </li>';
 	my $tot=$tot.$x;
 	if ($in{'Errname'}) {
@@ -164,10 +164,10 @@ if(!$already_reviewed) {
 		$tot=$tot.$x;
 	}
 	my $x='<li>
-                    <label id="recensioneTesto-label">* Testo:</label>
+                    <label for="testo" id="recensioneTesto-label">* Testo:</label>
                 </li>
                 <li>
-                    <textarea class="gestione_textarea" name="testo" rows="" cols="">'."$in{'Testo'}".'</textarea>
+                    <textarea id="testo" class="gestione_textarea" name="testo">'."$in{'Testo'}".'</textarea>
                 </li>';
 	my $tot=$tot.$x;
 	if ($in{'Errtext'}) {
@@ -175,7 +175,7 @@ if(!$already_reviewed) {
 		$tot=$tot.$x;
 	}
 	my $x='<li><label id="recensioneVoto-label"> Voto prodotto: <span>
-				<select name="voto">
+				<select title="scegli il voto" name="voto">
 					<option value="1"> 1 </option>
 					<option value="2"> 2 </option>
 					<option value="3"> 3 </option>
