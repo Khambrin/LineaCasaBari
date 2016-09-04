@@ -98,7 +98,8 @@ Lo sviluppo del sito è stato conferme alle predisposizioni degli standard W3C, 
 		\begin{itemize}
 			\item tutte le immagini di contenuto sono state accompagnate da un testo di descrizione, tramite l'utilizzo dell'attributo \texttt{alt};
 			\item è stato fornito lo strumento link skipper, utile a saltare direttamente al contenuto, senza dover leggere tutti i link dell'header;
-			\item tutti i campi dei form sono stati accompagnati da un \texttt{label} o \texttt{title}.
+			\item tutti i campi dei form sono stati accompagnati da un \texttt{label} o \texttt{title};
+			\item tutte le parole di lingue diverse da quelle generale specificata dal tag meta, sono state inserite in un elemento \texttt{span}, dotato dell'attributo \texttt{xml:lang}. Questo permette agli screen reader di pronunciare correttamente la parola secondo l'accento del linguaggio indicato.
 		\end{itemize}
 		\subsubsection{Immagini}
 		Tutte le immagini di contenuto vengono accompagnate da un testo che ne descrive il contenuto, in questo modo si agevolano gli utenti con problemi di vista, oltre a fornire un aiuto nel caso in cui le immagini non vengano caricate correttamente. \\
@@ -112,27 +113,51 @@ Lo sviluppo del sito è stato conferme alle predisposizioni degli standard W3C, 
 			\item è stato creato un link skipper, nascosto agli utenti ed accessibile mediante la pressione del tasto tab, il quale permette di saltare i link dell'header e posizionarsi sul contenuto. Mediante l'utilizzo di uno script javascript, si è garantito il focus dei link del contenuto alla pressione del tabulatore, successivamente al salto del contenuto mediante il link skipper;
 			\item non è stato necessario ritoccare i tabindex, in quanto quelli di default previsti dai diversi browser si comportavano come previsto.
 		\end{itemize}
+	\subsection{Layout responsive}
+	Il layout del sito è stato reso responsive e quindi accessibile a diversi dispositivi. Questo avviene principalmente tramite l'utilizzo delle media query con relativo adattamento del layout con il CSS e l'utilizzo delle unità di misura adattabili, ovvero le percentuali per la larghezza degli elementi e gli em per l'altezza di essi. \\
+	Inoltre, è stato cambiato il sistema di navigazione del menu tramite l'utilizzo di un ``menu ad hamburger'' o così detto drawer. Esso permette di mostrare il menu lateralmente, solo nel caso in cui viene attivato, facendo così risparmiare spazio ai contenuti del sito.
 \section{Strumenti e sviluppo} % Progettazione fisica
 	\subsection{Strumenti per la validazione}
 	
 		\subsubsection{W3C Markup Validator}
-		
+		Per la validazione del codice rappresentante la struttura del sito web rispetto allo standard W3C, si è utilizzato il validatore ufficiale offerto dal W3C. Esso è raggiungibile al seguente indirizzo:
+		\begin{center}
+			\url{https://validator.w3.org/}
+		\end{center}
 		\subsubsection{W3C CSS Validator}		
-		
+		Per la validazione del codice rappresentante la presentazione del sito web rispetto allo standard W3C, si è utilizzato il validatore ufficiale offerto dal W3C. Esso è raggiungibile al seguente indirizzo:
+		\begin{center}
+			\url{https://jigsaw.w3.org/css-validator/}
+		\end{center}
 		\subsubsection{W3C XML Schema Validator}
-	
+		Per la validazione del codice xml rispetto allo schema XSD si è utilizzato il seguente validatore:
+		\begin{center}
+			\url{http://www.utilities-online.info/xsdvalidation/}
+		\end{center}
 	\subsection{Strumenti per l'accessibilità}
 	
 		\subsubsection{Total Validator}
-		%Strumento gradiazione colori
+		Per cercare di aderire il più possibile alle linea guida per l'accessibilità (WCAG), si è utilizzato lo strumento Total Validator, il quale è in grado di evidenziare gli errori che ostacolano il raggiungimento di certi livelli di conformità a tali linee guida. Lo strumento è raggiungibile al seguente indirizzo:
+		\begin{center}
+			\url{https://www.totalvalidator.com/}
+		\end{center}
+		
+		
+		%Strumento gradazione colori
 		%Strumento browser testuale
 		
 	
 	\subsection{Perl}
-	
+	Per la realizzazione delle pagine dinamiche si è utilizzata la libreria Perl Template Toolkit (\url{http://template-toolkit.org/}). Essa mette a disposizione un semplice linguaggio, utile a definire delle regole logiche, utilizzato nei file template con estensione .html rappresentanti le pagine web del sito. Successivamente, tramite gli script perl è possibile processare tali pagine in modo da stamparle secondo la logica definita negli script. \\
+	Tale libreria mette a disposizione le classiche direttive di un linguaggio di programmazione (sostituzione, condizionali, cicli, inclusioni etc.), ciò lo rende uno strumento molto potente e versatile. \\
+	Per la realizzazione e successiva interazione del database XML, si è utilizzata la libreria LibXML (\url{http://search.cpan.org/dist/XML-LibXML/LibXML.pod}).
 	\subsection{HTML}
-	%utilizzo xhtml 4.1
+	Come da specifica il progetto è stato realizzato con lo standard XHTML 1.0 Strict.
 	\subsection{CSS}
-	%utilizzo CSS3
+	Come da specifica il layout del sito è stato realizzato con CSS puri, nello specifico con la versione CSS3.
 	\subsection{Javascript}
+	
+\section{Struttura del progetto}
+	%gerarchia file e cartelle
+\section{Ripartizione del lavoro}
 \end{document}
