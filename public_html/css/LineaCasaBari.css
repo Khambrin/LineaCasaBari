@@ -1252,7 +1252,7 @@ body
     padding-top: 1em;
 }
 
-@media screen and (min-width: 965px)
+@media screen and (min-width: 965px), print
 {   
     .button {
         width: 20%;  
@@ -1900,4 +1900,27 @@ body
     {
         padding-bottom: 0.5em;
     }
+}
+
+@media print {
+	 
+	#header, #footer, #drawer, #searchBar, #torna-su, #prodotti-pageSelector, #link_pagina_precedente, #right_col, #linea-tempo-su
+	{
+		display:none;
+	}
+	
+	a
+	{
+		color: #000000;
+	}
+	
+	* {
+		box-shadow:none !important;
+	}
+	img 
+	{
+		max-width: 500px;
+		vertical-align: middle;
+	}
+	
 }
