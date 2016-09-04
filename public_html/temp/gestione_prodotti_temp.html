@@ -4,6 +4,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
     <title>Linea Casa Bari - Gestione sito</title>
     <meta name="title" content="Linea Casa Bari - Gestione sito" />
     <meta name="description" content="Pagina per gestire il sito del negozio Linea Casa Bari" />
@@ -139,7 +140,7 @@
                                     <label id="prodotto_descLabel" for="descrizione">* Descrizione:</label>
                                 </li>
                                 <li>
-                                    <textarea class="gestione_textarea" name="descrizione" rows="" cols="" >
+                                    <textarea id="descrizione" class="gestione_textarea" title="aggiungi una descrizione" name="descrizione">
                                         [% descrizione_value %]
                                     </textarea>
                                 </li>

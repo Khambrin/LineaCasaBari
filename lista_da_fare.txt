@@ -3,6 +3,7 @@ css stampa (lorenzo)
 css mobile (lorenzo navid)
 Eliminare ripetizioni tra css mobile e desktop
 Sistemare le immagini sulla home
+mettere apposto form aggiungi recensione
 
 Domande prof:
 
