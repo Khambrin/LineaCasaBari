@@ -4,10 +4,11 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
     <title>Linea Casa Bari - Prodotti</title>
     <meta name="title" content="Linea Casa Bari - Prodotti" />
     <meta name="description" content="Pagina dei prodotti acquistabili nel negozio Linea Casa Bari" />
-    <meta name="keywords" content="piatti, bicchieri, posate, porcellane, liste nozze, vasi, lampade, paralumi, prodotti, descrizione, immagini, compera, carrello " />
+    <meta name="keywords" content="piatti, bicchieri, posate, porcellane, liste nozze, vasi, lampade, paralumi, prodotti, descrizione, immagini, compera, carrello" />
     <meta name="language" content="italian it" />
     <meta name="author" content="Alessandro Bari, Navid Taha, Alice Sasso, Lorenzo Ferrarin" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -109,7 +110,7 @@
         	         Ordina per:
         	      </div>
         	      <div id="prodotti-searchSortFormSelect">
-        	         <select name="ordinamento" onchange="this.form.submit()">
+        	         <select title="ordina i prodotti" name="ordinamento" onchange="this.form.submit()">
         	         <option [% IF order == 'prezzo_crescente' %] selected="selected" [% END %] value="prezzo_crescente">Prezzo crescente</option>
         	         <option [% IF order == 'prezzo_decrescente' %] selected="selected" [% END %] value="prezzo_decrescente">Prezzo decrescente</option>
         	         <option [% IF order == 'media_recensioni_crescente' %] selected="selected" [% END %] value="media_recensioni_crescente">Media recensioni crescente</option>

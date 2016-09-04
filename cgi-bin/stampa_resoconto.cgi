@@ -64,7 +64,7 @@ if($pagamento eq 'carta_credito')
 {
 	my $x='Carta di credito</p></li>';
 	$tot=$tot.$x;
-	my $x='<li class="resocontoLi" ><label>* Inserire codice: </label><div class="inputLeft"></div><div class="inputMiddle"><input class="input" type="text" name="codice"/></div><div class="inputRight"></div></li>';
+	my $x='<li class="resocontoLi" ><label for="codice" >* Inserire codice: </label><div class="inputLeft"></div><div class="inputMiddle"><input id="codice" class="input" type="text" title="inserisci il codice" name="codice"/></div><div class="inputRight"></div></li>';
 	$tot=$tot.$x;
 }
 elsif($pagamento eq 'bonifico')
