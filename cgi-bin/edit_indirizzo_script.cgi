@@ -89,11 +89,11 @@ if (@errors)
 	my $indirizzo_provincia=$values{provincia};
 	my $indirizzo_cap=$values{cap};
 
-	my $via_form='<input class= "input" type="text" name="via" value="'."$indirizzo_via".'"/>';
-	my $numero_form='<input class= "input" type="text" name="numero" value="'."$indirizzo_numero_civico".'"/>';
-	my $citta_form='<input class= "input" type="text" name="citta" value="'."$indirizzo_citta".'"/>';
-	my $provincia_form='<input class= "input" type="text" name="provincia" value="'."$indirizzo_provincia".'"/>';
-	my $cap_form='<input class= "input" type="text" name="cap" value="'."$indirizzo_cap".'"/>';
+	my $via_form='<input title="Inserire via" class= "input" type="text" name="via" value="'."$indirizzo_via".'"/>';
+	my $numero_form='<input title="Inserire numero civico" class= "input" type="text" name="numero" value="'."$indirizzo_numero_civico".'"/>';
+	my $citta_form='<input title="Inserire citta" class= "input" type="text" name="citta" value="'."$indirizzo_citta".'"/>';
+	my $provincia_form='<input title="Inserire provincia" class= "input" type="text" name="provincia" value="'."$indirizzo_provincia".'"/>';
+	my $cap_form='<input title="Inserire cap" class= "input" type="text" name="cap" value="'."$indirizzo_cap".'"/>';
 	my $hidden='<input type="hidden" name="index_script" value="'."$ind".'"/>';
 
 	

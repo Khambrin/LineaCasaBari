@@ -33,11 +33,11 @@ my $indirizzo_provincia=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indiri
 my $indirizzo_cap=$doc->findnodes("Indirizzi/Utente[Email='$email']/Indirizzo[$index]/CAP/text()");
 
 
-my $via_form='<input id="via" class= "input" type="text" name="via" value="'."$indirizzo_via".'"/>';
-my $numero_form='<input id="numero" class= "input" type="text" name="numero" value="'."$indirizzo_numero_civico".'"/>';
-my $citta_form='<input id="citta" class= "input" type="text" name="citta" value="'."$indirizzo_citta".'"/>';
-my $provincia_form='<input id="provincia" class= "input" type="text" name="provincia" value="'."$indirizzo_provincia".'"/>';
-my $cap_form='<input id="cap" class= "input" type="text" name="cap" value="'."$indirizzo_cap".'"/>';
+my $via_form='<input id="via" title="Inserire via" class= "input" type="text" name="via" value="'."$indirizzo_via".'"/>';
+my $numero_form='<input id="numero" title="Inserire numero civico" class= "input" type="text" name="numero" value="'."$indirizzo_numero_civico".'"/>';
+my $citta_form='<input id="citta" title="Inserire citta" class= "input" type="text" name="citta" value="'."$indirizzo_citta".'"/>';
+my $provincia_form='<input id="provincia" title="Inserire provincia" class= "input" type="text" name="provincia" value="'."$indirizzo_provincia".'"/>';
+my $cap_form='<input title="Inserire cap" id="cap" class= "input" type="text" name="cap" value="'."$indirizzo_cap".'"/>';
 
 my $hidden='<input type="hidden" name="index_script" value="'."$index".'"/>';
 
