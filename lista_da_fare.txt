@@ -2,6 +2,7 @@ relazione
 css stampa (lorenzo)
 css mobile (lorenzo navid)
 Eliminare ripetizioni tra css mobile e desktop
+Aggiungere l'alt alle immagini della home
 
 Domande prof:
 
