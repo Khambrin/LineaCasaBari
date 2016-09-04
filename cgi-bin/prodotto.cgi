@@ -146,8 +146,8 @@ if(!$already_reviewed) {
 	my $x='<div class="form-container2"><h3>Aggiungi una recensione</h3><form id="addReviewForm" method="post" action="aggiungi_recensione_form.cgi'."$query_string".'" onsubmit="return newReviewForm()"  enctype="multipart/form-data">
 			<ul class="aggiungi_recensione_form">
 				<li>
-                    <label for="titolo" id="recensioneTitolo-label">* Titolo:</label>
-                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" id="titolo" title="inserisci il titolo" name="titolo"  value="'."$in{'Title'}".'"/></div><div class="inputRight"></div>
+                    <label for="titolo-recensione" id="recensioneTitolo-label">* Titolo:</label>
+                    <div class="inputLeft"></div><div class="gestione-inputMiddle"><input class="input" type="text" id="titolo-recensione" title="inserisci il titolo" name="titolo"  value="'."$in{'Title'}".'"/></div><div class="inputRight"></div>
                 </li>';
 	my $tot=$tot.$x;
 	if ($in{'Errtitle'}) {

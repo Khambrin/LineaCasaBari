@@ -535,34 +535,10 @@ body
     background-color: #E1E3E4;
 }
 
-#listanozze
+.homeCategorie
 {
-    background-image: url(../images/listanozze.jpg);
-}
-
-#porcellane
-{
-    background-image: url(../images/porcellane.jpg);
-}
-
-#lampade
-{
-    background-image:url(../images/lampade.jpg);
-}
-
-#pentole
-{
-    background-image:url(../images/pentole.jpg);
-}
-
-#tavola
-{
-    background-image:url(../images/tavola.jpg);
-}
-
-#tovaglie
-{
-	background-image: url(../images/tovaglie.jpg);
+    width: 100%;
+    height: 100%;        
 }
     
 /*---------------------------------------------------login.html ------------------------------------------------------------------------------*/
