@@ -251,6 +251,12 @@ if($query) {
 	$query_string_prodotto='&amp;Filter='."$filter".'&amp;Page='."$page".'&amp;Order='."$order";
 }
 
+my @alt;
+
+foreach my $image(@prodotto_immagine){
+	push (@alt, substr $image, 19, -4);
+}
+
 for (my $riga=0; $riga <= 2; $riga++)	
 {
 	my $x='<div class="riga">';
@@ -262,7 +268,7 @@ for (my $riga=0; $riga <= 2; $riga++)
 		$tot=$tot.$x;
 		my $x='<li class="nome-prodotto"><a href="prodotto.cgi?Codice='."@prodotti_codice[$index]"."$query_string_prodotto".'">'."@prodotto_nome[$index]".'</a></li>';
 		$tot=$tot.$x;
-		my $x='<li class="immagine-prodotto"><a href="prodotto.cgi?Codice='."@prodotti_codice[$index]"."$query_string_prodotto".'"><img src="'."@prodotto_immagine[$index]".'" alt=""/></a></li>';
+		my $x='<li class="immagine-prodotto"><a href="prodotto.cgi?Codice='."@prodotti_codice[$index]"."$query_string_prodotto".'"><img src="'."@prodotto_immagine[$index]".'" alt="'."@alt[$index]".'"/></a></li>';
 		$tot=$tot.$x;
 		my $x='<li class="prezzo-prodotto"><a href="prodotto.cgi?Codice='."@prodotti_codice[$index]"."$query_string_prodotto".'">'."@prodotto_prezzo[$index]".' &#8364;</a></li>';
 		$tot=$tot.$x;
