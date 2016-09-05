@@ -27,7 +27,7 @@ my $vars;
 my $messaggio_confirm=0;
 if ($ENV{'QUERY_STRING'} eq "aggiunto")
 {
-	$messaggio_confirm="Annuncio aggiunto con successo";
+	$messaggio_confirm="Annuncio aggiunto con successo. Vai alla pagina <a href='stampa_annunci.cgi'>Annunci</a>";
 	 $vars={
 			'sessione' => "true",
 			'email' => $email,

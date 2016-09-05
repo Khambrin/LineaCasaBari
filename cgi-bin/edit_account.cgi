@@ -47,7 +47,31 @@ if($values{"nuova_email"} ne $email)
 		push @errors, "Indirizzo email gi&agrave; utilizzato"
 	}
 }
+my $old_tel=$doc->findnodes("Utenti/Utente[Email='$email']/Telefono/text()");
+if($values{"nuovo_telefono"} ne $old_tel)
+{
+	my $regex = $values{"nuovo_telefono"}=~ /^\+?([0-9]){8,15}$/;
+	if (length $values{"nuovo_telefono"}<8 or length $values{"nuovo_telefono"}>15)
+	{
+		push @errors, "Numero di telefono non valido";
+	}
+	elsif (not $regex)
+	{
+		push @errors, "Numero di telefono non valido, uso di caratteri proibiti";
+	}
+}
 
+if($values{"nuova_password"} and $values{"vecchia_password"})
+{  
+	if(length $values{"nuova_password"}<8)
+	{
+		push @errors, "Nuova Password troppo corta, minimo 8 caratteri";
+	}
+	elsif(length $values{"nuova_password"}>20)
+	{
+		push @errors, "Nuova Password troppo lunga, massimo 20 caratteri";
+    }
+}
 if (@errors)
 {
 	print $cgi->header('text/html');

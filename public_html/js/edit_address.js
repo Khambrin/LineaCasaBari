@@ -13,7 +13,7 @@ function editForm() {// modifica indirizzo
 	else{document.getElementById("editvia").innerHTML = "";}
 	if(num1==false){ document.getElementById("editnum").innerHTML = "Inserisci un numero civico"; }
 	else{document.getElementById("editnum").innerHTML = "";}
-	if(cit1==false){ document.getElementById("editcit").innerHTML = "Inserisci una città"; }
+	if(cit1==false){ document.getElementById("editcit").innerHTML = "Inserisci una citt&agrave;"; }
 	else{document.getElementById("editcit").innerHTML = "";}
 
 	var rgprov = /^([A-Za-z]){2,2}$/ ;

@@ -969,8 +969,8 @@ body
 }
 
 .carrello_left_col img {
-	height: 7em;
-	width: 100%;
+	max-height: 7em;
+	max-width: 100%;
   	box-shadow: 1px 1px 1px 1px #888888;	
     vertical-align: middle;
     margin-top: 1em;

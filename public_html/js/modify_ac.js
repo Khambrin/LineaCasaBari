@@ -22,14 +22,14 @@
 			if(snt)
 			{
 				if(t<8 | t>15) { //ITU-T recommendation E.164
-					document.getElementById("ernumber").innerHTML = "Numero non valido";
+					document.getElementById("ernumber").innerHTML = "Numero di telefono non valido";
         				return false;
 		
     				}
 				var rgx = /^\+?([0-9]){8,15}$/;
     				var scr = rgx.test(snt);
 				if(scr==false){
-					document.getElementById("ernumber").innerHTML = "Numero non valido, uso di caratteri proibiti"; 
+					document.getElementById("ernumber").innerHTML = "Numero di telefono non valido, uso di caratteri proibiti"; 
 					return false;
 				}
     			}
