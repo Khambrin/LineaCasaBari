@@ -1676,14 +1676,12 @@ body
 		display: inline-block;
 		vertical-align: middle;
 		width: 25%;
-		height: 10em;
 	}
 
 	.carrello_right_col{
 		display: inline-block;
 		vertical-align: middle;
 		width: 60%;
-		height: 10em;
 		padding: 0.5em;
 	}
 	
