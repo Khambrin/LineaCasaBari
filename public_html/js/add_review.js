@@ -9,7 +9,7 @@ function newReviewForm() {// aggiungi annuncio
 	else{document.getElementById("titolo_error").innerHTML = "";}
 	if(nomeReview==false){ document.getElementById("nome_error").innerHTML = "Inserisci un nome"; }
 	else{document.getElementById("titolo_error").innerHTML = "";}
-	if(testoReview==false){ document.getElementById("testo_error").innerHTML = "Inserisci una testo"; }
+	if(testoReview==false){ document.getElementById("testo_error").innerHTML = "Inserisci un testo"; }
 	else{document.getElementById("testo_error").innerHTML = ""; }
 
 	if(titoloReview==false|nomeReview==false|testoReview==false){return false;}
