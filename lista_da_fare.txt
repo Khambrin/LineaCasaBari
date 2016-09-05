@@ -1,8 +1,4 @@
 relazione
-css stampa (lorenzo)
-css mobile (lorenzo navid)
-Eliminare ripetizioni tra css mobile e desktop
-Carrello form sballato
 
 Domande prof:
 

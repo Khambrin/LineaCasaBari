@@ -333,6 +333,15 @@ body
     display: none;
 }
 
+.w3c-validation
+{
+    display: inline;
+}
+.w3cImg
+{
+    height:31px;
+    width:88px;
+}
 #footer
 {
     background-color: #E1E3E4;
@@ -1459,7 +1468,11 @@ body
         padding-bottom: 1em;
     }
     
-    #w3cImg
+    .w3c-validation
+    {
+        display: inline;
+    }
+    .w3cImg
     {
         height:31px;
         width:88px;
@@ -1936,14 +1949,14 @@ body
 
 	.recensione-prodotto h2
 	{
-		background_color: white;
+		background-color: white;
 		color: black;
 	}
 	
 
 	.recensione-prodotto h2 span
 	{
-		background_color: white;
+		background-color: white;
 		color: black;
 	}
 
