@@ -1902,7 +1902,7 @@ body
 
 @media print {
 	 
-	#header, #footer, #drawer, #searchBar, #torna-su, #prodotti-pageSelector, #link_pagina_precedente, #right_col, #linea-tempo-su
+	#header, #footer, #menu, #drawer, #searchBar, #torna-su, #prodotti-pageSelector, #link_pagina_precedente, #right_col, .linea-tempo-su, .elimina_recensione, #prodotti-resultInfoBar, #prodotti-categorie, #left-col, #sub_menu, #ordini-cerca
 	{
 		display:none;
 	}
@@ -1915,10 +1915,105 @@ body
 	* {
 		box-shadow:none !important;
 	}
+
 	img 
 	{
 		max-width: 500px;
 		vertical-align: middle;
 	}
+
+ 	/* prodotto */
+
+	#left_col img
+	{
+		width:100%;
+	}
+
+	#middle_col 
+	{
+		width:40%;
+	}
+
+	.recensione-prodotto h2
+	{
+		background_color: white;
+		color: black;
+	}
 	
+
+	.recensione-prodotto h2 span
+	{
+		background_color: white;
+		color: black;
+	}
+
+	content { 
+		font-size: 12pt !important; 
+	}
+
+	/*------------------------------ la_nostra_storia, termini e spedizioni, resi e rimborsi-----------------------------------------------------------*/
+
+	.info-container
+	{
+		width:100%;
+	}
+
+	#resi_rimb_term_sped-h2
+	{
+		margin: 0em;
+		padding: 0em;
+	}
+
+	
+	/*------------------------------------------carrelo--------------------------------------------------------------------*/
+
+	.carrello_right_col input[type=checkbox]
+	{
+		display:none;
+	}
+
+	.form-container2 .button
+	{
+		visibility: hidden;
+	}
+
+	/*---------------------------------gestione account-------------------------------------------------------------------*/
+
+	#right-col
+	{
+		border: none;
+		overflow:visible;
+		width: 100%;
+	}
+
+	#right-col .button
+	{
+		display:none;
+	}
+
+	.form-Block li
+	{	
+		page-break-inside: avoid;
+	}
+
+	.form-Block label[for="codice"]
+	{
+		display:none;
+	}
+
+	.generic-container
+	{
+		width: 100%;
+	}
+
+	.generic-container .button
+	{
+		display: none;
+	}
+
+	.form-container2
+	{
+		width:100%;
+	}
+
 }
