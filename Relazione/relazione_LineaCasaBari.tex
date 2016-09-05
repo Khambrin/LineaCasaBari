@@ -142,10 +142,17 @@ Lo sviluppo del sito è stato conferme alle predisposizioni degli standard W3C, 
 			\url{https://www.totalvalidator.com/}
 		\end{center}
 		
+		\subsubsection{snook.ca}
+		Per la misurazione dei contrasti per le varie combinazioni di colori è stato utilizzato lo strumento snook.ca accessibile al seguente indirizzo:
+		\begin{center}
+			\url{https://snook.ca/technical/colour_contrast/colour.html}
+		\end{center}
 		
-		%Strumento gradazione colori
+		\subsubsection{Firefox developer tools}
+		
+		il quale testa i diversi livelli di conformità alle linee guida per l'accessibilità WCAG.
 		%Strumento browser testuale
-		
+		%testing browser
 	
 	\subsection{Perl}
 	Per la realizzazione delle pagine dinamiche si è utilizzata la libreria Perl Template Toolkit (\url{http://template-toolkit.org/}). Essa mette a disposizione un semplice linguaggio, utile a definire delle regole logiche, utilizzato nei file template con estensione .html rappresentanti le pagine web del sito. Successivamente, tramite gli script perl è possibile processare tali pagine in modo da stamparle secondo la logica definita negli script. \\
@@ -156,8 +163,24 @@ Lo sviluppo del sito è stato conferme alle predisposizioni degli standard W3C, 
 	\subsection{CSS}
 	Come da specifica il layout del sito è stato realizzato con CSS puri, nello specifico con la versione CSS3.
 	\subsection{Javascript}
-	
+	E' stato utilizzato Javascript per implementare le seguenti funzionalità:
+	\begin{itemize}
+		\item controllo degli errori dei form, segnalando gli errori di immissione all'utente;
+		\item ordinamento dei prodotti della pagina prodotti;
+		\item focalizzazione dei link del contenuto, successivamente al salto dal menu ad esso, dovuto all'attivazione del link skipper.
+	\end{itemize}
 \section{Struttura del progetto}
-	%gerarchia file e cartelle
+	Il progetto è strutturato come segue:
+	\begin{itemize}
+		\item \textbf{cgi-bin}: cartella contenente gli script Perl con estensione \texttt{.cgi};
+		\item \textbf{data}: cartella contenente i file \texttt{.xml} rappresentanti la base informativa del sito, con i relativi schemi \texttt{.xsd};
+		\item \textbf{public\_html}: cartella in cui è presente il contenuto statico del sito. E' ulteriormente suddivisa come segue:
+		\begin{itemize}
+			\item \textbf{css}: sono presenti i file contenenti il codice di presentazione del sito;
+			\item \textbf{js}: sono presenti i file contenti il codice Javascript di comportamento del sito;
+			\item \textbf{temp}: sono presenti i file template \texttt{.html}, i quali vengono processati dal Perl;
+			\item \textbf{images}: sono presenti le immagini di contenuto del sito.
+		\end{itemize}
+	\end{itemize}
 \section{Ripartizione del lavoro}
 \end{document}

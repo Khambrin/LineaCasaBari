@@ -30,9 +30,10 @@
 \contentsline {subsubsection}{\numberline {7.1.3}W3C XML Schema Validator}{8}{subsubsection.7.1.3}
 \contentsline {subsection}{\numberline {7.2}Strumenti per l'accessibilit\IeC {\`a}}{8}{subsection.7.2}
 \contentsline {subsubsection}{\numberline {7.2.1}Total Validator}{8}{subsubsection.7.2.1}
-\contentsline {subsection}{\numberline {7.3}Perl}{8}{subsection.7.3}
+\contentsline {subsubsection}{\numberline {7.2.2}snook.ca}{8}{subsubsection.7.2.2}
+\contentsline {subsection}{\numberline {7.3}Perl}{9}{subsection.7.3}
 \contentsline {subsection}{\numberline {7.4}HTML}{9}{subsection.7.4}
 \contentsline {subsection}{\numberline {7.5}CSS}{9}{subsection.7.5}
 \contentsline {subsection}{\numberline {7.6}Javascript}{9}{subsection.7.6}
 \contentsline {section}{\numberline {8}Struttura del progetto}{9}{section.8}
-\contentsline {section}{\numberline {9}Ripartizione del lavoro}{9}{section.9}
+\contentsline {section}{\numberline {9}Ripartizione del lavoro}{10}{section.9}
