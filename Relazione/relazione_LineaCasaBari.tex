@@ -6,10 +6,22 @@
 \makeFrontPage
 \clearpage
 \tableofcontents
-\listoffigures
 \clearpage
 
 \section{Riferimenti informativi}
+	\subparagraph{Link skipper}~
+	
+	Per la creazione del link skipper, con relativo supporto Javascript, si è seguita la seguente guida:
+	\begin{center}
+		\url{https://www.bignerdranch.com/blog/web-accessibility-skip-navigation-links/}
+	\end{center}
+	
+	\subparagraph{Drawer}~
+	
+	Per la creazione del drawer o ``menu ad hamburger'' si è seguita la seguente guida:
+	\begin{center}
+		\url{http://www.designcouch.com/home/why/2014/04/23/pure-css-drawer-menu/}
+	\end{center}
 
 \section{Introduzione}
 Il progetto ha lo scopo di sviluppare il sito web commerciale del negozio LineaCasaBari, operante nel settore della vendita di oggetti per la casa. \\
@@ -25,8 +37,7 @@ Lo sviluppo del sito è stato conferme alle predisposizioni degli standard W3C, 
 		Le informazioni che cerca devono essere accessibili nel minor numero di click, in quanto è stato riscontrato che la permanenza di utente nel sito dipende da quanto tempo è necessario per reperire le informazioni utili.
 		
 		\subsubsection{Utente registrato}
-		L'utente registrato visualizza la stessa versione del sito dell'utente non registrato, in modo da favorirne l'orientamento in esso. Tuttavia, ha la possibilità di effettuare degli ordini ed acquistare i prodotto offerti dal negozio. Inoltre, ha accesso alla sezione di gestione del proprio account, in cui ha la possibilità di modificare i dati del proprio account, aggiungere/modificare/rimuovere gli indirizzi di spedizione e %annullare
-		consultare gli ordini effettuati; è presente anche la lista dei desideri, in cui l'utente può salvare i suoi articoli preferiti in modo da ritrovarli successivamente.
+		L'utente registrato visualizza la stessa versione del sito dell'utente non registrato, in modo da favorirne l'orientamento in esso. Tuttavia, ha la possibilità di effettuare degli ordini ed acquistare i prodotto offerti dal negozio. Inoltre, ha accesso alla sezione di gestione del proprio account, in cui ha la possibilità di modificare i dati del proprio account, aggiungere/modificare/rimuovere gli indirizzi di spedizione e consultare gli ordini effettuati; è presente anche la lista dei desideri, in cui l'utente può salvare i suoi articoli preferiti in modo da ritrovarli successivamente.
 
 	\subsection{Utenti interni}
 		\subsubsection{Amministratore}
@@ -77,7 +88,7 @@ Lo sviluppo del sito è stato conferme alle predisposizioni degli standard W3C, 
 	\subsection{Sezione utente registrato}
 	Sono state previste le seguenti funzionalità, oltre a quelle già descritte per l'utente non registrato, utili ad utilizzare il sito come servizio, messe a disposizione dell'utente registrato.
 	\begin{itemize}
-		\item \textbf{Gestione account}: da questa sezione sarà possibile consultare e modificare gli ordini effettuati, modificare i dati del proprio account e gestire gli indirizzi di spedizione associati ad esso;
+		\item \textbf{Gestione account}: da questa sezione sarà possibile consultare gli ordini effettuati, modificare i dati del proprio account e gestire gli indirizzi di spedizione associati ad esso;
 		\item \textbf{Carrello}: in questa pagina vengono visualizzati i prodotti che si intende acquistare, effettuando successivamente un ordini complessivo di essi;
 		\item \textbf{Lista dei desideri}: questa pagina è utile all'utente, in quando permette di salvarsi i prodotti preferiti, in modo da ritrovarli più tardi.
 	\end{itemize}
@@ -105,7 +116,8 @@ Lo sviluppo del sito è stato conferme alle predisposizioni degli standard W3C, 
 		Tutte le immagini di contenuto vengono accompagnate da un testo che ne descrive il contenuto, in questo modo si agevolano gli utenti con problemi di vista, oltre a fornire un aiuto nel caso in cui le immagini non vengano caricate correttamente. \\
 		Per le immagini di presentazione, cioè inserite tramite css, non sono previste tali accorgimenti in quanto la loro utilità è solo quella di abbellire e risaltare la grafica del sito.
 		\subsubsection{Colori}
-		
+		Lo schema dei colori è stati reso conforme alle linee guida per l'accessibilità WCAG, tramite l'utilizzo di colori con contrasti forti, in modo da favorire la leggibilità del sito anche a persone con difetti visivi. \\
+		Le diverse combinazioni di colori sono state testate con l'utilizzo dello strumento accessibile dal web \textit{snook.ca}.
 		\subsubsection{Navigazione}
 		Per facilitare la navigazione agli utenti di ogni genere, sono stati previsti i seguenti accorgimenti:
 		\begin{itemize}
@@ -147,12 +159,20 @@ Lo sviluppo del sito è stato conferme alle predisposizioni degli standard W3C, 
 		\begin{center}
 			\url{https://snook.ca/technical/colour_contrast/colour.html}
 		\end{center}
+		il quale testa i diversi livelli di conformità alle linee guida per l'accessibilità WCAG.
 		
 		\subsubsection{Firefox developer tools}
+		Per rendere il sito più accessibile a diverse tipologie di apparecchi e quindi responsive, si è utilizzata la modalità di visualizzazione degli strumenti di sviluppo di Firefox, il quale permette di visualizzare il sito in diverse risoluzioni.
 		
-		il quale testa i diversi livelli di conformità alle linee guida per l'accessibilità WCAG.
-		%Strumento browser testuale
-		%testing browser
+		\subsubsection{Lynx}
+		Per la visualizzazione del sito in formato testuale e quindi il testing dell'accessibilità dal punto di vista degli utenti che necessitano dell'uso di uno screen reader, si è utilizzato il browser testuale Lynx, raggiungibile al seguente sito:
+		\begin{center}
+			\url {http://lynx.browser.org/}
+		\end{center}
+		
+		\subsubsection{Edge developer tools}
+		Per testare il funzionamento del sito su diversi browser, si è utilizzato lo strumento di simulazione offerto dal browser Edge. \\
+		Il sito risulta essere funzionante da Internet Explorer 8 e successivi, oltre che a Firefox, Chrome, Safari, Chromium ed Opera.
 	
 	\subsection{Perl}
 	Per la realizzazione delle pagine dinamiche si è utilizzata la libreria Perl Template Toolkit (\url{http://template-toolkit.org/}). Essa mette a disposizione un semplice linguaggio, utile a definire delle regole logiche, utilizzato nei file template con estensione .html rappresentanti le pagine web del sito. Successivamente, tramite gli script perl è possibile processare tali pagine in modo da stamparle secondo la logica definita negli script. \\
@@ -183,4 +203,186 @@ Lo sviluppo del sito è stato conferme alle predisposizioni degli standard W3C, 
 		\end{itemize}
 	\end{itemize}
 \section{Ripartizione del lavoro}
+Il progetto è stato ripartito come segue:
+	\subparagraph{Alessandro Bari}~
+	
+	\begin{itemize}
+		\item \textbf{HTML}:
+			\begin{itemize}
+				\item Carrello
+				\item Account
+				\item Gestione sito
+				\item La nostra storia
+				\item Termini e spedizioni
+				\item Resi e rimborsi
+			\end{itemize}
+		
+		\item \textbf{CSS}:
+			\begin{itemize}
+				\item Carrello
+				\item Account
+				\item Gestione sito
+				\item La nostra storia
+				\item Termini e spedizioni
+				\item Resi e rimborsi
+			\end{itemize}
+		\item \textbf{CGI}:
+			\begin{itemize}
+				\item Gestione prodotti
+				\item Gestione ordini
+				\item Carrello
+				\item Acquisto
+				\item Resoconto
+				\item Controllo sessione
+			\end{itemize}
+		
+		\item \textbf{XML}:
+			\begin{itemize}
+			 	\item schema Carrelli
+			 	\item schema Ordini
+			\end{itemize}
+		\item \textbf{Validazione di alcune pagine}
+		\item \textbf{Controllo compatibilità browser}
+	\end{itemize}
+	
+	\subparagraph{Lorenzo Ferrarin}~
+	
+	\begin{itemize}
+		\item \textbf{HTML}:
+			\begin{itemize}
+				\item Home
+				\item Prodotto
+				\item Prodotti
+				\item Annunci
+			\end{itemize}
+		
+		\item \textbf{CSS}:
+			\begin{itemize}
+				\item Home
+				\item Prodotto
+				\item Prodotti
+				\item Annunci
+				\item Versione mobile pagine di Gestione sito
+				\item Versione mobile pagine di Account
+				\item Versione mobile Carrello
+				\item Versione mobile Acquisto
+				\item Versione mobile Lista dei desideri
+				\item CSS per la stampa
+			\end{itemize}
+		\item \textbf{CGI}:
+			\begin{itemize}
+				\item Prodotto
+				\item Prodotti
+				\item Recensioni
+				\item Controllo sessione
+			\end{itemize}
+		
+		\item \textbf{XML}:
+			\begin{itemize}
+			 	\item schema Prodotti
+			\end{itemize}
+		\item \textbf{JS}:
+			\begin{itemize}
+				\item Selezione ordinamento prodotti
+			\end{itemize}
+		\item \textbf{Controllo contrasto}
+	\end{itemize}
+	
+	\subparagraph{Navid Taha}~
+	
+	\begin{itemize}
+		\item \textbf{HTML}:
+			\begin{itemize}
+				\item Login
+				\item Registrazione
+				\item Footer
+				\item Header
+				\item Gestione utenti
+				\item Mappa del sito
+			\end{itemize}
+		
+		\item \textbf{CSS}:
+			\begin{itemize}
+				\item Login
+				\item Registrazione
+				\item Footer
+				\item Header
+				\item Gestione utenti
+				\item Mappa del sito
+				\item Stile input
+				\item Versione mobile La nostra storia
+				\item Versione mobile Termini e spedizione
+				\item Versione mobile Resi e rimborsi
+				\item Versione mobile Mappa del sito
+				\item Versione mobile Login
+				\item Versione mobile Registrazione
+				\item Drawer
+			\end{itemize}
+		\item \textbf{CGI}:
+			\begin{itemize}
+				\item Controllo sessione
+				\item Login
+				\item Logout
+				\item Registrazione
+				\item Togli utenti
+			\end{itemize}
+		
+		\item \textbf{XML}:
+			\begin{itemize}
+			 	\item schema Utenti
+			\end{itemize}
+		
+		\item \textbf{Link skipper}
+		\item \textbf{Validate alcune pagine}
+		\item \textbf{Relazione}
+	\end{itemize}	
+	
+	\subparagraph{Alice Sasso}~
+		
+		\begin{itemize}
+		\item \textbf{HTML}:
+			\begin{itemize}
+				\item Newsletter
+				\item Impostazioni account
+				\item Indirizzi
+				\item Gestione annunci
+				\item Annunci
+				\item Lista dei desideri
+			\end{itemize}
+		
+		\item \textbf{CSS}:
+			\begin{itemize}
+				\item Newsletter
+				\item Impostazioni account
+				\item Indirizzi
+				\item Gestione annunci
+				\item Annunci
+				\item Lista dei desideri
+			\end{itemize}
+		\item \textbf{CGI}:
+			\begin{itemize}
+				\item Lista dei desideri
+				\item Gestione account
+				\item Gestione indirizzi
+				\item Gestione annunci
+				\item Annunci
+				\item Newsletter
+			\end{itemize}
+		
+		\item \textbf{XML}:
+			\begin{itemize}
+			 	\item schema Annunci
+			 	\item schema Desideri
+			 	\item schema Indirizzi
+			 	\item schema Newsletter
+			\end{itemize}
+		\item \textbf{JS}:
+			\begin{itemize}
+				\item Controllo errori di tutti i form
+			\end{itemize}
+		\item \textbf{Controllo contrasto}
+	\end{itemize}
+	
+	C'è stato un alto livello di collaborazione che ha portato allo svolgimento di diverse funzionalità in modo collaborativo.
+	
 \end{document}

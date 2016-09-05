@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.8.30)  5 SEP 2016 15:56
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.8.30)  5 SEP 2016 17:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1445,11 +1445,11 @@ our preamble.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<logo.png, id=155, 43.362pt x 24.09pt>
+<logo.png, id=167, 1067.48813pt x 720.89325pt>
 File: logo.png Graphic file (type png)
  <use logo.png>
 Package pdftex.def Info: logo.png used on input line 6.
-(pdftex.def)             Requested size: 284.52756pt x 158.13678pt.
+(pdftex.def)             Requested size: 284.52756pt x 192.14679pt.
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 6.
 
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
@@ -1488,93 +1488,203 @@ LineaCasaBari.toc)
 \tf@toc=\write5
 \openout5 = `relazione_LineaCasaBari.toc'.
 
-
-(./relazione_LineaCasaBari.lof)
-\tf@lof=\write6
-\openout6 = `relazione_LineaCasaBari.lof'.
-
 File: logo.png Graphic file (type png)
  <use logo.png>
-Package pdftex.def Info: logo.png used on input line 10.
-(pdftex.def)             Requested size: 42.68103pt x 23.71167pt.
+Package pdftex.def Info: logo.png used on input line 9.
+(pdftex.def)             Requested size: 42.67596pt x 28.81981pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (30.0pt): 
+ Make it at least 32.41985pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.10 \clearpage
-                [1
+l.9 \clearpage
+               [1
 
 
 ]
 File: logo.png Graphic file (type png)
  <use logo.png>
-Package pdftex.def Info: logo.png used on input line 10.
-(pdftex.def)             Requested size: 42.68103pt x 23.71167pt.
- [2]
+Package pdftex.def Info: logo.png used on input line 9.
+(pdftex.def)             Requested size: 42.67596pt x 28.81981pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (30.0pt): 
+ Make it at least 32.41985pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[2]
 File: logo.png Graphic file (type png)
  <use logo.png>
-Package pdftex.def Info: logo.png used on input line 36.
-(pdftex.def)             Requested size: 42.68103pt x 23.71167pt.
- [3
+Package pdftex.def Info: logo.png used on input line 41.
+(pdftex.def)             Requested size: 42.67596pt x 28.81981pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (30.0pt): 
+ Make it at least 32.41985pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[3
 
 ]
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 41.
-
-(/usr/share/texmf/tex/latex/lm/ts1lmr.fd
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 52.
+ (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 File: logo.png Graphic file (type png)
  <use logo.png>
-Package pdftex.def Info: logo.png used on input line 58.
-(pdftex.def)             Requested size: 42.68103pt x 23.71167pt.
- [4]
+Package pdftex.def Info: logo.png used on input line 60.
+(pdftex.def)             Requested size: 42.67596pt x 28.81981pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (30.0pt): 
+ Make it at least 32.41985pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4]
 File: logo.png Graphic file (type png)
  <use logo.png>
-Package pdftex.def Info: logo.png used on input line 75.
-(pdftex.def)             Requested size: 42.68103pt x 23.71167pt.
+Package pdftex.def Info: logo.png used on input line 81.
+(pdftex.def)             Requested size: 42.67596pt x 28.81981pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (30.0pt): 
+ Make it at least 32.41985pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
 [5]
 File: logo.png Graphic file (type png)
  <use logo.png>
-Package pdftex.def Info: logo.png used on input line 100.
-(pdftex.def)             Requested size: 42.68103pt x 23.71167pt.
- [6]
-File: logo.png Graphic file (type png)
- <use logo.png>
-Package pdftex.def Info: logo.png used on input line 124.
-(pdftex.def)             Requested size: 42.68103pt x 23.71167pt.
- [7]
-File: logo.png Graphic file (type png)
- <use logo.png>
-Package pdftex.def Info: logo.png used on input line 159.
-(pdftex.def)             Requested size: 42.68103pt x 23.71167pt.
- [8]
-File: logo.png Graphic file (type png)
- <use logo.png>
-Package pdftex.def Info: logo.png used on input line 181.
-(pdftex.def)             Requested size: 42.68103pt x 23.71167pt.
+Package pdftex.def Info: logo.png used on input line 105.
+(pdftex.def)             Requested size: 42.67596pt x 28.81981pt.
 
-[9] 
+
+Package Fancyhdr Warning: \headheight is too small (30.0pt): 
+ Make it at least 32.41985pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[6]
+File: logo.png Graphic file (type png)
+ <use logo.png>
+Package pdftex.def Info: logo.png used on input line 127.
+(pdftex.def)             Requested size: 42.67596pt x 28.81981pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (30.0pt): 
+ Make it at least 32.41985pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[7]
+File: logo.png Graphic file (type png)
+ <use logo.png>
+Package pdftex.def Info: logo.png used on input line 153.
+(pdftex.def)             Requested size: 42.67596pt x 28.81981pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (30.0pt): 
+ Make it at least 32.41985pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8]
+File: logo.png Graphic file (type png)
+ <use logo.png>
+Package pdftex.def Info: logo.png used on input line 183.
+(pdftex.def)             Requested size: 42.67596pt x 28.81981pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (30.0pt): 
+ Make it at least 32.41985pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[9]
+File: logo.png Graphic file (type png)
+ <use logo.png>
+Package pdftex.def Info: logo.png used on input line 214.
+(pdftex.def)             Requested size: 42.67596pt x 28.81981pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (30.0pt): 
+ Make it at least 32.41985pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[10]
+File: logo.png Graphic file (type png)
+ <use logo.png>
+Package pdftex.def Info: logo.png used on input line 257.
+(pdftex.def)             Requested size: 42.67596pt x 28.81981pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (30.0pt): 
+ Make it at least 32.41985pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[11]
+File: logo.png Graphic file (type png)
+ <use logo.png>
+Package pdftex.def Info: logo.png used on input line 308.
+(pdftex.def)             Requested size: 42.67596pt x 28.81981pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (30.0pt): 
+ Make it at least 32.41985pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[12]
+File: logo.png Graphic file (type png)
+ <use logo.png>
+Package pdftex.def Info: logo.png used on input line 355.
+(pdftex.def)             Requested size: 42.67596pt x 28.81981pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (30.0pt): 
+ Make it at least 32.41985pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[13] 
 AED: lastpage setting LastPage
 File: logo.png Graphic file (type png)
 <use logo.png>
-Package pdftex.def Info: logo.png used on input line 184.
-(pdftex.def)             Requested size: 42.68103pt x 23.71167pt.
- [10]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 184.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 184.
+Package pdftex.def Info: logo.png used on input line 388.
+(pdftex.def)             Requested size: 42.67596pt x 28.81981pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (30.0pt): 
+ Make it at least 32.41985pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[14]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 388.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 388.
  (./relazione_LineaCasaBari.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 184.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 184.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 388.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 388.
 Package rerunfilecheck Info: File `relazione_LineaCasaBari.out' has not changed
 .
-(rerunfilecheck)             Checksum: F03D2D5F33BAAB9742EB0B098090B70A;2451.
+(rerunfilecheck)             Checksum: 1EB0243433E54B4B3B3DF7D91FDBA635;2678.
  ) 
 Here is how much of TeX's memory you used:
- 26723 strings out of 493304
- 560291 string characters out of 6139871
- 742812 words of memory out of 5000000
- 29563 multiletter control sequences out of 15000+600000
+ 26745 strings out of 493304
+ 560614 string characters out of 6139871
+ 743812 words of memory out of 5000000
+ 29575 multiletter control sequences out of 15000+600000
  47377 words of font info for 37 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  65i,15n,74p,823b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1584,10 +1694,10 @@ e/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texm
 f/fonts/type1/public/lm/lmro10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt
 10.pfb>
-Output written on relazione_LineaCasaBari.pdf (11 pages, 220438 bytes).
+Output written on relazione_LineaCasaBari.pdf (15 pages, 878504 bytes).
 PDF statistics:
- 304 PDF objects out of 1000 (max. 8388607)
- 280 compressed objects within 3 object streams
- 48 named destinations out of 1000 (max. 500000)
- 314 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 352 PDF objects out of 1000 (max. 8388607)
+ 323 compressed objects within 4 object streams
+ 61 named destinations out of 1000 (max. 500000)
+ 338 words of extra memory for PDF output out of 10000 (max. 10000000)
 
